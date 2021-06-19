@@ -1,3 +1,4 @@
+import { formatDistance, format } from 'date-fns'
 import styles from '@/styles/projects.module.css'
 import { StarIcon } from '@/components/icons/icons.js'
 
@@ -5,6 +6,7 @@ export default function ProjectCard({
   name,
   desc,
   star_count,
+  pushed_date,
   href,
   language,
 }) {
@@ -23,7 +25,9 @@ export default function ProjectCard({
             <StarIcon />
           </p>
         </div>
+
         <p className={styles.description}>{desc}</p>
+        <p className={styles.date}>Last edited {pushed_date}</p>
         <span className={styles.language}>{language}</span>
       </div>
     </a>

@@ -10,22 +10,21 @@ export default function Projects() {
       <section>
         <h1>Rajbir Johar</h1>
         <p>
-          <span>Frontend Developer based in Southern California.</span>
+          <span>A Frontend Developer based in Southern California.</span>
         </p>
         <p>
-          You found my corner of the internet. Learn about how I want to make
-          the web a beautiful place. I am a Junior at the University of
-          California, Riverside studying Computer Science. But my real passion
-          lies in frontend web development.
+          I&#39;m a senior at the University of California, Riverside, studying
+          Computer Science but loving web development.
         </p>
         <p>
-          If I am not coding, you can catch me perfecting the art of the grilled
-          cheese or building bespoke keyboards. I'm typing on my Iron165 (my
-          favorite board ever) with lubricated cream switches.
+          If I&#39;m not coding, you can catch me perfecting the art of the
+          grilled cheese or building bespoke keyboards. I&apos;m typing on my
+          Iron165 (my favorite board ever) with lubricated cream switches.
         </p>
         <p>
-          You can also find me currently playing through Returnal. I'm always up
-          for a conversation. Feel free to hit me up.
+          You can also find me currently playing through{' '}
+          <i>Ratchet and Clank: Rift Apart</i>. I&apos;m always up for a
+          conversation. Feel free to hit me up.
         </p>
       </section>
     </Layout>

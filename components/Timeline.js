@@ -4,7 +4,6 @@ import styles from '@/styles/timeline.module.css'
 import {
   HatIcon,
   CakeIcon,
-  CheckIcon,
   FireIcon,
   StarIcon,
   SadIcon,
@@ -57,7 +56,7 @@ const FullTimeline = () => (
     <ul className={styles.list}>
       <Step title="Hello World!" icon={<StarIcon />}>
         I wrote my first line of code{' '}
-        <code>cout &#60;&#60; "Hello World!";</code>
+        <code>cout &#60;&#60; &#34;Hello World!&#34;;</code>
       </Step>
       <Step
         title="Moved to University of California, Riverside"
@@ -110,11 +109,12 @@ export default function Timeline() {
     <>
       <Year>2021</Year>
       <ul className={styles.list}>
+        <Step title="Joined Prytaneum" icon={<BoltIcon />}>
+          A collaborative effort to build a unique platform for democratic talks
+          a.k.a an online townhall that &#34;promotes democracy&#34;.
+        </Step>
         <Step title="Director of Citrus Hack" icon={<FireIcon />}>
           Bringing <i>zesty</i> ideas to Citrus Hack as a director.
-        </Step>
-        <Step title="First Internship" icon={<BoltIcon />}>
-          Finally moving up in the world.
         </Step>
         <Step title="Built my Fourth Keyboard" icon={<FireIcon />}>
           Hopefully my last. This one is a polycarbonate Think6.5 V2 with
@@ -126,7 +126,8 @@ export default function Timeline() {
         </Step>
         <Step title="Built my Third Keyboard" icon={<FireIcon />}>
           An e-white Vega 65 with gateron ink switches and a set of GMK Minimal.
-          It's certainly a thocky boy. Also where I discovered the 7U layout.
+          It&#39;s certainly a thocky boy. Also where I discovered the 7U
+          layout.
         </Step>
       </ul>
       <Divider />
@@ -134,11 +135,11 @@ export default function Timeline() {
       <ul className={styles.list}>
         <Step title="Web dev Lead" icon={<StarIcon />}>
           Spearheaded the development for the Biohack, Cutie Hack, and Citrus
-          Hack websites. Let's just say I don't know when to stop.
+          Hack websites. Let&#39;s just say I don&#39;t know when to stop.
         </Step>
         <Step title="Started Habitle" icon={<FireIcon />}>
           Because of my bad habits, I built a tool to promote good ones instead.
-          It's super primitive but was good practice on building my own
+          It&#39;s super primitive but was good practice on building my own
           projects.
         </Step>
         <Step title="Online Classes" icon={<SadIcon />}>

@@ -14,14 +14,15 @@ export default function Interests() {
         <h1>Interests</h1>
         <p>
           There is more to life than sitting in front of a screen all day
-          coding. Here you can learn about where I've gone, what I've done, and
-          why I've done it. I love sharing my notable experiences with others.
+          coding. Here you can learn about where I&apos;ve gone, what I&apos;ve
+          done, and why I&apos;ve done it. I love sharing my notable experiences
+          with others.
         </p>
-        <p>If anything here interests you, let's talk about it.</p>
+        <p>If anything here interests you, let&apos;s talk about it.</p>
         <h2>Music</h2>
         <p>
           Discover my usual rotation. This list consists of the top ten songs
-          that I've been listening to on Spotify.
+          that I&apos;ve been listening to on Spotify.
         </p>
         <TrackList />
         <hr />

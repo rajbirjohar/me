@@ -27,7 +27,7 @@ export default function Projects() {
         <h2>Dashboard</h2>
         <p>
           My github dashboard containing live statistics on my github profile.
-          This uses Github's official REST API to access the data you see.
+          This uses Github&apos;s official REST API to access the data you see.
           Follow me and watch the numbers update.
         </p>
         <Dashboard />

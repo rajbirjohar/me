@@ -23,6 +23,7 @@
 
 .title {
   color: var(--success);
+  margin-right: var(--gap-quarter);
 }
 
 .group:hover .title {
@@ -90,6 +91,13 @@
   border-radius: var(--radius-sm);
   background-color: var(--accent-2);
 }
+
+.date {
+  color: var(--accent-5);
+  font-weight: 400;
+  margin: 0;
+}
+
 @keyframes pulse {
   0% {
     opacity: 1;
