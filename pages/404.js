@@ -15,7 +15,7 @@ export default function Custom404() {
         <p>
           I must have done something gravely wrong for you to find this page.
         </p>
-        <Link href="/">
+        <Link href="/" passHref>
           <button className={styles.button}>
             <LeftArrow /> Back home
           </button>

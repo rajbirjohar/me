@@ -5,6 +5,7 @@ import Layout from '@/components/Layout'
 import { Text } from '@/components/Text'
 import Link from 'next/link'
 import { databaseId } from './readings'
+import { LeftArrow } from '@/components/icons/icons'
 import styles from '@/styles/post.module.css'
 
 const renderBlock = (block) => {
@@ -92,7 +93,9 @@ export default function Post({ page, blocks }) {
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
           <Link href="/readings">
-            <a>← Go back</a>
+            <a className={styles.goback}>
+              <LeftArrow /> Go back
+            </a>
           </Link>
         </section>
       </article>

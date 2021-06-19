@@ -23,3 +23,7 @@
 .underline {
   text-decoration: underline;
 }
+.goback {
+  display: flex;
+  align-items: center;
+}

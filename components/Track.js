@@ -1,10 +1,13 @@
+import Image from 'next/image'
 import styles from '@/styles/track.module.css'
 
 export default function Track(track) {
   return (
     <div className={styles.track}>
       <div className={styles.info}>
-        <img src={track.albumArt} className={styles.albumArt} />
+        <div className={styles.albumArt}>
+          <Image src={track.albumArt} alt="Album Art" width={75} height={75} />
+        </div>
         <div>
           <p className={styles.title}>
             <a href={track.songUrl} target="_blank" rel="noopener noreferrer">

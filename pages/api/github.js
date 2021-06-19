@@ -1,6 +1,6 @@
 const { Octokit } = require('@octokit/rest')
 
-export default async (req, res) => {
+const githubFetch = async (req, res) => {
   const octokit = new Octokit({
     auth: process.env.GITHUB_AUTH_TOKEN,
   })
@@ -39,6 +39,7 @@ export default async (req, res) => {
     projectsList.push({
       name: p.name,
       stars: p.stargazers_count,
+      pushed: p.pushed_at,
       url: p.html_url,
       description: p.description,
       language: p.language,
@@ -54,3 +55,5 @@ export default async (req, res) => {
     repos: projectsList,
   })
 }
+
+export default githubFetch

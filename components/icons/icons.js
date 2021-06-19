@@ -43,9 +43,9 @@ export const SepiaIcon = () => (
     <path
       d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -53,14 +53,15 @@ export const SepiaIcon = () => (
 export const RightArrow = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="h-4 w-4"
-    viewBox="0 0 20 20"
-    fill="currentColor"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
   >
     <path
-      fillRule="evenodd"
-      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-      clipRule="evenodd"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M9 5l7 7-7 7"
     />
   </svg>
 )
@@ -68,14 +69,15 @@ export const RightArrow = () => (
 export const LeftArrow = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5"
-    viewBox="0 0 20 20"
-    fill="currentColor"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
   >
     <path
-      fillRule="evenodd"
-      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-      clipRule="evenodd"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M15 19l-7-7 7-7"
     />
   </svg>
 )

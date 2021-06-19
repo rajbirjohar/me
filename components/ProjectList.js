@@ -4,6 +4,7 @@ import fetcher from '@/lib/fetcher'
 import ProjectCard from './ProjectCard'
 import styles from '@/styles/projects.module.css'
 import { SearchIcon } from '@/components/icons/icons'
+import TimeAgo from 'react-timeago'
 
 const Skeleton = () => {
   return (
@@ -79,6 +80,7 @@ export default function ProjectList() {
           key={p.name}
           name={p.name}
           star_count={p.stars}
+          pushed_date={<TimeAgo date={p.pushed} />}
           href={p.url}
           desc={p.description}
           language={p.language}
