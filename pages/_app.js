@@ -96,7 +96,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           name="description"
-          content="Hello! I'm Rajbir. Check out my portfolio, a collection of my neat projects and ideas."
+          content="A collection of my neat projects and ideas."
         />
         <meta property="og:image" content="/images/icon_logo.png" />
 
@@ -105,7 +105,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider
         disableTransitionOnChange
         defaultTheme="dark"
-        themes={['pink', 'light', 'dark']}
+        themes={['sepia', 'light', 'dark']}
       >
         <Header />
         <Component {...pageProps} />

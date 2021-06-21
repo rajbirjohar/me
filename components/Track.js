@@ -6,15 +6,21 @@ export default function Track(track) {
     <div className={styles.track}>
       <div className={styles.info}>
         <div className={styles.albumArt}>
-          <Image src={track.albumArt} alt="Album Art" width={75} height={75} />
+          <Image
+            src={track.albumArt}
+            alt="Album Art"
+            width={75}
+            height={75}
+            layout="fixed"
+          />
         </div>
         <div>
-          <p className={styles.title}>
+          <p className={`${styles.title} ${'clamp'}`}>
             <a href={track.songUrl} target="_blank" rel="noopener noreferrer">
               {track.title}
             </a>
           </p>
-          <p className={styles.artist}>{track.artist}</p>
+          <p className={`${styles.artist} ${'clamp'}`}>{track.artist}</p>
         </div>
       </div>
     </div>

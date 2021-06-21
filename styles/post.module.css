@@ -1,5 +1,5 @@
 .block {
-  font-weight: light !important;
+  font-size: 1.125rem;
 }
 .bold {
   font-weight: bold;
@@ -26,4 +26,6 @@
 .goback {
   display: flex;
   align-items: center;
+  font-size: 1.125rem;
+  font-weight: 400;
 }
