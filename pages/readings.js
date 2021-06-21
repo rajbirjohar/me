@@ -31,7 +31,6 @@ export default function Readings({ posts }) {
                 <p className={styles.postDescription}>
                   Last edited <TimeAgo date={post.last_edited_time} />
                 </p>
-                <p className={styles.postDescription}>{post.created_by}</p>
               </li>
             )
           })}
