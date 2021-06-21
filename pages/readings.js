@@ -1,27 +1,24 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import { getDatabase } from '@/lib/notion'
 import Layout from '@/components/Layout'
 import { Text } from '@/components/Text'
 import { RightArrow } from '@/components/icons/icons'
 import styles from '@/styles/readings.module.css'
+import TimeAgo from 'react-timeago'
 
 export const databaseId = process.env.NOTION_DATABASE_ID
 
 export default function Readings({ posts }) {
   return (
     <Layout>
+      <Head>
+        <title>Rajbir Johar | Readings</title>
+      </Head>
       <div>
         <h1>Readings</h1>
         <ol className={styles.posts}>
           {posts.map((post) => {
-            const date = new Date(post.last_edited_time).toLocaleString(
-              'en-US',
-              {
-                month: 'short',
-                day: '2-digit',
-                year: 'numeric',
-              }
-            )
             return (
               <li key={post.id} className={styles.post}>
                 <h3 className={styles.postTitle}>
@@ -31,7 +28,10 @@ export default function Readings({ posts }) {
                     </a>
                   </Link>
                 </h3>
-                <p className={styles.postDescription}>{date}</p>
+                <p className={styles.postDescription}>
+                  Last edited <TimeAgo date={post.last_edited_time} />
+                </p>
+                <p className={styles.postDescription}>{post.created_by}</p>
               </li>
             )
           })}
