@@ -19,10 +19,11 @@ export default function NowPlaying() {
                   alt="Album Art"
                   width={75}
                   height={75}
+                  layout="fixed"
                 />
               </div>
               <div>
-                <p className={styles.title}>
+                <p className={`${styles.title} ${'clamp'}`}>
                   <a
                     href={data.songUrl}
                     target="_blank"
@@ -31,7 +32,7 @@ export default function NowPlaying() {
                     {data?.title}
                   </a>
                 </p>
-                <p className={styles.artist}>{data?.artist}</p>
+                <p className={`${styles.artist} ${'clamp'}`}>{data?.artist}</p>
               </div>
             </div>
           </div>
@@ -48,8 +49,10 @@ export default function NowPlaying() {
               />
             </div>
             <div>
-              <p className={styles.title}>Not currently playing</p>
-              <p className={styles.artist}>Spotify</p>
+              <p className={`${styles.title} ${'clamp'}`}>
+                Not currently playing
+              </p>
+              <p className={`${styles.artist} ${'clamp'}`}>Spotify</p>
             </div>
           </div>
         </div>
