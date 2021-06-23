@@ -19,6 +19,7 @@ export default function NowPlaying() {
                   alt="Album Art"
                   width={75}
                   height={75}
+                  layout="fixed"
                 />
               </div>
               <div>
