@@ -16,8 +16,9 @@ export default function Header() {
         <li className={styles.li}>
           <Link href="/" title="Home" />
           <Link href="/projects" title="Projects" />
-          <Link href="/interests" title="Interests" />
-          <Link href="/readings" title="Readings" />
+          <Link href="/life" title="Life" />
+          <Link href="/music" title="Music" />
+          {/* <Link href="/readings" title="Readings" /> */}
         </li>
       </ul>
     </nav>
