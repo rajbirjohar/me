@@ -13,6 +13,10 @@ const githubFetch = async (req, res) => {
   const followers = await octokit.request('/users/r-jo/followers?per_page=100')
   const followerCount = followers.data.length
 
+  //Followers request
+  const portfolio = await octokit.request('/repos/r-jo/Portfolio')
+  const portfolioUpdated = portfolio.data.pushed_at
+
   //Stars request
   const stars = await octokit.request('/users/r-jo/repos')
   const starsCount = stars.data
@@ -53,6 +57,7 @@ const githubFetch = async (req, res) => {
     starred: starredCount,
     orgsCont: orgsCount,
     repos: projectsList,
+    portfolioLastUpdated: portfolioUpdated,
   })
 }
 

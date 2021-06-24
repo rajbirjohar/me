@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
+import useSWR from 'swr'
+import fetcher from '../lib/fetcher'
 import { useTheme } from 'next-themes'
 import styles from '@/styles/footer.module.css'
 import { MoonIcon, SunIcon, SepiaIcon } from '@/components/icons/icons'
+import TimeAgo from 'react-timeago'
 
 const ExtLink = ({ title, destination }) => {
   return (
@@ -78,7 +81,9 @@ const ThemeChanger = () => {
   )
 }
 
-export default function Header() {
+export default function Footer() {
+  const { data } = useSWR('/api/github', fetcher)
+  const loading = !data
   return (
     <footer className={styles.footer}>
       <hr />
@@ -96,6 +101,19 @@ export default function Header() {
           />
         </div>
         <ThemeChanger />
+      </div>
+      <div>
+        {loading ? (
+          <p className={styles.edited}>
+            Created by a human on Earth <br />
+            Finding out when this was last edited...
+          </p>
+        ) : (
+          <p className={styles.edited}>
+            Created by a human on Earth <br />
+            Lasted edited about <TimeAgo date={data.portfolioLastUpdated} />
+          </p>
+        )}
       </div>
     </footer>
   )

@@ -48,3 +48,6 @@
 .external:last-of-type {
   margin-right: 0;
 }
+.edited {
+  color: var(--accent-5);
+}
