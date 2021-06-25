@@ -60,20 +60,17 @@ This project has been bootstrapped using `yarn create next-app` and makes api ca
 
 Instructions on how to acquire said `TOKENS` are as followed:
 
-- Github
+### Github
 
   1. Try cloning/forking is repo on your own machine. Next, head to - Github account settings > Developer Settings > Personal Tokens > Generate New Token. Then check the **user box.**
   2. Then within the root of the project, open up a terminal and type `touch .env.local` to create a new `.env.local` file. Open up the file and paste in your new secret key like shown below without `<>`.
+  3. Finally, navigate to `/pages/api/github` and replace all mentions of my github username within the urls with your github username. (Better yet, set an env variable!)
 
     `GITHUB_AUTH_TOKEN=<SECRET-GH-TOKEN>`
 
   3. Once you've completed the above steps, your copy of this website should generate statistics and projects from your own Github profile.
 
-- Notion
-
-  1. Follow the official [Notion Guide](https://developers.notion.com/docs/getting-started) and acquire your `NOTION_TOKEN` and `NOTION_DATABASE_ID` and place within the `.env.local` file.
-
-- Spotify
+### Spotify
 
   1. Log into your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/).
   2. Click **Create an App**.
@@ -81,33 +78,28 @@ Instructions on how to acquire said `TOKENS` are as followed:
   4. Click **Show Client Secret**.
   5. Save your Client ID and Secret somewhere safe. You will need these later on.
   6. Click **Edit Settings**.
-  7. Add `http://localhost:3000` as a redirect URI. (You would also add your production domain if you want this to work on your live website, `https://example.com`).
+  7. Add `http://localhost:3000` as a redirect URI.
 
   You have properly set up a Spotify app and the correct credentials to make your requests.
 
   Since we only need to grant access once, we will follow the [Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#authorization-code-flow).
 
-  8. Use the example URL below to get an idea of what it might look like. Go ahead and swap out the `client_id` and scopes for your own. Then paste this within your browser.
+  8. Use the example URL below to get an idea of what it might look like. Go ahead and swap out the `client_id` without the `<>` and scopes for your own. Then paste this within your browser while your project is running.
   <br></br>
   ```Javascript
-  https://accounts.spotify.com/authorize?client_id=8e94bde7dd
-  b84a1f7a0e51bf3bc95be8&response_type=code&redirect_uri=http
-  %3A%2F%2Flocalhost:3000&scope=user-read-currently-playing%20
-  user-top-read
+  https://accounts.spotify.com/authorize?client_id=<client_id>&response_type=code&redirect_uri=http%3A%2F%2Flocalhost:3000&scope=user-read-currently-playing%20user-top-read%20user-read-recently-played
   ```
-
+  
   9. After authorization, you'll be sent back to `redirect_uri`. Within the URL, there is a `code` query parameter. Save the value without `<>`.
   <br></br>
   ```
   http://localhost:3000/callback?code=<NApCCg..BkWtQ>
   ```
   
-  10. Afterwards, you will need to retrieve the refresh token by generating a Base64 encoded string containing the client ID and secret you got from earlier. Use this [encoding tool](https://www.base64encode.org) to encode it online. The format should be `client_id:client_secret`. Replace the values with your new encoded string and the `code` parameter from the last step without the `<>`.
+  10. Afterwards, you will need to retrieve the refresh token by generating a Base64 encoded string containing the client ID and secret you got from earlier. Use this [encoding tool](https://www.base64encode.org) to encode it online. The format should be `client_id:client_secret`. Replace the values in the command below with your new encoded string and the `code` parameter from the last step without the `<>`.
 <br></br>
-  ```
-  curl -H "Authorization: Basic <base64 encoded client_id:client_secret>"
-  -d grant_type=authorization_code -d code=<code> -d redirect_uri=http%3A
-  %2F%2Flocalhost:3000 https://accounts.spotify.com/api/token
+  ```bash
+  curl -H "Authorization: Basic <base64 encoded client_id:client_secret>" -d grant_type=authorization_code -d code=<code> -d redirect_uri=http%3A%2F%2Flocalhost:3000 https://accounts.spotify.com/api/token
   ```
 
   11. This returns a JSON response containing a `refresh_token`. This token is valid indefinitely unless you revoke access, so we'll want to save this in an environment variable.
