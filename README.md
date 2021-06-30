@@ -102,7 +102,7 @@ Instructions on how to acquire said `TOKENS` are as followed:
   curl -H "Authorization: Basic <base64 encoded client_id:client_secret>" -d grant_type=authorization_code -d code=<code> -d redirect_uri=http%3A%2F%2Flocalhost:3000 https://accounts.spotify.com/api/token
   ```
 
-  11. This returns a JSON response containing a `refresh_token`. This token is valid indefinitely unless you revoke access, so we'll want to save this in an environment variable.
+  11. This returns a JSON response containing a `refresh_token`. This token is valid indefinitely unless you revoke access, so we'll want to save this in an environment variable (Note, it will display two tokens, you want the second token).
 
   12. Finally, place your `client_id`, `client_secret`, and `refresh_token` within the `.env.local` file.
   
