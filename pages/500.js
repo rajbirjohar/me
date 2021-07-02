@@ -4,14 +4,14 @@ import Layout from '@/components/Layout'
 import styles from '@/styles/404.module.css'
 import { LeftArrow } from '@/components/icons/icons'
 
-export default function Custom404() {
+export default function Custom500() {
   return (
     <Layout>
       <Head>
-        <title>Rajbir Johar | 404</title>
+        <title>Rajbir Johar | 500</title>
       </Head>
       <section>
-        <h1>What in the 404?</h1>
+        <h1>What in the 500?</h1>
         <p>
           I must have done something gravely wrong for you to find this page.
         </p>
