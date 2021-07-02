@@ -1,9 +1,10 @@
 import Header from '@/components/Header'
 import Head from 'next/head'
+import Router from 'next/router'
 import Footer from '@/components/Footer'
 import '@/styles/globals.css'
 import { ThemeProvider } from 'next-themes'
-import { AnimatePresence } from 'framer-motion'
+// import { AnimatePresence } from 'framer-motion'
 
 function MyApp({ Component, pageProps, router }) {
   return (
@@ -109,9 +110,9 @@ function MyApp({ Component, pageProps, router }) {
         themes={['sepia', 'light', 'dark']}
       >
         <Header />
-        <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
+        {/* <AnimatePresence exitBeforeEnter> */}
+        <Component {...pageProps} key={router.route} />
+        {/* </AnimatePresence> */}
         <Footer />
       </ThemeProvider>
     </>

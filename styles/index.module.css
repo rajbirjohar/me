@@ -7,16 +7,19 @@
 }
 .rounded {
   border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 
 @media (max-width: 960px) {
-  .title {
-    line-height: 1.5;
-  }
   .hero {
     flex-direction: column-reverse;
   }
   .content {
+    padding-top: var(--gap-double);
     padding-right: 0;
+  }
+  .title {
+    line-height: 1.5;
   }
 }

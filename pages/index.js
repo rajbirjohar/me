@@ -7,6 +7,7 @@ import profilePic from '@/public/assets/profile.jpeg'
 import styles from '@/styles/index.module.css'
 import toast, { Toaster } from 'react-hot-toast'
 import TimeAgo from 'react-timeago'
+import { motion } from 'framer-motion'
 
 export default function Projects() {
   const { data } = useSWR('/api/github', fetcher)
@@ -47,15 +48,11 @@ export default function Projects() {
           </p>
         </div>
         <div className={styles.profilePic}>
-          <Image
-            src={profilePic}
-            priority="true"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <motion.img
+            src="/assets/profile.jpeg"
             alt="Picture of Rajbir Johar"
-            placeholder="blur"
-            height={200}
-            width={200}
             className={styles.rounded}
-            layout="fixed"
           />
         </div>
       </section>
