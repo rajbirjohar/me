@@ -73,8 +73,12 @@ export default function ProjectList() {
           <SearchIcon />
         </svg>
       </div>
-      {!filteredProjects.length &&
-        "What!? It seems like you tried to find something I haven't created yet."}
+      {!filteredProjects.length && (
+        <p>
+          What!? That&#39;s crazy. It seems like you tried to find something I
+          haven&#39;t created yet.
+        </p>
+      )}
       {filteredProjects.map((p) => (
         <ProjectCard
           key={p.name}
