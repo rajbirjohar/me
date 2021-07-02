@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import styles from '@/styles/track.module.css'
 
-export default function Track(track) {
+export default function Artist(artist) {
   return (
     <div className={styles.track}>
       <div className={styles.info}>
         <div className={styles.albumArt}>
           <Image
-            src={track.albumArt}
+            src={artist.artistCover}
             alt="Album Art"
             className={styles.rounded}
             width={75}
@@ -17,11 +17,14 @@ export default function Track(track) {
         </div>
         <div>
           <p className={`${styles.title} ${'clamp'}`}>
-            <a href={track.songUrl} target="_blank" rel="noopener noreferrer">
-              {track.title}
+            <a
+              href={artist.artistUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {artist.artist}
             </a>
           </p>
-          <p className={`${styles.artist} ${'clamp'}`}>{track.artist}</p>
         </div>
       </div>
     </div>

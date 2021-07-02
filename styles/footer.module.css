@@ -48,6 +48,7 @@
 .external:last-of-type {
   margin-right: 0;
 }
-.edited {
+.last {
   color: var(--accent-5);
+  text-align: center;
 }

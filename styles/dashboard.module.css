@@ -16,7 +16,8 @@
   transition: all var(--transition);
 }
 .card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3.3px 6.7px rgba(0, 0, 0, 0.018),
+    0 11.2px 22.3px rgba(0, 0, 0, 0.027), 0 25px 100px rgba(0, 0, 0, 0.05);
   border-color: var(--accent-2);
 }
 

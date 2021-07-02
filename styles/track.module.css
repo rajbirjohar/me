@@ -29,10 +29,6 @@
   color: var(--accent-6);
 }
 
-/* .title,
-.artist {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-} */
+.rounded {
+  border-radius: 5px;
+}

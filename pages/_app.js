@@ -3,8 +3,9 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 import '@/styles/globals.css'
 import { ThemeProvider } from 'next-themes'
+import { AnimatePresence } from 'framer-motion'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Head>
@@ -108,7 +109,9 @@ function MyApp({ Component, pageProps }) {
         themes={['sepia', 'light', 'dark']}
       >
         <Header />
-        <Component {...pageProps} />
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
         <Footer />
       </ThemeProvider>
     </>

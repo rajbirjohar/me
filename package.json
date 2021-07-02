@@ -19,6 +19,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "framer-motion": "^4.1.17",
     "next": "^11.0.0",
     "next-themes": "^0.0.14",
     "prettier": "^2.3.0",
@@ -26,6 +27,7 @@
     "querystring": "^0.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hot-toast": "^2.0.0",
     "react-timeago": "^6.2.1",
     "swr": "^0.5.6"
   },
