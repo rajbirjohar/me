@@ -1,23 +1,15 @@
-.hero {
-  display: flex;
-  align-items: center;
-}
 .content {
-  padding-right: var(--gap-double);
+  padding-top: var(--gap-double);
 }
 .rounded {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }
 
 @media (max-width: 960px) {
   .hero {
     flex-direction: column-reverse;
-  }
-  .content {
-    padding-top: var(--gap-double);
-    padding-right: 0;
   }
   .title {
     line-height: 1.5;
