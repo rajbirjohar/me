@@ -5,6 +5,7 @@
 .step {
   display: flex;
   align-items: flex-start;
+  list-style-type: none;
 }
 .title {
   margin: 0 0 var(--gap-half) 0;
