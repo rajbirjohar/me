@@ -1,9 +1,5 @@
-.hero {
-  display: flex;
-  align-items: center;
-}
 .content {
-  padding-right: var(--gap-double);
+  padding-top: var(--gap-double);
 }
 .rounded {
   border-radius: 50%;
@@ -12,11 +8,5 @@
 @media (max-width: 960px) {
   .title {
     line-height: 1.5;
-  }
-  .hero {
-    flex-direction: column-reverse;
-  }
-  .content {
-    padding-right: 0;
   }
 }

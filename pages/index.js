@@ -23,6 +23,18 @@ export default function Projects() {
       </Head>
       <Toaster />
       <section className={styles.hero}>
+        <div className={styles.profilePic}>
+          <Image
+            src={profilePic}
+            priority="true"
+            alt="Picture of Rajbir Johar"
+            placeholder="blur"
+            height={200}
+            width={200}
+            className={styles.rounded}
+            layout="fixed"
+          />
+        </div>
         <div className={styles.content}>
           <h1 className={styles.title}>Hey there, I&#39;m Rajbir.</h1>
           <p>
@@ -45,18 +57,6 @@ export default function Projects() {
               </>
             )}
           </p>
-        </div>
-        <div className={styles.profilePic}>
-          <Image
-            src={profilePic}
-            priority="true"
-            alt="Picture of Rajbir Johar"
-            placeholder="blur"
-            height={200}
-            width={200}
-            className={styles.rounded}
-            layout="fixed"
-          />
         </div>
       </section>
     </Layout>
