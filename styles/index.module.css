@@ -1,0 +1,19 @@
+.hero {
+  display: flex;
+  align-items: center;
+}
+.content {
+  padding-right: var(--gap-double);
+}
+.rounded {
+  border-radius: 50%;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    flex-direction: column-reverse;
+  }
+  .content {
+    padding-right: 0;
+  }
+}
