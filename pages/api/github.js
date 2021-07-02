@@ -13,7 +13,7 @@ const githubFetch = async (req, res) => {
   const followers = await octokit.request('/users/r-jo/followers?per_page=100')
   const followerCount = followers.data.length
 
-  //Followers request
+  //Last updated request
   const portfolio = await octokit.request('/repos/r-jo/Portfolio')
   const portfolioUpdated = portfolio.data.pushed_at
 
@@ -26,7 +26,7 @@ const githubFetch = async (req, res) => {
     }, 0)
 
   //Repos request
-  const reposStarred = await octokit.request('/users/r-jo/starred')
+  const reposStarred = await octokit.request('/users/r-jo/starred?per_page=100')
   const starredCount = reposStarred.data.length
 
   //Orgs request
