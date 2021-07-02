@@ -17,6 +17,7 @@ export default function NowPlaying() {
                 <Image
                   src={data?.albumArt}
                   alt="Album Art"
+                  className={styles.rounded}
                   width={75}
                   height={75}
                   layout="fixed"
@@ -44,6 +45,7 @@ export default function NowPlaying() {
               <Image
                 src="/assets/spotify.png"
                 alt="Spotify Logo"
+                className={styles.rounded}
                 width={75}
                 height={75}
               />
