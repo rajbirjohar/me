@@ -7,6 +7,7 @@ import profilePic from '@/public/assets/profile.jpeg'
 import styles from '@/styles/index.module.css'
 import toast, { Toaster } from 'react-hot-toast'
 import TimeAgo from 'react-timeago'
+import { motion } from 'framer-motion'
 
 export default function Projects() {
   const { data } = useSWR('/api/github', fetcher)
@@ -25,7 +26,7 @@ export default function Projects() {
       <section className={styles.hero}>
         <div className={styles.profilePic}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <motion.img
             src="/assets/profile.jpeg"
             alt="Picture of Rajbir Johar"
             className={styles.rounded}
