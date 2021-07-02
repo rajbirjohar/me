@@ -24,7 +24,7 @@ export default function Projects() {
       <Toaster />
       <section className={styles.hero}>
         <div className={styles.content}>
-          <h1>Hey there, I&#39;m Rajbir.</h1>
+          <h1 className={styles.title}>Hey there, I&#39;m Rajbir.</h1>
           <p>
             Frontend Developer based in Southern California, typing on bespoke
             keyboards, playing through <i>Ratchet and Clank: Rift Apart</i>, and

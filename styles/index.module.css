@@ -10,6 +10,9 @@
 }
 
 @media (max-width: 960px) {
+  .title {
+    line-height: 1.5;
+  }
   .hero {
     flex-direction: column-reverse;
   }
