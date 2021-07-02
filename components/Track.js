@@ -9,6 +9,7 @@ export default function Track(track) {
           <Image
             src={track.albumArt}
             alt="Album Art"
+            className={styles.rounded}
             width={75}
             height={75}
             layout="fixed"
