@@ -6,7 +6,9 @@ import { MoonIcon, SunIcon, SepiaIcon } from '@/components/icons/icons'
 const ExtLink = ({ title, destination }) => {
   return (
     <p className={styles.external}>
-      <a href={destination}>{title}</a>
+      <a href={destination} target="_blank" rel="noreferrer noopener">
+        {title}
+      </a>
     </p>
   )
 }

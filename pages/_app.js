@@ -3,17 +3,9 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 import '@/styles/globals.css'
 import { ThemeProvider } from 'next-themes'
-<<<<<<< HEAD
-import { AnimatePresence } from 'framer-motion'
-import useTransitionFix from '@/utils/useTransitionFix'
-
-function MyApp({ Component, pageProps, router }) {
-  useTransitionFix()
-=======
 // import { AnimatePresence } from 'framer-motion'
 // router
 function MyApp({ Component, pageProps }) {
->>>>>>> staging
   return (
     <>
       <Head>
@@ -117,15 +109,9 @@ function MyApp({ Component, pageProps }) {
         themes={['sepia', 'light', 'dark']}
       >
         <Header />
-<<<<<<< HEAD
-        <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
-=======
         {/* <AnimatePresence exitBeforeEnter>  key={router.route} */}
         <Component {...pageProps} />
         {/* </AnimatePresence> */}
->>>>>>> staging
         <Footer />
       </ThemeProvider>
     </>

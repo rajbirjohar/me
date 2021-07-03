@@ -1,5 +1,6 @@
 import ActiveLink from './ActiveLink'
 import styles from '@/styles/header.module.css'
+import { Toaster } from 'react-hot-toast'
 
 const Link = ({ href, title }) => {
   return (
@@ -12,6 +13,7 @@ const Link = ({ href, title }) => {
 export default function Header() {
   return (
     <nav className={styles.nav}>
+      <Toaster />
       <ul className={styles.header}>
         <li className={styles.li}>
           <Link href="/" title="Home" />

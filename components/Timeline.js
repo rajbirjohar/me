@@ -42,8 +42,15 @@ const FullTimeline = () => (
         Oh boy was it ugly.
       </Step>
       <Step title="Joined Cutiehack" icon={<FireIcon />}>
-        Introduced to web development and helped design, develop, and deploy the
-        Cutie Hack hackathon website.
+        Introduced to web development and helped design, develop, and deploy the{' '}
+        <a
+          href="https://cutiehack.io"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Cutie Hack
+        </a>{' '}
+        hackathon website.
       </Step>
       <Step title="Built my First Keyboard" icon={<FireIcon />}>
         Tofu65 case, a DZ65 hotswap PCB, a handful of kailh box white switches,
@@ -114,7 +121,28 @@ export default function Timeline() {
           a.k.a an online townhall that &#34;promotes democracy&#34;.
         </Step>
         <Step title="Director of Citrus Hack" icon={<FireIcon />}>
-          Bringing <i>zesty</i> ideas to Citrus Hack as a director.
+          Bringing <i>zesty</i> ideas to{' '}
+          <a
+            href="https://citrushack.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Citrus Hack
+          </a>{' '}
+          as a director.
+        </Step>
+        <Step title="Launched Auto Exposure" icon={<BoltIcon />}>
+          As a final project for my web development class, my team developed and
+          deployed{' '}
+          <a
+            href="https://auto-exposure.vercel.app"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Auto Exposure
+          </a>
+          . A social medium dedicated to car enthusiasts inspired by our
+          collective appreciate for automotives.
         </Step>
         <Step title="Built my Fourth Keyboard" icon={<FireIcon />}>
           Hopefully my last. This one is a polycarbonate Think6.5 V2 with
@@ -134,8 +162,31 @@ export default function Timeline() {
       <Year>2020</Year>
       <ul className={styles.list}>
         <Step title="Web dev Lead" icon={<StarIcon />}>
-          Spearheaded the development for the Biohack, Cutie Hack, and Citrus
-          Hack websites. Let&#39;s just say I don&#39;t know when to stop.
+          Spearheaded the development for the{' '}
+          <a
+            href="https://biohackucr.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Biohack
+          </a>
+          ,{' '}
+          <a
+            href="https://cutiehack.io"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Cutie Hack
+          </a>
+          , and{' '}
+          <a
+            href="https://citrushack.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Citrus Hack
+          </a>{' '}
+          websites. Let&#39;s just say I don&#39;t know when to stop.
         </Step>
         <Step title="Started Habitle" icon={<FireIcon />}>
           Because of my bad habits, I built a tool to promote good ones instead.

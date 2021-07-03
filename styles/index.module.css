@@ -5,10 +5,9 @@
 .content {
   padding-right: var(--gap-double);
 }
+
 .rounded {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
 }
 
 @media (max-width: 960px) {
@@ -16,7 +15,7 @@
     flex-direction: column-reverse;
   }
   .content {
-    padding-top: var(--gap-double);
+    padding-top: var(--gap-half);
     padding-right: 0;
   }
   .title {
