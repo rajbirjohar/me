@@ -13,7 +13,12 @@ export default function Projects() {
   const loading = !data
   function copyEmail() {
     navigator.clipboard.writeText('hello@rajbir.io')
-    toast.success('Copied!')
+    toast.success(
+      'Copied my email! Go fire up your favorite mail app and say hello.',
+      { duration: 6000 }
+    )
+    // Should probably error check but there is nearly
+    // no way this simple function can produce an error.
   }
 
   return (
@@ -21,7 +26,6 @@ export default function Projects() {
       <Head>
         <title>Rajbir Johar | Home</title>
       </Head>
-      <Toaster />
       <section className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.title}>Hey there, I&#39;m Rajbir.</h1>
@@ -47,7 +51,6 @@ export default function Projects() {
           </p>
         </div>
         <div className={styles.profilePic}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <Image
             src={profilePic}
             priority="true"
