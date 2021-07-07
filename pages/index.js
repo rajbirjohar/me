@@ -14,7 +14,7 @@ export default function Projects() {
   function copyEmail() {
     navigator.clipboard.writeText('hello@rajbir.io')
     toast.success(
-      'Copied my email! Go fire up your favorite mail app and say hello.',
+      'Copied my email. Fire up your favorite mail app and say hi.',
       { duration: 6000 }
     )
     // Should probably error check but there is nearly
@@ -28,15 +28,15 @@ export default function Projects() {
       </Head>
       <section className={styles.hero}>
         <div className={styles.content}>
-          <h1 className={styles.title}>Hey there, I&#39;m Rajbir.</h1>
+          <h1 className={styles.title}>Hey, I&#39;m Rajbir.</h1>
           <p>
             Frontend Developer based in Southern California, typing on bespoke
             keyboards, playing through <i>Ratchet and Clank: Rift Apart</i>, and
             perfecting the grilled cheese.
           </p>
           <p>
-            Currently studying Computer Science but loving web development.
-            Shoot me a message at <a onClick={copyEmail}>hello@rajbir.io</a>.
+            Currently studying Computer Science but loving web development. Say
+            hello at <a onClick={copyEmail}>hello@rajbir.io</a>.
           </p>
           <p>
             Lasted edited about

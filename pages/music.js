@@ -15,7 +15,7 @@ export default function Music() {
         <h1>Music</h1>
         <p>
           Discover my usual rotation. This list consists of my favorite artists,
-          loved songs, and recently played songs that I&apos;ve been listening
+          loved songs, and recently played tracks that I&apos;ve been listening
           to on Spotify. Or see what I am listening to right now.
         </p>
 
