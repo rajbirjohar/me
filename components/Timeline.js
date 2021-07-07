@@ -7,6 +7,7 @@ import {
   FireIcon,
   StarIcon,
   SadIcon,
+  HappyIcon,
   BoltIcon,
 } from '@/components/icons/icons.js'
 
@@ -61,12 +62,11 @@ const FullTimeline = () => (
     <Divider />
     <Year>2018</Year>
     <ul className={styles.list}>
-      <Step title="Hello World!" icon={<StarIcon />}>
-        I wrote my first line of code{' '}
+      <Step title="Wrote my First Line of Code" icon={<StarIcon />}>
         <code>cout &#60;&#60; &#34;Hello World!&#34;;</code>
       </Step>
       <Step
-        title="Moved to University of California, Riverside"
+        title="Accepted to the University of California, Riverside"
         icon={<HatIcon />}
       >
         For Computer Science.
@@ -93,6 +93,11 @@ const FullTimeline = () => (
     <Divider />
     <Year>2012</Year>
     <ul className={styles.list}>
+      <Step title="Gifted an Xbox 360" icon={<HappyIcon />}>
+        So many good memories with friends on that solid console. I decided that{' '}
+        <i>Assassin&#39;s Creed II</i> was my favorite game of all time. It
+        still is.
+      </Step>
       <Step title="Broke my PSP" icon={<SadIcon />}>
         Thought I was smart enough to undertake a full internal transplant of my
         playstation. Turns out I was missing this small tool called experience
@@ -116,9 +121,9 @@ export default function Timeline() {
     <>
       <Year>2021</Year>
       <ul className={styles.list}>
-        <Step title="Joined Prytaneum" icon={<BoltIcon />}>
+        <Step title="Joined Prytaneum" icon={<StarIcon />}>
           A collaborative effort to build a unique platform for democratic talks
-          a.k.a an online townhall that &#34;promotes democracy&#34;.
+          a.k.a an online townhall that promotes democracy.
         </Step>
         <Step title="Director of Citrus Hack" icon={<FireIcon />}>
           Bringing <i>zesty</i> ideas to{' '}
@@ -144,15 +149,15 @@ export default function Timeline() {
           . A social medium dedicated to car enthusiasts inspired by our
           collective appreciate for automotives.
         </Step>
-        <Step title="Built my Fourth Keyboard" icon={<FireIcon />}>
+        <Step title="Built my Fifth Keyboard" icon={<FireIcon />}>
           Hopefully my last. This one is a polycarbonate Think6.5 V2 with
           lubricated durock POM switches.
         </Step>
-        <Step title="First Roadtrip" icon={<BoltIcon />}>
-          Crossed the border from CA to AZ, trekked over a few mountains, and
-          discovered decadent food not available locally.
+        <Step title="First Roadtrip" icon={<HappyIcon />}>
+          Crossed the border from CA to AZ with good friends, trekked over a few
+          mountains, and discovered decadent food not available locally.
         </Step>
-        <Step title="Built my Third Keyboard" icon={<FireIcon />}>
+        <Step title="Built my Fourth Keyboard" icon={<FireIcon />}>
           An e-white Vega 65 with gateron ink switches and a set of GMK Minimal.
           It&#39;s certainly a thocky boy. Also where I discovered the 7U
           layout.
@@ -200,10 +205,13 @@ export default function Timeline() {
           Part of the four-person team that helped design, develop, and deploy
           the Biohack hackathon website.
         </Step>
-        <Step title="Built my Second Keyboard" icon={<FireIcon />}>
+        <Step title="Built my Third Keyboard" icon={<FireIcon />}>
           A plum Iron165 from the first round of groupbuy, along with some
           lubricated novelkeys cream switches and a set of GMK Bingsu. I
           consider this one as my personal endgame board.
+        </Step>
+        <Step title="Built my Second Keyboard" icon={<FireIcon />}>
+          A black Doro67 with gateron ink switches and GMK Oblivion.
         </Step>
       </ul>
 

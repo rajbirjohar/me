@@ -99,9 +99,6 @@ export default function Footer() {
         </div>
         <ThemeChanger />
       </div>
-      <div>
-        <p className={styles.last}>Created by a human on Earth </p>
-      </div>
     </footer>
   )
 }

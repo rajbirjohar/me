@@ -33,38 +33,42 @@ const Skeleton = () => {
 export default function GithubStats() {
   const [loading, setLoading] = useState(false)
   const { data } = useSWR('/api/github', fetcher)
-  if (!data) {
-    return (
-      <div className={styles.dashboard}>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-      </div>
-    )
-  } else
-    return (
-      <div className={styles.dashboard}>
-        <Stat
-          title="Github Stars"
-          data={[data ? data.stars : 'Loading']}
-          caption="stars collected."
-        />
-        <Stat
-          title="Github Followers"
-          data={[data ? data.followers : 'Loading']}
-          caption="followers acquired."
-        />
-        <Stat
-          title="Repos Starred"
-          data={[data ? data.starred : 'Loading']}
-          caption="repos saved."
-        />
-        <Stat
-          title="Organizations"
-          data={[data ? data.orgsCont : 'Loading']}
-          caption="orgs contributed to."
-        />
-      </div>
-    )
+  // <div className={styles.dashboard}>
+  //   <Skeleton />
+  //   <Skeleton />
+  //   <Skeleton />
+  //   <Skeleton />
+  // </div>
+
+  return (
+    // <div className={styles.dashboard}>
+    //   <Stat
+    //     title="Github Stars"
+    //     data={[data ? data.stars : 'Loading']}
+    //     caption="stars collected."
+    //   />
+    //   <Stat
+    //     title="Github Followers"
+    //     data={[data ? data.followers : 'Loading']}
+    //     caption="followers acquired."
+    //   />
+    //   <Stat
+    //     title="Repos Starred"
+    //     data={[data ? data.starred : 'Loading']}
+    //     caption="repos saved."
+    //   />
+    //   <Stat
+    //     title="Organizations"
+    //     data={[data ? data.orgsCont : 'Loading']}
+    //     caption="orgs contributed to."
+    //   />
+    // </div>
+    <p>
+      So far, I collected {data ? data.stars : '...'} stars, acquired{' '}
+      {data ? data.followers : '...'} followers, saved{' '}
+      {data ? data.starred : '...'} repos, and contributed to{' '}
+      {data ? data.orgsCont : '...'} organizations. Follow me or star one of my
+      repos and watch the numbers update.
+    </p>
+  )
 }
