@@ -5,7 +5,7 @@ import fetcher from '@/lib/fetcher'
 import Layout from '@/components/Layout'
 import profilePic from '@/public/assets/profile.jpeg'
 import styles from '@/styles/index.module.css'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import TimeAgo from 'react-timeago'
 
 export default function Projects() {
@@ -28,7 +28,8 @@ export default function Projects() {
       </Head>
       <section className={styles.hero}>
         <div className={styles.content}>
-          <h1 className={styles.title}>Hey, I&#39;m Rajbir.</h1>
+          <h1 className={styles.title}>So you found my Portfolio.</h1>
+          <p>Glad to have you. I&#39;m Rajbir.</p>
           <p>
             Frontend Developer based in Southern California, typing on bespoke
             keyboards, playing through <i>Ratchet and Clank: Rift Apart</i>, and

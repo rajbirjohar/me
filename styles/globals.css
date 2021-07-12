@@ -178,10 +178,6 @@ svg {
   max-height: 20px;
 }
 
-p span {
-  font-weight: 500;
-}
-
 p a:hover,
 p a:focus,
 p a:active,
