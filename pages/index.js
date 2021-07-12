@@ -32,7 +32,13 @@ export default function Projects() {
           <h1 className={styles.title}>So you found my Portfolio.</h1>
           <p>
             Glad to have you. I&#39;m{' '}
-            <RoughNotation show={true} type="underline" strokeWidth="3">
+            <RoughNotation
+              show={true}
+              type="underline"
+              strokeWidth="3"
+              animationDelay={400}
+              order={1}
+            >
               Rajbir
             </RoughNotation>
             .
@@ -44,7 +50,17 @@ export default function Projects() {
           </p>
           <p>
             Currently studying Computer Science but loving web development. Say
-            hello at <a onClick={copyEmail}>hello@rajbir.io</a>.
+            hello at{' '}
+            <RoughNotation
+              show={true}
+              type="underline"
+              strokeWidth="3"
+              animationDelay={400}
+              order={2}
+            >
+              <a onClick={copyEmail}>hello@rajbir.io</a>
+            </RoughNotation>
+            .
           </p>
           <p>
             Lasted edited about
