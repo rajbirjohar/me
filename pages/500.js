@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 import styles from '@/styles/404.module.css'
 import { LeftArrow } from '@/components/icons/icons'
+import { motion } from 'framer-motion'
 
 export default function Custom500() {
   return (
@@ -24,9 +25,16 @@ export default function Custom500() {
         </p>
         <p>I tried to retrieve something but that something went wrong.</p>
         <Link href="/" passHref>
-          <button className={styles.button}>
+          <motion.button
+            aria-label="Go Back Home"
+            type="button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.995 }}
+            transition={{ ease: 'easeInOut', duration: 0.015 }}
+            className={styles.button}
+          >
             <LeftArrow /> Back home
-          </button>
+          </motion.button>
         </Link>
       </section>
     </Layout>
