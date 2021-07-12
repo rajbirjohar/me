@@ -5,7 +5,7 @@ import fetcher from '@/lib/fetcher'
 import Layout from '@/components/Layout'
 import profilePic from '@/public/assets/profile.jpeg'
 import styles from '@/styles/index.module.css'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import TimeAgo from 'react-timeago'
 
 export default function Projects() {
@@ -14,8 +14,8 @@ export default function Projects() {
   function copyEmail() {
     navigator.clipboard.writeText('hello@rajbir.io')
     toast.success(
-      'Copied my email. Fire up your favorite mail app and say hi.',
-      { duration: 6000 }
+      "Copied my email. Fire up your favorite mail app and let's talk.",
+      { duration: 4500 }
     )
     // Should probably error check but there is nearly
     // no way this simple function can produce an error.
@@ -28,7 +28,8 @@ export default function Projects() {
       </Head>
       <section className={styles.hero}>
         <div className={styles.content}>
-          <h1 className={styles.title}>Hey, I&#39;m Rajbir.</h1>
+          <h1 className={styles.title}>So you found my Portfolio.</h1>
+          <p>Glad to have you. I&#39;m Rajbir.</p>
           <p>
             Frontend Developer based in Southern California, typing on bespoke
             keyboards, playing through <i>Ratchet and Clank: Rift Apart</i>, and

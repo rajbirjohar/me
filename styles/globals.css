@@ -35,9 +35,9 @@
   --accent-6: #bfbfbf;
   --accent-7: #eaeaea;
   --accent-8: #fafafa;
-  --success: #f36b6b;
+  --success: #f87171;
 
-  --header-bg: rgba(19, 20, 21, 0.45);
+  --header-bg: rgba(17, 17, 17, 0.85);
 }
 
 [data-theme='light'] {
@@ -51,9 +51,9 @@
   --accent-6: #444;
   --accent-7: #333;
   --accent-8: #111;
-  --success: #0070f3;
+  --success: #60a5fa;
 
-  --header-bg: hsla(0, 0%, 100%, 0.8);
+  --header-bg: hsla(0, 0%, 100%, 0.85);
 }
 
 [data-theme='sepia'] {
@@ -67,9 +67,9 @@
   --accent-6: #615e56;
   --accent-7: #494640;
   --accent-8: #302f2b;
-  --success: #bf8d21;
+  --success: #f59e0b;
 
-  --header-bg: rgba(245, 241, 227, 0.9);
+  --header-bg: rgba(245, 241, 227, 0.85);
 }
 
 * {
@@ -176,10 +176,6 @@ svg {
   max-width: 20px;
   min-height: 20px;
   max-height: 20px;
-}
-
-p span {
-  font-weight: 500;
 }
 
 p a:hover,

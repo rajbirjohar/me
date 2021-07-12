@@ -10,6 +10,7 @@ import {
   HappyIcon,
   BoltIcon,
 } from '@/components/icons/icons.js'
+import { motion } from 'framer-motion'
 
 const Divider = () => {
   return <hr />
@@ -219,8 +220,12 @@ export default function Timeline() {
         <FullTimeline />
       ) : (
         <div className={styles.buttonwrapper}>
-          <button
+          <motion.button
+            aria-label="Show Full Timeline"
             type="button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.995 }}
+            transition={{ ease: 'easeInOut', duration: 0.015 }}
             className={styles.button}
             onClick={() => showFullTimeline(true)}
           >
@@ -239,7 +244,7 @@ export default function Timeline() {
                 d="M19 9l-7 7-7-7"
               />
             </svg>
-          </button>
+          </motion.button>
         </div>
       )}
     </>
