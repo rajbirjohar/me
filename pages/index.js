@@ -7,6 +7,7 @@ import profilePic from '@/public/assets/profile.jpeg'
 import styles from '@/styles/index.module.css'
 import toast from 'react-hot-toast'
 import TimeAgo from 'react-timeago'
+import { RoughNotation } from 'react-rough-notation'
 
 export default function Projects() {
   const { data } = useSWR('/api/github', fetcher)
@@ -29,7 +30,13 @@ export default function Projects() {
       <section className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.title}>So you found my Portfolio.</h1>
-          <p>Glad to have you. I&#39;m Rajbir.</p>
+          <p>
+            Glad to have you. I&#39;m{' '}
+            <RoughNotation show={true} type="underline" strokeWidth="3">
+              Rajbir
+            </RoughNotation>
+            .
+          </p>
           <p>
             Frontend Developer based in Southern California, typing on bespoke
             keyboards, playing through <i>Ratchet and Clank: Rift Apart</i>, and
