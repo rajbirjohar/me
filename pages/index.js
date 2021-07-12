@@ -14,8 +14,8 @@ export default function Projects() {
   function copyEmail() {
     navigator.clipboard.writeText('hello@rajbir.io')
     toast.success(
-      'Copied my email. Fire up your favorite mail app and say hi.',
-      { duration: 6000 }
+      "Copied my email. Fire up your favorite mail app and let's talk.",
+      { duration: 4500 }
     )
     // Should probably error check but there is nearly
     // no way this simple function can produce an error.
