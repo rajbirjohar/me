@@ -3,11 +3,13 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 import '@/styles/globals.css'
 import { ThemeProvider } from 'next-themes'
+import { Provider } from 'next-auth/client'
 // import { AnimatePresence } from 'framer-motion'
 // router
+
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <Provider session={pageProps.session}>
       <Head>
         <link
           rel="apple-touch-icon-precomposed"
@@ -114,7 +116,7 @@ function MyApp({ Component, pageProps }) {
         {/* </AnimatePresence> */}
         <Footer />
       </ThemeProvider>
-    </>
+    </Provider>
   )
 }
 

@@ -30,19 +30,7 @@ export default function Projects() {
       <section className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.title}>So you found my Portfolio.</h1>
-          <p>
-            Glad to have you. I&#39;m{' '}
-            <RoughNotation
-              show={true}
-              type="underline"
-              strokeWidth="3"
-              animationDelay={400}
-              order={1}
-            >
-              Rajbir
-            </RoughNotation>
-            .
-          </p>
+          <p>Glad to have you. I&#39;m Rajbir.</p>
           <p>
             Frontend Developer based in Southern California, typing on bespoke
             keyboards, playing through <i>Ratchet and Clank: Rift Apart</i>, and
@@ -50,17 +38,7 @@ export default function Projects() {
           </p>
           <p>
             Currently studying Computer Science but loving web development. Say
-            hello at{' '}
-            <RoughNotation
-              show={true}
-              type="underline"
-              strokeWidth="3"
-              animationDelay={400}
-              order={2}
-            >
-              <a onClick={copyEmail}>hello@rajbir.io</a>
-            </RoughNotation>
-            .
+            hello at <a onClick={copyEmail}>hello@rajbir.io</a>.
           </p>
           <p>
             Lasted edited about
