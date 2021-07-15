@@ -1,13 +1,17 @@
+import Link from 'next/link'
 import ThemeChanger from '@/components/Theme'
 import styles from '@/styles/footer.module.css'
 
 const ExtLink = ({ title, destination }) => {
   return (
-    <p className={styles.external}>
-      <a href={destination} target="_blank" rel="noreferrer noopener">
-        {title}
-      </a>
-    </p>
+    <a
+      className={styles.external}
+      href={destination}
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      {title}
+    </a>
   )
 }
 
@@ -27,6 +31,9 @@ export default function Footer() {
             title="Twitter"
             destination="https://twitter.com/RajbirJohar"
           />
+          <Link passHref href="/guestbook">
+            <a className={styles.external}>Guestbook</a>
+          </Link>
         </div>
         <ThemeChanger />
       </div>
