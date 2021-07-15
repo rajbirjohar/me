@@ -60,7 +60,7 @@
 .search {
   border: 2px solid var(--accent-2) !important;
   width: 100%;
-  padding: var(--gap);
+  padding: var(--gap-half) var(--gap);
   font-size: 18px;
   border-radius: var(--radius);
   margin: var(--gap-half) 0;
@@ -72,7 +72,7 @@
 
 .searchIcon {
   position: absolute;
-  top: 25px;
+  top: 18px;
   right: 15px;
   color: var(--accent-5) !important;
 }

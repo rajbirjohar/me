@@ -17,7 +17,7 @@
   background-color: var(--accent-1);
   color: var(--fg);
   transition: all var(--transition);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   cursor: pointer;
 }
 .button:hover {

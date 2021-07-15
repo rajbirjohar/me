@@ -1,11 +1,12 @@
 .button,
-.signbutton {
+.signbutton,
+.loginbutton {
   padding: 8px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   cursor: pointer;
 }
 
@@ -17,7 +18,15 @@
 .button:hover {
   background-color: var(--accent-2);
 }
-
+.loginbutton {
+  background-color: var(--success);
+  color: var(--bg);
+  border: 1px solid var(--success);
+}
+.loginbutton:hover {
+  background-color: var(--bg);
+  color: var(--success);
+}
 .signbutton {
   margin: var(--gap-half) 0 var(--gap-half) var(--gap-half);
   background-color: var(--success);
@@ -36,7 +45,7 @@
 .input {
   border: 2px solid var(--accent-2) !important;
   flex: 1;
-  padding: var(--gap);
+  padding: var(--gap-half) var(--gap);
   font-size: 18px;
   border-radius: var(--radius);
   margin: var(--gap-half) 0;
@@ -48,6 +57,7 @@
 
 .author {
   color: var(--accent-5);
+  font-size: 1.05rem;
 }
 
 @media (max-width: 960px) {

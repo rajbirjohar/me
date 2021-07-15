@@ -25,7 +25,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
         {entry}
         <br />
         <span className={styles.author}>
-          {name} about {timestamp}
+          {name} / {timestamp}
         </span>
       </p>
       {/* Still need to figure out how to delete */}
