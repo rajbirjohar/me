@@ -38,6 +38,7 @@
 }
 .external {
   margin: 0 10px;
+  font-size: 1.125rem;
 }
 .external:hover {
   text-decoration: underline;
