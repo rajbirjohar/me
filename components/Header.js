@@ -20,7 +20,6 @@ export default function Header() {
           <Link href="/projects" title="Projects" />
           <Link href="/life" title="Life" />
           <Link href="/music" title="Music" />
-          {/* <Link href="/readings" title="Readings" /> */}
         </li>
       </ul>
     </nav>
