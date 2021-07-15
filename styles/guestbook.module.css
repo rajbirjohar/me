@@ -1,26 +1,41 @@
-.button {
+.button,
+.signbutton {
   padding: 8px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--accent-1);
-  color: var(--fg);
   transition: all var(--transition);
   border-radius: var(--radius-sm);
   cursor: pointer;
 }
+
+.button {
+  background-color: var(--accent-1);
+  color: var(--fg);
+}
+
 .button:hover {
   background-color: var(--accent-2);
 }
 
+.signbutton {
+  margin: var(--gap-half) 0 var(--gap-half) var(--gap-half);
+  background-color: var(--success);
+  color: var(--bg);
+  border: 1px solid var(--success);
+}
+.signbutton:hover {
+  background-color: var(--bg);
+  color: var(--success);
+}
+
 .inputWrapper {
-  position: relative;
-  width: 100%;
+  display: flex;
 }
 
 .input {
   border: 2px solid var(--accent-2) !important;
-  width: 100%;
+  flex: 1;
   padding: var(--gap);
   font-size: 18px;
   border-radius: var(--radius);
@@ -29,4 +44,17 @@
 }
 .input::placeholder {
   color: var(--accent-7) !important;
+}
+
+.author {
+  color: var(--accent-5);
+}
+
+@media (max-width: 960px) {
+  .inputWrapper {
+    flex-direction: column;
+  }
+  .signbutton {
+    margin: 0;
+  }
 }

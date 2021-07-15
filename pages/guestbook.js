@@ -1,86 +1,46 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Head from 'next/head'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Layout from '@/components/Layout'
 import styles from '@/styles/guestbook.module.css'
-import { connectToDatabase } from '../util/mongodb'
-import Entry from '@/components/Entry'
+import EntryForm from '@/components/EntryForm'
+import Entries from '../components/Entries'
 
 export default function Page({ entries }) {
   const [session, loading] = useSession()
-  const [msg, setMsg] = useState(null)
-
-  async function submitEntry(e) {
-    e.preventDefault()
-    const body = {
-      content: e.currentTarget.content.value,
-    }
-    if (!e.currentTarget.content.value) return
-    e.currentTarget.content.value = ''
-    const res = await fetch('/api/entries', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    })
-    if (res.ok) {
-      setMsg('Posted!')
-      setTimeout(() => setMsg(null), 5000)
-    }
-  }
 
   return (
     <Layout>
+      <Head>
+        <title>Rajbir Johar | Guestbook</title>
+      </Head>
+      <h1>Sign My Guestbook</h1>
       <section>
         {!session && (
           <div>
-            <p>Not signed in</p>
             <button className={styles.button} onClick={() => signIn()}>
-              Sign in
+              Sign in with Github
             </button>
           </div>
         )}
         {session && (
           <div>
-            <p>Signed in as {session.user.name}</p>
+            <p>
+              Hey <b>{session.user.name}!</b>
+            </p>
             <button className={styles.button} onClick={() => signOut()}>
               Sign out
             </button>
-            <br />
-            <div className={styles.inputWrapper}>
-              <form onSubmit={submitEntry}>
-                <input
-                  aria-label="Enabled Searchbar"
-                  name="content"
-                  type="text"
-                  placeholder="Your message here..."
-                  className={styles.input}
-                />
-                <button className={styles.button} type="submit">
-                  Sign
-                </button>
-              </form>
-            </div>
+            <p>
+              Immortalize your place on this very cool website and post a
+              message for future visitors. Your name and email are only used to
+              display your comments.
+            </p>
+            <EntryForm name={session.user.name} email={session.user.email} />
           </div>
         )}
       </section>
-      <>
-        {entries.map((entry) => (
-          // eslint-disable-next-line react/jsx-key
-          <Entry entry={entry.entry} />
-        ))}
-      </>
+      <Entries />
     </Layout>
   )
-}
-
-export async function getStaticProps() {
-  const { db } = await connectToDatabase()
-
-  const entries = await db.collection('entries').find({}).limit(1000).toArray()
-
-  return {
-    props: {
-      entries: JSON.parse(JSON.stringify(entries)),
-    },
-    revalidate: 60,
-  }
 }

@@ -1,24 +1,15 @@
-// import nc from 'next-connect'
-// import { all } from '@/middlewares/index'
-// import { getPosts, insertPost } from '@/db/index'
+import { connectToDatabase } from '../../util/mongodb'
 
-// const handler = nc()
+const entriesFetch = async (req, res) => {
+  const { db } = await connectToDatabase()
 
-// handler.use(all)
+  const entries = await db
+    .collection('entries')
+    .find({})
+    .sort({ createdAt: -1 })
+    .toArray()
 
-// handler.post(async (req, res) => {
-//   if (!req.user) {
-//     return res.status(401).send('unauthenticated')
-//   }
+  return res.status(200).json({ entries })
+}
 
-//   if (!req.body.content) return res.status(400).send('You must write something')
-
-//   const post = await insertPost(req.db, {
-//     content: req.body.content,
-//     creatorId: req.user._id,
-//   })
-
-//   return res.json({ post })
-// })
-
-// export default handler
+export default entriesFetch
