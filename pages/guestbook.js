@@ -18,9 +18,14 @@ export default function Page({ entries }) {
       <section>
         {!session && (
           <div>
-            <button className={styles.button} onClick={() => signIn()}>
+            <button className={styles.loginbutton} onClick={() => signIn()}>
               Sign in with Github
             </button>
+            <p>
+              Immortalize your place on this very cool website and post a
+              message for future visitors. Your name and email are only used to
+              display your comments.
+            </p>
           </div>
         )}
         {session && (
@@ -40,6 +45,7 @@ export default function Page({ entries }) {
           </div>
         )}
       </section>
+      <h2>Signatures</h2>
       <Entries />
     </Layout>
   )
