@@ -15,7 +15,6 @@ export default function EntryForm(props) {
   const handleChangeEntry = (e) => {
     setEntry(e.target.value)
     filled.name = session.user.name
-    filled.email = session.user.email ? null : session.user.email
     filled.entry = e.target.value !== ''
   }
   const submitForm = (name, email) => {
