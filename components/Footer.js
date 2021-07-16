@@ -22,7 +22,10 @@ export default function Footer() {
       <h1 className={styles.title}>Elsewhere</h1>
       <div className={styles.actions}>
         <div className={styles.contact}>
-          <ExtLink title="Github" destination="https://github.com/r-jo" />
+          <ExtLink
+            title="Github"
+            destination="https://github.com/rajbirjohar"
+          />
           <ExtLink
             title="LinkedIn"
             destination="https://www.linkedin.com/in/rajbirjohar/"

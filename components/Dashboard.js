@@ -6,7 +6,7 @@ import styles from '@/styles/dashboard.module.css'
 const Stat = ({ title, data, caption }) => {
   return (
     <a
-      href="https://github.com/r-jo"
+      href="https://github.com/rajbirjohar"
       target="_blank"
       rel="noopener noreferrer"
       className={styles.group}
