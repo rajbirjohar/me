@@ -10,15 +10,17 @@ const githubFetch = async (req, res) => {
   }
 
   //Followers request
-  const followers = await octokit.request('/users/r-jo/followers?per_page=100')
+  const followers = await octokit.request(
+    '/users/rajbirjohar/followers?per_page=100'
+  )
   const followerCount = followers.data.length
 
   //Last updated request
-  const portfolio = await octokit.request('/repos/r-jo/Portfolio')
+  const portfolio = await octokit.request('/repos/rajbirjohar/Portfolio')
   const portfolioUpdated = portfolio.data.pushed_at
 
   //Stars request
-  const stars = await octokit.request('/users/r-jo/repos')
+  const stars = await octokit.request('/users/rajbirjohar/repos')
   const starsCount = stars.data
     .filter((repo) => !repo.fork)
     .reduce((acc, item) => {
@@ -26,7 +28,9 @@ const githubFetch = async (req, res) => {
     }, 0)
 
   //Repos request
-  const reposStarred = await octokit.request('/users/r-jo/starred?per_page=100')
+  const reposStarred = await octokit.request(
+    '/users/rajbirjohar/starred?per_page=100'
+  )
   const starredCount = reposStarred.data.length
 
   //Orgs request
@@ -34,7 +38,7 @@ const githubFetch = async (req, res) => {
   const orgsCount = userOrgs.data.length
 
   // projects
-  const url = 'https://api.github.com/users/r-jo/repos'
+  const url = 'https://api.github.com/users/rajbirjohar/repos'
   const response = await fetch(url, { headers: headers })
   const json = await response.json()
   const projectsList = []

@@ -16,7 +16,7 @@ export default function Projects() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/r-jo"
+            href="https://github.com/rajbirjohar"
           >
             Github
           </a>
