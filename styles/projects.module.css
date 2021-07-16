@@ -53,15 +53,14 @@
   color: #fff;
 }
 .searchWrapper {
-  position: relative;
-  width: 100%;
+  display: flex;
 }
 
 .search {
   border: 2px solid var(--accent-2) !important;
   width: 100%;
-  padding: var(--gap-half) var(--gap);
-  font-size: 18px;
+  padding: var(--gap) var(--gap);
+  font-size: 1.125rem;
   border-radius: var(--radius);
   margin: var(--gap-half) 0;
   background-color: var(--accent-1) !important;

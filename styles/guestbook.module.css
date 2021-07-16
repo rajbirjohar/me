@@ -46,8 +46,8 @@
 .input {
   border: 2px solid var(--accent-2) !important;
   flex: 1;
-  padding: var(--gap-half) var(--gap);
-  font-size: 18px;
+  padding: var(--gap) var(--gap);
+  font-size: 1.125rem;
   border-radius: var(--radius);
   margin: var(--gap-half) 0;
   background-color: var(--accent-1) !important;
@@ -71,7 +71,6 @@
     flex-direction: column;
   }
   .signbutton {
-    margin: 0;
-    padding: 7px 9px;
+    margin: var(--gap-half) 0 0 0;
   }
 }

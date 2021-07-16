@@ -23,7 +23,7 @@ export default function Page({ entries }) {
               whileTap={{ scale: 0.995 }}
               transition={{ ease: 'easeInOut', duration: 0.015 }}
               className={styles.loginbutton}
-              onClick={() => signIn()}
+              onClick={() => signIn('github')}
             >
               Sign in with Github
             </motion.button>
