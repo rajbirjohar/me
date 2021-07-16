@@ -286,3 +286,20 @@ export const SwatchIcon = () => (
     />
   </svg>
 )
+
+export const ReplyIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    className="h-6 w-6"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      d="M10 6h0a2 2 0 000 2v10a2 2 0 002 2h10a2"
+    />
+  </svg>
+)

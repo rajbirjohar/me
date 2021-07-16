@@ -7,7 +7,6 @@ import profilePic from '@/public/assets/profile.jpeg'
 import styles from '@/styles/index.module.css'
 import toast from 'react-hot-toast'
 import TimeAgo from 'react-timeago'
-import { RoughNotation } from 'react-rough-notation'
 
 export default function Projects() {
   const { data } = useSWR('/api/github', fetcher)

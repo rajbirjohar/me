@@ -32,6 +32,7 @@
   background-color: var(--success);
   color: var(--bg);
   border: 1px solid var(--success);
+  padding: var(--gap-half) var(--gap);
 }
 .signbutton:hover {
   background-color: var(--bg);
@@ -60,11 +61,17 @@
   font-size: 1.05rem;
 }
 
+.author svg {
+  color: var(--accent-2);
+  margin-right: 5px;
+}
+
 @media (max-width: 960px) {
   .inputWrapper {
     flex-direction: column;
   }
   .signbutton {
     margin: 0;
+    padding: 7px 9px;
   }
 }

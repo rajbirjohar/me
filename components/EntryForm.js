@@ -2,6 +2,7 @@ import React from 'react'
 import toast from 'react-hot-toast'
 import { useSession } from 'next-auth/client'
 import styles from '@/styles/guestbook.module.css'
+import { motion } from 'framer-motion'
 
 export default function EntryForm(props) {
   const [error, setError] = React.useState(false)
@@ -23,7 +24,10 @@ export default function EntryForm(props) {
       setError(false)
       const data = [name, email, entry]
       sendData(data)
-      toast.success('Awesome. You signed!')
+      toast.success('Awesome. You signed!', {
+        icon: '👏',
+        background: '#61d345',
+      })
     } else {
       setError(true)
       toast.error('Please fill out your message.')
@@ -55,13 +59,16 @@ export default function EntryForm(props) {
         placeholder="Your message here..."
         className={styles.input}
       />
-      <button
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.995 }}
+        transition={{ ease: 'easeInOut', duration: 0.015 }}
         className={styles.signbutton}
         type="submit"
         onClick={() => submitForm(props.name, props.email)}
       >
         Sign Message
-      </button>
+      </motion.button>
     </div>
   )
 }
