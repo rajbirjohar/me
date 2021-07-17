@@ -21,7 +21,6 @@ export default function Entries() {
           name={entry.name}
           entry={entry.entry}
           timestamp={<TimeAgo date={entry.createdAt} />}
-          entryId={entry._id}
         />
       ))}
     </div>
