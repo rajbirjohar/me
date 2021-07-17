@@ -33,9 +33,9 @@ export default function Entry({ name, entry, timestamp, entryId }) {
         </span>
       </p>
       {/* Still need to figure out how to delete */}
-      {/* <a className={styles.delete} onClick={deleteEntry}>
+      <a className={styles.delete} onClick={deleteEntry}>
         Delete
-      </a> */}
+      </a>
     </div>
   )
 }

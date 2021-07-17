@@ -53,14 +53,15 @@
   color: #fff;
 }
 .searchWrapper {
-  display: flex;
+  position: relative;
+  width: 100%;
 }
 
 .search {
   border: 2px solid var(--accent-2) !important;
   width: 100%;
-  padding: var(--gap) var(--gap);
-  font-size: 1.125rem;
+  padding: var(--gap);
+  font-size: 18px;
   border-radius: var(--radius);
   margin: var(--gap-half) 0;
   background-color: var(--accent-1) !important;
@@ -71,7 +72,7 @@
 
 .searchIcon {
   position: absolute;
-  top: 18px;
+  top: 25px;
   right: 15px;
   color: var(--accent-5) !important;
 }
