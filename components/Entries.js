@@ -18,6 +18,7 @@ export default function Entries() {
       {data.entries.map((entry) => (
         <Entry
           key={entry._id}
+          entryId={entry._id}
           name={entry.name}
           entry={entry.entry}
           timestamp={<TimeAgo date={entry.createdAt} />}

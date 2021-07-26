@@ -1,7 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { connectToDatabase } from '../../../util/mongodb'
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function createEntry(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { db } = await connectToDatabase()
   const {
     entry_data: [name, email, entry],
