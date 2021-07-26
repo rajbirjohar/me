@@ -299,7 +299,7 @@ export const ReplyIcon = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="3"
-      d="M10 6h0a2 2 0 000 2v10a2 2 0 002 2h10a2"
+      d="M10 6h0a2 0 0 000 2v10a2 2 0 002 2h10a2"
     />
   </svg>
 )

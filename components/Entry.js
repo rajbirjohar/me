@@ -23,9 +23,15 @@ export default function Entry({ name, entry, timestamp, entryId }) {
       }
     }
   }
-  const match = () => {
-    session.user.name === { name }
+  // Render delete button only if the
+  // session user equals the name of the entry
+  var match = false
+  if (session) {
+    if (session.user.name === name) {
+      match = true
+    }
   }
+
   return (
     <div>
       <p>
