@@ -5,9 +5,7 @@ import styles from '@/styles/guestbook.module.css'
 import { motion } from 'framer-motion'
 
 export default function EntryForm(props) {
-  const [error, setError] = React.useState(false)
   const [entry, setEntry] = React.useState('')
-  const [submit_triggered, triggerSubmit] = React.useState(false)
   const [session, loading] = useSession()
 
   const [filled] = React.useState({
@@ -19,9 +17,7 @@ export default function EntryForm(props) {
     filled.entry = e.target.value !== ''
   }
   const submitForm = (name, email) => {
-    triggerSubmit(true)
     if (Object.values(filled).every((e) => e)) {
-      setError(false)
       const data = [name, email, entry]
       sendData(data)
       toast.success('Awesome. You signed!', {
@@ -29,9 +25,9 @@ export default function EntryForm(props) {
         background: '#61d345',
       })
     } else {
-      setError(true)
       toast.error('Please fill out your message.')
     }
+    setEntry('')
   }
 
   const sendData = async (entryData) => {
@@ -49,7 +45,7 @@ export default function EntryForm(props) {
   }
 
   return (
-    <div className={styles.inputWrapper}>
+    <form onSubmit={(e) => e.preventDefault()} className={styles.inputWrapper}>
       <input
         aria-label="Entry Input"
         name="Entry"
@@ -69,6 +65,6 @@ export default function EntryForm(props) {
       >
         Sign Message
       </motion.button>
-    </div>
+    </form>
   )
 }

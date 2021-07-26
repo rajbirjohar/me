@@ -11,7 +11,7 @@ export default function Entries() {
     return <p>Oops. Looks like my database is not being fetched right now.</p>
   }
   if (!data) {
-    return <p>Loading...</p>
+    return <p>Loading entries...</p>
   }
   return (
     <div>
