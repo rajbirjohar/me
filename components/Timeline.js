@@ -9,6 +9,7 @@ import {
   SadIcon,
   HappyIcon,
   BoltIcon,
+  LocationIcon,
 } from '@/components/icons/icons.js'
 import { motion } from 'framer-motion'
 
@@ -122,6 +123,9 @@ export default function Timeline() {
     <>
       <Year>2021</Year>
       <ul className={styles.list}>
+        <Step title="Roadtrip to San Francisco" icon={<LocationIcon />}>
+          Drove up north to visit a friend and experience the city.
+        </Step>
         <Step title="Joined Prytaneum" icon={<StarIcon />}>
           A collaborative effort to build a unique platform for democratic talks
           a.k.a an online townhall that promotes democracy.
@@ -154,7 +158,7 @@ export default function Timeline() {
           Hopefully my last. This one is a polycarbonate Think6.5 V2 with
           lubricated durock POM switches.
         </Step>
-        <Step title="First Roadtrip" icon={<HappyIcon />}>
+        <Step title="Roadtrip to Arizona" icon={<LocationIcon />}>
           Crossed the border from CA to AZ with good friends, trekked over a few
           mountains, and discovered decadent food not available locally.
         </Step>
