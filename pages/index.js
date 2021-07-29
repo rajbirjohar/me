@@ -3,7 +3,7 @@ import Image from 'next/image'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
 import Layout from '@/components/Layout'
-import profilePic from '@/public/assets/profile_old2.jpeg'
+import profilePic from '@/public/assets/profile3.jpeg'
 import styles from '@/styles/index.module.css'
 import toast from 'react-hot-toast'
 import TimeAgo from 'react-timeago'
@@ -61,6 +61,7 @@ export default function Projects() {
             width={200}
             height={200}
             layout="fixed"
+            quality={100}
           />
         </div>
       </section>
