@@ -1,6 +1,7 @@
 .button,
 .signbutton,
-.loginbutton {
+.loginbutton,
+.modifybutton {
   padding: 8px 10px;
   display: flex;
   align-items: center;
@@ -8,6 +9,7 @@
   transition: all var(--transition);
   border-radius: var(--radius);
   cursor: pointer;
+  font-weight: 500;
 }
 
 .button {
@@ -33,10 +35,34 @@
   color: var(--bg);
   border: 1px solid var(--success);
   padding: var(--gap-half) var(--gap);
+  width: 9rem;
 }
 .signbutton:hover {
   background-color: var(--bg);
   color: var(--success);
+}
+.modifybutton {
+  margin: var(--gap-half) 0 var(--gap-half) var(--gap-half);
+  background-color: var(--accent-1);
+  color: var(--success);
+  border: 1px solid var(--accent-1);
+  padding: var(--gap-half) var(--gap);
+  width: 9rem;
+}
+.modifybutton:hover {
+  background-color: var(--accent-2);
+}
+.delete {
+  color: var(--success-2);
+}
+.delete:hover {
+  color: var(--success-2);
+}
+.modify {
+  color: var(--success-3);
+}
+.modify:hover {
+  color: var(--success-3);
 }
 
 .inputWrapper {
@@ -70,7 +96,9 @@
   .inputWrapper {
     flex-direction: column;
   }
-  .signbutton {
+  .signbutton,
+  .modifybutton {
     margin: var(--gap-half) 0 0 0;
+    width: 100%;
   }
 }

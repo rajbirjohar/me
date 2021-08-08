@@ -65,6 +65,7 @@
   border-radius: var(--radius);
   margin: var(--gap-half) 0;
   background-color: var(--accent-1) !important;
+  color: var(--accent-7) !important;
 }
 .search::placeholder {
   color: var(--accent-7) !important;

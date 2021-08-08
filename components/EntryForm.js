@@ -52,7 +52,7 @@ export default function EntryForm(props) {
         value={entry}
         onChange={handleChangeEntry}
         type="text"
-        placeholder="Your message here..."
+        placeholder="Your entry here..."
         className={styles.input}
       />
       <motion.button
@@ -63,7 +63,7 @@ export default function EntryForm(props) {
         type="submit"
         onClick={() => submitForm(props.name, props.email)}
       >
-        Sign Message
+        Sign Entry
       </motion.button>
     </form>
   )

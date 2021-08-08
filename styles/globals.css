@@ -36,6 +36,8 @@
   --accent-7: #eaeaea;
   --accent-8: #fafafa;
   --success: #f87171;
+  --success-2: #f87171;
+  --success-3: #fafbfc;
 
   --header-bg: rgba(17, 17, 17, 0.85);
 }
@@ -52,6 +54,8 @@
   --accent-7: #333;
   --accent-8: #111;
   --success: #60a5fa;
+  --success-2: #f87171;
+  --success-3: #60a5fa;
 
   --header-bg: hsla(0, 0%, 100%, 0.85);
 }
@@ -68,6 +72,8 @@
   --accent-7: #494640;
   --accent-8: #302f2b;
   --success: #f59e0b;
+  --success-2: #f87171;
+  --success-3: #f59e0b;
 
   --header-bg: rgba(245, 241, 227, 0.85);
 }
@@ -193,6 +199,12 @@ code {
   background-color: var(--accent-2);
   padding: 3px 6px;
   border-radius: var(--radius-sm);
+}
+
+input,
+select,
+textarea {
+  color: var(--accent-7);
 }
 
 input[type='text'],
