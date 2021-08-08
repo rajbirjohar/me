@@ -17,9 +17,7 @@ export default async function createEntry(
       entry: entry,
       createdAt: new Date(),
     })
-
     console.log(result.ops[0])
-
     return res.status(200).json({})
   } catch {
     res.status(500)
