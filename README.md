@@ -140,6 +140,8 @@ NextAuth is my authentication library of choice because I was not going to write
 
 All you really need to know is that NextAuth requires a `NEXTAUTH_URL` as the canonical url of your production website so as to perform auth callbacks. `NEXTAUTH_SECRET` should be any random string of characters or a protected password. It is not required but strongly recommended.
 
+#### Github Authentication
+
 I chose Github as my primary OAuth provider because it's really easy to set up and developers and recruiters are my main target audience right now. Follow below to set up your own Github OAuth application.
 
 1. Navigate to Github account settings > Developer Settings > OAuth apps.
