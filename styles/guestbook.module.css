@@ -87,9 +87,38 @@
   font-size: 1.05rem;
 }
 
+.dummyauthor svg,
 .author svg {
   color: var(--accent-2);
   margin-right: 5px;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.dummyauthor {
+  display: flex;
+  align-items: center;
+  margin-top: -0.75rem;
+}
+
+.dummytitle,
+.dummydescription {
+  height: 25px;
+  animation: pulse 2s infinite;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent-2);
+}
+
+.dummytitle {
+  width: 25%;
+}
+.dummydescription {
+  width: 75%;
 }
 
 @media (max-width: 960px) {

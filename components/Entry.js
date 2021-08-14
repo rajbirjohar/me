@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 export default function Entry({ name, entry, timestamp, entryId }) {
   const [session, loading] = useSession()
   const [newEntry, setNewEntry] = useState('')
-  const [flag, setFlag] = useState(false)
+  const [modify, showModify] = useState(false)
   const [filled] = useState({
     newEntry: false,
   })
@@ -32,7 +32,6 @@ export default function Entry({ name, entry, timestamp, entryId }) {
   }
 
   const modifyEntry = async (newEntryData) => {
-    console.log(newEntryData)
     const response = await fetch('api/entry/modify', {
       method: 'PATCH',
       headers: {
@@ -41,7 +40,6 @@ export default function Entry({ name, entry, timestamp, entryId }) {
       body: JSON.stringify({ newEntry_data: newEntryData }),
     })
     const data = await response.json()
-    console.log(data.newEntry_data)
     return data.newEntry_data
   }
   const deleteEntry = async (event) => {
@@ -55,7 +53,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
       })
       await res.json()
       if (res.status === 200) {
-        toast.success('Deleted!')
+        toast.success('Deleted entry!')
       } else {
         toast.error('Uh oh. Something went wrong.')
       }
@@ -83,14 +81,14 @@ export default function Entry({ name, entry, timestamp, entryId }) {
           {match && (
             <>
               /{' '}
-              <a className={styles.modify} onClick={() => setFlag(!flag)}>
+              <a className={styles.modify} onClick={() => showModify(!modify)}>
                 Modify
               </a>{' '}
               /{' '}
               <a className={styles.delete} onClick={deleteEntry}>
                 Delete
               </a>
-              {flag && (
+              {modify && (
                 <form
                   onSubmit={(e) => e.preventDefault()}
                   className={styles.inputWrapper}

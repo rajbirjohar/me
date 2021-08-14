@@ -78,20 +78,24 @@
   color: var(--accent-5) !important;
 }
 
-.dummytitle {
-  width: 50%;
+.dummytitle,
+.dummydescription,
+.dummylanguage {
   height: 25px;
   margin-bottom: 0.5rem !important;
   animation: pulse 2s infinite;
   border-radius: var(--radius-sm);
   background-color: var(--accent-2);
 }
+
+.dummytitle {
+  width: 50%;
+}
 .dummydescription {
   width: 75%;
-  height: 25px;
-  animation: pulse 2s infinite;
-  border-radius: var(--radius-sm);
-  background-color: var(--accent-2);
+}
+.dummylanguage {
+  width: 10%;
 }
 
 .date {
