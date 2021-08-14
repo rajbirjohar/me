@@ -45,7 +45,6 @@ export default function Entries() {
   }
   return (
     <div>
-      <Skeleton />
       {data.entries.map((entry) => (
         <Entry
           key={entry._id}
