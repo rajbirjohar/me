@@ -24,7 +24,10 @@ export default function Projects() {
         </p>
         <Dashboard />
         <h2>Contributed</h2>
-        <p>A list of the projects I created or contributed to.</p>
+        <p>
+          A list of the top ten projects I created or contributed to sorted by
+          star count.
+        </p>
         <ProjectList />
       </section>
     </Layout>
