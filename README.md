@@ -87,21 +87,18 @@ You have properly set up a Spotify app and the correct credentials to make your 
 Since we only need to grant access once, we will follow the [Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#authorization-code-flow).
 
 8. Use the example URL below to get an idea of what it might look like. Go ahead and swap out the `client_id` without the `<>` and scopes for your own. Then paste this within your browser while your project is running.
-   <br></br>
 
 ```Javascript
 https://accounts.spotify.com/authorize?client_id=<client_id>&response_type=code&redirect_uri=http%3A%2F%2Flocalhost:3000&scope=user-read-currently-playing%20user-top-read%20user-read-recently-played
 ```
 
 9. After authorization, you'll be sent back to `redirect_uri`. Within the URL, there is a `code` query parameter. Save the value without `<>`.
-   <br></br>
 
 ```
 http://localhost:3000/callback?code=<NApCCg..BkWtQ>
 ```
 
 10. Afterwards, you will need to retrieve the refresh token by generating a Base64 encoded string containing the client ID and secret you got from earlier. Use this [encoding tool](https://www.base64encode.org) to encode it online. The format should be `client_id:client_secret`. Replace the values in the command below with your new encoded string and the `code` parameter from the last step without the `<>`.
-    <br></br>
 
 ```bash
 curl -H "Authorization: Basic <base64 encoded client_id:client_secret>" -d grant_type=authorization_code -d code=<code> -d redirect_uri=http%3A%2F%2Flocalhost:3000 https://accounts.spotify.com/api/token
@@ -127,14 +124,11 @@ The steps to get the required env variables are as followed:
 
 1. Create a free MongoDB atlas account and create a database. It does not need to have any collections yet to start working.
 
-2. Click on the **Connect** button and select the second option. You will be presented with your `MONGODB_URI` in the format below.
-   <br></br>
+2. Click on the **Connect** button and select the second option. You will be presented with your `MONGODB_URI` in the format below where `user` will be your MongoDB access name and `<password>` will be your access password without the `<>`. You can create a new access user via the **Database Access** tab on the left under Security. I recommend allowing MongoDB to generate your password or using a password generator to keep your database safe.
 
 ```bash
 mongodb+srv://user:<password>@portfoliocluster.abc12.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 ```
-
-Where `user` will be your MongoDB access name and `<password>` will be your access password without the `<>`. You can create a new access user via the **Database Access** tab on the left under Security. I recommend allowing MongoDB to generate your password or using a password generator to keep your database safe.
 
 Then, `myFirstDatabase` is where you will replace the name of your database incase you named it something different. It will also be the env variable for `MONGODB_DB`.
 
@@ -150,18 +144,18 @@ I chose Github as my primary OAuth provider because it's really easy to set up a
 
 1. Navigate to Github account settings > Developer Settings > OAuth apps.
 2. Click **New OAuth App** and fill out the required information. This is what will display to users when they attempt to login via NextAuth. The important bit is the homepage url and the callback url which works with NextAuth on redirecting users back to the guestbook page. It will be of the format:
-   <br></br>
 
 ```bash
 http://localhost:3000/api/auth/callback
 ```
 
-or for your production site:
-<br></br>
+- or for your production site:
 
 ```bash
 https://example.com/api/auth/callback
 ```
+
+3. After this is done, you should now be able to view your `Client ID` which will be place into `GITHUB_ID` and generate a `Client Secret` which will go into `GITHUB_SECRET`
 
 I recommend creating two different OAuth apps so you don't need to switch the callback url every time you are on your dev environment.
 
