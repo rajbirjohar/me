@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 export default function Entry({ name, entry, timestamp, entryId }) {
   const [session, loading] = useSession()
   const [newEntry, setNewEntry] = useState('')
-  const [flag, setFlag] = useState(false)
+  const [modify, showModify] = useState(false)
   const [filled] = useState({
     newEntry: false,
   })
@@ -83,14 +83,14 @@ export default function Entry({ name, entry, timestamp, entryId }) {
           {match && (
             <>
               /{' '}
-              <a className={styles.modify} onClick={() => setFlag(!flag)}>
+              <a className={styles.modify} onClick={() => showModify(!modify)}>
                 Modify
               </a>{' '}
               /{' '}
               <a className={styles.delete} onClick={deleteEntry}>
                 Delete
               </a>
-              {flag && (
+              {modify && (
                 <form
                   onSubmit={(e) => e.preventDefault()}
                   className={styles.inputWrapper}
