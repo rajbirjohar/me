@@ -31,7 +31,6 @@ export default function EntryForm(props) {
   }
 
   const sendData = async (entryData) => {
-    console.log(entryData)
     const response = await fetch('/api/entry/create', {
       method: 'POST',
       headers: {
@@ -40,7 +39,6 @@ export default function EntryForm(props) {
       body: JSON.stringify({ entry_data: entryData }),
     })
     const data = await response.json()
-    console.log(data.entry_data)
     return data.entry_data
   }
 

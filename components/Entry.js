@@ -32,7 +32,6 @@ export default function Entry({ name, entry, timestamp, entryId }) {
   }
 
   const modifyEntry = async (newEntryData) => {
-    console.log(newEntryData)
     const response = await fetch('api/entry/modify', {
       method: 'PATCH',
       headers: {
@@ -41,7 +40,6 @@ export default function Entry({ name, entry, timestamp, entryId }) {
       body: JSON.stringify({ newEntry_data: newEntryData }),
     })
     const data = await response.json()
-    console.log(data.newEntry_data)
     return data.newEntry_data
   }
   const deleteEntry = async (event) => {
@@ -55,7 +53,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
       })
       await res.json()
       if (res.status === 200) {
-        toast.success('Deleted!')
+        toast.success('Deleted entry!')
       } else {
         toast.error('Uh oh. Something went wrong.')
       }
