@@ -94,16 +94,13 @@
 }
 
 .skeleton {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 1rem;
+  display: block;
 }
 
 .dummyauthor {
   display: flex;
   align-items: center;
-  margin-top: -0.75rem;
+  margin-top: -3rem;
 }
 
 .dummytitle,
