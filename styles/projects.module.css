@@ -23,7 +23,7 @@
 }
 
 .title {
-  color: var(--success);
+  color: var(--brand);
   margin-right: var(--gap-quarter);
 }
 
@@ -46,12 +46,13 @@
 
 .language {
   margin: var(--gap-half) 0 var(--gap) 0;
-  background-color: var(--success);
+  background-color: var(--language-alt);
   max-width: max-content;
   padding: 0px 8px;
   border-radius: var(--radius-sm);
-  color: #fff;
+  color: var(--language);
 }
+
 .searchWrapper {
   position: relative;
   width: 100%;
