@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
 import Layout from '@/components/Layout'
@@ -38,6 +39,10 @@ export default function Projects() {
           <p>
             Currently studying Computer Science but loving web development. Say
             hello at <a onClick={copyEmail}>hello@rajbir.io</a>.
+          </p>
+          <p>
+            Feel free to sign my <Link href="/guestbook">Guestbook</Link> while
+            you&#39;re here.
           </p>
           <p>
             Lasted edited about

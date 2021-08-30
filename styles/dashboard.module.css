@@ -26,7 +26,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: -10px !important;
-  color: var(--success);
+  color: var(--brand);
 }
 
 .group:hover .title {

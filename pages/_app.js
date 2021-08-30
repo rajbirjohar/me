@@ -107,7 +107,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <ThemeProvider
         disableTransitionOnChange
-        defaultTheme="light"
+        enableSystem
         themes={['sepia', 'light', 'dark']}
       >
         <Header />

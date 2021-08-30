@@ -21,30 +21,30 @@
   background-color: var(--accent-2);
 }
 .loginbutton {
-  background-color: var(--success);
+  background-color: var(--brand);
   color: var(--bg);
-  border: 1px solid var(--success);
+  border: 1px solid var(--brand);
 }
 .loginbutton:hover {
   background-color: var(--bg);
-  color: var(--success);
+  color: var(--brand);
 }
 .signbutton {
   margin: var(--gap-half) 0 var(--gap-half) var(--gap-half);
-  background-color: var(--success);
+  background-color: var(--brand);
   color: var(--bg);
-  border: 1px solid var(--success);
+  border: 1px solid var(--brand);
   padding: var(--gap-half) var(--gap);
   width: 9rem;
 }
 .signbutton:hover {
   background-color: var(--bg);
-  color: var(--success);
+  color: var(--brand);
 }
 .modifybutton {
   margin: var(--gap-half) 0 var(--gap-half) var(--gap-half);
   background-color: var(--accent-1);
-  color: var(--success);
+  color: var(--brand);
   border: 1px solid var(--accent-1);
   padding: var(--gap-half) var(--gap);
   width: 9rem;
@@ -52,17 +52,14 @@
 .modifybutton:hover {
   background-color: var(--accent-2);
 }
-.delete {
-  color: var(--success-2);
-}
+.delete,
 .delete:hover {
-  color: var(--success-2);
+  color: var(--delete);
 }
-.modify {
-  color: var(--success-3);
-}
+
+.modify,
 .modify:hover {
-  color: var(--success-3);
+  color: var(--modify);
 }
 
 .inputWrapper {
