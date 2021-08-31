@@ -9,6 +9,39 @@
   font-size: 1.25rem;
   line-height: inherit;
 }
+
+.selectWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-2);
+  color: var(--fg);
+  transition: all var(--transition);
+  border-radius: var(--radius);
+  border: 2px solid var(--accent-2);
+}
+
+.selectWrapper svg {
+  margin: 0 8px;
+}
+
+.select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  font-size: 1.125rem;
+  padding: 8px 10px;
+  background-color: var(--accent-1);
+  cursor: pointer;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.select:hover {
+  background-color: var(--accent-2);
+}
+
 .button {
   padding: 8px 10px;
   display: flex;
