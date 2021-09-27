@@ -61,7 +61,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
   }
   // Render delete button only if the
   // session user equals the name of the entry
-  var match = false
+  let match = false
   if (session) {
     if (session.user.name === name) {
       match = true
