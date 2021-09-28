@@ -30,7 +30,9 @@ export default function Projects() {
       <section className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.title}>So you found my Portfolio.</h1>
-          <p>Glad to have you. I&#39;m Rajbir.</p>
+          <p>
+            Glad to have you. <b>I&#39;m Rajbir.</b>
+          </p>
           <p>
             Frontend Developer based in Southern California, typing on bespoke
             keyboards, playing through <i>Ratchet and Clank: Rift Apart</i>, and
