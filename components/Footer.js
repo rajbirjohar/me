@@ -1,6 +1,25 @@
 import Link from 'next/link'
-import ThemeChanger from '@/components/Theme'
+import React, { useState } from 'react'
+import { useTheme } from 'next-themes'
+import { SwatchIcon } from '@/components/icons/icons'
 import styles from '@/styles/footer.module.css'
+import { motion } from 'framer-motion'
+
+const ThemeItem = ({ title, value, onClick }) => {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.995 }}
+      transition={{ ease: 'easeInOut', duration: 0.015 }}
+      value={value}
+      type="submit"
+      className={styles.themeItem}
+      onClick={onClick}
+    >
+      {title}
+    </motion.button>
+  )
+}
 
 const ExtLink = ({ title, destination }) => {
   return (
@@ -16,6 +35,8 @@ const ExtLink = ({ title, destination }) => {
 }
 
 export default function Footer() {
+  const { theme, setTheme } = useTheme()
+  const [modify, showModify] = useState(false)
   return (
     <footer className={styles.footer}>
       <hr />
@@ -38,8 +59,58 @@ export default function Footer() {
             <a className={styles.external}>Guestbook</a>
           </Link>
         </div>
-        <ThemeChanger />
+        <div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.995 }}
+            transition={{ ease: 'easeInOut', duration: 0.015 }}
+            className={styles.button}
+            onClick={() => showModify(!modify)}
+          >
+            <SwatchIcon />
+            Theme
+          </motion.button>
+        </div>
       </div>
+      {modify && (
+        <div>
+          {theme !== undefined && (
+            <div className={styles.themeWrapper}>
+              {/* <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.995 }}
+                transition={{ ease: 'easeInOut', duration: 0.015 }}
+                value="dark"
+                type="submit"
+                className={styles.themeItem}
+                onClick={(e) => setTheme(e.target.value)}
+              >
+                Dark
+              </motion.button> */}
+              <ThemeItem
+                title="Dark"
+                value="dark"
+                onClick={(e) => setTheme(e.target.value)}
+              />
+              <ThemeItem
+                title="Light"
+                value="light"
+                onClick={(e) => setTheme(e.target.value)}
+              />
+              <ThemeItem
+                title="Sepia"
+                value="sepia"
+                onClick={(e) => setTheme(e.target.value)}
+              />
+              <ThemeItem
+                title="System"
+                value="system"
+                onClick={(e) => setTheme(e.target.value)}
+              />
+            </div>
+          )}
+        </div>
+      )}
     </footer>
   )
 }
