@@ -44,7 +44,12 @@
 
 .themeWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.themeSelection {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   margin-top: 10px;
   border-radius: var(--radius);
@@ -53,6 +58,8 @@
 
 .themeItem {
   flex: 1;
+  display: flex;
+  align-items: center;
   width: 100%;
   padding: 10px;
   background-color: transparent;
@@ -68,30 +75,8 @@
     0 11.2px 22.3px rgba(0, 0, 0, 0.027), 0 25px 100px rgba(0, 0, 0, 0.05);
 }
 
-.colorWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.color1,
-.color2,
-.color3,
-.color4 {
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-}
-
-.color1 {
-  background-color: var(--brand);
-}
-.color2 {
-  background-color: var(--bg);
-}
-
 .button {
-  padding: 8px 10px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,20 +85,13 @@
   transition: all var(--transition);
   border-radius: var(--radius);
   cursor: pointer;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently */
 }
+
 .button:hover {
   background-color: var(--accent-2);
 }
 .button svg {
   padding: 0;
-  margin-bottom: -4px;
-  margin-right: 4px;
 }
 .actions {
   display: flex;
@@ -156,6 +134,6 @@
     margin-top: var(--gap-half);
   }
   .themeWrapper {
-    flex-direction: column;
+    justify-content: flex-start;
   }
 }

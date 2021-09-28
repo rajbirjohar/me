@@ -68,49 +68,59 @@ export default function Footer() {
             onClick={() => showModify(!modify)}
           >
             <SwatchIcon />
-            Theme
           </motion.button>
         </div>
       </div>
-      {modify && (
-        <div>
-          {theme !== undefined && (
-            <div className={styles.themeWrapper}>
-              {/* <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.995 }}
-                transition={{ ease: 'easeInOut', duration: 0.015 }}
-                value="dark"
-                type="submit"
-                className={styles.themeItem}
-                onClick={(e) => setTheme(e.target.value)}
-              >
-                Dark
-              </motion.button> */}
-              <ThemeItem
-                title="Dark"
-                value="dark"
-                onClick={(e) => setTheme(e.target.value)}
-              />
-              <ThemeItem
-                title="Light"
-                value="light"
-                onClick={(e) => setTheme(e.target.value)}
-              />
-              <ThemeItem
-                title="Sepia"
-                value="sepia"
-                onClick={(e) => setTheme(e.target.value)}
-              />
-              <ThemeItem
-                title="System"
-                value="system"
-                onClick={(e) => setTheme(e.target.value)}
-              />
-            </div>
-          )}
-        </div>
-      )}
+      <div className={styles.themeWrapper}>
+        {modify && theme !== undefined && (
+          <div className={styles.themeSelection}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.995 }}
+              transition={{ ease: 'easeInOut', duration: 0.015 }}
+              value="light"
+              type="submit"
+              className={styles.themeItem}
+              onClick={(e) => setTheme(e.target.value)}
+            >
+              Light
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.995 }}
+              transition={{ ease: 'easeInOut', duration: 0.015 }}
+              value="dark"
+              type="submit"
+              className={styles.themeItem}
+              onClick={(e) => setTheme(e.target.value)}
+            >
+              Dark
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.995 }}
+              transition={{ ease: 'easeInOut', duration: 0.015 }}
+              value="sepia"
+              type="submit"
+              className={styles.themeItem}
+              onClick={(e) => setTheme(e.target.value)}
+            >
+              Sepia
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.995 }}
+              transition={{ ease: 'easeInOut', duration: 0.015 }}
+              value="system"
+              type="submit"
+              className={styles.themeItem}
+              onClick={(e) => setTheme(e.target.value)}
+            >
+              System
+            </motion.button>
+          </div>
+        )}
+      </div>
     </footer>
   )
 }
