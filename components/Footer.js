@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import ThemeChanger from '@/components/Theme'
+import { SwatchIcon } from '@/components/icons/icons'
 import styles from '@/styles/footer.module.css'
+import { motion } from 'framer-motion'
 
 const ExtLink = ({ title, destination }) => {
   return (
@@ -38,7 +39,18 @@ export default function Footer() {
             <a className={styles.external}>Guestbook</a>
           </Link>
         </div>
-        <ThemeChanger />
+        <div>
+          <Link passHref href="/theme">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.995 }}
+              transition={{ ease: 'easeInOut', duration: 0.015 }}
+              className={styles.button}
+            >
+              <SwatchIcon />
+            </motion.button>
+          </Link>
+        </div>
       </div>
     </footer>
   )
