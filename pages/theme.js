@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Layout from '@/components/Layout'
 import ThemeCard from '../components/ThemeCard'
 import styles from '@/styles/theme.module.css'
@@ -5,6 +6,9 @@ import styles from '@/styles/theme.module.css'
 export default function Theme() {
   return (
     <Layout>
+      <Head>
+        <title>Rajbir Johar | Theme</title>
+      </Head>
       <section>
         <h1 className={styles.title}>Pick Your Theme.</h1>
         <p>
@@ -14,8 +18,8 @@ export default function Theme() {
         </p>
         <div className={styles.themeWrapper}>
           <ThemeCard title="System" value="system" />
-          <ThemeCard title="Light" value="light" />
-          <ThemeCard title="Dark" value="dark" />
+          <ThemeCard title="Starlight" value="light" />
+          <ThemeCard title="Midnight" value="dark" />
           <ThemeCard title="Sepia" value="sepia" />
           <ThemeCard title="Nord" value="nord" />
         </div>
