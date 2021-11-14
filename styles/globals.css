@@ -22,6 +22,7 @@
 
   /* Transitions */
   --transition: 0.1s ease-in-out;
+  --transition-med: 0.25s ease-in-out;
   --transition-slow: 0.3s ease-in-out;
 
   /* Dark Mode Colors */
@@ -40,8 +41,17 @@
   --delete: #fc8181;
   --language: #fed7d7;
   --language-alt: #362525;
-
+  --shadow-color: rgba(0, 0, 0, 0.15);
   --header-bg: rgba(17, 17, 17, 0.85);
+
+  /* Shadows */
+  --shadows-sm: 0 1px 2px 0 var(--shadow-color);
+  --shadows-base: 0 1px 3px 0 var(--shadow-color),
+    0 1px 2px 0 var(--shadow-color);
+  --shadows-lg: 0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
+  --shadows-xl: 0 20px 25px -5px var(--shadow-color),
+    0 10px 10px -5px var(--shadow-color);
 }
 
 [data-theme='light'] {
@@ -60,7 +70,7 @@
   --delete: #e53e3e;
   --language: #1d4044;
   --language-alt: #b2f5ea;
-
+  --shadow-color: rgba(224, 226, 230, 0.15);
   --header-bg: hsla(0, 0%, 100%, 0.85);
 }
 
@@ -80,7 +90,7 @@
   --delete: #e53e3e;
   --language: #652b19;
   --language-alt: #ffe0ac;
-
+  --shadow-color: rgba(197, 189, 170, 0.15);
   --header-bg: rgba(245, 241, 227, 0.85);
 }
 
@@ -100,7 +110,7 @@
   --delete: #bf616a;
   --language: #88c0d0;
   --language-alt: #4c566a;
-
+  --shadow-color: rgba(20, 20, 20, 0.15);
   --header-bg: rgba(36, 41, 51, 0.85);
 }
 

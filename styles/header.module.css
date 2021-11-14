@@ -1,9 +1,17 @@
-.nav {
-  z-index: 10;
-  margin: var(--small-gap) auto var(--big-gap) auto;
-  position: sticky;
+.nav,
+.mobilenav {
+  width: 100%;
+  height: 8rem;
   padding: var(--gap-med) 0;
+  z-index: 10;
+  margin: 0 auto;
+  position: fixed;
   top: 0;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  transition: height var(--transition-slow), box-shadow var(--transition-slow),
+    top var(--transition-slow);
   background-color: var(--header-bg);
   backdrop-filter: saturate(180%) blur(20px);
   -moz-backdrop-filter: saturate(180%) blur(20px);
@@ -11,23 +19,91 @@
 }
 
 .header {
-  height: 32px;
+  width: var(--main-content);
+  padding: var(--gap-med);
+  display: flex;
+  align-items: center;
   margin: 0 auto;
-  padding: 0 var(--gap-med);
-  max-width: var(--main-content);
+  justify-content: flex-end;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.li {
+.shadow {
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  box-shadow: var(--shadows-lg);
+  background-color: var(--bg);
+}
+
+.open,
+.notopen {
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  margin-top: 5rem;
+  background-color: var(--bg);
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  transition: 400ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-med);
+  font-size: 1.2rem;
+}
+
+.open {
+  height: 100%;
+}
+
+.notopen {
+  height: 0vh;
+}
+
+.link {
   list-style: none;
-  padding: 0;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 var(--gap-med);
+}
+
+.hamburger {
+  margin: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.inner {
+  height: 0.2rem;
+  width: 2rem;
+  background-color: var(--fg);
+  margin: 0.25rem 0;
+  border-radius: var(--radius);
+  transition: var(--transition-med);
+}
+
+.onclick {
+  transform: rotate(45deg) translateY(0.5rem);
+  transform-origin: center;
+}
+
+.onclick2 {
+  transform: rotate(-45deg) translateY(-0.5rem);
+  transform-origin: center;
 }
 
 @media (max-width: 960px) {
-  .nav {
-    margin: var(--gap-double) 0;
+  .link {
+    margin: 0;
   }
 }

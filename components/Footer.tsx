@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { SwatchIcon } from '@/components/icons/icons'
-import styles from '@/styles/footer.module.css'
 import { motion } from 'framer-motion'
+import { SwatchIcon } from '@/components/Icons/Icons'
+import styles from '@/styles/footer.module.css'
 
 const ExtLink = ({ title, destination }) => {
   return (

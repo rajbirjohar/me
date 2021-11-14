@@ -1,5 +1,5 @@
-import styles from '@/styles/layout.module.css'
 import { motion } from 'framer-motion'
+import styles from '@/styles/layout.module.css'
 
 export default function Layout({ children }) {
   return (
