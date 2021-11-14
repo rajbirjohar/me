@@ -9,8 +9,7 @@
   display: flex;
   align-items: center;
   box-shadow: none;
-  transition: height var(--transition-slow), top var(--transition-slow),
-    box-shadow var(--transition-slow);
+  transition: height var(--transition-med), box-shadow var(--transition-med);
   background-color: var(--header-bg);
   backdrop-filter: saturate(180%) blur(20px);
   -moz-backdrop-filter: saturate(180%) blur(20px);
@@ -19,7 +18,6 @@
 
 .shadow {
   height: 5rem;
-  top: 0;
   box-shadow: var(--shadows-lg);
   background-color: var(--bg);
 }
@@ -47,7 +45,7 @@
   background-color: var(--bg);
   overflow-x: hidden !important;
   overflow-y: hidden !important;
-  transition: 400ms ease-in-out;
+  transition: 500ms ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

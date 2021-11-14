@@ -22,7 +22,7 @@
 
   /* Transitions */
   --transition: 0.1s ease-in-out;
-  --transition-med: 0.25s ease-in-out;
+  --transition-med: 250ms ease-in-out;
   --transition-slow: 0.3s ease-in-out;
 
   /* Dark Mode Colors */
