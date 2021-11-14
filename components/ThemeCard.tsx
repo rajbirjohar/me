@@ -14,12 +14,6 @@ const ThemeCard = ({ title, value }) => {
           onClick={(e) => setTheme(value)}
         >
           <h1>{title}</h1>
-          {/* <div className={styles.swatchWrapper}>
-            <span className={styles.swatch1}></span>
-            <span className={styles.swatch2}></span>
-            <span className={styles.swatch3}></span>
-            <span className={styles.swatch4}></span>
-          </div> */}
         </button>
       )}
     </>

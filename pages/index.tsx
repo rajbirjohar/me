@@ -61,7 +61,7 @@ export default function Projects() {
         <div className={styles.profilePic}>
           <Image
             src={profilePic}
-            priority="true"
+            priority={true}
             placeholder="blur"
             alt="Picture of Rajbir Johar"
             className={styles.rounded}

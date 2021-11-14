@@ -10,7 +10,7 @@ import {
   HappyIcon,
   BoltIcon,
   LocationIcon,
-} from '@/components/icons/icons.js'
+} from '@/components/icons/icons'
 import { motion } from 'framer-motion'
 
 const Divider = () => {

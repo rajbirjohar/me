@@ -6,6 +6,9 @@ import styles from '@/styles/interests.module.css'
 export default function Interests() {
   return (
     <Layout>
+      <Head>
+        <title>Portfolio | Interests</title>
+      </Head>
       <section>
         <h1>Interests</h1>
         <p>Just some of the hobbies and passions that I have right now.</p>

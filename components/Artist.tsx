@@ -13,7 +13,7 @@ export default function Artist(artist) {
             width={75}
             height={75}
             layout="fixed"
-            priority="true"
+            priority={true}
           />
         </div>
         <div>

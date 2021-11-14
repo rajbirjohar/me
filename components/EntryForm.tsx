@@ -9,21 +9,17 @@ export default function EntryForm(props) {
   const [session, loading] = useSession()
 
   const [filled] = React.useState({
+    name: session.user.name,
     entry: false,
   })
   const handleChangeEntry = (e) => {
     setEntry(e.target.value)
-    filled.name = session.user.name
     filled.entry = e.target.value !== ''
   }
   const submitForm = (name, email) => {
     if (Object.values(filled).every((e) => e)) {
       const data = [name, email, entry]
       sendData(data)
-      toast.success('Awesome. You signed!', {
-        icon: '👏',
-        background: '#61d345',
-      })
     } else {
       toast.error('Please fill out your message.')
     }
@@ -39,6 +35,11 @@ export default function EntryForm(props) {
       body: JSON.stringify({ entry_data: entryData }),
     })
     const data = await response.json()
+    if (response.status === 200) {
+      toast.success('Awesome. You signed!', {
+        icon: '👏',
+      })
+    }
     return data.entry_data
   }
 

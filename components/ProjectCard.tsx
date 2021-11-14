@@ -1,6 +1,6 @@
 import { formatDistance, format } from 'date-fns'
 import styles from '@/styles/projects.module.css'
-import { StarIcon } from '@/components/icons/icons.js'
+import { StarIcon } from '@/components/icons/icons'
 
 export default function ProjectCard({
   name,

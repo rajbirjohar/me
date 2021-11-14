@@ -9,7 +9,11 @@ const ActiveLink = ({ children, activeClassName, ...props }) => {
 
   const className = pathname === props.href ? 'active' : child.props.className
 
-  return <Link {...props}>{React.cloneElement(child, { className })}</Link>
+  return (
+    <Link href={props.href} {...props}>
+      {React.cloneElement(child, { className })}
+    </Link>
+  )
 }
 
 ActiveLink.propTypes = {

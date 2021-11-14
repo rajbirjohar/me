@@ -21,10 +21,6 @@ export default function Entry({ name, entry, timestamp, entryId }) {
     if (Object.values(filled).every((e) => e)) {
       const data = [entryId, newEntry]
       modifyEntry(data)
-      toast.success('Awesome. Entry modified!', {
-        icon: '👏',
-        background: '#61d345',
-      })
     } else {
       toast.error('Please fill out your message.')
     }
@@ -40,6 +36,11 @@ export default function Entry({ name, entry, timestamp, entryId }) {
       body: JSON.stringify({ newEntry_data: newEntryData }),
     })
     const data = await response.json()
+    if (response.status === 200) {
+      toast.success('Awesome. Entry modified!', {
+        icon: '👏',
+      })
+    }
     return data.newEntry_data
   }
   const deleteEntry = async (event) => {
