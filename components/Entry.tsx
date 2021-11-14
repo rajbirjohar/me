@@ -6,68 +6,60 @@ import styles from '@/styles/guestbook.module.css'
 import { motion } from 'framer-motion'
 
 export default function Entry({ name, entry, timestamp, entryId }) {
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
   const [newEntry, setNewEntry] = useState('')
   const [modify, showModify] = useState(false)
-  const [filled] = useState({
-    newEntry: false,
-  })
-
-  const handleChangeEntry = (e) => {
-    setNewEntry(e.target.value)
-    filled.newEntry = e.target.value !== ''
+  const handleChange = (event) => {
+    setNewEntry(event.target.value)
   }
-  const submitNewForm = () => {
-    if (Object.values(filled).every((e) => e)) {
-      const data = [entryId, newEntry]
-      modifyEntry(data)
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    if (newEntry !== '') {
+      const data = { entryId, newEntry }
+      sendData(data)
     } else {
       toast.error('Please fill out your message.')
     }
     setNewEntry('')
   }
 
-  const modifyEntry = async (newEntryData) => {
+  const sendData = async (newEntryData) => {
     const response = await fetch('api/entry/modify', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ newEntry_data: newEntryData }),
+      body: JSON.stringify({ newEntryData: newEntryData }),
     })
     const data = await response.json()
     if (response.status === 200) {
       toast.success('Awesome. Entry modified!', {
         icon: '👏',
       })
+    } else {
+      toast.error('Uh oh. Something went wrong.')
     }
-    return data.newEntry_data
+    return data.newEntryData
   }
+
   const deleteEntry = async (event) => {
-    if (session) {
-      const res = await fetch('/api/entry/delete', {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ entry: entryId }),
-      })
-      await res.json()
-      if (res.status === 200) {
-        toast.success('Deleted entry!')
-      } else {
-        toast.error('Uh oh. Something went wrong.')
-      }
+    const response = await fetch('/api/entry/delete', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ entryId: entryId }),
+    })
+    await response.json()
+    if (response.status === 200) {
+      toast.success('Deleted entry!')
+    } else {
+      toast.error('Uh oh. Something went wrong.')
     }
   }
   // Render delete button only if the
   // session user equals the name of the entry
-  let match = false
-  if (session) {
-    if (session.user.name === name) {
-      match = true
-    }
-  }
 
   return (
     <div>
@@ -79,7 +71,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
             <ReplyIcon />
           </svg>
           {name} / {timestamp}{' '}
-          {match && (
+          {session.user.name === name && (
             <>
               /{' '}
               <a className={styles.modify} onClick={() => showModify(!modify)}>
@@ -90,15 +82,12 @@ export default function Entry({ name, entry, timestamp, entryId }) {
                 Delete
               </a>
               {modify && (
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className={styles.inputWrapper}
-                >
+                <form onSubmit={handleSubmit} className={styles.inputWrapper}>
                   <input
                     aria-label="Entry Input"
-                    name="Entry"
+                    name="newEntry"
                     value={newEntry}
-                    onChange={handleChangeEntry}
+                    onChange={handleChange}
                     type="text"
                     placeholder="Your new entry here..."
                     className={styles.input}
@@ -109,7 +98,6 @@ export default function Entry({ name, entry, timestamp, entryId }) {
                     transition={{ ease: 'easeInOut', duration: 0.015 }}
                     className={styles.modifybutton}
                     type="submit"
-                    onClick={() => submitNewForm()}
                   >
                     Modify Entry
                   </motion.button>

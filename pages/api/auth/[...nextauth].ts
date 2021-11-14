@@ -9,7 +9,6 @@ export default NextAuth({
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
-      // scope: 'read:user user:email',
       profile(profile: { id; login; email; avatar_url }) {
         return {
           id: profile.id,

@@ -1,29 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 import { useSession } from 'next-auth/react'
 import styles from '@/styles/guestbook.module.css'
 import { motion } from 'framer-motion'
 
 export default function EntryForm() {
-  const [entry, setEntry] = React.useState('')
-  const { data: session, status } = useSession()
-
-  const [filled] = React.useState({
+  const { data: session } = useSession()
+  const [entry, setEntry] = useState({
     name: session.user.name,
-    entry: false,
+    email: session.user.email,
+    _entry: '',
   })
-  const handleChangeEntry = (e) => {
-    setEntry(e.target.value)
-    filled.entry = e.target.value !== ''
+
+  const handleChange = (event) => {
+    setEntry({ ...entry, [event.target.name]: event.target.value })
   }
-  const submitForm = (name, email) => {
-    if (Object.values(filled).every((e) => e)) {
-      const data = [name, email, entry]
-      sendData(data)
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    if (entry._entry !== '') {
+      sendData(entry)
     } else {
       toast.error('Please fill out your message.')
     }
-    setEntry('')
+    setEntry({ ...entry, _entry: '' })
   }
 
   const sendData = async (entryData) => {
@@ -32,24 +32,26 @@ export default function EntryForm() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ entry_data: entryData }),
+      body: JSON.stringify({ entryData: entryData }),
     })
     const data = await response.json()
     if (response.status === 200) {
       toast.success('Awesome. You signed!', {
         icon: '👏',
       })
+    } else {
+      toast.error('Uh oh. Something went wrong.')
     }
-    return data.entry_data
+    return data.entryData
   }
 
   return (
-    <form onSubmit={(e) => e.preventDefault()} className={styles.inputWrapper}>
+    <form onSubmit={handleSubmit} className={styles.inputWrapper}>
       <input
         aria-label="Entry Input"
-        name="Entry"
-        value={entry}
-        onChange={handleChangeEntry}
+        name="_entry"
+        value={entry._entry}
+        onChange={handleChange}
         type="text"
         placeholder="Your entry here..."
         className={styles.input}
@@ -60,7 +62,6 @@ export default function EntryForm() {
         transition={{ ease: 'easeInOut', duration: 0.015 }}
         className={styles.signbutton}
         type="submit"
-        onClick={() => submitForm(session.user.name, session.user.email)}
       >
         Sign Entry
       </motion.button>

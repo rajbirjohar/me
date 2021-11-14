@@ -16,7 +16,7 @@ export default async function deleteEntry(
         'Not signed in. Why are you trying to access sensitive information or attack my site? :(',
     })
   }
-  const { entry: entryId } = req.body
+  const { entryId: entryId } = req.body
   const result = await db
     .collection('entries')
     .deleteOne({ _id: new mongodb.ObjectID(entryId) })

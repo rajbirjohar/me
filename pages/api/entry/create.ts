@@ -15,15 +15,13 @@ export default async function createEntry(
         'Not signed in. Why are you trying to access sensitive information or attack my site? :(',
     })
   }
-
   const {
-    entry_data: [name, email, entry],
+    entryData: { name, email, _entry },
   } = req.body
-
   await db.collection('entries').insertOne({
     name: name,
     email: email,
-    entry: entry,
+    entry: _entry,
     createdAt: new Date(),
   })
   return res.status(200).json({ message: 'Successfully posted entry.' })

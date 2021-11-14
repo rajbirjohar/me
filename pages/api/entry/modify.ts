@@ -17,7 +17,7 @@ export default async function modifyEntry(
     })
   }
   const {
-    newEntry_data: [entryId, newEntry],
+    newEntryData: { entryId, newEntry },
   } = req.body
   await db.collection('entries').findOneAndUpdate(
     {
