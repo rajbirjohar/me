@@ -71,7 +71,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
             <ReplyIcon />
           </svg>
           {name} / {timestamp}{' '}
-          {session.user.name === name && (
+          {session && session.user.name === name && (
             <>
               /{' '}
               <a className={styles.modify} onClick={() => showModify(!modify)}>
