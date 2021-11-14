@@ -5,12 +5,6 @@
 
 .main {
   max-width: var(--main-content);
-  margin: 10rem auto 0;
+  margin: 8rem auto 0;
   padding: 0 var(--gap-med);
-}
-
-@media (max-width: 960px) {
-  .main {
-    margin: 8rem auto;
-  }
 }
