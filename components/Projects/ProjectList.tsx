@@ -4,7 +4,7 @@ import TimeAgo from 'react-timeago'
 import fetcher from '@/lib/fetcher'
 import ProjectCard from '@/components/Projects/ProjectCard'
 import styles from '@/styles/projects.module.css'
-import { SearchIcon } from '@/components/Icons/Icons'
+import { SearchIcon } from '@/components/Icons'
 
 const Skeleton = () => {
   return (

@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import TimeAgo from 'react-timeago'
 import fetcher from '@/lib/fetcher'
 import Entry from '@/components/Entries/Entry'
-import { ReplyIcon } from '@/components/Icons/Icons'
+import { ReplyIcon } from '@/components/Icons'
 import styles from '@/styles/guestbook.module.css'
 
 const Skeleton = () => {

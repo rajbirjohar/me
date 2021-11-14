@@ -1,5 +1,5 @@
 import styles from '@/styles/projects.module.css'
-import { StarIcon } from '@/components/Icons/Icons'
+import { StarIcon } from '@/components/Icons'
 
 export default function ProjectCard({
   name,

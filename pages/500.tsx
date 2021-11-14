@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
 import styles from '@/styles/404.module.css'
-import { LeftArrow } from '@/components/Icons/Icons'
+import { LeftArrow } from '@/components/Icons'
 import { motion } from 'framer-motion'
 
 export default function Custom500() {

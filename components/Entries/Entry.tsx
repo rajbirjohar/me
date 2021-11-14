@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSession } from 'next-auth/react'
 import toast from 'react-hot-toast'
 import { motion } from 'framer-motion'
-import { ReplyIcon } from '@/components/Icons/Icons'
+import { ReplyIcon } from '@/components/Icons'
 import styles from '@/styles/guestbook.module.css'
 
 export default function Entry({ name, entry, timestamp, entryId }) {
