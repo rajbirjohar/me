@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@next-auth/mongodb-adapter": "^0.0.2-next.285",
     "@notionhq/client": "^0.1.8",
     "@octokit/rest": "^18.5.3",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
@@ -20,9 +21,9 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "framer-motion": "^4.1.17",
-    "mongodb": "^3.6.10",
+    "mongodb": "^4.1.4",
     "next": "^11.0.0",
-    "next-auth": "^3.27.3",
+    "next-auth": "^4.0.0-beta.6",
     "next-themes": "^0.0.14",
     "prettier": "^2.3.0",
     "props-type": "^1.0.1",

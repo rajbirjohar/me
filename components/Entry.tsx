@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/react'
 import toast from 'react-hot-toast'
 import { ReplyIcon } from '@/components/icons/icons'
 import styles from '@/styles/guestbook.module.css'
 import { motion } from 'framer-motion'
 
 export default function Entry({ name, entry, timestamp, entryId }) {
-  const [session, loading] = useSession()
+  const { data: session, status } = useSession()
   const [newEntry, setNewEntry] = useState('')
   const [modify, showModify] = useState(false)
   const [filled] = useState({

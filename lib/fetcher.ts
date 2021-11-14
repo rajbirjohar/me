@@ -1,8 +1,3 @@
-// export default async function Fetcher(...args) {
-//   const res = await fetch(...args)
-//   return res.json()
-// }
-
 const Fetcher = async (
   input: RequestInfo,
   init: RequestInit,

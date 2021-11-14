@@ -3,13 +3,13 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import '@/styles/globals.css'
 import { ThemeProvider } from 'next-themes'
-import { Provider } from 'next-auth/client'
+import { SessionProvider } from 'next-auth/react'
 // import { AnimatePresence } from 'framer-motion'
 // router
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <Provider session={pageProps.session}>
+    <SessionProvider session={pageProps.session} refetchInterval={5 * 60}>
       <ThemeProvider
         disableTransitionOnChange
         enableSystem
@@ -21,7 +21,7 @@ function App({ Component, pageProps }: AppProps) {
         {/* </AnimatePresence> */}
         <Footer />
       </ThemeProvider>
-    </Provider>
+    </SessionProvider>
   )
 }
 

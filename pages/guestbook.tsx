@@ -1,14 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
-import { signIn, signOut, useSession } from 'next-auth/client'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import Layout from '@/components/Layout'
 import styles from '@/styles/guestbook.module.css'
 import EntryForm from '@/components/EntryForm'
 import Entries from '../components/Entries'
 import { motion } from 'framer-motion'
 
-export default function Page({ entries }) {
-  const [session, loading] = useSession()
+export default function Page() {
+  const { data: session, status } = useSession()
   return (
     <Layout>
       <Head>
@@ -52,7 +52,7 @@ export default function Page({ entries }) {
         </p>
         {session && (
           <>
-            <EntryForm name={session.user.name} email={session.user.email} />
+            <EntryForm />
           </>
         )}
       </section>

@@ -1,12 +1,12 @@
 import React from 'react'
 import toast from 'react-hot-toast'
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/react'
 import styles from '@/styles/guestbook.module.css'
 import { motion } from 'framer-motion'
 
-export default function EntryForm(props) {
+export default function EntryForm() {
   const [entry, setEntry] = React.useState('')
-  const [session, loading] = useSession()
+  const { data: session, status } = useSession()
 
   const [filled] = React.useState({
     name: session.user.name,
@@ -60,7 +60,7 @@ export default function EntryForm(props) {
         transition={{ ease: 'easeInOut', duration: 0.015 }}
         className={styles.signbutton}
         type="submit"
-        onClick={() => submitForm(props.name, props.email)}
+        onClick={() => submitForm(session.user.name, session.user.email)}
       >
         Sign Entry
       </motion.button>

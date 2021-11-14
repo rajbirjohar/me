@@ -1,7 +1,8 @@
-import { connectToDatabase } from '../../util/mongodb'
+import clientPromise from 'lib/mongodb'
 
 const entriesFetch = async (req, res) => {
-  const { db } = await connectToDatabase()
+  const isConnected = await clientPromise
+  const db = isConnected.db(process.env.MONGODB_DB)
 
   const entries = await db
     .collection('entries')
