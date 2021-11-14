@@ -3,8 +3,8 @@ import Head from 'next/head'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Layout from '@/components/Layout'
 import styles from '@/styles/guestbook.module.css'
-import EntryForm from '@/components/EntryForm'
-import Entries from '../components/Entries'
+import EntryForm from '@/components/Entries/EntryForm'
+import Entries from '@/components/Entries/Entries'
 import { motion } from 'framer-motion'
 
 export default function Page() {

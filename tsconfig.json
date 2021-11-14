@@ -7,7 +7,7 @@
       "@/components/*": ["components/*"],
       "@/api/*": ["api/*"],
       "@/lib/*": ["lib/*"],
-      "@/util/*": ["util/*"],
+      "@/hooks/*": ["hooks/*"],
       "@/styles/*": ["styles/*"]
     },
     "target": "es5",

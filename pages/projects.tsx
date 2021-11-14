@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from '@/components/Layout'
-import ProjectList from '@/components/ProjectList'
-import Dashboard from '@/components/Dashboard'
+import ProjectList from '@/components/Projects/ProjectList'
+import Dashboard from '@/components/Projects/Dashboard'
 
 export default function Projects() {
   return (

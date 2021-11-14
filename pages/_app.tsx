@@ -1,9 +1,10 @@
 import { AppProps } from 'next/app'
+import { ThemeProvider } from 'next-themes'
+import { SessionProvider } from 'next-auth/react'
+import { Toaster } from 'react-hot-toast'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import '@/styles/globals.css'
-import { ThemeProvider } from 'next-themes'
-import { SessionProvider } from 'next-auth/react'
 // import { AnimatePresence } from 'framer-motion'
 // router
 
@@ -13,8 +14,9 @@ function App({ Component, pageProps }: AppProps) {
       <ThemeProvider
         disableTransitionOnChange
         enableSystem
-        themes={['sepia', 'light', 'dark']}
+        themes={['light', 'dark', 'sepia', 'nord']}
       >
+        <Toaster />
         <Header />
         {/* <AnimatePresence exitBeforeEnter>  key={router.route} */}
         <Component {...pageProps} />

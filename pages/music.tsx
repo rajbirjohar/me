@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import RecentlyPlayedList from '@/components/RecentlyPlayedList'
-import TrackList from '@/components/TrackList'
-import NowPlaying from '@/components/NowPlaying'
-import ArtistList from '@/components/ArtistList'
+import RecentlyPlayedList from '@/components/Spotify/RecentlyPlayedList'
+import TrackList from '@/components/Spotify/TrackList'
+import NowPlaying from '@/components/Spotify/NowPlaying'
+import ArtistList from '@/components/Spotify/ArtistList'
 import Layout from '@/components/Layout'
 
 export default function Music() {

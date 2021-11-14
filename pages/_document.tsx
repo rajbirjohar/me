@@ -102,10 +102,9 @@ class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="A cool collection of my neat projects and ideas."
+            content="Hello! I'm Rajbir and this is my portfolio. Check out my cool collection some neat projects and ideas."
           />
           <meta property="og:image" content="/images/icon_logo.png" />
-
           <meta name="og:title" content="Rajbir Johar | Portfolio" />
         </Head>
         <body>

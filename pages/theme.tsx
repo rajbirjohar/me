@@ -10,7 +10,7 @@ export default function Theme() {
         <title>Rajbir Johar | Theme</title>
       </Head>
       <section>
-        <h1 className={styles.title}>Pick Your Theme.</h1>
+        <h1 className={styles.title}>Themes</h1>
         <p>
           Check them all out. This is a continuous work in progress as I
           encounter more themes that speak to me and hopefully speak to you.
