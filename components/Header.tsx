@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Toaster } from 'react-hot-toast'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import ActiveLink from '@/components/ActiveLink'
 import { useWindowSize } from '@/hooks/useWindowSize'
+import { useScrollBlock } from '@/hooks/useScrollBlock'
 import styles from '@/styles/header.module.css'
 
 interface Size {
@@ -63,12 +63,22 @@ const MobileLink = ({ href, title, onClick }) => {
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [scroll, setScroll] = useState(false)
+  const [blockScroll, allowScroll] = useScrollBlock()
   const size: Size = useWindowSize()
   useEffect(() => {
     window.addEventListener('scroll', () => {
       setScroll(window.scrollY > 0)
     })
   }, [])
+
+  const openNav = () => {
+    setOpen(!open)
+    if (!open) {
+      blockScroll()
+    } else {
+      allowScroll()
+    }
+  }
 
   return (
     <>
@@ -95,7 +105,7 @@ export default function Header() {
           }
         >
           <ul className={styles.header}>
-            <div className={styles.hamburger} onClick={() => setOpen(!open)}>
+            <div className={styles.hamburger} onClick={openNav}>
               <span
                 className={
                   open ? `${styles.inner} ${styles.onclick}` : `${styles.inner}`
@@ -114,36 +124,16 @@ export default function Header() {
               variants={list}
               className={styles.notopen}
             >
-              <MobileLink
-                href="/"
-                title="Home"
-                onClick={() => setOpen(!open)}
-              />
-              <MobileLink
-                href="/projects"
-                title="Projects"
-                onClick={() => setOpen(!open)}
-              />
-              <MobileLink
-                href="/life"
-                title="Life"
-                onClick={() => setOpen(!open)}
-              />
-              <MobileLink
-                href="/music"
-                title="Music"
-                onClick={() => setOpen(!open)}
-              />
+              <MobileLink href="/" title="Home" onClick={openNav} />
+              <MobileLink href="/projects" title="Projects" onClick={openNav} />
+              <MobileLink href="/life" title="Life" onClick={openNav} />
+              <MobileLink href="/music" title="Music" onClick={openNav} />
               <MobileLink
                 href="/guestbook"
                 title="Guestbook"
-                onClick={() => setOpen(!open)}
+                onClick={openNav}
               />
-              <MobileLink
-                href="/theme"
-                title="Themes"
-                onClick={() => setOpen(!open)}
-              />
+              <MobileLink href="/theme" title="Themes" onClick={openNav} />
             </motion.ul>
           </ul>
         </nav>

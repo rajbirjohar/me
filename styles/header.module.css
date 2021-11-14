@@ -1,7 +1,7 @@
 .nav,
 .mobilenav {
   width: 100%;
-  height: 6rem;
+  height: 7rem;
   z-index: 10;
   margin: 0 auto;
   position: fixed;
@@ -9,7 +9,8 @@
   display: flex;
   align-items: center;
   box-shadow: none;
-  transition: height var(--transition-slow), box-shadow var(--transition-slow);
+  transition: height var(--transition-slow), top var(--transition-slow),
+    box-shadow var(--transition-slow);
   background-color: var(--header-bg);
   backdrop-filter: saturate(180%) blur(20px);
   -moz-backdrop-filter: saturate(180%) blur(20px);
@@ -25,10 +26,10 @@
 
 .header {
   width: var(--main-content);
-  padding: var(--gap-med);
   display: flex;
   align-items: center;
   margin: 0 auto;
+  padding: var(--gap-med);
   justify-content: flex-end;
   display: flex;
   align-items: center;
@@ -45,7 +46,7 @@
   margin-top: 5rem;
   background-color: var(--bg);
   overflow-x: hidden !important;
-  overflow-y: auto !important;
+  overflow-y: hidden !important;
   transition: 400ms ease-in-out;
   display: flex;
   flex-direction: column;
