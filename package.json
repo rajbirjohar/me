@@ -22,7 +22,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "framer-motion": "^4.1.17",
     "mongodb": "^4.1.4",
-    "next": "^11.0.0",
+    "next": "12",
     "next-auth": "^4.0.0-beta.6",
     "next-themes": "^0.0.14",
     "prettier": "^2.3.0",
