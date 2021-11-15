@@ -21,7 +21,15 @@
   align-items: center;
   justify-content: flex-end;
   padding-right: var(--gap-med);
+  background-color: var(--header-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  transition: background-color var(--transition-med),
+    backdrop-filter var(--transition-med);
+}
+
+.mobilenavopen {
   background-color: var(--bg);
+  backdrop-filter: none;
 }
 
 .header {
@@ -36,14 +44,13 @@
 }
 
 .notopen {
-  height: 0vh;
   width: 100vw;
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
   margin-top: 5rem;
-  background-color: var(--bg);
+  background-color: var(--bg) !important;
   overflow-x: hidden !important;
   overflow-y: hidden !important;
   transition: 500ms ease-in-out;

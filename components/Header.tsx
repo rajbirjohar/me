@@ -91,10 +91,17 @@ export default function Header() {
             <NavLink href="/projects" title="Projects" />
             <NavLink href="/life" title="Life" />
             <NavLink href="/music" title="Music" />
+            <NavLink href="/guestbook" title="Guestbook" />
           </ul>
         </nav>
       ) : (
-        <nav className={styles.mobilenav}>
+        <nav
+          className={
+            open
+              ? `${styles.mobilenav} ${styles.mobilenavopen}`
+              : `${styles.mobilenav}`
+          }
+        >
           <ul className={styles.header}>
             <div className={styles.hamburger} onClick={openNav}>
               <span
@@ -119,6 +126,11 @@ export default function Header() {
               <MobileLink href="/projects" title="Projects" onClick={openNav} />
               <MobileLink href="/life" title="Life" onClick={openNav} />
               <MobileLink href="/music" title="Music" onClick={openNav} />
+              <MobileLink
+                href="/guestbook"
+                title="Guestbook"
+                onClick={openNav}
+              />
             </motion.ul>
           </ul>
         </nav>
