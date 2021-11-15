@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ActiveLink from '@/components/ActiveLink'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { useScrollBlock } from '@/hooks/useScrollBlock'
 import styles from '@/styles/header.module.css'
-import { SwatchIcon } from '@/components/Icons'
 
 interface Size {
   width: number | undefined
@@ -120,6 +118,7 @@ export default function Header() {
             <motion.ul
               animate={open ? 'open' : 'closed'}
               variants={list}
+              initial="closed"
               className={styles.notopen}
             >
               <MobileLink href="/" title="Home" onClick={openNav} />
