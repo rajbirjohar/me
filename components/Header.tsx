@@ -5,6 +5,7 @@ import ActiveLink from '@/components/ActiveLink'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { useScrollBlock } from '@/hooks/useScrollBlock'
 import styles from '@/styles/header.module.css'
+import { SwatchIcon } from '@/components/Icons'
 
 interface Size {
   width: number | undefined
@@ -84,31 +85,16 @@ export default function Header() {
   return (
     <>
       {size.width > 668 ? (
-        <nav
-          className={
-            scroll ? `${styles.nav} ${styles.shadow}` : `${styles.nav}`
-          }
-        >
-          <div className={styles.header}>
-            <Link href="/" passHref>
-              <span className={styles.logo}>RAJBIR JOHAR</span>
-            </Link>
-            <ul className={styles.linkwrapper}>
-              <NavLink href="/projects" title="Projects" />
-              <NavLink href="/life" title="Life" />
-              <NavLink href="/music" title="Music" />
-              <NavLink href="/guestbook" title="Guestbook" />
-            </ul>
-          </div>
+        <nav className={styles.nav}>
+          <ul className={styles.header}>
+            <NavLink href="/" title="Home" />
+            <NavLink href="/projects" title="Projects" />
+            <NavLink href="/life" title="Life" />
+            <NavLink href="/music" title="Music" />
+          </ul>
         </nav>
       ) : (
-        <nav
-          className={
-            scroll
-              ? `${styles.mobilenav} ${styles.shadow}`
-              : `${styles.mobilenav}`
-          }
-        >
+        <nav className={styles.mobilenav}>
           <ul className={styles.header}>
             <div className={styles.hamburger} onClick={openNav}>
               <span
@@ -133,12 +119,6 @@ export default function Header() {
               <MobileLink href="/projects" title="Projects" onClick={openNav} />
               <MobileLink href="/life" title="Life" onClick={openNav} />
               <MobileLink href="/music" title="Music" onClick={openNav} />
-              <MobileLink
-                href="/guestbook"
-                title="Guestbook"
-                onClick={openNav}
-              />
-              <MobileLink href="/theme" title="Themes" onClick={openNav} />
             </motion.ul>
           </ul>
         </nav>

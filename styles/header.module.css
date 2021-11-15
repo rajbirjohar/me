@@ -1,44 +1,33 @@
-.nav,
-.mobilenav {
-  width: 100vw;
+.nav {
+  max-width: var(--main-content);
   height: 5rem;
+  margin: var(--gap-double) auto;
   z-index: 10;
-  margin: 0 auto;
-  position: fixed;
+  position: sticky;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  box-shadow: none;
-  transition: all var(--transition-med);
+  background-color: var(--header-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.mobilenav {
+  width: 100%;
+  position: fixed;
+  height: 5rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: var(--gap-med);
   background-color: var(--bg);
 }
 
-.shadow {
-  height: 4rem;
-  margin: 0 auto var(--small-gap);
-  box-shadow: var(--shadows-lg);
-}
-
-.logo {
-  font-weight: 600;
-  transition: color var(--transition);
-}
-.logo:hover {
-  cursor: pointer;
-  color: var(--brand);
-}
-
 .header {
-  width: var(--main-content);
-  height: 100%;
   display: flex;
   align-items: center;
-  margin: 0 auto;
-  padding: 0 var(--gap-med);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .linkwrapper {
@@ -46,14 +35,14 @@
   align-items: center;
 }
 
-.open,
 .notopen {
+  height: 0vh;
   width: 100vw;
   position: fixed;
-  z-index: 2;
+  z-index: 10;
   top: 0;
   left: 0;
-  margin-top: 4rem;
+  margin-top: 5rem;
   background-color: var(--bg);
   overflow-x: hidden !important;
   overflow-y: hidden !important;
@@ -66,18 +55,10 @@
   font-size: 1.2rem;
 }
 
-.open {
-  height: 100%;
-  padding-top: var(--gap-med);
-}
-
-.notopen {
-  height: 0vh;
-}
-
 .link {
   list-style: none;
-  margin: 0 0 0 var(--gap-med);
+  padding: none;
+  margin: 0 var(--gap-med) 0 0;
 }
 
 .hamburger {
@@ -101,6 +82,24 @@
   transition: var(--transition-med);
 }
 
+.button {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-1);
+  color: var(--fg);
+  transition: all var(--transition);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--accent-2);
+}
+.button svg {
+  padding: 0;
+}
 .onclick {
   transform: rotate(45deg) translateY(0.5rem);
   transform-origin: center;
@@ -109,14 +108,4 @@
 .onclick2 {
   transform: rotate(-45deg) translateY(-0.5rem);
   transform-origin: center;
-}
-
-@media (max-width: 668px) {
-  .header {
-    justify-content: flex-end;
-  }
-  .link {
-    padding-top: 0.5rem;
-    margin-left: -1rem;
-  }
 }

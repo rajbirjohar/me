@@ -45,7 +45,7 @@
   --language: #f5a564;
   --language-alt: #da925717;
   --shadow-color: rgba(0, 0, 0, 0.062);
-  --header-bg: #0c1b1b;
+  --header-bg: #0c1b1bd7;
 
   /* Shadows */
   --shadows-sm: 0 1px 2px 0 var(--shadow-color);
