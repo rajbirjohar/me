@@ -10,13 +10,13 @@
   border-radius: 50%;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 668px) {
   .hero {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   .content {
-    padding-top: var(--gap-half);
     padding-right: 0;
+    padding-bottom: var(--gap-double);
   }
   .title {
     line-height: 1.5;

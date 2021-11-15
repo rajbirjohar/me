@@ -63,7 +63,7 @@
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 668px) {
   .dashboard {
     grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 0;

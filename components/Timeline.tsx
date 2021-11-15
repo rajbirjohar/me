@@ -123,6 +123,18 @@ export default function Timeline() {
     <>
       <Year>2021</Year>
       <ul className={styles.list}>
+        <Step title="Launched Nexus @ UCR" icon={<StarIcon />}>
+          With a team of five, we launched{' '}
+          <a
+            href="https://nexus-ucr.vercel.app"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Nexus
+          </a>{' '}
+          first ever student driven review site at UCR. We wanted to provide a
+          medium where students can provide and learn from experiences.
+        </Step>
         <Step title="Roadtrip to San Francisco" icon={<LocationIcon />}>
           Drove up north to visit a friend and experience the city.
         </Step>

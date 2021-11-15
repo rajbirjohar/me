@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ActiveLink from '@/components/ActiveLink'
 import { useWindowSize } from '@/hooks/useWindowSize'
@@ -40,7 +41,7 @@ const listItems = {
   },
 }
 
-const Link = ({ href, title }) => {
+const NavLink = ({ href, title }) => {
   return (
     <li className={styles.link}>
       <ActiveLink activeClassName="active" href={href}>
@@ -82,19 +83,23 @@ export default function Header() {
 
   return (
     <>
-      {size.width > 960 ? (
+      {size.width > 668 ? (
         <nav
           className={
             scroll ? `${styles.nav} ${styles.shadow}` : `${styles.nav}`
           }
         >
-          <ul className={styles.header}>
-            <Link href="/" title="Home" />
-            <Link href="/projects" title="Projects" />
-            <Link href="/life" title="Life" />
-            <Link href="/music" title="Music" />
-            <Link href="/guestbook" title="Guestbook" />
-          </ul>
+          <div className={styles.header}>
+            <Link href="/" passHref>
+              <span className={styles.logo}>RAJBIR JOHAR</span>
+            </Link>
+            <ul className={styles.linkwrapper}>
+              <NavLink href="/projects" title="Projects" />
+              <NavLink href="/life" title="Life" />
+              <NavLink href="/music" title="Music" />
+              <NavLink href="/guestbook" title="Guestbook" />
+            </ul>
+          </div>
         </nav>
       ) : (
         <nav

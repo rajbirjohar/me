@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap');
 @import './inter.css';
 
 :root {
@@ -9,12 +10,14 @@
   --gap-med: 1.5rem;
   --small-gap: 4rem;
   --big-gap: 4rem;
-  --main-content: 48rem;
+  --main-content: 50rem;
   --radius-sm: 5px;
   --radius: 8px;
   --inline-radius: 5px;
 
   /* Typography */
+  --font-head: 'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
@@ -26,7 +29,7 @@
   --transition-slow: 0.3s ease-in-out;
 
   /* Dark Mode Colors */
-  --bg: #111;
+  --bg: #0c1b1b;
   --fg: #fafbfc;
   --accent-1: #222;
   --accent-2: #333;
@@ -36,13 +39,13 @@
   --accent-6: #bfbfbf;
   --accent-7: #eaeaea;
   --accent-8: #fafafa;
-  --brand: #fc8181;
+  --brand: #f5a564;
   --modify: #fafbfc;
   --delete: #fc8181;
-  --language: #fed7d7;
-  --language-alt: #362525;
-  --shadow-color: rgba(0, 0, 0, 0.15);
-  --header-bg: rgba(17, 17, 17, 0.85);
+  --language: #f5a564;
+  --language-alt: #da925717;
+  --shadow-color: rgba(0, 0, 0, 0.062);
+  --header-bg: #0c1b1b;
 
   /* Shadows */
   --shadows-sm: 0 1px 2px 0 var(--shadow-color);
@@ -56,7 +59,7 @@
 
 [data-theme='light'] {
   --bg: #fff;
-  --fg: #000;
+  --fg: #141414;
   --accent-1: #fafafa;
   --accent-2: #eaeaea;
   --accent-3: #999;
@@ -65,11 +68,11 @@
   --accent-6: #444;
   --accent-7: #333;
   --accent-8: #111;
-  --brand: #319795;
-  --modify: #319795;
+  --brand: rgba(59, 130, 246, 0.75);
+  --modify: rgba(59, 130, 246, 0.75);
   --delete: #e53e3e;
-  --language: #1d4044;
-  --language-alt: #b2f5ea;
+  --language: #1a3766;
+  --language-alt: #c6dafa81;
   --shadow-color: rgba(224, 226, 230, 0.15);
   --header-bg: hsla(0, 0%, 100%, 0.85);
 }
@@ -99,10 +102,10 @@
   --fg: #eceff4;
   --accent-1: #2e3440;
   --accent-2: #3b4252;
-  --accent-3: #434c5e;
-  --accent-4: #4c566a;
-  --accent-5: #6c7079;
-  --accent-6: #81858c;
+  --accent-3: #4f596e;
+  --accent-4: #525d74;
+  --accent-5: #878c97;
+  --accent-6: #bac0cc;
   --accent-7: #d8dee9;
   --accent-8: #e5e9f0;
   --brand: #8fbcbb;
@@ -159,7 +162,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-sans);
+  font-family: var(--font-head);
   font-weight: 600;
 }
 
@@ -329,7 +332,7 @@ input[type='text']:disabled::placeholder {
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 668px) {
   html,
   body {
     font-size: 15px;

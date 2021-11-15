@@ -35,8 +35,8 @@ export default function Projects() {
           </p>
           <p>
             Frontend Developer based in Southern California, typing on bespoke
-            keyboards, playing through <i>Ratchet and Clank: Rift Apart</i>, and
-            perfecting the grilled cheese.
+            keyboards, playing through <i>God of War</i>, and perfecting the
+            grilled cheese.
           </p>
           <p>
             Currently studying Computer Science but loving web development. Say

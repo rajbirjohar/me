@@ -1,37 +1,49 @@
 .nav,
 .mobilenav {
-  width: 100%;
-  height: 7rem;
+  width: 100vw;
+  height: 5rem;
   z-index: 10;
   margin: 0 auto;
   position: fixed;
   top: 0;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   box-shadow: none;
-  transition: height var(--transition-med), box-shadow var(--transition-med);
-  background-color: var(--header-bg);
-  backdrop-filter: saturate(180%) blur(20px);
-  -moz-backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  transition: all var(--transition-med);
+  background-color: var(--bg);
 }
 
 .shadow {
-  height: 5rem;
+  height: 4rem;
+  margin: 0 auto var(--small-gap);
   box-shadow: var(--shadows-lg);
-  background-color: var(--bg);
+}
+
+.logo {
+  font-weight: 600;
+  transition: color var(--transition);
+}
+.logo:hover {
+  cursor: pointer;
+  color: var(--brand);
 }
 
 .header {
   width: var(--main-content);
+  height: 100%;
   display: flex;
   align-items: center;
   margin: 0 auto;
-  padding: var(--gap-med);
-  justify-content: flex-end;
+  padding: 0 var(--gap-med);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.linkwrapper {
+  display: flex;
+  align-items: center;
 }
 
 .open,
@@ -41,7 +53,7 @@
   z-index: 2;
   top: 0;
   left: 0;
-  margin-top: 5rem;
+  margin-top: 4rem;
   background-color: var(--bg);
   overflow-x: hidden !important;
   overflow-y: hidden !important;
@@ -56,6 +68,7 @@
 
 .open {
   height: 100%;
+  padding-top: var(--gap-med);
 }
 
 .notopen {
@@ -98,8 +111,12 @@
   transform-origin: center;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 668px) {
+  .header {
+    justify-content: flex-end;
+  }
   .link {
-    margin: 0;
+    padding-top: 0.5rem;
+    margin-left: -1rem;
   }
 }

@@ -54,7 +54,7 @@
   text-align: center;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 668px) {
   .contact {
     flex-direction: column;
   }
