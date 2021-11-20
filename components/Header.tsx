@@ -87,7 +87,7 @@ export default function Header() {
           <ul className={styles.header}>
             <NavLink href="/" title="Home" />
             <NavLink href="/projects" title="Projects" />
-            <NavLink href="/life" title="Life" />
+            <NavLink href="/experiences" title="Experiences" />
             <NavLink href="/music" title="Music" />
             <NavLink href="/guestbook" title="Guestbook" />
           </ul>
@@ -123,7 +123,11 @@ export default function Header() {
             >
               <MobileLink href="/" title="Home" onClick={openNav} />
               <MobileLink href="/projects" title="Projects" onClick={openNav} />
-              <MobileLink href="/life" title="Life" onClick={openNav} />
+              <MobileLink
+                href="/experiences"
+                title="Experiences"
+                onClick={openNav}
+              />
               <MobileLink href="/music" title="Music" onClick={openNav} />
               <MobileLink
                 href="/guestbook"

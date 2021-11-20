@@ -25,6 +25,11 @@ export default function Projects() {
         </p>
         <Dashboard />
         <h2>Featured</h2>
+        <p>
+          My passion written in code. My perserverance through late nights,
+          early mornings, and plenty of mochas. I hope you enjoy them just as
+          much as I had creating them.
+        </p>
         <FeaturedProjects />
         <h2>Contributed</h2>
         <p>
