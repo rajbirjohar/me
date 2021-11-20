@@ -1,3 +1,22 @@
+.featured {
+  margin: 0;
+  gap: var(--gap-med);
+}
+
+.featuredimagewrapper {
+  margin: 0;
+  box-shadow: none;
+  transition: all 200ms ease-in-out;
+}
+
+.featuredimagewrapper:hover {
+  box-shadow: var(--shadows-lg) !important;
+}
+
+.featuredimage {
+  border-radius: var(--radius);
+}
+
 .card {
   border: 2px solid var(--accent-1);
   border-radius: var(--radius);

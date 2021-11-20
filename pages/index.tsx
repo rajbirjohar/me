@@ -39,8 +39,16 @@ export default function Projects() {
             grilled cheese.
           </p>
           <p>
-            Currently studying Computer Science but loving web development. Say
-            hello at <a onClick={copyEmail}>hello@rajbir.io</a>.
+            Currently studying Computer Science but loving web development.
+            Check out my recent project{' '}
+            <a
+              href="https://nexus-ucr.vercel.app"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Nexus
+            </a>
+            .
           </p>
           <p>
             Feel free to sign my <Link href="/guestbook">Guestbook</Link> while

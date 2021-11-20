@@ -60,8 +60,8 @@ export const RightArrow = () => (
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth="2"
-      d="M9 5l7 7-7 7"
+      strokeWidth="3.5"
+      d="M14 5l7 7m0 0l-7 7m7-7H3"
     />
   </svg>
 )

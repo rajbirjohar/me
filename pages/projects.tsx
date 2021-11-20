@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '@/components/Layout'
+import FeaturedProjects from '@/components/Projects/FeaturedProjects'
 import ProjectList from '@/components/Projects/ProjectList'
 import Dashboard from '@/components/Projects/Dashboard'
 
@@ -23,6 +24,8 @@ export default function Projects() {
           .
         </p>
         <Dashboard />
+        <h2>Featured</h2>
+        <FeaturedProjects />
         <h2>Contributed</h2>
         <p>
           A list of the top ten projects I created or contributed to sorted by
