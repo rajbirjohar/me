@@ -1,18 +1,7 @@
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
 import Artist from '@/components/Spotify/Artist'
-import styles from '@/styles/track.module.css'
-
-const Skeleton = () => {
-  return (
-    <div className={styles.skeleton}>
-      <div className={styles.dummyimage}></div>
-      <div className={styles.dummycontent}>
-        <p className={styles.dummydescription}></p>
-      </div>
-    </div>
-  )
-}
+import { Loader } from '@/components/Spotify/Loader'
 
 export default function TopArtists() {
   const { error, data } = useSWR('/api/topartists', fetcher)
@@ -27,11 +16,7 @@ export default function TopArtists() {
   if (!data) {
     return (
       <>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
+        <Loader />
       </>
     )
   } else

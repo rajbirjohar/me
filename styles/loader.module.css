@@ -64,6 +64,43 @@
   margin-right: 5px;
 }
 
+/* Track Loader */
+
+.trackskeleton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.trackdummyimage {
+  height: 75px;
+  width: 75px;
+  margin-right: 1rem !important;
+  animation: pulse 2s infinite;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent-2);
+}
+
+.trackdummycontent {
+  flex: 1;
+}
+
+.trackdummytitle,
+.trackdummydescription {
+  height: 20px;
+  animation: pulse 2s infinite;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent-2);
+}
+
+.trackdummytitle {
+  width: 50%;
+}
+.trackdummydescription {
+  width: 25%;
+}
+
 @keyframes pulse {
   0% {
     opacity: 1;

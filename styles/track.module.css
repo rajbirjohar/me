@@ -30,40 +30,5 @@
 }
 
 .rounded {
-  border-radius: 5px;
-}
-
-.skeleton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.dummyimage {
-  height: 75px;
-  width: 75px;
-  margin-right: 1rem !important;
-  animation: pulse 2s infinite;
-  border-radius: var(--radius-sm);
-  background-color: var(--accent-2);
-}
-
-.dummycontent {
-  flex: 1;
-}
-
-.dummytitle,
-.dummydescription {
-  height: 20px;
-  animation: pulse 2s infinite;
-  border-radius: var(--radius-sm);
-  background-color: var(--accent-2);
-}
-
-.dummytitle {
-  width: 50%;
-}
-.dummydescription {
-  width: 25%;
+  border-radius: var(--radius);
 }
