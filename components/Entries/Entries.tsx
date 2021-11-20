@@ -2,23 +2,7 @@ import useSWR from 'swr'
 import TimeAgo from 'react-timeago'
 import fetcher from '@/lib/fetcher'
 import Entry from '@/components/Entries/Entry'
-import { ReplyIcon } from '@/components/Icons'
-import styles from '@/styles/guestbook.module.css'
-
-const Skeleton = () => {
-  return (
-    <div className={styles.skeleton}>
-      <p className={styles.dummydescription}></p>
-      <br />
-      <span className={styles.dummyauthor}>
-        <svg className={styles.replyicon}>
-          <ReplyIcon />
-        </svg>
-        <p className={styles.dummytitle}></p>
-      </span>
-    </div>
-  )
-}
+import Loader from '@/components/Entries/Loader'
 
 export default function Entries() {
   const { data, error } = useSWR('/api/entries', fetcher, {
@@ -35,11 +19,7 @@ export default function Entries() {
   if (!data) {
     return (
       <>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
+        <Loader />
       </>
     )
   }

@@ -1,6 +1,6 @@
 /* Projects Loader */
 
-.skeleton {
+.projectskeleton {
   border: 2px solid var(--accent-1);
   border-radius: var(--radius);
   padding: var(--gap);
@@ -12,24 +12,56 @@
   transition: all var(--transition);
 }
 
-.dummytitle,
-.dummydescription,
-.dummylanguage {
+.projectdummytitle,
+.projectdummydescription,
+.projectdummylanguage {
   height: 25px;
-  margin: var(--gap-half) !important;
+  margin: var(--gap-half) 0 !important;
   animation: pulse 2s infinite;
   border-radius: var(--radius-sm);
   background-color: var(--accent-2);
 }
 
-.dummytitle {
+.projectdummytitle {
   width: 50%;
 }
-.dummydescription {
+.projectdummydescription {
   width: 75%;
 }
-.dummylanguage {
+.projectdummylanguage {
   width: 10%;
+}
+
+/* Guestbook Loader */
+
+.guestbookskeleton {
+  display: block;
+}
+
+.guestbookdummyauthor {
+  display: flex;
+  align-items: center;
+}
+
+.guestbookdummytitle,
+.guestbookdummydescription {
+  height: 25px;
+  animation: pulse 2s infinite;
+  margin: 0.05 0 !important;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent-2);
+}
+
+.guestbookdummytitle {
+  width: 25%;
+}
+.guestbookdummydescription {
+  width: 75%;
+}
+
+.guestbookdummyauthor svg {
+  color: var(--accent-2);
+  margin-right: 5px;
 }
 
 @keyframes pulse {

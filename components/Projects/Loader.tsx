@@ -2,11 +2,11 @@ import styles from '@/styles/loader.module.css'
 
 const Skeleton = () => {
   return (
-    <div className={styles.skeleton}>
-      <p className={styles.dummytitle}></p>
-      <p className={styles.dummydescription}></p>
-      <p className={styles.dummydescription}></p>
-      <p className={styles.dummylanguage}></p>
+    <div className={styles.projectskeleton}>
+      <p className={styles.projectdummytitle}></p>
+      <p className={styles.projectdummydescription}></p>
+      <p className={styles.projectdummydescription}></p>
+      <p className={styles.projectdummylanguage}></p>
     </div>
   )
 }
