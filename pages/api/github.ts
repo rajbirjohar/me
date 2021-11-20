@@ -1,6 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 const { Octokit } = require('@octokit/rest')
 
-const githubFetch = async (req, res) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const octokit = new Octokit({
     auth: process.env.GITHUB_AUTH_TOKEN,
   })
@@ -64,5 +68,3 @@ const githubFetch = async (req, res) => {
     portfolioLastUpdated: portfolioUpdated,
   })
 }
-
-export default githubFetch

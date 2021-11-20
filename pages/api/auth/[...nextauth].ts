@@ -13,14 +13,10 @@ export default NextAuth({
         return {
           id: profile.id,
           name: profile.login,
-          email: profile.email, // email can be null! Need to fix this
+          email: profile.email,
           image: profile.avatar_url,
         }
       },
     }),
-    // ...add more providers here
   ],
-
-  // A database is optional, but required to persist accounts in a database
-  // database: process.env.MONGODB_URI,
 })

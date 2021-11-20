@@ -1,6 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import { getTopArtists } from '@/lib/spotify'
 
-const topArtists = async (_, res) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const response = await getTopArtists()
   const { items } = await response.json()
 
@@ -12,5 +16,3 @@ const topArtists = async (_, res) => {
 
   return res.status(200).json({ artists })
 }
-
-export default topArtists

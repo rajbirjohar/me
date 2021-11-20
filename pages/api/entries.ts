@@ -1,6 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import clientPromise from 'lib/mongodb'
 
-const entriesFetch = async (req, res) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const isConnected = await clientPromise
   const db = isConnected.db(process.env.MONGODB_DB)
 
@@ -12,5 +16,3 @@ const entriesFetch = async (req, res) => {
 
   return res.status(200).json({ entries })
 }
-
-export default entriesFetch
