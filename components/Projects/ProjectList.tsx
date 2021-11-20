@@ -3,19 +3,9 @@ import useSWR from 'swr'
 import TimeAgo from 'react-timeago'
 import fetcher from '@/lib/fetcher'
 import ProjectCard from '@/components/Projects/ProjectCard'
+import Loader from '@/components/Projects/Loader'
 import styles from '@/styles/projects.module.css'
 import { SearchIcon } from '@/components/Icons'
-
-const Skeleton = () => {
-  return (
-    <div className={styles.skeleton}>
-      <p className={styles.dummytitle}></p>
-      <p className={styles.dummydescription}></p>
-      <p className={styles.dummydescription}></p>
-      <p className={styles.dummylanguage}></p>
-    </div>
-  )
-}
 
 export default function ProjectList() {
   const [searchValue, setSearchValue] = useState('')
@@ -41,12 +31,8 @@ export default function ProjectList() {
           <svg className={styles.searchIcon}>
             <SearchIcon />
           </svg>
+          <Loader />
         </div>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
       </>
     )
 

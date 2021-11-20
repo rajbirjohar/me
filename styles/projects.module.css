@@ -1,5 +1,4 @@
-.card,
-.skeleton {
+.card {
   border: 2px solid var(--accent-1);
   border-radius: var(--radius);
   padding: 0 var(--gap);
@@ -47,7 +46,7 @@
   margin: var(--gap-half) 0 var(--gap) 0;
   background-color: var(--language-alt);
   max-width: max-content;
-  padding: 0px 8px;
+  padding: var(--gap-quarter) var(--gap-half);
   border-radius: var(--radius-sm);
   color: var(--language);
 }
@@ -78,42 +77,10 @@
   color: var(--accent-5) !important;
 }
 
-.dummytitle,
-.dummydescription,
-.dummylanguage {
-  height: 25px;
-  margin-bottom: 0.5rem !important;
-  animation: pulse 2s infinite;
-  border-radius: var(--radius-sm);
-  background-color: var(--accent-2);
-}
-
-.dummytitle {
-  width: 50%;
-}
-.dummydescription {
-  width: 75%;
-}
-.dummylanguage {
-  width: 10%;
-}
-
 .date {
   color: var(--accent-5);
   font-weight: 400;
   margin: 0;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @media (max-width: 668px) {

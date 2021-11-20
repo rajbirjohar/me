@@ -1,0 +1,45 @@
+/* Projects Loader */
+
+.skeleton {
+  border: 2px solid var(--accent-1);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  margin-bottom: var(--gap-half);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: var(--bg);
+  transition: all var(--transition);
+}
+
+.dummytitle,
+.dummydescription,
+.dummylanguage {
+  height: 25px;
+  margin: var(--gap-half) !important;
+  animation: pulse 2s infinite;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent-2);
+}
+
+.dummytitle {
+  width: 50%;
+}
+.dummydescription {
+  width: 75%;
+}
+.dummylanguage {
+  width: 10%;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
