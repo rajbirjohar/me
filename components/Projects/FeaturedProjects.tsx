@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import NexusHero from '@/public/assets/NexusHero.png'
+import NexusHero from '@/public/assets/NexusLanding.png'
 import styles from '@/styles/projects.module.css'
 
 export default function FeaturedProjects() {
