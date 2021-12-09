@@ -121,6 +121,12 @@ export default function Timeline() {
 
   return (
     <>
+      <Year>2022</Year>
+      <ul className={styles.list}>
+        <Step title="Joined Inventives" icon={<StarIcon />}>
+          First big boy job! Time to put my skills to the (real world) test.
+        </Step>
+      </ul>
       <Year>2021</Year>
       <ul className={styles.list}>
         <Step title="Launched Nexus @ UCR" icon={<StarIcon />}>
