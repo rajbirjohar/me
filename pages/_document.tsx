@@ -11,6 +11,12 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta
+            name="description"
+            content="Hello! I'm Rajbir and this is my portfolio. Check out my cool collection of some of my neat projects and ideas."
+          />
+          <meta property="og:image" content="/images/icon_logo.png" />
+          <meta name="og:title" content="Rajbir Johar | Portfolio" />
           <link
             rel="apple-touch-icon-precomposed"
             sizes="57x57"
@@ -81,7 +87,6 @@ class MyDocument extends Document {
             href="favicon-128.png"
             sizes="128x128"
           />
-          <meta name="application-name" content="&nbsp;" />
           <meta name="msapplication-TileColor" content="#FFFFFF" />
           <meta name="msapplication-TileImage" content="mstile-144x144.png" />
           <meta
@@ -100,12 +105,6 @@ class MyDocument extends Document {
             name="msapplication-square310x310logo"
             content="mstile-310x310.png"
           />
-          <meta
-            name="description"
-            content="Hello! I'm Rajbir and this is my portfolio. Check out my cool collection some neat projects and ideas."
-          />
-          <meta property="og:image" content="/images/icon_logo.png" />
-          <meta name="og:title" content="Rajbir Johar | Portfolio" />
         </Head>
         <body>
           <Main />
