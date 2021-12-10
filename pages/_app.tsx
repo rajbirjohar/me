@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import '@/styles/globals.css'
 // import { AnimatePresence } from 'framer-motion'
 // router
+import ParticlesCanvas from '@/components/Particles'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -16,6 +17,7 @@ function App({ Component, pageProps }: AppProps) {
         enableSystem
         themes={['light', 'dark', 'sepia', 'nord']}
       >
+        <ParticlesCanvas />
         <Toaster />
         <Header />
         {/* <AnimatePresence exitBeforeEnter>  key={router.route} */}
