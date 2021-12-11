@@ -23,6 +23,7 @@ function App({ Component, pageProps }: AppProps) {
         {/* <AnimatePresence exitBeforeEnter>  key={router.route} */}
         <Component {...pageProps} />
         {/* </AnimatePresence> */}
+
         <Footer />
       </ThemeProvider>
     </SessionProvider>

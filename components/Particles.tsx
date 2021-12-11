@@ -39,7 +39,7 @@ const ParticlesCanvas = () => {
         },
         particles: {
           color: {
-            value: '#CBD5E1',
+            value: '#d5dbe3',
           },
           links: {
             enable: false,
