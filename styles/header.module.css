@@ -21,15 +21,9 @@
   align-items: center;
   justify-content: flex-end;
   padding-right: var(--gap-med);
-  background-color: var(--header-bg);
-  backdrop-filter: saturate(180%) blur(20px);
+  background-color: transparent;
   transition: background-color var(--transition-med),
     backdrop-filter var(--transition-med);
-}
-
-.mobilenavopen {
-  background-color: var(--bg);
-  backdrop-filter: none;
 }
 
 .header {
@@ -45,15 +39,16 @@
 
 .notopen {
   width: 100vw;
+  height: 100vh;
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
-  margin-top: 5rem;
+  padding-top: 5rem;
   background-color: var(--bg) !important;
   overflow-x: hidden !important;
   overflow-y: hidden !important;
-  transition: 500ms ease-in-out;
+  transition: 300ms ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -72,41 +67,22 @@
   margin: 0;
   width: 2rem;
   height: 2rem;
-  background-color: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 15;
 }
 
 .inner {
   height: 0.2rem;
   width: 2rem;
   background-color: var(--fg);
-  margin: 0.25rem 0;
+  margin: 0.25rem;
   border-radius: var(--radius);
-  transition: var(--transition-med);
+  transition: all 400ms ease-in-out;
 }
 
-.button {
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accent-1);
-  color: var(--fg);
-  transition: all var(--transition);
-  border-radius: var(--radius);
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: var(--accent-2);
-}
-.button svg {
-  padding: 0;
-}
 .onclick {
   transform: rotate(45deg) translateY(0.5rem);
   transform-origin: center;

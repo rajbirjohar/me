@@ -12,19 +12,13 @@ interface Size {
 
 const list = {
   closed: {
-    opacity: 1,
-    height: '0vh',
-    transition: {
-      duration: 0.0005,
-    },
+    opacity: 0,
   },
   open: {
     opacity: 1,
-    height: '100vh',
     transition: {
-      duration: 0.0005,
-      delayChildren: 0.05,
-      staggerChildren: 0.05,
+      delayChildren: 0.5,
+      staggerChildren: 0.15,
     },
   },
 }
@@ -32,11 +26,9 @@ const list = {
 const listItems = {
   closed: {
     opacity: 0,
-    x: -15,
   },
   open: {
     opacity: 1,
-    x: 0,
   },
 }
 
