@@ -68,8 +68,8 @@
   --accent-6: #444;
   --accent-7: #333;
   --accent-8: #111;
-  --brand: rgba(59, 130, 246, 0.75);
-  --modify: rgba(59, 130, 246, 0.75);
+  --brand: rgb(129, 176, 250);
+  --modify: rgb(129, 176, 250);
   --delete: #e53e3e;
   --language: #1a3766;
   --language-alt: #c6dafa81;
@@ -153,7 +153,7 @@ body {
 p,
 li {
   font-size: 1.125rem;
-  color: var(--accent-7);
+  color: var(--accent-8);
 }
 
 h1,

@@ -23,29 +23,31 @@
 .loginbutton {
   background-color: var(--brand);
   color: var(--bg);
-  border: 1px solid var(--brand);
+  border: 2px solid var(--brand);
 }
 .loginbutton:hover {
   background-color: var(--bg);
   color: var(--brand);
 }
+.inputWrapper {
+  display: flex;
+  gap: var(--gap-half);
+  margin: var(--gap) 0;
+}
 .signbutton {
-  margin: var(--gap-half) 0 var(--gap-half) var(--gap-half);
+  width: max-content;
   background-color: var(--brand);
   color: var(--bg);
-  border: 1px solid var(--brand);
+  border: 2px solid var(--brand);
   padding: var(--gap-half) var(--gap);
-  width: 9rem;
 }
 .signbutton:hover {
   background-color: var(--bg);
   color: var(--brand);
 }
 .modifybutton {
-  margin: var(--gap-half) 0 var(--gap-half) var(--gap-half);
   background-color: var(--accent-1);
   color: var(--brand);
-  border: 1px solid var(--accent-1);
   padding: var(--gap-half) var(--gap);
   width: 9rem;
 }
@@ -62,17 +64,12 @@
   color: var(--modify);
 }
 
-.inputWrapper {
-  display: flex;
-}
-
 .input {
-  border: 2px solid var(--accent-2) !important;
   flex: 1;
-  padding: var(--gap) var(--gap);
+  border: 2px solid var(--accent-2) !important;
+  padding: var(--gap);
   font-size: 1.125rem;
   border-radius: var(--radius);
-  margin: var(--gap-half) 0;
   background-color: var(--accent-1) !important;
 }
 .input::placeholder {
@@ -80,8 +77,16 @@
 }
 
 .author {
+  color: var(--accent-3);
+  font-size: 1rem;
+}
+
+.name {
   color: var(--accent-5);
-  font-size: 1.05rem;
+}
+
+.divider {
+  color: var(--accent-2);
 }
 
 .author svg {

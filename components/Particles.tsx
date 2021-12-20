@@ -56,11 +56,7 @@ const ParticlesCanvas = () => {
             straight: false,
           },
           number: {
-            density: {
-              enable: true,
-              value_area: 1200,
-            },
-            value: 80,
+            value: 50,
           },
           opacity: {
             value: 0.8,

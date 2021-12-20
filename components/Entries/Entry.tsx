@@ -5,6 +5,10 @@ import { motion } from 'framer-motion'
 import { ReplyIcon } from '@/components/Icons'
 import styles from '@/styles/guestbook.module.css'
 
+const Divider = () => {
+  return <span className={styles.divider}> / </span>
+}
+
 export default function Entry({ name, entry, timestamp, entryId }) {
   const { data: session } = useSession()
   const [newEntry, setNewEntry] = useState('')
@@ -15,11 +19,11 @@ export default function Entry({ name, entry, timestamp, entryId }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    if (newEntry !== '') {
+    if (newEntry === '') {
+      toast.error('Please fill out your message.')
+    } else {
       const data = { entryId, newEntry }
       sendData(data)
-    } else {
-      toast.error('Please fill out your message.')
     }
     setNewEntry('')
   }
@@ -53,7 +57,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
     })
     await response.json()
     if (response.status === 200) {
-      toast.success('Deleted entry!')
+      toast.success('Deleted entry.')
     } else {
       toast.error('Uh oh. Something went wrong.')
     }
@@ -67,17 +71,19 @@ export default function Entry({ name, entry, timestamp, entryId }) {
         {entry}
         <br />
         <span className={styles.author}>
-          <svg className={styles.replyicon}>
+          {/* <svg className={styles.replyicon}>
             <ReplyIcon />
-          </svg>
-          {name} / {timestamp}{' '}
+          </svg> */}
+          <span className={styles.name}>{name}</span>
+          <Divider />
+          {timestamp}
           {session && session.user.name === name && (
             <>
-              /{' '}
+              <Divider />
               <a className={styles.modify} onClick={() => showModify(!modify)}>
                 Modify
-              </a>{' '}
-              /{' '}
+              </a>
+              <Divider />
               <a className={styles.delete} onClick={deleteEntry}>
                 Delete
               </a>
