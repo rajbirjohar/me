@@ -18,10 +18,10 @@ export default function EntryForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    if (entry._entry !== '') {
-      sendData(entry)
-    } else {
+    if (entry._entry === '') {
       toast.error('Please fill out your message.')
+    } else {
+      sendData(entry)
     }
     setEntry({ ...entry, _entry: '' })
   }
@@ -55,7 +55,7 @@ export default function EntryForm() {
         type="text"
         placeholder="Your entry here..."
         className={styles.input}
-      />
+      ></input>
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.995 }}
