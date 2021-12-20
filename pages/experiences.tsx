@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
 import Timeline from '@/components/Timeline'
+import TheOfficeQuote from '@/components/TheOfficeQuote'
 
 export default function Life() {
   return (
@@ -18,6 +19,7 @@ export default function Life() {
           <Link href="/interests">pictures</Link> to go along with it.
         </p>
         <Timeline />
+        <TheOfficeQuote />
       </section>
     </Layout>
   )
