@@ -29,35 +29,7 @@
   --transition-slow: 0.3s ease-in-out;
 
   /* Dark Mode Colors */
-  --bg: #0c1b1b;
-  --fg: #fafbfc;
-  --accent-1: #222;
-  --accent-2: #333;
-  --accent-3: #444;
-  --accent-4: #666;
-  --accent-5: #888;
-  --accent-6: #bfbfbf;
-  --accent-7: #eaeaea;
-  --accent-8: #fafafa;
-  --brand: #f5a564;
-  --modify: #fafbfc;
-  --delete: #fc8181;
-  --language: #f5a564;
-  --language-alt: #da925717;
-  --shadow-color: rgba(0, 0, 0, 0.062);
-  --header-bg: #0c1b1bd7;
 
-  /* Shadows */
-  --shadows-sm: 0 1px 2px 0 var(--shadow-color);
-  --shadows-base: 0 1px 3px 0 var(--shadow-color),
-    0 1px 2px 0 var(--shadow-color);
-  --shadows-lg: 0 10px 15px -3px var(--shadow-color),
-    0 4px 6px -2px var(--shadow-color);
-  --shadows-xl: 0 20px 25px -5px var(--shadow-color),
-    0 10px 10px -5px var(--shadow-color);
-}
-
-[data-theme='light'] {
   --bg: #fff;
   --fg: #141414;
   --accent-1: #fafafa;
@@ -75,6 +47,35 @@
   --language-alt: #c6dafa81;
   --shadow-color: rgba(224, 226, 230, 0.15);
   --header-bg: hsla(0, 0%, 100%, 0.85);
+
+  /* Shadows */
+  --shadows-sm: 0 1px 2px 0 var(--shadow-color);
+  --shadows-base: 0 1px 3px 0 var(--shadow-color),
+    0 1px 2px 0 var(--shadow-color);
+  --shadows-lg: 0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
+  --shadows-xl: 0 20px 25px -5px var(--shadow-color),
+    0 10px 10px -5px var(--shadow-color);
+}
+
+[data-theme='dark'] {
+  --bg: #0c1b1b;
+  --fg: #fafbfc;
+  --accent-1: #222;
+  --accent-2: #333;
+  --accent-3: #444;
+  --accent-4: #666;
+  --accent-5: #888;
+  --accent-6: #bfbfbf;
+  --accent-7: #eaeaea;
+  --accent-8: #fafafa;
+  --brand: #f5a564;
+  --modify: #fafbfc;
+  --delete: #fc8181;
+  --language: #f5a564;
+  --language-alt: #da925717;
+  --shadow-color: rgba(0, 0, 0, 0.062);
+  --header-bg: #0c1b1bd7;
 }
 
 [data-theme='sepia'] {
@@ -115,6 +116,13 @@
   --language-alt: #4c566a;
   --shadow-color: rgba(20, 20, 20, 0.15);
   --header-bg: rgba(36, 41, 51, 0.85);
+}
+
+[data-theme='honey'] {
+  --brand: #d4ae03;
+  --modify: #d4ae03;
+  --language: #e7c429;
+  --language-alt: #da925717;
 }
 
 * {
