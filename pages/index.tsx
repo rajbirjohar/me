@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { GetStaticProps } from 'next'
+import { GetStaticProps, GetServerSideProps } from 'next'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
 import clientPromise from 'lib/mongodb'
@@ -82,7 +82,7 @@ export default function Projects({ hitcount }) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const isConnected = await clientPromise
   const db = isConnected.db(process.env.MONGODB_DB)
   const hitcount = await db.collection('hitcount').find({}).toArray()
