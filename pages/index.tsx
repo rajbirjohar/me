@@ -1,26 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { GetStaticProps, GetServerSideProps } from 'next'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
+import clientPromise from 'lib/mongodb'
 import Layout from '@/components/Layout'
 import profilePic from '@/public/assets/profile.jpeg'
 import styles from '@/styles/index.module.css'
-import toast from 'react-hot-toast'
 import TimeAgo from 'react-timeago'
 
-export default function Projects() {
+export default function Projects({ hitcount }) {
   const { data } = useSWR('/api/github', fetcher)
   const loading = !data
-  function copyEmail() {
-    navigator.clipboard.writeText('hello@rajbir.io')
-    toast.success(
-      "Copied my email. Fire up your favorite mail app and let's talk.",
-      { duration: 4500 }
-    )
-    // Should probably error check but there is nearly
-    // no way this simple function can produce an error.
-  }
 
   return (
     <Layout>
@@ -55,15 +47,21 @@ export default function Projects() {
             you&#39;re here.
           </p>
           <p>
-            Lasted edited about
+            This site was lasted edited about
             {loading ? (
               <>...</>
             ) : (
               <>
                 {' '}
-                <TimeAgo date={data.portfolioLastUpdated} />.
+                <strong>
+                  <TimeAgo date={data.portfolioLastUpdated} />
+                </strong>
               </>
-            )}
+            )}{' '}
+            and awesome people have visited a total of{' '}
+            <strong>
+              {hitcount.map((hitcount) => hitcount.hitcount)} times.
+            </strong>
           </p>
         </div>
         <div className={styles.profilePic}>
@@ -82,4 +80,15 @@ export default function Projects() {
       </section>
     </Layout>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const isConnected = await clientPromise
+  const db = isConnected.db(process.env.MONGODB_DB)
+  const hitcount = await db.collection('hitcount').find({}).toArray()
+  return {
+    props: {
+      hitcount: JSON.parse(JSON.stringify(hitcount)),
+    },
+  }
 }

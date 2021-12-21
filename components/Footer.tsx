@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { SwatchIcon } from '@/components/Icons'
@@ -17,6 +18,30 @@ const ExtLink = ({ title, destination }) => {
 }
 
 export default function Footer() {
+  // Hit Counter
+  // I use a useEffect so that this function only runs
+  // once since I set an empty dependency array (It does
+  // not run/depend on any values).
+  // I placed this in the footer since I only want it to
+  // run once on initial visit (and reload) but not when
+  // visiting other pages (then going back). The footer is
+  // rendered only once.
+  useEffect(() => {
+    sendData()
+  }, [])
+
+  const sendData = async () => {
+    const response = await fetch('/api/hitcount', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({}),
+    })
+    const data = await response.json()
+    return data
+  }
+
   return (
     <footer className={styles.footer}>
       <hr />

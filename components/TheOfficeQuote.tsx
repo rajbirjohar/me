@@ -6,7 +6,7 @@ export default function TheOfficeQuote() {
 
   return (
     <div>
-      <h4>How About a Quote from The Office?</h4>
+      <h4>Enjoy An Office Quote</h4>
       {data?.id ? (
         <blockquote key={data?.id}>
           {data?.quote}{' '}
