@@ -22,6 +22,7 @@ export default function Theme() {
           <ThemeCard title="Midnight" value="dark" />
           <ThemeCard title="Sepia" value="sepia" />
           <ThemeCard title="Nord" value="nord" />
+          <ThemeCard title="Honey" value="honey" />
         </div>
       </section>
     </Layout>
