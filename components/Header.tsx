@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import ActiveLink from '@/components/ActiveLink'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { useScrollBlock } from '@/hooks/useScrollBlock'
@@ -15,16 +15,18 @@ const list = {
     opacity: 1,
     height: '0vh',
     transition: {
-      duration: 0.0005,
+      duration: 0.1,
+      staggerChildren: 0.05,
     },
   },
   open: {
     opacity: 1,
     height: '100vh',
     transition: {
-      duration: 0.0005,
-      delayChildren: 0.05,
+      duration: 0.15,
       staggerChildren: 0.05,
+      delayChildren: 0.15,
+      when: 'beforeChildren',
     },
   },
 }
@@ -32,11 +34,19 @@ const list = {
 const listItems = {
   closed: {
     opacity: 0,
-    x: -15,
+    x: -5,
+    transition: {
+      ease: 'easeInOut',
+      duration: '0.10',
+    },
   },
   open: {
     opacity: 1,
     x: 0,
+    transition: {
+      ease: 'easeInOut',
+      duration: '0.15',
+    },
   },
 }
 
@@ -115,26 +125,33 @@ export default function Header() {
                 }
               ></span>
             </div>
-            <motion.ul
-              animate={open ? 'open' : 'closed'}
-              variants={list}
-              initial="closed"
-              className={styles.notopen}
-            >
-              <MobileLink href="/" title="Home" onClick={openNav} />
-              <MobileLink href="/projects" title="Projects" onClick={openNav} />
-              <MobileLink
-                href="/experiences"
-                title="Experiences"
-                onClick={openNav}
-              />
-              <MobileLink href="/music" title="Music" onClick={openNav} />
-              <MobileLink
-                href="/guestbook"
-                title="Guestbook"
-                onClick={openNav}
-              />
-            </motion.ul>
+            <AnimatePresence exitBeforeEnter>
+              <motion.ul
+                animate={open ? 'open' : 'closed'}
+                variants={list}
+                exit="closed"
+                initial={false}
+                className={styles.notopen}
+              >
+                <MobileLink href="/" title="Home" onClick={openNav} />
+                <MobileLink
+                  href="/projects"
+                  title="Projects"
+                  onClick={openNav}
+                />
+                <MobileLink
+                  href="/experiences"
+                  title="Experiences"
+                  onClick={openNav}
+                />
+                <MobileLink href="/music" title="Music" onClick={openNav} />
+                <MobileLink
+                  href="/guestbook"
+                  title="Guestbook"
+                  onClick={openNav}
+                />
+              </motion.ul>
+            </AnimatePresence>
           </ul>
         </nav>
       )}

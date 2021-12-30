@@ -33,8 +33,8 @@ export default function Projects() {
         <FeaturedProjects />
         <h2>Contributed</h2>
         <p>
-          A list of the top ten projects I created or contributed to sorted by
-          star count.
+          A list of the top five projects I created or contributed to sorted by
+          star count. You can check them out in depth on my Github.
         </p>
         <ProjectList />
       </section>
