@@ -10,8 +10,10 @@ import {
   HappyIcon,
   BoltIcon,
   LocationIcon,
+  CameraIcon,
 } from '@/components/Icons'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const Divider = () => {
   return <hr />
@@ -129,6 +131,14 @@ export default function Timeline() {
       </ul>
       <Year>2021</Year>
       <ul className={styles.list}>
+        <Step title="Traveled Route 243" icon={<CameraIcon />}>
+          Ripped it on an incredibly fun panoramic highway and sparked an urge
+          to find another road to drive. Angela&#39;s Crest here I come. Some{' '}
+          <Link href="/interests" passHref>
+            <a>car shots</a>
+          </Link>{' '}
+          I took on my trip.
+        </Step>
         <Step title="Launched Nexus @ UCR" icon={<StarIcon />}>
           With a team of five, we launched{' '}
           <a

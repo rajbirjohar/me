@@ -4,8 +4,19 @@ import TimeAgo from 'react-timeago'
 import fetcher from '@/lib/fetcher'
 import ProjectCard from '@/components/Projects/ProjectCard'
 import Loader from '@/components/Projects/Loader'
+import { motion, LayoutGroup } from 'framer-motion'
 import styles from '@/styles/projects.module.css'
 import { SearchIcon } from '@/components/Icons'
+
+const list = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+}
 
 export default function ProjectList() {
   const [searchValue, setSearchValue] = useState('')
@@ -67,17 +78,21 @@ export default function ProjectList() {
           haven&#39;t created yet.
         </p>
       )}
-      {filteredProjects.map((p) => (
-        <ProjectCard
-          key={p.name}
-          name={p.name}
-          star_count={p.stars}
-          pushed_date={<TimeAgo date={p.pushed} />}
-          href={p.url}
-          desc={p.description}
-          language={p.language}
-        />
-      ))}
+      <LayoutGroup>
+        <motion.div variants={list} initial="hidden" animate="show" layout>
+          {filteredProjects.map((p) => (
+            <ProjectCard
+              key={p.name}
+              name={p.name}
+              star_count={p.stars}
+              pushed_date={<TimeAgo date={p.pushed} />}
+              href={p.url}
+              desc={p.description}
+              language={p.language}
+            />
+          ))}
+        </motion.div>
+      </LayoutGroup>
     </>
   )
 }

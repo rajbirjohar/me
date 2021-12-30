@@ -11,7 +11,37 @@ export default function Interests() {
       </Head>
       <section>
         <h1>Interests</h1>
-        <p>Just some of the hobbies and passions that I have right now.</p>
+        <p>
+          Just some of the hobbies and passions that I have right now. Thanks to
+          Conley and Danial for the edits since I suck at Lightroom.
+        </p>
+        <Image
+          className={styles.picture}
+          src="/assets/car/front.jpg"
+          alt="Picture of my car"
+          layout="responsive"
+          height={75}
+          width={100}
+          objectFit="contain"
+        />
+        <Image
+          className={styles.picture}
+          src="/assets/car/front_snow.jpg"
+          alt="Picture of my car"
+          layout="responsive"
+          height={75}
+          width={100}
+          objectFit="contain"
+        />
+        <Image
+          className={styles.picture}
+          src="/assets/car/rear.jpg"
+          alt="Picture of my car"
+          layout="responsive"
+          height={75}
+          width={100}
+          objectFit="contain"
+        />
         <Image
           className={styles.picture}
           src="/assets/keyboards/Think65_Iron165.jpeg"

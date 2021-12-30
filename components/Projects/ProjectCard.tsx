@@ -1,5 +1,11 @@
+import { motion } from 'framer-motion'
 import styles from '@/styles/projects.module.css'
 import { StarIcon } from '@/components/Icons'
+
+const listItems = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+}
 
 export default function ProjectCard({
   name,
@@ -10,25 +16,27 @@ export default function ProjectCard({
   language,
 }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={styles.group}
-    >
-      <div className={styles.card}>
-        <div className={styles.titleWrapper}>
-          <p className={styles.title}>{name}</p>
-          <p className={styles.stars}>
-            {star_count}
-            <StarIcon />
-          </p>
-        </div>
+    <motion.div variants={listItems} layout>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.group}
+      >
+        <div className={styles.card}>
+          <div className={styles.titleWrapper}>
+            <p className={styles.title}>{name}</p>
+            <p className={styles.stars}>
+              {star_count}
+              <StarIcon />
+            </p>
+          </div>
 
-        <p className={styles.description}>{desc}</p>
-        <p className={styles.date}>Last edited {pushed_date}</p>
-        <span className={styles.language}>{language}</span>
-      </div>
-    </a>
+          <p className={styles.description}>{desc}</p>
+          <p className={styles.date}>Last edited {pushed_date}</p>
+          <span className={styles.language}>{language}</span>
+        </div>
+      </a>
+    </motion.div>
   )
 }
