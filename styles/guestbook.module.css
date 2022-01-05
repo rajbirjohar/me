@@ -54,6 +54,7 @@
 .modifybutton:hover {
   background-color: var(--accent-2);
 }
+.error,
 .delete,
 .delete:hover {
   color: var(--delete);

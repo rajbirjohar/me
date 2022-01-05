@@ -1,17 +1,14 @@
 import React from 'react'
-import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Layout from '@/components/Layout'
 import styles from '@/styles/guestbook.module.css'
 import EntryForm from '@/components/Entries/EntryForm'
 import Entries from '@/components/Entries/Entries'
-import clientPromise from 'lib/mongodb'
 import { motion } from 'framer-motion'
-import Loader from '@/components/Entries/Loader'
 
 export default function Page() {
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
   return (
     <Layout>
       <Head>
@@ -55,7 +52,7 @@ export default function Page() {
         </p>
         {session && (
           <>
-            <EntryForm />
+            <EntryForm user={session.user.name} email={session.user.email} />
           </>
         )}
       </section>

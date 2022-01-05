@@ -1,6 +1,4 @@
 import NextAuth from 'next-auth'
-import clientPromise from 'lib/mongodb'
-import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 import GithubProvider from 'next-auth/providers/github'
 
 export default NextAuth({
@@ -11,7 +9,7 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
       profile(profile: { id; login; email; avatar_url }) {
         return {
-          id: profile.id,
+          id: profile.id.toString(),
           name: profile.login,
           email: profile.email,
           image: profile.avatar_url,

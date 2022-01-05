@@ -42,7 +42,7 @@ export default async function handler(
   const orgsCount = userOrgs.data.length
 
   // projects
-  const url = 'https://api.github.com/users/rajbirjohar/repos?per_page=5'
+  const url = 'https://api.github.com/users/rajbirjohar/repos?per_page=10'
   const response = await fetch(url, { headers: headers })
   const json = await response.json()
   const projectsList = []
