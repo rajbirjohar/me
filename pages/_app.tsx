@@ -15,7 +15,14 @@ function App({ Component, pageProps }: AppProps) {
         enableSystem
         themes={['light', 'dark', 'sepia', 'nord']}
       >
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            style: {
+              background: 'var(--card)',
+              color: 'var(--fg)',
+            },
+          }}
+        />
         <Header />
         {/* <AnimatePresence exitBeforeEnter>  key={router.route} */}
         <Component {...pageProps} />

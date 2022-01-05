@@ -9,7 +9,7 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
       profile(profile: { id; login; email; avatar_url }) {
         return {
-          id: profile.id,
+          id: profile.id.toString(),
           name: profile.login,
           email: profile.email,
           image: profile.avatar_url,

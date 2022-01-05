@@ -1,31 +1,22 @@
 import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
-import { useSession } from 'next-auth/react'
 import { motion } from 'framer-motion'
 import styles from '@/styles/guestbook.module.css'
 
-export default function EntryForm() {
-  const { data: session } = useSession()
-  const [entry, setEntry] = useState({
-    name: session.user.name,
-    email: session.user.email,
-    _entry: '',
+export default function EntryForm({ user, email }) {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      entry: '',
+      name: user,
+      email: email,
+    },
   })
-
-  const handleChange = (event) => {
-    setEntry({ ...entry, [event.target.name]: event.target.value })
-  }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    if (entry._entry === '') {
-      toast.error('Please fill out your message.')
-    } else {
-      sendData(entry)
-    }
-    setEntry({ ...entry, _entry: '' })
-  }
-
   const sendData = async (entryData) => {
     const response = await fetch('/api/entry/create', {
       method: 'POST',
@@ -39,32 +30,37 @@ export default function EntryForm() {
       toast.success('Awesome. You signed!', {
         icon: '👏',
       })
+      reset({ entry: '' })
     } else {
-      toast.error('Uh oh. Something went wrong.')
+      toast.error('Uh oh. Something went wrong.', {
+        icon: '😔',
+      })
     }
     return data.entryData
   }
 
   return (
-    <form onSubmit={handleSubmit} className={styles.inputWrapper}>
-      <input
-        aria-label="Entry Input"
-        name="_entry"
-        value={entry._entry}
-        onChange={handleChange}
-        type="text"
-        placeholder="Your entry here..."
-        className={styles.input}
-      ></input>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.995 }}
-        transition={{ ease: 'easeInOut', duration: 0.015 }}
-        className={styles.signbutton}
-        type="submit"
-      >
-        Sign Entry
-      </motion.button>
+    <form onSubmit={handleSubmit(sendData)}>
+      {errors.entry && (
+        <span className={styles.error}>This field is required</span>
+      )}
+      <div className={styles.inputWrapper}>
+        <input
+          {...register('entry', { required: true, maxLength: 200 })}
+          type="text"
+          placeholder="What do you want to say?"
+          className={styles.input}
+        />
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.995 }}
+          transition={{ ease: 'easeInOut', duration: 0.015 }}
+          className={styles.signbutton}
+          type="submit"
+        >
+          Sign Entry
+        </motion.button>
+      </div>
     </form>
   )
 }

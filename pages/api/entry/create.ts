@@ -16,12 +16,12 @@ export default async function createEntry(
     })
   }
   const {
-    entryData: { name, email, _entry },
+    entryData: { name, email, entry },
   } = req.body
   await db.collection('entries').insertOne({
     name: name,
     email: email,
-    entry: _entry,
+    entry: entry,
     createdAt: new Date(),
   })
   return res.status(200).json({ message: 'Successfully posted entry.' })
