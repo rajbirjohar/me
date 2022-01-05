@@ -79,7 +79,13 @@ export default function ProjectList() {
         </p>
       )}
       <LayoutGroup>
-        <motion.div variants={list} initial="hidden" animate="show" layout>
+        <motion.div
+          className={styles.cardlist}
+          variants={list}
+          initial="hidden"
+          animate="show"
+          layout
+        >
           {filteredProjects.map((p) => (
             <ProjectCard
               key={p.name}

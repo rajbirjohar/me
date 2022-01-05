@@ -7,18 +7,16 @@
 .themeItem {
   width: 100%;
   padding: var(--gap-quarter);
-  background-color: var(--accent-1);
+  background-color: var(--card);
   color: var(--fg);
   border-radius: var(--radius);
   cursor: pointer;
   padding: var(--gap-half);
-  transition: all 150ms ease-in-out;
-  border: 3px solid var(--accent-1);
+  transition: all var(--transition);
+  box-shadow: var(--shadows-lg);
 }
 
 .themeItem:hover {
-  background-color: var(--accent-2);
-  border: 3px solid var(--accent-2);
-  box-shadow: 0 3.3px 6.7px rgba(0, 0, 0, 0.018),
-    0 11.2px 22.3px rgba(0, 0, 0, 0.027), 0 25px 100px rgba(0, 0, 0, 0.05);
+  background-color: var(--accent-1);
+  box-shadow: var(--shadows-xl);
 }

@@ -1,6 +1,4 @@
 import NextAuth from 'next-auth'
-import clientPromise from 'lib/mongodb'
-import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 import GithubProvider from 'next-auth/providers/github'
 
 export default NextAuth({
