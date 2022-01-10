@@ -48,6 +48,7 @@
   left: 0;
   margin-top: 5rem;
   background-color: var(--header) !important;
+  backdrop-filter: saturate(180%) blur(20px);
   overflow-x: hidden !important;
   overflow-y: hidden !important;
   transition: 500ms ease-in-out;
