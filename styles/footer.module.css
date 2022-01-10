@@ -1,5 +1,5 @@
 .footer {
-  margin: var(--small-gap) auto var(--big-gap) auto;
+  margin: var(--small-gap) auto;
   max-width: var(--main-content);
   padding: 0 var(--gap-med);
 }
@@ -9,25 +9,6 @@
   font-size: 1.25rem;
   line-height: inherit;
 }
-
-.button {
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accent-1);
-  color: var(--fg);
-  transition: all var(--transition);
-  border-radius: var(--radius);
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: var(--accent-2);
-}
-.button svg {
-  padding: 0;
-}
 .actions {
   display: flex;
   justify-content: space-between;
@@ -35,40 +16,17 @@
 }
 .contact {
   display: flex;
+  gap: var(--gap-med);
 }
-.external {
-  margin: 0 10px;
-  font-size: 1.125rem;
+.status {
+  color: var(--mono-400);
 }
-.external:hover {
-  text-decoration: underline;
-}
-.external:first-of-type {
-  margin-left: 0;
-}
-.external:last-of-type {
-  margin-right: 0;
-}
-.last {
-  color: var(--accent-5);
-  text-align: center;
-}
-
 @media (max-width: 668px) {
   .contact {
     flex-direction: column;
   }
-  .external {
-    margin: var(--gap-half) 0;
-  }
   .actions {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .button {
-    margin-top: var(--gap-half);
-  }
-  .themeWrapper {
-    justify-content: flex-start;
   }
 }

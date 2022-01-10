@@ -23,18 +23,31 @@ export default function Projects() {
           </a>
           .
         </p>
-        <Dashboard />
-        <h2>Featured</h2>
+        <h2>Now</h2>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://nexus-ucr.vercel.app"
+        >
+          Nexus
+        </a>
         <p>
-          My passion written in code. My perserverance through late nights,
-          early mornings, and plenty of mochas. I hope you enjoy them just as
-          much as I had creating them.
+          I wanted to build a place where information gathers. A curation of
+          reviews on all classes at UCR. A bulletin board for all clubs on
+          campus. A completely student driven idea.
         </p>
-        <FeaturedProjects />
-        <h2>Contributed</h2>
+        <a target="_blank" rel="noopener noreferrer" href="https://rajbir.io">
+          Portfolio
+        </a>
         <p>
-          A list of the top five projects I created or contributed to sorted by
-          star count. You can check them out in depth on my Github.
+          Resumes are boring so I made this. Here is where I grow and tend my
+          everchanging garden of thoughts and ideas. Meant solely for myself and
+          inspiration for others.
+        </p>
+        <h2>Other</h2>
+        <p>
+          A list of my most active projects. You can check them out in depth on
+          Github.
         </p>
         <ProjectList />
       </section>

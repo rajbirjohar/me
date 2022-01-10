@@ -12,12 +12,7 @@ import {
   LocationIcon,
   CameraIcon,
 } from '@/components/Icons'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
-
-const Divider = () => {
-  return <hr />
-}
 
 const Year = ({ children }) => {
   return <h3>{children}</h3>
@@ -37,7 +32,6 @@ const Step = ({ title, children, icon }) => {
 
 const FullTimeline = () => (
   <div>
-    <Divider />
     <Year>2019</Year>
     <ul className={styles.list}>
       <Step title="Started Web Development" icon={<StarIcon />}>
@@ -63,7 +57,7 @@ const FullTimeline = () => (
         room.
       </Step>
     </ul>
-    <Divider />
+
     <Year>2018</Year>
     <ul className={styles.list}>
       <Step title="Wrote my First Line of Code" icon={<StarIcon />}>
@@ -79,7 +73,7 @@ const FullTimeline = () => (
         Good bye soggy and cold high school lunches.
       </Step>
     </ul>
-    <Divider />
+
     <Year>2017</Year>
     <ul className={styles.list}>
       <Step title="Built my First Computer" icon={<BoltIcon />}>
@@ -87,14 +81,14 @@ const FullTimeline = () => (
         freaked out when it would not turn on.
       </Step>
     </ul>
-    <Divider />
+
     <Year>2015</Year>
     <ul className={styles.list}>
       <Step title="Jailbroke my iPhone" icon={<BoltIcon />}>
         And bricked it.
       </Step>
     </ul>
-    <Divider />
+
     <Year>2012</Year>
     <ul className={styles.list}>
       <Step title="Gifted an Xbox 360" icon={<HappyIcon />}>
@@ -108,7 +102,7 @@ const FullTimeline = () => (
         which led me to crack the screen.
       </Step>
     </ul>
-    <Divider />
+
     <Year>2000</Year>
     <ul className={styles.list}>
       <Step title="Born" icon={<CakeIcon />}>
@@ -196,7 +190,6 @@ export default function Timeline() {
           layout.
         </Step>
       </ul>
-      <Divider />
       <Year>2020</Year>
       <ul className={styles.list}>
         <Step title="Web dev Lead" icon={<StarIcon />}>
@@ -251,14 +244,10 @@ export default function Timeline() {
       {isShowingFullTimeline ? (
         <FullTimeline />
       ) : (
-        <div className={styles.buttonwrapper}>
-          <motion.button
+        <div className={styles.actions}>
+          <button
             aria-label="Show Full Timeline"
             type="button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.995 }}
-            transition={{ ease: 'easeInOut', duration: 0.015 }}
-            className={styles.button}
             onClick={() => showFullTimeline(true)}
           >
             See More
@@ -276,7 +265,7 @@ export default function Timeline() {
                 d="M19 9l-7 7-7-7"
               />
             </svg>
-          </motion.button>
+          </button>
         </div>
       )}
     </>

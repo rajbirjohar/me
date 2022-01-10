@@ -25,16 +25,18 @@
 
 .card {
   border-radius: var(--radius);
-  padding: 0 var(--gap);
+  padding: var(--gap);
   display: flex;
   flex-direction: column;
   cursor: pointer;
   background-color: var(--card);
   transition: all var(--transition);
   box-shadow: var(--shadows-lg);
+  gap: var(--gap-half);
 }
+
 .card:hover {
-  box-shadow: var(--shadows-xl);
+  box-shadow: var(--shadows);
 }
 
 .titleWrapper {
@@ -43,13 +45,20 @@
   align-items: center;
 }
 
-.title {
-  color: var(--brand);
-  margin-right: var(--gap-quarter);
+.group {
+  text-decoration: none !important;
 }
 
 .group:hover .title {
-  text-decoration: underline !important;
+  text-decoration-color: var(--mono-500);
+}
+
+.title {
+  outline: none;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--mono-200);
+  transition: text-decoration-color var(--transition);
 }
 
 .stars {
@@ -61,17 +70,17 @@
 }
 
 .description {
-  margin: -10px 125px 0 0;
-  font-weight: 400;
+  margin: 0;
+  font-weight: normal;
 }
 
 .language {
-  margin: var(--gap-half) 0 var(--gap) 0;
-  background-color: var(--language-alt);
+  font-size: 1rem;
+  background-color: var(--mono-100);
   max-width: max-content;
   padding: var(--gap-quarter) var(--gap-half);
   border-radius: var(--radius-sm);
-  color: var(--language);
+  color: var(--mono-800);
 }
 
 .searchWrapper {
@@ -79,35 +88,15 @@
   width: 100%;
 }
 
-.search {
-  border: 2px solid var(--accent-2) !important;
-  width: 100%;
-  padding: var(--gap);
-  font-size: 18px;
-  border-radius: var(--radius);
-  margin: var(--gap-half) 0;
-  background-color: var(--accent-1) !important;
-  color: var(--accent-7) !important;
-}
-.search::placeholder {
-  color: var(--accent-7) !important;
-}
-
 .searchIcon {
   position: absolute;
   top: 25px;
   right: 15px;
-  color: var(--accent-5) !important;
+  color: var(--mono-400) !important;
 }
 
 .date {
-  color: var(--accent-5);
+  color: var(--mono-500);
   font-weight: 400;
   margin: 0;
-}
-
-@media (max-width: 668px) {
-  .description {
-    margin: -10px 0 0 0;
-  }
 }

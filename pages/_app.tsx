@@ -10,16 +10,12 @@ import '@/styles/globals.css'
 function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider session={pageProps.session} refetchInterval={5 * 60}>
-      <ThemeProvider
-        disableTransitionOnChange
-        enableSystem
-        themes={['light', 'dark', 'sepia', 'nord']}
-      >
+      <ThemeProvider disableTransitionOnChange enableSystem>
         <Toaster
           toastOptions={{
             style: {
               background: 'var(--card)',
-              color: 'var(--fg)',
+              color: 'var(--mono-900)',
             },
           }}
         />

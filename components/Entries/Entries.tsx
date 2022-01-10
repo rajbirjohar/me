@@ -1,4 +1,4 @@
-import useSWR from 'swr'
+import useSWR, { SWRConfig } from 'swr'
 import TimeAgo from 'react-timeago'
 import fetcher from '@/lib/fetcher'
 import Entry from '@/components/Entries/Entry'

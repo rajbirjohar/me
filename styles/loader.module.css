@@ -1,14 +1,13 @@
 /* Projects Loader */
 
 .projectskeleton {
-  border: 2px solid var(--accent-1);
   border-radius: var(--radius);
   padding: var(--gap);
   margin-bottom: var(--gap-half);
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background-color: var(--bg);
+  background-color: var(--card);
   transition: all var(--transition);
 }
 
@@ -19,7 +18,7 @@
   margin: var(--gap-half) 0 !important;
   animation: pulse 2s infinite;
   border-radius: var(--radius-sm);
-  background-color: var(--accent-2);
+  background-color: var(--mono-100);
 }
 
 .projectdummytitle {
@@ -79,7 +78,7 @@
   margin-right: 1rem !important;
   animation: pulse 2s infinite;
   border-radius: var(--radius-sm);
-  background-color: var(--accent-2);
+  background-color: var(--mono-100);
 }
 
 .trackdummycontent {
@@ -91,7 +90,7 @@
   height: 20px;
   animation: pulse 2s infinite;
   border-radius: var(--radius-sm);
-  background-color: var(--accent-2);
+  background-color: var(--mono-100);
 }
 
 .trackdummytitle {

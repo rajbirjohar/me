@@ -25,16 +25,15 @@ export default function ProjectCard({
       >
         <div className={styles.card}>
           <div className={styles.titleWrapper}>
-            <p className={styles.title}>{name}</p>
-            <p className={styles.stars}>
+            <span className={styles.title}>{name}</span>
+            <span className={styles.stars}>
               {star_count}
               <StarIcon />
-            </p>
+            </span>
           </div>
-
+          <span className={styles.date}>Last edited {pushed_date}</span>
           <p className={styles.description}>{desc}</p>
-          <p className={styles.date}>Last edited {pushed_date}</p>
-          <span className={styles.language}>{language}</span>
+          {language && <span className={styles.language}>{language}</span>}
         </div>
       </a>
     </motion.div>

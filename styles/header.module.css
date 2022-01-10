@@ -2,13 +2,14 @@
   max-width: var(--main-content);
   height: 5rem;
   margin: var(--gap-double) auto;
+  padding: 0 var(--gap-med);
   z-index: 10;
   position: sticky;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-color: var(--header-bg);
+  background-color: var(--header);
   backdrop-filter: saturate(180%) blur(20px);
 }
 
@@ -20,15 +21,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: var(--gap-med);
-  background-color: var(--header-bg);
+  padding-right: var(--gap);
+  background-color: var(--header);
   backdrop-filter: saturate(180%) blur(20px);
   transition: background-color var(--transition-med),
     backdrop-filter var(--transition-med);
 }
 
 .mobilenavopen {
-  background-color: var(--bg);
+  background-color: var(--header);
   backdrop-filter: none;
 }
 
@@ -36,11 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-.linkwrapper {
-  display: flex;
-  align-items: center;
+  gap: var(--gap);
 }
 
 .notopen {
@@ -50,7 +47,7 @@
   top: 0;
   left: 0;
   margin-top: 5rem;
-  background-color: var(--bg) !important;
+  background-color: var(--header) !important;
   overflow-x: hidden !important;
   overflow-y: hidden !important;
   transition: 500ms ease-in-out;
@@ -64,14 +61,12 @@
 
 .link {
   list-style: none;
-  padding: none;
-  margin: 0 var(--gap-med) 0 0;
 }
 
 .hamburger {
   margin: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   background-color: none;
   display: flex;
   flex-direction: column;
@@ -83,30 +78,12 @@
 .inner {
   height: 0.2rem;
   width: 2rem;
-  background-color: var(--fg);
+  background-color: var(--mono-500);
   margin: 0.25rem 0;
   border-radius: var(--radius);
   transition: var(--transition-med);
 }
 
-.button {
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accent-1);
-  color: var(--fg);
-  transition: all var(--transition);
-  border-radius: var(--radius);
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: var(--accent-2);
-}
-.button svg {
-  padding: 0;
-}
 .onclick {
   transform: rotate(45deg) translateY(0.5rem);
   transform-origin: center;
