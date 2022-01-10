@@ -36,7 +36,6 @@ export default function ProjectList() {
             aria-label="Disabled Searchbar"
             type="text"
             placeholder="Not yet..."
-            className={styles.search}
             disabled
           />
           <svg className={styles.searchIcon}>
@@ -66,7 +65,6 @@ export default function ProjectList() {
           type="text"
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search my projects"
-          className={styles.search}
         />
         <svg className={styles.searchIcon}>
           <SearchIcon />

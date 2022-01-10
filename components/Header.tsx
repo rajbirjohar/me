@@ -72,14 +72,8 @@ const MobileLink = ({ href, title, onClick }) => {
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const [scroll, setScroll] = useState(false)
   const [blockScroll, allowScroll] = useScrollBlock()
   const size: Size = useWindowSize()
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScroll(window.scrollY > 0)
-    })
-  }, [])
 
   const openNav = () => {
     setOpen(!open)

@@ -1,6 +1,7 @@
 .list {
   padding: 0;
   margin: 0;
+  gap: var(--gap-half);
 }
 .step {
   display: flex;
@@ -8,35 +9,20 @@
   list-style-type: none;
 }
 .title {
-  margin: 0 0 var(--gap-half) 0;
+  margin: 0;
+  line-height: 1;
   font-weight: 500;
 }
 .icon {
-  margin: 5px 5px 0 0;
+  margin: -1px 5px 0 0;
   font-weight: 500;
 }
 .content {
-  margin: 0 0 var(--gap) 0;
-  color: var(--accent-6);
+  color: var(--mono-500);
 }
-.buttonwrapper {
-  width: 100%;
-}
-.button {
-  margin: auto;
-  padding: 8px 10px;
+
+.actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--accent-1);
-  color: var(--fg);
-  transition: all var(--transition);
-  border-radius: var(--radius);
-  cursor: pointer;
-}
-.button svg {
-  margin-left: 3px;
-}
-.button:hover {
-  background-color: var(--accent-2);
 }

@@ -10,7 +10,6 @@ export default function NowPlaying() {
     <>
       {data?.songUrl ? (
         <div className={styles.nowplaying}>
-          <p>Now currently playing - </p>
           <div className={styles.nowplaying}>
             <div className={styles.info}>
               <div className={styles.albumArt}>

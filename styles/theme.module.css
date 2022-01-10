@@ -13,10 +13,8 @@
   cursor: pointer;
   padding: var(--gap-half);
   transition: all var(--transition);
-  box-shadow: var(--shadows-lg);
 }
 
 .themeItem:hover {
-  background-color: var(--accent-1);
-  box-shadow: var(--shadows-xl);
+  box-shadow: var(--shadows);
 }

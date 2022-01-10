@@ -13,36 +13,13 @@ export default async function handler(
     Authorization: 'Token ' + process.env.GITHUB_AUTH_TOKEN,
   }
 
-  //Followers request
-  const followers = await octokit.request(
-    '/users/rajbirjohar/followers?per_page=100'
-  )
-  const followerCount = followers.data.length
-
   //Last updated request
   const portfolio = await octokit.request('/repos/rajbirjohar/Portfolio')
-  const portfolioUpdated = portfolio.data.pushed_at
-
-  //Stars request
-  const stars = await octokit.request('/users/rajbirjohar/repos')
-  const starsCount = stars.data
-    .filter((repo) => !repo.fork)
-    .reduce((acc, item) => {
-      return acc + item.stargazers_count
-    }, 0)
-
-  //Repos request
-  const reposStarred = await octokit.request(
-    '/users/rajbirjohar/starred?per_page=100'
-  )
-  const starredCount = reposStarred.data.length
-
-  //Orgs request
-  const userOrgs = await octokit.request('/user/orgs')
-  const orgsCount = userOrgs.data.length
+  const lastUpdated = portfolio.data.pushed_at
 
   // projects
-  const url = 'https://api.github.com/users/rajbirjohar/repos?per_page=10'
+  const url =
+    'https://api.github.com/users/rajbirjohar/repos?sort=updated&per_page=7'
   const response = await fetch(url, { headers: headers })
   const json = await response.json()
   const projectsList = []
@@ -60,11 +37,7 @@ export default async function handler(
 
   //return
   return res.status(200).json({
-    stars: starsCount,
-    followers: followerCount,
-    starred: starredCount,
-    orgsCont: orgsCount,
     repos: projectsList,
-    portfolioLastUpdated: portfolioUpdated,
+    lastUpdated: lastUpdated,
   })
 }

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useSession } from 'next-auth/react'
 import toast from 'react-hot-toast'
 import { motion } from 'framer-motion'
-import { ReplyIcon } from '@/components/Icons'
 import styles from '@/styles/guestbook.module.css'
 
 const Divider = () => {
@@ -38,7 +37,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
     })
     const data = await response.json()
     if (response.status === 200) {
-      toast.success('Awesome. Entry modified!', {
+      toast.success('Entry modified.', {
         icon: '👏',
       })
     } else {
@@ -57,7 +56,9 @@ export default function Entry({ name, entry, timestamp, entryId }) {
     })
     await response.json()
     if (response.status === 200) {
-      toast.success('Deleted entry.')
+      toast.success('Deleted entry.', {
+        icon: '✌️',
+      })
     } else {
       toast.error('Uh oh. Something went wrong.')
     }
@@ -74,7 +75,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
           {/* <svg className={styles.replyicon}>
             <ReplyIcon />
           </svg> */}
-          <span className={styles.name}>{name}</span>
+          {name}
           <Divider />
           {timestamp}
           {session && session.user.name === name && (
@@ -88,7 +89,7 @@ export default function Entry({ name, entry, timestamp, entryId }) {
                 Delete
               </a>
               {modify && (
-                <form onSubmit={handleSubmit} className={styles.inputWrapper}>
+                <form onSubmit={handleSubmit}>
                   <input
                     aria-label="Entry Input"
                     name="newEntry"
@@ -98,15 +99,11 @@ export default function Entry({ name, entry, timestamp, entryId }) {
                     placeholder="Your new entry here..."
                     className={styles.input}
                   />
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.995 }}
-                    transition={{ ease: 'easeInOut', duration: 0.015 }}
-                    className={styles.modifybutton}
-                    type="submit"
-                  >
-                    Modify Entry
-                  </motion.button>
+                  <span className={styles.actions}>
+                    <button className={styles.secondary} type="submit">
+                      Modify Entry
+                    </button>
+                  </span>
                 </form>
               )}
             </>

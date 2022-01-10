@@ -27,10 +27,10 @@ export default function EntryForm({ user, email }) {
     })
     const data = await response.json()
     if (response.status === 200) {
-      toast.success('Awesome. You signed!', {
-        icon: '👏',
+      toast.success('Thanks for signing.', {
+        icon: '🎉',
       })
-      reset({ entry: '' })
+      reset({ entry: '', name: user, email: email })
     } else {
       toast.error('Uh oh. Something went wrong.', {
         icon: '😔',
@@ -41,26 +41,23 @@ export default function EntryForm({ user, email }) {
 
   return (
     <form onSubmit={handleSubmit(sendData)}>
-      {errors.entry && (
-        <span className={styles.error}>This field is required</span>
-      )}
-      <div className={styles.inputWrapper}>
-        <input
-          {...register('entry', { required: true, maxLength: 200 })}
-          type="text"
-          placeholder="What do you want to say?"
-          className={styles.input}
-        />
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.995 }}
-          transition={{ ease: 'easeInOut', duration: 0.015 }}
-          className={styles.signbutton}
-          type="submit"
-        >
-          Sign Entry
-        </motion.button>
+      <div className={styles.inputheader}>
+        <label>Entry:</label>
+        {errors.entry && (
+          <span className={styles.error}>This field is required</span>
+        )}
       </div>
+      <input
+        {...register('entry', { required: true, maxLength: 200 })}
+        type="text"
+        autoComplete="off"
+        placeholder="What do you want to say?"
+      />
+      <span className={styles.actions}>
+        <button type="submit" className={styles.primary}>
+          Sign Entry
+        </button>
+      </span>
     </form>
   )
 }

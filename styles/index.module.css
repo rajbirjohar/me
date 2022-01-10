@@ -1,24 +1,12 @@
-.hero {
+.timeline {
+}
+
+.timelineitem {
   display: flex;
-  align-items: center;
-}
-.content {
-  padding-right: var(--gap-double);
+  gap: var(--gap);
 }
 
-.rounded {
-  border-radius: 50%;
-}
-
-@media (max-width: 668px) {
-  .hero {
-    flex-direction: column;
-  }
-  .content {
-    padding-right: 0;
-    padding-bottom: var(--gap-double);
-  }
-  .title {
-    line-height: 1.5;
-  }
+.year {
+  font-weight: bold;
+  color: var(--accent-6);
 }
