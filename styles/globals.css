@@ -148,6 +148,8 @@ button {
   border-radius: var(--radius);
   padding: var(--gap-half) var(--gap);
   background-color: var(--mono-100);
+  color: var(--mono-900);
+  font-weight: 600;
   transition: background-color var(--transition), box-shadow var(--transition);
 }
 
