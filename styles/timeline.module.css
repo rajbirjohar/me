@@ -17,6 +17,14 @@
   margin: -1px 5px 0 0;
   font-weight: 500;
 }
+
+.icon,
+.chevron {
+  min-width: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  max-height: 20px;
+}
 .content {
   color: var(--mono-500);
 }

@@ -58,7 +58,7 @@
   --header: rgba(23, 23, 23, 0.9);
   --shadow: #262626;
   --card: #1b1b1b;
-  --shadows: 0 5px 20px -5px rgba(0, 0, 0, 0.7);
+  --shadows: 0 5px 20px -5px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -173,12 +173,12 @@ a.reset {
   transition: text-decoration-color var(--transition);
 }
 
-svg {
+/* svg {
   min-width: 20px;
   max-width: 20px;
   min-height: 20px;
   max-height: 20px;
-}
+} */
 
 a:hover,
 p a:hover,

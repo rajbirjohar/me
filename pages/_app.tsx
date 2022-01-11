@@ -2,7 +2,7 @@ import { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import { SessionProvider } from 'next-auth/react'
 import { Toaster } from 'react-hot-toast'
-import Header from '@/components/Header'
+import Header from '@/components/Navigation/Header'
 import Footer from '@/components/Footer'
 import '@/styles/globals.css'
 // router
