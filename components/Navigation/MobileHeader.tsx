@@ -44,9 +44,9 @@ const NavLink = ({ title, path, setIsOpen, isOpen }) => {
   const openNav = () => {
     setIsOpen(!isOpen)
     if (!isOpen) {
-      allowScroll()
-    } else {
       blockScroll()
+    } else {
+      allowScroll()
     }
   }
   return (
