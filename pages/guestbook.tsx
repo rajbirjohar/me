@@ -1,12 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
+import useSWR, { SWRConfig } from 'swr'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import clientPromise from 'lib/mongodb'
 import Layout from '@/components/Layout'
 import styles from '@/styles/guestbook.module.css'
 import EntryForm from '@/components/Entries/EntryForm'
 import Entries from '@/components/Entries/Entries'
 
-export default function Page() {
+export default function Guestbook({ fallbackData }) {
   const { data: session } = useSession()
   return (
     <Layout>
@@ -42,7 +45,24 @@ export default function Page() {
         )}
       </section>
       <h2>Signatures</h2>
-      <Entries />
+      <SWRConfig value={fallbackData}>
+        <Entries />
+      </SWRConfig>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const isConnected = await clientPromise
+  const db = isConnected.db(process.env.MONGODB_DB)
+
+  const fallbackData = await db
+    .collection('entries')
+    .find({})
+    .sort({ createdAt: -1 })
+    .toArray()
+
+  return {
+    props: JSON.parse(JSON.stringify({ fallbackData })),
+  }
 }
