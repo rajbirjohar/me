@@ -1,21 +1,12 @@
-.buttonwrapper {
-  width: 100%;
-}
 .button {
+  width: max-content;
   margin: auto;
-  padding: 8px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accent-1);
-  color: var(--fg);
-  transition: all var(--transition);
-  border-radius: var(--radius);
-  cursor: pointer;
 }
+
 .button svg {
   margin-left: 3px;
-}
-.button:hover {
-  background-color: var(--accent-2);
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
 }

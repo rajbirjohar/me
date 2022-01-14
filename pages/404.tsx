@@ -25,16 +25,13 @@ export default function Custom404() {
         </p>
         <p>Just like this non(-existent) page.</p>
         <Link href="/" passHref>
-          <motion.button
+          <button
             aria-label="Go Back Home"
             type="button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.995 }}
-            transition={{ ease: 'easeInOut', duration: 0.015 }}
             className={styles.button}
           >
             <LeftArrow /> Back home
-          </motion.button>
+          </button>
         </Link>
       </section>
     </Layout>
