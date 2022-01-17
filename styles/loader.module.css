@@ -72,7 +72,7 @@
   width: 75px;
   margin-right: 1rem !important;
   animation: pulse 2s infinite;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background-color: var(--mono-200);
 }
 

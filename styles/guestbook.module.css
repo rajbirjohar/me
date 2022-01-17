@@ -27,6 +27,7 @@
 .actions {
   display: flex;
   justify-content: flex-end;
+  gap: var(--gap-half);
 }
 
 .primary {
@@ -36,6 +37,14 @@
 
 .primary:hover {
   background-color: var(--mono-800);
+}
+.secondary {
+  border: 2px solid var(--mono-800);
+  background-color: var(--mono-50);
+}
+
+.secondary {
+  background-color: var(--mono-100);
 }
 
 .author {

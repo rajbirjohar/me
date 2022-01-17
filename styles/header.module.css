@@ -27,6 +27,7 @@
 
 .navlist {
   display: flex;
+  align-items: center;
   gap: var(--gap);
 }
 
@@ -42,15 +43,16 @@
   display: flex;
   flex-direction: column;
   padding-top: var(--big-gap);
-  gap: var(--gap);
+  gap: var(--gap-double);
   margin-top: 0;
 }
 
 .navlist li,
 .mobilenavlist li {
   list-style: none;
-  font-size: 2rem;
   max-width: max-content;
+  padding: 0;
+  margin: 0;
 }
 
 .mobilenavlist li a {
