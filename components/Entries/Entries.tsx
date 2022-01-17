@@ -1,8 +1,9 @@
-import useSWR, { SWRConfig } from 'swr'
+import useSWR from 'swr'
 import TimeAgo from 'react-timeago'
 import fetcher from '@/lib/fetcher'
 import Entry from '@/components/Entries/Entry'
 import Loader from '@/components/Entries/Loader'
+import { LayoutGroup } from 'framer-motion'
 
 export default function Entries() {
   const { data, error } = useSWR('/api/entries', fetcher, {
@@ -24,16 +25,16 @@ export default function Entries() {
     )
   }
   return (
-    <div>
+    <LayoutGroup>
       {data.entries.map((entry) => (
         <Entry
           key={entry._id}
           entryId={entry._id}
-          name={entry.name}
+          user={entry.name}
           entry={entry.entry}
           timestamp={<TimeAgo date={entry.createdAt} />}
         />
       ))}
-    </div>
+    </LayoutGroup>
   )
 }

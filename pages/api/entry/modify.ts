@@ -17,11 +17,12 @@ export default async function modifyEntry(
     })
   }
   const {
-    newEntryData: { entryId, newEntry },
+    entryData: { entryId, newEntry, user },
   } = req.body
-  await db.collection('entries').findOneAndUpdate(
+  await db.collection('entries').updateOne(
     {
       _id: new mongodb.ObjectID(entryId),
+      name: user,
     },
     { $set: { entry: newEntry, createdAt: new Date() } }
   )

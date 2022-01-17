@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { motion } from 'framer-motion'
 import styles from '@/styles/guestbook.module.css'
 
-export default function EntryForm({ user, email }) {
+export default function ModEntryForm({
+  user,
+  entry,
+  entryId,
+  showModify,
+  modify,
+}) {
   const {
     register,
     handleSubmit,
@@ -12,13 +17,13 @@ export default function EntryForm({ user, email }) {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      entry: '',
+      entryId: entryId,
+      newEntry: entry,
       user: user,
-      email: email,
     },
   })
   const sendData = async (entryData) => {
-    const response = await fetch('/api/entry/create', {
+    const response = await fetch('/api/entry/modify', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -27,10 +32,11 @@ export default function EntryForm({ user, email }) {
     })
     const data = await response.json()
     if (response.status === 200) {
-      toast.success('Thanks for signing.', {
+      toast.success('Edited entry.', {
         icon: '🎉',
       })
-      reset({ entry: '', user: user, email: email })
+      reset({ newEntry: '', user: user })
+      showModify(!modify)
     } else {
       toast.error('Uh oh. Something went wrong.', {
         icon: '😔',
@@ -40,31 +46,41 @@ export default function EntryForm({ user, email }) {
   }
 
   return (
-    <form onSubmit={handleSubmit(sendData)}>
+    <motion.form
+      onSubmit={handleSubmit(sendData)}
+      layout="position"
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ type: 'tween' }}
+    >
       <div className={styles.inputheader}>
-        <label>Entry:</label>
-        {errors.entry && (
+        <label>New Entry:</label>
+        {errors.newEntry && (
           <>
-            {errors.entry.type === 'required' && (
+            {errors.newEntry.type === 'required' && (
               <span className={styles.error}>Field required</span>
             )}
-            {errors.entry.type === 'maxLength' && (
+            {errors.newEntry.type === 'maxLength' && (
               <span className={styles.error}>Too many characters</span>
             )}
           </>
         )}
       </div>
       <input
-        {...register('entry', { required: true, maxLength: 200 })}
+        {...register('newEntry', { required: true, maxLength: 200 })}
         type="text"
         autoComplete="off"
-        placeholder="What do you want to say?"
+        placeholder="Changed your mind?"
       />
       <span className={styles.actions}>
-        <button type="submit" className={styles.primary}>
-          Sign Entry
+        <button className={styles.tertiaty} onClick={() => showModify(!modify)}>
+          Cancel
+        </button>
+        <button type="submit" className={styles.secondary}>
+          Modify Entry
         </button>
       </span>
-    </form>
+    </motion.form>
   )
 }

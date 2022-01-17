@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import { GetStaticProps } from 'next'
 import useSWR, { SWRConfig } from 'swr'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import clientPromise from 'lib/mongodb'
@@ -34,9 +33,8 @@ export default function Guestbook({ fallbackData }) {
           </div>
         )}
         <p>
-          Immortalize your place on this very cool website and post a message
-          for future visitors. Your Github username is only used to display your
-          comment.
+          Immortalize your place here by posting a message for future visitors.
+          Your Github username is only used to display your comment.
         </p>
         {session && (
           <>
@@ -63,6 +61,8 @@ export async function getStaticProps(context) {
     .toArray()
 
   return {
-    props: JSON.parse(JSON.stringify({ fallbackData })),
+    props: {
+      fallbackData: JSON.parse(JSON.stringify(fallbackData)),
+    },
   }
 }

@@ -16,10 +16,10 @@ export default async function createEntry(
     })
   }
   const {
-    entryData: { name, email, entry },
+    entryData: { user, email, entry },
   } = req.body
   await db.collection('entries').insertOne({
-    name: name,
+    name: user,
     email: email,
     entry: entry,
     createdAt: new Date(),
