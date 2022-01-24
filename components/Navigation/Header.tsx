@@ -20,7 +20,6 @@ const NavLink = ({ href, title }) => {
 
 export default function Header() {
   const size: Size = useWindowSize()
-
   return (
     <>
       {size.width > 668 ? (
