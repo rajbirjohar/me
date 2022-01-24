@@ -124,6 +124,11 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.0.tgz#f3933a44e365864f4dad5db94158106d511e8131"
   integrity sha512-sqKVVVOe5ivCaXDWivIJYVSaEgdQK9ul7a4Kity5Iw7u9+wBAPbX1RMSnLLmp7O4Vzj0WOWwMAJsTL00xwaNug==
 
+"@mantine/hooks@^3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-3.6.2.tgz#42793c976bc8f1d03b53971404232532ab03d2eb"
+  integrity sha512-/NxNTGNRs+Qs2ci24tsgFrT16Po2MHQ+Yn+POPB4TQpeNaCLzMIgE5jLtr9Vq5BdG5ZFja0KPxiIxXt8t51nCQ==
+
 "@napi-rs/triples@1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"

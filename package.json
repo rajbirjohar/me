@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mantine/hooks": "^3.6.2",
     "@next-auth/mongodb-adapter": "^0.0.2-next.285",
     "@notionhq/client": "^0.1.8",
     "@octokit/rest": "^18.5.3",
