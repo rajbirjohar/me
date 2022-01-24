@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
-import { motion } from 'framer-motion'
 import styles from '@/styles/guestbook.module.css'
 
 export default function EntryForm({ user, email }) {

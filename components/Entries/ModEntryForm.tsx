@@ -74,7 +74,11 @@ export default function ModEntryForm({
         placeholder="Changed your mind?"
       />
       <span className={styles.actions}>
-        <button className={styles.tertiaty} onClick={() => showModify(!modify)}>
+        <button
+          type="button"
+          className={styles.tertiaty}
+          onClick={() => showModify(!modify)}
+        >
           Cancel
         </button>
         <button type="submit" className={styles.secondary}>
