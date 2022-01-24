@@ -20,7 +20,7 @@
 .cardlist {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-half);
+  gap: var(--gap);
 }
 
 .card {
@@ -31,12 +31,8 @@
   cursor: pointer;
   background-color: var(--card);
   transition: all var(--transition);
-  box-shadow: var(--shadows-lg);
-  gap: var(--gap-half);
-}
-
-.card:hover {
   box-shadow: var(--shadows);
+  gap: var(--gap-half);
 }
 
 .titleWrapper {
@@ -90,6 +86,7 @@
 .searchWrapper {
   position: relative;
   width: 100%;
+  margin: var(--gap-half) 0;
 }
 
 .searchIcon {

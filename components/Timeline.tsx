@@ -250,7 +250,6 @@ export default function Timeline() {
             type="button"
             onClick={() => showFullTimeline(true)}
           >
-            See More
             <svg
               className={styles.chevron}
               xmlns="http://www.w3.org/2000/svg"
@@ -265,6 +264,7 @@ export default function Timeline() {
                 d="M19 9l-7 7-7-7"
               />
             </svg>
+            See More
           </button>
         </div>
       )}

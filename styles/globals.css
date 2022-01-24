@@ -165,7 +165,7 @@ a.reset {
   outline: none;
   text-decoration-line: underline;
   text-decoration-thickness: 2px;
-  text-decoration-color: var(--mono-200);
+  text-decoration-color: var(--mono-300);
   font-size: 1.125rem;
   font-weight: 500;
   cursor: pointer;

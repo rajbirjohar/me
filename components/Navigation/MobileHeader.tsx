@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { useScrollBlock } from '@/hooks/useScrollBlock'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MenuButton } from './MenuButton'
 import styles from '@/styles/header.module.css'
+import { useScrollLock } from '@mantine/hooks'
 
 const list = {
   closed: {
@@ -39,16 +39,7 @@ const listItem = {
   },
 }
 
-const NavLink = ({ title, path, setIsOpen, isOpen }) => {
-  const [blockScroll, allowScroll] = useScrollBlock()
-  const openNav = () => {
-    setIsOpen(!isOpen)
-    if (!isOpen) {
-      blockScroll()
-    } else {
-      allowScroll()
-    }
-  }
+const NavLink = ({ title, path, openNav }) => {
   return (
     <motion.li variants={listItem} onClick={openNav}>
       <Link href={path}>{title}</Link>
@@ -58,12 +49,20 @@ const NavLink = ({ title, path, setIsOpen, isOpen }) => {
 
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrollLocked, setScrollLocked] = useScrollLock()
+  const openNav = () => {
+    setIsOpen(!isOpen)
+    setScrollLocked(!scrollLocked)
+  }
 
   return (
     <nav className={styles.mobilenav}>
       <MenuButton
         isOpen={isOpen}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          setIsOpen(!isOpen)
+          setScrollLocked(!scrollLocked)
+        }}
         strokeWidth="4"
         color="var(--mono-900)"
         lineProps={{ strokeLinecap: 'round' }}
@@ -81,24 +80,15 @@ export default function MobileHeader() {
             animate="open"
             exit="closed"
           >
+            <NavLink title="Home" path="/" openNav={openNav} />
+            <NavLink title="Projects" path="/projects" openNav={openNav} />
             <NavLink
-              title="Home"
-              path="/"
-              setIsOpen={setIsOpen}
-              isOpen={isOpen}
+              title="Experiences"
+              path="/experiences"
+              openNav={openNav}
             />
-            <motion.li variants={listItem} onClick={() => setIsOpen(!isOpen)}>
-              <Link href="/projects">Projects</Link>
-            </motion.li>
-            <motion.li variants={listItem} onClick={() => setIsOpen(!isOpen)}>
-              <Link href="/experiences">Experiences</Link>
-            </motion.li>
-            <motion.li variants={listItem} onClick={() => setIsOpen(!isOpen)}>
-              <Link href="/music">Music</Link>
-            </motion.li>
-            <motion.li variants={listItem} onClick={() => setIsOpen(!isOpen)}>
-              <Link href="/guestbook">Guestbook</Link>
-            </motion.li>
+            <NavLink title="Music" path="/music" openNav={openNav} />
+            <NavLink title="Guestbook" path="/guestbook" openNav={openNav} />
           </motion.ul>
         )}
       </AnimatePresence>
