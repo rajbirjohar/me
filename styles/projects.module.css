@@ -1,25 +1,6 @@
-.featured {
-  margin: 0;
-  gap: var(--gap-med);
-}
-
-.featuredimagewrapper {
-  margin: 0;
-  box-shadow: none;
-  transition: all 200ms ease-in-out;
-}
-
-.featuredimagewrapper:hover {
-  box-shadow: var(--shadows-lg) !important;
-}
-
-.featuredimage {
-  border-radius: var(--radius);
-}
-
 .cardlist {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--gap);
 }
 
@@ -28,11 +9,13 @@
   padding: var(--gap);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
   background-color: var(--card);
   transition: all var(--transition);
   box-shadow: var(--shadows);
   gap: var(--gap-half);
+  height: 100%;
 }
 
 .titleWrapper {
@@ -70,7 +53,6 @@
 }
 
 .description {
-  margin: 0;
   font-weight: normal;
 }
 

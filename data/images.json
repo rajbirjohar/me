@@ -1,0 +1,62 @@
+[
+  {
+    "src": "/assets/car/front.jpg",
+    "alt": "Picture of my car"
+  },
+  {
+    "src": "/assets/car/front_snow.jpg",
+    "alt": "Picture of my car"
+  },
+  {
+    "src": "/assets/car/rear.jpg",
+    "alt": "Picture of my car"
+  },
+  {
+    "src": "/assets/travels/sf_saltlake.jpeg",
+    "alt": "San Franscisco"
+  },
+  {
+    "src": "/assets/travels/sf_alcatraz.jpeg",
+    "alt": "San Franscisco"
+  },
+  {
+    "src": "/assets/travels/sf_pacificheights.jpeg",
+    "alt": "San Franscisco"
+  },
+  {
+    "src": "/assets/travels/az_hiking.jpeg",
+    "alt": "Arizona"
+  },
+  {
+    "src": "/assets/travels/az_devilsbridge.jpeg",
+    "alt": "Arizona"
+  },
+  {
+    "src": "/assets/travels/grandcanyon.jpeg",
+    "alt": "Grand Canyon"
+  },
+  {
+    "src": "/assets/keyboards/Think65_Iron165.jpeg",
+    "alt": "Picture of my keyboard"
+  },
+  {
+    "src": "/assets/keyboards/Doro65.jpeg",
+    "alt": "Picture of my keyboard"
+  },
+  {
+    "src": "/assets/keyboards/Vega65_Iron165.jpeg",
+    "alt": "Picture of my car"
+  },
+  {
+    "src": "/assets/keyboards/Think65_Iron165_2.jpeg",
+    "alt": "Picture of my keyboards"
+  },
+  {
+    "src": "/assets/computers/GhostS1.jpeg",
+    "alt": "Picture of my computer"
+  },
+  {
+    "src": "/assets/computers/AMD.jpeg",
+    "alt": "Picture of my computer"
+  }
+]

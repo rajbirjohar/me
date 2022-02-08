@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Layout from '@/components/Layout'
-import FeaturedProjects from '@/components/Projects/FeaturedProjects'
 import ProjectList from '@/components/Projects/ProjectList'
-import Dashboard from '@/components/Projects/Dashboard'
+import styles from '@/styles/projects.module.css'
 
 export default function Projects() {
   return (
@@ -36,6 +35,7 @@ export default function Projects() {
           reviews on all classes at UCR. A bulletin board for all clubs on
           campus. A completely student driven idea.
         </p>
+
         <a target="_blank" rel="noopener noreferrer" href="https://rajbir.io">
           Portfolio
         </a>

@@ -82,7 +82,6 @@ export default function ProjectList() {
           variants={list}
           initial="hidden"
           animate="show"
-          layout
         >
           {filteredProjects.map((p) => (
             <ProjectCard

@@ -19,7 +19,7 @@ export default async function handler(
 
   // projects
   const url =
-    'https://api.github.com/users/rajbirjohar/repos?sort=updated&per_page=7'
+    'https://api.github.com/users/rajbirjohar/repos?sort=updated&per_page=10'
   const response = await fetch(url, { headers: headers })
   const json = await response.json()
   const projectsList = []

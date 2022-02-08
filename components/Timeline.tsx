@@ -11,6 +11,8 @@ import {
   BoltIcon,
   LocationIcon,
   CameraIcon,
+  BriefcaseIcon,
+  CodeIcon,
 } from '@/components/Icons'
 import Link from 'next/link'
 
@@ -37,10 +39,10 @@ const FullTimeline = () => (
       <Step title="Started Web Development" icon={<StarIcon />}>
         Decided to become a professional pixel pusher.
       </Step>
-      <Step title="Built First Portfolio" icon={<FireIcon />}>
+      <Step title="Built First Portfolio" icon={<CodeIcon />}>
         Oh boy was it ugly.
       </Step>
-      <Step title="Joined Cutiehack" icon={<FireIcon />}>
+      <Step title="Joined Cutiehack" icon={<CodeIcon />}>
         Introduced to web development and helped design, develop, and deploy the{' '}
         <a
           href="https://cutiehack.io"
@@ -60,7 +62,7 @@ const FullTimeline = () => (
 
     <Year>2018</Year>
     <ul className={styles.list}>
-      <Step title="Wrote my First Line of Code" icon={<StarIcon />}>
+      <Step title="Wrote my First Line of Code" icon={<CodeIcon />}>
         <code>cout &#60;&#60; &#34;Hello World!&#34;;</code>
       </Step>
       <Step
@@ -119,19 +121,15 @@ export default function Timeline() {
     <>
       <Year>2022</Year>
       <ul className={styles.list}>
-        <Step title="Joined Inventives" icon={<StarIcon />}>
-          First big boy job! Time to put my skills to the (real world) test.
+        <Step title="Joined Inventives" icon={<BriefcaseIcon />}>
+          First big boy job. Time to put my skills to the (real world) test.
         </Step>
       </ul>
       <Year>2021</Year>
       <ul className={styles.list}>
         <Step title="Traveled Route 243" icon={<CameraIcon />}>
           Ripped it on an incredibly fun panoramic highway and sparked an urge
-          to find another road to drive. Angela&#39;s Crest here I come. Some{' '}
-          <Link href="/interests" passHref>
-            <a>car shots</a>
-          </Link>{' '}
-          I took on my trip.
+          to find another road to drive. Angela&#39;s Crest here I come.
         </Step>
         <Step title="Launched Nexus @ UCR" icon={<StarIcon />}>
           With a team of five, we launched{' '}
@@ -148,7 +146,7 @@ export default function Timeline() {
         <Step title="Roadtrip to San Francisco" icon={<LocationIcon />}>
           Drove up north to visit a friend and experience the city.
         </Step>
-        <Step title="Joined Prytaneum" icon={<StarIcon />}>
+        <Step title="Joined Prytaneum" icon={<BriefcaseIcon />}>
           A collaborative effort to build a unique platform for democratic talks
           a.k.a an online townhall that promotes democracy.
         </Step>
@@ -163,7 +161,7 @@ export default function Timeline() {
           </a>{' '}
           as a director.
         </Step>
-        <Step title="Launched Auto Exposure" icon={<BoltIcon />}>
+        <Step title="Launched Auto Exposure" icon={<CodeIcon />}>
           As a final project for my web development class, my team developed and
           deployed{' '}
           <a
@@ -219,7 +217,7 @@ export default function Timeline() {
           </a>{' '}
           websites. Let&#39;s just say I don&#39;t know when to stop.
         </Step>
-        <Step title="Started Habitle" icon={<FireIcon />}>
+        <Step title="Started Habitle" icon={<CodeIcon />}>
           Because of my bad habits, I built a tool to promote good ones instead.
           It&#39;s super primitive but was good practice on building my own
           projects.
@@ -227,7 +225,7 @@ export default function Timeline() {
         <Step title="Online Classes" icon={<SadIcon />}>
           I am happy to announce I will be attending UC Zoom.
         </Step>
-        <Step title="Joined Biohack" icon={<FireIcon />}>
+        <Step title="Joined Biohack" icon={<CodeIcon />}>
           Part of the four-person team that helped design, develop, and deploy
           the Biohack hackathon website.
         </Step>

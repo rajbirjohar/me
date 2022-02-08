@@ -14,8 +14,7 @@ export default function Life() {
         <p>
           There is more to life than sitting in front of a screen all day
           coding. You can learn about where I&apos;ve gone, what I&apos;ve done,
-          and why I&apos;ve done it. I also have some{' '}
-          <Link href="/interests">pictures</Link> to go along with it.
+          and why I&apos;ve done it.
         </p>
         <Timeline />
       </section>

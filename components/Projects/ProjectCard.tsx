@@ -16,26 +16,31 @@ export default function ProjectCard({
   language,
 }) {
   return (
-    <motion.div variants={listItems} layout>
-      <a
+    <motion.div variants={listItems} layout="position">
+      <motion.a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         className={styles.group}
+        layout
       >
         <div className={styles.card}>
-          <div className={styles.titleWrapper}>
-            <span className={styles.title}>{name}</span>
-            <span className={styles.stars}>
-              {star_count}
-              <StarIcon />
-            </span>
+          <div>
+            <div className={styles.titleWrapper}>
+              <span className={styles.title}>{name}</span>
+              <span className={styles.stars}>
+                {star_count}
+                <StarIcon />
+              </span>
+            </div>
+            <p className={styles.description}>{desc}</p>
           </div>
-          <span className={styles.date}>Last edited {pushed_date}</span>
-          <p className={styles.description}>{desc}</p>
-          {language && <span className={styles.language}>{language}</span>}
+          <span>
+            {language && <span className={styles.language}>{language}</span>}{' '}
+            <span className={styles.date}>• {pushed_date}</span>
+          </span>
         </div>
-      </a>
+      </motion.a>
     </motion.div>
   )
 }
