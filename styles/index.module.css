@@ -1,12 +1,88 @@
-.timeline {
-}
-
-.timelineitem {
+.likewrapper {
   display: flex;
-  gap: var(--gap);
+  align-items: center;
+  gap: var(--gap-half);
 }
 
-.year {
-  font-weight: bold;
-  color: var(--accent-6);
+.inner {
+  position: relative;
+}
+
+.button {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  background-color: var(--mono-300);
+}
+
+.emoji {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  animation: emoji 0.75s;
+}
+
+.gradientwrapper {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  min-width: 1.5rem;
+  max-width: 1.5rem;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
+  margin: var(--gap-half);
+  margin-bottom: 0;
+  position: relative;
+  color: var(--card);
+}
+
+.gradient {
+  position: absolute;
+  background: var(--gradient-fallback);
+  background: var(--gradient);
+  inset: 0;
+}
+
+.likes {
+  font-weight: 600;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.0125rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes emoji {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-40px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(1.4);
+  }
 }

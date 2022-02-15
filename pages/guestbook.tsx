@@ -19,7 +19,7 @@ export default function Guestbook({ fallbackData }) {
       <section>
         {!session && (
           <div>
-            <button onClick={() => signIn('github')}>
+            <button className={styles.primary} onClick={() => signIn('github')}>
               Sign in with Github
             </button>
           </div>

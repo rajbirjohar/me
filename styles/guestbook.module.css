@@ -42,8 +42,9 @@
   background-color: var(--mono-50);
 }
 
-.secondary {
-  background-color: var(--mono-100);
+.secondary:hover {
+  background-color: var(--mono-900);
+  color: var(--mono-50);
 }
 
 .author {

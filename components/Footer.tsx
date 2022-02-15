@@ -1,4 +1,5 @@
 import styles from '@/styles/footer.module.css'
+import { LikeButton } from './LikeButton'
 
 const ExtLink = ({ title, destination }) => {
   return (
@@ -27,9 +28,7 @@ export default function Footer() {
             destination="https://twitter.com/RajbirJohar"
           />
         </div>
-        <div>
-          <p className={styles.status}>Exploring.</p>
-        </div>
+        <LikeButton />
       </div>
     </footer>
   )

@@ -9,7 +9,7 @@
   --gap-med: 1.5rem;
   --small-gap: 4rem;
   --big-gap: 8rem;
-  --main-content: 50rem;
+  --main-content: 40rem;
   --radius-sm: 5px;
   --radius: 15px;
   --inline-radius: 5px;
@@ -40,6 +40,12 @@
   --red-500: #ef4444;
   --header: rgba(250, 250, 250, 0.9);
   --card: rgb(253, 253, 253);
+  --gradient-fallback: rgb(168, 85, 247);
+  --gradient: linear-gradient(
+    20deg,
+    rgba(168, 85, 247, 1) 0%,
+    rgba(251, 113, 133, 1) 100%
+  );
   --shadows: 0 5px 20px -5px rgba(0, 0, 0, 0.07);
 }
 
@@ -58,6 +64,12 @@
   --header: rgba(23, 23, 23, 0.9);
   --shadow: #262626;
   --card: #1b1b1b;
+  --gradient-fallback: rgb(192, 132, 252);
+  --gradient: linear-gradient(
+    20deg,
+    rgba(192, 132, 252, 1) 0%,
+    rgba(244, 63, 94, 1) 100%
+  );
   --shadows: 0 5px 20px -5px rgba(0, 0, 0, 0.6);
 }
 
@@ -96,7 +108,7 @@ body {
 
 p,
 li {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--mono-700);
 }
 
@@ -149,6 +161,7 @@ button {
   background-color: var(--mono-100);
   color: var(--mono-900);
   font-weight: 600;
+  font-size: 1rem;
   transition: background-color var(--transition), box-shadow var(--transition);
 }
 
@@ -204,7 +217,7 @@ input,
 select,
 textarea {
   color: var(--mono-700);
-  font-size: 1rem;
+  font-size: 1.05rem;
   outline: none;
   border: 2px solid var(--mono-200) !important;
   width: 100%;

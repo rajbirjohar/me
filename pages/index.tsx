@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
 import styles from '@/styles/index.module.css'
+import { LikeButton } from '../components/LikeButton'
 
 export default function Projects() {
   return (
@@ -20,7 +21,7 @@ export default function Projects() {
         </p>
         <p>
           You should sign my <Link href="/guestbook">Guestbook</Link> while
-          you&#39;re here.
+          you&#39;re here. Tap the heart below if you like my site :).
         </p>
       </section>
     </Layout>
