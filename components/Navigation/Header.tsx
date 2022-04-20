@@ -1,6 +1,7 @@
 import ActiveLink from '@/components/ActiveLink'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import styles from '@/styles/header.module.css'
+import Theme from '../Theme'
 import MobileHeader from './MobileHeader'
 
 interface Size {
@@ -24,12 +25,15 @@ export default function Header() {
     <>
       {size.width > 668 ? (
         <nav className={styles.nav}>
-          <ul className={styles.navlist}>
-            <NavLink href="/" title="Home" />
-            <NavLink href="/projects" title="Projects" />
-            <NavLink href="/experiences" title="Experiences" />
-            <NavLink href="/music" title="Music" />
-            <NavLink href="/guestbook" title="Guestbook" />
+          <ul className={styles.inner}>
+            <Theme />
+            <div className={styles.navlist}>
+              <NavLink href="/" title="Home" />
+              <NavLink href="/projects" title="Projects" />
+              <NavLink href="/experiences" title="Experiences" />
+              <NavLink href="/music" title="Music" />
+              <NavLink href="/guestbook" title="Guestbook" />
+            </div>
           </ul>
         </nav>
       ) : (

@@ -12,6 +12,7 @@
     "@next-auth/mongodb-adapter": "^0.0.2-next.285",
     "@notionhq/client": "^0.1.8",
     "@octokit/rest": "^18.5.3",
+    "@theme-toggles/react": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
     "date-fns": "^2.22.1",

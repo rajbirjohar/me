@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Layout from '@/components/Layout'
 import ProjectList from '@/components/Projects/ProjectList'
 import styles from '@/styles/projects.module.css'
@@ -23,19 +24,31 @@ export default function Projects() {
           .
         </p>
         <h2>Now</h2>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://nexus-ucr.vercel.app"
-        >
-          Nexus
-        </a>
-        <p>
-          I wanted to build a place where information gathers. A curation of
-          reviews on all classes at UCR. A bulletin board for all clubs on
-          campus. A completely student driven idea.
-        </p>
+        <div className={styles.featured}>
+          {/* <Image
+            src={'/assets/projects/Nexus.png'}
+            alt="Nexus"
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+          /> */}
 
+          <div className={styles.featuredcontent}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://nexus-ucr.vercel.app"
+            >
+              Nexus
+            </a>
+            <p>
+              I wanted to build a place where information gathers. A curation of
+              class reviews and club bulletin board at UCR. A completely student
+              driven idea.
+            </p>
+          </div>
+        </div>
         <a target="_blank" rel="noopener noreferrer" href="https://rajbir.io">
           Portfolio
         </a>

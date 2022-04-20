@@ -15,24 +15,31 @@
 }
 
 .mobilenav {
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
   padding: 0 var(--gap-med);
-  backdrop-filter: none;
+  /* backdrop-filter: none; */
   margin: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hamburger {
   z-index: 999;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
-.navlist {
+.inner {
   width: var(--main-content);
   margin: 0 auto;
   padding: 0 var(--gap-med);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.navlist {
+  display: flex;
   gap: var(--gap);
 }
 
@@ -62,4 +69,16 @@
 
 .mobilenavlist li a {
   text-decoration: none;
+}
+
+.theme {
+  /* Override default styles */
+  background-color: var(--mono-100) !important;
+  transform: scale(1.1);
+  padding: 0.5rem;
+  z-index: 999;
+}
+
+.theme:hover {
+  background-color: var(--mono-200) !important;
 }

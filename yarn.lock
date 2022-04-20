@@ -389,6 +389,11 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
+"@theme-toggles/react@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@theme-toggles/react/-/react-4.0.2.tgz#0d7807425c5d4c41c3a5c843af08b4ad611bd7e8"
+  integrity sha512-7LEytrHt1XODyLtg4A6E5Fufo/uy7lafeA53Aw2U2JuXHFBMII77wxuOThQwoRYDN+TAv0E5L3KmtDLlpRYd+Q==
+
 "@types/cacheable-request@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@types/cacheable-request/-/cacheable-request-6.0.1.tgz#5d22f3dded1fd3a84c0bbeb5039a7419c2c91976"

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { MenuButton } from './MenuButton'
 import styles from '@/styles/header.module.css'
 import { useScrollLock } from '@mantine/hooks'
+import Theme from '../Theme'
 
 const list = {
   closed: {
@@ -17,7 +18,7 @@ const list = {
     opacity: 1,
     transition: {
       type: 'tween',
-      staggerChildren: 0.1,
+      staggerChildren: 0.05,
     },
   },
 }
@@ -57,18 +58,19 @@ export default function MobileHeader() {
 
   return (
     <nav className={styles.mobilenav}>
+      <Theme />
       <MenuButton
         isOpen={isOpen}
         onClick={() => {
           setIsOpen(!isOpen)
           setScrollLocked(!scrollLocked)
         }}
-        strokeWidth="4"
+        strokeWidth="3"
         color="var(--mono-900)"
         lineProps={{ strokeLinecap: 'round' }}
-        transition={{ type: 'tween', duration: 0.4 }}
-        width="24"
-        height="15"
+        transition={{ type: 'tween', duration: 0.25 }}
+        width="20"
+        height="12"
         className={styles.hamburger}
       />
       <AnimatePresence>
