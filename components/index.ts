@@ -1,5 +1,6 @@
-import Experiences from "./Experiences";
+import ListExperiences from "./ListExperiences";
 import Page from "./Page";
-import Projects from "./Projects";
+import Heading from "./Heading";
+import ListProjects from "./ListProjects";
 
-export { Experiences, Page, Projects };
+export { ListExperiences, Page, Heading, ListProjects };

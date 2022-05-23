@@ -8,7 +8,7 @@ const experiences: Experience[] = [
     startDate: "January 2022",
     endDate: "current",
     caption:
-      "Working with React and Typescript to build aesthetic and accessible interfaces for mind blowing ideas. Having fun and learning along the way.",
+      "Working with React and Typescript to build aesthetic and accessible interfaces. Having fun and learning along the way.",
     icon: IconBolt,
   },
   {
