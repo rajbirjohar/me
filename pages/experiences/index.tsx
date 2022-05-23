@@ -1,3 +1,5 @@
+import Heading from "@/components/Heading";
+import { ListExperiences } from "../../components";
 import Page from "@/components/Page";
 import { NextPage } from "next";
 import Head from "next/head";
@@ -9,10 +11,11 @@ const Experiences: NextPage = () => {
       <Head>
         <title>Rajbir Johar | Experiences</title>
       </Head>
-      <h1 className={css.heading}>Experiences</h1>
+      <Heading title={"Experiences"} />
       <p>
         <em>Working on it.</em>
       </p>
+      <ListExperiences all={true} />
     </Page>
   );
 };

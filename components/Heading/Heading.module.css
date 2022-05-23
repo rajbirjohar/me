@@ -1,0 +1,9 @@
+.heading {
+  margin: var(--gap-lg) 0;
+}
+
+.subtitle {
+  color: var(--fg-dim);
+  font-size: 1rem;
+  font-weight: normal;
+}

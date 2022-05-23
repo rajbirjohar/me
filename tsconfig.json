@@ -7,8 +7,10 @@
       "@/components/*": ["components/*"],
       "@/api/*": ["api/*"],
       "@/lib/*": ["lib/*"],
+      "@/util/*": ["util/*"],
       "@/hooks/*": ["hooks/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/data/*": ["data/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

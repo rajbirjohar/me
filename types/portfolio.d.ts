@@ -8,3 +8,12 @@ interface Experience {
   caption: React.ReactNode | React.ReactNode[];
   icon: TablerIcon;
 }
+
+interface Project {
+  title: string;
+  stars: number;
+  pushed: Date;
+  url: string;
+  description?: string;
+  language?: string;
+}

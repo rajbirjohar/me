@@ -1,3 +1,5 @@
+import Heading from "@/components/Heading";
+import ListProjects from "@/components/ListProjects";
 import Page from "@/components/Page";
 import { NextPage } from "next";
 import Head from "next/head";
@@ -9,10 +11,11 @@ const Projects: NextPage = () => {
       <Head>
         <title>Rajbir | Projects</title>
       </Head>
-      <h1 className={css.heading}>Projects</h1>
-      <p>
-        <em>Working on it.</em>
-      </p>
+      <Heading
+        title={"Projects"}
+        subtitle={"Open source for the world to see."}
+      />
+      <ListProjects all />
     </Page>
   );
 };

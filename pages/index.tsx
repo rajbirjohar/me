@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Experiences, Page } from "../components";
+import { ListExperiences, Page, Heading, ListProjects } from "../components";
 import css from "@/styles/Index.module.css";
 import Link from "next/link";
 import { IconArrowRight, IconArrowUpRight } from "@tabler/icons";
@@ -24,12 +24,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Rajbir Johar</title>
       </Head>
-      <article className={css.wrapper}>
+      <div className={css.wrapper}>
         <section className={css.section}>
-          <div className={css.heading}>
-            <h1>Rajbir Johar</h1>
-            <span className={css.subtitle}>Creative</span>
-          </div>
+          <Heading title={"Rajbir Johar"} subtitle={"Creative"} />
           <p>
             <em>Glad to have you.</em> Frontend Developer based in Southern
             California. Building and typing on bespoke keyboards. Getting lost
@@ -38,8 +35,8 @@ const Home: NextPage = () => {
           </p>
         </section>
         <section className={css.section}>
-          <h1 className={css.heading}>Now</h1>
-          <Experiences />
+          <Heading title="Now" />
+          <ListExperiences />
           <Link href={`/experiences`} passHref>
             <a className={css.action}>
               Learn More <IconArrowRight width={18} />
@@ -47,7 +44,8 @@ const Home: NextPage = () => {
           </Link>
         </section>
         <section className={css.section}>
-          <h1 className={css.heading}>Work</h1>
+          <Heading title={"Work"} />
+          <ListProjects />
           <Link href={`/projects`} passHref>
             <a className={css.action}>
               Learn More <IconArrowRight width={18} />
@@ -55,7 +53,7 @@ const Home: NextPage = () => {
           </Link>
         </section>
         <section className={css.section}>
-          <h1 className={css.heading}>Elsewhere</h1>
+          <Heading title={"Elsewhere"} />
           <div className={css.actions}>
             <ExternaltLink
               title={"Github"}
@@ -71,7 +69,7 @@ const Home: NextPage = () => {
             />
           </div>
         </section>
-      </article>
+      </div>
     </Page>
   );
 };
