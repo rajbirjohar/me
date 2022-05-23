@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.heading {
+  margin: var(--gap-lg) 0;
+}
+
+.subtitle {
+  color: var(--fg-dim);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.action {
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+}

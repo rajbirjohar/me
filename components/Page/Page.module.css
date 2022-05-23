@@ -1,0 +1,20 @@
+.wrapper {
+  max-width: var(--main-content);
+  padding: var(--gap-2xl) var(--gap-lg);
+  margin: 0 auto;
+}
+
+.heading {
+  margin: var(--gap-lg) 0;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  border-bottom: none;
+}
+
+.action:hover {
+  border-bottom: none;
+}
