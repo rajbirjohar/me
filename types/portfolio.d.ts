@@ -2,9 +2,10 @@ import { TablerIcon } from "@tabler/icons";
 
 interface Experience {
   title: string;
-  position: string;
-  endDate: string | "current";
+  position?: string;
+  endDate?: string;
   startDate: string;
+  year: number;
   caption: React.ReactNode | React.ReactNode[];
   icon: TablerIcon;
 }

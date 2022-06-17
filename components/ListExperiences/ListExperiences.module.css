@@ -1,3 +1,7 @@
 .wrapper {
-    margin: var(--gap-lg) 0;
+  margin: var(--gap-lg) 0;
+}
+
+.year {
+  margin: var(--gap) 0;
 }

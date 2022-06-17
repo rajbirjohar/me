@@ -9,10 +9,15 @@ export default function Step(props: Experience): JSX.Element {
       </div>
       <div>
         <h2 className={css.title}>
-          {props.title} - <span>{props.position}</span>
+          {props.title}{" "}
+          {props.position && (
+            <>
+              - <span>{props.position}</span>
+            </>
+          )}
         </h2>
         <time className={css.date}>
-          {props.startDate} - {props.endDate}
+          {props.startDate} {props.endDate && <>- {props.endDate}</>}
         </time>
         <p className={css.caption}>{props.caption}</p>
       </div>
