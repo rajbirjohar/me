@@ -1,9 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { ListExperiences, Page, Heading, ListProjects } from "../components";
 import css from "@/styles/Index.module.css";
 import Link from "next/link";
 import { IconArrowRight, IconArrowUpRight } from "@tabler/icons";
+import Heading from "@/components/Heading";
+import ListExperiences from "@/components/ListExperiences";
+import ListProjects from "@/components/ListProjects";
+import Page from "@/components/Page";
 
 const ExternaltLink = (props: { title: string; href: string }) => {
   return (
