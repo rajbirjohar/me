@@ -2,15 +2,15 @@ import css from "./Ascii.module.css";
 
 export default function Ascii(): JSX.Element {
   return (
-      <footer className={css.wrapper}>
-        <div className={css.ascii}>
-                                                                                                                                        <span className="ascii-gray">## #</span><br />
-    ^      ^      ^      ^     ^      ^      ^      ^                            ^                             ^                       <span className="ascii-gray"># #</span>                         ^                              ^      ^      ^      ^     ^      ^      ^      ^
- ^ /|\    /|\    /|\ ^  /|\ ^ /|\    /|\    /|\ ^  /|\        ^    ^            /|\            ^    ^         /|\ ^                   <span className="ascii-gray">##</span>         ^                /|\   ^         ^    ^       ^ /|\    /|\    /|\ ^  /|\ ^ /|\    /|\    /|\ ^  /|\
-/|\/|\ ^  /|\  ^ /|\/|\ /|\/|\/|\ ^  /|\  ^ /|\/|\ /|\    ^  /|\  /|\  ^        /|\  ^     ^  /|\  /|\  ^     /|\/|\    ^          <span className="ascii-primary">__||</span>         /|\ ^    ^   ^    /|\  /|\     ^ /|\  /|\   ^ /|\/|\ ^  /|\  ^ /|\/|\ /|\/|\/|\ ^  /|\  ^ /|\/|\ /|\
-/|\/|\/|\ /|\ /|\/|\/|\ /|\/|\/|\/|\ /|\ /|\/|\/|\ /|\   /|\ /|\  /|\ /|\       /|\ /|\   /|\ /|\  /|\ /|\    /|\/|\   /|\        <span className="ascii-primary">/<span className="ascii-dark">.</span>\__\</span>        /|\/|\  /|\ /|\   /|\  /|\    /|\/|\  /|\  /|\/|\/|\/|\ /|\ /|\/|\/|\ /|\/|\/|\/|\ /|\ /|\/|\/|\ /|\
- |  |  |   |   |  |  |   |  |  |  |   |   |  |  |   |    .|  #|.. .|& /|\        | #&|.   .|  #|.. .|& /|\     | #|.   /|\        <span className="ascii-dark">|O | |</span>        .| #|.. .|& /|\    |#& /|\    .| #|.. .|&  /|\ |  |  |   |   |  |  |   |  |  |  |   |   |  |  |   |
-</div>
+      <footer className={css.wrapper}> 
+         <pre className={css.ascii}>
+          {"  "}^     ^                          ^                           ^                <span className={css.smoke}>## #</span>                                      ^                              ^     {"\n"}
+          {" "}/|\ ^ /|\       ^    ^           /|\           ^    ^        /|\ ^            <span className={css.smoke}># #</span>     <span className={css.tent}>_________</span>     ^                   /|\   ^         ^    ^       ^ /|\   /{"\n"}
+          {" "}/|\/|\/|\    ^ /|\  /|\ ^        /|\  ^     ^ /|\  /|\ ^     /|\/|\    ^     <span className={css.smoke}>##</span>      <span className={css.tent}>^    \    \</span>   /|\ ^    ^   ^       /|\  /|\     ^ /|\  /|\   ^ /|\/|\ ^ /{"\n"}
+              \/|\/|\/|\   /|\/|\  /|\/|\       /|\ /|\   /|\/|\  /|\/|\    /|\/|\   /|\   <span className={css.fire}>***</span>     <span className={css.tent}>/|\    \    \</span>  /|\/|\  /|\ /|\      /|\  /|\    /|\/|\  /|\  /|\/|\/|\/|\/{"\n"}
+          {"  "}|  |  |    .| #|.. .|&/|\        | #&|.   .| #|.. .|&/|\     | #|.   /|\  =*=*=   <span className={css.tent}>/#|#\    \    \</span> .| #|.. .|& /|\       |#& /|\    .| #|.. .|&  /|\ |  |  |  {"\n"}
+          -----    ----- -----      -----   -----     -----     ----------   -----    --------------------   -----  ---------- -----    ----------   ----- -----   -----  {"\n"}
+         </pre>
     </footer>
   )
 }

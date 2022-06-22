@@ -6,8 +6,9 @@ interface Experience {
   endDate?: string;
   startDate: string;
   year: number;
-  caption: React.ReactNode | React.ReactNode[];
+  caption: string;
   icon: TablerIcon;
+  url?: string;
 }
 
 interface Project {

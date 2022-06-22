@@ -1,6 +1,7 @@
 import { IconArrowBarToLeft } from "@tabler/icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Ascii from "../Ascii";
 import css from "./Page.module.css";
 
 export default function Page(props: {

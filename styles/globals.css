@@ -5,6 +5,7 @@
 
 :root {
   /* Spacing */
+  --gap-2xs: 0.125rem;
   --gap-xs: 0.25rem;
   --gap-sm: 0.5rem;
   --gap: 1rem;
@@ -22,11 +23,13 @@
   --radius-inline: 5px;
 
   /* Color */
-  --hue: 200;
+  --hue: 160;
   --bg: hsl(var(--hue) 2% 97%);
   --fg: hsl(var(--hue) 10% 10%);
-  --fg-dim: hsl(var(--hue) 20% 35%);
+  --fg-bright: hsl(var(--hue) 50% 40%);
+  --fg-dim: hsl(var(--hue) 20% 45%);
   --fg-mute: hsl(var(--hue) 10% 90%);
+  --fg-muter: hsl(var(--hue) 10% 75%);
   --border: 1px solid var(--fg-mute);
   --shadow: 0px 0.2px 0.9px hsl(var(--hue) 1% 1% / 0.003),
     0px 0.5px 2px hsl(var(--hue) 1% 1% / 0.004),
@@ -56,19 +59,21 @@
   --hue: 150;
   --bg: hsl(var(--hue) 2% 9%);
   --fg: hsl(var(--hue) 10% 97%);
-  --fg-dim: hsl(var(--hue) 20% 65%);
+  --fg-bright: hsl(var(--hue) 40% 75%);
+  --fg-dim: hsl(var(--hue) 15% 65%);
   --fg-mute: hsl(var(--hue) 10% 20%);
+  --fg-muter: hsl(var(--hue) 10% 35%);
   --border: 1px solid var(--fg-mute);
-  --shadow: 0px 0.2px 0.9px hsl(var(--hue) 1% 1% / 0.003),
-    0px 0.5px 2px hsl(var(--hue) 1% 1% / 0.004),
-    0px 0.7px 3.5px hsl(var(--hue) 1% 1% / 0.006),
-    0px 1.1px 5.3px hsl(var(--hue) 1% 1% / 0.007),
-    0px 1.5px 7.8px hsl(var(--hue) 1% 1% / 0.008),
-    0px 2.1px 11.4px hsl(var(--hue) 1% 1% / 0.009),
-    0px 2.8px 16.8px hsl(var(--hue) 1% 1% / 0.011),
-    0px 4px 25.6px hsl(var(--hue) 1% 1% / 0.014),
-    0px 5.8px 41.3px hsl(var(--hue) 1% 1% / 0.018),
-    0px 8px 73px hsl(var(--hue) 1% 1% / 0.02);
+  --shadow: 0px 0.2px 0.9px hsl(var(--hue) 3% 3% / 0.03),
+    0px 0.5px 2px hsl(var(--hue) 3% 3% / 0.04),
+    0px 0.7px 3.5px hsl(var(--hue) 3% 3% / 0.06),
+    0px 1.1px 5.3px hsl(var(--hue) 3% 3% / 0.07),
+    0px 1.5px 7.8px hsl(var(--hue) 3% 3% / 0.08),
+    0px 2.1px 11.4px hsl(var(--hue) 3% 3% / 0.09),
+    0px 2.8px 16.8px hsl(var(--hue) 3% 3% / 0.11),
+    0px 4px 25.6px hsl(var(--hue) 3% 3% / 0.14),
+    0px 5.8px 41.3px hsl(var(--hue) 3% 3% / 0.18),
+    0px 8px 73px hsl(var(--hue) 3% 3% / 0.2);
 }
 
 /*
@@ -150,7 +155,7 @@ h6 {
 }
 
 a {
-  color: var(--fg-dim);
+  color: var(--fg-bright);
   text-decoration: none;
   transition: color var(--tran);
 }
@@ -174,6 +179,14 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  background-color: var(--fg-mute);
+  padding: var(--gap-xs) var(--gap-sm);
+  border-radius: 5px;
 }
 
 /*

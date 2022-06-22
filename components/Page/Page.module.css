@@ -1,6 +1,6 @@
 .wrapper {
   max-width: var(--main-content);
-  padding: var(--gap-2xl) var(--gap-md);
+  padding: var(--gap-2xl) var(--gap-md) var(--gap-lg) var(--gap-md);
   margin: 0 auto;
 }
 

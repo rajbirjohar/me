@@ -29,16 +29,20 @@ const Home: NextPage = () => {
       </Head>
       <div className={css.wrapper}>
         <section className={css.section}>
-          <Heading title={"Rajbir Johar"} subtitle={"Creative"} />
+          <Heading
+            title={"Rajbir Johar"}
+            subtitle={"Frontend Developer at Inventives"}
+          />
           <p>
-            <em>Glad to have you.</em> Frontend Developer based in Southern
-            California. Building and typing on bespoke keyboards. Getting lost
-            on canyon drives during my downtime. Crafting aesthetic interfaces
-            at Inventives for <em>mind blowing ideas.</em>
+            <em>Glad to have you.</em> Frontend Developer based in{" "}
+            <s>Southern California</s> Arizona. Building and typing on bespoke
+            keyboards. Getting lost on canyon drives during my downtime.
+            Crafting aesthetic interfaces at Inventives for{" "}
+            <em>mind blowing ideas.</em>
           </p>
         </section>
         <section className={css.section}>
-          <Heading title="Now" />
+          <Heading title="Now" subtitle="What I've been up to recently" />
           <ListExperiences />
           <Link href={`/experiences`} passHref>
             <a className={css.action}>
@@ -47,7 +51,10 @@ const Home: NextPage = () => {
           </Link>
         </section>
         <section className={css.section}>
-          <Heading title={"Work"} />
+          <Heading
+            title={"Work"}
+            subtitle="All my work not protected under an NDA"
+          />
           <ListProjects />
           <Link href={`/projects`} passHref>
             <a className={css.action}>
@@ -56,7 +63,7 @@ const Home: NextPage = () => {
           </Link>
         </section>
         <section className={css.section}>
-          <Heading title={"Elsewhere"} />
+          <Heading title={"Elsewhere"} subtitle="Let's talk?" />
           <div className={css.actions}>
             <ExternaltLink
               title={"Github"}

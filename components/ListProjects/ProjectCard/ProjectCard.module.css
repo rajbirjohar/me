@@ -7,6 +7,7 @@
   border: 1px solid var(--fg-mute);
   border-radius: var(--radius);
   transition: border var(--tran-slow), box-shadow var(--tran-slow);
+  background: var(--bg);
 }
 
 .wrapper:hover {
@@ -22,16 +23,16 @@
 
 .title {
   font-size: 1rem;
-  font-weight: normal;
   display: flex;
   align-items: center;
-  color: var(--fg-dim);
+  color: var(--fg-bright);
   transition: color var(--tran-slow);
 }
 
 .stars {
   display: flex;
   align-items: center;
+  gap: var(--gap-2xs);
 }
 
 .info {

@@ -9,13 +9,23 @@
   padding-bottom: 0;
 }
 
+.action {
+  display: flex;
+  align-items: center;
+}
+
+.action:hover > .title span {
+  color: var(--fg);
+}
+
 .title {
   font-weight: 500;
   font-size: 16px;
 }
 
 .title span {
-  color: var(--fg-dim);
+  /* color: var(--fg-dim); */
+  transition: var(--tran);
 }
 
 .icon {
