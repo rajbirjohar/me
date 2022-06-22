@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider enableSystem>
       <Component {...pageProps} />
+      <Ascii />
     </ThemeProvider>
   );
 }

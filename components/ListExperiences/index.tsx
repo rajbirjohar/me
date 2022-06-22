@@ -37,6 +37,7 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
                     year={step.year}
                     caption={step.caption}
                     icon={step.icon}
+                    url={step.url}
                   />
                 ))}
               </div>
@@ -44,18 +45,26 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
         </>
       ) : (
         <>
-          {experiences.slice(0, 3).map((step: Experience) => (
-            <Step
-              key={step.title}
-              title={step.title}
-              position={step.position}
-              endDate={step.endDate}
-              startDate={step.startDate}
-              year={step.year}
-              caption={step.caption}
-              icon={step.icon}
-            />
-          ))}
+          {groupByYear(experiences, "year")
+            .sort((a, b) => b.year - a.year)
+            .slice(0, 1)
+            .map((value, index) => (
+              <div key={index}>
+                {value.events.slice(0, 3).map((step: Experience) => (
+                  <Step
+                    key={step.title}
+                    title={step.title}
+                    position={step.position}
+                    endDate={step.endDate}
+                    startDate={step.startDate}
+                    year={step.year}
+                    caption={step.caption}
+                    icon={step.icon}
+                    url={step.url}
+                  />
+                ))}
+              </div>
+            ))}
         </>
       )}
     </ul>

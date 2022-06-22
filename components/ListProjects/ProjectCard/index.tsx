@@ -14,7 +14,7 @@ export default function ProjectCard(props: Project): JSX.Element {
       <article className={css.wrapper}>
         <div className={css.heading}>
           <h2 className={css.title}>
-            {props.title} <IconArrowUpRight width={18} />
+            {props.title} <IconArrowUpRight width={20} />
           </h2>
 
           <span className={css.stars}>
