@@ -1,25 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import css from "@/styles/Index.module.css";
-import Link from "next/link";
-import { IconArrowRight, IconArrowUpRight } from "@tabler/icons";
 import Heading from "@/components/Heading";
 import ListExperiences from "@/components/ListExperiences";
 import ListProjects from "@/components/ListProjects";
 import Page from "@/components/Page";
-
-const ExternaltLink = (props: { title: string; href: string }) => {
-  return (
-    <a
-      href={props.href}
-      target="_blank"
-      rel="noreferrer noopener"
-      className={css.action}
-    >
-      {props.title} <IconArrowUpRight width={18} />
-    </a>
-  );
-};
+import ExternalLink from "@/components/ExternalLink";
 
 const Home: NextPage = () => {
   return (
@@ -44,38 +30,37 @@ const Home: NextPage = () => {
         <section className={css.section}>
           <Heading title="Now" subtitle="What I've been up to recently" />
           <ListExperiences />
-          <Link href={`/experiences`} passHref>
-            <a className={css.action}>
-              Learn More <IconArrowRight width={18} />
-            </a>
-          </Link>
+          <ExternalLink
+            title={"Learn More"}
+            href={`/experiences`}
+            type="local"
+          />
         </section>
         <section className={css.section}>
           <Heading
-            title={"Work"}
+            title="Work"
             subtitle="All my work not protected under an NDA"
           />
           <ListProjects />
-          <Link href={`/projects`} passHref>
-            <a className={css.action}>
-              Learn More <IconArrowRight width={18} />
-            </a>
-          </Link>
+          <ExternalLink title={"Learn More"} href={`/projects`} type="local" />
         </section>
         <section className={css.section}>
-          <Heading title={"Elsewhere"} subtitle="Let's talk?" />
+          <Heading title={"Elsewhere"} subtitle="Let's go for a walk" />
           <div className={css.actions}>
-            <ExternaltLink
-              title={"Github"}
-              href={"https://github.com/rajbirjohar"}
+            <ExternalLink
+              title="Github"
+              href="https://github.com/rajbirjohar"
+              type="external"
             />
-            <ExternaltLink
-              title={"LinkedIn"}
-              href={"https://www.linkedin.com/in/rajbirjohar/"}
+            <ExternalLink
+              title="LinkedIn"
+              href="https://www.linkedin.com/in/rajbirjohar/"
+              type="external"
             />
-            <ExternaltLink
-              title={"Instagram"}
-              href={"https://www.instagram.com/rajbir.johar/"}
+            <ExternalLink
+              title="Instagram"
+              href="https://www.instagram.com/rajbir.johar/"
+              type="external"
             />
           </div>
         </section>

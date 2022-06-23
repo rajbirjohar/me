@@ -1,0 +1,15 @@
+.local, .external {
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2xs);
+  }
+
+  .local {
+    padding: var(--gap-sm) var(--gap);
+    border-radius: var(--radius);
+  }
+
+  .local:hover {
+    background-color: var(--fg-mute);
+  }
