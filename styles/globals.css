@@ -53,6 +53,9 @@
   --tran: 100ms ease-in-out;
   --tran-slow: 200ms ease-in-out;
   --tran-slower: 300ms ease-in-out;
+  --stagger: 0;
+  --delay: 120ms;
+  --start: 0ms;
 }
 
 [data-theme="dark"] {
@@ -157,7 +160,7 @@ h6 {
 a {
   color: var(--fg-bright);
   text-decoration: none;
-  transition: color var(--tran);
+  transition: all var(--tran);
 }
 
 a:hover {

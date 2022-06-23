@@ -13,7 +13,7 @@ const Projects: NextPage = () => {
       </Head>
       <Heading
         title={"Projects"}
-        subtitle={"Open source for the world to see."}
+        subtitle={"Open source for the world to see"}
       />
       <ListProjects all />
     </Page>
