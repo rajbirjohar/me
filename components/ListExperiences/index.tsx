@@ -32,8 +32,7 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
                     key={step.title}
                     title={step.title}
                     position={step.position}
-                    endDate={step.endDate}
-                    startDate={step.startDate}
+                    range={step.range}
                     year={step.year}
                     caption={step.caption}
                     icon={step.icon}
@@ -55,8 +54,7 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
                     key={step.title}
                     title={step.title}
                     position={step.position}
-                    endDate={step.endDate}
-                    startDate={step.startDate}
+                    range={step.range}
                     year={step.year}
                     caption={step.caption}
                     icon={step.icon}

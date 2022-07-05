@@ -38,7 +38,7 @@ export default function Step(props: Experience): JSX.Element {
         )}
 
         <time className={css.date}>
-          {props.startDate} {props.endDate && <>- {props.endDate}</>}
+          {props.range}
         </time>
         <p dangerouslySetInnerHTML={{ __html: props.caption }} />
       </div>
