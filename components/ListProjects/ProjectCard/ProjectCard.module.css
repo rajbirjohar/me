@@ -6,13 +6,14 @@
   padding: var(--gap);
   border: 1px solid var(--fg-mute);
   border-radius: var(--radius);
-  transition: border var(--tran-slow), box-shadow var(--tran-slow);
-  background: var(--bg);
+  transition: all var(--tran-slow);
+  background-color: var(--bg);
 }
 
 .wrapper:hover {
-  border: 1px solid var(--bg);
+  border: 1px solid var(--bg-bright);
   box-shadow: var(--shadow);
+  background-color: var(--bg-bright);
 }
 
 .heading {

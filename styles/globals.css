@@ -25,6 +25,7 @@
   /* Color */
   --hue: 160;
   --bg: hsl(var(--hue) 2% 97%);
+  --bg-bright: hsl(var(--hue) 2% 98%);
   --fg: hsl(var(--hue) 10% 10%);
   --fg-bright: hsl(var(--hue) 50% 40%);
   --fg-dim: hsl(var(--hue) 20% 45%);
@@ -61,6 +62,7 @@
 [data-theme="dark"] {
   --hue: 150;
   --bg: hsl(var(--hue) 2% 9%);
+  --bg-bright: hsl(var(--hue) 2% 11%);
   --fg: hsl(var(--hue) 10% 97%);
   --fg-bright: hsl(var(--hue) 40% 75%);
   --fg-dim: hsl(var(--hue) 15% 65%);

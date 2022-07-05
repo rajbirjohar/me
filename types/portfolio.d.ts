@@ -3,8 +3,7 @@ import { TablerIcon } from "@tabler/icons";
 interface Experience {
   title: string;
   position?: string;
-  endDate?: string;
-  startDate: string;
+  range?: string;
   year: number;
   caption: string;
   icon: TablerIcon;
