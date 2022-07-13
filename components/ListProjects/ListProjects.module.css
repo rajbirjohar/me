@@ -4,3 +4,16 @@
   gap: var(--gap);
   margin: var(--gap-lg) 0;
 }
+
+.selected {
+  transition: all var(--tran-slow);
+}
+
+.wrapper:hover > .selected {
+  transform: scale(1.01);
+}
+
+.wrapper:hover > .selected:not(:hover) {
+  opacity: 0.5;
+  transform: scale(1);
+}

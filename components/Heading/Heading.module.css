@@ -2,8 +2,25 @@
   margin: var(--gap-lg) 0;
 }
 
+.heading.large h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 .subtitle {
-  color: var(--fg-dim);
+  color: var(--fg-muter);
   font-size: 1rem;
   font-weight: normal;
+}
+
+.subtitle.large {
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: var(--fg);
+}
+
+@media only screen and (max-width: 75rem) {
+  .heading.large h1 {
+    font-size: 1.5rem;
+  }
 }

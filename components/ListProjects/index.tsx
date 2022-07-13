@@ -27,15 +27,16 @@ export default function ListProjects(props: { all?: boolean }): JSX.Element {
           {data.projects
             .sort((a: Project, b: Project) => b.stars - a.stars)
             .map((project: Project) => (
-              <ProjectCard
-                key={project.title}
-                title={project.title}
-                stars={project.stars}
-                pushed={project.pushed}
-                url={project.url}
-                description={project.description}
-                language={project.language}
-              />
+              <div key={project.title} className={css.selected}>
+                <ProjectCard
+                  title={project.title}
+                  stars={project.stars}
+                  pushed={project.pushed}
+                  url={project.url}
+                  description={project.description}
+                  language={project.language}
+                />
+              </div>
             ))}
         </>
       ) : (
@@ -44,15 +45,16 @@ export default function ListProjects(props: { all?: boolean }): JSX.Element {
             .sort((a: Project, b: Project) => b.pushed > a.pushed)
             .slice(0, 3)
             .map((project: Project) => (
-              <ProjectCard
-                key={project.title}
-                title={project.title}
-                stars={project.stars}
-                pushed={project.pushed}
-                url={project.url}
-                description={project.description}
-                language={project.language}
-              />
+              <div key={project.title} className={css.selected}>
+                <ProjectCard
+                  title={project.title}
+                  stars={project.stars}
+                  pushed={project.pushed}
+                  url={project.url}
+                  description={project.description}
+                  language={project.language}
+                />
+              </div>
             ))}
         </>
       )}

@@ -12,24 +12,23 @@ export default function ProjectCard(props: Project): JSX.Element {
       className={css.action}
     >
       <article className={css.wrapper}>
-        <div className={css.heading}>
+        <div className={css.info}>
+          {/* <time className={css.time}>
+            {formatRelative(subDays(new Date(props.pushed), 0), new Date())}
+          </time> */}
           <h2 className={css.title}>
-            {props.title} <IconArrowUpRight width={20} />
+            {props.title}{" "}
+            <IconArrowUpRight width={20} height={20} strokeWidth={2.5} />
           </h2>
-
           <span className={css.stars}>
-            {props.stars} <IconStar width={16} />
+            <IconStar fill="var(--fg)" width={16} /> {props.stars}
           </span>
         </div>
+
         <p className={css.description}>{props.description}</p>
-        <div className={css.info}>
-          <time className={css.time}>
-            {formatRelative(subDays(new Date(props.pushed), 0), new Date())}
-          </time>
-          {props.language && (
-            <span className={css.language}>{props.language}</span>
-          )}
-        </div>
+        {props.language && (
+          <span className={css.language}>{props.language}</span>
+        )}
       </article>
     </a>
   );
