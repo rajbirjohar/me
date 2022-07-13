@@ -13,16 +13,14 @@ import { Experience } from "types/portfolio";
 
 const experiences: Experience[] = [
   {
-    title: "Arizona",
-    position: "Goodbye California",
-    range: "June 2022 - current",
+    title: "Moved to Arizona",
+    range: "June 2022",
     year: 2022,
-    caption: "Here's to new adventures in the Grand Canyon State.",
+    caption: "Goodbye California. Here's to new adventures.",
     icon: IconPlaneDeparture,
   },
   {
-    title: "Inventives",
-    position: "Frontend Developer",
+    title: "Started at Inventives",
     range: "January 2022 - current",
     year: 2022,
     caption:
@@ -30,25 +28,24 @@ const experiences: Experience[] = [
     icon: IconBolt,
   },
   {
-    title: "Restarted Photography",
+    title: "Seeing the World Differently",
     range: "May 2022",
     year: 2022,
-    caption: "Picked up an R6 and some primes.",
+    caption:
+      "Shooting with a Canon R6 and a few cool primes. My favorite is definitely the 85mm.",
     icon: IconCamera,
     url: "https://www.instagram.com/rajbir.johar/",
   },
   {
-    title: "UC Riverside",
-    position: "B.S. Computer Science",
+    title: "Graduated with a CS Degree",
     range: "September 2018 - June 2022",
     year: 2022,
     caption:
-      "Graduated with a Bachelors of Science in Computer Science. Heavily involved with Citrus Hack. Worked at Prytaneum and ResTech.",
+      "Graduated with a B.S. in Computer Science. Heavily involved with Citrus Hack. Worked at Prytaneum and ResTech.",
     icon: IconSchool,
   },
   {
-    title: "Citrus Hack",
-    position: "Director",
+    title: "Directed Citrus Hack",
     range: "April 2021 - April 2022",
     year: 2022,
     caption:
@@ -66,15 +63,14 @@ const experiences: Experience[] = [
     url: "https://nexus-ucr.vercel.app/",
   },
   {
-    title: "Road trip to San Franscisco",
+    title: "Drove to San Franscisco",
     range: "July 2021",
     year: 2021,
     caption: "Three good friends exploring the bay.",
     icon: IconRoad,
   },
   {
-    title: "Citrus Hack",
-    position: "Frontend Lead",
+    title: "Launched Citrus Hack",
     range: "April 2020 - April 2021",
     year: 2021,
     caption:
@@ -89,14 +85,14 @@ const experiences: Experience[] = [
     icon: IconPaw,
   },
   {
-    title: "First Solo Road Trip to Arizona",
+    title: "Drove Solo to Arizona",
     range: "March 2020",
     year: 2020,
     caption: "Just me, smooth music, and open road.",
     icon: IconRoad,
   },
   {
-    title: "First Solo Flight to Arizona",
+    title: "Flew Solo to Arizona",
     range: "March 2019",
     year: 2019,
     caption: "Southwest pretzels are the only reason I keep choosing them.",

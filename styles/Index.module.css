@@ -11,9 +11,3 @@
 .subtitle {
   color: var(--fg-dim);
 }
-
-.actions {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-sm);
-}

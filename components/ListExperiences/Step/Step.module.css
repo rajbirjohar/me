@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   border-left: 2px solid var(--fg-mute);
-  padding: 0 0 var(--gap) var(--gap);
+  padding: 0 0 var(--gap-md) var(--gap);
 }
 
 .wrapper:last-child {
@@ -24,8 +24,11 @@
 }
 
 .title span {
-  /* color: var(--fg-dim); */
   transition: var(--tran);
+}
+
+.description {
+  color: var(--fg-dim);
 }
 
 .icon {
@@ -40,5 +43,5 @@
 }
 
 .date {
-    color: var(--fg-dim);
+    color: var(--fg-muter);
 }

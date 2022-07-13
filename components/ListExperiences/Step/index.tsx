@@ -40,7 +40,7 @@ export default function Step(props: Experience): JSX.Element {
         <time className={css.date}>
           {props.range}
         </time>
-        <p dangerouslySetInnerHTML={{ __html: props.caption }} />
+        <p dangerouslySetInnerHTML={{ __html: props.caption }} className={css.description} />
       </div>
     </li>
   );

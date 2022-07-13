@@ -16,21 +16,21 @@
   --gap-3xl: 16rem;
   --gap-4xl: 32rem;
   --gap-5xl: 64rem;
-  --main-content: 45rem;
+  --main-content: 80rem;
   --radius-sm: 5px;
   --radius: 10px;
   --radius-full: 50%;
   --radius-inline: 5px;
 
   /* Color */
-  --hue: 160;
-  --bg: hsl(var(--hue) 2% 97%);
-  --bg-bright: hsl(var(--hue) 2% 98%);
-  --fg: hsl(var(--hue) 10% 10%);
-  --fg-bright: hsl(var(--hue) 50% 40%);
-  --fg-dim: hsl(var(--hue) 20% 45%);
-  --fg-mute: hsl(var(--hue) 10% 90%);
-  --fg-muter: hsl(var(--hue) 10% 75%);
+  --hue: 165;
+  --bg: hsl(var(--hue) 2% 90%);
+  --bg-bright: hsl(var(--hue) 2% 93%);
+  --fg: hsl(var(--hue) 10% 23%);
+  --fg-bright: hsl(var(--hue) 80% 30%);
+  --fg-dim: hsl(var(--hue) 10% 40%);
+  --fg-mute: hsl(var(--hue) 10% 85%);
+  --fg-muter: hsl(var(--hue) 10% 60%);
   --border: 1px solid var(--fg-mute);
   --shadow: 0px 0.2px 0.9px hsl(var(--hue) 1% 1% / 0.003),
     0px 0.5px 2px hsl(var(--hue) 1% 1% / 0.004),
@@ -60,14 +60,14 @@
 }
 
 [data-theme="dark"] {
-  --hue: 150;
+  --hue: 170;
   --bg: hsl(var(--hue) 2% 9%);
   --bg-bright: hsl(var(--hue) 2% 11%);
   --fg: hsl(var(--hue) 10% 97%);
-  --fg-bright: hsl(var(--hue) 40% 75%);
-  --fg-dim: hsl(var(--hue) 15% 65%);
-  --fg-mute: hsl(var(--hue) 10% 20%);
-  --fg-muter: hsl(var(--hue) 10% 35%);
+  --fg-bright: hsl(var(--hue) 90% 40%);
+  --fg-dim: hsl(var(--hue) 10% 60%);
+  --fg-mute: hsl(var(--hue) 20% 20%);
+  --fg-muter: hsl(var(--hue) 20% 35%);
   --border: 1px solid var(--fg-mute);
   --shadow: 0px 0.2px 0.9px hsl(var(--hue) 3% 3% / 0.03),
     0px 0.5px 2px hsl(var(--hue) 3% 3% / 0.04),
