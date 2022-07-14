@@ -13,7 +13,7 @@ export default function Artist(artist: any) {
         <Image
           src={artist.artistCover}
           alt="Album Art"
-          className={styles.rounded}
+          className={styles.roundedfull}
           width="100%"
           height="100%"
           layout="responsive"

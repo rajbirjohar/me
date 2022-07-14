@@ -23,7 +23,7 @@ export default function Track(track: any) {
               {track.title}
             </a>
           </p>
-          <p className={`${styles.artist} ${"clamp"}`}>{track.artist}</p>
+          <p className={`${styles.artistName} ${"clamp"}`}>{track.artist}</p>
         </div>
       </div>
     </div>
