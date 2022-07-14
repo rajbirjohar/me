@@ -1,5 +1,5 @@
 import Heading from "@/components/Heading";
-import ListExperiences from "@/components/ListExperiences";
+import ListExperiences from "@/components/Experiences";
 import Page from "@/components/Page";
 import { NextPage } from "next";
 import Head from "next/head";

@@ -37,7 +37,7 @@ const experiences: Experience[] = [
     url: "https://www.instagram.com/rajbir.johar/",
   },
   {
-    title: "Graduated with a CS Degree",
+    title: "Graduated",
     range: "September 2018 - June 2022",
     year: 2022,
     caption:
@@ -70,7 +70,7 @@ const experiences: Experience[] = [
     icon: IconRoad,
   },
   {
-    title: "Launched Citrus Hack",
+    title: "Joined Citrus Hack",
     range: "April 2020 - April 2021",
     year: 2021,
     caption:
@@ -102,15 +102,14 @@ const experiences: Experience[] = [
     title: "Started Writing Code",
     range: "September 2017",
     year: 2017,
-    caption: "<code>Woah! Hello World!</code>",
+    caption: "<code>Kinda crazy</code>",
     icon: IconCode,
   },
   {
     title: "Born",
-    position: "1 of 1",
     range: "February 2000",
     year: 2000,
-    caption: "Haha, yes.",
+    caption: "One of one.",
     icon: IconCake,
   },
 ];

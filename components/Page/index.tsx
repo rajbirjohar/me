@@ -21,7 +21,6 @@ export default function Page(props: {
         <Heading
           title={"Rajbir Johar"}
           subtitle={"FE Developer at Inventives"}
-          large
         />
         <p>
           <em>Glad to have you.</em> Frontend Developer based in{" "}

@@ -32,7 +32,7 @@
 
 .description {
   color: var(--fg-dim);
-  margin: var(--gap-sm) 0;
+  margin: var(--gap-2xs) 0;
 }
 
 .stars {
@@ -60,7 +60,6 @@
 }
 
 .language {
-  line-height: 1;
   font-weight: 600;
   letter-spacing: 1.5px;
   font-size: 0.75rem;
