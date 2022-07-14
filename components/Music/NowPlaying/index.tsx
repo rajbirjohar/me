@@ -32,7 +32,7 @@ export default function NowPlaying() {
                   {data?.title}
                 </a>
               </p>
-              <p className={`${styles.artist} ${"clamp"}`}>{data?.artist}</p>
+              <p className={`${styles.artistName} ${"clamp"}`}>{data?.artist}</p>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function NowPlaying() {
               <p className={`${styles.placeholder} ${"clamp"}`}>
                 Not currently playing
               </p>
-              <p className={`${styles.artist} ${"clamp"}`}>Spotify</p>
+              <p className={`${styles.artistName} ${"clamp"}`}>Spotify</p>
             </div>
           </div>
         </div>

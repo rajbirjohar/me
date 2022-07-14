@@ -38,11 +38,14 @@
   position: relative;
   flex: 1;
   transition: all var(--tran-slow);
+  background-color: var(--fg-mute);
+  padding: var(--gap);
+  border-radius: var(--radius);
 }
 
 .artistArt {
-  min-width: 175px;
-  min-height: 175px;
+  min-width: 120px;
+  min-height: 120px;
   position: relative;
 }
 
@@ -56,13 +59,17 @@
 }
 
 .artistUrl {
-  margin: var(--gap) 0;
+  margin: var(--gap) 0 0 0;
   font-size: 1.2rem;
   font-weight: 550;
 }
 
 .rounded {
   border-radius: var(--radius-sm);
+}
+
+.roundedfull {
+  border-radius: var(--radius-full);
 }
 
 .intro {
