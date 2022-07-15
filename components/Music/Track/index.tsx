@@ -1,29 +1,44 @@
 import Image from "next/image";
-import styles from "../music.module.css";
+import css from "./styles.module.css";
+import { Track as TrackType } from "types/portfolio";
 
-export default function Track(track: any) {
+export default function Track(props: TrackType) {
   return (
-    <div className={styles.track}>
-      <div className={styles.info}>
-        <div className={styles.albumArt}>
+    <div className={css.wrapper}>
+      <div className={css.track}>
+        <div className={css.albumArt}>
           <Image
-            src={track.albumArt}
+            src={props.albumArt}
             alt="Album Art"
-            className={styles.rounded}
-            width="100%"
-            height="100%"
-            layout="responsive"
+            className={css.rounded}
+            width={75}
+            height={75}
+            layout="fixed"
             objectFit="contain"
             priority={true}
           />
         </div>
-        <div>
-          <p className={`${styles.title} ${"clamp"}`}>
-            <a href={track.songUrl} target="_blank" rel="noopener noreferrer">
-              {track.title}
+        <div className={css.info}>
+          {props.progress && (
+            <div
+              className={css.progress + " " + css.secondary}
+              style={{
+                width: `${(props.progress / props.duration ?? 0) * 100}%`,
+              }}
+            />
+          )}
+          <div className={css.heading}>
+            <a
+              className={`${css.title} ${"clamp"}`}
+              href={props.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {props.title}{" "}
+              {props.explicit && <span className={css.explicit}>E</span>}
             </a>
-          </p>
-          <p className={`${styles.artistName} ${"clamp"}`}>{track.artist}</p>
+          </div>
+          <p className={`${css.artist} ${"clamp"}`}>{props.artist}</p>
         </div>
       </div>
     </div>

@@ -2,12 +2,12 @@
   margin: var(--gap-lg) 0;
 }
 
-.heading h1 {
+.title {
   font-weight: 600;
 }
 
 .subtitle {
-  color: var(--fg-muter);
+  color: var(--fg-mute);
   font-size: 1rem;
   font-weight: normal;
 }

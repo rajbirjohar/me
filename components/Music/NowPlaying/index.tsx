@@ -1,61 +1,43 @@
-import Image from "next/image";
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
-import styles from "../music.module.css";
+import css from "./styles.module.css";
+import Track from "../Track";
 
 export default function NowPlaying() {
-  const { data } = useSWR("/api/spotify/nowplaying", fetcher);
+  const { data, error } = useSWR("/api/spotify/nowplaying", fetcher, {
+    refreshInterval: 5000,
+  });
 
+  if (error) {
+    return <em>How unfortunate. Spotify broke.<br /></em>;
+  }
+  if (!data) {
+    return <em>Loading...</em>;
+  }
   return (
     <>
-      <h2 className={styles.intro}>Listening to</h2>
-      {data?.songUrl ? (
-        <div className={styles.nowplaying}>
-          <div className={styles.info}>
-            <div className={styles.albumArt}>
-              <Image
-                src={data?.albumArt}
-                alt="Album Art"
-                className={styles.rounded}
-                width={75}
-                height={75}
-                layout="fixed"
-              />
-            </div>
-            <div>
-              <p className={`${styles.title} ${"clamp"}`}>
-                <a
-                  href={data.songUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {data?.title}
-                </a>
-              </p>
-              <p className={`${styles.artistName} ${"clamp"}`}>{data?.artist}</p>
-            </div>
-          </div>
-        </div>
+      <h2 className={css.intro}>Listening to</h2>
+      {data.url ? (
+        <Track
+          title={data.title}
+          artist={data.artist}
+          album={data.album}
+          albumArt={data.albumArt}
+          url={data.url}
+          duration={data.duration}
+          progress={data.progress}
+          explicit={data.explicit}
+        />
       ) : (
-        <div className={styles.nowplaying}>
-          <div className={styles.info}>
-            <div className={styles.albumArt}>
-              <Image
-                src="/spotify.png"
-                alt="Spotify Logo"
-                className={styles.rounded}
-                width={75}
-                height={75}
-              />
-            </div>
-            <div>
-              <p className={`${styles.placeholder} ${"clamp"}`}>
-                Not currently playing
-              </p>
-              <p className={`${styles.artistName} ${"clamp"}`}>Spotify</p>
-            </div>
-          </div>
-        </div>
+        <Track
+          title={"Not currently playing"}
+          artist={"Spotify"}
+          album={"Spotify"}
+          albumArt={"/spotify.png"}
+          url={""}
+          duration={0}
+          explicit={false}
+        />
       )}
     </>
   );

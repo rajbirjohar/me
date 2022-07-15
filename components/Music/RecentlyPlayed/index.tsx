@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 import Track from "@/components/Music/Track";
-import styles from "../music.module.css";
+import styles from "../Track/styles.module.css";
 
 export default function RecentlyPlayed() {
   const { error, data } = useSWR("/api/spotify/recentlyplayed", fetcher);
