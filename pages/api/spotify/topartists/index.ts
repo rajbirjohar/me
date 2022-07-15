@@ -1,18 +1,30 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getTopArtists } from "@/lib/spotify";
+import { Artist } from "types/portfolio";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<Artist[]>
 ) {
   const response = await getTopArtists();
-  const { items } = await response.json();
 
-  const artists = items.slice(0, 3).map((artist: any) => ({
+  if (response.status === 204 || response.status > 400) {
+    return res.status(200).json([
+      {
+        artist: "",
+        url: "",
+        coverArt: "",
+      },
+    ]);
+  }
+
+  const artists = await response.json();
+
+  const result: Artist[] = artists.items.slice(0, 3).map((artist: any) => ({
     artist: artist.name,
-    artistUrl: artist.external_urls.spotify,
-    artistCover: artist.images[1].url,
+    url: artist.external_urls.spotify,
+    coverArt: artist.images[1].url,
   }));
 
-  return res.status(200).json({ artists });
+  return res.status(200).json(result);
 }

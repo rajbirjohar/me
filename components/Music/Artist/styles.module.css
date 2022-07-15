@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--tran-slow);
+  background-color: var(--bg-card);
+  padding: var(--gap);
+  border-radius: var(--radius);
+}
+
+.artist {
+  margin: var(--gap) 0 0 0;
+  font-size: 1rem;
+  font-weight: 550;
+}
+
+.description {
+  color: var(--fg-mute);
+}
+
+.coverArt {
+  min-width: 120px;
+  min-height: 120px;
+  position: relative;
+}
+
+.rounded {
+  border-radius: var(--radius-full);
+}

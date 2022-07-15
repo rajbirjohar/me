@@ -18,3 +18,21 @@ interface Project {
   description?: string;
   language?: string;
 }
+
+interface Track {
+  title: string,
+  artist: string | string[],
+  album: string,
+  albumArt: string,
+  url: string,
+  progress?: number,
+  duration: number,
+  explicit: boolean,
+  isPlaying?: boolean,
+}
+
+interface Artist {
+  artist: string,
+  url: string,
+  coverArt: string,
+}

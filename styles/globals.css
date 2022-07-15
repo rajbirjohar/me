@@ -26,12 +26,13 @@
   --hue: 165;
   --bg: hsl(var(--hue) 2% 90%);
   --bg-bright: hsl(var(--hue) 2% 93%);
+  --bg-card: hsl(var(--hue) 2% 94%);
   --fg: hsl(var(--hue) 10% 23%);
-  --fg-bright: hsl(var(--hue) 80% 30%);
   --fg-dim: hsl(var(--hue) 10% 40%);
-  --fg-mute: hsl(var(--hue) 10% 85%);
-  --fg-muter: hsl(var(--hue) 10% 60%);
-  --border: 1px solid var(--fg-mute);
+  --fg-mute: hsl(var(--hue) 10% 65%);
+  --fg-muter: hsl(var(--hue) 10% 83%);
+  --fg-bright: hsl(var(--hue) 80% 30%);
+  --border: 2px solid var(--fg-muter);
   --shadow: 0px 0.2px 0.9px hsl(var(--hue) 1% 1% / 0.003),
     0px 0.5px 2px hsl(var(--hue) 1% 1% / 0.004),
     0px 0.7px 3.5px hsl(var(--hue) 1% 1% / 0.006),
@@ -62,13 +63,13 @@
 [data-theme="dark"] {
   --hue: 170;
   --bg: hsl(var(--hue) 2% 9%);
-  --bg-bright: hsl(var(--hue) 2% 11%);
+  --bg-card: hsl(var(--hue) 10% 10%);
   --fg: hsl(var(--hue) 10% 97%);
-  --fg-bright: hsl(var(--hue) 90% 40%);
   --fg-dim: hsl(var(--hue) 10% 70%);
-  --fg-mute: hsl(var(--hue) 20% 20%);
-  --fg-muter: hsl(var(--hue) 20% 35%);
-  --border: 1px solid var(--fg-mute);
+  --fg-mute: hsl(var(--hue) 10% 30%);
+  --fg-muter: hsl(var(--hue) 10% 12%);
+  --fg-bright: hsl(var(--hue) 90% 40%);
+  --border: 2px solid var(--fg-muter);
   --shadow: 0px 0.2px 0.9px hsl(var(--hue) 3% 3% / 0.03),
     0px 0.5px 2px hsl(var(--hue) 3% 3% / 0.04),
     0px 0.7px 3.5px hsl(var(--hue) 3% 3% / 0.06),
@@ -192,6 +193,20 @@ code {
   background-color: var(--fg-mute);
   padding: var(--gap-xs) var(--gap-sm);
   border-radius: 5px;
+}
+
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 /*

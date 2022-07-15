@@ -2,16 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-sm);
-  box-shadow: none;
   padding: var(--gap-md);
   border-radius: var(--radius);
   transition: all var(--tran-slow);
-  background-color: var(--bg-bright);
+  background-color: var(--bg-card);
 }
 
 .wrapper:hover {
   box-shadow: var(--shadow);
-  background-color: var(--bg-bright);
 }
 
 .heading {
@@ -39,6 +37,7 @@
   display: flex;
   align-items: center;
   gap: var(--gap-2xs);
+  color: var(--fg);
 }
 
 .info {
@@ -47,16 +46,8 @@
   justify-content: space-between;
 }
 
-.action {
+.action:hover > .wrapper > .info > .title {
   color: var(--fg);
-}
-
-.action:hover > .wrapper > .title {
-  color: var(--fg);
-}
-
-.time {
-  color: var(--fg-dim);
 }
 
 .language {
@@ -64,4 +55,9 @@
   letter-spacing: 1.5px;
   font-size: 0.75rem;
   text-transform: uppercase;
+  color: var(--fg);
+}
+
+.time {
+  color: var(--fg-mute);
 }

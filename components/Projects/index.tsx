@@ -1,10 +1,10 @@
 import fetcher from "@/util/fetcher";
 import useSWR from "swr";
 import { Project } from "types/portfolio";
-import ProjectCard from "./ProjectCard";
-import css from "./ListProjects.module.css";
+import ProjectCard from "@/components/Projects/ProjectCard";
+import css from "./styles.module.css";
 
-export default function ListProjects(props: { all?: boolean }): JSX.Element {
+export default function Projects(props: { all?: boolean }): JSX.Element {
   const { data, error } = useSWR(`/api/github`, fetcher);
   if (error) {
     return (

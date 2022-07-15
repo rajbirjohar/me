@@ -1,0 +1,24 @@
+.intro {
+  margin: var(--gap) 0;
+  font-weight: 550;
+}
+
+.topArtists {
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: wrap;
+}
+
+.artist {
+  transition: all var(--tran-slow);
+  flex: 1;
+}
+
+.topArtists:hover > .artist {
+  transform: scale(1.01);
+}
+
+.topArtists:hover > .artist:not(:hover) {
+  opacity: 0.5;
+  transform: scale(1);
+}

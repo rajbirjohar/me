@@ -11,5 +11,5 @@
   }
 
   .local:hover {
-    background-color: var(--fg-mute);
+    background-color: var(--fg-muter);
   }
