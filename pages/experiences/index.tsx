@@ -11,11 +11,10 @@ const Experiences: NextPage = () => {
       <Head>
         <title>Rajbir Johar | Experiences</title>
       </Head>
-      <Heading title={"Experiences"} />
-      <p>
-        <em>Working on it.</em>
-      </p>
-      <ListExperiences all={true} />
+      <section>
+        <Heading title={"Experiences"} />
+        <ListExperiences all />
+      </section>
     </Page>
   );
 };

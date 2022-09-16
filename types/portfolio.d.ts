@@ -6,7 +6,7 @@ interface Experience {
   position?: string;
   range?: string;
   year: number;
-  caption: string;
+  caption: string | React.ReactNode;
   icon: TablerIcon;
   url?: string;
 }

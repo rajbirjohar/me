@@ -1,0 +1,26 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  z-index: -1;
+  background-color: var(--bg-card);
+}
+
+.nav {
+  width: var(--main-content);
+  margin: 0 auto;
+  padding: var(--gap-lg) var(--gap-md) var(--gap-xl) var(--gap-md);
+}
+
+.actions {
+  display: flex;
+  gap: var(--gap);
+}
+
+@media only screen and (max-width: 45rem) {
+  .actions {
+    flex-direction: column;
+    gap: var(--gap-sm);
+  }
+}

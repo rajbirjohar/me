@@ -25,8 +25,8 @@ export default function FeaturedProjects() {
       description: (
         <>
           <p>
-            Nexus is a full fledged course review system and database for
-            students at UCR.
+            Nexus is a fully fledged course review system and database for
+            students.
           </p>
         </>
       ),

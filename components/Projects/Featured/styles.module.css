@@ -6,4 +6,5 @@
     minmax(var(--auto-grid-min-size), 1fr)
   );
   grid-gap: 1rem;
+  margin: var(--gap-lg) 0;
 }

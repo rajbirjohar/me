@@ -1,10 +1,17 @@
 .wrapper {
+  background-color: var(--bg);
+  z-index: 1;
+  width: 100%;
+}
+
+.page {
   max-width: var(--main-content);
+  min-height: 100vh;
   padding: var(--gap-2xl) var(--gap-md) var(--gap-lg) var(--gap-md);
-  margin: 0 auto;
+  margin: 0 auto 15rem auto;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
 }
 
 .intro {
@@ -13,19 +20,7 @@
 
 .intro p {
   color: var(--fg-dim);
-}
-
-.section {
-  flex: 1.5;
-}
-
-.heading {
-  margin: var(--gap-lg) 0;
-}
-
-.actions {
-  display: flex;
-  gap: var(--gap);
+  margin-bottom: 1rem;
 }
 
 .action {
@@ -33,7 +28,6 @@
   align-items: center;
   max-width: max-content;
   border-bottom: none;
-  margin-top: -1.75rem;
 }
 
 .action:hover {
@@ -44,11 +38,15 @@
   display: none;
 }
 
-@media only screen and (max-width: 75rem) {
+@media only screen and (max-width: 45rem) {
   .wrapper {
     flex-direction: column;
-    max-width: 45rem;
+    max-width: 100%;
     gap: 0;
+  }
+
+  .page {
+    margin-bottom: 20rem;
   }
   .intro {
     position: relative;
@@ -58,10 +56,5 @@
   .intro,
   .wrapper {
     flex: 1;
-  }
-
-  .actions {
-    flex-direction: column;
-    gap: var(--gap-sm);
   }
 }

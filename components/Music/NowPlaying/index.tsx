@@ -20,7 +20,7 @@ export default function NowPlaying() {
     return <em>Loading...</em>;
   }
   return (
-    <>
+    <div className={css.wrapper}>
       <h2 className={css.intro}>Listening to</h2>
       {data.url ? (
         <Track
@@ -44,6 +44,6 @@ export default function NowPlaying() {
           explicit={false}
         />
       )}
-    </>
+    </div>
   );
 }

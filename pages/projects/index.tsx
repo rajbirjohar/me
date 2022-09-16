@@ -11,11 +11,13 @@ const Projects: NextPage = () => {
       <Head>
         <title>Rajbir | Projects</title>
       </Head>
-      <Heading
-        title={"Projects"}
-        subtitle={"Open source for the world to see"}
-      />
-      <ListProjects all />
+      <section>
+        <Heading
+          title={"Projects"}
+          subtitle={"Open source for the world to see"}
+        />
+        <ListProjects />
+      </section>
     </Page>
   );
 };
