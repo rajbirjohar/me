@@ -9,6 +9,7 @@ import ExternalLink from "@/components/ExternalLink";
 import NowPlaying from "@/components/Music/NowPlaying";
 import TopArtists from "@/components/Music/TopArtists";
 import RecentlyPlayed from "@/components/Music/RecentlyPlayed";
+import FeaturedProjects from "@/components/Projects/Featured";
 
 const Home: NextPage = () => {
   return (
@@ -17,11 +18,15 @@ const Home: NextPage = () => {
         <title>Rajbir Johar</title>
       </Head>
       <div className={css.wrapper}>
-        <section className={css.section}>
+        <section>
           <Heading
-            title="Work"
-            subtitle="All my work not protected under an NDA"
+            title="Featured"
+            subtitle="Some of the creations I'm extra proud about"
           />
+          <FeaturedProjects />
+        </section>
+        <section className={css.section}>
+          <Heading title="Work" subtitle="All of my other open source work" />
           <ListProjects />
           <ExternalLink title={"Discover"} href={`/projects`} type="local" />
         </section>
@@ -31,13 +36,10 @@ const Home: NextPage = () => {
           <ExternalLink title={"Discover"} href={`/experiences`} type="local" />
         </section>
         <section>
-          <Heading
-            title="Music"
-            subtitle="Do you ever feel compelled to move?"
-          />
+          <Heading title="Music" subtitle="Music that's inspired me lately" />
           <NowPlaying />
           <TopArtists />
-          {/* <RecentlyPlayed /> */}
+          <ExternalLink title={"Discover"} href={`/music`} type="local" />
         </section>
       </div>
     </Page>

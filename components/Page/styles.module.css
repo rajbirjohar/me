@@ -3,13 +3,11 @@
   padding: var(--gap-2xl) var(--gap-md) var(--gap-lg) var(--gap-md);
   margin: 0 auto;
   display: flex;
-  gap: var(--gap-2xl);
+  flex-direction: column;
+  gap: var(--gap-xl);
 }
 
 .intro {
-  flex: 1;
-  align-self: flex-start;
-  position: sticky;
   top: var(--gap-2xl);
 }
 
@@ -42,6 +40,10 @@
   border-bottom: none;
 }
 
+.hidden {
+  display: none;
+}
+
 @media only screen and (max-width: 75rem) {
   .wrapper {
     flex-direction: column;
@@ -56,10 +58,6 @@
   .intro,
   .wrapper {
     flex: 1;
-  }
-
-  .hidden {
-    display: none;
   }
 
   .actions {

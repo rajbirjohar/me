@@ -9,7 +9,12 @@ export default function NowPlaying() {
   });
 
   if (error) {
-    return <em>How unfortunate. Spotify broke.<br /></em>;
+    return (
+      <em>
+        How unfortunate. Spotify broke.
+        <br />
+      </em>
+    );
   }
   if (!data) {
     return <em>Loading...</em>;
@@ -24,8 +29,8 @@ export default function NowPlaying() {
           album={data.album}
           albumArt={data.albumArt}
           url={data.url}
-          duration={data.duration}
-          progress={data.progress}
+          duration={0}
+          // progress={data.progress}
           explicit={data.explicit}
         />
       ) : (

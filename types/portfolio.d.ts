@@ -1,4 +1,5 @@
 import { TablerIcon } from "@tabler/icons";
+import { StaticImageData } from "next/image";
 
 interface Experience {
   title: string;
@@ -8,6 +9,14 @@ interface Experience {
   caption: string;
   icon: TablerIcon;
   url?: string;
+}
+
+interface Featured {
+  id: string;
+  title: React.ReactNode;
+  description: React.ReactNode;
+  url: string;
+  image: string | StaticImageData;
 }
 
 interface Project {
@@ -20,19 +29,19 @@ interface Project {
 }
 
 interface Track {
-  title: string,
-  artist: string | string[],
-  album: string,
-  albumArt: string,
-  url: string,
-  progress?: number,
-  duration: number,
-  explicit: boolean,
-  isPlaying?: boolean,
+  title: string;
+  artist: string | string[];
+  album: string;
+  albumArt: string;
+  url: string;
+  progress?: number;
+  duration: number;
+  explicit: boolean;
+  isPlaying?: boolean;
 }
 
 interface Artist {
-  artist: string,
-  url: string,
-  coverArt: string,
+  artist: string;
+  url: string;
+  coverArt: string;
 }
