@@ -16,14 +16,14 @@
   --gap-3xl: 16rem;
   --gap-4xl: 32rem;
   --gap-5xl: 64rem;
-  --main-content: 70rem;
+  --main-content: 45rem;
   --radius-sm: 5px;
   --radius: 10px;
   --radius-full: 50%;
   --radius-inline: 5px;
 
   /* Color */
-  --hue: 165;
+  --hue: 200;
   --bg: hsl(var(--hue) 2% 90%);
   --bg-bright: hsl(var(--hue) 2% 93%);
   --bg-card: hsl(var(--hue) 2% 94%);

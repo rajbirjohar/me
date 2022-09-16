@@ -28,23 +28,30 @@
 }
 
 .heading {
-    display: flex;
+  display: flex;
 }
 
 .artist {
-    color: var(--fg-mute);
+  color: var(--fg-mute);
 }
 
 .explicit {
-    color: var(--bg);
-    background-color: var(--fg-dim);
-    border-radius: var(--radius-sm);
-    padding: 0 var(--gap-xs);
+  color: var(--bg);
+  background-color: var(--fg-dim);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--gap-xs);
 }
 
 .progress {
-    height: 2px;
-    width: 0;
-    background-color: var(--fg-bright);
-    margin: var(--gap-sm) 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--fg-bright);
+  margin: var(--gap-sm) 0;
+}
+
+.recentlyPlayed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  margin: var(--gap-lg) 0;
 }
