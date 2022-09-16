@@ -190,7 +190,7 @@ li {
 code {
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  background-color: var(--fg-mute);
+  background-color: var(--bg-card);
   padding: var(--gap-xs) var(--gap-sm);
   border-radius: 5px;
 }

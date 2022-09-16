@@ -23,7 +23,7 @@ export default function ExternalLink(props: {
   return (
     <Link href={props.href} passHref>
       <a className={css.local}>
-        Learn More <IconArrowRight width={18} />
+        Discover <IconArrowRight width={18} />
       </a>
     </Link>
   );

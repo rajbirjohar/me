@@ -22,42 +22,19 @@ export default function Projects(props: { all?: boolean }): JSX.Element {
   }
   return (
     <ul className={css.wrapper}>
-      {props.all ? (
-        <>
-          {data.projects
-            .sort((a: Project, b: Project) => b.stars - a.stars)
-            .map((project: Project) => (
-              <div key={project.title} className={css.selected}>
-                <ProjectCard
-                  title={project.title}
-                  stars={project.stars}
-                  pushed={project.pushed}
-                  url={project.url}
-                  description={project.description}
-                  language={project.language}
-                />
-              </div>
-            ))}
-        </>
-      ) : (
-        <>
-          {data.projects
-            .sort((a: Project, b: Project) => b.pushed > a.pushed)
-            .slice(0, 3)
-            .map((project: Project) => (
-              <div key={project.title} className={css.selected}>
-                <ProjectCard
-                  title={project.title}
-                  stars={project.stars}
-                  pushed={project.pushed}
-                  url={project.url}
-                  description={project.description}
-                  language={project.language}
-                />
-              </div>
-            ))}
-        </>
-      )}
+      {data.projects
+        .sort((a: Project, b: Project) => b.stars - a.stars)
+        .map((project: Project) => (
+          <ProjectCard
+            key={project.title}
+            title={project.title}
+            stars={project.stars}
+            pushed={project.pushed}
+            url={project.url}
+            description={project.description}
+            language={project.language}
+          />
+        ))}
     </ul>
   );
 }

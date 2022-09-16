@@ -13,13 +13,16 @@ const Music: NextPage = () => {
       <Head>
         <title>Rajbir Johar | Music</title>
       </Head>
-      <Heading
-        title={"Music"}
-        subtitle="Color you can hear. A good playlist is the difference between living life and enjoying life"
-      />
-      <NowPlaying />
-      <TopArtists />
-      <RecentlyPlayed />
+      <section>
+        <Heading
+          title={"Music"}
+          subtitle="A good playlist is the difference between living life and enjoying life"
+        />
+
+        <NowPlaying />
+        <TopArtists />
+        <RecentlyPlayed />
+      </section>
     </Page>
   );
 };
