@@ -24,8 +24,8 @@
 
   /* Color */
   --hue: 200;
-  --bg: hsl(var(--hue) 2% 90%);
-  --bg-bright: hsl(var(--hue) 2% 93%);
+  --bg: hsl(var(--hue) 2% 92%);
+  --bg-bright: hsl(var(--hue) 2% 98%);
   --bg-card: hsl(var(--hue) 2% 94%);
   --fg: hsl(var(--hue) 10% 23%);
   --fg-dim: hsl(var(--hue) 10% 40%);
@@ -62,8 +62,8 @@
 
 [data-theme="dark"] {
   --hue: 170;
-  --bg: hsl(var(--hue) 2% 9%);
-  --bg-card: hsl(var(--hue) 10% 10%);
+  --bg: hsl(var(--hue) 2% 4%);
+  --bg-card: hsl(var(--hue) 10% 6%);
   --fg: hsl(var(--hue) 10% 97%);
   --fg-dim: hsl(var(--hue) 10% 70%);
   --fg-mute: hsl(var(--hue) 10% 30%);

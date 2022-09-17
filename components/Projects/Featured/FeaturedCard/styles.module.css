@@ -5,11 +5,12 @@
   border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;
-  transition: box-shadow var(--tran-slow);
+  transition: all var(--tran-slow);
 }
 
 .wrapper:hover {
   box-shadow: var(--shadow);
+  scale: 1.01;
 }
 
 .title {
@@ -27,13 +28,24 @@
   margin-top: var(--gap-md);
 }
 
+.background,
+.background2 {
+  opacity: 0;
+  transition: all var(--tran-slow);
+}
+
+.wrapper:hover > .background,
+.wrapper:hover > .background2 {
+  opacity: 0.1;
+}
+
 .background {
   position: absolute;
   bottom: -5px;
   right: 0;
   min-width: 200%;
   max-width: 200%;
-  animation: wave cubic-bezier(0.37, 0.46, 0.73, 0.64) 3.85s infinite;
+  animation: wave cubic-bezier(0.37, 0.46, 0.73, 0.64) 4s infinite;
   fill: var(--fg-dim);
 }
 
@@ -43,7 +55,7 @@
   right: 0;
   min-width: 200%;
   max-width: 200%;
-  animation: wave cubic-bezier(0.37, 0.46, 0.73, 0.64) 4s infinite;
+  animation: wave cubic-bezier(0.37, 0.46, 0.73, 0.64) 3s infinite;
   fill: var(--fg-mute);
   transform: translateX(40%);
 }

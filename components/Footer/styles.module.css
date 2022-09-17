@@ -10,7 +10,7 @@
 .nav {
   width: var(--main-content);
   margin: 0 auto;
-  padding: var(--gap-lg) var(--gap-md) var(--gap-xl) var(--gap-md);
+  padding: var(--gap-2xl) var(--gap-md) var(--gap-xl) var(--gap-md);
 }
 
 .actions {
