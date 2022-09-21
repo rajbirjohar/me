@@ -1,4 +1,4 @@
-import css from "./Ascii.module.css";
+import css from "./styles.module.css";
 
 export default function Ascii(): JSX.Element {
   return (

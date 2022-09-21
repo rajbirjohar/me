@@ -5,7 +5,7 @@ import TopArtists from "@/components/Music/TopArtists";
 import Page from "@/components/Page";
 import { NextPage } from "next";
 import Head from "next/head";
-import css from "./music.module.css";
+import css from "./styles.module.css";
 
 const Music: NextPage = () => {
   return (

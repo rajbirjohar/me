@@ -3,11 +3,9 @@ import Head from "next/head";
 import css from "@/styles/Index.module.css";
 import Heading from "@/components/Heading";
 import ListExperiences from "@/components/Experiences";
-import ListProjects from "@/components/Projects";
 import Page from "@/components/Page";
 import ExternalLink from "@/components/ExternalLink";
 import NowPlaying from "@/components/Music/NowPlaying";
-import TopArtists from "@/components/Music/TopArtists";
 import FeaturedProjects from "@/components/Projects/Featured";
 
 const Home: NextPage = () => {

@@ -3,7 +3,7 @@ import ListProjects from "@/components/Projects";
 import Page from "@/components/Page";
 import { NextPage } from "next";
 import Head from "next/head";
-import css from "./projects.module.css";
+import css from "./styles.module.css";
 
 const Projects: NextPage = () => {
   return (
