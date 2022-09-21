@@ -1,7 +1,7 @@
 import { Experience } from "types/portfolio";
 import experiences from "@/data/experiences";
 import Step from "./Step";
-import css from "./ListExperiences.module.css";
+import css from "./styles.module.css";
 
 export default function ListExperiences(props: { all?: boolean }): JSX.Element {
   const groupByYear = (arr: Experience[], property: string) => {

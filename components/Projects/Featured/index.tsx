@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Featured } from "types/portfolio";
 import FeaturedCard from "./FeaturedCard";
 import css from "./styles.module.css";
+import chromax from "/public/chromax.svg";
 
 export default function FeaturedProjects() {
   const featured: Featured[] = [
@@ -17,7 +18,7 @@ export default function FeaturedProjects() {
         </>
       ),
       url: "https://www.chromax.app/",
-      image: "",
+      image: chromax,
     },
     {
       id: "nexus",

@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 import Track from "@/components/Music/Track";
-import styles from "../Track/styles.module.css";
+import css from "../Track/styles.module.css";
 
 export default function RecentlyPlayed() {
   const { error, data } = useSWR("/api/spotify/recentlyplayed", fetcher);
@@ -19,8 +19,8 @@ export default function RecentlyPlayed() {
   } else
     return (
       <>
-        <h2 className={styles.intro}>Recents</h2>
-        <ul className={styles.recentlyPlayed}>
+        <h2 className={css.intro}>Recents</h2>
+        <ul className={css.recentlyPlayed}>
           {data.tracks.map((track: any, index: any) => (
             <Track ranking={index + 1} key={track.songUrl} {...track} />
           ))}

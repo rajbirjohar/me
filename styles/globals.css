@@ -24,9 +24,9 @@
 
   /* Color */
   --hue: 200;
-  --bg: hsl(var(--hue) 2% 92%);
-  --bg-bright: hsl(var(--hue) 2% 98%);
-  --bg-card: hsl(var(--hue) 2% 94%);
+  --bg: hsl(var(--hue) 2% 96%);
+  --bg-card: hsl(var(--hue) 2% 99.5%);
+  --bg-thumbnail: hsl(var(--hue) 2% 97.5%);
   --fg: hsl(var(--hue) 10% 23%);
   --fg-dim: hsl(var(--hue) 10% 40%);
   --fg-mute: hsl(var(--hue) 10% 65%);
@@ -63,7 +63,8 @@
 [data-theme="dark"] {
   --hue: 170;
   --bg: hsl(var(--hue) 2% 4%);
-  --bg-card: hsl(var(--hue) 10% 6%);
+  --bg-card: hsl(var(--hue) 10% 7%);
+  --bg-thumbnail: hsl(var(--hue) 10% 5%);
   --fg: hsl(var(--hue) 10% 97%);
   --fg-dim: hsl(var(--hue) 10% 70%);
   --fg-mute: hsl(var(--hue) 10% 30%);

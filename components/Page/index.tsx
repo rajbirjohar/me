@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Heading from "@/components/Heading";
 import css from "./styles.module.css";
+import ExternalLink from "../ExternalLink";
 
 export default function Page(props: {
   children: React.ReactNode | React.ReactNode[];
@@ -12,12 +13,7 @@ export default function Page(props: {
     <main className={css.wrapper}>
       <article className={css.page}>
         {router.pathname !== "/" ? (
-          <Link href={`/`} passHref>
-            <a className={css.action}>
-              <IconArrowBarToLeft width={18} />
-              Back to index
-            </a>
-          </Link>
+          <ExternalLink type="back" title="Back to index" href="/" />
         ) : (
           <section className={css.intro}>
             <Heading
