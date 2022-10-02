@@ -7,10 +7,20 @@ import { Artist as ArtistType } from "types/portfolio";
 export default function TopArtists() {
   const { error, data } = useSWR("/api/spotify/topartists", fetcher);
   if (error) {
-    return <em>How unfortunate. Spotify broke. <br /></em>;
+    return (
+      <>
+        <h2 className={css.intro}>Favorites</h2>
+        <em>How unfortunate. Spotify broke.</em>
+      </>
+    );
   }
   if (!data) {
-    return <em>Loading...</em>;
+    return (
+      <>
+        <h2 className={css.intro}>Favorites</h2>
+        <em>Loading...</em>
+      </>
+    );
   } else
     return (
       <>
