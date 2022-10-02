@@ -10,14 +10,19 @@ export default function NowPlaying() {
 
   if (error) {
     return (
-      <em>
-        How unfortunate. Spotify broke.
-        <br />
-      </em>
+      <div className={css.wrapper}>
+        <h2 className={css.intro}>Listening to</h2>
+        <em>How unfortunate. Spotify broke.</em>
+      </div>
     );
   }
   if (!data) {
-    return <em>Loading...</em>;
+    return (
+      <div className={css.wrapper}>
+        <h2 className={css.intro}>Listening to</h2>
+        <em>Loading...</em>
+      </div>
+    );
   }
   return (
     <div className={css.wrapper}>

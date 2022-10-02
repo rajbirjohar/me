@@ -1,9 +1,9 @@
-import { IconArrowBarToLeft } from "@tabler/icons";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import Heading from "@/components/Heading";
 import css from "./styles.module.css";
 import ExternalLink from "../ExternalLink";
+import Image from "next/future/image";
+import profilePic from "../../public/me.jpg";
 
 export default function Page(props: {
   children: React.ReactNode | React.ReactNode[];
@@ -31,6 +31,16 @@ export default function Page(props: {
               This space is ever changing, just like we are as humans. Tomorrow
               might not look like today so enjoy today while you can.
             </p>
+            <Image
+              src={profilePic}
+              alt="A picture of me standing in front of a forest with a cloudy sky. I'm wearing a beige shirt and I have round, black glasses."
+              width="0"
+              height="0"
+              sizes="100vw"
+              className={css.profile}
+              quality={100}
+              placeholder="blur"
+            />
           </section>
         )}
         <>{props.children}</>

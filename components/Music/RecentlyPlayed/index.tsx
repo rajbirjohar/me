@@ -8,14 +8,19 @@ export default function RecentlyPlayed() {
 
   if (error) {
     return (
-      <p>
-        Hmm. Spotify does not seem to be working right now. If this persists
-        please let me know.
-      </p>
+      <>
+        <h2 className={css.intro}>Recents</h2>
+        <em>How unfortunate. Spotify broke.</em>
+      </>
     );
   }
   if (!data) {
-    return <em>Loading...</em>;
+    return (
+      <>
+        <h2 className={css.intro}>Recents</h2>
+        <em>Loading...</em>
+      </>
+    );
   } else
     return (
       <>

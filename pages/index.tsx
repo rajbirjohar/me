@@ -17,8 +17,8 @@ const Home: NextPage = () => {
       <div className={css.wrapper}>
         <section>
           <Heading
-            title="In The Works"
-            subtitle="Some of the creations I'm extra proud about"
+            title="After Hours"
+            subtitle="A couple of my favorite projects outside of work"
           />
           <FeaturedProjects />
           <ExternalLink title={"Discover"} href={`/projects`} type="local" />
@@ -27,6 +27,19 @@ const Home: NextPage = () => {
           <Heading title="Now" subtitle="What I've been up to recently" />
           <ListExperiences />
           <ExternalLink title={"Discover"} href={`/experiences`} type="local" />
+        </section>
+        <section>
+          <Heading
+            title="Stack"
+            subtitle="Is the craftsman only as good as their tools?"
+          />
+          <p>
+            I primarily find myself at home on a Mac. After hours, I write my
+            code on a Macbook Pro 14&#34;. My code editor of choice is Visual
+            Studio Code. I use Figma for design FigJam for brainstorming and
+            Illustrator for icons. For photos, I rock a Canon EOS R6 and my
+            current favorite lens is the RF 24-70.
+          </p>
         </section>
         <section>
           <Heading title="Music" subtitle="Music that's inspired me lately" />
