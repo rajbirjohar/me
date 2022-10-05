@@ -1,10 +1,28 @@
 import Image from "next/image";
 import css from "./styles.module.css";
 import { Track as TrackType } from "types/portfolio";
+import { motion, Variants } from "framer-motion";
+
+const track: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 5,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 export default function Track(props: TrackType) {
   return (
-    <div className={css.wrapper}>
+    <motion.div className={css.wrapper} variants={track}>
       <div className={css.track}>
         <div className={css.albumArt}>
           <Image
@@ -29,7 +47,7 @@ export default function Track(props: TrackType) {
           )}
           <div className={css.heading}>
             <a
-              className={`${css.title} ${"clamp"}`}
+              className={`${css.title} clamp`}
               href={props.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -38,9 +56,9 @@ export default function Track(props: TrackType) {
               {props.explicit && <span className={css.explicit}>E</span>}
             </a>
           </div>
-          <p className={`${css.artist} ${"clamp"}`}>{props.artist}</p>
+          <p className={`${css.artist} clamp`}>{props.artist}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -19,11 +19,18 @@
 }
 
 .coverArt {
-  min-width: 120px;
-  min-height: 120px;
+  min-width: 180px;
+  min-height: 180px;
   position: relative;
 }
 
 .rounded {
   border-radius: var(--radius-full);
+}
+
+@media screen and (max-width:668px) {
+  .coverArt {
+    min-width: 80px;
+    min-height: 80px;
+  }
 }

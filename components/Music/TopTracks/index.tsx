@@ -1,5 +1,5 @@
-import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
+import useSWR from "swr";
 import Track from "@/components/Music/Track";
 import css from "../Track/styles.module.css";
 import { motion, Variants } from "framer-motion";
@@ -21,9 +21,8 @@ const tracks: Variants = {
   },
 };
 
-export default function RecentlyPlayed() {
-  const { error, data } = useSWR("/api/spotify/recentlyplayed", fetcher);
-
+export default function TopTracks() {
+  const { error, data } = useSWR("/api/spotify/toptracks", fetcher);
   if (error) {
     return (
       <>
@@ -37,7 +36,7 @@ export default function RecentlyPlayed() {
         <em>Loading...</em>
       </>
     );
-  } else
+  } else {
     return (
       <motion.ul
         className={css.recentlyPlayed}
@@ -51,4 +50,5 @@ export default function RecentlyPlayed() {
         ))}
       </motion.ul>
     );
+  }
 }

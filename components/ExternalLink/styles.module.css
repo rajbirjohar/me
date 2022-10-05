@@ -1,6 +1,6 @@
 .local, .external {
     max-width: max-content;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: var(--gap-2xs);
     font-weight: 500;

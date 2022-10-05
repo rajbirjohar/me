@@ -18,15 +18,14 @@
   top: var(--gap-2xl);
 }
 
-.intro p {
-  color: var(--fg-dim);
+.intro {
   margin-bottom: 1rem;
 }
 
 .profile {
   width: 100%;
   height: auto;
-  margin-top: var(--gap-xl);
+  margin-top: var(--gap-lg);
 }
 
 @media only screen and (max-width: 45rem) {
