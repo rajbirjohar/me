@@ -44,4 +44,5 @@
 
 .date {
     color: var(--fg-mute);
+    display: flex;
 }

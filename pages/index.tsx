@@ -35,10 +35,32 @@ const Home: NextPage = () => {
           />
           <p>
             I primarily find myself at home on a Mac. After hours, I write my
-            code on a Macbook Pro 14&#34;. My code editor of choice is Visual
-            Studio Code. I use Figma for design FigJam for brainstorming and
-            Illustrator for icons. For photos, I rock a Canon EOS R6 and my
-            current favorite lens is the RF 24-70.
+            code on a Macbook Pro 14&#34;. My code editor of choice is{" "}
+            <ExternalLink
+              title="Visual Studio Code"
+              type="external"
+              href="https://code.visualstudio.com/"
+            />
+            . I use{" "}
+            <ExternalLink
+              title="Figma"
+              type="external"
+              href="https://www.figma.com/"
+            />{" "}
+            for design,
+            <ExternalLink
+              title="FigJam"
+              type="external"
+              href="https://www.figma.com/figjam/"
+            />{" "}
+            for brainstorming and{" "}
+            <ExternalLink
+              title="Illustrator"
+              type="external"
+              href="https://www.adobe.com/products/illustrator.html"
+            />{" "}
+            for icons. For photos, I rock a Canon EOS R6 and my current favorite
+            lens is the RF 24-70mm.
           </p>
         </section>
         <section>

@@ -66,6 +66,7 @@
   --bg: hsl(var(--hue) 2% 4%);
   --bg-card: hsl(var(--hue) 10% 7%);
   --bg-thumbnail: hsl(var(--hue) 10% 5%);
+  --bg-button: hsl(var(--hue) 10% 10%);
   --fg: hsl(var(--hue) 10% 97%);
   --fg-dim: hsl(var(--hue) 10% 70%);
   --fg-mute: hsl(var(--hue) 10% 30%);
@@ -160,6 +161,10 @@ h5,
 h6 {
   font-weight: 500;
   font-size: 1.2rem;
+}
+
+p {
+  color: var(--fg-dim);
 }
 
 a {

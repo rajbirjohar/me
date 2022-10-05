@@ -22,7 +22,7 @@ const experiences: Experience[] = [
     year: 2022,
     caption: (
       <p>
-        Taveled to Canada! Definitely one of the most memorable experiences
+        Traveled to Canada! Definitely one of the most memorable experiences
         I&#39;ve had. Explored Algonquin Park and enjoyed the rain.
       </p>
     ),

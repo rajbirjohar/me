@@ -1,0 +1,15 @@
+.actions {
+  display: flex;
+  gap: var(--gap);
+}
+
+.title {
+  color: var(--fg-mute);
+  cursor: pointer;
+  transition: color var(--tran-slow);
+}
+
+.title.selected,
+.title:hover {
+  color: var(--fg);
+}
