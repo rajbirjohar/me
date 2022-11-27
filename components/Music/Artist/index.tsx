@@ -21,7 +21,7 @@ export default function Artist(props: ArtistType) {
           objectFit="contain"
           priority={true}
         />
-        <h3 className={`${css.artist} ${"clamp"}`}>{props.artist}</h3>
+        <h3 className={`${css.artist} clamp`}>{props.artist}</h3>
         <p className={css.description}>Artist</p>
       </div>
     </a>

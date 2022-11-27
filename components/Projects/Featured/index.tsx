@@ -1,11 +1,25 @@
-import { motion } from "framer-motion";
 import { Featured } from "types/portfolio";
 import FeaturedCard from "./FeaturedCard";
 import css from "./styles.module.css";
 import chromax from "/public/chromax.svg";
+import fearlessmouse from "/public/fearlessmouse.png";
 
 export default function FeaturedProjects() {
   const featured: Featured[] = [
+    {
+      id: "fearless",
+      title: "Fearless Mouse",
+      description: (
+        <>
+          <p>
+            A studio I&#39;m starting with a partner, trying to see how high we
+            can dream.
+          </p>
+        </>
+      ),
+      url: "https://fearlessmouse.com/",
+      image: fearlessmouse,
+    },
     {
       id: "chromax",
       title: "Chromax",
@@ -19,20 +33,6 @@ export default function FeaturedProjects() {
       ),
       url: "https://www.chromax.app/",
       image: chromax,
-    },
-    {
-      id: "nexus",
-      title: "Nexus",
-      description: (
-        <>
-          <p>
-            Nexus is a fully fledged course review system and database for
-            students.
-          </p>
-        </>
-      ),
-      url: "https://nexus-ucr.vercel.app/",
-      image: "",
     },
     {
       id: "portfolio",
@@ -50,10 +50,10 @@ export default function FeaturedProjects() {
     },
   ];
   return (
-    <motion.ul className={css.wrapper}>
+    <ul className={css.wrapper}>
       {featured.map((featured) => (
         <FeaturedCard key={featured.id} featured={featured} />
       ))}
-    </motion.ul>
+    </ul>
   );
 }

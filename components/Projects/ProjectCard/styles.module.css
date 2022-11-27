@@ -4,7 +4,7 @@
   gap: var(--gap-sm);
   padding: var(--gap-md);
   border-radius: var(--radius);
-  transition: all var(--tran-slow);
+  transition: all var(--tran-cubic-out);
   background-color: var(--bg-card);
 }
 
@@ -62,3 +62,5 @@
 .time {
   color: var(--fg-mute);
 }
+
+
