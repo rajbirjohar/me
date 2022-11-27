@@ -34,8 +34,8 @@ const Home: NextPage = () => {
             subtitle="Is the craftsman only as good as their tools?"
           />
           <p>
-            I primarily find myself at home on a Mac. After hours, I write my
-            code on a Macbook Pro 14&#34;. My code editor of choice is{" "}
+            I primarily write my code on my Macbook Pro 14&#34;. My editor of
+            choice is{" "}
             <ExternalLink
               title="Visual Studio Code"
               type="external"
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
               type="external"
               href="https://www.figma.com/"
             />{" "}
-            for design,
+            for design,{" "}
             <ExternalLink
               title="FigJam"
               type="external"
@@ -59,8 +59,8 @@ const Home: NextPage = () => {
               type="external"
               href="https://www.adobe.com/products/illustrator.html"
             />{" "}
-            for icons. For photos, I rock a Canon EOS R6 and my current favorite
-            lens is the RF 24-70mm.
+            for icons. For photos, I rock a Canon EOS R6 and I bounce between my
+            RF 35mm prime and RF 24-70mm L.
           </p>
         </section>
         <section>

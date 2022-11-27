@@ -18,7 +18,7 @@ export default function Page(props: {
           <section className={css.intro}>
             <Heading
               title={"Rajbir Johar"}
-              subtitle={"Pushing the waves you surf on the web"}
+              subtitle={"🌲 Exploring."}
             />
             <p>
               <em>Glad to have you.</em> Frontend and UX Engineer based in{" "}

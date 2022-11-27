@@ -23,10 +23,6 @@
   border-radius: var(--radius-sm);
 }
 
-.info {
-  min-width: 100%;
-}
-
 .heading {
   display: flex;
 }

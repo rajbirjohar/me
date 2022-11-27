@@ -18,11 +18,12 @@ export default function FeaturedCard(props: { featured: Featured }) {
             src={props.featured.image}
             alt="Thumbnail"
             style={{
-              height: "10rem",
+              height: "100%",
               width: "100%",
               padding: "1rem",
               margin: "0 auto",
               backgroundColor: "var(--bg-thumbnail)",
+              backgroundSize: "container",
             }}
           />
         )}
