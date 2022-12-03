@@ -1,3 +1,4 @@
+import Ascii from "../Ascii";
 import ExternalLink from "../ExternalLink";
 import Heading from "../Heading";
 import css from "./styles.module.css";
@@ -25,6 +26,7 @@ export default function Footer() {
           />
         </div>
       </nav>
+      <Ascii />
     </footer>
   );
 }

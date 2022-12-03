@@ -167,6 +167,7 @@ h6 {
 
 p {
   color: var(--fg-dim);
+  margin-bottom: 1rem;
 }
 
 a {

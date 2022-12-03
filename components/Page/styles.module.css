@@ -7,25 +7,11 @@
 .page {
   max-width: var(--main-content);
   min-height: 100vh;
-  padding: var(--gap-2xl) var(--gap-md) var(--gap-lg) var(--gap-md);
-  margin: 0 auto 15rem auto;
+  padding: var(--gap-lg) var(--gap-md);
+  margin: 0 auto 24rem auto;
   display: flex;
   flex-direction: column;
   gap: var(--gap-lg);
-}
-
-.intro {
-  top: var(--gap-2xl);
-}
-
-.intro {
-  margin-bottom: 1rem;
-}
-
-.profile {
-  width: 100%;
-  height: auto;
-  margin-top: var(--gap-lg);
 }
 
 @media only screen and (max-width: 45rem) {
@@ -34,17 +20,7 @@
     max-width: 100%;
     gap: 0;
   }
-
   .page {
-    margin-bottom: 20rem;
-  }
-  .intro {
-    position: relative;
-    top: 0;
-  }
-
-  .intro,
-  .wrapper {
-    flex: 1;
+    margin-bottom: 26rem;
   }
 }

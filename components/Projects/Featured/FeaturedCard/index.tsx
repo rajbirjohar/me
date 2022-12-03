@@ -2,7 +2,7 @@ import { IconArrowUpRight } from "@tabler/icons";
 import { motion, Variants } from "framer-motion";
 import { Featured } from "types/portfolio";
 import css from "./styles.module.css";
-import Image from "next/future/image";
+import Image from "next/image";
 
 export default function FeaturedCard(props: { featured: Featured }) {
   return (
@@ -14,18 +14,13 @@ export default function FeaturedCard(props: { featured: Featured }) {
     >
       <li className={css.wrapper}>
         {props.featured.image && (
-          <Image
-            src={props.featured.image}
-            alt="Thumbnail"
-            style={{
-              height: "100%",
-              width: "100%",
-              padding: "1rem",
-              margin: "0 auto",
-              backgroundColor: "var(--bg-thumbnail)",
-              backgroundSize: "container",
-            }}
-          />
+          <div className={css.imagewrapper}>
+            <Image
+              src={props.featured.image}
+              alt="Thumbnail"
+              className={css.image}
+            />
+          </div>
         )}
 
         <div className={css.content}>
