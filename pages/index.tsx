@@ -7,6 +7,8 @@ import Page from "@/components/Page";
 import ExternalLink from "@/components/ExternalLink";
 import NowPlaying from "@/components/Music/NowPlaying";
 import FeaturedProjects from "@/components/Projects/Featured";
+import Image from "next/image";
+import profilePic from "../public/me_square.jpeg";
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +17,30 @@ const Home: NextPage = () => {
         <title>Rajbir Johar</title>
       </Head>
       <div className={css.wrapper}>
+        <section className={css.intro}>
+          <Image
+            src={profilePic}
+            alt="A picture of me standing in front of a forest with a cloudy sky. I'm wearing a beige shirt and I have round, black glasses."
+            width="0"
+            height="0"
+            sizes="100vw"
+            className={css.profile}
+            quality={100}
+            placeholder="blur"
+          />
+          <Heading title={"Rajbir Johar"} subtitle={"🌲 Exploring."} />
+          <p>
+            <em>Glad to have you.</em> Frontend and UX Engineer based in{" "}
+            <s>Southern California</s> Arizona. Building and typing on bespoke
+            keyboards. Getting lost on canyon drives during my downtime.
+            Crafting aesthetic interfaces at Inventives for{" "}
+            <em>mind blowing ideas.</em>
+          </p>
+          <p>
+            This space is ever changing, just like we are as humans. Tomorrow
+            might not look like today so enjoy today while you can.
+          </p>
+        </section>
         <section>
           <Heading
             title="After Hours"

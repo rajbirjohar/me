@@ -67,6 +67,18 @@
   color: var(--fg);
 }
 
+.imagewrapper {
+  background-color: var(--bg-thumbnail);
+}
+
+.image {
+  aspect-ratio: 1 / 1;
+  height: 12rem;
+  width: auto;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
 @keyframes wave {
   0% {
     transform: translateX(0);

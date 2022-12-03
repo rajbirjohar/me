@@ -27,8 +27,9 @@
   transition: var(--tran);
 }
 
-.description {
+.description p {
   color: var(--fg-dim);
+  margin-bottom: 0;
 }
 
 .icon {
