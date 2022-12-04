@@ -46,6 +46,9 @@
 }
 
 @media screen and (max-width: 568px) {
+  .header {
+    top: var(--gap-md)
+  }
   .links {
     width: 100%;
     gap: unset;
