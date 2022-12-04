@@ -4,10 +4,12 @@ import { ThemeProvider } from "next-themes";
 import Ascii from "@/components/Ascii";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Seo from "@/components/Seo";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider enableSystem>
+      <Seo />
       <Header />
       <Component {...pageProps} />
       {/* <Ascii /> */}

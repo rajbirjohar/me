@@ -12,7 +12,7 @@ export default function FeaturedCard(props: { featured: Featured }) {
       rel="noreferrer noopener"
       className={css.action}
     >
-      <li className={css.wrapper}>
+      <div className={css.wrapper}>
         {props.featured.image && (
           <div className={css.imagewrapper}>
             <Image
@@ -46,7 +46,7 @@ export default function FeaturedCard(props: { featured: Featured }) {
         >
           <path d="M385,1c-48,0-48,14-96,14S241,1,192.99,1c-2.82,0-5.48,.05-7.99,.14-40.17,1.46-42.83,13.86-88,13.86C49,15,49,1,1,1v31H385V1Z" />
         </svg>
-      </li>
+      </div>
     </a>
   );
 }

@@ -44,7 +44,7 @@ export default function NowPlaying() {
           artist={"Spotify"}
           album={"Spotify"}
           albumArt={"/spotify.png"}
-          url={""}
+          url={"https://rajbir.io"}
           duration={0}
           explicit={false}
         />
