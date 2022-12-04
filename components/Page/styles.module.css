@@ -7,7 +7,8 @@
 .page {
   max-width: var(--main-content);
   min-height: 100vh;
-  padding: var(--gap-lg) var(--gap-md);
+  padding: calc(var(--gap-2xl) + var(--gap)) var(--gap-md) var(--gap-lg)
+    var(--gap-md);
   margin: 0 auto 24rem auto;
   display: flex;
   flex-direction: column;

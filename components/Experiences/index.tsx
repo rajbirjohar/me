@@ -25,7 +25,7 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
           {groupByYear(experiences, "year")
             .sort((a, b) => b.year - a.year)
             .map((value, index) => (
-              <div key={index}>
+              <li key={index}>
                 <h3 className={css.year}>{value.year}</h3>
                 {value.events.map((step: Experience) => (
                   <Step
@@ -39,7 +39,7 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
                     url={step.url}
                   />
                 ))}
-              </div>
+              </li>
             ))}
         </>
       ) : (
@@ -48,7 +48,7 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
             .sort((a, b) => b.year - a.year)
             .slice(0, 1)
             .map((value, index) => (
-              <div key={index}>
+              <li key={index}>
                 {value.events.slice(0, 3).map((step: Experience) => (
                   <Step
                     key={step.title}
@@ -61,7 +61,7 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
                     url={step.url}
                   />
                 ))}
-              </div>
+              </li>
             ))}
         </>
       )}

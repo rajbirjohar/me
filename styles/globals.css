@@ -69,9 +69,9 @@
   --bg-card: hsl(var(--hue) 10% 7%);
   --bg-thumbnail: hsl(var(--hue) 10% 5%);
   --bg-button: hsl(var(--hue) 10% 10%);
-  --fg: hsl(var(--hue) 10% 97%);
+  --fg: hsl(var(--hue) 10% 98%);
   --fg-dim: hsl(var(--hue) 10% 70%);
-  --fg-mute: hsl(var(--hue) 10% 30%);
+  --fg-mute: hsl(var(--hue) 10% 50%);
   --fg-muter: hsl(var(--hue) 10% 12%);
   --fg-bright: hsl(var(--hue) 90% 40%);
   --border: 2px solid var(--fg-muter);

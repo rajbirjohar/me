@@ -5,7 +5,7 @@ import css from "./styles.module.css";
 
 export default function Step(props: Experience): JSX.Element {
   return (
-    <li className={css.wrapper}>
+    <div className={css.wrapper}>
       <div className={css.icon}>
         <props.icon width={20} />
       </div>
@@ -39,6 +39,6 @@ export default function Step(props: Experience): JSX.Element {
         <time className={css.date}>{props.range}</time>
         <div className={css.description}>{props.caption}</div>
       </div>
-    </li>
+    </div>
   );
 }

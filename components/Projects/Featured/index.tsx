@@ -50,10 +50,10 @@ export default function FeaturedProjects() {
     },
   ];
   return (
-    <ul className={css.wrapper}>
+    <div className={css.wrapper}>
       {featured.map((featured) => (
         <FeaturedCard key={featured.id} featured={featured} />
       ))}
-    </ul>
+    </div>
   );
 }

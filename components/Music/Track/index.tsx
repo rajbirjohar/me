@@ -24,18 +24,15 @@ export default function Track(props: TrackType) {
   return (
     <motion.div className={css.wrapper} variants={track}>
       <div className={css.track}>
-        <div className={css.albumArt}>
-          <Image
-            src={props.albumArt}
-            alt="Album Art"
-            className={css.rounded}
-            width={75}
-            height={75}
-            layout="fixed"
-            objectFit="contain"
-            priority={true}
-          />
-        </div>
+        <Image
+          src={props.albumArt}
+          alt="Album Art"
+          className={css.albumArt}
+          width={75}
+          height={75}
+          priority={true}
+        />
+
         <div className={css.info}>
           {/* {props.progress && (
             <div
