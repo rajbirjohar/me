@@ -1,10 +1,6 @@
-.intro {
-  margin: var(--gap) 0;
-  font-weight: 550;
-}
-
 .topArtists {
   display: flex;
+  flex-direction: column;
   gap: var(--gap);
   flex-wrap: wrap;
   margin: var(--gap-lg) 0;
@@ -13,6 +9,7 @@
 .artist {
   transition: all var(--tran-slow);
   flex: 1;
+  max-width: max-content;
 }
 
 .topArtists:hover > .artist {

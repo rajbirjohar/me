@@ -1,9 +1,7 @@
-import Heading from "@/components/Heading";
 import ListExperiences from "@/components/Experiences";
 import Page from "@/components/Page";
 import { NextPage } from "next";
 import Head from "next/head";
-import css from "./styles.module.css";
 
 const Experiences: NextPage = () => {
   return (
@@ -12,7 +10,7 @@ const Experiences: NextPage = () => {
         <title>Rajbir Johar | Experiences</title>
       </Head>
       <section>
-        <Heading title={"Experiences"} />
+        <h1>Experiences</h1>
         <ListExperiences all />
       </section>
     </Page>

@@ -4,26 +4,27 @@ import { Artist as ArtistType } from "types/portfolio";
 
 export default function Artist(props: ArtistType) {
   return (
-    <a
-      className={css.wrapper}
-      href={props.url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div className={css.coverArt}>
-        <Image
-          src={props.coverArt}
-          alt="Album Art"
-          className={css.rounded}
-          width={0}
-          height={0}
-          layout="responsive"
-          objectFit="contain"
-          priority={true}
-        />
-        <h3 className={`${css.artist} clamp`}>{props.artist}</h3>
+    <li className={css.wrapper}>
+      <Image
+        src={props.coverArt}
+        alt="Album Art"
+        width={75}
+        height={75}
+        priority={true}
+        className={css.coverArt}
+      />
+      <div>
+        <a
+          href={props.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${css.artist} clamp`}
+        >
+          {props.artist}
+        </a>
+
         <p className={css.description}>Artist</p>
       </div>
-    </a>
+    </li>
   );
 }

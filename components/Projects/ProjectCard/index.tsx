@@ -11,7 +11,7 @@ export default function ProjectCard(props: Project): JSX.Element {
       rel="noreferrer noopener"
       className={css.action}
     >
-      <li className={css.wrapper}>
+      <div className={css.wrapper}>
         <div className={css.info}>
           <h2 className={css.title}>
             {props.title}{" "}
@@ -30,7 +30,7 @@ export default function ProjectCard(props: Project): JSX.Element {
             <span className={css.language}>{props.language}</span>
           )}
         </div>
-      </li>
+      </div>
     </a>
   );
 }

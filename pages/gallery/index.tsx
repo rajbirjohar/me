@@ -1,4 +1,3 @@
-import Heading from "@/components/Heading";
 import Page from "@/components/Page";
 import { NextPage } from "next";
 import Image from "next/image";
@@ -61,10 +60,7 @@ const Gallery: NextPage = () => {
         <title>Rajbir Johar | Gallery</title>
       </Head>
       <section>
-        <Heading
-          title={"Gallery"}
-          subtitle="A glimpse of how I see the world."
-        />
+        <h1>Gallery</h1>
         <Expanded expanded={expanded} setExpanded={setExpanded} />
         <div className={css.gallery}>
           {galleryData.map((image) => (

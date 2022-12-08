@@ -1,13 +1,13 @@
 import Ascii from "../Ascii";
 import ExternalLink from "../ExternalLink";
-import Heading from "../Heading";
 import css from "./styles.module.css";
 
 export default function Footer() {
   return (
     <footer className={css.footer}>
       <nav className={css.nav}>
-        <Heading title={"Elsewhere"} subtitle="Let's go for a walk" />
+        <h4>Elsewhere</h4>
+        <p>Let&#39;s go for a walk.</p>
         <div className={css.actions}>
           <ExternalLink
             title="Github"

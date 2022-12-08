@@ -25,15 +25,16 @@ export default function Projects(props: { all?: boolean }): JSX.Element {
       {data.projects
         .sort((a: Project, b: Project) => b.stars - a.stars)
         .map((project: Project) => (
-          <ProjectCard
-            key={project.title}
-            title={project.title}
-            stars={project.stars}
-            pushed={project.pushed}
-            url={project.url}
-            description={project.description}
-            language={project.language}
-          />
+          <li key={project.title}>
+            <ProjectCard
+              title={project.title}
+              stars={project.stars}
+              pushed={project.pushed}
+              url={project.url}
+              description={project.description}
+              language={project.language}
+            />
+          </li>
         ))}
     </ul>
   );

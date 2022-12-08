@@ -1,9 +1,7 @@
-import Heading from "@/components/Heading";
 import ListProjects from "@/components/Projects";
 import Page from "@/components/Page";
 import { NextPage } from "next";
 import Head from "next/head";
-import css from "./styles.module.css";
 
 const Projects: NextPage = () => {
   return (
@@ -12,10 +10,8 @@ const Projects: NextPage = () => {
         <title>Rajbir | Projects</title>
       </Head>
       <section>
-        <Heading
-          title={"Projects"}
-          subtitle={"Open source for the world to see"}
-        />
+        <h1>Projects</h1>
+        <p>Open source.</p>
         <ListProjects />
       </section>
     </Page>

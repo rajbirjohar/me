@@ -1,15 +1,10 @@
 .wrapper {
   display: flex;
-  flex-direction: column;
-  position: relative;
   transition: all var(--tran-slow);
-  background-color: var(--bg-card);
-  padding: var(--gap);
-  border-radius: var(--radius);
+  gap: var(--gap);
 }
 
 .artist {
-  margin: var(--gap) 0 0 0;
   font-size: 1rem;
   font-weight: 550;
 }
@@ -19,18 +14,9 @@
 }
 
 .coverArt {
-  min-width: 180px;
-  min-height: 180px;
-  position: relative;
+  border-radius: var(--radius-full);
 }
 
 .rounded {
   border-radius: var(--radius-full);
-}
-
-@media screen and (max-width:668px) {
-  .coverArt {
-    min-width: 80px;
-    min-height: 80px;
-  }
 }

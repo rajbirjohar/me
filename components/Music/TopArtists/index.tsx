@@ -27,13 +27,12 @@ export default function TopArtists() {
         <h2 className={css.intro}>Favorites</h2>
         <ul className={css.topArtists}>
           {data.map((artist: ArtistType) => (
-            <div key={artist.artist} className={css.artist}>
-              <Artist
-                artist={artist.artist}
-                url={artist.url}
-                coverArt={artist.coverArt}
-              />
-            </div>
+            <Artist
+              key={artist.artist}
+              artist={artist.artist}
+              url={artist.url}
+              coverArt={artist.coverArt}
+            />
           ))}
         </ul>
       </>
