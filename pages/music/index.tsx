@@ -1,4 +1,3 @@
-import Heading from "@/components/Heading";
 import NowPlaying from "@/components/Music/NowPlaying";
 import RecentlyPlayed from "@/components/Music/RecentlyPlayed";
 import TopArtists from "@/components/Music/TopArtists";
@@ -19,11 +18,7 @@ const Music: NextPage = () => {
         <title>Rajbir Johar | Music</title>
       </Head>
       <section>
-        <Heading
-          title={"Music"}
-          subtitle="A good playlist is the difference between living life and enjoying life"
-        />
-
+        <h1>Music</h1>
         <NowPlaying />
         <TopArtists />
         <div className={css.actions}>

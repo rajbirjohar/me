@@ -64,6 +64,7 @@ const NavButton = (props: {
 
 export default function Header() {
   const router = useRouter();
+
   return (
     <header className={css.header}>
       <nav className={css.nav}>
@@ -97,7 +98,7 @@ export default function Header() {
             />
             <NavButton
               icon={IconHourglass}
-              title={"Experience"}
+              title={"Experiences"}
               href={"/experiences"}
             />
             <NavButton

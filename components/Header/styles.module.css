@@ -10,7 +10,7 @@
 }
 
 .nav {
-  margin: 0 var(--gap-md);
+  margin: 0 var(--gap-lg);
   width: 100%;
   max-width: var(--main-content);
 }
@@ -24,6 +24,7 @@
   background-color: var(--bg);
   width: max-content;
   margin: 0 auto;
+  border: 2px solid var(--bg-thumbnail);
 }
 
 .button {
@@ -45,13 +46,13 @@
   background-color: var(--fg);
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 568px) and (hover: none) and (pointer: coarse) {
   .header {
-    top: var(--gap-md)
+    top: var(--gap-md);
   }
   .links {
-    width: 100%;
-    gap: unset;
+    width: max-content;
+    gap: 0.75rem;
     justify-content: space-between;
   }
   .label {

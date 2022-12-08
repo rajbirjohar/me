@@ -26,7 +26,7 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
             .sort((a, b) => b.year - a.year)
             .map((value, index) => (
               <li key={index}>
-                <h3 className={css.year}>{value.year}</h3>
+                <h2 className={css.year}>{value.year}</h2>
                 {value.events.map((step: Experience) => (
                   <Step
                     key={step.title}

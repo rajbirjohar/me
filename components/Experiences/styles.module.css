@@ -4,5 +4,6 @@
 
 .year {
   margin: var(--gap) 0;
-  font-weight: 550;
+  font-size: var(--step-4);
+  color: var(--fg-mute);
 }
