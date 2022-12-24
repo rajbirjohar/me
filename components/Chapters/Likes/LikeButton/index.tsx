@@ -29,12 +29,18 @@ export default function LikeButton(props: { slug: string }) {
   const { trigger } = useSWRMutation(`/api/likes/${props.slug}`, like);
 
   async function like(url: string) {
-    return fetch(url, {
-      method: "POST",
-      headers: {
-        contentType: "application/json",
-      },
-    }).then((data) => data.json);
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          contentType: "application/json",
+        },
+      });
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   console.log(data);
@@ -57,8 +63,7 @@ export default function LikeButton(props: { slug: string }) {
           if (userLiked < 11) {
             trigger(liked, {
               // TODO: Reconcile data types
-              optimisticData: (data) =>
-                ({ ...data, likes: liked, userLiked: userLiked } as any),
+              optimisticData: (data: any) => ({ ...data, likes: liked } as any),
               rollbackOnError: true,
             });
           }
