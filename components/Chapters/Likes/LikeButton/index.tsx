@@ -49,11 +49,14 @@ export default function LikeButton(props: { slug: string }) {
         animate={{ scale: 1, opacity: 1, y: 0 }}
         onClick={() => {
           const liked: number = data.likes + 1;
+          const userLiked: number =
+            data.userLikes === null ? 0 : data.userLikes + 1;
           // Limits user likes to 10
-          if (data.userLikes < 10) {
+          if (userLiked < 11) {
             trigger(liked, {
               // TODO: Reconcile data types
-              optimisticData: (data) => ({ ...data, likes: liked } as any),
+              optimisticData: (data) =>
+                ({ ...data, likes: liked, userLiked: userLiked } as any),
               rollbackOnError: true,
             });
           }
