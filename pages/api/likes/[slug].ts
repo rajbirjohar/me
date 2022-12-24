@@ -36,20 +36,19 @@ export default async function handler(
           supabase
             .from("likes")
             .select("user_likes")
-            .filter("userid", "eq", sessionId),
+            .filter("userid", "eq", sessionId)
+            .filter("slug", "eq", req.query.slug),
         ]);
 
         if (chapter.data === null || user.data === null) {
           return res.status(404).send("No data");
         }
-        console.log("chapter:", chapter);
-        console.log("user:", user);
         return res.status(200).json({
-          likes: chapter.data[0].likes || 0,
-          userLikes: user.data[0].user_likes || 0,
+          likes: chapter.data.length > 0 ? chapter.data[0].likes : 0,
+          userLikes: user.data.length > 0 ? user.data[0].user_likes : 0,
         });
       } catch (error) {
-        return res.status(400).json(error);
+        return res.status(400).json({ error: error });
       }
     }
     case "POST": {
@@ -61,7 +60,6 @@ export default async function handler(
         console.log(response);
         return res.status(200).json("Success");
       } catch (error) {
-        console.log("error:", error);
         return res.status(400).json({ error: error });
       }
     }

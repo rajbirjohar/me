@@ -24,7 +24,6 @@ export default function LikeButton(props: { slug: string }) {
 
   const { data, error } = useSWR(`/api/likes/${props.slug}`, fetcher, {
     refreshInterval: 10000,
-    dedupingInterval: 60000,
   });
   const { trigger } = useSWRMutation(`/api/likes/${props.slug}`, like);
 
