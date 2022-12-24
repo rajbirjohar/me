@@ -81,7 +81,6 @@ export default function Stack(props: { cardStack: Card[] }) {
         ...array.slice(targetIndex, length),
       ];
     }
-    console.log(array);
     return array;
   };
 

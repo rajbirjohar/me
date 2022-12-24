@@ -40,8 +40,6 @@ export default async function handler(
         if (chapter.data === null || user.data === null) {
           return res.status(404).send("No data");
         }
-        console.log("user:", user);
-        console.log("chapter:", chapter);
         return res.status(200).json({
           user: user,
           chapter: chapter,
@@ -58,7 +56,6 @@ export default async function handler(
           page_slug: req.query.slug,
           user_id: sessionId,
         });
-
         return res.status(200).json({ message: response });
       } catch (error) {
         return res.status(400).json({ error: error });
