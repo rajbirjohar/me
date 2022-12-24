@@ -11,7 +11,7 @@ export default function ChapterCard(props: {
   likes?: number;
 }) {
   return (
-    <Link href={props.chapter.url} className={css.card} tabIndex={0}>
+    <Link href={props.chapter.url} className={css.card}>
       <article className={css.article}>
         <header>
           <div className={css.heading}>

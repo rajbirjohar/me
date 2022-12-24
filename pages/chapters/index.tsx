@@ -72,7 +72,7 @@ export default function ChaptersPage(props: { chapters: Chapter[] }) {
             className={css.search}
             autoComplete="off"
             id="search"
-            type="search"
+            type="text"
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

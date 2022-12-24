@@ -9,11 +9,6 @@
   overflow: hidden;
 }
 
-.wrapper:hover > .backgroundArt {
-  opacity: 0.15 !important;
-  animation: slide 10s linear infinite;
-}
-
 .backgroundArt {
   z-index: -2;
   opacity: 0;
@@ -71,6 +66,13 @@
 .title {
   font-weight: 500;
   cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .wrapper:hover > .backgroundArt {
+    opacity: 0.15 !important;
+    animation: slide 10s linear infinite;
+  }
 }
 
 @keyframes slide {

@@ -19,22 +19,6 @@
     color var(--transition-cubic-out);
 }
 
-.button:hover {
-  background-color: var(--forest);
-  color: var(--paper-1);
-  scale: 1.05;
-}
-
-.button:hover .filled {
-  fill: var(--paper-1);
-  color: var(--paper-1);
-}
-
-.button:active {
-  scale: 0.98;
-  background-color: var(--forest-dark);
-}
-
 .emojiwrapper {
   position: relative;
   translate: 10px 0;
@@ -47,4 +31,21 @@
 .emoji {
   position: absolute;
   width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background-color: var(--forest);
+    color: var(--paper-1);
+    scale: 1.05;
+  }
+  .button:active {
+    scale: 0.98;
+    background-color: var(--forest-dark);
+  }
+
+  .button:hover .filled {
+    fill: var(--paper-1);
+    color: var(--paper-1);
+  }
 }

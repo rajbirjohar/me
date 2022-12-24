@@ -25,15 +25,6 @@
   cursor: grab;
 }
 
-.image.front:hover {
-  scale: 1.1;
-}
-
-.image.front:active {
-  cursor: grabbing;
-  scale: 1;
-}
-
 .reload {
   border-radius: var(--radius-full);
   background-color: var(--paper-2);
@@ -48,10 +39,14 @@
   cursor: pointer;
 }
 
-.reload:hover {
-  background-color: var(--paper-3);
-  rotate: 360deg;
-  scale: 1.1;
+@media (hover: hover) and (pointer: fine) {
+  .image.front:hover {
+    scale: 1.1;
+  }
+  .image.front:active {
+    cursor: grabbing;
+    scale: 1;
+  }
 }
 
 @media screen and (max-width: 868px) {

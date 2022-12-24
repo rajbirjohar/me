@@ -14,10 +14,12 @@
   cursor: pointer;
 }
 
-.link:not(.active):hover {
-  color: var(--paper-10);
-}
-
 .label {
   margin-left: var(--space-sm);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:not(.active):hover {
+    color: var(--paper-10);
+  }
 }

@@ -16,22 +16,6 @@
   max-width: unset;
 }
 
-.card:hover {
-  scale: 1.05;
-  border-radius: 24px;
-  color: unset;
-  border-color: var(--forest);
-}
-
-.card:hover .title {
-  color: var(--forest-dark);
-}
-
-.card:active {
-  scale: 0.99;
-  border-color: var(--forest-dark);
-}
-
 .heading {
   display: flex;
   justify-content: space-between;
@@ -119,4 +103,21 @@
 
 .icon {
   width: var(--font-size-sm);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    scale: 1.05;
+    border-radius: 24px;
+    color: unset;
+    border-color: var(--forest);
+  }
+
+  .card:hover .title {
+    color: var(--forest-dark);
+  }
+  .card:active {
+    scale: 0.99;
+    border-color: var(--forest-dark);
+  }
 }

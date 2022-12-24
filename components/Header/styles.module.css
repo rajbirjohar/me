@@ -93,13 +93,14 @@
     background-color var(--transition-slow);
 }
 
-.icon:hover {
-  background-color: var(--paper-2);
-  scale: 1.05;
-}
-
-.icon:active {
-  scale: 0.98;
+@media (hover: hover) and (pointer: fine) {
+  .icon:hover {
+    background-color: var(--paper-2);
+    scale: 1.05;
+  }
+  .icon:active {
+    scale: 0.98;
+  }
 }
 
 @media screen and (max-width: 668px) {

@@ -25,10 +25,6 @@
   align-items: center;
 }
 
-.action:hover > .title span {
-  color: var(--fg);
-}
-
 .title span {
   transition: var(--transition);
 }
@@ -60,4 +56,10 @@
 
 .substep .date {
   font-size: var(--font-size-sm);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .action:hover > .title span {
+    color: var(--fg);
+  }
 }

@@ -40,7 +40,7 @@ export default function ListProjects(props: { all?: boolean }) {
             className={css.search}
             autoComplete="off"
             id="search"
-            type="search"
+            type="text"
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

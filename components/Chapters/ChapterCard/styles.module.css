@@ -17,19 +17,6 @@
   max-width: unset;
 }
 
-.card:hover {
-  scale: 1.05;
-  border-radius: 24px;
-  color: unset;
-  background-color: var(--forest);
-  color: var(--paper-2);
-}
-
-.card:active {
-  scale: 0.99;
-  background-color: var(--forest-dark);
-}
-
 .heading {
   display: flex;
   justify-content: space-between;
@@ -120,20 +107,52 @@
   width: var(--font-size-sm);
 }
 
-.card:hover .badge {
-  background-color: var(--forest-dark);
-  color: var(--paper-1);
-}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    scale: 1.05;
+    border-radius: 24px;
+    color: unset;
+    background-color: var(--forest);
+    color: var(--paper-2);
+  }
+  .card:hover .badge {
+    background-color: var(--forest-dark);
+    color: var(--paper-1);
+  }
 
-.card:hover .title {
-  color: var(--paper-1);
-}
+  .card:hover .title {
+    color: var(--paper-1);
+  }
 
-.card:hover .tag,
-.card:hover .date {
-  color: var(--paper-2);
-}
+  .card:hover .tag,
+  .card:hover .date {
+    color: var(--paper-2);
+  }
 
-.card:hover .link span {
-  color: var(--paper-1);
+  .card:hover .link span {
+    color: var(--paper-1);
+  }
+  .card:active {
+    scale: 0.99;
+    background-color: var(--forest-dark);
+    color: var(--paper-2);
+  }
+
+  .card:active .badge {
+    background-color: var(--forest);
+    color: var(--paper-1);
+  }
+
+  .card:active .title {
+    color: var(--paper-1);
+  }
+
+  .card:active .tag,
+  .card:active .date {
+    color: var(--paper-2);
+  }
+
+  .card:active .link span {
+    color: var(--paper-1);
+  }
 }

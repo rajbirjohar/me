@@ -71,6 +71,7 @@
   font-size: var(--font-size-sm);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .badge {
@@ -94,17 +95,6 @@
   cursor: pointer;
 }
 
-.button:hover {
-  border-radius: 20px;
-  scale: 1.01;
-}
-
-.button:active {
-  background-color: var(--forest-dark);
-  color: var(--forest-light);
-  scale: 0.99;
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -121,10 +111,6 @@
   margin: 0;
   cursor: pointer;
   transition: color var(--transition);
-}
-
-.tag:hover {
-  color: var(--paper-10);
 }
 
 .signature {
@@ -148,4 +134,19 @@
   margin: var(--space-md) 0;
   display: flex;
   justify-content: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    border-radius: 20px;
+    scale: 1.01;
+  }
+  .button:active {
+    background-color: var(--forest-dark);
+    color: var(--forest-light);
+    scale: 0.99;
+  }
+  .tag:hover {
+    color: var(--paper-10);
+  }
 }
