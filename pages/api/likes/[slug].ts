@@ -28,15 +28,12 @@ export default async function handler(
       try {
         const [chapter, user] = await Promise.all([
           // Get all likes per slug
-          supabase
-            .from("analytics")
-            .select("likes")
-            .eq("slug", req.query.slug)
-            .filter("slug", "eq", req.query.slug),
+          supabase.from("analytics").select("*").eq("slug", req.query.slug),
+
           // Get all likes per user per slug
           supabase
             .from("likes")
-            .select("user_likes")
+            .select("*")
             .eq("userid", sessionId)
             .eq("slug", req.query.slug),
         ]);
@@ -46,6 +43,8 @@ export default async function handler(
         console.log("user:", user);
         console.log("chapter:", chapter);
         return res.status(200).json({
+          user: user,
+          chapter: chapter,
           likes: chapter.data.length > 0 ? chapter.data[0].likes : 0,
           userLikes: user.data.length > 0 ? user.data[0].user_likes : 0,
         });
