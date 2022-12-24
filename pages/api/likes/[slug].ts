@@ -31,18 +31,20 @@ export default async function handler(
           supabase
             .from("analytics")
             .select("likes")
+            .eq("slug", req.query.slug)
             .filter("slug", "eq", req.query.slug),
           // Get all likes per user per slug
           supabase
             .from("likes")
             .select("user_likes")
-            .filter("userid", "eq", sessionId)
-            .filter("slug", "eq", req.query.slug),
+            .eq("userid", sessionId)
+            .eq("slug", req.query.slug),
         ]);
-
         if (chapter.data === null || user.data === null) {
           return res.status(404).send("No data");
         }
+        console.log("user:", user);
+        console.log("chapter:", chapter);
         return res.status(200).json({
           likes: chapter.data.length > 0 ? chapter.data[0].likes : 0,
           userLikes: user.data.length > 0 ? user.data[0].user_likes : 0,

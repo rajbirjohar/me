@@ -56,10 +56,9 @@ export default function LikeButton(props: { slug: string }) {
         animate={{ scale: 1, opacity: 1, y: 0 }}
         onClick={() => {
           const liked: number = data.likes + 1;
-          const userLiked: number =
-            data.userLikes === null ? 0 : data.userLikes + 1;
+          const userLiked: number = data.userLikes + 1;
           // Limits user likes to 10
-          if (userLiked < 10) {
+          if (userLiked < 11) {
             trigger(liked, {
               // TODO: Reconcile data types
               optimisticData: (data: any) => ({ ...data, likes: liked } as any),
@@ -86,7 +85,8 @@ export default function LikeButton(props: { slug: string }) {
             })}
           </div>
         </div>
-        <IconHeart className={data.userLikes ? css.filled : ""} /> {data.likes}
+        <IconHeart className={data.userLikes === 10 ? css.filled : ""} />{" "}
+        {data.likes}
       </motion.button>
     </AnimatePresence>
   );
