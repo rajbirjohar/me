@@ -37,6 +37,8 @@ export default function LikeButton(props: { slug: string }) {
     }).then((data) => data.json);
   }
 
+  console.log(data);
+
   if (!data || error) {
     return <></>;
   }

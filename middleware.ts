@@ -13,10 +13,12 @@ export const middleware: NextMiddleware = async (req, event) => {
   const sendAnalytics = async () => {
     const slug = pathname.split("/chapters/")[1];
     // Change your production URL!
-    const URL =
-      process.env.NODE_ENV === "production"
-        ? "https://rajbir.io/api/views"
-        : "http://localhost:3000/api/views";
+    let URL = "";
+    if (process.env.NODE_ENV === "production") {
+      URL = "https://rajbir.io/api/views";
+    } else if (process.env.NODE_ENV === "development") {
+      URL = "http://localhost:3000/api/views";
+    }
     const res = await fetch(`${URL}`, {
       method: "POST",
       headers: {
