@@ -58,6 +58,7 @@ export default async function handler(
           page_slug: req.query.slug,
           user_id: sessionId,
         });
+
         return res.status(200).json("Success");
       } catch (error) {
         return res.status(400).json({ error: error });

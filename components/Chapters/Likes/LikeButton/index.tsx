@@ -36,6 +36,7 @@ export default function LikeButton(props: { slug: string }) {
         },
       });
       const data = await response.json();
+      console.log("post:", data);
       return data;
     } catch (error) {
       console.log(error);
