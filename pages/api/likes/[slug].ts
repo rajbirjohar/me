@@ -53,11 +53,10 @@ export default async function handler(
     }
     case "POST": {
       try {
-        const response = await supabase.rpc("increment_likes", {
+        await supabase.rpc("increment_likes", {
           page_slug: req.query.slug,
           user_id: sessionId,
         });
-        console.log(response);
         return res.status(200).json("Success");
       } catch (error) {
         return res.status(400).json({ error: error });
