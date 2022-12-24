@@ -1,0 +1,22 @@
+.switch {
+  border: none;
+  background-color: var(--paper-1);
+  border-radius: var(--radius-full);
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: scale var(--transition-cubic-out),
+    background-color var(--transition-slow);
+}
+
+.switch:hover {
+  background-color: var(--paper-2);
+  scale: 1.05;
+}
+
+.switch:active {
+  scale: 0.98;
+}

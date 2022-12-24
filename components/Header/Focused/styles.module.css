@@ -1,0 +1,23 @@
+.link {
+  pointer-events: all;
+  transition: color var(--transition-slow);
+  font-weight: 500;
+}
+
+.active {
+  cursor: default;
+  color: var(--forest);
+}
+
+.link:not(.active) {
+  color: var(--paper-7);
+  cursor: pointer;
+}
+
+.link:not(.active):hover {
+  color: var(--paper-10);
+}
+
+.label {
+  margin-left: var(--space-sm);
+}

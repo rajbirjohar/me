@@ -1,0 +1,50 @@
+.button {
+  border: none;
+  background-color: var(--paper-2);
+  border-radius: 48px;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background-color var(--transition-cubic-out),
+    color var(--transition-cubic-out), scale var(--transition-cubic-out);
+}
+
+.button .filled {
+  fill: var(--fg);
+  color: var(--fg);
+  transition: fill var(--transition-cubic-out),
+    color var(--transition-cubic-out);
+}
+
+.button:hover {
+  background-color: var(--forest);
+  color: var(--paper-1);
+  scale: 1.05;
+}
+
+.button:hover .filled {
+  fill: var(--paper-1);
+  color: var(--paper-1);
+}
+
+.button:active {
+  scale: 0.98;
+  background-color: var(--forest-dark);
+}
+
+.emojiwrapper {
+  position: relative;
+  translate: 10px 0;
+}
+
+.emojis {
+  position: absolute;
+  width: 100%;
+}
+.emoji {
+  position: absolute;
+  width: 100%;
+}

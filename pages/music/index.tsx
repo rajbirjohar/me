@@ -1,0 +1,28 @@
+import Playing from "@/components/Music/Playing";
+import RecentlyPlayed from "@/components/Music/RecentlyPlayed";
+import TopTracks from "@/components/Music/TopTracks";
+import css from "./styles.module.css";
+import Head from "next/head";
+import TopArtists from "@/components/Music/TopArtists";
+
+export default function Music() {
+  return (
+    <>
+      <Head>
+        <title>Rajbir Johar | Music</title>
+      </Head>
+      <header>
+        <h1>Music</h1>
+        <p>Music that&#39;s inspired me lately.</p>
+        <section>
+          <Playing />
+          <TopArtists />
+          <div className={css.trackswrapper}>
+            <TopTracks />
+            <RecentlyPlayed />
+          </div>
+        </section>
+      </header>
+    </>
+  );
+}

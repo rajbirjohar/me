@@ -1,0 +1,8 @@
+.wrapper {
+  margin: var(--space-lg) 0;
+}
+
+.intro {
+  margin: var(--space) 0;
+  font-weight: 550;
+}

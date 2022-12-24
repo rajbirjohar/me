@@ -1,0 +1,13 @@
+.article {
+  max-width: 32rem;
+}
+
+.article * {
+  margin-bottom: var(--space);
+}
+
+.gradient {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

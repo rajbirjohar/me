@@ -1,0 +1,17 @@
+.wrapper {
+  margin: var(--space-md) 0;
+  max-width: 32rem;
+  padding: 0;
+}
+
+.wrapper li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.year {
+  margin: var(--space) 0;
+  font-size: var(--font-size-md);
+  color: var(--paper-5);
+}

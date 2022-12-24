@@ -1,0 +1,30 @@
+.footer {
+  width: 100%;
+  max-width: var(--main-content);
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.content {
+  border-top: var(--border);
+  padding: 32px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space);
+  margin: var(--space) 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+}
+
+.lastupdated {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--paper-6);
+}

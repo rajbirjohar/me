@@ -1,0 +1,134 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: var(--space-lg);
+  z-index: 10;
+  /* This is needed to allow links that 
+  cross the threshold of this element
+  to be clickable because header spans 
+  100% of the width of the screen */
+  pointer-events: none;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 32rem;
+  padding: var(--space-sm);
+  margin: 0 auto;
+  justify-content: space-between;
+  border-radius: 32px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  isolation: isolate;
+  font-size: 1rem;
+  /* Because .header has pointer events none,
+  it stops any element within header to be 
+  clickable so this counters that rule. */
+  pointer-events: all;
+}
+
+.nav::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 32px;
+  background: var(--header-bg);
+  opacity: 0.8;
+  z-index: -1;
+  transition: all var(--transition-slower);
+  border: var(--border);
+  border-color: var(--paper-1);
+  border-width: 3px;
+}
+
+.nav.scroll::before {
+  background-color: var(--paper-1);
+  border-color: var(--paper-2);
+  box-shadow: var(--shadow);
+}
+
+.menuwrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mobilemenuwrapper {
+  display: none;
+}
+
+.collapsewrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  border: none;
+  background-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--forest);
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: scale var(--transition-cubic-out),
+    background-color var(--transition-slow);
+}
+
+.icon:hover {
+  background-color: var(--paper-2);
+  scale: 1.05;
+}
+
+.icon:active {
+  scale: 0.98;
+}
+
+@media screen and (max-width: 668px) {
+  .header {
+    width: 100%;
+    padding: 0 var(--space-md);
+  }
+  .nav {
+    flex-direction: column;
+  }
+
+  .menuwrapper {
+    display: none;
+  }
+
+  .mobilemenuwrapper {
+    margin-top: var(--space);
+    z-index: 10;
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobilelinks {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--space-md);
+    padding: var(--space-lg) var(--space-sm);
+  }
+}

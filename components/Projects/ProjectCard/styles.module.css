@@ -1,0 +1,122 @@
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--card-bg);
+  padding: 1rem 1.2rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  transition: scale var(--transition-cubic-out),
+    border-radius var(--transition-cubic-out),
+    border-color var(--transition-cubic-out);
+  cursor: pointer;
+  color: var(--fg);
+  align-items: unset;
+  max-width: unset;
+}
+
+.card:hover {
+  scale: 1.05;
+  border-radius: 24px;
+  color: unset;
+  border-color: var(--forest);
+}
+
+.card:hover .title {
+  color: var(--forest-dark);
+}
+
+.card:active {
+  scale: 0.99;
+  border-color: var(--forest-dark);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+}
+
+.analytics {
+  display: flex;
+  align-items: center;
+}
+
+.analytics span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.title {
+  transition: color var(--transition);
+}
+
+.badge {
+  background-color: var(--forest-light);
+  color: var(--paper-8);
+  max-width: max-content;
+  border-radius: 99px;
+  padding: 0.2rem 0.6rem;
+  margin: var(--space-sm) 0;
+  font-weight: 500;
+}
+
+.empty {
+  margin: 0.2rem 0;
+  height: 2.75rem;
+}
+
+.date {
+  color: var(--paper-6);
+}
+
+.description {
+  margin: var(--space) 0;
+  font-weight: 500;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+}
+
+.link span {
+  color: var(--forest);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  max-width: max-content;
+  gap: var(--space-2xs);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
+  margin: 0 0 var(--space) 0;
+}
+
+.tag {
+  font-size: var(--font-size-sm);
+  color: var(--paper-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon {
+  width: var(--font-size-sm);
+}

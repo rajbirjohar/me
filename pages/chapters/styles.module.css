@@ -1,0 +1,151 @@
+.section {
+  margin-bottom: var(--space-md);
+}
+
+.history {
+  margin: var(--space-md) 0;
+}
+
+.section > p {
+  max-width: 32rem;
+  margin: var(--space) 0;
+}
+
+.searchwrapper {
+  max-width: 32rem;
+  width: 100%;
+  border: var(--border);
+  border-radius: 48px;
+  padding: 0.3rem 1rem;
+  outline: none;
+  transition: border-color var(--transition-slow);
+  background-color: var(--paper-0);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.search::placeholder {
+  color: var(--paper-6);
+}
+
+.searchwrapper:focus-within {
+  border-color: var(--paper-10);
+}
+
+.search {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.grid {
+  margin: var(--space-md) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: var(--space-md);
+}
+
+.filtertag {
+  color: var(--paper-5);
+}
+
+.chapter {
+  max-width: 32rem;
+}
+
+.chapter .content *,
+.chapter header,
+.chapter footer {
+  margin: var(--space) 0;
+}
+
+.link {
+  margin-bottom: var(--space);
+}
+
+.author {
+  color: var(--paper-6);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  background-color: var(--forest-light);
+  max-width: max-content;
+  border-radius: 99px;
+  padding: 0.2rem 0.8rem;
+  margin: var(--space-sm) 0;
+  font-weight: 500;
+}
+
+.button {
+  border: none;
+  background-color: var(--forest);
+  color: var(--forest-light);
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius);
+  transition: scale var(--transition-cubic-out),
+    border-radius var(--transition-cubic-out),
+    background-color var(--transition);
+  cursor: pointer;
+}
+
+.button:hover {
+  border-radius: 20px;
+  scale: 1.01;
+}
+
+.button:active {
+  background-color: var(--forest-dark);
+  color: var(--forest-light);
+  scale: 0.99;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
+  margin: 0 0 var(--space) 0;
+}
+
+.tag {
+  color: var(--paper-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.tag:hover {
+  color: var(--paper-10);
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: flex-end;
+  color: var(--forest);
+  margin-top: var(--space);
+}
+
+.signature svg {
+  width: 200px;
+  fill: var(--forest-dark);
+}
+
+.sticky {
+  position: sticky;
+  bottom: var(--space-md);
+  width: 100%;
+  margin: var(--space-md) 0;
+  display: flex;
+  justify-content: center;
+}
