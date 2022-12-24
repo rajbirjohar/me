@@ -41,8 +41,6 @@ export default async function handler(
           return res.status(404).send("No data");
         }
         return res.status(200).json({
-          user: user,
-          chapter: chapter,
           likes: chapter.data.length > 0 ? chapter.data[0].likes : 0,
           userLikes: user.data.length > 0 ? user.data[0].user_likes : 0,
         });

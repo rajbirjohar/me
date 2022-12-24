@@ -22,9 +22,13 @@ export default function LikeButton(props: { slug: string }) {
     },
   };
 
-  const { data, error } = useSWR(`/api/likes/${props.slug}`, fetcher, {
-    refreshInterval: 10000,
-  });
+  const { data, error } = useSWR<{ likes: number; userLikes: number }>(
+    `/api/likes/${props.slug}`,
+    fetcher,
+    {
+      refreshInterval: 10000,
+    }
+  );
   const { trigger } = useSWRMutation(`/api/likes/${props.slug}`, like);
 
   async function like(url: string) {
@@ -56,10 +60,11 @@ export default function LikeButton(props: { slug: string }) {
           const liked: number = data.likes + 1;
           const userLiked: number = data.userLikes + 1;
           // Limits user likes to 10
-          if (userLiked < 11) {
-            trigger(liked, {
+          if (userLiked && userLiked < 11) {
+            trigger(userLiked, {
               // TODO: Reconcile data types
-              optimisticData: (data: any) => ({ ...data, likes: liked } as any),
+              optimisticData: (data: any) =>
+                ({ ...data, likes: liked, userLikes: userLiked } as any),
               rollbackOnError: true,
             });
           }
