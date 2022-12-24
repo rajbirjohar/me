@@ -42,7 +42,8 @@ export default async function handler(
         if (chapter.data === null || user.data === null) {
           return res.status(404).send("No data");
         }
-
+        console.log("chapter:", chapter);
+        console.log("user:", user);
         return res.status(200).json({
           likes: chapter.data[0].likes || 0,
           userLikes: user.data[0].user_likes || 0,
@@ -60,6 +61,7 @@ export default async function handler(
         console.log(response);
         return res.status(200).json("Success");
       } catch (error) {
+        console.log("error:", error);
         return res.status(400).send(error);
       }
     }
