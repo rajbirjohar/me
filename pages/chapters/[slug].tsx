@@ -46,7 +46,7 @@ const PostLayout = ({ chapter }: { chapter: Chapter }) => {
           <p className={css.author}>
             {chapter.author}
             <Divider />
-            <time dateTime={chapter.date}>
+            <time dateTime={chapter.date} suppressHydrationWarning>
               {format(parseISO(chapter.date), "LLLL d, yyyy")}
             </time>
             <Divider />

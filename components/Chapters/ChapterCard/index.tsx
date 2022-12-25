@@ -10,6 +10,7 @@ export default function ChapterCard(props: {
   views?: number;
   likes?: number;
 }) {
+  const date = parseISO(props.chapter.date);
   return (
     <Link href={props.chapter.url} className={css.card}>
       <article className={css.article}>
@@ -43,8 +44,8 @@ export default function ChapterCard(props: {
             <span>
               Read <IconArrowRight className={css.icon} />
             </span>
-            <time className={css.date}>
-              {format(parseISO(props.chapter.date), "M.d.yyyy")}
+            <time className={css.date} suppressHydrationWarning>
+              {format(date, "M.d.yyyy")}
             </time>
           </div>
         </div>
