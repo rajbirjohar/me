@@ -132,4 +132,11 @@
     gap: var(--space-md);
     padding: var(--space-lg) var(--space-sm);
   }
+  .icon svg {
+    min-height: 24px;
+    max-height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    stroke-width: 2;
+  }
 }

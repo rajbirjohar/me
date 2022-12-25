@@ -33,4 +33,11 @@
   .switch {
     display: flex;
   }
+  .switch svg {
+    min-height: 24px;
+    max-height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    stroke-width: 2;
+  }
 }

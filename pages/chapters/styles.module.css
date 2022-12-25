@@ -119,7 +119,7 @@
   gap: var(--space-sm);
   align-items: flex-end;
   color: var(--forest);
-  margin-top: var(--space);
+  margin: var(--space-md) 0;
 }
 
 .signature svg {
@@ -148,5 +148,12 @@
   }
   .tag:hover {
     color: var(--paper-10);
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .signature svg {
+    width: 150px;
+    fill: var(--forest-dark);
   }
 }

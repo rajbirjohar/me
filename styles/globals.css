@@ -267,9 +267,9 @@ blockquote {
   margin: var(--space-md) 0;
   padding: 0 var(--space);
   border-left: var(--border);
-  border-color: var(--paper-4);
+  border-color: var(--forest);
   font-style: italic;
-  color: var(--paper-7);
+  color: var(--paper-10);
 }
 
 .clamp {

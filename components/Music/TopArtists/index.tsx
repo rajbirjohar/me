@@ -15,7 +15,7 @@ export default function TopArtists() {
   }
   return (
     <div className={css.section}>
-      <h3>Who I&#39;m Listening To</h3>
+      <h2>Who I&#39;m Listening To</h2>
       <div className={css.artists}>
         {data
           .map((artist: Artist, index: any) => (

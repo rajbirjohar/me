@@ -2,7 +2,7 @@
   border: none;
   background-color: var(--paper-2);
   border-radius: 48px;
-  padding: 0.5rem 0.8rem;
+  padding: 0.5rem 0.8rem 0.5rem 0.4rem;
   display: flex;
   align-items: center;
   gap: var(--space-sm);
@@ -10,6 +10,7 @@
   box-shadow: var(--shadow);
   transition: background-color var(--transition-cubic-out),
     color var(--transition-cubic-out), scale var(--transition-cubic-out);
+  color: var(--paper-9);
 }
 
 .button .filled {

@@ -36,7 +36,7 @@ export default function Step(props: { experience: Experience }): JSX.Element {
           <h3 className={css.title}>
             <Link href={experience.url}>
               <>
-                {experience.title} <IconArrowUpRight strokeWidth={3} />
+                {experience.title} <IconArrowUpRight className={css.externalicon} />
               </>
             </Link>
           </h3>

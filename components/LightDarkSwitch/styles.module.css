@@ -2,7 +2,7 @@
   border: none;
   background-color: var(--paper-1);
   border-radius: var(--radius-full);
-  color: var(--fg);
+  color: var(--paper-10);
   height: 48px;
   width: 48px;
   display: flex;
@@ -27,5 +27,15 @@
 
   .switch:active {
     scale: 0.98;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .switch svg {
+    min-height: 24px;
+    max-height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    stroke-width: 2;
   }
 }

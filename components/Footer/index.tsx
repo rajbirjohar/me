@@ -42,10 +42,11 @@ export default function Footer() {
               <Link href="/chapters">Chapters</Link>
               <Link href="/projects">Projects</Link>
               <Link href="/about">About</Link>
-              <Link href="/music">Music</Link>
+              <Link href="/experiences">Experiences</Link>
             </div>
             <div className={css.links}>
-              <Link href="/experiences">Experiences</Link>
+              <Link href="/music">Music</Link>
+              <Link href="/snippets">Snippets</Link>
             </div>
           </div>
         </div>
