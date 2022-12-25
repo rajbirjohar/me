@@ -39,7 +39,7 @@ interface Track {
   title: string;
   artist: string | string[];
   album: string;
-  albumArt: string;
+  albumArt: string | StaticImageData;
   url: string;
   progress?: number;
   duration: number;

@@ -24,14 +24,6 @@ export default function Track(props: TrackType) {
         />
 
         <div className={css.info}>
-          {/* {props.progress && (
-            <div
-              className={css.progress + " " + css.secondary}
-              style={{
-                width: `${(props.progress / props.duration ?? 0) * 100}%`,
-              }}
-            />
-          )} */}
           <div className={`${css.heading} clamp`}>
             <a
               className={`${css.title} clamp`}

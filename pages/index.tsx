@@ -11,12 +11,11 @@ import { useCallback } from "react";
 import Chapters from "@/components/Chapters";
 import ListExperiences from "@/components/Experiences";
 import Playing from "@/components/Music/Playing";
-import me from "../public/me.jpg";
-import horseshoe from "../public/horseshoe.jpg";
-import route243 from "../public/route243.jpg";
-import anthem from "../public/anthem.jpg";
+import me from "@/public/static/images/me.jpg";
+import horseshoe from "@/public/static/images/horseshoe.jpg";
+import route243 from "@/public/static/images/route243.jpg";
+import anthem from "@/public/static/images/anthem.jpg";
 import Stack from "@/components/Stack";
-import Projects from "@/components/Projects/ProjectCard";
 import ListProjects from "@/components/Projects";
 
 const greetings = [
@@ -146,6 +145,7 @@ export default function Home(props: { chapters: Chapter[] }) {
     <>
       <Head>
         <title>Rajbir Johar</title>
+        <meta content="A brief overview of different aspects of my career" name="description" />
       </Head>
       {render && <Hello index={index} />}
       <div className={css.intro}>

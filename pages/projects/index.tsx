@@ -6,6 +6,7 @@ export default function Projects() {
     <>
       <Head>
         <title>Rajbir Johar | Projects</title>
+        <meta content="All my open source projects hosted on Github" name="description" />
       </Head>
       <header>
         <h1>Projects</h1>

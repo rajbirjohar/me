@@ -50,7 +50,11 @@ export default function ChaptersPage(props: { chapters: Chapter[] }) {
   return (
     <>
       <Head>
-        <title>Rajbir Johar</title>
+        <title>Rajbir Johar | Chapters</title>
+        <meta
+          content="My thoughts on different topics relating to mainly developer experiences"
+          name="description"
+        />
       </Head>
       <header>
         {query && (

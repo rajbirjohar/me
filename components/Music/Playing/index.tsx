@@ -16,7 +16,7 @@ export default function Playing() {
           title={"Unable to play"}
           artist={"–––"}
           album={"–––"}
-          albumArt={"/spotify.png"}
+          albumArt={"/static/images/spotify.png"}
           url={"https://rajbir.io"}
           duration={0}
           explicit={false}
@@ -32,7 +32,7 @@ export default function Playing() {
           title={"Loading..."}
           artist={"–––"}
           album={"–––"}
-          albumArt={"/spotify.png"}
+          albumArt={"/static/images/spotify.png"}
           url={"https://rajbir.io"}
           duration={0}
           explicit={false}
@@ -59,7 +59,7 @@ export default function Playing() {
           title={"Not currently playing"}
           artist={"Spotify"}
           album={"Spotify"}
-          albumArt={"/spotify.png"}
+          albumArt={"/static/images/spotify.png"}
           url={"https://rajbir.io"}
           duration={0}
           explicit={false}

@@ -106,7 +106,8 @@
 @media screen and (max-width: 668px) {
   .header {
     width: 100%;
-    padding: 0 var(--space-md);
+    top: var(--space);
+    padding: 0 32px;
   }
   .nav {
     flex-direction: column;
