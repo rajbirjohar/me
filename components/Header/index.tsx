@@ -35,6 +35,14 @@ function Menu(props: { onClick?: () => void }): JSX.Element {
       >
         Projects
       </Focused>
+
+      <Focused
+        href="/gallery"
+        onClick={props.onClick}
+        label="Navigate to the gallery page to view some of my photography."
+      >
+        Gallery
+      </Focused>
       <Focused
         href="/about"
         onClick={props.onClick}

@@ -50,7 +50,7 @@ export default function Focused(props: {
             router.pathname === props.href ||
             router.asPath.includes(props.href) ||
             router.pathname.includes(props.href)) && (
-            <motion.span
+            <motion.strong
               key={props.href}
               style={{
                 // This rule is needed because
@@ -67,7 +67,7 @@ export default function Focused(props: {
               transition={{ duration: 0.15, type: "tween" }}
             >
               &#9900;
-            </motion.span>
+            </motion.strong>
           )}
         </AnimatePresence>
         <span className={css.label}>{props.children}</span>
