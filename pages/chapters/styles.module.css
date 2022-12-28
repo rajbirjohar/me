@@ -86,7 +86,7 @@
 .button {
   border: none;
   background-color: var(--forest);
-  color: var(--forest-light);
+  color: var(--paper-2);
   padding: 0.5rem 0.8rem;
   border-radius: var(--radius);
   transition: scale var(--transition-cubic-out),
@@ -143,7 +143,7 @@
   }
   .button:active {
     background-color: var(--forest-dark);
-    color: var(--forest-light);
+    color: var(--paper-2);
     scale: 0.99;
   }
   .tag:hover {

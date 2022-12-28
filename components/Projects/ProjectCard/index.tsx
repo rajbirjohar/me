@@ -31,7 +31,7 @@ export default function ProjectCard(props: { project: Project }) {
         </header>
         <div className={css.link}>
           <span>
-            Explore <IconArrowRight className={css.icon} />
+            Explore <IconArrowRight className={css.icon} strokeWidth={2.5} />
           </span>
           <time className={css.date}>
             {formatDistance(new Date(project.pushed), new Date(), {

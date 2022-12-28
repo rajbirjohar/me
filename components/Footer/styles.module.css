@@ -5,6 +5,10 @@
   padding: 32px;
 }
 
+.footer a {
+  font-weight: 550;
+}
+
 .content {
   border-top: var(--border);
   padding: 32px 0;

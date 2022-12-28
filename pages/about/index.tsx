@@ -11,29 +11,43 @@ export default function About() {
         <header>
           <h1>Whoami</h1>
           <p>Well that&#39;s a great question isn&#39;t it? 🤔 </p>
+          <p>
+            The short version is that I&#39;m an engineer specializing in
+            frontend and UX development. I&#39;m currently working at
+            Inventives, a venture studio.
+          </p>
+          <p>
+            This space is ever changing, just like we are as humans. Tomorrow
+            might not look like today so enjoy today while you can.
+          </p>
         </header>
         <section>
           <h2>A Detailed View</h2>
+          <h3>Career</h3>
           <p>
-            I am currently an engineer at Inventives. I&#39;m primarily focused
-            on designing, architecting, and developing interfaces. Although, I
-            found a strong yearning for building and breaking things alot
-            earlier in life.
+            I&#39;m primarily focused on designing, architecting, and developing
+            interfaces. Although, I found a strong yearning for building and
+            breaking things alot earlier in life.
           </p>
+          <h3>Inspiration</h3>
           <p>
             I didn&#39;t really have much direction on what I wanted to be
             growing up. But I do remember enjoying jailbreaking my iPhone and
             pretending to be a hacker with <code>ipconfig</code>. On the flip
             side, I also had an affinity for artistic stuff like drawing and
             painting. To me they seemed like totally different worlds and I felt
-            like I had to choose one or the other especially as that growing
-            question kept being asked.
+            like I had to choose one or the other especially as people kept
+            asking me what I wanted to be when I grew up.
           </p>
-          <blockquote>What do you want to be when you grow up?</blockquote>
           <p>
             It wasn&#39;t until college where I discovered that I could carve
             out my little slice of the world wide web with <code>code</code>{" "}
             <i>and</i> with <span className={css.gradient}>art</span>.
+          </p>
+          <h3>Education</h3>
+          <p>
+            For my education, I graduated with a Bachelors in Computer Science
+            from the University of California, Riverside.
           </p>
         </section>
         <section>

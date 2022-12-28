@@ -145,46 +145,38 @@ export default function Home(props: { chapters: Chapter[] }) {
     <>
       <Head>
         <title>Rajbir Johar</title>
-        <meta content="A brief overview of different aspects of my career" name="description" />
+        <meta
+          content="A brief overview of different aspects of my career"
+          name="description"
+        />
       </Head>
-      {render && <Hello index={index} />}
+
       <div className={css.intro}>
         <div className={css.section}>
-          <p>I&#39;m an engineer, photographer, and explorer 🌲.</p>
+          <div className={css.profilewrapper}>
+            <Image
+              src={me}
+              priority
+              quality={100}
+              alt={
+                "A picture of me wearing a light grey beanie and a thick winter jacket. This was taken at Flagstaff."
+              }
+              className={css.profile}
+            />
+          </div>
+          {render && <Hello index={index} />}
           <p>
-            <em>Glad to have you.</em> Frontend and UX Engineer based in{" "}
-            <s>Southern California</s> Arizona. Building and typing on bespoke
-            keyboards. Getting lost on canyon drives during my downtime.
-            Crafting aesthetic interfaces at{" "}
-            <a
-              href="https://inventives.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Inventives
-            </a>{" "}
-            for mind blowing ideas.
+            Frontend and UX Engineer at Inventives. Crafting aesthetic
+            interfaces for mindblowing ideas.
           </p>
-          <p>
-            This space is ever changing, just like we are as humans. Tomorrow
-            might not look like today so enjoy today while you can.
-          </p>
-          <Link href="/about">
+          <Link
+            href="/about"
+            aria-label="Navigate to the about me page to learn more about me."
+          >
             <>
-              More <IconArrowRight />
+              Discover <IconArrowRight strokeWidth={2.5} />
             </>
           </Link>
-        </div>
-        <div className={css.profilewrapper}>
-          <Image
-            src={me}
-            priority
-            quality={100}
-            alt={
-              "A picture of me wearing a light grey beanie and a thick winter jacket. This was taken at Flagstaff."
-            }
-            className={css.profile}
-          />
         </div>
       </div>
       <div className={css.section}>
@@ -201,7 +193,7 @@ export default function Home(props: { chapters: Chapter[] }) {
         <ListProjects />
         <Link href="/projects">
           <>
-            Discover <IconArrowRight />
+            Discover <IconArrowRight strokeWidth={2.5} />
           </>
         </Link>
       </div>
@@ -210,9 +202,14 @@ export default function Home(props: { chapters: Chapter[] }) {
         <div className={css.experiences}>
           <div>
             <ListExperiences />
-            <Link href="/experiences">
+            <Link
+              href="/experiences"
+              style={{
+                fontWeight: 550,
+              }}
+            >
               <>
-                Discover <IconArrowRight />
+                Discover <IconArrowRight strokeWidth={2.5} />
               </>
             </Link>
           </div>
@@ -226,7 +223,7 @@ export default function Home(props: { chapters: Chapter[] }) {
         <Playing />
         <Link href="/music">
           <>
-            Discover <IconArrowRight />
+            Discover <IconArrowRight strokeWidth={2.5} />
           </>
         </Link>
       </div>

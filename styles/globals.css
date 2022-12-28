@@ -24,7 +24,7 @@
   --start: 0ms;
 
   /* Colors */
-  --hue: 165;
+  --hue: 200;
 
   --paper-0: hsl(var(--hue) 0% 98%);
   --paper-1: hsl(var(--hue) 0% 95%);
@@ -32,11 +32,11 @@
   --paper-3: hsl(var(--hue) 0% 80%);
   --paper-4: hsl(var(--hue) 0% 70%);
   --paper-5: hsl(var(--hue) 0% 60%);
-  --paper-6: hsl(var(--hue) 0% 50%);
-  --paper-7: hsl(var(--hue) 0% 40%);
-  --paper-8: hsl(var(--hue) 0% 30%);
-  --paper-9: hsl(var(--hue) 0% 20%);
-  --paper-10: hsl(var(--hue) 0% 10%);
+  --paper-6: hsl(var(--hue) 0% 40%);
+  --paper-7: hsl(var(--hue) 0% 30%);
+  --paper-8: hsl(var(--hue) 0% 20%);
+  --paper-9: hsl(var(--hue) 0% 10%);
+  --paper-10: hsl(var(--hue) 0% 5%);
 
   --bg: var(--paper-0);
   --fg: var(--paper-7);
@@ -44,9 +44,9 @@
   --card-bg: var(--paper-1);
   --border: 2px solid var(--paper-2);
 
-  --forest-dark: hsl(var(--hue) 100% 15%);
-  --forest: hsl(var(--hue) 100% 30%);
-  --forest-light: hsl(var(--hue) 70% 75%);
+  --forest-dark: hsl(var(--hue) 28% 15%);
+  --forest: hsl(var(--hue) 28% 41%);
+  --forest-light: hsl(var(--hue) 28% 75%);
 
   --gradient: linear-gradient(
       217deg,
@@ -247,6 +247,10 @@ a {
   transition: color var(--transition);
 }
 
+p a {
+  font-weight: 550;
+}
+
 a:hover {
   color: var(--forest-dark);
 }
@@ -292,7 +296,6 @@ blockquote {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
-
 
 /*
   9. Create a root stacking context

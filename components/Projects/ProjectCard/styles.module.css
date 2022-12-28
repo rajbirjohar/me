@@ -73,6 +73,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: var(--font-size-sm);
+
 }
 
 .link span {
@@ -82,23 +83,7 @@
   align-items: center;
   max-width: max-content;
   gap: var(--space-2xs);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  padding: 0;
-  margin: 0;
-  margin: 0 0 var(--space) 0;
-}
-
-.tag {
-  font-size: var(--font-size-sm);
-  color: var(--paper-6);
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  font-weight: 550;
 }
 
 .icon {

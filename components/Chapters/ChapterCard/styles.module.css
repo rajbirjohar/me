@@ -83,6 +83,7 @@
   max-width: max-content;
   gap: var(--space-2xs);
   transition: color var(--transition-cubic-out);
+  font-weight: 550;
 }
 
 .tags {

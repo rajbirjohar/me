@@ -42,7 +42,7 @@ export default function ChapterCard(props: {
           </ul>
           <div className={css.link}>
             <span>
-              Read <IconArrowRight className={css.icon} />
+              Read <IconArrowRight className={css.icon} strokeWidth={2.5} />
             </span>
             <time className={css.date} suppressHydrationWarning>
               {format(date, "M.d.yyyy")}
