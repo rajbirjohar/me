@@ -46,8 +46,8 @@ export default function Expanded(props: {
             <MotionImage
               layoutId={photo.name}
               quality={100}
-              width={1000}
-              height={1000}
+              width={500}
+              height={500}
               src={photo.url}
               alt={"Expanded"}
               className={css.image}
