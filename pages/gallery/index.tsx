@@ -1,11 +1,10 @@
 import supabase from "@/lib/supabase/public";
 import Head from "next/head";
-import Image from "next/image";
 import css from "./styles.module.css";
 import { useState } from "react";
 import { useDisableScroll } from "@/hooks/useDisableScroll";
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
-import Expanded from "@/components/Expanded";
+import Expanded from "@/components/Gallery/Expanded";
+import Gallery from "@/components/Gallery";
 
 export type Photo = {
   name: string;
@@ -13,9 +12,7 @@ export type Photo = {
   url: string;
 };
 
-const MotionImage = motion(Image);
-
-export default function Gallery(props: { photos: Photo[] }) {
+export default function GalleryPage(props: { photos: Photo[] }) {
   const [selected, setSelected] = useState<Photo | null>(null);
   useDisableScroll(selected !== null);
   const { photos } = props;
@@ -41,35 +38,11 @@ export default function Gallery(props: { photos: Photo[] }) {
             href={"https://www.instagram.com/rajbir.johar/"}
           >
             Instagram
-          </a>.
+          </a>
+          .
         </p>
         <Expanded photo={selected} setPhoto={setSelected} />
-        <div className={css.gallery}>
-          <LayoutGroup>
-            {photos
-              .sort(
-                (a, b) =>
-                  new Date(b.date).getTime() - new Date(a.date).getTime()
-              )
-              .map((photo) => (
-                <motion.div
-                  key={photo.name}
-                  className={css.imagewrapper}
-                  role="button"
-                  onClick={() => setSelected(photo)}
-                >
-                  <MotionImage
-                    layoutId={photo.name}
-                    width={200}
-                    height={200}
-                    src={photo.url}
-                    alt={"photo"}
-                    className={css.image}
-                  />
-                </motion.div>
-              ))}
-          </LayoutGroup>
-        </div>
+        <Gallery photos={photos} setPhoto={setSelected} />
       </div>
     </>
   );

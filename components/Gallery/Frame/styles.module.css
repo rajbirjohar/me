@@ -1,0 +1,32 @@
+.imagewrapper {
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.image {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  transition: scale var(--transition-cubic-out);
+}
+
+.loading {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  width: 100%;
+  background-color: var(--paper-2);
+  scale: 1.1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .imagewrapper:hover > .image {
+    scale: 1.05;
+  }
+
+  .imagewrapper:active > .image {
+    scale: 1;
+  }
+}

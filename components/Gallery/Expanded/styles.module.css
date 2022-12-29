@@ -37,7 +37,6 @@
 .image {
   height: 100%;
   width: auto;
-  margin: 0 auto;
   object-fit: contain;
   z-index: 15;
 }
