@@ -1,0 +1,30 @@
+.link {
+  pointer-events: all;
+  transition: color var(--transition-slower),
+    font-weight var(--transition-slower);
+  font-weight: 500;
+}
+
+.active {
+  cursor: default;
+  font-weight: 600;
+  color: var(--zinc-900);
+}
+
+.link:not(.active) {
+  color: var(--zinc-500);
+  cursor: pointer;
+}
+
+.label {
+  margin-left: var(--space-sm);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:not(.active):hover {
+    color: inherit;
+  }
+  .active:hover {
+    color: var(--zinc-900);
+  }
+}

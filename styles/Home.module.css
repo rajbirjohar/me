@@ -4,23 +4,6 @@
   gap: var(--space-md);
 }
 
-/* .intro a {
-  font-weight: 550;
-} */
-
-.section {
-  margin-bottom: var(--space-xl);
-}
-
-.section > p {
-  max-width: 32rem;
-  margin: var(--space) 0;
-}
-
-.section > a {
-  font-weight: 550;
-}
-
 .hello {
   /* This rule is needed because
   spans are an inline element

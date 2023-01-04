@@ -8,15 +8,16 @@ import { IconArrowRight } from "@tabler/icons";
 import { AnimatePresence, LayoutGroup, motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
-import Chapters from "@/components/Chapters";
-import ListExperiences from "@/components/Experiences";
-import Playing from "@/components/Music/Playing";
+import Chapters from "@/organisms/Chapters";
+import ListExperiences from "@/organisms/Experiences";
+import Playing from "@/organisms/Playing";
 import me from "@/public/static/images/me.jpg";
 import horseshoe from "@/public/static/images/horseshoe.jpg";
 import route243 from "@/public/static/images/route243.jpg";
 import anthem from "@/public/static/images/anthem.jpg";
-import Stack from "@/components/Stack";
-import ListProjects from "@/components/Projects";
+import Stack from "@/molecules/Stack";
+import ListProjects from "@/organisms/Projects";
+import Section from "@/atoms/Section";
 
 const greetings = [
   "Hello",
@@ -152,7 +153,7 @@ export default function Home(props: { chapters: Chapter[] }) {
       </Head>
 
       <div className={css.intro}>
-        <div className={css.section}>
+        <Section>
           <div className={css.profilewrapper}>
             <Image
               src={me}
@@ -177,9 +178,9 @@ export default function Home(props: { chapters: Chapter[] }) {
               Discover <IconArrowRight strokeWidth={2.5} />
             </>
           </Link>
-        </div>
+        </Section>
       </div>
-      <div className={css.section}>
+      <Section>
         <h2>Chapters</h2>
         <Chapters chapters={props.chapters} />
         <Link href="/chapters">
@@ -187,8 +188,8 @@ export default function Home(props: { chapters: Chapter[] }) {
             Discover <IconArrowRight />
           </>
         </Link>
-      </div>
-      <div className={css.section}>
+      </Section>
+      <Section>
         <h2>Projects</h2>
         <ListProjects />
         <Link href="/projects">
@@ -196,8 +197,8 @@ export default function Home(props: { chapters: Chapter[] }) {
             Discover <IconArrowRight strokeWidth={2.5} />
           </>
         </Link>
-      </div>
-      <div className={css.section}>
+      </Section>
+      <Section>
         <h2>Experiences</h2>
         <div className={css.experiences}>
           <div>
@@ -217,8 +218,8 @@ export default function Home(props: { chapters: Chapter[] }) {
             <Stack cardStack={cardStack} />
           </div>
         </div>
-      </div>
-      <div className={css.section}>
+      </Section>
+      <Section>
         <h2>Music</h2>
         <Playing />
         <Link href="/music">
@@ -226,7 +227,7 @@ export default function Home(props: { chapters: Chapter[] }) {
             Discover <IconArrowRight strokeWidth={2.5} />
           </>
         </Link>
-      </div>
+      </Section>
     </>
   );
 }

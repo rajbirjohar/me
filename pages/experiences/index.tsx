@@ -1,4 +1,4 @@
-import ListExperiences from "@/components/Experiences";
+import ListExperiences from "@/organisms/Experiences";
 import Head from "next/head";
 
 export default function Experiences() {
@@ -6,12 +6,15 @@ export default function Experiences() {
     <>
       <Head>
         <title>Rajbir Johar | Experiences</title>
-        <meta content="Experiences that I've had both in and outside of my career." name="description" />
+        <meta
+          content="Experiences that I've had both in and outside of my career."
+          name="description"
+        />
       </Head>
       <header>
         <h1>Experiences</h1>
-        <ListExperiences all />
       </header>
+      <ListExperiences all />
     </>
   );
 }

@@ -30,7 +30,30 @@ export type Chapter = {
   /** MDX file body */
   body: MDX
   slug: string
-  url: string
+  image: string
+  og: string
+}
+
+export type Snippet = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Snippet'
+  /** The title of the post */
+  title: string
+  /** The description of the post */
+  description: string
+  /** The title of the post */
+  language: string
+  /** The category of the post */
+  category: string
+  /** The date of the post */
+  date: IsoDateTimeString
+  /** Determines if the post has been published */
+  draft: boolean
+  /** MDX file body */
+  body: MDX
+  slug: string
 }  
 
 /** Nested types */
@@ -41,8 +64,8 @@ export type Chapter = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Chapter
-export type DocumentTypeNames = 'Chapter'
+export type DocumentTypes = Chapter | Snippet
+export type DocumentTypeNames = 'Chapter' | 'Snippet'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -64,6 +87,7 @@ declare global {
 
 export type DocumentTypeMap = {
   Chapter: Chapter
+  Snippet: Snippet
 }
 
 export type NestedTypeMap = {

@@ -1,0 +1,139 @@
+.section {
+  margin-bottom: var(--space-md);
+}
+
+.history {
+  margin: var(--space-md) 0;
+}
+
+.section > p {
+  max-width: 32rem;
+  margin: var(--space) 0;
+}
+
+.searchwrapper {
+  max-width: 32rem;
+  width: 100%;
+  border: var(--border);
+  border-radius: 48px;
+  padding: var(--space-sm) var(--space);
+  outline: none;
+  transition: border-color var(--transition-slow);
+  background-color: var(--zinc-0);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.search::placeholder {
+  color: var(--zinc-600);
+}
+
+.searchwrapper:focus-within {
+  border-color: var(--zinc-900);
+  box-shadow: var(--shadow);
+}
+
+.search {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.grid {
+  margin: var(--space-md) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: var(--space-md);
+}
+
+.filtertag {
+  color: var(--zinc-5);
+}
+
+.chapter {
+  max-width: 32rem;
+}
+
+.chapter .content *,
+.chapter header,
+.chapter footer {
+  margin: var(--space) 0;
+}
+
+.link {
+  margin-bottom: var(--space);
+}
+
+.author {
+  color: var(--zinc-6);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: var(--primary-light);
+  max-width: max-content;
+  border-radius: 99px;
+  padding: 0.2rem 0.8rem;
+  margin: var(--space-sm) 0;
+  font-weight: 500;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
+  margin: 0 0 var(--space) 0;
+}
+
+.tag {
+  color: var(--zinc-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: flex-end;
+  color: var(--primary);
+  margin: var(--space-md) 0;
+}
+
+.signature svg {
+  width: 200px;
+  fill: var(--primary-dark);
+}
+
+.sticky {
+  position: sticky;
+  bottom: var(--space-md);
+  width: 100%;
+  margin: var(--space-md) 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tag:hover {
+    color: var(--zinc-10);
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .signature svg {
+    width: 150px;
+    fill: var(--primary-dark);
+  }
+}

@@ -6,21 +6,11 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import css from "./styles.module.css";
 import { IconArrowBarToLeft } from "@tabler/icons";
 import Link from "next/link";
-import { useState } from "react";
-import Views from "@/components/Chapters/Views";
-import Signature from "@/components/Signature";
-import LikeButton from "../../components/Chapters/Likes/LikeButton/index";
-import Divider from "@/components/Divider";
-
-function MyButton() {
-  const [clicks, setClicks] = useState(0);
-
-  return (
-    <button onClick={() => setClicks(clicks + 1)} className={css.button}>
-      Clicked me {clicks} times
-    </button>
-  );
-}
+import Views from "@/molecules/Views";
+import Signature from "@/atoms/Signature";
+import LikeButton from "../../core/molecules/LikeButton/index";
+import Divider from "@/atoms/Divider";
+import MDXComponents from "@/molecules/Components";
 
 const PostLayout = ({ chapter }: { chapter: Chapter }) => {
   const MDXContent = useMDXComponent(chapter.body.code);
@@ -28,7 +18,7 @@ const PostLayout = ({ chapter }: { chapter: Chapter }) => {
   return (
     <>
       <Head>
-        <title>Rajbir Johar | {chapter.title}</title>
+        <title>{`Rajbir Johar | ${chapter.title}`}</title>
         <meta content={chapter.description} name="description" />
         <meta property="article:published_time" content={chapter.date} />
         <meta name="keywords" content={chapter.tags.toString()} />
@@ -55,7 +45,7 @@ const PostLayout = ({ chapter }: { chapter: Chapter }) => {
         </header>
         <hr />
         <div className={css.content}>
-          <MDXContent components={{ MyButton }} />
+          <MDXContent components={MDXComponents} />
         </div>
         <div className={css.sticky}>
           <LikeButton slug={chapter.slug} />
@@ -94,7 +84,7 @@ export default PostLayout;
 
 export async function getStaticProps(params: Params) {
   const chapter: Chapter | undefined = allChapters.find((chapter: Chapter) => {
-    return chapter._raw.flattenedPath === params.params.slug;
+    return chapter.slug === params.params.slug;
   });
 
   return {
@@ -105,11 +95,10 @@ export async function getStaticProps(params: Params) {
 }
 
 export async function getStaticPaths() {
-  const paths: string[] = allChapters
-    .filter((chapter) => chapter.draft === false)
-    .map((chapter: Chapter) => chapter.url);
   return {
-    paths,
+    paths: allChapters
+      .filter((chapter) => chapter.draft === false)
+      .map((chapter) => ({ params: { slug: chapter.slug } })),
     fallback: false,
   };
 }

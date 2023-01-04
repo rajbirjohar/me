@@ -7,7 +7,8 @@ import { useRouter } from "next/router";
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { IconArrowBarToLeft, IconSearch } from "@tabler/icons";
-import Chapters from "@/components/Chapters";
+import Chapters from "@/organisms/Chapters";
+import Section from "@/atoms/Section";
 
 export default function ChaptersPage(props: { chapters: Chapter[] }) {
   const router = useRouter();
@@ -68,7 +69,7 @@ export default function ChaptersPage(props: { chapters: Chapter[] }) {
           Chapters {query && <span className={css.filtertag}>on {query}</span>}
         </h1>
       </header>
-      <div className={css.section}>
+      <Section>
         <p>Here is where I type at the speed of thought.</p>
         <div className={css.searchwrapper}>
           <IconSearch />
@@ -104,7 +105,7 @@ export default function ChaptersPage(props: { chapters: Chapter[] }) {
             ))}
         </div>
         <Chapters chapters={filteredChapters} />
-      </div>
+      </Section>
     </>
   );
 }
@@ -122,7 +123,6 @@ export async function getStaticProps() {
         "description",
         "tags",
         "date",
-        "url",
         "slug",
       ])
     )

@@ -3,8 +3,8 @@ import Head from "next/head";
 import css from "./styles.module.css";
 import { useState } from "react";
 import { useDisableScroll } from "@/hooks/useDisableScroll";
-import Expanded from "@/components/Gallery/Expanded";
-import Gallery from "@/components/Gallery";
+import Expanded from "@/molecules/Expanded";
+import Gallery from "@/organisms/Gallery";
 
 export type Photo = {
   name: string;

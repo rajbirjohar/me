@@ -1,0 +1,145 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: var(--space-lg);
+  z-index: 5;
+  /* This is needed to allow links that 
+  cross the threshold of this element
+  to be clickable because header spans 
+  100% of the width of the screen */
+  pointer-events: none;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  padding: var(--space-sm);
+  margin: 0 auto;
+  justify-content: space-between;
+  border-radius: 32px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  isolation: isolate;
+  font-size: 1rem;
+  /* Because .header has pointer events none,
+  it stops any element within header to be 
+  clickable so this counters that rule. */
+  pointer-events: all;
+}
+
+.nav::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 32px;
+  background-color: var(--header-bg);
+  opacity: 0.75;
+  z-index: -1;
+  border-width: 3px;
+  transition: box-shadow var(--transition-slowest);
+}
+
+.nav.scroll::before {
+  box-shadow: var(--shadow-lg);
+}
+
+.menuwrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--space-md);
+  margin-left: var(--space-xl);
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mobilemenuwrapper {
+  display: none;
+}
+
+.collapsewrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home {
+  border: none;
+  background-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--emerald-600);
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: scale var(--transition-slowest), color var(--transition-slower),
+    background-color var(--transition-slower);
+}
+
+.home svg {
+  min-height: 24px;
+  max-height: 24px;
+  min-width: 24px;
+  max-width: 24px;
+  stroke-width: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home:hover {
+    background-color: var(--zinc-100);
+    color: var(--emerald-700);
+    scale: 1.05;
+  }
+  .home:active {
+    background-color: var(--zinc-50);
+    color: var(--emerald-800);
+    scale: 0.95;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .header {
+    width: 100%;
+    top: var(--space);
+    padding: 0 var(--space-lg);
+  }
+  .nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menuwrapper {
+    display: none;
+  }
+
+  .mobilemenuwrapper {
+    margin-top: var(--space);
+    z-index: 10;
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobilelinks {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--space-md);
+    padding: var(--space-lg) var(--space-sm);
+  }
+}

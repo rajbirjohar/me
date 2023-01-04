@@ -1,7 +1,9 @@
-import ListProjects from "@/components/Projects";
+import Section from "@/atoms/Section";
+import { pick } from "contentlayer/client";
+import { Snippet, allSnippets } from "contentlayer/generated";
 import Head from "next/head";
 
-export default function Snippets() {
+export default function SnippetsPage(props: { snippets: Snippet[] }) {
   return (
     <>
       <Head>
@@ -9,12 +11,22 @@ export default function Snippets() {
       </Head>
       <header>
         <h1>Snippets</h1>
+      </header>
+      <Section>
         <p>
           Short pieces of code or components that I&#39;ve acquired over the
           years and use often.
         </p>
-        <em>Stay tuned.</em>
-      </header>
+      </Section>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const snippets = allSnippets
+    .filter((snippet) => snippet.draft === false)
+    .map((snippet) =>
+      pick(snippet, ["category", "title", "description", "language", "slug"])
+    );
+  return { props: { snippets } };
 }

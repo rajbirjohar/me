@@ -1,4 +1,5 @@
-import ListProjects from "@/components/Projects";
+import ListProjects from "@/organisms/Projects";
+import Section from "@/atoms/Section";
 import Head from "next/head";
 
 export default function Projects() {
@@ -6,12 +7,18 @@ export default function Projects() {
     <>
       <Head>
         <title>Rajbir Johar | Projects</title>
-        <meta content="All my open source projects hosted on Github" name="description" />
+        <meta
+          content="All my open source projects hosted on Github"
+          name="description"
+        />
       </Head>
       <header>
         <h1>Projects</h1>
-        <ListProjects all />
       </header>
+      <Section>
+        <p>Open source for the world to see.</p>
+        <ListProjects all />
+      </Section>
     </>
   );
 }

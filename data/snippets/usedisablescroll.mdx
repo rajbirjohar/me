@@ -1,0 +1,49 @@
+---
+title: useDisableScroll
+description: A hook which accepts a boolean value to determine if the page should lock any scroll functionality.
+category: hooks
+language: TypeScript
+date: 2022-12-29
+draft: false
+---
+
+## Demo
+
+<LockButton />
+
+## Code
+
+```ts:useDisableScroll.ts showLineNumbers
+import { useEffect } from "react";
+
+/**
+ * useDisableScroll
+ *
+ * If value is true, lock scroll on a global level.
+ *
+ * @param value - Determines if we should lock scroll.
+ */
+export const useDisableScroll = (value: boolean) => {
+  useEffect(() => {
+    if (value) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [value]);
+};
+
+```
+
+## Use
+
+```tsx:LockButton.tsx {1,5} showLineNumbers
+import useDisableScroll from './useDisableScroll'
+
+export default function LockScroll() {
+  const [lock, setLock] = useState(false);
+  useDisableScroll(lock);
+
+  return <button onClick={() => setLock(!lock)}>Lock Scroll</button>;
+}
+```

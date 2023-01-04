@@ -1,0 +1,35 @@
+.switch {
+  border: none;
+  background-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--zinc-700);
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: scale var(--transition-slowest), color var(--transition-slower),
+    background-color var(--transition-slower);
+}
+
+.switch svg {
+  min-height: 24px;
+  max-height: 24px;
+  min-width: 24px;
+  max-width: 24px;
+  stroke-width: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .switch:hover {
+    background-color: var(--zinc-100);
+    color: var(--zinc-800);
+    scale: 1.05;
+  }
+  .switch:active {
+    background-color: var(--zinc-50);
+    color: var(--zinc-900);
+    scale: 0.95;
+  }
+}
