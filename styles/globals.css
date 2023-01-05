@@ -299,6 +299,7 @@ button {
   border: none;
   outline: none;
   background-color: var(--zinc-200);
+  color: var(--zinc-900);
   padding: var(--space-sm) var(--space);
   border-radius: 32px;
   cursor: pointer;
