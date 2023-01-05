@@ -214,6 +214,7 @@ pre {
   margin-right: -16px;
   background-color: var(--highlight-bg); /* Set highlight bg color */
   border-left: var(--border); /* Set highlight accent border color */
+  border-width: 4px;
 }
 
 .line-number::before {

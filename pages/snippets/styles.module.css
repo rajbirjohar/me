@@ -18,8 +18,8 @@
   border-radius: 48px;
   padding: var(--space-sm) var(--space);
   outline: none;
-  transition: border-color var(--transition-slow);
-  background-color: var(--zinc-0);
+  transition: border-color var(--transition-slower);
+  background-color: var(--zinc-200);
   color: var(--fg);
   display: flex;
   align-items: center;
@@ -60,6 +60,10 @@
 .chapter .content *,
 .chapter header,
 .chapter footer {
+  margin: var(--space-sm) 0;
+}
+
+.chapter .content p {
   margin: var(--space) 0;
 }
 
@@ -76,10 +80,11 @@
 }
 
 .badge {
-  background-color: var(--primary-light);
+  background-color: var(--emerald-200);
+  color: var(--emerald-900);
   max-width: max-content;
-  border-radius: 99px;
-  padding: 0.2rem 0.8rem;
+  border-radius: 32px;
+  padding: var(--space-xs) var(--space);
   margin: var(--space-sm) 0;
   font-weight: 500;
 }
@@ -102,27 +107,12 @@
   transition: color var(--transition);
 }
 
-.signature {
+.footer {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  gap: var(--space-sm);
-  align-items: flex-end;
-  color: var(--primary);
-  margin: var(--space-md) 0;
-}
-
-.signature svg {
-  width: 200px;
-  fill: var(--primary-dark);
-}
-
-.sticky {
-  position: sticky;
-  bottom: var(--space-md);
-  width: 100%;
-  margin: var(--space-md) 0;
-  display: flex;
-  justify-content: center;
+  padding-top: var(--space-lg);
+  font-size: var(--font-size-sm);
 }
 
 @media (hover: hover) and (pointer: fine) {

@@ -31,6 +31,20 @@ const PostLayout = ({ snippet }: { snippet: Snippet }) => {
         <div className={css.content}>
           <MDXContent components={MDXComponents} />
         </div>
+        <footer className={css.footer}>
+          <em>Found something wrong?</em>
+          <p>
+            Let me know on{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={"https://github.com/rajbirjohar"}
+            >
+              Github
+            </a>
+            .
+          </p>
+        </footer>
       </article>
     </>
   );

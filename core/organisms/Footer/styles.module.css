@@ -14,6 +14,10 @@
   padding: 32px 0;
 }
 
+.content p {
+  color: var(--zinc-500);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -30,5 +34,5 @@
 .lastupdated {
   text-align: center;
   font-size: var(--font-size-sm);
-  color: var(--zinc-6);
+  color: var(--zinc-500);
 }

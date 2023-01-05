@@ -25,9 +25,9 @@ export default function Chapters(props: { chapters: Chapter[] }) {
   }
   return (
     <div className={css.grid}>
-      {props.chapters.map((chapter: Chapter, index: number) => (
+      {props.chapters.map((chapter: Chapter) => (
         <ChapterCard
-          key={index}
+          key={chapter.title}
           chapter={chapter}
           views={
             data?.data.find(

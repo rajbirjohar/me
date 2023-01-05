@@ -9,7 +9,8 @@
   border-radius: var(--radius);
   transition: scale var(--transition-slowest),
     border-radius var(--transition-slowest),
-    box-shadow var(--transition-slowest), color var(--transition-slower);
+    box-shadow var(--transition-slowest), color var(--transition-slower),
+    background-color var(--transition-slower);
   cursor: pointer;
   color: var(--fg);
   align-items: unset;
@@ -20,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   font-size: var(--font-size-sm);
+  margin-bottom: var(--space);
 }
 
 .analytics {
@@ -65,7 +67,7 @@
 
 .description {
   margin: var(--space) 0;
-  font-weight: 500;
+  font-weight: 450;
 }
 
 .link {

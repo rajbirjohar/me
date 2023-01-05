@@ -1,4 +1,5 @@
 import Section from "@/atoms/Section";
+import Snippets from "@/organisms/Snippets";
 import { pick } from "contentlayer/client";
 import { Snippet, allSnippets } from "contentlayer/generated";
 import Head from "next/head";
@@ -17,6 +18,7 @@ export default function SnippetsPage(props: { snippets: Snippet[] }) {
           Short pieces of code or components that I&#39;ve acquired over the
           years and use often.
         </p>
+        <Snippets snippets={props.snippets} />
       </Section>
     </>
   );

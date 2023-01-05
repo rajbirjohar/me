@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   border-left: var(--border);
-  border-width: 5px;
+  border-width: 6px;
   padding: 0 0 var(--space-md) var(--space-lg);
 }
 
@@ -12,7 +12,7 @@
 }
 
 .substep {
-  border-width: 4px;
+  border-width: 6px;
 }
 
 .wrapper:last-child,
@@ -23,6 +23,10 @@
 .action {
   display: flex;
   align-items: center;
+}
+
+.title {
+  margin-top: 0;
 }
 
 .title span {
@@ -43,7 +47,7 @@
 .icon,
 .substep .icon {
   position: absolute;
-  top: 4px;
+  top: 0;
   left: 0;
   margin-left: -21px;
   background-color: var(--zinc-200);

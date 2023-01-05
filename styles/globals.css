@@ -6,13 +6,12 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   /* Font sizes */
-  --font-size-sm: clamp(0.83rem, 0.26vw + 0.77rem, 0.98rem);
+  --font-size-xs: clamp(0.69rem, 0.16vw + 0.65rem, 0.78rem);
+  --font-size-sm: clamp(0.83rem, 0.19vw + 0.79rem, 0.94rem);
   --font-size-base: clamp(1rem, 0.23vw + 0.94rem, 1.13rem);
-  --font-size-md: clamp(1.2rem, 0.17vw + 1.16rem, 1.29rem);
-  --font-size-lg: clamp(1.44rem, 0.09vw + 1.42rem, 1.49rem);
-  --font-size-xl: clamp(1.73rem, -0.03vw + 1.74rem, 1.71rem);
-  --font-size-xxl: clamp(2.07rem, -0.19vw + 2.12rem, 1.97rem);
-  --font-size-xxxl: clamp(2.49rem, -0.41vw + 2.59rem, 2.26rem);
+  --font-size-md: clamp(1.2rem, 0.27vw + 1.13rem, 1.35rem);
+  --font-size-lg: clamp(1.44rem, 0.33vw + 1.36rem, 1.62rem);
+  --font-size-xl: clamp(1.73rem, 0.39vw + 1.63rem, 1.94rem);
 
   /* Transitions */
   --transition: 100ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -58,7 +57,7 @@
 
   --bg: var(--zinc-100);
   --fg: var(--zinc-700);
-  --header-bg: var(--zinc-200);
+  --header-bg: var(--zinc-50);
   --card-bg: var(--zinc-50);
   --border: 2px solid var(--zinc-200);
 
@@ -109,8 +108,8 @@
   --zinc-400: #71717a;
   --zinc-300: #52525b;
   --zinc-200: #3f3f46;
-  --zinc-50: #27272a;
   --zinc-100: #18181b;
+  --zinc-50: #27272a;
 
   --red-900: #fef2f2;
   --red-800: #fee2e2;
@@ -224,32 +223,32 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
   color: var(--zinc-900);
+  font-weight: 550;
 }
 
 h1 {
-  font-size: var(--font-size-xxl);
-}
-
-h2 {
   font-size: var(--font-size-xl);
 }
 
-h3 {
+h2 {
   font-size: var(--font-size-lg);
 }
 
-h4 {
+h3 {
   font-size: var(--font-size-md);
 }
 
-h5 {
+h4 {
   font-size: var(--font-size-base);
 }
 
-h6 {
+h5 {
   font-size: var(--font-size-sm);
+}
+
+h6 {
+  font-size: var(--font-size-xs);
 }
 
 a {
@@ -341,11 +340,11 @@ button:active {
 }
 
 ::selection {
-  background: var(--primary);
+  background: var(--emerald-500);
   color: var(--bg); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: var(--primary);
+  background: var(--emerald-500);
   color: var(--bg); /* Gecko Browsers */
 }
 

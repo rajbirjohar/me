@@ -24,12 +24,12 @@
 
 @media (hover: hover) and (pointer: fine) {
   .switch:hover {
-    background-color: var(--zinc-100);
+    background-color: var(--zinc-200);
     color: var(--zinc-800);
     scale: 1.05;
   }
   .switch:active {
-    background-color: var(--zinc-50);
+    background-color: var(--zinc-300);
     color: var(--zinc-900);
     scale: 0.95;
   }
