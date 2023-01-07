@@ -17,6 +17,7 @@ import route243 from "@/public/static/images/route243.jpg";
 import anthem from "@/public/static/images/anthem.jpg";
 import Stack from "core/molecules/Stack";
 import ListProjects from "core/organisms/Projects";
+import { pick } from "contentlayer/client";
 
 const greetings = [
   "Hello",
@@ -259,8 +260,24 @@ export default function Home(props: { chapters: Chapter[] }) {
 }
 
 export async function getStaticProps() {
-  const chapters = allChapters.slice(0, 3).sort((a: Chapter, b: Chapter) => {
-    return compareDesc(new Date(a.date), new Date(b.date));
-  });
+  const chapters = allChapters
+    // Select only the fields needed to fill out the
+    // cards for the journals
+    .filter((chapter) => chapter.draft === false)
+    .slice(0, 3)
+    .map((chapter) =>
+      pick(chapter, [
+        "category",
+        "title",
+        "author",
+        "description",
+        "tags",
+        "date",
+        "slug",
+      ])
+    )
+    .sort((a, b) => {
+      return compareDesc(new Date(a.date), new Date(b.date));
+    });
   return { props: { chapters } };
 }

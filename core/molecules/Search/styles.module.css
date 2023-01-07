@@ -3,6 +3,7 @@
   max-width: 32rem;
   width: 100%;
   border: var(--border);
+  border-color: var(--outline);
   border-radius: 48px;
   padding: var(--space-sm) var(--space);
   outline: none;
