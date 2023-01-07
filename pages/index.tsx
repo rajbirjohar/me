@@ -244,7 +244,7 @@ export default function Home(props: { chapters: Chapter[] }) {
             <h2>Music</h2>
           </header>
           <Playing />
-          <Link href="/music" className="">
+          <Link href="/music" className={css.discover}>
             <button>
               Discover{" "}
               <IconArrowRight
