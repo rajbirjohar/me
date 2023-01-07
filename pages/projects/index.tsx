@@ -1,5 +1,5 @@
-import ListProjects from "@/organisms/Projects";
-import Section from "@/atoms/Section";
+import ListProjects from "core/organisms/Projects";
+import Section from "core/atoms/Section";
 import Head from "next/head";
 
 export default function Projects() {

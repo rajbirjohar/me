@@ -1,45 +1,17 @@
+.chapters section > header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  max-width: 32rem;
+  margin-bottom: var(--space-md);
+}
+
 .section {
   margin-bottom: var(--space-md);
 }
 
 .history {
   margin: var(--space-md) 0;
-}
-
-.section > p {
-  max-width: 32rem;
-  /* margin: var(--space) 0; */
-}
-
-.searchwrapper {
-  max-width: 32rem;
-  width: 100%;
-  border: var(--border);
-  border-radius: 48px;
-  padding: var(--space-sm) var(--space);
-  outline: none;
-  transition: border-color var(--transition-slower);
-  background-color: var(--zinc-200);
-  color: var(--fg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.search::placeholder {
-  color: var(--zinc-600);
-}
-
-.searchwrapper:focus-within {
-  border-color: var(--zinc-900);
-  box-shadow: var(--shadow);
-}
-
-.search {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  outline: none;
 }
 
 .grid {
@@ -50,11 +22,11 @@
 }
 
 .filtertag {
-  color: var(--zinc-500);
+  color: var(--secondary-fg);
 }
 
 .chapter {
-  max-width: 32rem;
+  max-width: 36rem;
 }
 
 .chapter .content *,
@@ -72,7 +44,7 @@
 }
 
 .author {
-  color: var(--zinc-600);
+  color: var(--secondary-fg);
   font-size: var(--font-size-sm);
   display: flex;
   align-items: center;
@@ -80,8 +52,8 @@
 }
 
 .badge {
-  background-color: var(--emerald-200);
-  color: var(--emerald-900);
+  background-color: var(--badge-bg);
+  color: var(--badge-fg);
   max-width: max-content;
   border-radius: 32px;
   padding: var(--space-xs) var(--space);
@@ -99,7 +71,7 @@
 }
 
 .tag {
-  color: var(--zinc-500);
+  color: var(--secondary-fg);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -112,13 +84,13 @@
   flex-direction: column;
   gap: var(--space-sm);
   align-items: flex-end;
-  color: var(--emerald-800);
+  color: var(--brand);
   margin: var(--space-md) 0;
 }
 
 .signature svg {
   width: 200px;
-  fill: var(--emerald-800);
+  fill: var(--brand);
 }
 
 .sticky {
@@ -132,7 +104,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .tag:hover {
-    color: var(--zinc-700);
+    color: var(--heading-fg);
   }
 }
 

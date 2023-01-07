@@ -6,11 +6,11 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import css from "./styles.module.css";
 import { IconArrowBarToLeft } from "@tabler/icons";
 import Link from "next/link";
-import Views from "@/molecules/Views";
-import Signature from "@/atoms/Signature";
+import Views from "core/molecules/Views";
+import Signature from "core/atoms/Signature";
 import LikeButton from "../../core/molecules/LikeButton/index";
-import Divider from "@/atoms/Divider";
-import MDXComponents from "@/molecules/Components";
+import Divider from "core/atoms/Divider";
+import MDXComponents from "core/molecules/Components";
 
 const PostLayout = ({ chapter }: { chapter: Chapter }) => {
   const MDXContent = useMDXComponent(chapter.body.code);

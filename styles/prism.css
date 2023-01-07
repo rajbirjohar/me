@@ -39,8 +39,8 @@
 }
 
 .rehype-code-title {
-  background-color: var(--zinc-50);
-  color: var(--emerald-600);
+  background-color: var(--card-bg);
+  color: var(--brand);
   padding: var(--space-sm) var(--space);
   margin-bottom: 0 !important;
   border-top-left-radius: var(--radius);

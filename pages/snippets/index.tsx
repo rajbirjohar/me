@@ -1,5 +1,5 @@
-import Section from "@/atoms/Section";
-import Snippets from "@/organisms/Snippets";
+import Section from "core/atoms/Section";
+import Snippets from "core/organisms/Snippets";
 import { pick } from "contentlayer/client";
 import { Snippet, allSnippets } from "contentlayer/generated";
 import Head from "next/head";

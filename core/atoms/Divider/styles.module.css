@@ -1,6 +1,9 @@
 .divider {
   height: 16px;
+  width: 2px;
   margin: 0 12px;
-  border-right: 2px solid var(--zinc-200);
+  background-color: var(--step-bg);
+  border: none;
+  border-radius: 4px;
   display: inline-block;
 }

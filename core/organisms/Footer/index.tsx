@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { inter } from "../../atoms/Layout";
+import { inter } from "../../templates/Layout";
 import css from "./styles.module.css";
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 import { formatDistance } from "date-fns";
+import Signature from "@/atoms/Signature";
+import { IconClock, IconLocation } from "@tabler/icons";
 
 export default function Footer() {
   const { data } = useSWR("/api/github/lastupdated", fetcher);
@@ -48,18 +50,32 @@ export default function Footer() {
               <Link href="/music">Music</Link>
               <Link href="/snippets">Snippets</Link>
             </div>
+            <div className={css.links}>
+              <div className={css.last}>
+                <div className={css.signature}>
+                  <Signature />
+                </div>
+                <address className={css.address}>
+                  <IconLocation size={"var(--font-size-sm)"} fill="inherit" />
+                  United States
+                </address>
+                {data ? (
+                  <p className={css.lastupdated}>
+                    <IconClock /> Last updated{" "}
+                    {formatDistance(new Date(data.lastUpdated), new Date(), {
+                      addSuffix: true,
+                    })}
+                  </p>
+                ) : (
+                  <></>
+                )}
+              </div>
+            </div>
           </div>
         </div>
-        {data ? (
-          <p className={css.lastupdated}>
-            Last updated{" "}
-            {formatDistance(new Date(data.lastUpdated), new Date(), {
-              addSuffix: true,
-            })}
-          </p>
-        ) : (
-          <></>
-        )}
+        <p className={css.copyright}>
+          &#169; {new Date().getFullYear()} Rajbir Johar
+        </p>
       </div>
     </footer>
   );

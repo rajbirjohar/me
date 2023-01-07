@@ -1,6 +1,6 @@
 import fetcher from "@/lib/fetcher";
 import useSWR from "swr";
-import Track from "@/molecules/Track";
+import Track from "core/molecules/Track";
 import css from "./styles.module.css";
 
 export default function TopTracks() {

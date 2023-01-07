@@ -5,7 +5,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import css from "./styles.module.css";
 import { IconArrowBarToLeft } from "@tabler/icons";
 import Link from "next/link";
-import MDXComponents from "@/molecules/Components";
+import MDXComponents from "core/molecules/Components";
 
 const PostLayout = ({ snippet }: { snippet: Snippet }) => {
   const MDXContent = useMDXComponent(snippet.body.code);
@@ -17,12 +17,12 @@ const PostLayout = ({ snippet }: { snippet: Snippet }) => {
         <meta content={snippet.description} name="description" />
         <meta property="article:published_time" content={snippet.date} />
       </Head>
-      <Link href={"/chapters"} className={css.link}>
+      <Link href={"/snippets"} className={css.link}>
         <>
           <IconArrowBarToLeft /> Index
         </>
       </Link>
-      <article className={css.chapter}>
+      <article className={css.snippet}>
         <header>
           <p className={css.badge}>{snippet.category}</p>
           <h1>{snippet.title}</h1>

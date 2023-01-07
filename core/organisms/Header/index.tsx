@@ -3,10 +3,10 @@ import Link from "next/link";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { IconHome } from "@tabler/icons";
 import { useIsScrolling } from "@/hooks/useIsScrolling";
-import { inter } from "@/atoms/Layout";
-import Focused from "@/molecules/Focused";
-import LightDarkSwitch from "@/molecules/LightDarkSwitch";
-import ExpandSwitch from "@/molecules/ExpandSwitch";
+import { inter } from "core/templates/Layout";
+import Focused from "core/molecules/Focused";
+import LightDarkSwitch from "core/molecules/LightDarkSwitch";
+import ExpandSwitch from "core/molecules/ExpandSwitch";
 import css from "./styles.module.css";
 
 /**

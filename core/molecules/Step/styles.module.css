@@ -12,7 +12,7 @@
 }
 
 .substep {
-  border-width: 6px;
+  border-width: 4px;
 }
 
 .wrapper:last-child,
@@ -50,7 +50,8 @@
   top: 0;
   left: 0;
   margin-left: -21px;
-  background-color: var(--zinc-200);
+  background-color: var(--step-bg);
+  color: var(--heading-fg);
   padding: var(--space-sm);
   border-radius: var(--radius-full);
 }
@@ -61,7 +62,7 @@
 
 .date,
 .substep .date {
-  color: var(--zinc-400);
+  color: var(--secondary-fg);
   display: flex;
 }
 

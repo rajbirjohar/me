@@ -8,16 +8,15 @@ import { IconArrowRight } from "@tabler/icons";
 import { AnimatePresence, LayoutGroup, motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
-import Chapters from "@/organisms/Chapters";
-import ListExperiences from "@/organisms/Experiences";
-import Playing from "@/organisms/Playing";
+import Chapters from "core/organisms/Chapters";
+import ListExperiences from "core/organisms/Experiences";
+import Playing from "core/organisms/Playing";
 import me from "@/public/static/images/me.jpg";
 import horseshoe from "@/public/static/images/horseshoe.jpg";
 import route243 from "@/public/static/images/route243.jpg";
 import anthem from "@/public/static/images/anthem.jpg";
-import Stack from "@/molecules/Stack";
-import ListProjects from "@/organisms/Projects";
-import Section from "@/atoms/Section";
+import Stack from "core/molecules/Stack";
+import ListProjects from "core/organisms/Projects";
 
 const greetings = [
   "Hello",
@@ -97,25 +96,23 @@ function Hello(props: { index: number }) {
   };
 
   return (
-    <header>
-      <h1>
-        <LayoutGroup>
-          <AnimatePresence mode="wait">
-            <motion.span
-              className={css.hello}
-              key={greetings[props.index]}
-              variants={hello}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-            >
-              {greetings[props.index]}.&nbsp;
-            </motion.span>
-          </AnimatePresence>
-          <motion.span>I&#39;m Rajbir.</motion.span>
-        </LayoutGroup>
-      </h1>
-    </header>
+    <h1 className={css.name}>
+      <LayoutGroup>
+        <AnimatePresence mode="wait">
+          <motion.span
+            className={css.hello}
+            key={greetings[props.index]}
+            variants={hello}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            {greetings[props.index]}.&nbsp;
+          </motion.span>
+        </AnimatePresence>
+        <motion.span>I&#39;m Rajbir.</motion.span>
+      </LayoutGroup>
+    </h1>
   );
 }
 
@@ -151,10 +148,9 @@ export default function Home(props: { chapters: Chapter[] }) {
           name="description"
         />
       </Head>
-
-      <div className={css.intro}>
-        <Section>
-          <div className={css.profilewrapper}>
+      <article className={css.landing}>
+        <section className={css.hero}>
+          <header>
             <Image
               src={me}
               priority
@@ -164,70 +160,100 @@ export default function Home(props: { chapters: Chapter[] }) {
               }
               className={css.profile}
             />
+            {render && <Hello index={index} />}
+            <p>
+              Frontend and UX Engineer at Inventives. Crafting aesthetic
+              interfaces for mindblowing ideas.
+            </p>
+          </header>
+          <div className={css.herobuttoncontainer}>
+            <div className={css.herobuttonwrapper}>
+              <span className={css.herobuttonbg} />
+              <Link
+                href="/about"
+                aria-label="Navigate to the about me page to learn more about me."
+                className={css.discover}
+              >
+                <button className={css.herogradientbutton}>
+                  Discover{" "}
+                  <IconArrowRight
+                    size={"var(--font-size-base)"}
+                    strokeWidth={2.5}
+                  />
+                </button>
+              </Link>
+            </div>
           </div>
-          {render && <Hello index={index} />}
-          <p>
-            Frontend and UX Engineer at Inventives. Crafting aesthetic
-            interfaces for mindblowing ideas.
-          </p>
-          <Link
-            href="/about"
-            aria-label="Navigate to the about me page to learn more about me."
-          >
-            <>
-              Discover <IconArrowRight strokeWidth={2.5} />
-            </>
+        </section>
+
+        <section>
+          <header>
+            <h2>Chapters</h2>
+          </header>
+          <Chapters chapters={props.chapters} />
+          <Link href="/chapters" className={css.discover}>
+            <button>
+              Discover{" "}
+              <IconArrowRight
+                size={"var(--font-size-base)"}
+                strokeWidth={2.5}
+              />
+            </button>
           </Link>
-        </Section>
-      </div>
-      <Section>
-        <h2>Chapters</h2>
-        <Chapters chapters={props.chapters} />
-        <Link href="/chapters">
-          <>
-            Discover <IconArrowRight />
-          </>
-        </Link>
-      </Section>
-      <Section>
-        <h2>Projects</h2>
-        <ListProjects />
-        <Link href="/projects">
-          <>
-            Discover <IconArrowRight strokeWidth={2.5} />
-          </>
-        </Link>
-      </Section>
-      <Section>
-        <h2>Experiences</h2>
-        <div className={css.experiences}>
-          <div>
-            <ListExperiences />
-            <Link
-              href="/experiences"
-              style={{
-                fontWeight: 550,
-              }}
-            >
-              <>
-                Discover <IconArrowRight strokeWidth={2.5} />
-              </>
-            </Link>
+        </section>
+        <section>
+          <header>
+            <h2>Projects</h2>
+          </header>
+          <ListProjects />
+          <Link href="/projects" className={css.discover}>
+            <button>
+              Discover{" "}
+              <IconArrowRight
+                size={"var(--font-size-base)"}
+                strokeWidth={2.5}
+              />
+            </button>
+          </Link>
+        </section>
+        <section>
+          <header>
+            <h2>Experiences</h2>
+          </header>
+          <div className={css.experiences}>
+            <div>
+              <ListExperiences />
+            </div>
+            <div className={css.stackwrapper}>
+              <Stack cardStack={cardStack} />
+            </div>
           </div>
-          <div className={css.stackwrapper}>
-            <Stack cardStack={cardStack} />
-          </div>
-        </div>
-      </Section>
-      <Section>
-        <h2>Music</h2>
-        <Playing />
-        <Link href="/music">
-          <>
-            Discover <IconArrowRight strokeWidth={2.5} />
-          </>
-        </Link>
-      </Section>
+          <Link href="/experiences" className={css.discover}>
+            <button>
+              Discover{" "}
+              <IconArrowRight
+                size={"var(--font-size-base)"}
+                strokeWidth={2.5}
+              />
+            </button>
+          </Link>
+        </section>
+        <section>
+          <header>
+            <h2>Music</h2>
+          </header>
+          <Playing />
+          <Link href="/music" className="">
+            <button>
+              Discover{" "}
+              <IconArrowRight
+                size={"var(--font-size-base)"}
+                strokeWidth={2.5}
+              />
+            </button>
+          </Link>
+        </section>
+      </article>
     </>
   );
 }

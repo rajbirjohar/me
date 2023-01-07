@@ -3,7 +3,7 @@ import { Chapter } from "contentlayer/generated";
 import css from "./styles.module.css";
 import { IconArrowRight, IconEye, IconHeart } from "@tabler/icons";
 import Link from "next/link";
-import Divider from "@/atoms/Divider";
+import Divider from "core/atoms/Divider";
 
 export default function ChapterCard(props: {
   chapter: Chapter;

@@ -7,16 +7,16 @@ import css from "./styles.module.css";
 import Head from "next/head";
 
 const paper = [
-  "--zinc-0",
-  "--zinc-1",
-  "--zinc-2",
-  "--zinc-3",
-  "--zinc-4",
-  "--zinc-5",
-  "--zinc-6",
-  "--zinc-7",
-  "--zinc-8",
-  "--zinc-9",
+  "--void-0",
+  "--void-1",
+  "--void-2",
+  "--void-3",
+  "--void-4",
+  "--void-5",
+  "--void-6",
+  "--void-7",
+  "--void-8",
+  "--void-9",
 ];
 
 const primary = [

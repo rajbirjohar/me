@@ -39,17 +39,20 @@
   right: 0;
   height: 100%;
   border-radius: 32px;
-  background-color: transparent;
+  background-color: var(--header-bg);
+  border: var(--border);
+  border-color: var(--card-bg);
   opacity: 0.8;
   z-index: -1;
   border-width: 3px;
   transition: background-color var(--transition-slower),
-    box-shadow var(--transition-slowest);
+    border-color var(--transition-slower), box-shadow var(--transition-slowest);
 }
 
 .nav.scroll::before {
   background-color: var(--header-bg);
-
+  box-shadow: var(--nav-shadow);
+  border-color: var(--step-bg);
 }
 
 .menuwrapper {
@@ -82,7 +85,7 @@
   border: none;
   background-color: transparent;
   border-radius: var(--radius-full);
-  color: var(--emerald-600);
+  color: var(--brand);
   height: 48px;
   width: 48px;
   display: flex;
@@ -103,13 +106,11 @@
 
 @media (hover: hover) and (pointer: fine) {
   .home:hover {
-    background-color: var(--zinc-200);
-    color: var(--emerald-700);
+    color: var(--brand-alt);
     scale: 1.05;
   }
   .home:active {
-    background-color: var(--zinc-300);
-    color: var(--emerald-800);
+    color: var(--brand-alt);
     scale: 0.95;
   }
 }

@@ -6,9 +6,36 @@ import { pick } from "@contentlayer/client";
 import { useRouter } from "next/router";
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { IconArrowBarToLeft, IconSearch } from "@tabler/icons";
-import Chapters from "@/organisms/Chapters";
-import Section from "@/atoms/Section";
+import { IconArrowBarToLeft } from "@tabler/icons";
+import Chapters from "core/organisms/Chapters";
+import Section from "core/atoms/Section";
+import Search from "@/molecules/Search";
+
+const History = (props: { queries: string[] }) => {
+  if (props.queries.length === 0) {
+    return <></>;
+  }
+  return (
+    <div className={css.history}>
+      <h3>Revisit</h3>
+      {props.queries.slice(0, 10).map((query) => (
+        <Link
+          key={query}
+          className={css.tag}
+          href={{
+            pathname: "/chapters",
+            query: { tag: query },
+          }}
+          passHref
+          shallow
+          replace
+        >
+          #{query}&nbsp;&nbsp;
+        </Link>
+      ))}
+    </div>
+  );
+};
 
 export default function ChaptersPage(props: { chapters: Chapter[] }) {
   const router = useRouter();
@@ -57,55 +84,27 @@ export default function ChaptersPage(props: { chapters: Chapter[] }) {
           name="description"
         />
       </Head>
-      <header>
-        {query && (
-          <Link href={"/chapters"} className={css.link}>
-            <>
-              <IconArrowBarToLeft /> Index
-            </>
-          </Link>
-        )}
-        <h1>
-          Chapters {query && <span className={css.filtertag}>on {query}</span>}
-        </h1>
-      </header>
-      <Section>
-        <p>Here is where I type at the speed of thought.</p>
-        <div className={css.searchwrapper}>
-          <IconSearch />
-          <input
-            className={css.search}
-            autoComplete="off"
-            id="search"
-            type="text"
-            placeholder="Search"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-        <div className={css.history}>
-          <h3>Revisit</h3>
-          {Array.from(previousQueries)
-            .slice(0, 10)
-            .map((query) => (
-              <Link
-                tabIndex={0}
-                key={query}
-                className={css.tag}
-                href={{
-                  pathname: "/chapters",
-                  query: { tag: query },
-                }}
-                passHref
-                shallow
-                replace
-              >
-                #{query}&nbsp;&nbsp;
+      <article className={css.chapters}>
+        <section>
+          <header>
+            {query && (
+              <Link href={"/chapters"} className={css.link}>
+                <>
+                  <IconArrowBarToLeft /> Index
+                </>
               </Link>
-            ))}
-        </div>
-        <Chapters chapters={filteredChapters} />
-      </Section>
+            )}
+            <h1>
+              Chapters{" "}
+              {query && <span className={css.filtertag}>on {query}</span>}
+            </h1>
+            <p>Here is where I type at the speed of thought.</p>
+          </header>
+          <Search value={search} setValue={setSearch} />
+          <History queries={Array.from(previousQueries)} />
+          <Chapters chapters={filteredChapters} />
+        </section>
+      </article>
     </>
   );
 }

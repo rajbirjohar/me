@@ -1,6 +1,6 @@
 import { Snippet } from "contentlayer/generated";
 import css from "./styles.module.css";
-import SnippetCard from "@/molecules/SnippetCard";
+import SnippetCard from "core/molecules/SnippetCard";
 
 export default function Snippets(props: { snippets: Snippet[] }) {
   if (props.snippets.length === 0) {

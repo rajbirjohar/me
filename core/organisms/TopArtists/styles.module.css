@@ -45,7 +45,7 @@
   }
 
   .artist:hover > .image {
-    border: 4px solid var(--emerald-500);
+    border: 4px solid var(--ocean-500);
   }
 }
 

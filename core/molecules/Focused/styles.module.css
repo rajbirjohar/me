@@ -8,19 +8,19 @@
 .active {
   cursor: default;
   font-weight: 500;
-  color: var(--zinc-900);
+  color: var(--heading-fg);
 }
 
 .link:not(.active) {
-  color: var(--zinc-500);
+  color: var(--secondary-fg);
   cursor: pointer;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .link:not(.active):hover {
-    color: inherit;
+    color: var(--brand);
   }
   .active:hover {
-    color: var(--zinc-900);
+    color: var(--heading-fg);
   }
 }

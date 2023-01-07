@@ -1,5 +1,5 @@
 .article {
-  max-width: 32rem;
+  max-width: 36rem;
 }
 
 .article * {
@@ -7,7 +7,7 @@
 }
 
 .gradient {
-  background: var(--gradient);
+  background: linear-gradient(90deg, #007cf0, #00dfd8);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -4,7 +4,7 @@ import useSWR from "swr";
 import { Project } from "types/alpine";
 import ProjectCard from "../../molecules/ProjectCard";
 import { useState } from "react";
-import { IconSearch } from "@tabler/icons";
+import Search from "@/molecules/Search";
 
 export default function ListProjects(props: { all?: boolean }) {
   const { data, error } = useSWR<{ projects: Project[] }>(
@@ -33,18 +33,7 @@ export default function ListProjects(props: { all?: boolean }) {
   if (props.all) {
     return (
       <>
-        <div className={css.searchwrapper}>
-          <IconSearch />
-          <input
-            className={css.search}
-            autoComplete="off"
-            id="search"
-            type="text"
-            placeholder="Search"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+        <Search value={search} setValue={setSearch} />
         {filteredProjects.length === 0 && (
           <p>
             <em>

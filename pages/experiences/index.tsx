@@ -1,4 +1,4 @@
-import ListExperiences from "@/organisms/Experiences";
+import ListExperiences from "core/organisms/Experiences";
 import Head from "next/head";
 
 export default function Experiences() {

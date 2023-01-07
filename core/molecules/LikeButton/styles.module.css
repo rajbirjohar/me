@@ -1,6 +1,6 @@
 .button {
   border: none;
-  background-color: var(--zinc-200);
+  background-color: var(--card-bg);
   border-radius: 48px;
   padding: var(--space-sm) var(--space) var(--space-sm) 0.4rem;
   display: flex;
@@ -10,7 +10,7 @@
   box-shadow: var(--shadow);
   transition: background-color var(--transition-slower),
     color var(--transition-slower), scale var(--transition-slowest);
-  color: var(--zinc-900);
+  color: var(--heading-fg);
 }
 
 .button .filled {
@@ -35,22 +35,17 @@
 
 @media (hover: hover) and (pointer: fine) {
   .button:hover {
-    background-color: var(--emerald-600);
-    color: var(--zinc-200);
+    background-color: var(--brand);
+    color: var(--bg);
     scale: 1.05;
   }
   .button:active {
     scale: 0.98;
-    background-color: var(--emerald-700);
+    background-color: var(--brand-alt);
   }
 
   .button:hover .filled {
-    fill: var(--zinc-200);
-    color: var(--zinc-200);
-  }
-
-  .button:active .filled {
-    fill: var(--zinc-300);
-    color: var(--zinc-300);
+    fill: var(--bg);
+    color: var(--bg);
   }
 }

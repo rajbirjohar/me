@@ -1,9 +1,9 @@
-import Playing from "@/organisms/Playing";
-import RecentlyPlayed from "@/organisms/RecentlyPlayed";
-import TopTracks from "@/organisms/TopTracks";
+import Playing from "core/organisms/Playing";
+import RecentlyPlayed from "core/organisms/RecentlyPlayed";
+import TopTracks from "core/organisms/TopTracks";
 import css from "./styles.module.css";
 import Head from "next/head";
-import TopArtists from "@/organisms/TopArtists";
+import TopArtists from "core/organisms/TopArtists";
 
 export default function Music() {
   return (

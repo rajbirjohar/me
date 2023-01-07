@@ -4,17 +4,20 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--card-bg);
-  padding: 1rem 1.2rem;
-  border: 2px solid transparent;
+  padding: var(--space) var(--space-md);
   border-radius: var(--radius);
-  transition: scale var(--transition-slowest),
-    border-radius var(--transition-slowest),
-    box-shadow var(--transition-slowest), color var(--transition-slower),
-    background-color var(--transition-slower);
   cursor: pointer;
   color: var(--fg);
   align-items: unset;
   max-width: unset;
+}
+
+.card,
+.card * {
+  transition: scale var(--transition-slowest),
+    border-radius var(--transition-slowest),
+    box-shadow var(--transition-slowest), color var(--transition-slower),
+    background-color var(--transition-slower);
 }
 
 .heading {
@@ -42,21 +45,15 @@
   height: 100%;
 }
 
-.title {
-  transition: color var(--transition-slower);
-}
-
 .badge {
-  background-color: var(--emerald-200);
-  color: var(--emerald-900);
+  background-color: var(--badge-bg);
+  color: var(--badge-fg);
   max-width: max-content;
   border-radius: 32px;
   padding: var(--space-xs) 0.625rem;
   margin: var(--space-sm) 0;
-  font-size: var(--font-size-sm);
   font-weight: 500;
-  transition: color var(--transition-slower),
-    background-color var(--transition-slower);
+  font-size: var(--font-size-sm);
 }
 
 .empty {
@@ -65,8 +62,7 @@
 }
 
 .date {
-  color: var(--zinc-400);
-  transition: color var(--transition-slower);
+  color: var(--secondary-fg);
 }
 
 .description {
@@ -82,7 +78,7 @@
 }
 
 .link span {
-  color: var(--emerald-600);
+  color: var(--brand);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -98,15 +94,12 @@
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    scale: 1.05;
-    border-radius: 24px;
+    scale: 1.025;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
     color: unset;
-    box-shadow: var(--shadow-lg);
   }
 
-  .card:hover .title {
-    color: var(--emerald-700);
-  }
   .card:active {
     scale: 0.99;
   }

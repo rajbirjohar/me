@@ -1,8 +1,7 @@
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 import css from "./styles.module.css";
-import { inter } from "@/atoms/Layout";
-import { AnimatePresence, motion } from "framer-motion";
+import { inter } from "core/templates/Layout";
 
 export interface NavLinkProps extends LinkProps {
   children: React.ReactElement;

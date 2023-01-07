@@ -13,5 +13,5 @@
 .year {
   margin: var(--space) 0;
   font-size: var(--font-size-md);
-  color: var(--zinc-500);
+  color: var(--secondary-fg);
 }
