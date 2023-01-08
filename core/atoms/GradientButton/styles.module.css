@@ -47,3 +47,7 @@
   background-color: transparent;
   color: var(--bg);
 }
+
+.herogradientbutton:hover svg {
+  translate: 4px 0;
+}

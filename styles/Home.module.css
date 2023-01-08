@@ -72,11 +72,12 @@
   background-color: var(--button-bg-alt);
 }
 
-.discover svg {
+.arrow {
   transition: translate var(--transition-slowest);
+  width: var(--font-size-sm);
 }
 
-.discover:hover svg {
+.discover:hover .arrow {
   translate: 4px 0;
 }
 

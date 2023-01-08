@@ -177,10 +177,7 @@ export default function Home(props: { journals: Journal[] }) {
           >
             <GradientButton>
               Discover{" "}
-              <IconArrowRight
-                size={"var(--font-size-base)"}
-                strokeWidth={2.5}
-              />
+              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
             </GradientButton>
           </Link>
         </section>
@@ -193,10 +190,7 @@ export default function Home(props: { journals: Journal[] }) {
           <Link href="/journals" className={css.discover}>
             <button>
               Read more{" "}
-              <IconArrowRight
-                size={"var(--font-size-base)"}
-                strokeWidth={2.5}
-              />
+              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
             </button>
           </Link>
         </section>
@@ -207,11 +201,7 @@ export default function Home(props: { journals: Journal[] }) {
           <ListProjects />
           <Link href="/projects" className={css.discover}>
             <button>
-              Explore{" "}
-              <IconArrowRight
-                size={"var(--font-size-base)"}
-                strokeWidth={2.5}
-              />
+              Explore <IconArrowRight className={css.arrow} strokeWidth={2.5} />
             </button>
           </Link>
         </section>
@@ -230,10 +220,7 @@ export default function Home(props: { journals: Journal[] }) {
           <Link href="/experiences" className={css.discover}>
             <button>
               Discover{" "}
-              <IconArrowRight
-                size={"var(--font-size-base)"}
-                strokeWidth={2.5}
-              />
+              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
             </button>
           </Link>
         </section>
@@ -244,11 +231,7 @@ export default function Home(props: { journals: Journal[] }) {
           <Playing />
           <Link href="/music" className={css.discover}>
             <button>
-              Listen{" "}
-              <IconArrowRight
-                size={"var(--font-size-base)"}
-                strokeWidth={2.5}
-              />
+              Listen <IconArrowRight className={css.arrow} strokeWidth={2.5} />
             </button>
           </Link>
         </section>
