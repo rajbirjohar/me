@@ -1,0 +1,49 @@
+.herobuttoncontainer {
+  position: relative;
+  max-width: max-content;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.herobuttonbg {
+  background: linear-gradient(165deg, var(--start-color), var(--end-color));
+  border-radius: 32px;
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -2;
+}
+
+.herobuttonbg:before {
+  background: linear-gradient(165deg, var(--start-color), var(--end-color));
+  border: 8px solid transparent;
+  border-radius: 32px;
+  background-clip: padding-box;
+  content: "";
+  filter: blur(36px);
+  height: 100%;
+  opacity: 0.8;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.herogradientbutton {
+  background-color: var(--bg);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 4px 0 #00000010;
+  color: var(--heading-fg);
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.herogradientbutton:hover {
+  background-color: transparent;
+  color: var(--bg);
+}

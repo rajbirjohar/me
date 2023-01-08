@@ -18,6 +18,7 @@ import anthem from "@/public/static/images/anthem.jpg";
 import Stack from "core/molecules/Stack";
 import ListProjects from "core/organisms/Projects";
 import { pick } from "contentlayer/client";
+import GradientButton from "@/atoms/GradientButton";
 
 const greetings = [
   "Hello",
@@ -97,7 +98,7 @@ function Hello(props: { index: number }) {
   };
 
   return (
-    <h1 className={css.greeting}>
+    <h1 className={css.greeting} data-nosnippet>
       <LayoutGroup>
         <AnimatePresence mode="wait">
           <motion.span
@@ -111,7 +112,8 @@ function Hello(props: { index: number }) {
             {greetings[props.index]}.&nbsp;
           </motion.span>
         </AnimatePresence>
-        <motion.span className={css.name}>I&#39;m Rajbir.</motion.span>
+        <br />
+        <span className={css.name}>I&#39;m Rajbir.</span>
       </LayoutGroup>
     </h1>
   );
@@ -152,39 +154,35 @@ export default function Home(props: { journals: Journal[] }) {
       <article className={css.landing}>
         <section className={css.hero}>
           <header>
-            <Image
-              src={me}
-              priority
-              quality={100}
-              alt={
-                "A picture of me wearing a light grey beanie and a thick winter jacket. This was taken at Flagstaff."
-              }
-              className={css.profile}
-            />
-            {render && <Hello index={index} />}
+            <div className={css.herocontent}>
+              <Image
+                src={me}
+                priority
+                quality={100}
+                alt={
+                  "A picture of me wearing a light grey beanie and a thick winter jacket. This was taken at Flagstaff."
+                }
+                className={css.profile}
+              />
+              {render && <Hello index={index} />}
+            </div>
             <p>
               Frontend and UX Engineer at Inventives. Crafting aesthetic
               interfaces for mindblowing ideas.
             </p>
           </header>
-          <div className={css.herobuttoncontainer}>
-            <div className={css.herobuttonwrapper}>
-              <span className={css.herobuttonbg} />
-              <Link
-                href="/about"
-                aria-label="Navigate to the about me page to learn more about me."
-                className={css.discover}
-              >
-                <button className={css.herogradientbutton}>
-                  Discover{" "}
-                  <IconArrowRight
-                    size={"var(--font-size-base)"}
-                    strokeWidth={2.5}
-                  />
-                </button>
-              </Link>
-            </div>
-          </div>
+          <Link
+            href="/about"
+            aria-label="Navigate to the about me page to learn more about me."
+          >
+            <GradientButton>
+              Discover{" "}
+              <IconArrowRight
+                size={"var(--font-size-base)"}
+                strokeWidth={2.5}
+              />
+            </GradientButton>
+          </Link>
         </section>
 
         <section>

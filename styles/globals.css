@@ -120,7 +120,7 @@
   --brand-alt: var(--ocean-light);
   --button-fg: var(--void-9);
 
-  --shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075),
+  --shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075),
     0 4px 4px hsl(0deg 0% 0% / 0.075), 0 8px 8px hsl(0deg 0% 0% / 0.075),
     0 16px 16px hsl(0deg 0% 0% / 0.075);
   --nav-shadow: rgba(3, 3, 3, 0.171) 0px 5px 10px 0px;
@@ -326,10 +326,12 @@ button {
 ::selection {
   background: var(--brand);
   color: var(--bg); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--bg);
 }
 ::-moz-selection {
   background: var(--brand);
-  color: var(--bg); /* Gecko Browsers */
+  color: var(--bg);
+  -webkit-text-fill-color: var(--bg); /* Gecko Browsers */
 }
 
 /*

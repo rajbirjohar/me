@@ -24,7 +24,7 @@ export default function ProjectCard(props: { project: Project }) {
           </div>
           <h3 className={css.title}>{project.title}</h3>
           {project.description && (
-            <p className={`${css.description} clamp-3`}>
+            <p className={`${css.description} clamp-2`}>
               {project.description}
             </p>
           )}

@@ -29,8 +29,10 @@ export default function JournalCard(props: {
               </span>
             </div>
           </div>
-          <h3 className={css.title}>{props.journal.title}</h3>
-          <p className={css.description}>{props.journal.description}</p>
+          <h3 className={`clamp ${css.title}`}>{props.journal.title}</h3>
+          <p className={`clamp-2 ${css.description}`}>
+            {props.journal.description}
+          </p>
         </header>
         <div>
           <ul className={css.tags}>
