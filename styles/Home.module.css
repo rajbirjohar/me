@@ -14,8 +14,14 @@
   margin-bottom: var(--space-md);
 }
 
-.name {
+.greeting {
   font-weight: 700;
+}
+
+.name {
+  background: linear-gradient(165deg, var(--start-color), var(--end-color));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hello {
@@ -27,9 +33,6 @@
   display: inline-flex;
   overflow: hidden;
   white-space: nowrap;
-  background: linear-gradient(165deg, var(--start-color), var(--end-color));
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .profile {

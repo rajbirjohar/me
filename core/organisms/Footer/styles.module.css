@@ -30,7 +30,7 @@
 .copyright {
   margin-top: var(--space-xl);
   text-align: center;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   color: var(--secondary-fg);
 }
 

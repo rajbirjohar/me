@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   top: var(--space-lg);
-  z-index: 5;
+  z-index: 10;
   /* This is needed to allow links that 
   cross the threshold of this element
   to be clickable because header spans 

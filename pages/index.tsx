@@ -97,7 +97,7 @@ function Hello(props: { index: number }) {
   };
 
   return (
-    <h1 className={css.name}>
+    <h1 className={css.greeting}>
       <LayoutGroup>
         <AnimatePresence mode="wait">
           <motion.span
@@ -111,7 +111,7 @@ function Hello(props: { index: number }) {
             {greetings[props.index]}.&nbsp;
           </motion.span>
         </AnimatePresence>
-        <motion.span>I&#39;m Rajbir.</motion.span>
+        <motion.span className={css.name}>I&#39;m Rajbir.</motion.span>
       </LayoutGroup>
     </h1>
   );

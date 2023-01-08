@@ -56,12 +56,12 @@ export default function Footer() {
                   <Signature />
                 </div>
                 <address className={css.address}>
-                  <IconLocation size={"var(--font-size-sm)"} fill="inherit" />
+                  <IconLocation size={"var(--font-size-base)"} fill="inherit" />
                   United States
                 </address>
                 {data ? (
                   <p className={css.lastupdated}>
-                    <IconClock /> Last updated{" "}
+                    <IconClock size={"var(--font-size-base)"} />
                     {formatDistance(new Date(data.lastUpdated), new Date(), {
                       addSuffix: true,
                     })}

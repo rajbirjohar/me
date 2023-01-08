@@ -7,7 +7,7 @@
 
   /* Font sizes */
   --font-size-xs: clamp(0.69rem, 0.16vw + 0.65rem, 0.78rem);
-  --font-size-sm: clamp(0.83rem, 0.19vw + 0.79rem, 0.94rem);
+  --font-size-sm: clamp(1rem, 0.19vw + 0.79rem, 0.94rem);
   --font-size-base: clamp(1rem, 0.23vw + 0.94rem, 1.13rem);
   --font-size-md: clamp(1.2rem, 0.27vw + 1.13rem, 1.35rem);
   --font-size-lg: clamp(1.44rem, 0.33vw + 1.36rem, 1.62rem);
@@ -30,9 +30,9 @@
   --void-3: #444444;
   --void-4: #666666;
   --void-5: #888888;
-  --void-6: #c7c6c6;
+  --void-6: #e6e6e6;
   --void-7: #eaeaea;
-  --void-8: #fafafa;
+  --void-8: #fcfcfc;
   --void-9: #ffffff;
 
   --rose-lighter: #f7d4d6;
@@ -54,7 +54,7 @@
   --bg: var(--void-8);
   --header-bg: var(--void-9);
   --card-bg: var(--void-9);
-  --badge-bg: var(--ocean-lighter);
+  --badge-bg: var(--ocean-light);
   --step-bg: var(--void-7);
   --button-bg: var(--void-7);
   --button-bg-alt: var(--void-6);
@@ -108,7 +108,7 @@
   --step-bg: var(--void-2);
   --button-bg: var(--void-2);
   --button-bg-alt: var(--void-3);
-  --outline: var(--void-4);
+  --outline: var(--void-3);
 
   --fg: var(--void-6);
   --heading-fg: var(--void-9);
@@ -290,11 +290,12 @@ button {
   align-items: center;
   max-width: max-content;
   gap: var(--space-xs);
+  font-size: var(--font-size-sm);
   border: none;
   outline: none;
   background-color: var(--button-bg);
   color: var(--button-fg);
-  padding: var(--space-sm) var(--space);
+  padding: var(--space-xs) var(--space);
   border-radius: 32px;
   cursor: pointer;
   transition: background-color var(--transition-slower),
