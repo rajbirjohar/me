@@ -2,7 +2,7 @@
   height: 16px;
   width: 2px;
   margin: 0 12px;
-  background-color: var(--step-bg);
+  background-color: var(--secondary-fg);
   border: none;
   border-radius: 4px;
   display: inline-block;

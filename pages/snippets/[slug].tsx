@@ -6,6 +6,7 @@ import css from "./styles.module.css";
 import { IconArrowBarToLeft } from "@tabler/icons";
 import Link from "next/link";
 import MDXComponents from "core/molecules/Components";
+import Container from "@/templates/Container";
 
 const PostLayout = ({ snippet }: { snippet: Snippet }) => {
   const MDXContent = useMDXComponent(snippet.body.code);
@@ -17,35 +18,39 @@ const PostLayout = ({ snippet }: { snippet: Snippet }) => {
         <meta content={snippet.description} name="description" />
         <meta property="article:published_time" content={snippet.date} />
       </Head>
-      <Link href={"/snippets"} className={css.link}>
-        <>
-          <IconArrowBarToLeft /> Index
-        </>
-      </Link>
-      <article className={css.snippet}>
-        <header>
-          <p className={css.badge}>{snippet.category}</p>
-          <h1>{snippet.title}</h1>
-        </header>
-        <hr />
-        <div className={css.content}>
-          <MDXContent components={MDXComponents} />
-        </div>
-        <footer className={css.footer}>
-          <em>Found something wrong?</em>
-          <p>
-            Let me know on{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={"https://github.com/rajbirjohar"}
-            >
-              Github
-            </a>
-            .
-          </p>
-        </footer>
-      </article>
+      <Container
+        heading={
+          <header>
+            <Link href={"/snippets"} className={css.link}>
+              <>
+                <IconArrowBarToLeft /> Index
+              </>
+            </Link>
+            <p className={css.badge}>{snippet.category}</p>
+            <h1>{snippet.title}</h1>
+          </header>
+        }
+      >
+        <section className={css.snippet}>
+          <div className={css.content}>
+            <MDXContent components={MDXComponents} />
+          </div>
+          <footer className={css.footer}>
+            <em>Found something wrong?</em>
+            <p>
+              Let me know on{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={"https://github.com/rajbirjohar"}
+              >
+                Github
+              </a>
+              .
+            </p>
+          </footer>
+        </section>
+      </Container>
     </>
   );
 };

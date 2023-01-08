@@ -53,7 +53,7 @@
   padding: var(--space-xs) 0.625rem;
   margin: var(--space-sm) 0;
   font-weight: 500;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 .empty {
@@ -70,25 +70,27 @@
   font-weight: 450;
 }
 
-.link {
+.card footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   font-size: var(--font-size-sm);
 }
 
-.link span {
-  color: var(--brand);
-  text-decoration: none;
+.link {
   display: inline-flex;
   align-items: center;
-  max-width: max-content;
   gap: var(--space-2xs);
-  transition: color var(--transition-slower);
+  color: var(--brand);
 }
 
-.icon {
+.icon,
+.arrow {
   width: var(--font-size-sm);
+}
+
+.arrow {
+  transition: translate var(--transition-slower);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -97,6 +99,14 @@
     border-radius: 18px;
     box-shadow: var(--shadow);
     color: unset;
+  }
+
+  .card:hover .link {
+    color: var(--brand-alt);
+  }
+
+  .card:hover .arrow {
+    translate: 4px 0;
   }
 
   .card:active {

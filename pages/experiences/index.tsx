@@ -1,3 +1,4 @@
+import Container from "@/templates/Container";
 import ListExperiences from "core/organisms/Experiences";
 import Head from "next/head";
 
@@ -11,10 +12,17 @@ export default function Experiences() {
           name="description"
         />
       </Head>
-      <header>
-        <h1>Experiences</h1>
-      </header>
-      <ListExperiences all />
+      <Container
+        heading={
+          <header>
+            <h1>Experiences</h1>
+          </header>
+        }
+      >
+        <section>
+          <ListExperiences all />
+        </section>
+      </Container>
     </>
   );
 }

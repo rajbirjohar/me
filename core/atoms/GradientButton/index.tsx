@@ -5,10 +5,12 @@ export default function GradientButton(props: {
   onClick?: () => void;
 }) {
   return (
-    <div className={css.herobuttoncontainer}>
-      <div className={css.herobuttonwrapper}>
-        <span className={css.herobuttonbg} />
-        <button className={css.herogradientbutton}>{props.children}</button>
+    <div className={css.mask}>
+      <div className={css.herobuttoncontainer}>
+        <div className={css.herobuttonwrapper}>
+          <span className={css.herobuttonbg} />
+          <button className={css.herogradientbutton}>{props.children}</button>
+        </div>
       </div>
     </div>
   );

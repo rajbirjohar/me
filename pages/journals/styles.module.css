@@ -11,7 +11,7 @@
 }
 
 .history {
-  margin: var(--space-md) 0;
+  margin-bottom: var(--space-lg);
 }
 
 .grid {
@@ -61,24 +61,6 @@
   font-weight: 500;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  padding: 0;
-  margin: 0;
-  margin: 0 0 var(--space) 0;
-}
-
-.tag {
-  color: var(--secondary-fg);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  transition: color var(--transition-slower);
-}
-
 .signature {
   display: flex;
   flex-direction: column;
@@ -100,12 +82,6 @@
   margin: var(--space-md) 0;
   display: flex;
   justify-content: center;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .tag:hover {
-    color: var(--heading-fg);
-  }
 }
 
 @media screen and (max-width: 668px) {

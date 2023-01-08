@@ -1,5 +1,5 @@
 .wrapper {
-  margin: var(--space-md) 0;
+  margin-bottom: var(--space-md);
   max-width: 36rem;
   padding: 0;
 }
@@ -8,6 +8,10 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
+}
+
+.year:first-of-type {
+  margin-top: 0;
 }
 
 .year {

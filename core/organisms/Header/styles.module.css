@@ -106,10 +106,12 @@
 
 @media (hover: hover) and (pointer: fine) {
   .home:hover {
+    background-color: var(--button-bg);
     color: var(--brand-alt);
     scale: 1.05;
   }
   .home:active {
+    background-color: var(--button-bg);
     color: var(--brand-alt);
     scale: 0.95;
   }

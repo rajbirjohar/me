@@ -8,8 +8,8 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { IconArrowBarToLeft } from "@tabler/icons";
 import Journals from "core/organisms/Journals";
-import Section from "core/atoms/Section";
-import Search from "@/molecules/Search";
+import Tags from "@/molecules/Tags";
+import Container from "@/templates/Container";
 
 const History = (props: { queries: string[] }) => {
   if (props.queries.length === 0) {
@@ -18,21 +18,7 @@ const History = (props: { queries: string[] }) => {
   return (
     <div className={css.history}>
       <h3>Revisit</h3>
-      {props.queries.slice(0, 10).map((query) => (
-        <Link
-          key={query}
-          className={css.tag}
-          href={{
-            pathname: "/journals",
-            query: { tag: query },
-          }}
-          passHref
-          shallow
-          replace
-        >
-          #{query}&nbsp;&nbsp;
-        </Link>
-      ))}
+      <Tags tags={props.queries} />
     </div>
   );
 };
@@ -40,22 +26,10 @@ const History = (props: { queries: string[] }) => {
 export default function JournalsPage(props: { journals: Journal[] }) {
   const router = useRouter();
   const query = router.query.tag ?? null;
-  const [search, setSearch] = useState("");
+
   const [previousQueries, setPreviousQueries] = useState<Set<string>>(
     new Set()
   );
-  const filteredJournals: Journal[] = props.journals
-    .filter(
-      ({ tags }) =>
-        query == null ||
-        tags.join(" ").includes(query.toString().toLocaleLowerCase())
-    )
-    .filter(({ title, description, tags }) => {
-      const searchString: string = `${title.toLowerCase()} ${description.toLowerCase()} ${tags.join(
-        " "
-      )}`;
-      return searchString.includes(search.toLowerCase());
-    });
 
   const storeRecentQueries = useCallback(() => {
     const recentQueries = new Set<string>(
@@ -84,8 +58,9 @@ export default function JournalsPage(props: { journals: Journal[] }) {
           name="description"
         />
       </Head>
-      <article className={css.journals}>
-        <section>
+      <Container
+        className={css.journals}
+        heading={
           <header>
             {query && (
               <Link href={"/journals"} className={css.link}>
@@ -100,11 +75,11 @@ export default function JournalsPage(props: { journals: Journal[] }) {
             </h1>
             <p>Here is where I type at the speed of thought.</p>
           </header>
-          <Search value={search} setValue={setSearch} />
-          <History queries={Array.from(previousQueries)} />
-          <Journals journals={filteredJournals} />
-        </section>
-      </article>
+        }
+      >
+        <History queries={Array.from(previousQueries)} />
+        <Journals journals={props.journals} query={query} all />
+      </Container>
     </>
   );
 }

@@ -11,6 +11,8 @@ import Signature from "core/atoms/Signature";
 import LikeButton from "../../core/molecules/LikeButton/index";
 import Divider from "core/atoms/Divider";
 import MDXComponents from "core/molecules/Components";
+import Tags from "@/molecules/Tags";
+import Container from "@/templates/Container";
 
 const PostLayout = ({ journal }: { journal: Journal }) => {
   const MDXContent = useMDXComponent(journal.body.code);
@@ -24,58 +26,46 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
         <meta name="keywords" content={journal.tags.toString()} />
         <meta name="author" content={journal.author} />
       </Head>
-      <Link href={"/journals"} className={css.link}>
-        <>
-          <IconArrowBarToLeft /> Index
-        </>
-      </Link>
-      <article className={css.journal}>
-        <header>
-          <p className={css.badge}>{journal.category}</p>
-          <h1>{journal.title}</h1>
-          <p className={css.author}>
-            {journal.author}
-            <Divider />
-            <time dateTime={journal.date} suppressHydrationWarning>
-              {format(parseISO(journal.date), "LLLL d, yyyy")}
-            </time>
-            <Divider />
-            <Views slug={journal.slug} />
-          </p>
-        </header>
-        <hr />
-        <div className={css.content}>
-          <MDXContent components={MDXComponents} />
-        </div>
-        <div className={css.sticky}>
-          <LikeButton slug={journal.slug} />
-        </div>
-        <hr />
-        <footer>
-          <div className={css.signature}>
-            <Signature />
-            <cite>— {journal.author}</cite>
+      <Container
+        heading={
+          <header>
+            <Link href={"/journals"} className={css.link}>
+              <>
+                <IconArrowBarToLeft /> Index
+              </>
+            </Link>
+            <p className={css.badge}>{journal.category}</p>
+            <h1>{journal.title}</h1>
+            <p className={css.author}>
+              {journal.author}
+              <Divider />
+              <time dateTime={journal.date} suppressHydrationWarning>
+                {format(parseISO(journal.date), "LLLL d, yyyy")}
+              </time>
+              <Divider />
+              <Views slug={journal.slug} />
+            </p>
+          </header>
+        }
+      >
+        <div className={css.journal}>
+          <div className={css.content}>
+            <MDXContent components={MDXComponents} />
           </div>
+          <div className={css.sticky}>
+            <LikeButton slug={journal.slug} />
+          </div>
+          <hr />
+          <footer>
+            <div className={css.signature}>
+              <Signature />
+              <cite>— {journal.author}</cite>
+            </div>
+          </footer>
           <h4>Related</h4>
-          <div className={css.tags}>
-            {journal.tags.map((tag: string) => (
-              <Link
-                key={tag}
-                className={css.tag}
-                href={{
-                  pathname: "/journals",
-                  query: { tag: tag },
-                }}
-                passHref
-                shallow
-                replace
-              >
-                #{tag}&nbsp;
-              </Link>
-            ))}
-          </div>
-        </footer>
-      </article>
+          <Tags tags={journal.tags} />
+        </div>
+      </Container>
     </>
   );
 };

@@ -34,11 +34,16 @@
   font-size: var(--font-size-xs);
 }
 
-.analytics span,
+.analytic,
 .analytics time {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
+}
+
+.analytic span {
+  font-weight: 600;
+  color: var(--heading-fg);
 }
 
 .article {
@@ -66,25 +71,15 @@
 .description {
   margin: var(--space) 0;
   font-weight: 450;
-  color: var(--secondary-fg);
   font-size: var(--font-size-sm);
 }
 
 .link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   font-size: var(--font-size-sm);
-}
-
-.link span {
-  color: var(--brand);
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  max-width: max-content;
   gap: var(--space-2xs);
-  transition: color var(--transition-slower);
+  color: var(--brand);
 }
 
 .tags {
@@ -105,6 +100,10 @@
   transition: color var(--transition-slower);
 }
 
+.icon {
+  color: var(--secondary-fg);
+}
+
 .icon,
 .arrow {
   width: var(--font-size-sm);
@@ -115,7 +114,14 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    color: unset;
+  }
   .card:hover .title {
+    color: var(--brand-alt);
+  }
+
+  .card:hover .link {
     color: var(--brand-alt);
   }
 

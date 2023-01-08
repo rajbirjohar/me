@@ -1,0 +1,28 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
+  margin: var(--space) 0;
+}
+
+.tag {
+  background-color: var(--button-bg);
+  font-size: var(--font-size-sm);
+  padding: var(--space-xs) var(--space-sm) var(--space-xs) 0.75rem;
+  color: var(--heading-fg);
+  border-radius: 32px;
+  list-style: none;
+  margin: 0;
+  cursor: pointer;
+  transition: color var(--transition-slower),
+    background-color var(--transition-slower);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tag:hover {
+    background-color: var(--button-bg-alt);
+    color: var(--heading-fg);
+  }
+}

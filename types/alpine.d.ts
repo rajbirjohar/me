@@ -1,4 +1,5 @@
 import { TablerIcon } from "@tabler/icons";
+import { Journal } from "contentlayer/generated";
 import { StaticImageData } from "next/image";
 
 interface SubStep {
@@ -18,12 +19,9 @@ interface Experience {
   substeps?: SubStep[];
 }
 
-interface Featured {
-  id: string;
-  title: React.ReactNode;
-  description: React.ReactNode;
-  url: string;
-  image: string | StaticImageData;
+interface TrackedJournal extends Journal {
+  views?: number;
+  likes?: number;
 }
 
 interface Project {

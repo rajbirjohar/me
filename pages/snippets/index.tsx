@@ -1,8 +1,8 @@
-import Section from "core/atoms/Section";
 import Snippets from "core/organisms/Snippets";
 import { pick } from "contentlayer/client";
 import { Snippet, allSnippets } from "contentlayer/generated";
 import Head from "next/head";
+import Container from "@/templates/Container";
 
 export default function SnippetsPage(props: { snippets: Snippet[] }) {
   return (
@@ -10,16 +10,21 @@ export default function SnippetsPage(props: { snippets: Snippet[] }) {
       <Head>
         <title>Rajbir Johar | Snippets</title>
       </Head>
-      <header>
-        <h1>Snippets</h1>
-      </header>
-      <Section>
-        <p>
-          Short pieces of code or components that I&#39;ve acquired over the
-          years and use often.
-        </p>
-        <Snippets snippets={props.snippets} />
-      </Section>
+      <Container
+        heading={
+          <header>
+            <h1>Snippets</h1>
+            <p>
+              Short pieces of code or components that I&#39;ve acquired over the
+              years and use often.
+            </p>
+          </header>
+        }
+      >
+        <section>
+          <Snippets snippets={props.snippets} />
+        </section>
+      </Container>
     </>
   );
 }

@@ -4,39 +4,35 @@ import css from "./styles.module.css";
 import { IconArrowRight, IconEye, IconHeart } from "@tabler/icons";
 import Link from "next/link";
 import Divider from "core/atoms/Divider";
+import { TrackedJournal } from "types/alpine";
 
-export default function JournalCard(props: {
-  journal: Journal;
-  views?: number;
-  likes?: number;
-}) {
-  const date = parseISO(props.journal.date);
+export default function JournalCard(props: { journal: TrackedJournal }) {
+  const journal = props.journal;
+  const date = parseISO(journal.date);
   return (
-    <Link href={`/journals/${props.journal.slug}`} className={css.card}>
+    <Link href={`/journals/${journal.slug}`} className={css.card}>
       <article className={css.article}>
         <header>
-          <h3 className={`clamp ${css.title}`}>{props.journal.title}</h3>
+          <h3 className={`clamp ${css.title}`}>{journal.title}</h3>
           <div className={css.analytics}>
-            <time suppressHydrationWarning>{format(date, "M.d.yyyy")}</time>
+            <time className={css.date} suppressHydrationWarning>
+              {format(date, "M.d.yyyy")}
+            </time>
             <Divider />
-            <span>
+            <div className={css.analytic}>
               <IconEye className={css.icon} />
-              {props.views ? `${props.views}` : `–––`}
-            </span>
+              <span>{journal.views ? `${journal.views}` : `–––`}</span>
+            </div>
             <Divider />
-            <span>
+            <div className={css.analytic}>
               <IconHeart className={css.icon} />{" "}
-              {props.likes ? `${props.likes}` : `–––`}
-            </span>
+              <span>{journal.likes ? `${journal.likes}` : `–––`}</span>
+            </div>
           </div>
-          <p className={css.description}>{props.journal.description}</p>
         </header>
-        <div>
-          <div className={css.link}>
-            <span>
-              Read <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-            </span>
-          </div>
+        <p className={css.description}>{journal.description}</p>
+        <div className={css.link}>
+          Read <IconArrowRight className={css.arrow} strokeWidth={2.5} />
         </div>
       </article>
     </Link>

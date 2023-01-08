@@ -1,5 +1,5 @@
 .searchwrapper {
-  margin: var(--space-md) 0;
+  margin: 0 0 var(--space-md) 0;
   max-width: 32rem;
   width: 100%;
   border: var(--border);

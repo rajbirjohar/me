@@ -33,7 +33,7 @@ export default function Step(props: { experience: Experience }): JSX.Element {
       </div>
       <div>
         {experience.url ? (
-          <Link href={experience.url}>
+          <Link href={experience.url} className={css.link}>
             <h3 className={css.title}>
               {experience.title}{" "}
               <IconArrowUpRight

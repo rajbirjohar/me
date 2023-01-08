@@ -19,6 +19,7 @@ import Stack from "core/molecules/Stack";
 import ListProjects from "core/organisms/Projects";
 import { pick } from "contentlayer/client";
 import GradientButton from "@/atoms/GradientButton";
+import Container from "../core/templates/Container/index";
 
 const greetings = [
   "Hello",
@@ -70,7 +71,6 @@ function Hello(props: { index: number }) {
   const hello: Variants = {
     initial: {
       opacity: 0,
-      width: 0,
       transition: {
         type: "tween",
         ease: "anticipate",
@@ -79,7 +79,6 @@ function Hello(props: { index: number }) {
     },
     animate: {
       opacity: 1,
-      width: "auto",
       transition: {
         type: "tween",
         ease: "anticipate",
@@ -88,7 +87,6 @@ function Hello(props: { index: number }) {
     },
     exit: {
       opacity: 0,
-      width: 0,
       transition: {
         type: "tween",
         ease: "anticipate",
@@ -101,7 +99,7 @@ function Hello(props: { index: number }) {
     <h1 className={css.greeting} data-nosnippet>
       <LayoutGroup>
         <AnimatePresence mode="wait">
-          <motion.span
+          <motion.div
             className={css.hello}
             key={greetings[props.index]}
             variants={hello}
@@ -110,7 +108,7 @@ function Hello(props: { index: number }) {
             exit="exit"
           >
             {greetings[props.index]}.&nbsp;
-          </motion.span>
+          </motion.div>
         </AnimatePresence>
         <br />
         <span className={css.name}>I&#39;m Rajbir.</span>
@@ -144,6 +142,7 @@ export default function Home(props: { journals: Journal[] }) {
 
   return (
     <>
+      {" "}
       <Head>
         <title>Rajbir Johar</title>
         <meta
@@ -151,9 +150,10 @@ export default function Home(props: { journals: Journal[] }) {
           name="description"
         />
       </Head>
-      <article className={css.landing}>
-        <section className={css.hero}>
-          <header>
+      <Container
+        className={css.landing}
+        heading={
+          <header className={css.hero}>
             <div className={css.herocontent}>
               <Image
                 src={me}
@@ -166,11 +166,14 @@ export default function Home(props: { journals: Journal[] }) {
               />
               {render && <Hello index={index} />}
             </div>
-            <p>
-              Frontend and UX Engineer at Inventives. Crafting aesthetic
-              interfaces for mindblowing ideas.
-            </p>
           </header>
+        }
+      >
+        <div className={css.bio}>
+          <p>
+            Frontend and UX Engineer at Inventives. Crafting aesthetic
+            interfaces for mindblowing ideas.
+          </p>
           <Link
             href="/about"
             aria-label="Navigate to the about me page to learn more about me."
@@ -180,8 +183,7 @@ export default function Home(props: { journals: Journal[] }) {
               <IconArrowRight className={css.arrow} strokeWidth={2.5} />
             </GradientButton>
           </Link>
-        </section>
-
+        </div>
         <section>
           <header>
             <h2>Recently Published</h2>
@@ -202,7 +204,11 @@ export default function Home(props: { journals: Journal[] }) {
           </Link>
         </section>
         <section>
-          <header>
+          <header
+            style={{
+              marginBottom: "var(--space)",
+            }}
+          >
             <h2>Experiences</h2>
           </header>
           <div className={css.experiences}>
@@ -228,7 +234,7 @@ export default function Home(props: { journals: Journal[] }) {
             <IconArrowRight className={css.arrow} strokeWidth={2.5} />
           </Link>
         </section>
-      </article>
+      </Container>
     </>
   );
 }
@@ -238,7 +244,6 @@ export async function getStaticProps() {
     // Select only the fields needed to fill out the
     // cards for the journals
     .filter((journal) => journal.draft === false)
-    .slice(0, 3)
     .map((journal) =>
       pick(journal, [
         "category",

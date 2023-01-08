@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDisableScroll } from "@/hooks/useDisableScroll";
 import Expanded from "core/molecules/Expanded";
 import Gallery from "core/organisms/Gallery";
+import Container from "@/templates/Container";
 
 export type Photo = {
   name: string;
@@ -25,25 +26,29 @@ export default function GalleryPage(props: { photos: Photo[] }) {
           name="description"
         />
       </Head>
-      <header>
-        <h1>Gallery</h1>
-      </header>
-      <div className={css.section}>
-        <p>
-          Recently, I&#39;ve been trying to capture how I see the world.
-          Here&#39;s a glimpse through some of work. You can find more on my{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={"https://www.instagram.com/rajbir.johar/"}
-          >
-            Instagram
-          </a>
-          .
-        </p>
-        <Expanded photo={selected} setPhoto={setSelected} />
-        <Gallery photos={photos} setPhoto={setSelected} />
-      </div>
+      <Container
+        heading={
+          <header>
+            <h1>Gallery</h1>
+            <p>
+              Recently, I&#39;ve been trying to capture how I see the world.
+              Here&#39;s a glimpse through some of work. You can find more on my{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={"https://www.instagram.com/rajbir.johar/"}
+              >
+                Instagram.
+              </a>
+            </p>
+          </header>
+        }
+      >
+        <section>
+          <Expanded photo={selected} setPhoto={setSelected} />
+          <Gallery photos={photos} setPhoto={setSelected} />
+        </section>
+      </Container>
     </>
   );
 }

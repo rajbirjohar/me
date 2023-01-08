@@ -22,9 +22,11 @@
 
 @media (hover: hover) and (pointer: fine) {
   .switch:hover {
+    background-color: var(--button-bg);
     scale: 1.05;
   }
   .switch:active {
+    background-color: var(--button-bg);
     scale: 0.95;
   }
 }

@@ -25,12 +25,15 @@
   align-items: center;
 }
 
+.link .title {
+  color: inherit;
+}
+
 .title {
   margin-top: 0;
-  color: inherit;
+  color: var(--heading-fg);
   display: inline-flex;
   align-items: center;
-
 }
 
 .title span {

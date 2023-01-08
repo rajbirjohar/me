@@ -1,5 +1,5 @@
+import Container from "@/templates/Container";
 import ListProjects from "core/organisms/Projects";
-import Section from "core/atoms/Section";
 import Head from "next/head";
 
 export default function Projects() {
@@ -12,13 +12,18 @@ export default function Projects() {
           name="description"
         />
       </Head>
-      <header>
-        <h1>Projects</h1>
-      </header>
-      <Section>
-        <p>Open source for the world to see.</p>
-        <ListProjects all />
-      </Section>
+      <Container
+        heading={
+          <header>
+            <h1>Projects</h1>
+            <p>Open source for the world to see.</p>
+          </header>
+        }
+      >
+        <section>
+          <ListProjects all />
+        </section>
+      </Container>
     </>
   );
 }

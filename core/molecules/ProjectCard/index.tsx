@@ -23,22 +23,20 @@ export default function ProjectCard(props: { project: Project }) {
             </div>
           </div>
           <h3 className={css.title}>{project.title}</h3>
-          {project.description && (
-            <p className={`${css.description} clamp-2`}>
-              {project.description}
-            </p>
-          )}
         </header>
-        <div className={css.link}>
-          <span>
-            Explore <IconArrowRight className={css.icon} strokeWidth={2.5} />
-          </span>
+        {project.description && (
+          <p className={`${css.description} clamp-2`}>{project.description}</p>
+        )}
+        <footer>
+          <div className={css.link}>
+            Explore <IconArrowRight className={css.arrow} strokeWidth={2.5} />
+          </div>
           <time className={css.date}>
             {formatDistance(new Date(project.pushed), new Date(), {
               addSuffix: true,
             })}
           </time>
-        </div>
+        </footer>
       </article>
     </Link>
   );

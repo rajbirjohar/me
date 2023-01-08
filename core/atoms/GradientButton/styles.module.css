@@ -6,6 +6,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  /* Stacking gradients appears to make the top one disappear. */
+  z-index: 1;
 }
 
 .herobuttonbg {
@@ -33,7 +35,7 @@
 }
 
 .herogradientbutton {
-  background-color: var(--bg);
+  background-color: var(--bg) !important;
   background-clip: padding-box;
   border: 2px solid transparent;
   box-shadow: 0 4px 4px 0 #00000010;
@@ -44,7 +46,7 @@
 }
 
 .herogradientbutton:hover {
-  background-color: transparent;
+  background-color: transparent !important;
   color: var(--bg);
 }
 
