@@ -8,7 +8,7 @@
   padding: var(--space-sm) var(--space);
   outline: none;
   transition: border-color var(--transition-slower);
-  background-color: transparent;
+  background-color: var(--outline);
   color: var(--fg);
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .search::placeholder {
-  color: var(--secondary-fg);
+  color: var(--fg);
 }
 
 .searchwrapper:focus-within {

@@ -8,10 +8,10 @@ export const middleware: NextMiddleware = async (req, event) => {
   const isPageRequest =
     !PUBLIC_FILE.test(pathname) &&
     !pathname.startsWith("/api") &&
-    !pathname.endsWith("/chapters");
+    !pathname.endsWith("/journals");
 
   const sendAnalytics = async () => {
-    const slug = pathname.split("/chapters/")[1];
+    const slug = pathname.split("/journals/")[1];
     // Change your production URL!
     let URL = "";
     if (process.env.NODE_ENV === "production") {
@@ -41,5 +41,5 @@ export const middleware: NextMiddleware = async (req, event) => {
 };
 
 export const config = {
-  matcher: ["/chapters/:path*"],
+  matcher: ["/journals/:path*"],
 };

@@ -2,6 +2,7 @@
   padding: var(--space-xl) 0;
   font-size: var(--font-size-sm);
   background-color: var(--card-bg);
+  transition: background-color var(--transition-slower);
 }
 
 .content {

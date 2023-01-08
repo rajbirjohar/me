@@ -2,13 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { compareDesc } from "date-fns";
-import { Chapter, allChapters } from "contentlayer/generated";
+import { Journal, allJournals } from "contentlayer/generated";
 import css from "@/styles/Home.module.css";
 import { IconArrowRight } from "@tabler/icons";
 import { AnimatePresence, LayoutGroup, motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
-import Chapters from "core/organisms/Chapters";
+import Journals from "core/organisms/Journals";
 import ListExperiences from "core/organisms/Experiences";
 import Playing from "core/organisms/Playing";
 import me from "@/public/static/images/me.jpg";
@@ -117,7 +117,7 @@ function Hello(props: { index: number }) {
   );
 }
 
-export default function Home(props: { chapters: Chapter[] }) {
+export default function Home(props: { journals: Journal[] }) {
   // Prevents a hydration error due to assigning
   // a random number to the index of the chosen
   // greeting.
@@ -189,10 +189,10 @@ export default function Home(props: { chapters: Chapter[] }) {
 
         <section>
           <header>
-            <h2>Chapters</h2>
+            <h2>Journals</h2>
           </header>
-          <Chapters chapters={props.chapters} />
-          <Link href="/chapters" className={css.discover}>
+          <Journals journals={props.journals} />
+          <Link href="/journals" className={css.discover}>
             <button>
               Discover{" "}
               <IconArrowRight
@@ -260,13 +260,13 @@ export default function Home(props: { chapters: Chapter[] }) {
 }
 
 export async function getStaticProps() {
-  const chapters = allChapters
+  const journals = allJournals
     // Select only the fields needed to fill out the
     // cards for the journals
-    .filter((chapter) => chapter.draft === false)
+    .filter((journal) => journal.draft === false)
     .slice(0, 3)
-    .map((chapter) =>
-      pick(chapter, [
+    .map((journal) =>
+      pick(journal, [
         "category",
         "title",
         "author",
@@ -279,5 +279,5 @@ export async function getStaticProps() {
     .sort((a, b) => {
       return compareDesc(new Date(a.date), new Date(b.date));
     });
-  return { props: { chapters } };
+  return { props: { journals } };
 }

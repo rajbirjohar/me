@@ -6,6 +6,7 @@
   padding: var(--space);
   border-radius: var(--radius);
   overflow: hidden;
+  margin-left: -1rem;
 }
 
 .backgroundArt {
@@ -61,6 +62,7 @@
 @media screen and (max-width: 668px) {
   .wrapper {
     padding: var(--space-sm) 0;
+    margin-left: 0;
   }
   .backgroundArt {
     display: none;

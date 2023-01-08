@@ -26,7 +26,7 @@ export default async function handler(
   switch (req.method) {
     case "GET": {
       try {
-        const [chapter, user] = await Promise.all([
+        const [journal, user] = await Promise.all([
           // Get all likes per slug
           supabase.from("analytics").select("*").eq("slug", req.query.slug),
 
@@ -37,11 +37,11 @@ export default async function handler(
             .eq("userid", sessionId)
             .eq("slug", req.query.slug),
         ]);
-        if (chapter.data === null || user.data === null) {
+        if (journal.data === null || user.data === null) {
           return res.status(404).send("No data");
         }
         return res.status(200).json({
-          likes: chapter.data.length > 0 ? chapter.data[0].likes : 0,
+          likes: journal.data.length > 0 ? journal.data[0].likes : 0,
           userLikes: user.data.length > 0 ? user.data[0].user_likes : 0,
         });
       } catch (error) {

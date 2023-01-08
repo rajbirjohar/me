@@ -27,6 +27,10 @@
 
 .title {
   margin-top: 0;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+
 }
 
 .title span {
