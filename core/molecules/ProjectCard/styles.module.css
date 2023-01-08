@@ -85,7 +85,6 @@
   max-width: max-content;
   gap: var(--space-2xs);
   transition: color var(--transition-slower);
-  font-weight: 550;
 }
 
 .icon {

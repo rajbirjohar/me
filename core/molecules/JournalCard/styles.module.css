@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--card-bg);
-  padding: var(--space) var(--space-md);
-  border-radius: var(--radius);
+  /* background-color: var(--card-bg); */
+  /* padding: var(--space) var(--space-md); */
+  /* border-radius: var(--radius); */
   cursor: pointer;
   color: var(--fg);
   align-items: unset;
@@ -31,9 +31,11 @@
   display: flex;
   align-items: center;
   transition: color var(--transition-slower);
+  font-size: var(--font-size-xs);
 }
 
-.analytics span {
+.analytics span,
+.analytics time {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
@@ -64,6 +66,8 @@
 .description {
   margin: var(--space) 0;
   font-weight: 450;
+  color: var(--secondary-fg);
+  font-size: var(--font-size-sm);
 }
 
 .link {
@@ -81,7 +85,6 @@
   max-width: max-content;
   gap: var(--space-2xs);
   transition: color var(--transition-slower);
-  font-weight: 550;
 }
 
 .tags {
@@ -102,19 +105,21 @@
   transition: color var(--transition-slower);
 }
 
-.icon {
+.icon,
+.arrow {
   width: var(--font-size-sm);
 }
 
+.arrow {
+  transition: translate var(--transition-slower);
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    scale: 1.025;
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    color: unset;
+  .card:hover .title {
+    color: var(--brand-alt);
   }
 
-  .card:active {
-    scale: 0.99;
+  .card:hover .arrow {
+    translate: 4px 0;
   }
 }

@@ -184,14 +184,11 @@ export default function Home(props: { journals: Journal[] }) {
 
         <section>
           <header>
-            <h2>Journals</h2>
+            <h2>Recently Published</h2>
           </header>
           <Journals journals={props.journals} />
           <Link href="/journals" className={css.discover}>
-            <button>
-              Read more{" "}
-              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-            </button>
+            Read more <IconArrowRight className={css.arrow} strokeWidth={2.5} />
           </Link>
         </section>
         <section>
@@ -200,9 +197,8 @@ export default function Home(props: { journals: Journal[] }) {
           </header>
           <ListProjects />
           <Link href="/projects" className={css.discover}>
-            <button>
-              Explore <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-            </button>
+            Explore more{" "}
+            <IconArrowRight className={css.arrow} strokeWidth={2.5} />
           </Link>
         </section>
         <section>
@@ -218,10 +214,8 @@ export default function Home(props: { journals: Journal[] }) {
             </div>
           </div>
           <Link href="/experiences" className={css.discover}>
-            <button>
-              Discover{" "}
-              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-            </button>
+            Discover more{" "}
+            <IconArrowRight className={css.arrow} strokeWidth={2.5} />
           </Link>
         </section>
         <section>
@@ -230,9 +224,8 @@ export default function Home(props: { journals: Journal[] }) {
           </header>
           <Playing />
           <Link href="/music" className={css.discover}>
-            <button>
-              Listen <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-            </button>
+            Listen more
+            <IconArrowRight className={css.arrow} strokeWidth={2.5} />
           </Link>
         </section>
       </article>

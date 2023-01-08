@@ -15,40 +15,27 @@ export default function JournalCard(props: {
     <Link href={`/journals/${props.journal.slug}`} className={css.card}>
       <article className={css.article}>
         <header>
-          <div className={css.heading}>
-            <div className={css.badge}>{props.journal.category}</div>
-            <div className={css.analytics}>
-              <span>
-                <IconEye className={css.icon} />
-                {props.views ? `${props.views}` : `–––`}
-              </span>
-              <Divider />
-              <span>
-                <IconHeart className={css.icon} />{" "}
-                {props.likes ? `${props.likes}` : `–––`}
-              </span>
-            </div>
-          </div>
           <h3 className={`clamp ${css.title}`}>{props.journal.title}</h3>
-          <p className={`clamp-2 ${css.description}`}>
-            {props.journal.description}
-          </p>
+          <div className={css.analytics}>
+            <time suppressHydrationWarning>{format(date, "M.d.yyyy")}</time>
+            <Divider />
+            <span>
+              <IconEye className={css.icon} />
+              {props.views ? `${props.views}` : `–––`}
+            </span>
+            <Divider />
+            <span>
+              <IconHeart className={css.icon} />{" "}
+              {props.likes ? `${props.likes}` : `–––`}
+            </span>
+          </div>
+          <p className={css.description}>{props.journal.description}</p>
         </header>
         <div>
-          <ul className={css.tags}>
-            {props.journal.tags.map((tag: string) => (
-              <li key={tag} className={css.tag}>
-                #{tag}
-              </li>
-            ))}
-          </ul>
           <div className={css.link}>
             <span>
-              Read <IconArrowRight className={css.icon} strokeWidth={2.5} />
+              Read <IconArrowRight className={css.arrow} strokeWidth={2.5} />
             </span>
-            <time className={css.date} suppressHydrationWarning>
-              {format(date, "M.d.yyyy")}
-            </time>
           </div>
         </div>
       </article>

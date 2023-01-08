@@ -1,6 +1,61 @@
-.grid {
+.wrapper {
   margin: var(--space-md) 0;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xl);
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 36rem;
+
+  /* margin: var(--space-md) 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: var(--space-md);
+  grid-gap: var(--space-md); */
+}
+
+.aside {
+  position: sticky;
+  top: 150px;
+  flex: 1;
+  /* background-color: var(--card-bg);
+  padding: var(--space) var(--space-md);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow); */
+}
+
+.popular {
+  display: flex;
+  flex-direction: column;
+  margin: var(--space) 0;
+  gap: var(--space-sm);
+}
+
+.link {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-weight: 550;
+}
+
+.arrow {
+  margin-top: 6px;
+  min-width: var(--font-size-base);
+  max-width: var(--font-size-base);
+  transition: translate var(--transition-slower);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover > .arrow {
+    translate: 4px 0;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .aside {
+    display: none;
+  }
 }

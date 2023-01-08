@@ -28,7 +28,7 @@
   --void-1: #111111;
   --void-2: #222222;
   --void-3: #444444;
-  --void-4: #666666;
+  --void-4: #7c7b7b;
   --void-5: #888888;
   --void-6: #e6e6e6;
   --void-7: #eaeaea;
@@ -112,7 +112,7 @@
 
   --fg: var(--void-6);
   --heading-fg: var(--void-9);
-  --secondary-fg: var(--void-4);
+  --secondary-fg: var(--void-5);
   --badge-fg: var(--ocean-lighter);
 
   --border: 2px solid var(--void-2);
