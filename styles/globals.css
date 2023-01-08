@@ -26,7 +26,7 @@
   /* Colors */
   --void-0: #000000;
   --void-1: #111111;
-  --void-2: #333333;
+  --void-2: #222222;
   --void-3: #444444;
   --void-4: #666666;
   --void-5: #888888;
@@ -58,7 +58,7 @@
   --step-bg: var(--void-7);
   --button-bg: var(--void-7);
   --button-bg-alt: var(--void-6);
-  --outline: var(--void-6);
+  --outline: var(--void-7);
 
   --fg: var(--void-3);
   --heading-fg: var(--void-0);
@@ -108,7 +108,7 @@
   --step-bg: var(--void-2);
   --button-bg: var(--void-2);
   --button-bg-alt: var(--void-3);
-  --outline: var(--void-3);
+  --outline: var(--void-2);
 
   --fg: var(--void-6);
   --heading-fg: var(--void-9);

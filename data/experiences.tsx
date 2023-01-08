@@ -1,36 +1,19 @@
 import {
   IconBolt,
   IconCake,
-  IconCamera,
   IconCode,
   IconCpu,
-  IconDeviceGamepad2,
-  IconGauge,
   IconNotebook,
   IconPalette,
-  IconPlaneDeparture,
   IconPrison,
-  IconRoad,
   IconSchool,
 } from "@tabler/icons";
 import { Experience } from "types/alpine";
 
 const experiences: Experience[] = [
   {
-    title: "Flew to Canada",
-    month: "September",
-    year: 2022,
-    caption: (
-      <p>
-        Definitely one of the most memorable experiences I&#39;ve had. Explored
-        Algonquin Park and enjoyed the rain.
-      </p>
-    ),
-    icon: IconPlaneDeparture,
-  },
-  {
     title: "Launched Chromax",
-    month: "June",
+    month: "September",
     year: 2022,
     caption: (
       <p>
@@ -42,20 +25,13 @@ const experiences: Experience[] = [
     url: "https://www.chromax.app/",
   },
   {
-    title: "Moved to Arizona",
-    month: "June",
-    year: 2022,
-    caption: <p>Stay casual California. Here&#39;s to new adventures.</p>,
-    icon: IconPlaneDeparture,
-  },
-  {
     title: "Started at Inventives",
     month: "January - current",
     year: 2022,
     caption: (
       <p>
         Working with React and TypeScript to build aesthetic and accessible
-        interfaces. Having fun and breaking things along the way.
+        interfaces.
       </p>
     ),
     icon: IconBolt,
@@ -91,19 +67,6 @@ const experiences: Experience[] = [
     ],
   },
   {
-    title: "Peered Through a New Lens",
-    month: "May",
-    year: 2022,
-    caption: (
-      <p>
-        Started shooting with a Canon R6. Capturing the world the way I want to
-        see it.
-      </p>
-    ),
-    icon: IconCamera,
-    url: "https://www.instagram.com/rajbir.johar/",
-  },
-  {
     title: "Graduated",
     month: "June",
     year: 2022,
@@ -130,13 +93,6 @@ const experiences: Experience[] = [
     url: "https://www.citrushack.com/",
   },
   {
-    title: "Drove to San Franscisco",
-    month: "July",
-    year: 2021,
-    caption: <p>Explored the bay with good friends and made great memories.</p>,
-    icon: IconRoad,
-  },
-  {
     title: "Launched Nexus",
     month: "April",
     year: 2021,
@@ -149,13 +105,6 @@ const experiences: Experience[] = [
     ),
     icon: IconNotebook,
     url: "https://nexus-ucr.vercel.app/",
-  },
-  {
-    title: "Picked Out My First Car",
-    month: "January",
-    year: 2021,
-    caption: <p>Discovered a love for the fast lane and mountain roads.</p>,
-    icon: IconGauge,
   },
   {
     title: "Joined Citrus Hack",
@@ -192,34 +141,15 @@ const experiences: Experience[] = [
     ],
   },
   {
-    title: "Flew Solo for the First Time",
-    month: "March",
-    year: 2019,
-    caption: <p>Discovered an incredibly strong wanderlust.</p>,
-    icon: IconPlaneDeparture,
-  },
-  {
-    title: "Built my First Keyboard",
-    month: "June",
-    year: 2018,
-    caption: (
-      <p>
-        <i>Oh no.</i>
-      </p>
-    ),
-    icon: IconCpu,
-  },
-  {
     title: "Started Writing Code",
     month: "September",
     year: 2017,
     caption: (
       <>
         <p>
-          Took a leap of faith and signed up for AP CS in high school. It did{" "}
-          <i>not</i> click at all the first time. Pushed through and pursued it
-          in college and{" "}
-          <code>console.log(&#34;its kinda crazy where it led me&#34;)</code>.
+          Signed up for AP CS in high school. Pushed through and pursued it in
+          college and{" "}
+          <code>console.log(&#34;it&#39;s crazy where it led me&#34;)</code>.
         </p>
       </>
     ),
@@ -238,23 +168,10 @@ const experiences: Experience[] = [
     year: 2014,
     caption: (
       <p>
-        Thought I was so cool jail breaking my iPhone and installing half the
-        tweaks on Cydia. I was in fact, not cool.
+        Learned that breaking things is the first step to understanding them.
       </p>
     ),
     icon: IconPrison,
-  },
-  {
-    title: "Got an Xbox 360",
-    month: "December",
-    year: 2012,
-    caption: (
-      <p>
-        A golden era. <i>Assassin&#39;s Creed II</i> is still my favorite video
-        game of all time.
-      </p>
-    ),
-    icon: IconDeviceGamepad2,
   },
   {
     title: "Born",

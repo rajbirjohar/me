@@ -16,7 +16,7 @@ export default function TopTracks() {
         <h2>Favorites</h2>
         <div className={css.tracks}>
           {data.tracks.map((track: any, index: any) => (
-            <Track ranking={index + 1} key={track.songUrl} {...track} />
+            <Track ranking={index + 1} key={track.url} {...track} />
           ))}
         </div>
       </div>

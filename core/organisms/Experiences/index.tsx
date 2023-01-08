@@ -44,6 +44,9 @@ export default function ListExperiences(props: { all?: boolean }): JSX.Element {
         .slice(0, 1)
         .map((value, index) => (
           <li key={index}>
+            <h2 className={css.year}>
+              <time dateTime={`${value.year}`}>{value.year}</time>
+            </h2>
             {value.events.slice(0, 3).map((step: Experience) => (
               <Step key={step.title} experience={step} />
             ))}

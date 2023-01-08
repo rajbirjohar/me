@@ -43,11 +43,13 @@
 
 .experiences {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-md);
 }
 
 .stackwrapper {
+  position: sticky;
+  top: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,6 +107,14 @@
   color: var(--bg);
 }
 
+.discover button:not(.herogradientbutton) {
+  background-color: transparent;
+}
+
+.discover:hover button:hover:not(.herogradientbutton) {
+  background-color: var(--button-bg-alt);
+}
+
 .discover svg {
   transition: translate var(--transition-slowest);
 }
@@ -124,5 +134,9 @@
   }
   .profilewrapper {
     align-items: flex-start;
+  }
+  .stackwrapper {
+    position: unset;
+    top: unset;
   }
 }

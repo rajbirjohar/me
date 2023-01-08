@@ -4,7 +4,12 @@ import { Track as TrackType } from "types/alpine";
 
 export default function Track(props: TrackType) {
   return (
-    <div className={css.wrapper}>
+    <a
+      href={props.url}
+      className={css.wrapper}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Image
         src={props.albumArt}
         alt="Album Art"
@@ -24,19 +29,12 @@ export default function Track(props: TrackType) {
         />
 
         <div className={css.info}>
-          <div className={`${css.heading} clamp`}>
-            <a
-              className={`${css.title} clamp`}
-              href={props.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {props.title}
-            </a>
+          <div className={css.heading}>
+            <h3 className={`${css.title} clamp`}>{props.title}</h3>
+            <p className={`${css.artist} clamp`}>{props.artist}</p>
           </div>
-          <p className={`${css.artist} clamp`}>{props.artist}</p>
         </div>
       </div>
-    </div>
+    </a>
   );
 }

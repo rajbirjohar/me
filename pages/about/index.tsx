@@ -10,48 +10,47 @@ export default function About() {
       <article className={css.article}>
         <header>
           <h1>Whoami</h1>
-          <p>Well that&#39;s a great question isn&#39;t it? 🤔 </p>
           <p>
-            The short version is that I&#39;m an engineer specializing in
-            frontend and UX development. I&#39;m currently working at
-            Inventives, a venture studio.
+            I&#39;m currently an engineer specializing in frontend and UX
+            development. I work at Inventives, a venture studio.
           </p>
-          <p>
+          <em
+            style={{
+              fontSize: "var(--font-size-sm)",
+              color: "var(--secondary-fg)",
+            }}
+          >
             This space is ever changing, just like we are as humans. Tomorrow
             might not look like today so enjoy today while you can.
-          </p>
+          </em>
         </header>
         <section>
           <h2>A Detailed View</h2>
           <h3>Career</h3>
           <p>
             I&#39;m primarily focused on designing, architecting, and developing
-            interfaces. Although, I found a strong yearning for building and
-            breaking things alot earlier in life.
-          </p>
-          <h3>Inspiration</h3>
-          <p>
-            I didn&#39;t really have much direction on what I wanted to be
-            growing up. But I do remember enjoying jailbreaking my iPhone and
-            pretending to be a hacker with <code>ipconfig</code>. On the flip
-            side, I also had an affinity for artistic stuff like drawing and
-            painting. To me they seemed like totally different worlds and I felt
-            like I had to choose one or the other especially as people kept
-            asking me what I wanted to be when I grew up.
+            interfaces. Most of my experience is founded in React, specifically
+            NextJS although I thoroughly enjoy writing CSS.
           </p>
           <p>
-            It wasn&#39;t until college where I discovered that I could carve
-            out my little slice of the world wide web with <code>code</code>{" "}
-            <i>and</i> with <span className={css.gradient}>art</span>.
+            Having only worked six months out of college (at the time of writing
+            this), I am barely starting my career in web development and
+            software engineering. Although I have taught myself everything I
+            know for the past four years including foundational HTML, CSS, and
+            Javascript as well as React and Typescript.
+          </p>
+          <p>
+            Recently, I am also dabbling in App development with Flutter and
+            Dart.
           </p>
           <h3>Education</h3>
           <p>
-            For my education, I graduated with a Bachelors in Computer Science
-            from the University of California, Riverside.
+            I graduated with a Bachelors in Computer Science from the University
+            of California, Riverside.
           </p>
         </section>
         <section>
-          <h2>Other Things I Enjoy</h2>
+          <h2>Personal</h2>
           <h3>📸 Photography</h3>
           <p>
             Recently, I started shooting photography after leaving my camera to
@@ -61,10 +60,8 @@ export default function About() {
           </p>
           <h3>⌨️ Keyboards</h3>
           <p>
-            I&#39;ve built an unholy amount of keyboards. Way too many. They
-            make my job very enjoyable though. I figured if I&#39;m going to be
-            coding for the rest of my life, might as well invest in the tool of
-            the trade.
+            I figured if I&#39;m going to be coding for the rest of my life,
+            might as well invest in the tool of the trade.
           </p>
           <h3>🐎 Automotives</h3>
           <p>

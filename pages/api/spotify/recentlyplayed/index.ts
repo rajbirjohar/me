@@ -10,7 +10,7 @@ export default async function handler(
 
   const tracks = items.slice(0, 10).map((track: any) => ({
     artist: track.track.artists.map((_artist: any) => _artist.name).join(", "),
-    songUrl: track.track.external_urls.spotify,
+    url: track.track.external_urls.spotify,
     title: track.track.name,
     albumArt: track.track.album.images[1].url,
   }));

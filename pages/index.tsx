@@ -194,7 +194,7 @@ export default function Home(props: { journals: Journal[] }) {
           <Journals journals={props.journals} />
           <Link href="/journals" className={css.discover}>
             <button>
-              Discover{" "}
+              Read more{" "}
               <IconArrowRight
                 size={"var(--font-size-base)"}
                 strokeWidth={2.5}
@@ -209,7 +209,7 @@ export default function Home(props: { journals: Journal[] }) {
           <ListProjects />
           <Link href="/projects" className={css.discover}>
             <button>
-              Discover{" "}
+              Explore{" "}
               <IconArrowRight
                 size={"var(--font-size-base)"}
                 strokeWidth={2.5}
@@ -246,7 +246,7 @@ export default function Home(props: { journals: Journal[] }) {
           <Playing />
           <Link href="/music" className={css.discover}>
             <button>
-              Discover{" "}
+              Listen{" "}
               <IconArrowRight
                 size={"var(--font-size-base)"}
                 strokeWidth={2.5}
