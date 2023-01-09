@@ -8,6 +8,8 @@
   to be clickable because header spans 
   100% of the width of the screen */
   pointer-events: none;
+  translate: 0 0;
+  transition: translate var(--transition-slowest);
 }
 
 .nav {
@@ -102,6 +104,10 @@
   min-width: 24px;
   max-width: 24px;
   stroke-width: 2;
+}
+
+.hidden {
+  translate: 0 -100px;
 }
 
 @media (hover: hover) and (pointer: fine) {

@@ -8,6 +8,7 @@ import Focused from "core/molecules/Focused";
 import LightDarkSwitch from "core/molecules/LightDarkSwitch";
 import ExpandSwitch from "core/molecules/ExpandSwitch";
 import css from "./styles.module.css";
+import { useScrollShow } from "../../../hooks/useScrollShow";
 
 /**
  * Menu
@@ -109,10 +110,13 @@ export default function Header(): JSX.Element {
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolling] = useIsScrolling(50);
+  const [show] = useScrollShow();
 
   return (
     <>
-      <header className={`${css.header} ${inter.className}`}>
+      <header
+        className={`${css.header} ${inter.className} ${!show && css.hidden}`}
+      >
         <nav
           className={scrolling || isOpen ? `${css.nav} ${css.scroll}` : css.nav}
         >
