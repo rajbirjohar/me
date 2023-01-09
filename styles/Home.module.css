@@ -69,6 +69,10 @@
   width: 100%;
 }
 
+.discover {
+  margin: var(--space) 0;
+}
+
 .discover button {
   background-color: transparent;
 }

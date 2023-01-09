@@ -1,5 +1,6 @@
 import React from "react";
 import css from "./styles.module.css";
+import Wave from "@/atoms/Wave";
 
 export default function Container(props: {
   heading: React.ReactNode;
@@ -11,7 +12,9 @@ export default function Container(props: {
       <article className={props.className ? props.className : ""}>
         <div className={css.heading}>
           <div className={css.headingcontent}>{props.heading}</div>
+          <Wave />
         </div>
+
         <div className={css.content}>{props.children}</div>
       </article>
     </div>

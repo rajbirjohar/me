@@ -1,0 +1,5 @@
+.wave {
+  fill: var(--bg);
+  width: 100%;
+  transition: fill var(--transition-slower);
+}

@@ -4,7 +4,7 @@
 
 .heading {
   width: 100%;
-  min-height: 400px;
+  min-height: 475px;
   background: var(--heading-gradient);
   display: flex;
   align-items: flex-start;
@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 868px) {
   .heading {
-    height: min-content;
+    min-height: min-content;
     padding-top: var(--space-2xl);
   }
 }
