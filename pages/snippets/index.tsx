@@ -2,7 +2,8 @@ import Snippets from "core/organisms/Snippets";
 import { pick } from "contentlayer/client";
 import { Snippet, allSnippets } from "contentlayer/generated";
 import Head from "next/head";
-import Container from "@/templates/Container";
+import Page from "@/templates/Page";
+import css from "./styles.module.css";
 
 export default function SnippetsPage(props: { snippets: Snippet[] }) {
   return (
@@ -10,8 +11,8 @@ export default function SnippetsPage(props: { snippets: Snippet[] }) {
       <Head>
         <title>Rajbir Johar | Snippets</title>
       </Head>
-      <Container
-        heading={
+      <Page>
+        <article className={css.wrapper}>
           <header>
             <h1>Snippets</h1>
             <p>
@@ -19,12 +20,9 @@ export default function SnippetsPage(props: { snippets: Snippet[] }) {
               years and use often.
             </p>
           </header>
-        }
-      >
-        <section>
           <Snippets snippets={props.snippets} />
-        </section>
-      </Container>
+        </article>
+      </Page>
     </>
   );
 }

@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { compareDesc } from "date-fns";
-import { Journal, allJournals } from "contentlayer/generated";
+import { Journal, allJournals, allSnippets } from "contentlayer/generated";
 import css from "@/styles/Home.module.css";
 import { IconArrowRight } from "@tabler/icons";
 import { AnimatePresence, LayoutGroup, motion, Variants } from "framer-motion";
@@ -19,7 +19,9 @@ import Stack from "core/molecules/Stack";
 import ListProjects from "core/organisms/Projects";
 import { pick } from "contentlayer/client";
 import GradientButton from "@/atoms/GradientButton";
-import Container from "../core/templates/Container/index";
+import Container from "../core/templates/Landing/index";
+import Wave from "@/atoms/Wave";
+import Header from "@/organisms/Header";
 
 const greetings = [
   "Hello",
@@ -142,7 +144,6 @@ export default function Home(props: { journals: Journal[] }) {
 
   return (
     <>
-      {" "}
       <Head>
         <title>Rajbir Johar</title>
         <meta
@@ -150,91 +151,92 @@ export default function Home(props: { journals: Journal[] }) {
           name="description"
         />
       </Head>
-      <Container
-        className={css.landing}
-        heading={
-          <header className={css.hero}>
-            <div className={css.herocontent}>
-              <Image
-                src={me}
-                priority
-                quality={100}
-                alt={
-                  "A picture of me wearing a light grey beanie and a thick winter jacket. This was taken at Flagstaff."
-                }
-                className={css.profile}
-              />
-              {render && <Hello index={index} />}
-            </div>
-          </header>
-        }
-      >
-        <div className={css.bio}>
-          <p>
-            Frontend and UX Engineer at Inventives. Crafting aesthetic
-            interfaces for mindblowing ideas.
-          </p>
-          <Link
-            href="/about"
-            aria-label="Navigate to the about me page to learn more about me."
-          >
-            <GradientButton>
-              Discover{" "}
-              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-            </GradientButton>
-          </Link>
-        </div>
-        <section>
-          <header>
-            <h2>Recently Published</h2>
-          </header>
-          <Journals journals={props.journals} />
-          <Link href="/journals" className={css.discover}>
-            Read more <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-          </Link>
-        </section>
-        <section>
-          <header>
-            <h2>Projects</h2>
-          </header>
-          <ListProjects />
-          <Link href="/projects" className={css.discover}>
-            Explore more{" "}
-            <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-          </Link>
-        </section>
-        <section>
-          <header
-            style={{
-              marginBottom: "var(--space)",
-            }}
-          >
-            <h2>Experiences</h2>
-          </header>
-          <div className={css.experiences}>
-            <div>
-              <ListExperiences />
-            </div>
-            <div className={css.stackwrapper}>
-              <Stack cardStack={cardStack} />
-            </div>
+      <div className={css.wrapper}>
+        <div className={css.header}>
+          <Header />
+          <div className={css.hero}>
+            <Image
+              src={me}
+              priority
+              quality={100}
+              alt={
+                "A picture of me wearing a light grey beanie and a thick winter jacket. This was taken at Flagstaff."
+              }
+              className={css.profile}
+            />
+            {render && <Hello index={index} />}
           </div>
-          <Link href="/experiences" className={css.discover}>
-            Discover more{" "}
-            <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-          </Link>
-        </section>
-        <section>
-          <header>
-            <h2>Music</h2>
-          </header>
-          <Playing />
-          <Link href="/music" className={css.discover}>
-            Listen more
-            <IconArrowRight className={css.arrow} strokeWidth={2.5} />
-          </Link>
-        </section>
-      </Container>
+          <Wave />
+        </div>
+        <article className={css.content}>
+          <section>
+            <div className={css.bio}>
+              <p>
+                Frontend and UX Engineer at Inventives. Crafting aesthetic
+                interfaces for mindblowing ideas.
+              </p>
+              <Link
+                href="/about"
+                aria-label="Navigate to the about me page to learn more about me."
+              >
+                <GradientButton>
+                  Discover{" "}
+                  <IconArrowRight className={css.arrow} strokeWidth={2.5} />
+                </GradientButton>
+              </Link>
+            </div>
+            <header>
+              <h2>Recently Published</h2>
+            </header>
+            <Journals journals={props.journals} />
+            <Link href="/journals" className={css.discover}>
+              Read more{" "}
+              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
+            </Link>
+          </section>
+          <section>
+            <header>
+              <h2>Projects</h2>
+            </header>
+            <ListProjects />
+            <Link href="/projects" className={css.discover}>
+              Explore more{" "}
+              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
+            </Link>
+          </section>
+          <section>
+            <header
+              style={{
+                marginBottom: "var(--space)",
+              }}
+            >
+              <h2>Experiences</h2>
+            </header>
+            <div className={css.experiences}>
+              <div>
+                <ListExperiences />
+              </div>
+              <div className={css.stackwrapper}>
+                <Stack cardStack={cardStack} />
+              </div>
+            </div>
+            <Link href="/experiences" className={css.discover}>
+              Discover more{" "}
+              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
+            </Link>
+          </section>
+          <section>
+            <header>
+              <h2>Music</h2>
+            </header>
+            <Playing />
+            <Link href="/music" className={css.discover}>
+              Listen more
+              <IconArrowRight className={css.arrow} strokeWidth={2.5} />
+            </Link>
+          </section>
+        </article>
+      </div>
     </>
   );
 }

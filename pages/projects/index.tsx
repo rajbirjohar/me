@@ -1,6 +1,7 @@
-import Container from "@/templates/Container";
+import Page from "@/templates/Page";
 import ListProjects from "core/organisms/Projects";
 import Head from "next/head";
+import css from "./styles.module.css";
 
 export default function Projects() {
   return (
@@ -12,18 +13,15 @@ export default function Projects() {
           name="description"
         />
       </Head>
-      <Container
-        heading={
+      <Page>
+        <article className={css.wrapper}>
           <header>
             <h1>Projects</h1>
             <p>Open source for the world to see.</p>
           </header>
-        }
-      >
-        <section>
           <ListProjects all />
-        </section>
-      </Container>
+        </article>
+      </Page>
     </>
   );
 }

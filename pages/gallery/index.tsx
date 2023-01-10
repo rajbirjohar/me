@@ -5,7 +5,8 @@ import { useState } from "react";
 import { useDisableScroll } from "@/hooks/useDisableScroll";
 import Expanded from "core/molecules/Expanded";
 import Gallery from "core/organisms/Gallery";
-import Container from "@/templates/Container";
+import Container from "@/templates/Landing";
+import Page from "@/templates/Page";
 
 export type Photo = {
   name: string;
@@ -26,8 +27,8 @@ export default function GalleryPage(props: { photos: Photo[] }) {
           name="description"
         />
       </Head>
-      <Container
-        heading={
+      <Page>
+        <article className={css.wrapper}>
           <header>
             <h1>Gallery</h1>
             <p>
@@ -42,13 +43,10 @@ export default function GalleryPage(props: { photos: Photo[] }) {
               </a>
             </p>
           </header>
-        }
-      >
-        <section>
           <Expanded photo={selected} setPhoto={setSelected} />
           <Gallery photos={photos} setPhoto={setSelected} />
-        </section>
-      </Container>
+        </article>
+      </Page>
     </>
   );
 }

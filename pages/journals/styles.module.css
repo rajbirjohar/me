@@ -1,91 +1,11 @@
-.journals section > header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space);
-  max-width: 32rem;
-  margin-bottom: var(--space-md);
-}
-
-.section {
-  margin-bottom: var(--space-md);
-}
-
 .history {
   margin-bottom: var(--space-lg);
 }
 
-.grid {
-  margin: var(--space-md) 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: var(--space-md);
+.history h5 {
+  color: var(--secondary-fg);
 }
 
 .filtertag {
   color: var(--secondary-fg);
-}
-
-.journal {
-  max-width: 36rem;
-}
-
-.journal .content *,
-.journal header,
-.journal footer {
-  margin: var(--space-sm) 0;
-}
-
-.journal .content p {
-  margin: var(--space) 0;
-}
-
-.link {
-  margin-bottom: var(--space);
-}
-
-.author {
-  color: var(--secondary-fg);
-  font-size: var(--font-size-sm);
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.badge {
-  background-color: var(--badge-bg);
-  color: var(--badge-fg);
-  max-width: max-content;
-  border-radius: 32px;
-  padding: var(--space-xs) var(--space);
-  margin: var(--space-sm) 0;
-  font-weight: 500;
-}
-
-.signature {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  align-items: flex-end;
-  color: var(--brand);
-  margin: var(--space-md) 0;
-}
-
-.signature svg {
-  width: 200px;
-  fill: var(--brand);
-}
-
-.sticky {
-  position: sticky;
-  bottom: var(--space-md);
-  width: 100%;
-  margin: var(--space-md) 0;
-  display: flex;
-  justify-content: center;
-}
-
-@media screen and (max-width: 668px) {
-  .signature svg {
-    width: 125px;
-  }
 }

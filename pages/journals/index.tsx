@@ -9,7 +9,7 @@ import Link from "next/link";
 import { IconArrowBarToLeft } from "@tabler/icons";
 import Journals from "core/organisms/Journals";
 import Tags from "@/molecules/Tags";
-import Container from "@/templates/Container";
+import Page from "@/templates/Page";
 
 const History = (props: { queries: string[] }) => {
   if (props.queries.length === 0) {
@@ -17,7 +17,7 @@ const History = (props: { queries: string[] }) => {
   }
   return (
     <div className={css.history}>
-      <h3>Revisit</h3>
+      <h5>Revisit</h5>
       <Tags tags={props.queries} />
     </div>
   );
@@ -58,9 +58,8 @@ export default function JournalsPage(props: { journals: Journal[] }) {
           name="description"
         />
       </Head>
-      <Container
-        className={css.journals}
-        heading={
+      <Page>
+        <article className={css.wrapper}>
           <header>
             {query && (
               <Link href={"/journals"} className={css.link}>
@@ -73,13 +72,11 @@ export default function JournalsPage(props: { journals: Journal[] }) {
               Journals{" "}
               {query && <span className={css.filtertag}>on {query}</span>}
             </h1>
-            <p>Here is where I type at the speed of thought.</p>
           </header>
-        }
-      >
-        <History queries={Array.from(previousQueries)} />
-        <Journals journals={props.journals} query={query} all />
-      </Container>
+          <History queries={Array.from(previousQueries)} />
+          <Journals journals={props.journals} query={query} all />
+        </article>
+      </Page>
     </>
   );
 }

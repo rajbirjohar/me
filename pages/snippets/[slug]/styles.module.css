@@ -1,0 +1,82 @@
+.wrapper {
+  display: flex;
+}
+
+.link {
+  margin-bottom: var(--space-md);
+}
+
+.badge {
+  background-color: var(--badge-bg);
+  color: var(--badge-fg);
+  font-size: var(--font-size-sm);
+  border-radius: 32px;
+  padding: var(--space-xs) var(--space);
+  font-weight: 500;
+  max-width: max-content;
+  margin-bottom: var(--space-md);
+}
+
+.header {
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.details {
+  color: var(--secondary-fg);
+  font-size: var(--font-size-sm);
+}
+
+.content {
+  width: 100%;
+  max-width: 36rem;
+}
+
+/* Fix this later - The line height does not seem
+  to be equal like it is on the about page. */
+.snippet :where(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 0 !important;
+}
+
+.snippet * {
+  margin-bottom: var(--space);
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: flex-end;
+  margin: var(--space-md) 0;
+}
+
+.signature svg {
+  width: 150px;
+  fill: var(--brand);
+}
+
+.signature cite {
+  font-size: var(--font-size-sm);
+}
+
+.sticky {
+  position: sticky;
+  bottom: var(--space-md);
+  width: 100%;
+  margin: var(--space-md) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  text-align: center;
+  padding-top: var(--space);
+}
+
+@media screen and (max-width: 668px) {
+  .signature svg {
+    width: 125px;
+  }
+}

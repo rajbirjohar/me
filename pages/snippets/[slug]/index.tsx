@@ -6,7 +6,8 @@ import css from "./styles.module.css";
 import { IconArrowBarToLeft } from "@tabler/icons";
 import Link from "next/link";
 import MDXComponents from "core/molecules/Components";
-import Container from "@/templates/Container";
+import Container from "@/templates/Landing";
+import Page from "@/templates/Page";
 
 const PostLayout = ({ snippet }: { snippet: Snippet }) => {
   const MDXContent = useMDXComponent(snippet.body.code);
@@ -18,39 +19,38 @@ const PostLayout = ({ snippet }: { snippet: Snippet }) => {
         <meta content={snippet.description} name="description" />
         <meta property="article:published_time" content={snippet.date} />
       </Head>
-      <Container
-        heading={
-          <header>
-            <Link href={"/snippets"} className={css.link}>
-              <>
-                <IconArrowBarToLeft /> Index
-              </>
-            </Link>
-            <p className={css.badge}>{snippet.category}</p>
-            <h1>{snippet.title}</h1>
-          </header>
-        }
-      >
-        <section className={css.snippet}>
+      <Page>
+        <article className={css.wrapper}>
           <div className={css.content}>
-            <MDXContent components={MDXComponents} />
+            <header>
+              <Link href={"/snippets"} className={css.link}>
+                <>
+                  <IconArrowBarToLeft /> Index
+                </>
+              </Link>
+              <p className={css.badge}>{snippet.category}</p>
+              <h1>{snippet.title}</h1>
+            </header>
+            <div className={css.snippet}>
+              <MDXContent components={MDXComponents} />
+            </div>
+            <footer className={css.footer}>
+              <em>Found something wrong?</em>
+              <p>
+                Let me know on{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={"https://github.com/rajbirjohar"}
+                >
+                  Github
+                </a>
+                .
+              </p>
+            </footer>
           </div>
-          <footer className={css.footer}>
-            <em>Found something wrong?</em>
-            <p>
-              Let me know on{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={"https://github.com/rajbirjohar"}
-              >
-                Github
-              </a>
-              .
-            </p>
-          </footer>
-        </section>
-      </Container>
+        </article>
+      </Page>
     </>
   );
 };

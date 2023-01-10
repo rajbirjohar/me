@@ -1,6 +1,7 @@
 import Head from "next/head";
 import css from "./styles.module.css";
-import Container from "@/templates/Container";
+import Container from "@/templates/Landing";
+import Page from "@/templates/Page";
 
 export default function About() {
   return (
@@ -8,31 +9,27 @@ export default function About() {
       <Head>
         <title>Rajbir Johar | About</title>
       </Head>
-      <Container
-        heading={
+      <Page>
+        <article className={css.article}>
           <header>
             <h1>Whoami</h1>
             <p>
               I&#39;m currently an engineer specializing in frontend and UX
               development. I work at Inventives, a venture studio.
             </p>
+            <p>
+              <em
+                style={{
+                  fontSize: "var(--font-size-sm)",
+                  color: "var(--secondary-fg)",
+                  marginBottom: "var(--space-lg)",
+                }}
+              >
+                This space is ever changing, just like we are as humans.
+                Tomorrow might not look like today so enjoy today while you can.
+              </em>
+            </p>
           </header>
-        }
-      >
-        <div className={css.article}>
-          <p>
-            <em
-              style={{
-                fontSize: "var(--font-size-sm)",
-                color: "var(--secondary-fg)",
-                marginBottom: "var(--space-lg)",
-              }}
-            >
-              This space is ever changing, just like we are as humans. Tomorrow
-              might not look like today so enjoy today while you can.
-            </em>
-          </p>
-
           <section>
             <h2>A Detailed View</h2>
             <h3>Career</h3>
@@ -79,8 +76,8 @@ export default function About() {
               thrill seeking part of me.
             </p>
           </section>
-        </div>
-      </Container>
+        </article>
+      </Page>
     </>
   );
 }

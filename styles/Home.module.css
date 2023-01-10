@@ -1,12 +1,30 @@
-.landing section {
-  margin: var(--space-xl) 0;
+.header {
+  width: 100%;
+  height: 400px;
+  background: var(--heading-gradient);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero,
+.content {
+  max-width: var(--main-content);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-md);
 }
 
 .hero {
   display: flex;
-  flex-direction: column;
   gap: var(--space-md);
-  max-width: 36rem;
+  z-index: 3;
+}
+
+.content section:not(section:last-of-type) {
+  margin-bottom: var(--space-xl);
 }
 
 .bio {
@@ -45,6 +63,7 @@
   overflow: hidden;
   white-space: nowrap;
   height: 54.6px;
+  margin-bottom: 0;
 }
 
 .profile {
@@ -99,10 +118,17 @@
 }
 
 @media screen and (max-width: 868px) {
-  .herocontent {
+  .header {
+    height: 300px;
+  }
+  .profile {
+    display: none;
+  }
+  .hero {
     flex-direction: column;
     gap: var(--space-md);
     align-items: flex-start;
+    padding-bottom: var(--space-xl);
   }
   .intro {
     flex-direction: column;

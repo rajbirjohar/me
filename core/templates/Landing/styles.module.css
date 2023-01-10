@@ -1,0 +1,22 @@
+.headercontent,
+.content {
+  max-width: var(--main-content);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.headercontent {
+  padding: var(--space-md);
+}
+
+.content {
+  padding: var(--space-lg) var(--space-md);
+  z-index: 2;
+}
+
+@media screen and (max-width: 868px) {
+  .heading {
+    /* min-height: min-content; */
+    padding-top: var(--space-2xl);
+  }
+}

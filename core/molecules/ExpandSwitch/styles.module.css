@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
   transition: scale var(--transition-slowest), color var(--transition-slower),
     background-color var(--transition-slower);
   display: none;
@@ -37,5 +36,9 @@
 @media screen and (max-width: 668px) {
   .switch {
     display: flex;
+    position: fixed;
+    z-index: 100001;
+    top: 32px;
+    right: 32px;
   }
 }

@@ -50,7 +50,7 @@
 }
 
 .signature svg {
-  width: 200px;
+  width: 150px;
 }
 
 .address,
@@ -68,6 +68,7 @@
 
 @media screen and (max-width: 668px) {
   .signature svg {
+    margin-top: var(--space-sm);
     width: 125px;
   }
 }

@@ -1,4 +1,4 @@
-import Container from "@/templates/Container";
+import Page from "@/templates/Page";
 import ListExperiences from "core/organisms/Experiences";
 import Head from "next/head";
 
@@ -12,17 +12,14 @@ export default function Experiences() {
           name="description"
         />
       </Head>
-      <Container
-        heading={
+      <Page>
+        <article>
           <header>
             <h1>Experiences</h1>
           </header>
-        }
-      >
-        <section>
           <ListExperiences all />
-        </section>
-      </Container>
+        </article>
+      </Page>
     </>
   );
 }

@@ -1,7 +1,6 @@
 .link {
   pointer-events: all;
-  transition: color var(--transition-slower),
-    font-weight var(--transition-slower);
+  transition: color var(--transition-slower);
   font-weight: 450;
 }
 

@@ -4,7 +4,7 @@ import TopTracks from "core/organisms/TopTracks";
 import css from "./styles.module.css";
 import Head from "next/head";
 import TopArtists from "core/organisms/TopArtists";
-import Container from "@/templates/Container";
+import Page from "@/templates/Page";
 
 export default function Music() {
   return (
@@ -16,23 +16,20 @@ export default function Music() {
           name="description"
         />
       </Head>
-      <Container
-        heading={
+      <Page>
+        <article className={css.wrapper}>
           <header>
             <h1>Music</h1>
             <p>Music that&#39;s inspired me lately.</p>
           </header>
-        }
-      >
-        <section>
           <Playing />
           <TopArtists />
           <div className={css.trackswrapper}>
             <TopTracks />
             <RecentlyPlayed />
           </div>
-        </section>
-      </Container>
+        </article>
+      </Page>
     </>
   );
 }
