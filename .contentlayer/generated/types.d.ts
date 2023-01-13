@@ -27,11 +27,13 @@ export type Journal = {
   tags: any
   /** Determines if the post has been published */
   draft: boolean
+  toc: boolean
   /** MDX file body */
   body: MDX
   slug: string
   image: string
   og: string
+  headings: json
 }
 
 export type Snippet = {

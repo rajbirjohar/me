@@ -75,7 +75,7 @@
 .experiences {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .stackwrapper {

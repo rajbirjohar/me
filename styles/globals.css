@@ -171,6 +171,8 @@ body {
   color: var(--fg);
   transition: background-color var(--transition-slower),
     color var(--transition-slower);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-2xl);
 }
 /*
   Typographic tweaks!
@@ -226,6 +228,7 @@ h5,
 h6 {
   color: var(--heading-fg);
   font-weight: 600;
+  position: relative;
 }
 
 h1 {
@@ -310,6 +313,11 @@ button {
     color var(--transition-slower), scale var(--transition-slower);
 }
 
+.anchor {
+  font-weight: inherit;
+  color: inherit;
+}
+
 .clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -329,6 +337,14 @@ button {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+.anchor:hover::before {
+  content: "#";
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+  color: var(--secondary-fg);
 }
 
 ::selection {
@@ -360,5 +376,11 @@ button {
   }
   a:hover {
     color: var(--brand-alt);
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .anchor:hover::before {
+    display: none;
   }
 }

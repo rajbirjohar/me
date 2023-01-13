@@ -88,7 +88,10 @@ export default function LikeButton(props: { slug: string }) {
             })}
           </div>
         </div>
-        <IconHeart className={data.userLikes === 10 ? css.filled : ""} />{" "}
+        <IconHeart
+          style={{ marginBottom: 0 }}
+          className={data.userLikes === 10 ? css.filled : ""}
+        />{" "}
         {data.likes}
       </motion.button>
     </AnimatePresence>

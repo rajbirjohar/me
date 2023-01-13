@@ -1,53 +1,46 @@
+// contentlayer.config.ts
 import {
-  ComputedFields,
   defineDocumentType,
-  makeSource,
+  makeSource
 } from "contentlayer/source-files";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
-import GithubSlugger from "github-slugger";
-
-const getSlug = (doc: any) => doc._raw.sourceFileName.replace(/\.mdx$/, "");
-
-const journalComputedFields: ComputedFields = {
+var getSlug = (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, "");
+var journalComputedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => getSlug(doc),
+    resolve: (doc) => getSlug(doc)
   },
   image: {
     type: "string",
-    resolve: (doc) => `/journals/${getSlug(doc)}/image.png`,
+    resolve: (doc) => `/journals/${getSlug(doc)}/image.png`
   },
   og: {
     type: "string",
-    resolve: (doc) => `/journals/${getSlug(doc)}/og.jpg`,
+    resolve: (doc) => `/journals/${getSlug(doc)}/og.jpg`
   },
   headings: {
     type: "json",
     resolve: async (doc) => {
-      const slugger = new GithubSlugger();
       const headingsRegex = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
       const headings = Array.from(doc.body.raw.matchAll(headingsRegex)).map(
-        ({ groups }: any) => {
+        ({ groups }) => {
           const flag = groups?.flag;
           const content = groups?.content;
           return {
-            level:
-              flag?.length == 1 ? "one" : flag?.length == 2 ? "two" : "three",
-            text: content,
-            slug: content ? slugger.slug(content) : undefined,
+            level: flag.length,
+            text: content
           };
         }
       );
       return headings;
-    },
-  },
+    }
+  }
 };
-
-export const Journal = defineDocumentType(() => ({
+var Journal = defineDocumentType(() => ({
   name: "Journal",
   filePathPattern: `journals/**/*.mdx`,
   contentType: "mdx",
@@ -55,55 +48,48 @@ export const Journal = defineDocumentType(() => ({
     title: {
       type: "string",
       description: "The title of the post",
-      required: true,
+      required: true
     },
     description: {
       type: "string",
       description: "The description of the post",
-      required: true,
+      required: true
     },
     category: {
       type: "string",
       description: "The category of the post",
-      required: true,
+      required: true
     },
     date: {
       type: "date",
       description: "The date of the post",
-      required: true,
+      required: true
     },
     author: {
       type: "string",
       description: "The author of the post",
-      required: true,
+      required: true
     },
     tags: {
       type: "json",
       description: "Related concepts to the post",
-      required: true,
+      required: true
     },
     draft: {
       type: "boolean",
       description: "Determines if the post has been published",
-      required: true,
-    },
-    toc: {
-      type: "boolean",
-      required: false,
-      default: false,
-    },
+      required: true
+    }
   },
-  computedFields: journalComputedFields,
+  computedFields: journalComputedFields
 }));
-
-const snippetComputedFields: ComputedFields = {
+var snippetComputedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => getSlug(doc),
-  },
+    resolve: (doc) => getSlug(doc)
+  }
 };
-
-export const Snippet = defineDocumentType(() => ({
+var Snippet = defineDocumentType(() => ({
   name: "Snippet",
   filePathPattern: `snippets/**/*.mdx`,
   contentType: "mdx",
@@ -111,38 +97,37 @@ export const Snippet = defineDocumentType(() => ({
     title: {
       type: "string",
       description: "The title of the post",
-      required: true,
+      required: true
     },
     description: {
       type: "string",
       description: "The description of the post",
-      required: true,
+      required: true
     },
     language: {
       type: "string",
       description: "The title of the post",
-      required: true,
+      required: true
     },
     category: {
       type: "string",
       description: "The category of the post",
-      required: true,
+      required: true
     },
     date: {
       type: "date",
       description: "The date of the post",
-      required: true,
+      required: true
     },
     draft: {
       type: "boolean",
       description: "Determines if the post has been published",
-      required: true,
-    },
+      required: true
+    }
   },
-  computedFields: snippetComputedFields,
+  computedFields: snippetComputedFields
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   contentDirPath: "data",
   documentTypes: [Journal, Snippet],
   mdx: {
@@ -150,16 +135,14 @@ export default makeSource({
       rehypeSlug,
       rehypeCodeTitles,
       rehypePrism,
-      rehypeAccessibleEmojis,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "wrap",
-          properties: {
-            className: ["anchor"],
-          },
-        },
-      ],
-    ],
-  },
+      rehypeAutolinkHeadings,
+      rehypeAccessibleEmojis
+    ]
+  }
 });
+export {
+  Journal,
+  Snippet,
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-UQIQHGST.mjs.map
