@@ -122,6 +122,10 @@ to be equal like it is on the about page. */
   color: var(--brand-alt);
 }
 
+.active {
+  color: var(--brand-alt) !important;
+}
+
 @media screen and (max-width: 868px) {
   .journal {
     flex-direction: column-reverse;

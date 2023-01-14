@@ -13,28 +13,11 @@ import Divider from "core/atoms/Divider";
 import MDXComponents from "core/molecules/Components";
 import Tags from "@/molecules/Tags";
 import Page from "@/templates/Page";
-import { useEffect, useState } from "react";
+import { useActiveId } from "@/hooks/useActiveId";
 
 const PostLayout = ({ journal }: { journal: Journal }) => {
   const MDXContent = useMDXComponent(journal.body.code);
-  const [headings, setHeadings] = useState<
-    { id: string; text: string; level: number }[]
-  >([]);
-
-  // TODO - Implement intersection observer
-  // useEffect(() => {
-  //   const journal = document.querySelector(`.${css.text}`);
-  //   if (journal) {
-  //     const elements = Array.from(journal.querySelectorAll(` h2, h3,  h4`)).map(
-  //       (elem) => ({
-  //         id: elem.id,
-  //         text: (elem as HTMLHeadingElement).innerText,
-  //         level: Number(elem.nodeName.charAt(1)),
-  //       })
-  //     );
-  //     setHeadings(elements);
-  //   }
-  // }, []);
+  const activeId = useActiveId(journal.headings);
 
   return (
     <>
@@ -66,22 +49,34 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
             </p>
           </header>
           <div className={css.journal}>
-            <div className={css.text}>
+            <div className={css.text} id="journal">
               <MDXContent components={MDXComponents} />
             </div>
             {journal.toc && (
               <aside className={css.tocwrapper}>
                 <h3>Table of Contents</h3>
                 <div className={css.toc}>
-                  {journal.headings.map((heading: any) => {
-                    return (
-                      <div key={`#${heading.slug}`} className={css.tocanchor}>
-                        <a data-level={heading.level} href={`#${heading.slug}`}>
-                          {heading.text}
-                        </a>
-                      </div>
-                    );
-                  })}
+                  {journal.headings.map(
+                    (heading: {
+                      level: string;
+                      text: string;
+                      slug: string;
+                    }) => {
+                      return (
+                        <div key={`#${heading.slug}`} className={css.tocanchor}>
+                          <a
+                            data-level={heading.level}
+                            href={`#${heading.slug}`}
+                            className={
+                              activeId === heading.slug ? css.active : ""
+                            }
+                          >
+                            {heading.text}
+                          </a>
+                        </div>
+                      );
+                    }
+                  )}
                 </div>
               </aside>
             )}
