@@ -29,7 +29,7 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
         <meta name="author" content={journal.author} />
         <meta
           property="og:image"
-          content={`https://my-og-img.vercel.app/api/og?title=${journal.title}`}
+          content={`https://rajbir.io/api/og?title=${journal.title}`}
         />
       </Head>
       <Page>
