@@ -44,7 +44,8 @@ export default function handler(req: NextRequest) {
           />
           <div
             style={{
-              fontSize: 60,
+              fontSize: "125px",
+              fontWeight: 700,
               fontStyle: "normal",
               color: "white",
               lineHeight: 1.4,

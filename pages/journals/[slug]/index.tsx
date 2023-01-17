@@ -23,12 +23,27 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
     <>
       <Head>
         <title>{`Rajbir Johar | ${journal.title}`}</title>
-        <meta content={journal.description} name="description" />
+        <meta
+          content={journal.description}
+          name="description"
+          key="description"
+        />
         <meta property="article:published_time" content={journal.date} />
         <meta name="keywords" content={journal.tags.toString()} />
         <meta name="author" content={journal.author} />
         <meta
           property="og:image"
+          content={`https://rajbir.io/api/og?title=${journal.title}`}
+          key="image"
+        />
+
+        <meta
+          name="twitter:title"
+          content={`Rajbir Johar | ${journal.title}`}
+        />
+        <meta name="twitter:description" content={journal.description} />
+        <meta
+          name="twitter:image"
           content={`https://rajbir.io/api/og?title=${journal.title}`}
         />
       </Head>

@@ -19,9 +19,13 @@ export default function Meta(props: { customMeta?: any }) {
       <link rel="canonical" href={`https://rajbir.io${router.asPath}`} />
       <meta property="og:type" content={meta.type} />
       <meta property="og:site_name" content="Rajbir Johar" />
-      <meta property="og:description" content={meta.description} />
-      <meta property="og:title" content={meta.title} />
-      <meta property="og:image" content={meta.image} />
+      <meta property="og:title" content={meta.title} key="title" />
+      <meta property="og:image" content={meta.image} key="image" />
+      <meta
+        property="og:description"
+        content={meta.description}
+        key="description"
+      />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@rajbirjohar" />
       <meta name="twitter:title" content={meta.title} />
