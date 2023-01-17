@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { compareDesc } from "date-fns";
-import { Journal, allJournals, allSnippets } from "contentlayer/generated";
+import { Journal, allJournals } from "contentlayer/generated";
 import css from "@/styles/Home.module.css";
 import { IconArrowRight } from "@tabler/icons";
 import { AnimatePresence, LayoutGroup, motion, Variants } from "framer-motion";
@@ -19,7 +19,6 @@ import Stack from "core/molecules/Stack";
 import ListProjects from "core/organisms/Projects";
 import { pick } from "contentlayer/client";
 import GradientButton from "@/atoms/GradientButton";
-import Container from "../core/templates/Landing/index";
 import Wave from "@/atoms/Wave";
 import Header from "@/organisms/Header";
 

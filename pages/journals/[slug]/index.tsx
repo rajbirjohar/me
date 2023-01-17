@@ -27,6 +27,10 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
         <meta property="article:published_time" content={journal.date} />
         <meta name="keywords" content={journal.tags.toString()} />
         <meta name="author" content={journal.author} />
+        <meta
+          property="og:image"
+          content={`https://my-og-img.vercel.app/api/og?title=${journal.title}`}
+        />
       </Head>
       <Page>
         <article className={css.wrapper}>
