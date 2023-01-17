@@ -4,11 +4,11 @@ import { useRouter } from "next/router";
 export default function Meta(props: { customMeta?: any }) {
   const router = useRouter();
   const meta = {
+    ...props.customMeta,
     title: "Rajbir Johar – Engineer, Photographer, Explorer",
     description: `I'm a front-end/UX engineer and I strive to build things that people enjoy using.`,
     image: "https://rajbir.io/static/images/rajbir-banner.jpg",
     type: "website",
-    ...props.customMeta,
   };
   return (
     <Head>
