@@ -15,7 +15,9 @@
 }
 
 .year {
+  padding-top: var(--space);
   margin: var(--space) 0;
   font-size: var(--font-size-md);
   color: var(--secondary-fg);
 }
+

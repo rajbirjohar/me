@@ -14,6 +14,7 @@ import MDXComponents from "core/molecules/Components";
 import Tags from "@/molecules/Tags";
 import Page from "@/templates/Page";
 import { useActiveId } from "@/hooks/useActiveId";
+import { sourceSerifPro } from "@/templates/Layout";
 
 const PostLayout = ({ journal }: { journal: Journal }) => {
   const MDXContent = useMDXComponent(journal.body.code);
@@ -68,7 +69,10 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
             </p>
           </header>
           <div className={css.journal}>
-            <div className={css.text} id="journal">
+            <div
+              className={`${css.text} ${sourceSerifPro.className}`}
+              id="journal"
+            >
               <MDXContent components={MDXComponents} />
             </div>
             {journal.toc && (
@@ -104,7 +108,7 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
             <LikeButton slug={journal.slug} />
           </div>
           <footer className={css.footer}>
-            <div className={css.signature}>
+            <div className={`${css.signature} ${sourceSerifPro.className}`}>
               <p>Yours Truly,</p>
               <Signature />
               <cite>— {journal.author}</cite>

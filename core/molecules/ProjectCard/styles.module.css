@@ -24,7 +24,11 @@
   display: flex;
   justify-content: space-between;
   font-size: var(--font-size-sm);
-  margin-bottom: var(--space);
+  margin-bottom: 0;
+}
+
+.title {
+  margin-bottom: 0;
 }
 
 .analytics {
@@ -66,7 +70,7 @@
 }
 
 .description {
-  margin: var(--space) 0 var(--space-md) 0;
+  margin: 0 0 var(--space-md) 0;
   font-weight: 450;
 }
 
