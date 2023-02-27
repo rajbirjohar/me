@@ -14,7 +14,13 @@ import MDXComponents from "core/molecules/Components";
 import Tags from "@/molecules/Tags";
 import Page from "@/templates/Page";
 import { useActiveId } from "@/hooks/useActiveId";
-import { sourceSerifPro } from "@/templates/Layout";
+import { Source_Serif_Pro } from "@next/font/google";
+
+export const sourceSerifPro = Source_Serif_Pro({
+  subsets: ["latin"],
+  variable: "--source-serif-pro-font",
+  weight: ["200", "300", "400", "600", "700", "900"],
+});
 
 const PostLayout = ({ journal }: { journal: Journal }) => {
   const MDXContent = useMDXComponent(journal.body.code);
@@ -47,6 +53,11 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
           name="twitter:image"
           content={`https://rajbir.io/api/og?title=${journal.title}`}
         />
+        <style jsx global>{`
+          html {
+            font-family: ${sourceSerifPro.style.fontFamily};
+          }
+        `}</style>
       </Head>
       <Page>
         <article className={css.wrapper}>
@@ -77,7 +88,13 @@ const PostLayout = ({ journal }: { journal: Journal }) => {
             </div>
             {journal.toc && (
               <aside className={css.tocwrapper}>
-                <h3>Table of Contents</h3>
+                <h3
+                  style={{
+                    marginBlockEnd: 0,
+                  }}
+                >
+                  Table of Contents
+                </h3>
                 <div className={css.toc}>
                   {journal.headings.map(
                     (heading: {

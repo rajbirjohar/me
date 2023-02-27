@@ -1,0 +1,186 @@
+---
+title: Building a CRUD App • Part 1
+description: When starting a new project, it helps to plan out the foundations of what you want to build, how you want to build it, and the milestones you need to achieve to get there. If done effectively, this can significantly improve developer experience and shorten timeframes.
+category: development
+date: 2023-2-27
+author: Rajbir Johar
+tags: ["nextjs", "typescript", "crud"]
+draft: false
+toc: true
+---
+
+## It All Starts With An Idea
+
+So you've decided you wanted to put your skills to the test. You've
+copied too many tutorials and you feel ready to take on a challenge.
+
+Well, you're first going to need an idea.
+
+You know, the one where your distant family member or friend you barely
+talk to texts you one day out of the blue saying they have a 1 million dollar app idea.
+
+All jokes aside, having some semblance of what you want to build will
+inevitably help you develop the granular features you want to include.
+
+I've decided to build a real time chat web app with a partner. Feel free to ride along.
+
+## The Process
+
+Once you've figured out what you want to build, I like to think the steps
+required to start and finish a project goes as such:
+
+1. Name the project.
+2. Define the data models and features.
+3. Create wireframes/mock ups.
+4. Choose a framework(s).
+5. Decide which libraries are necessary.
+6. Build.
+7. <s>Quit, then come back in a few months.</s>
+8. Test.
+9. Beta test with live users.
+10. Profit.
+
+### Name the Project
+
+As every new venture goes, the first step we took was coming up
+with a catchy name for our new project, one that will take the world
+by storm and become the next best thing.
+
+We called our project, Blip.
+
+### Define the Data Models and Features
+
+This part will probably be the most important and difficult step. Reason being
+is that you will think you have it down, start coding, then realize you missed
+an imperative property or feature that you needed to get the rest of the project
+working.
+
+For example, we wanted our `User` model to have some sort of customization.
+Our first model looked something like this:
+
+```ts
+User {
+    id: string;
+    email: string;
+    full_name: string;
+}
+```
+
+Then we thought about it a bit more and we realized that alot of social media and
+messaging apps have alias, or usernames, as well as image avatars and so on. So we
+added those properties.
+
+```ts
+User {
+    id: string;
+    email: string;
+    full_name: string;
+    username: string;
+    avatar_url: string;
+    socials: string[];
+}
+```
+
+Granted, this is an extremely simple example but somewhere where this could really
+prove difficult is how you model relations between datasets.
+
+A messaging app should have somewhere to store messages right? But where is the right place
+to store them? Do I store them directly in the `User` object and sort by channel or message thread id?
+
+Probably not because while we would get that data the moment we have the `User` object, the messages
+field becomes _unbounded_. This means that the `User` object will grow to an infinite size
+thus making each additional message and `User` object call impractical.
+
+It would make more sense to store the `Message` object in another data collection and
+establish a relation between the `User` objects.
+
+It helps drawing this out on a blank white board. We like to use [FigJam](https://www.figma.com/figjam/) by Figma.
+
+### Create Wireframes or Mockups
+
+Before we even begin to think about code, we have to know what our app
+will look like. This gives the team a cohesive sense of what goes where and
+makes sure that we don't deviate unless required.
+
+Otherwise what may end up happening is that we start coding while designing
+at the same time and then at some point we change our minds on a certain element
+which makes us spend unecessary time which should be spent on building out
+actual features.
+
+### Choose a framework
+
+You can't really go wrong here. Choose which framework or tech stack you feel
+comfortable with. We decided on [Next.JS](https://nextjs.org/) because we found it
+incredibly easy to get booted up in minutes and the developer experience is
+unparalleled. Plus, we figured the user base wouldn't expand beyond a few hundred
+so a dedicated backend wasn't required.
+
+For our database, we went with [Supabase](https://supabase.com/) because they were 
+open source, relational, and had a lot of the features we were looking for such as 
+real time database subscriptions to help with our message latency.
+
+### Third Party Libraries
+
+When it comes to selecting a library, one thing to keep in mind is the tradeoff
+between complete customization and saving yourself time. Also, knowing how a component
+works versus trusting someone else's work to be compatible with your code.
+A few libraries we love are:
+
+- [Radix UI](https://www.radix-ui.com/) for providing primitive, common, and powerful
+  components like modals and dropdown menus.
+- [React-hook-form](https://react-hook-form.com/) to handle all our form validation.
+- [React Query](https://react-query-v3.tanstack.com/) for our data fetching and data
+  mutation needs.
+
+### Build
+
+Once we were satisfied with all of our previous steps, only then we decided to build.
+This way we were focused on one thing and one thing only, coding the features. We wouldn't
+waste any time figuring out how the UI will look because we already decided on that. We
+knew exactly how the data is shaped and related to each other for optimal data fetching
+performance. We understood the libraries we were using and the code we wrote.
+
+All of this culminated into a better feature timeframe and time spent on actual important issues.
+
+### Quitting
+
+I personally encounter this all the time where I think I have a novel idea that I want to
+build out but life gets in the way and starts chucking unripe lemons at me.
+
+And that's okay.
+
+I highly suggest you block out development time that is reasonable and manageable where
+you can maintain the other aspects of your life like hobbies and relationships. The code
+will be here when you get back.
+
+### Testing the Code
+
+Now this step should really be done in tandem with step 6 because this will make testing
+way more easier to deal with. It's a whole different beast to test all your components when
+you're done building them and integration testing them too. We like to use
+[React Testing Library](https://testing-library.com/).
+
+### Beta Testing With users
+
+Congratulations. If you made it this far, you're in the home stretch. This is the part where
+you share your newly built project with friends and family who might be interested and ask them
+for their opinion.
+
+The important thing is to take their criticisms gracefully. If it's your first time building it,
+your project will without a doubt destroy your application from being usable. As developers, we
+get so enveloped by our code and our work that we tend to forget who will be using this at the
+end of the day.
+
+More than likely, they won't care about how elegant your code is or how clean your solution is.
+They just care that it works.
+
+### Profit
+
+The project you end up building may be the one that does take the world by storm. Building a company
+out of it is out of the scope of this series but ask around and see what potential opportunities may
+arise from it.
+
+## Conclusion
+
+Thanks for reading. In the next part, I'll walk through the more in depth parts of the project 
+we're building starting with authentication.

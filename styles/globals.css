@@ -40,14 +40,14 @@
   --rose: red;
   --rose-dark: #e60000;
 
-  --ocean-lighter: #aaffec;
-  --ocean-light: #79ffe1;
-  --ocean: #50e3c2;
-  --ocean-dark: #27ad90;
-  --ocean-darker: #176957;
+  --main-lighter: #aaffec;
+  --main-light: #79ffe1;
+  --main: #3fad96;
+  --main-dark: #27ad90;
+  --main-darker: #176957;
 
-  --start-color: var(--ocean);
-  --end-color: var(--ocean-dark);
+  --start-color: var(--main);
+  --end-color: var(--main-dark);
 
   --gradient: linear-gradient(165deg, var(--start-color), var(--end-color));
   --heading-gradient: linear-gradient(
@@ -60,21 +60,21 @@
   --bg: var(--void-8);
   --header-bg: var(--void-9);
   --card-bg: var(--void-9);
-  --badge-bg: var(--ocean-light);
+  --badge-bg: var(--main-light);
   --step-bg: var(--void-7);
   --button-bg: var(--void-7);
   --button-bg-alt: var(--void-6);
   --outline: var(--void-7);
 
-  --fg: var(--void-4);
+  --fg: var(--void-3);
   --heading-fg: var(--void-0);
   --secondary-fg: var(--void-5);
-  --badge-fg: var(--ocean-darker);
+  --badge-fg: var(--main-darker);
   --button-fg: var(--void-0);
 
   --border: 2px solid var(--step-bg);
-  --brand: var(--ocean-dark);
-  --brand-alt: var(--ocean-darker);
+  --brand: var(--main-dark);
+  --brand-alt: var(--main-darker);
 
   /* Spacing */
   --space-2xs: 0.125rem;
@@ -107,10 +107,16 @@
 }
 
 [data-theme="dark"] {
+  --main-lighter: #ffedd5;
+  --main-light: #fdba74;
+  --main: #f97316;
+  --main-dark: #c2410c;
+  --main-darker: #7c2d12;
+
   --bg: var(--void-0);
   --header-bg: var(--void-1);
   --card-bg: var(--void-1);
-  --badge-bg: var(--ocean-darker);
+  --badge-bg: var(--main-darker);
   --step-bg: var(--void-2);
   --button-bg: var(--void-2);
   --button-bg-alt: var(--void-3);
@@ -124,14 +130,14 @@
     rgb(55, 55, 55) 100%
   );
 
-  --fg: var(--void-6);
+  --fg: var(--void-7);
   --heading-fg: var(--void-9);
   --secondary-fg: var(--void-4);
-  --badge-fg: var(--ocean-lighter);
+  --badge-fg: var(--main-lighter);
 
   --border: 2px solid var(--void-2);
-  --brand: var(--ocean);
-  --brand-alt: var(--ocean-light);
+  --brand: var(--main);
+  --brand-alt: var(--main-light);
   --button-fg: var(--void-9);
 
   --shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075),
@@ -173,6 +179,7 @@ body {
     color var(--transition-slower);
   scroll-behavior: smooth;
   scroll-padding-top: var(--space-2xl);
+  font-family: var(--inter-font);
 }
 /*
   Typographic tweaks!
@@ -275,16 +282,20 @@ hr {
   margin: var(--space-md) auto;
 }
 
+pre {
+  font-size: var(--font-size-sm) !important;
+}
+
 code {
   font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm) !important;
   background-color: var(--step-bg);
   padding: var(--space-xs) var(--space-sm);
   border-radius: 5px;
 }
 
 mark {
-  background-color: var(--ocean);
+  background-color: var(--main);
 }
 
 blockquote {

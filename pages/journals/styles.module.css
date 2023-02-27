@@ -1,5 +1,6 @@
 .history {
   margin-bottom: var(--space-lg);
+  max-width: 600px;
 }
 
 .history h5 {

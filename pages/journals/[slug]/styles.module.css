@@ -47,11 +47,19 @@
   margin-bottom: 0;
 }
 
+.journal :is(h2 + *, h3 + *, h4 + *) {
+  --flow-space: var(--font-size-sm);
+  margin-block-start: var(--flow-space, 1em);
+}
+
 /* Fix this later - The line height does not seem
 to be equal like it is on the about page. */
 .journal :where(h1, h2, h3, h4, h5, h6) {
-  margin-bottom: 0 !important;
   font-family: var(--font-sans);
+}
+
+.journal a {
+  display: unset;
 }
 
 .journal * {
@@ -95,7 +103,6 @@ to be equal like it is on the about page. */
   top: var(--space-2xl);
   display: flex;
   flex-direction: column;
-  gap: var(--space);
   margin: var(--space) 0;
   height: max-content;
 }
@@ -121,6 +128,12 @@ to be equal like it is on the about page. */
 
 .tocanchor a:hover {
   color: var(--brand-alt);
+}
+
+.toc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 .active {

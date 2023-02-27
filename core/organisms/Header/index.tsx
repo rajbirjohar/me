@@ -2,8 +2,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { IconHome } from "@tabler/icons";
-import { useIsScrolling } from "@/hooks/useIsScrolling";
-import { inter } from "core/templates/Layout";
 import Focused from "core/molecules/Focused";
 import LightDarkSwitch from "core/molecules/LightDarkSwitch";
 import ExpandSwitch from "core/molecules/ExpandSwitch";
@@ -81,7 +79,6 @@ export default function Header(props: { sticky?: boolean }): JSX.Element {
 
   const headerClasses = classNames({
     [css.header]: true,
-    [inter.className]: true,
     [css.sticky]: props.sticky,
   });
 

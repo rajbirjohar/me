@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { inter } from "../../templates/Layout";
 import css from "./styles.module.css";
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
@@ -11,7 +10,7 @@ export default function Footer() {
   const { data } = useSWR("/api/github/lastupdated", fetcher);
 
   return (
-    <footer className={inter.className}>
+    <footer>
       <div className={css.footer}>
         <div className={css.content}>
           <p>Thanks for visiting.</p>

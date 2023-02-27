@@ -57,7 +57,7 @@ pre[class*="language-"] {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm) !important;
   line-height: 1.2em;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -69,7 +69,7 @@ pre[class*="language-"] {
 }
 
 pre > code[class*="language-"] {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm) !important;
 }
 
 pre * {

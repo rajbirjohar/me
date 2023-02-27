@@ -1,15 +1,6 @@
-import { Inter, Source_Serif_Pro } from "@next/font/google";
-
-export const inter = Inter({ subsets: ["latin"], variable: "--inter-font" });
-export const sourceSerifPro = Source_Serif_Pro({
-  subsets: ["latin"],
-  variable: "--source-serif-pro-font",
-  weight: "400",
-});
-
 export default function Layout(props: { children: React.ReactNode }) {
   return (
-    <main className={inter.className}>
+    <main>
       {props.children}{" "}
       <div
         style={{

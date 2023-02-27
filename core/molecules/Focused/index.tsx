@@ -1,7 +1,7 @@
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 import css from "./styles.module.css";
-import { inter } from "core/templates/Layout";
+import classNames from "classnames";
 
 export interface NavLinkProps extends LinkProps {
   children: React.ReactElement;
@@ -28,21 +28,19 @@ export default function Focused(props: {
 }): JSX.Element {
   const router = useRouter();
 
+  const focusedClasses = classNames({
+    [css.link]: true,
+    [css.active]:
+      router.asPath === props.href ||
+      router.pathname === props.href ||
+      // In order to keep the link active when traversing
+      // down child routes or dynamic routes.
+      router.asPath.includes(props.href) ||
+      router.pathname.includes(props.href),
+  });
+
   return (
-    <Link
-      aria-label={props.label}
-      href={props.href}
-      className={
-        router.asPath === props.href ||
-        router.pathname === props.href ||
-        // In order to keep the link active when traversing
-        // down child routes or dynamic routes.
-        router.asPath.includes(props.href) ||
-        router.pathname.includes(props.href)
-          ? `${css.link} ${css.active} ${inter.className}`
-          : `${css.link} ${inter.className}`
-      }
-    >
+    <Link aria-label={props.label} href={props.href} className={focusedClasses}>
       <span onClick={props.onClick}>
         <span className={css.label}>{props.children}</span>
       </span>
