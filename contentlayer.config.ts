@@ -19,7 +19,7 @@ const journalComputedFields: ComputedFields = {
   },
   image: {
     type: "string",
-    resolve: (doc) => `/journals/${getSlug(doc)}/image.png`,
+    resolve: (doc) => `/journals/${getSlug(doc)}/index.jpg`,
   },
   og: {
     type: "string",
@@ -62,11 +62,6 @@ export const Journal = defineDocumentType(() => ({
       description: "The description of the post",
       required: true,
     },
-    category: {
-      type: "string",
-      description: "The category of the post",
-      required: true,
-    },
     date: {
       type: "date",
       description: "The date of the post",
@@ -92,6 +87,7 @@ export const Journal = defineDocumentType(() => ({
       required: false,
       default: false,
     },
+    image: { type: "string", required: false },
   },
   computedFields: journalComputedFields,
 }));
@@ -121,11 +117,6 @@ export const Snippet = defineDocumentType(() => ({
     language: {
       type: "string",
       description: "The title of the post",
-      required: true,
-    },
-    category: {
-      type: "string",
-      description: "The category of the post",
       required: true,
     },
     date: {

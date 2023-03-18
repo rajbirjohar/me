@@ -384,10 +384,10 @@
   dependencies:
     glob "7.1.7"
 
-"@next/font@^13.2.2":
-  version "13.2.2"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.2.2.tgz#7ef6e67ead1a4e337e89394194d95eb77c8e95b4"
-  integrity sha512-ZGwJxAfAYRTO+GTrlFqXFnh1vbcXvtf+kMRE23MjyIJpQQA3qFXnMSitXJkfzzyMAFYo1cRuKeWJbIqqFVYRXQ==
+"@next/font@^13.2.4":
+  version "13.2.4"
+  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.2.4.tgz#c8c2249e11338d2e04f3b721a62c560358de0e70"
+  integrity sha512-lMAnuOYjv5g22WhD00u0DQ9u2rTMJH0S64PKE4Sy8Y2q+FJTYs6ZHT2z3VRoI8+AOWSLK4FirpnygcjOienQ9A==
 
 "@next/swc-android-arm-eabi@13.2.1":
   version "13.2.1"
@@ -1186,6 +1186,11 @@ data-uri-to-buffer@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz#d8feb2b2881e6a4f58c2e08acfd0e2834e26222e"
   integrity sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==
+
+date-fns@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
 
 debug@^3.2.7:
   version "3.2.7"

@@ -16,9 +16,9 @@ export default function Layout(props: { children: React.ReactNode }) {
           <motion.div
             key={asPath}
             variants={wrapper}
-            animate="in"
-            initial="out"
-            exit="out"
+            animate="animate"
+            initial="initial"
+            exit="exit"
           >
             {props.children}
           </motion.div>

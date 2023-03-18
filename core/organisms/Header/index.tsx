@@ -18,6 +18,10 @@ const links: { href: string; label: string }[] = [
     label: "projects",
     href: "/projects",
   },
+  {
+    label: "journals",
+    href: "/journals",
+  },
 ];
 
 const MotionLink = motion(Link);
@@ -29,6 +33,10 @@ export default function Header() {
     duration: 0.4,
   };
   const router = useRouter();
+  let pathname = router.asPath || "/";
+  if (pathname.includes("/journals/")) {
+    pathname = "/journals";
+  }
 
   return (
     <header className={css.header}>
@@ -47,7 +55,7 @@ export default function Header() {
             >
               <span className={css.label}>{link.label}</span>
               <AnimatePresence>
-                {router.asPath === link.href ? (
+                {pathname === link.href ? (
                   <motion.div
                     className={css.hovered}
                     transition={transition}

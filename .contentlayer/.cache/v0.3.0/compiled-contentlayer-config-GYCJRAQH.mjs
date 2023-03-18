@@ -17,7 +17,7 @@ var journalComputedFields = {
   },
   image: {
     type: "string",
-    resolve: (doc) => `/journals/${getSlug(doc)}/image.png`
+    resolve: (doc) => `/journals/${getSlug(doc)}/index.jpg`
   },
   og: {
     type: "string",
@@ -58,11 +58,6 @@ var Journal = defineDocumentType(() => ({
       description: "The description of the post",
       required: true
     },
-    category: {
-      type: "string",
-      description: "The category of the post",
-      required: true
-    },
     date: {
       type: "date",
       description: "The date of the post",
@@ -87,7 +82,8 @@ var Journal = defineDocumentType(() => ({
       type: "boolean",
       required: false,
       default: false
-    }
+    },
+    image: { type: "string", required: false }
   },
   computedFields: journalComputedFields
 }));
@@ -115,11 +111,6 @@ var Snippet = defineDocumentType(() => ({
     language: {
       type: "string",
       description: "The title of the post",
-      required: true
-    },
-    category: {
-      type: "string",
-      description: "The category of the post",
       required: true
     },
     date: {
@@ -161,4 +152,4 @@ export {
   Snippet,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-DKDKC6IT.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-GYCJRAQH.mjs.map

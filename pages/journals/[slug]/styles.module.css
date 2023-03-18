@@ -1,0 +1,22 @@
+.header > * + * {
+margin-block-start: var(--space-sm);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--sub-fg);
+}
+
+.hero {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: var(--space) 0;
+  box-shadow: var(--shadow);
+}
+
+.image {
+  object-fit: cover;
+  border-radius: var(--radius);
+}

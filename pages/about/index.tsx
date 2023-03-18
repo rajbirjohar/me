@@ -14,15 +14,17 @@ export default function About() {
       <section>
         <Prose>
           <motion.h2 variants={item}>Who Am I</motion.h2>
-          <motion.p variants={item}>
-            Hi there! My name is Rajbir Johar and I am a{" "}
-            <strong>Frontend Architect</strong> at Inventives, where I am
-            responsible for designing, coding and maintaining user interfaces.
-            My focus is on creating <strong>enjoyable user experiences</strong>{" "}
-            and delivering <strong>aesthetic design language</strong> in all of
-            my projects.
+          <motion.div variants={item}>
+            <p>
+              Hi there! My name is Rajbir Johar and I am a{" "}
+              <strong>Frontend Architect</strong> at Inventives, where I am
+              responsible for designing, coding and maintaining user interfaces.
+              My focus is on creating{" "}
+              <strong>enjoyable user experiences</strong> and delivering{" "}
+              <strong>aesthetic design language</strong> in all of my projects.
+            </p>
             <hr />
-          </motion.p>
+          </motion.div>
           <motion.p variants={item}>
             I am an artist at heart and I approach my work with a unique
             perspective. I believe in the importance of{" "}

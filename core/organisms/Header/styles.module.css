@@ -12,12 +12,13 @@
   border-radius: var(--radius);
 }
 
-.link:hover {
+.link:hover,
+.link.selected {
   color: var(--link-hover);
 }
 
 .link.selected:hover {
-  color: var(--link);
+  color: var(--link-hover);
 }
 
 .hovered {

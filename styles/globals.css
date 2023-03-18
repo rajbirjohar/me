@@ -53,13 +53,15 @@
 
   --bg: var(--stone-100);
   --heading-fg: var(--stone-900);
-  --fg: var(--stone-700);
+  --fg: var(--stone-600);
+  --sub-fg: var(--stone-400);
   --border-color: var(--stone-200);
   --button-bg: var(--stone-200);
   --button-bg-hover: var(--stone-300);
   --button-fg: var(--stone-800);
   --link: var(--brand);
   --link-hover: var(--brand-dark);
+  --card-bg: var(--stone-50);
 
   --border: 2px solid var(--border-color);
 
@@ -91,12 +93,14 @@
   --bg: #111010;
   --heading-fg: var(--stone-50);
   --fg: var(--stone-300);
+  --sub-fg: var(--stone-500);
   --border-color: var(--stone-800);
   --button-bg: var(--stone-800);
   --button-bg-hover: var(--stone-700);
   --button-fg: var(--stone-100);
   --link: var(--brand-light);
   --link-hover: var(--brand-lighter);
+  --card-bg: var(--stone-900);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -313,8 +317,8 @@ button {
   content: "#";
   position: absolute;
   top: 0;
-  left: -1.5rem;
-  color: var(--secondary-fg);
+  left: -1em;
+  color: var(--sub-fg);
 }
 
 ::selection {
@@ -345,7 +349,7 @@ button {
   }
 }
 
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 868px) {
   .anchor:hover::before {
     display: none;
   }

@@ -17,8 +17,6 @@ export type Journal = {
   title: string
   /** The description of the post */
   description: string
-  /** The category of the post */
-  category: string
   /** The date of the post */
   date: IsoDateTimeString
   /** The author of the post */
@@ -28,6 +26,7 @@ export type Journal = {
   /** Determines if the post has been published */
   draft: boolean
   toc: boolean
+  image?: string | undefined
   /** MDX file body */
   body: MDX
   slug: string
@@ -47,8 +46,6 @@ export type Snippet = {
   description: string
   /** The title of the post */
   language: string
-  /** The category of the post */
-  category: string
   /** The date of the post */
   date: IsoDateTimeString
   /** Determines if the post has been published */
