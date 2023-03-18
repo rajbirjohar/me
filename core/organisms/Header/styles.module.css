@@ -1,0 +1,32 @@
+.navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--space) 0;
+  gap: var(--space-xs);
+}
+
+.link {
+  position: relative;
+  padding: var(--space-xs) var(--space);
+  border-radius: var(--radius);
+}
+
+.link:hover {
+  color: var(--link-hover);
+}
+
+.link.selected:hover {
+  color: var(--link);
+}
+
+.hovered {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: var(--radius);
+  background-color: var(--button-bg);
+}

@@ -1,0 +1,9 @@
+.prose {
+  width: 100%;
+  max-width: var(--prose);
+}
+
+.prose > * + *,
+.prose > * + * > * + * {
+  margin-block-start: 1rem;
+}
