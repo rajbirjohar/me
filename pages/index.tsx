@@ -5,7 +5,6 @@ import css from "@/styles/styles.module.css";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { item } from "@/utils/animations";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -49,14 +48,6 @@ export default function Home() {
               >
                 <ArrowUpRight />
                 LinkedIn
-              </Link>
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href={"https://www.instagram.com/rajbir.johar/"}
-              >
-                <ArrowUpRight />
-                Instagram
               </Link>
             </div>
           </motion.div>

@@ -41,7 +41,7 @@ export default function JournalCard(props: { journal: Journal }) {
             <Image
               src={props.journal.image}
               className={css.image}
-              alt=""
+              alt={`${props.journal.title} journal image`}
               fill
             />
           )}

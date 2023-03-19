@@ -32,7 +32,7 @@ export default function About() {
             <strong>continuous learning</strong> to stay at the forefront of my
             field. Although I spend most of my time coding, I find great joy in
             designing visually stunning and user-friendly interfaces. My
-            particular expertise in CSS allows me to bring my ideas to life.
+            particular expertise in CSS lets me to bring my ideas to life.
           </motion.p>
           <motion.div className={css.signaturewrapper} variants={item}>
             <Signature />
