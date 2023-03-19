@@ -11,6 +11,10 @@ export default function Home() {
     <>
       <Head>
         <title>Rajbir Johar</title>
+        <meta
+          content="An overview of different aspects of my career and what I've been up to lately."
+          name="description"
+        />
       </Head>
       <section>
         <Prose>
