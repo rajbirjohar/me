@@ -1,5 +1,4 @@
 .signaturewrapper {
   display: flex;
   justify-content: flex-end;
-  margin: var(--space-md) 0;
 }
