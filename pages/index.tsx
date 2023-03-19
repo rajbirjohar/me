@@ -31,7 +31,13 @@ export default function Home() {
             <hr />
           </motion.div>
           <motion.div variants={item}>
-            <h4>Elsewhere</h4>
+            <h3
+              style={{
+                fontSize: "var(--font-base)",
+              }}
+            >
+              Elsewhere
+            </h3>
             <div className={css.links}>
               <Link
                 target="_blank"
