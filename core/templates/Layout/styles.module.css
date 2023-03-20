@@ -26,6 +26,6 @@
     margin: var(--space-xl) 0;
   }
   .article {
-    padding: 0;
+    padding: 0 0 var(--space-lg) 0;
   }
 }

@@ -5,7 +5,7 @@ import css from "./styles.module.css";
 import Animate from "@/core/organisms/Animate";
 
 export default function About() {
-  return ( 
+  return (
     <>
       <Head>
         <title>Rajbir Johar</title>

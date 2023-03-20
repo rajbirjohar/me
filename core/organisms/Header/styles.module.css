@@ -38,11 +38,12 @@
 
 @media screen and (max-width: 668px) {
   .navigation {
+    flex-wrap: wrap;
+    flex-direction: row;
     position: relative;
     top: 0;
     padding-bottom: 0;
-  }
-  .navigation {
-    flex-direction: row;
+    gap: 0;
+    width: 100%;
   }
 }
