@@ -1,5 +1,31 @@
 .main {
   min-height: 100vh;
+  width: 100%;
+  max-width: var(--main-content);
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  gap: var(--space-xl);
+  padding: 0 var(--space-md);
+}
+
+.article {
+  width: 100%;
+  padding: var(--space-2xl) var(--space-2xl) var(--space-2xl) 0;
+}
+
+@media screen and (max-width: 768px) {
+  .article {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .main {
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+  }
+  .article {
+    padding: 0;
+  }
 }

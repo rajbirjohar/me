@@ -83,7 +83,8 @@ var Journal = defineDocumentType(() => ({
       required: false,
       default: false
     },
-    image: { type: "string", required: false }
+    image: { type: "string", required: false },
+    banner: { type: "boolean", required: true, default: true }
   },
   computedFields: journalComputedFields
 }));
@@ -152,4 +153,4 @@ export {
   Snippet,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-GYCJRAQH.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-6ESI7GTI.mjs.map

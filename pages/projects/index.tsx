@@ -1,6 +1,5 @@
 import Prose from "@/core/atoms/Prose";
-import { item } from "@/utils/animations";
-import { motion } from "framer-motion";
+import Animate from "@/core/organisms/Animate";
 import Head from "next/head";
 
 export default function Projects() {
@@ -11,10 +10,14 @@ export default function Projects() {
       </Head>
       <section>
         <Prose>
-          <motion.h2 variants={item}>Projects</motion.h2>
-          <motion.p variants={item}>
-            <em>Stay tuned.</em>
-          </motion.p>
+          <Animate>
+            <h1>Projects</h1>
+          </Animate>
+          <Animate>
+            <p>
+              <em>Stay tuned.</em>
+            </p>
+          </Animate>
         </Prose>
       </section>
     </>

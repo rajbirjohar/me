@@ -1,5 +1,5 @@
 .header > * + * {
-margin-block-start: var(--space-sm);
+  margin-block-start: var(--space-sm);
 }
 
 .author {
@@ -7,6 +7,10 @@ margin-block-start: var(--space-sm);
   align-items: center;
   justify-content: space-between;
   color: var(--sub-fg);
+}
+
+.author time {
+  font-family: var(--font-mono);
 }
 
 .hero {

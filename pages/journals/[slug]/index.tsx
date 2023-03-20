@@ -41,7 +41,7 @@ export default function Journal(props: { journal: JournalType }) {
       </Head>
       <Prose>
         <header className={css.header}>
-          {props.journal.image && (
+          {props.journal.image && props.journal.banner && (
             <div className={css.hero}>
               <Image
                 src={props.journal.image}

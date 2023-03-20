@@ -1,10 +1,6 @@
-import { Journal } from "@/.contentlayer/generated";
-import Link from "next/link";
-import css from "./styles.module.css";
 import { Variants, motion } from "framer-motion";
-import { format } from "date-fns";
 
-export default function JournalCard(props: { journal: Journal }) {
+export default function Animate(props: { children: React.ReactNode }) {
   const item: Variants = {
     initial: {
       opacity: 0,
@@ -31,13 +27,8 @@ export default function JournalCard(props: { journal: Journal }) {
     },
   };
   return (
-    <motion.div className={css.journal} variants={item}>
-      <Link href={`/journals/${props.journal.slug}`} className="clamp">
-        {props.journal.title}
-      </Link>
-      <time className={css.date}>
-        {format(new Date(props.journal.date), "M.dd.yyyy")}
-      </time>
+    <motion.div variants={item} style={{ minWidth: "100%" }}>
+      {props.children}
     </motion.div>
   );
 }

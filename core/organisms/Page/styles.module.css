@@ -1,6 +1,0 @@
-.article {
-  width: 100%;
-  max-width: var(--main-content);
-  margin: 0 auto;
-  padding: 5rem var(--space-md);
-}

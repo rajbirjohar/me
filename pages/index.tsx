@@ -4,7 +4,7 @@ import Link from "next/link";
 import css from "@/styles/styles.module.css";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { item } from "@/utils/animations";
+import Animate from "@/core/organisms/Animate";
 
 export default function Home() {
   return (
@@ -18,13 +18,17 @@ export default function Home() {
       </Head>
       <section>
         <Prose>
-          <motion.h2 variants={item}>Hello, hello.</motion.h2>
-          <motion.div variants={item}>
+          <Animate>
+            <h1>Rajbir Johar</h1>
+          </Animate>
+          <Animate>
             <p>I&#39;m Rajbir. I&#39;m a developer and designer.</p>
             <p>I also take photos, play bass, and get lost on canyon drives.</p>
-          </motion.div>
-          <motion.h2 variants={item}>Lately,</motion.h2>
-          <motion.div variants={item}>
+          </Animate>
+          <Animate>
+            <h2>Lately,</h2>
+          </Animate>
+          <Animate>
             <p>I craft beautiful interfaces for mind blowing ideas.</p>
             <p>
               My work deals with Typescript and React and plenty of CSS. From
@@ -33,8 +37,8 @@ export default function Home() {
               use.
             </p>
             <hr />
-          </motion.div>
-          <motion.div variants={item}>
+          </Animate>
+          <Animate>
             <h3
               style={{
                 fontSize: "var(--font-base)",
@@ -60,7 +64,7 @@ export default function Home() {
                 LinkedIn
               </Link>
             </div>
-          </motion.div>
+          </Animate>
         </Prose>
       </section>
     </>

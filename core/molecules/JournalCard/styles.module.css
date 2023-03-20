@@ -1,10 +1,6 @@
-.journalcard {
-  background-color: var(--card-bg);
-  box-shadow: var(--shadow);
-  position: relative;
-  border-radius: var(--radius);
-  color: var(--fg);
-  transition: scale var(--transition-slower);
+.journal {
+  display: flex;
+  flex-direction: column;
 }
 
 .thumbnail {
@@ -14,43 +10,19 @@
   border-radius: inherit;
 }
 
-.image {
-  object-fit: cover;
-  border-radius: var(--radius) var(--radius) 0 0;
-}
-
-.content {
-  padding: var(--space) var(--space-md);
-  font-size: var(--font-sm);
-}
-
-.content > * + * {
-  margin-block-start: var(--space-sm);
-}
-
-.journalcard h3 {
+.journal h3 {
   color: var(--link);
   transition: color var(--transition-slower);
 }
 
 .date {
-  display: flex;
-  justify-content: flex-end;
   font-size: var(--font-sm);
+  font-family: var(--font-mono);
   color: var(--sub-fg);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .journalcard:hover {
-    scale: 1.02;
-    transition: scale var(--transition-slow);
-  }
-
-  .journalcard:hover h3 {
+  .journal h3:hover {
     color: var(--link-hover);
-  }
-
-  .journalcard:active {
-    scale: 1;
   }
 }

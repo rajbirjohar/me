@@ -1,7 +1,7 @@
 import { Journal, allJournals } from "@/.contentlayer/generated";
 import Prose from "@/core/atoms/Prose";
-import JournalGrid from "@/core/organisms/JournalGrid";
-import { item } from "@/utils/animations";
+import Animate from "@/core/organisms/Animate";
+import JournalList from "@/core/organisms/JournalList";
 import { pick } from "contentlayer/client";
 import { compareDesc } from "date-fns";
 import { motion } from "framer-motion";
@@ -19,15 +19,15 @@ export default function Journals(props: { journals: Journal[] }) {
       </Head>
       <section>
         <Prose>
-          <motion.h2 variants={item}>Journals</motion.h2>
-          <motion.div variants={item}>
+          <Animate>
+            <h1>Journals</h1>
+          </Animate>
+          <Animate>
             <p>Writing about design, development, and professional growth.</p>
             <hr />
-          </motion.div>
+          </Animate>
         </Prose>
-        <motion.div variants={item}>
-          <JournalGrid journals={props.journals} />
-        </motion.div>
+        <JournalList journals={props.journals} />
       </section>
     </>
   );

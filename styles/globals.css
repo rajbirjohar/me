@@ -1,18 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 
 :root {
   /* Typography */
-  --font-mono: "Menlo", "SFMono-Regular", "Consolas", "Liberation Mono",
-    monospace;
+  --font-mono: "Fira Code", "Menlo", "SFMono-Regular", "Consolas",
+    "Liberation Mono", monospace;
 
   /* Font sizes */
-  --font-xs: clamp(0.75rem, 0.16vw + 0.65rem, 0.78rem);
-  --font-sm: clamp(0.95rem, 0.18vw + 0.79rem, 0.94rem);
-  --font-base: clamp(1rem, 0.2vw + 0.9rem, 1.1rem);
-  --font-md: clamp(1.2rem, 0.27vw + 1.13rem, 1.35rem);
-  --font-lg: clamp(1.44rem, 0.33vw + 1.36rem, 1.62rem);
-  --font-xl: clamp(1.8rem, 0.35vw + 1.5rem, 1.7rem);
-  --font-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-xs: clamp(0.83rem, 0vw + 0.83rem, 0.83rem);
+  --font-sm: clamp(0.91rem, 0vw + 0.91rem, 0.91rem);
+  --font-base: clamp(1rem, 0vw + 1rem, 1rem);
+  --font-md: clamp(1.1rem, 0vw + 1.1rem, 1.1rem);
+  --font-lg: clamp(1.21rem, 0vw + 1.21rem, 1.21rem);
+  --font-xl: clamp(1.33rem, 0vw + 1.33rem, 1.33rem);
 
   /* Transitions */
   --transition: 200ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -45,7 +44,7 @@
   --red-800: #991b1b;
   --red-900: #7f1d1d;
 
-  --brand-ligher: #7bb1cc;
+  --brand-ligher: #79c2e7;
   --brand-light: #4f97ba;
   --brand: #37718e;
   --brand-dark: #285267;
@@ -62,6 +61,8 @@
   --link: var(--brand);
   --link-hover: var(--brand-dark);
   --card-bg: var(--stone-50);
+  --highlight-bg: var(--brand);
+  --highlight-fg: var(--bg);
 
   --border: 2px solid var(--border-color);
 
@@ -77,8 +78,7 @@
   --space-3xl: 16rem;
   --space-4xl: 32rem;
   --space-5xl: 64rem;
-  --main-content: 64rem;
-  --prose: 36rem;
+  --main-content: 56rem;
   --radius-sm: 8px;
   --radius: 12px;
   --radius-full: 50%;
@@ -101,6 +101,8 @@
   --link: var(--brand-light);
   --link-hover: var(--brand-lighter);
   --card-bg: var(--stone-900);
+  --highlight-bg: var(--brand-light);
+  --highlight-fg: var(--bg);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -240,28 +242,39 @@ strong {
 }
 
 pre {
-  font-size: var(--font-sm) !important;
+  background-color: var(--card-bg);
+  padding: var(--space-sm) var(--space);
+  border-radius: var(--radius-sm);
 }
 
 code {
   font-family: var(--font-mono);
-  font-size: var(--font-sm) !important;
-  background-color: var(--step-bg);
+  background-color: var(--card-bg);
   padding: var(--space-xs) var(--space-sm);
   border-radius: 5px;
 }
 
+pre code {
+  padding: 0;
+}
+
 mark {
-  background-color: var(--main);
+  background-color: var(--highlight-bg);
+  color: var(--highlight-fg);
 }
 
 blockquote {
-  margin: var(--space-md) 0;
-  padding: 0 var(--space);
+  padding: var(--space-sm) var(--space);
   border-left: var(--border);
-  border-color: var(--step-bg);
+  border-color: var(--link);
   font-style: italic;
-  color: var(--void-5);
+  color: var(--fg);
+}
+
+cite {
+  color: var(--sub-fg);
+  margin: var(--space) 0;
+  display: block;
 }
 
 button {
@@ -317,19 +330,19 @@ button {
   content: "#";
   position: absolute;
   top: 0;
-  left: -1em;
+  left: -1.1em;
   color: var(--sub-fg);
 }
 
 ::selection {
-  background: var(--brand);
-  color: var(--stone-50); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--stone-50);
+  background: var(--highlight-bg);
+  color: var(--highlight-fg); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--highlight-fg);
 }
 ::-moz-selection {
-  background: var(--brand);
-  color: var(--stone-50);
-  -webkit-text-fill-color: var(--stone-50); /* Gecko Browsers */
+  background: var(--highlight-bg);
+  color: var(--highlight-fg);
+  -webkit-text-fill-color: var(--highlight-fg); /* Gecko Browsers */
 }
 
 /*

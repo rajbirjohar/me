@@ -3,8 +3,8 @@ import JournalCard from "@/core/molecules/JournalCard";
 import css from "./styles.module.css";
 import { Variants, motion } from "framer-motion";
 
-export default function JournalGrid(props: { journals: Journal[] }) {
-  const grid: Variants = {
+export default function JournalList(props: { journals: Journal[] }) {
+  const list: Variants = {
     initial: {
       opacity: 0,
     },
@@ -21,11 +21,11 @@ export default function JournalGrid(props: { journals: Journal[] }) {
 
   return (
     <motion.div
-      variants={grid}
+      variants={list}
       initial="initial"
       animate="animate"
       exit="exit"
-      className={css.grid}
+      className={css.list}
     >
       {props.journals.map((journal) => (
         <JournalCard key={journal.title} journal={journal} />

@@ -27,6 +27,7 @@ export type Journal = {
   draft: boolean
   toc: boolean
   image?: string | undefined
+  banner: boolean
   /** MDX file body */
   body: MDX
   slug: string

@@ -1,26 +1,27 @@
 import Image from "next/image";
+import css from "./styles.module.css";
 
 export default function CustomImage(props: {
   src: string;
-  width: number;
-  height: number;
   alt: string;
-  caption?: string;
-  breakout?: true;
+  caption: string;
   priority?: true;
 }) {
   return (
-    <div>
-      <figure>
-        <Image
-          src={props.src}
-          width={props.width}
-          height={props.height}
-          alt={props.alt}
-          priority={props.priority}
-        />
-        {props.caption && <figcaption>{props.caption}</figcaption>}
-      </figure>
-    </div>
+    <figure className={css.figure}>
+      <Image
+        src={props.src}
+        alt={props.alt}
+        priority={props.priority}
+        width={0}
+        height={0}
+        sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+        className={css.image}
+      />
+
+      <figcaption className={css.caption}>{props.caption}</figcaption>
+    </figure>
   );
 }

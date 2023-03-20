@@ -88,6 +88,7 @@ export const Journal = defineDocumentType(() => ({
       default: false,
     },
     image: { type: "string", required: false },
+    banner: { type: "boolean", required: true, default: true },
   },
   computedFields: journalComputedFields,
 }));

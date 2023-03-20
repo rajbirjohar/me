@@ -1,15 +1,19 @@
 .navigation {
-  position: relative;
+  position: sticky;
+  top: var(--space-2xl);
+  height: max-content;
+  width: max-content;
   display: flex;
-  align-items: center;
-  padding: var(--space) 0;
+  flex-direction: column;
   gap: var(--space-xs);
+  overflow: hidden;
 }
 
 .link {
   position: relative;
   padding: var(--space-xs) var(--space);
   border-radius: var(--radius);
+  display: block;
 }
 
 .link:hover,
@@ -21,7 +25,7 @@
   color: var(--link-hover);
 }
 
-.hovered {
+.indicator {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -30,4 +34,15 @@
   right: 0;
   border-radius: var(--radius);
   background-color: var(--button-bg);
+}
+
+@media screen and (max-width: 668px) {
+  .navigation {
+    position: relative;
+    top: 0;
+    padding-bottom: 0;
+  }
+  .navigation {
+    flex-direction: row;
+  }
 }
