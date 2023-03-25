@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import classNames from "classnames";
 import { lora } from "@/pages/_app";
+import profile from "@/public/profile.jpg";
+import Image from "next/image";
 
 const links: { href: string; label: string }[] = [
   {
@@ -39,7 +41,12 @@ export default function Header() {
   }
 
   return (
-    <header>
+    <header className={css.header}>
+      <Image
+        src={profile}
+        alt="A black and white profile picture of me. I'm wearing round black glasses and a black jacket and I'm standing in front of a wall of leaves."
+        className={css.profile}
+      />
       <motion.nav
         layout
         layoutRoot

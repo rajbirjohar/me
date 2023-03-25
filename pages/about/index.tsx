@@ -8,12 +8,12 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Rajbir Johar</title>
+        <title>Rajbir Johar | About</title>
       </Head>
       <section>
         <Prose>
           <Animate>
-            <h2>Who Am I</h2>
+            <h1>Who Am I</h1>
           </Animate>
           <Animate>
             <p>

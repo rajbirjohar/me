@@ -2,15 +2,31 @@
   margin-block-start: var(--space-sm);
 }
 
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .author {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: var(--sub-fg);
+  font-family: var(--font-mono);
+  gap: var(--space);
 }
 
 .author time {
-  font-family: var(--font-mono);
+  color: var(--fg);
+  background-color: var(--button-bg);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+.line {
+  flex-grow: 1;
+  width: unset;
 }
 
 .hero {
@@ -23,4 +39,12 @@
 .image {
   object-fit: cover;
   border-radius: var(--radius);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-lg);
+  margin: var(--space-md) 0;
 }

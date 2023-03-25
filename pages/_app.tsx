@@ -5,11 +5,13 @@ import { Lora } from "@next/font/google";
 import { Inter } from "@next/font/google";
 import { ThemeProvider } from "next-themes";
 import { useNextCssRemovalPrevention } from "../hooks/useNextCssRemovalPrevention";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const lora = Lora({ subsets: ["latin"], variable: "--font-heading" });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient();
   useNextCssRemovalPrevention();
   return (
     <ThemeProvider enableSystem>
@@ -26,9 +28,11 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${lora.style.fontFamily};
         }
       `}</style>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <QueryClientProvider client={queryClient}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }

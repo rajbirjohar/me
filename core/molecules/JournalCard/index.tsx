@@ -1,10 +1,10 @@
-import { Journal } from "@/.contentlayer/generated";
 import Link from "next/link";
 import css from "./styles.module.css";
 import { Variants, motion } from "framer-motion";
 import { format } from "date-fns";
+import { TrackedJournal } from "@/core/organisms/JournalList";
 
-export default function JournalCard(props: { journal: Journal }) {
+export default function JournalCard(props: { journal: TrackedJournal }) {
   const item: Variants = {
     initial: {
       opacity: 0,
@@ -32,9 +32,12 @@ export default function JournalCard(props: { journal: Journal }) {
   };
   return (
     <motion.div className={css.journal} variants={item}>
-      <Link href={`/journals/${props.journal.slug}`} className="clamp">
-        {props.journal.title}
-      </Link>
+      <div className={css.heading}>
+        <Link href={`/journals/${props.journal.slug}`} className="clamp">
+          {props.journal.title}
+        </Link>
+        <span>{props.journal.views ?? <>—</>} views</span>
+      </div>
       <time className={css.date}>
         {format(new Date(props.journal.date), "M.dd.yyyy")}
       </time>

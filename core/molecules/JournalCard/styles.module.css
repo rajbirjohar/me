@@ -3,6 +3,17 @@
   flex-direction: column;
 }
 
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading span {
+  font-family: var(--font-mono);
+  font-size: var(--font-sm);
+}
+
 .thumbnail {
   width: 100%;
   height: 10rem;

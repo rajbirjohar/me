@@ -7,9 +7,40 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import MDXComponents from "@/core/molecules/JournalComponents";
 import css from "./styles.module.css";
 import { format } from "date-fns";
+import { TrackedJournal } from "@/core/organisms/JournalList";
+import { useQuery } from "@tanstack/react-query";
+import { lora } from "@/pages/_app";
 
-export default function Journal(props: { journal: JournalType }) {
+export default function Journal(props: { journal: TrackedJournal }) {
   const MDXContent = useMDXComponent(props.journal.body.code);
+
+  const fetchJournalViews = async () => {
+    const response = await fetch(`/api/views/${props.journal.slug}`);
+    return response.json();
+  };
+
+  const incrementJournalViews = async () => {
+    const response = await fetch(`/api/views/${props.journal.slug}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return response.json();
+  };
+
+  const views = useQuery({
+    queryKey: [props.journal.slug],
+    queryFn: fetchJournalViews,
+  });
+
+  useQuery({
+    queryKey: [props.journal.slug, "increment"],
+    queryFn: incrementJournalViews,
+    refetchOnMount: false,
+    refetchOnReconnect: false,
+    refetchOnWindowFocus: false,
+  });
 
   return (
     <>
@@ -52,13 +83,14 @@ export default function Journal(props: { journal: JournalType }) {
               />
             </div>
           )}
-          <h1>{props.journal.title}</h1>
+          <h1 className={css.title}>{props.journal.title}</h1>
           <div className={css.author}>
-            <span>{props.journal.author}</span>
             <time>{format(new Date(props.journal.date), "M.dd.yyyy")}</time>
+            <hr className={css.line} />
+            <span>{views.data ?? <>—</>} views</span>
           </div>
           <p>{props.journal.description}</p>
-          <hr />
+          <div className={`${css.divider} ${lora.className}`}>***</div>
         </header>
         <section>
           <MDXContent components={MDXComponents} />

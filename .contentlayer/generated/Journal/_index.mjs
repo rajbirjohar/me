@@ -2,5 +2,6 @@
 
 import journals__helloWorldMdx from './journals__hello-world.mdx.json'
 import journals__mdxMdx from './journals__mdx.mdx.json'
+import journals__sandSailorMdx from './journals__sand-sailor.mdx.json'
 
-export const allJournals = [journals__helloWorldMdx, journals__mdxMdx]
+export const allJournals = [journals__helloWorldMdx, journals__mdxMdx, journals__sandSailorMdx]

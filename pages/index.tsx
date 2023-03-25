@@ -3,10 +3,20 @@ import Head from "next/head";
 import Link from "next/link";
 import css from "@/styles/styles.module.css";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
 import Animate from "@/core/organisms/Animate";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Home() {
+  const fetchCurrentlyPlaying = async () => {
+    const response = await fetch("/api/spotify/playing");
+    return response.json();
+  };
+
+  const song = useQuery<Track>({
+    queryKey: ["playing"],
+    queryFn: fetchCurrentlyPlaying,
+  });
+
   return (
     <>
       <Head>
@@ -36,6 +46,16 @@ export default function Home() {
               interfaces that not only look amazing but also feel effortless to
               use.
             </p>
+          </Animate>
+          <Animate>
+            {song.isError || (song.isLoading && <></>)}
+            {song.data && song.data.title !== "" && (
+              <p>
+                Currently listening to{" "}
+                <Link href={song.data.url}>{song.data.title}</Link> by{" "}
+                {song.data.artist}.
+              </p>
+            )}
             <hr />
           </Animate>
           <Animate>
