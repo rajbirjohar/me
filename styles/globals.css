@@ -46,14 +46,14 @@
 
   --brand-ligher: #79c2e7;
   --brand-light: #4f97ba;
-  --brand: #37718e;
+  --brand: #31657f;
   --brand-dark: #285267;
   --brand-darker: #172f3b;
 
   --bg: var(--stone-100);
   --heading-fg: var(--stone-900);
-  --fg: var(--stone-600);
-  --sub-fg: var(--stone-400);
+  --fg: var(--stone-700);
+  --sub-fg: var(--stone-600);
   --border-color: var(--stone-200);
   --button-bg: var(--stone-200);
   --button-bg-hover: var(--stone-300);
@@ -93,7 +93,7 @@
   --bg: #111010;
   --heading-fg: var(--stone-50);
   --fg: var(--stone-300);
-  --sub-fg: var(--stone-500);
+  --sub-fg: var(--stone-400);
   --border-color: var(--stone-800);
   --button-bg: var(--stone-800);
   --button-bg-hover: var(--stone-700);
@@ -359,6 +359,9 @@ button {
   }
   button:hover {
     background-color: var(--button-bg-hover);
+  }
+  a:focus {
+    background-color: transparent;
   }
 }
 

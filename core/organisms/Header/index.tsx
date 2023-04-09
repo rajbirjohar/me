@@ -54,6 +54,7 @@ export default function Header() {
       >
         {links.map((link) => (
           <MotionLink
+            tabIndex={0}
             key={link.href}
             href={link.href}
             className={

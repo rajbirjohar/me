@@ -1,6 +1,13 @@
 .main {
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+  width: 100%;
   max-width: var(--main-content);
   margin: 0 auto;
   display: flex;
@@ -20,7 +27,7 @@
 }
 
 @media screen and (max-width: 668px) {
-  .main {
+  .page {
     flex-direction: column;
     gap: var(--space-lg);
     margin: var(--space-xl) 0;

@@ -1,7 +1,8 @@
 import Header from "@/core/organisms/Header";
-import { AnimatePresence, Variants, motion } from "framer-motion";
+import { AnimatePresence, LayoutGroup, Variants, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import css from "./styles.module.css";
+import Ascii from "@/core/atoms/Ascii";
 
 export default function Layout(props: { children: React.ReactNode }) {
   const { asPath } = useRouter();
@@ -23,19 +24,25 @@ export default function Layout(props: { children: React.ReactNode }) {
 
   return (
     <main className={css.main}>
-      <Header />
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.article
-          className={css.article}
-          key={asPath}
-          variants={wrapper}
-          animate="animate"
-          initial="initial"
-          exit="exit"
-        >
-          {props.children}
-        </motion.article>
-      </AnimatePresence>
+      <LayoutGroup>
+        <div className={css.page}>
+          <Header />
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.article
+              className={css.article}
+              key={asPath}
+              variants={wrapper}
+              animate="animate"
+              initial="initial"
+              exit="exit"
+              layout
+            >
+              {props.children}
+            </motion.article>
+          </AnimatePresence>
+        </div>
+        <Ascii />
+      </LayoutGroup>
     </main>
   );
 }

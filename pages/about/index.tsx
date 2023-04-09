@@ -17,7 +17,7 @@ export default function About() {
           </Animate>
           <Animate>
             <p>
-              Hi there! I&#39;m a <strong>Frontend Architect</strong> at
+              Hi there! I&#39;m a <strong>UX Engineer Lead</strong> at
               Inventives, where I&#39;m responsible for designing, coding and
               maintaining user interfaces.
             </p>
