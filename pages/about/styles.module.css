@@ -2,3 +2,24 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.profile {
+  margin-top: var(--space);
+  height: auto;
+  width: 10rem;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 868px) {
+  .hero {
+    flex-direction: column;
+  }
+}

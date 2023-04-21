@@ -6,6 +6,9 @@
   overflow-x: hidden;
   justify-content: center;
   align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
 }
 
 .ascii {
@@ -17,6 +20,8 @@
   font-family: "JetBrains Mono", monospace;
   color: var(--fg);
   background-color: var(--bg);
+  font-size: var(--font-sm);
+  opacity: 0.2;
 }
 
 .smoke {

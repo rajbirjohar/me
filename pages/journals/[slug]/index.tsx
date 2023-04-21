@@ -9,7 +9,6 @@ import css from "./styles.module.css";
 import { format } from "date-fns";
 import { TrackedJournal } from "@/core/organisms/JournalList";
 import { useQuery } from "@tanstack/react-query";
-import { lora } from "@/pages/_app";
 
 export default function Journal(props: { journal: TrackedJournal }) {
   const MDXContent = useMDXComponent(props.journal.body.code);
@@ -90,7 +89,7 @@ export default function Journal(props: { journal: TrackedJournal }) {
             <span>{views.data ?? <>—</>} views</span>
           </div>
           <p>{props.journal.description}</p>
-          <div className={`${css.divider} ${lora.className}`}>***</div>
+          <div className={css.divider}>***</div>
         </header>
         <section>
           <MDXContent components={MDXComponents} />

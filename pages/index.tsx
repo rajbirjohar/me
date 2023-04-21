@@ -56,34 +56,6 @@ export default function Home() {
                 {song.data.artist}.
               </p>
             )}
-            <hr />
-          </Animate>
-          <Animate>
-            <h3
-              style={{
-                fontSize: "var(--font-base)",
-              }}
-            >
-              Elsewhere
-            </h3>
-            <div className={css.links}>
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href={"https://github.com/rajbirjohar"}
-              >
-                <ArrowUpRight />
-                Github
-              </Link>
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href={"https://www.linkedin.com/in/rajbirjohar/"}
-              >
-                <ArrowUpRight />
-                LinkedIn
-              </Link>
-            </div>
           </Animate>
         </Prose>
       </section>

@@ -78,9 +78,10 @@
   --space-3xl: 16rem;
   --space-4xl: 32rem;
   --space-5xl: 64rem;
-  --main-content: 56rem;
-  --radius-sm: 8px;
-  --radius: 12px;
+  --main-content: 42rem;
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-inner: calc(var(--space) - var(--radius));
   --radius-full: 50%;
   --radius-inline: 4px;
 
@@ -234,7 +235,7 @@ hr {
   background-color: var(--border-color);
   border: none;
   border-radius: 4px;
-  margin: var(--space-lg) 0 !important;
+  margin: var(--space-lg) 0;
 }
 
 strong {
@@ -282,10 +283,8 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  min-width: 40px;
   gap: var(--space-xs);
-  padding: var(--space-xs) var(--space);
+  padding: var(--space-sm);
   border-radius: var(--radius);
   transition: all var(--transition-slower);
   background-color: var(--button-bg);
@@ -293,7 +292,14 @@ button {
   cursor: pointer;
 }
 
-.button svg {
+a:hover {
+  color: var(--link-hover);
+}
+button:hover {
+  background-color: var(--button-bg-hover);
+}
+
+button svg {
   min-width: 24px;
   min-height: 24px;
   max-width: 24px;
@@ -351,18 +357,6 @@ button {
 #root,
 #__next {
   isolation: isolate;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  a:hover {
-    color: var(--link-hover);
-  }
-  button:hover {
-    background-color: var(--button-bg-hover);
-  }
-  a:focus {
-    background-color: transparent;
-  }
 }
 
 @media screen and (max-width: 868px) {

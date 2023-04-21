@@ -1,8 +1,13 @@
 import Prose from "@/core/atoms/Prose";
 import Signature from "@/core/atoms/Signature";
 import Head from "next/head";
+import Animate, { item } from "@/core/organisms/Animate";
+import profile from "@/public/profile.jpg";
+import Image from "next/image";
 import css from "./styles.module.css";
-import Animate from "@/core/organisms/Animate";
+import { motion } from "framer-motion";
+
+const MotionImage = motion(Image);
 
 export default function About() {
   return (
@@ -15,19 +20,32 @@ export default function About() {
           <Animate>
             <h1>Who Am I</h1>
           </Animate>
+          <div className={css.hero}>
+            <MotionImage
+              src={profile}
+              alt="A black and white profile picture of me. I'm wearing round black glasses and a black jacket and I'm standing in front of a wall of leaves."
+              className={css.profile}
+              variants={item}
+            />
+            <Prose>
+              <Animate>
+                <p>
+                  Hi there! I&#39;m a <strong>UX Engineer Lead</strong> at
+                  Inventives, where I&#39;m responsible for designing, coding
+                  and maintaining user interfaces.
+                </p>
+              </Animate>
+              <Animate>
+                <p>
+                  My focus is on creating{" "}
+                  <strong>enjoyable user experiences</strong> and delivering{" "}
+                  <strong>aesthetic design language</strong> in all of my
+                  projects.
+                </p>
+              </Animate>
+            </Prose>
+          </div>
           <Animate>
-            <p>
-              Hi there! I&#39;m a <strong>UX Engineer Lead</strong> at
-              Inventives, where I&#39;m responsible for designing, coding and
-              maintaining user interfaces.
-            </p>
-          </Animate>
-          <Animate>
-            <p>
-              My focus is on creating{" "}
-              <strong>enjoyable user experiences</strong> and delivering{" "}
-              <strong>aesthetic design language</strong> in all of my projects.
-            </p>
             <hr />
           </Animate>
           <Animate>
