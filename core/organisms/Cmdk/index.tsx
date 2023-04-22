@@ -1,34 +1,35 @@
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/core/atoms/Dialog";
-import {
   Bookmark,
   Command as CommandIcon,
+  CornerUpLeft,
   CurlyBraces,
   ExternalLink,
   Github,
   Home,
   Instagram,
+  LightbulbOff,
   Linkedin,
   LucideIcon,
+  Moon,
+  Palette,
   ScanFace,
   Search,
+  SunMedium,
+  SunMoon,
+  Sunrise,
+  Sunset,
   Twitter,
 } from "lucide-react";
 import Link from "next/link";
-import css from "./styles.module.css";
+import css from "./styles.module.scss";
 import { useRouter } from "next/router";
-import { Input } from "@/core/atoms/Input";
-import { useHotkeys } from "react-hotkeys-hook";
 import { useEffect, useState } from "react";
-import { ScrollArea } from "@/core/atoms/Scrollable";
+import { Command } from "cmdk";
+import { useTheme } from "next-themes";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/core/atoms/Tooltip";
+import { motion } from "framer-motion";
 
 type ListItem = {
-  id: number;
   href: string;
   label: string;
   icon: LucideIcon;
@@ -37,52 +38,44 @@ type ListItem = {
 
 const links: ListItem[] = [
   {
-    id: 0,
     label: "home",
     href: "/",
     icon: Home,
   },
   {
-    id: 1,
     label: "about",
     href: "/about",
     icon: ScanFace,
   },
   {
-    id: 2,
     label: "journals",
     href: "/journals",
     icon: Bookmark,
   },
   {
-    id: 3,
     label: "projects",
     href: "/projects",
     icon: CurlyBraces,
   },
   {
-    id: 4,
     href: "https://github.com/rajbirjohar",
     label: "rajbirjohar",
     icon: Github,
     external: true,
   },
   {
-    id: 5,
     href: "https://www.linkedin.com/in/rajbirjohar/",
     label: "/rajbirjohar",
     icon: Linkedin,
     external: true,
   },
   {
-    id: 6,
     href: "https://www.instagram.com/rajbir.johar/",
     label: "@rajbir.johar",
     icon: Instagram,
     external: true,
   },
   {
-    id: 7,
     href: "https://twitter.com/rajbirjohar",
     label: "@rajbirjohar",
     icon: Twitter,
@@ -90,26 +83,73 @@ const links: ListItem[] = [
   },
 ];
 
+const themes: ListItem[] = [
+  {
+    href: "system",
+    label: "Auto",
+    icon: SunMoon,
+  },
+  {
+    href: "light",
+    label: "Day",
+    icon: Sunrise,
+  },
+  {
+    href: "afternoon",
+    label: "Afternoon",
+    icon: SunMedium,
+  },
+  {
+    href: "evening",
+    label: "Evening",
+    icon: Moon,
+  },
+  {
+    href: "dark",
+    label: "Lights Out",
+    icon: LightbulbOff,
+  },
+];
+
 const Greeting = () => {
   const currentTime = new Date().getHours();
   let greeting;
   if (currentTime >= 4 && currentTime < 12) {
-    greeting = "Good morning";
+    greeting = (
+      <>
+        <Sunrise /> Good Morning
+      </>
+    );
   } else if (currentTime >= 12 && currentTime < 18) {
-    greeting = "Good afternoon";
+    greeting = (
+      <>
+        <SunMedium /> Good Afternoon
+      </>
+    );
   } else if (currentTime >= 18 && currentTime < 22) {
-    greeting = "Good evening";
+    greeting = (
+      <>
+        <Sunset /> Good Evening
+      </>
+    );
   } else {
-    greeting = "Good night";
+    greeting = (
+      <>
+        <Moon /> Good Night
+      </>
+    );
   }
-  return <>{greeting}</>;
+  return greeting;
 };
 
 export default function Cmdk() {
-  const [search, setSearch] = useState("");
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [search, setSearch] = useState<string>("");
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState(new Date());
-  const [focused, setFocused] = useState();
+  const [pages, setPages] = useState<string[]>([]);
+  const page = pages[pages.length - 1];
 
   const router = useRouter();
   let pathname = router.asPath || "/";
@@ -117,19 +157,17 @@ export default function Cmdk() {
     pathname = "/journals";
   }
 
-  const results = links.filter((link) => {
-    if (
-      link.label.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
-      link.href.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-    ) {
-      return link;
-    }
-  });
+  const goBack = () => {
+    setPages((pages) => pages.slice(0, -1));
+  };
 
-  useHotkeys("meta+k, ctrl+k", (event) => {
-    event.preventDefault();
-    setOpen(!open);
-  });
+  const setPage = (page: string) => {
+    setPages([...pages, page]);
+  };
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setInterval(() => {
@@ -137,110 +175,155 @@ export default function Cmdk() {
     }, 1000);
   }, []);
 
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && e.metaKey) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    };
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+
+  if (!mounted) {
+    return <></>;
+  }
+
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger>
-        <CommandIcon />
-      </DialogTrigger>
-      <DialogContent className={css.cmdk}>
-        <DialogHeader className={css.header}>
-          <DialogTitle className={css.title}>
+    <>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <button
+            onClick={() => setOpen(!open)}
+            className={css.button}
+            aria-label="Menu Button"
+          >
+            <CommandIcon />
+          </button>
+        </TooltipTrigger>
+        <TooltipContent side="bottom">⌘ + K</TooltipContent>
+      </Tooltip>
+      <Command.Dialog
+        onKeyDown={(e) => {
+          if (pages.length > 0) {
+            if (e.key === "Escape") {
+              e.preventDefault();
+              goBack();
+            }
+          }
+        }}
+        open={open}
+        onOpenChange={setOpen}
+        label="Command Menu"
+        value={search}
+        onValueChange={setSearch}
+        filter={(value, search) => {
+          if (value.includes(search)) return 1;
+          return 0;
+        }}
+        className={css.command}
+        loop
+      >
+        <header>
+          <h1 className={css.greeting}>
             <Greeting />
-          </DialogTitle>
+          </h1>
           <time>
             {time.toLocaleString("en-US", {
               timeStyle: "medium",
               hour12: false,
             })}{" "}
           </time>
-        </DialogHeader>
+        </header>
         <div className={css.search}>
           <Search className={css.icon} />
-          <Input
-            className={css.input}
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-            placeholder="Explore"
-          />
+          <Command.Input placeholder="Explore" autoFocus={false} />
         </div>
-        <ScrollArea
-          style={{
-            height: 388,
-          }}
-        >
-          <div className={css.content}>
-            {search.length > 0 ? (
-              <>
-                <nav className={css.navigation}>
-                  <h4 className={css.heading}>Results</h4>
-                  {results.length === 0 && (
-                    <p className={css.empty}>Sorry, doesn&#39;t exist yet.</p>
-                  )}
-                  {results.map((link, index) => (
-                    <Link
-                      tabIndex={index}
-                      key={link.href}
-                      href={link.href}
-                      className={
-                        link.href === pathname
-                          ? `${css.link} ${css.active}`
-                          : css.link
-                      }
-                      onClick={() => setOpen(false)}
-                    >
-                      <span>
-                        <link.icon /> {link.label}
-                      </span>
-                    </Link>
-                  ))}
-                </nav>
-              </>
-            ) : (
-              <nav className={css.navigation}>
-                <h4 className={css.heading}>Navigation</h4>
+        <Command.List>
+          <Command.Empty>No results found.</Command.Empty>
+          {!page && (
+            <>
+              <Command.Group heading="Navigation">
                 {links
                   .filter((link) => !link.external)
                   .map((link) => (
                     <Link key={link.href} href={link.href} className={css.link}>
-                      <div
-                        tabIndex={0}
-                        className={
-                          link.href === pathname
-                            ? `${css.item} ${css.active}`
-                            : css.item
-                        }
-                        onClick={() => setOpen(false)}
+                      <Command.Item
+                        onSelect={() => {
+                          setOpen(false);
+                          router.push(link.href);
+                        }}
+                        className={link.href === pathname ? css.selected : ""}
                       >
                         <span>
                           <link.icon /> {link.label}
                         </span>
-                      </div>
+                      </Command.Item>
                     </Link>
                   ))}
-                <h4 className={css.heading}>Elsewhere</h4>
+              </Command.Group>
+              <Command.Group heading="Elsewhere">
                 {links
                   .filter((link) => link.external)
                   .map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={css.link}
-                    >
-                      <div tabIndex={0} className={css.item}>
+                    <Link key={link.href} href={link.href} className={css.link}>
+                      <Command.Item
+                        onSelect={() => {
+                          setOpen(false);
+                          router.push(link.href);
+                        }}
+                      >
                         <span>
                           <link.icon /> {link.label}
                         </span>
                         <ExternalLink />
-                      </div>
+                      </Command.Item>
                     </Link>
                   ))}
-              </nav>
-            )}
-          </div>
-        </ScrollArea>
-      </DialogContent>
-    </Dialog>
+              </Command.Group>
+              <Command.Separator />
+              <Command.Group heading="Ambience">
+                <Command.Item
+                  onSelect={() => {
+                    setPage("ambience");
+                    setSearch("");
+                  }}
+                >
+                  <span>
+                    <Palette /> Theme
+                  </span>
+                </Command.Item>
+              </Command.Group>
+            </>
+          )}
+          {page === "ambience" && (
+            <>
+              <Command.Item onSelect={goBack}>
+                <span>
+                  <CornerUpLeft /> Head Back
+                </span>
+                <div cmdk-shortcuts="">
+                  <kbd>Esc</kbd>
+                </div>
+              </Command.Item>
+              <Command.Group heading="Ambience">
+                {themes.map((item) => (
+                  <Command.Item
+                    key={item.href}
+                    onSelect={() => setTheme(item.href)}
+                    className={theme === item.href ? css.selected : ""}
+                  >
+                    <span>
+                      <item.icon /> {item.label}
+                    </span>
+                  </Command.Item>
+                ))}
+              </Command.Group>
+            </>
+          )}
+        </Command.List>
+      </Command.Dialog>
+    </>
   );
 }

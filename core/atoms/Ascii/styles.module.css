@@ -1,14 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap");
-
 .wrapper {
   width: 100%;
   display: flex;
-  overflow-x: hidden;
+  overflow: hidden;
   justify-content: center;
   align-items: flex-end;
-  position: fixed;
-  bottom: 0;
-  z-index: -1;
 }
 
 .ascii {
@@ -17,21 +12,30 @@
   line-height: 1.2;
   white-space: pre;
   font-weight: 700;
-  font-family: "JetBrains Mono", monospace;
-  color: var(--fg);
-  background-color: var(--bg);
+  font-family: var(--font-mono);
+  color: var(--tree);
   font-size: var(--font-sm);
-  opacity: 0.2;
+  background-color: transparent;
 }
 
 .smoke {
-  color: var(--sub-fg);
+  color: var(--button-bg-hover);
 }
 
 .fire {
   color: hsl(35 100% 45%);
 }
 
+.firefly {
+  color: var(--firefly);
+}
+
 .tent {
   color: var(--brand);
+}
+
+@media screen and (max-width: 668px) {
+  .ascii {
+    font-size: var(--font-xs);
+  }
 }

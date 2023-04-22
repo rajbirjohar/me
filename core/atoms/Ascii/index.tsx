@@ -7,10 +7,10 @@ export default function Ascii(): JSX.Element {
       <motion.footer className={css.wrapper} layout> 
          <pre className={css.ascii}>
           {"  "}^     ^                          ^                           ^                <span className={css.smoke}>## #</span>                                      ^                              ^     {"\n"}
-          {" "}/|\ ^ /|\       ^    ^           /|\           ^    ^        /|\ ^            <span className={css.smoke}># #</span>     <span className={css.tent}>____</span>          ^                   /|\   ^         ^    ^       ^ /|\   {"\n"}
-          {" "}/|\/|\/|\    ^ /|\  /|\ ^        /|\  ^     ^ /|\  /|\ ^     /|\/|\    ^     <span className={css.smoke}>##</span>      <span className={css.tent}>^    \</span>        /|\ ^    ^   ^       /|\  /|\     ^ /|\  /|\   ^ /|\/|\ ^ {"\n"}
-          {" "}/|\/|\/|\   /|\/|\  /|\/|\       /|\ /|\   /|\/|\  /|\/|\    /|\/|\   /|\   <span className={css.fire}>***</span>     <span className={css.tent}>/|\    \</span>       /|\/|\  /|\ /|\      /|\  /|\    /|\/|\  /|\  /|\/|\/|\/|\{"\n"}
-          {"  "}|  |  |    .| #|.. .|&/|\        | #&|.   .| #|.. .|&/|\     | #|.   /|\  =*=*=   <span className={css.tent}>/#|#\    \</span>      .| #|.. .|& /|\       |#& /|\    .| #|.. .|&  /|\ |  |  |  {"\n"}
+          {" "}/|\ ^ /|\       ^    ^      <span className={css.firefly}>*</span>    /|\           ^    ^        /|\ ^            <span className={css.smoke}># #</span>     <span className={css.tent}>____</span>   <span className={css.firefly}>*</span>      ^                   /|\   ^  <span className={css.firefly}>*</span>      ^    ^       ^ /|\   {"\n"}
+          {" "}/|\/|\/|\    ^ /|\  /|\ ^      <span className={css.firefly}>*</span> /|\  ^  <span className={css.firefly}>*</span>  ^ /|\  /|\ ^     /|\/|\    ^     <span className={css.smoke}>##</span>      <span className={css.tent}>^    \</span>    <span className={css.firefly}>*</span>   /|\ ^    ^   ^   <span className={css.firefly}>*</span>   /|\  /|\     ^ /|\  /|\   ^ /|\/|\ ^ {"\n"}
+          {" "}/|\/|\/|\   /|\/|\  /|\/|\       /|\ /|\   /|\/|\  /|\/|\    /|\/|\   /|\   <span className={css.fire}>***</span>     <span className={css.tent}>/|\    \</span>       /|\/|\  /|\ /|\ <span className={css.firefly}>*</span>    /|\  /|\    /|\/|\  /|\  /|\/|\/|\/|\{"\n"}
+          {"  "}|  |  |    .| #|.. .|&/|\  <span className={css.firefly}>*</span>     | #&|.   .| #|.. .|&/|\     | #|.   /|\  =*=*=   <span className={css.tent}>/#|#\    \</span>      .| #|.. .|& /|\       |#& /|\    .| #|.. .|&  /|\ |  |  |  {"\n"}
           -----    ----- -----      -----   -----     -----     ----------   -----    --------------------   -----  ---------- -----    ----------   ----- -----   -----  {"\n"}
          </pre>
     </motion.footer>

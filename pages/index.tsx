@@ -1,10 +1,9 @@
 import Prose from "@/core/atoms/Prose";
 import Head from "next/head";
 import Link from "next/link";
-import css from "@/styles/styles.module.css";
-import { ArrowUpRight } from "lucide-react";
 import Animate from "@/core/organisms/Animate";
 import { useQuery } from "@tanstack/react-query";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
   const fetchCurrentlyPlaying = async () => {
@@ -48,14 +47,27 @@ export default function Home() {
             </p>
           </Animate>
           <Animate>
-            {song.isError || (song.isLoading && <></>)}
-            {song.data && song.data.title !== "" && (
-              <p>
-                Currently listening to{" "}
-                <Link href={song.data.url}>{song.data.title}</Link> by{" "}
-                {song.data.artist}.
-              </p>
-            )}
+            <AnimatePresence mode="wait">
+              {song.isError || (song.isLoading && <></>)}
+              {song.data && song.data.title !== "" && (
+                <motion.p
+                  layout
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  exit={{
+                    opacity: 0,
+                  }}
+                >
+                  Currently listening to{" "}
+                  <Link href={song.data.url}>{song.data.title}</Link> by{" "}
+                  {song.data.artist}.
+                </motion.p>
+              )}
+            </AnimatePresence>
           </Animate>
         </Prose>
       </section>

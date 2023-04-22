@@ -1,0 +1,233 @@
+.command {
+  position: fixed;
+  z-index: 50;
+  width: 90vw;
+  top: 50%;
+  left: 50%;
+  background-color: var(--card-bg);
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  max-height: 500px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: contentShow var(--transition);
+
+  @keyframes contentShow {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @media screen and (max-width: 668px) {
+    max-height: unset;
+    transform: unset;
+    top: unset;
+    width: 100vw;
+    height: 90vh;
+    left: 0;
+    bottom: 0;
+    @keyframes contentShow {
+      from {
+        opacity: 0;
+        height: 0;
+        transform: scale(0.96);
+      }
+      to {
+        opacity: 1;
+        height: 90vh;
+        transform: scale(1);
+      }
+    }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 0 16px;
+
+    .greeting {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    time {
+      color: var(--sub-fg);
+    }
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    border-bottom: var(--border);
+    margin-bottom: 16px;
+    padding: 8px 16px 16px 16px;
+  }
+
+  [cmdk-input] {
+    font-family: var(--font-sans);
+    border: none;
+    width: 100%;
+    outline: none;
+    background: transparent;
+    color: var(--fg);
+    border-radius: 0;
+    height: 40px;
+    &::placeholder {
+      color: var(--sub-fg);
+    }
+  }
+
+  [cmdk-item] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    content-visibility: auto;
+    height: 48px;
+    font-size: var(--font-sm);
+    border-radius: 8px;
+    gap: 8px;
+    padding: 0 16px;
+    color: var(--sub-fg);
+    user-select: none;
+    transition: background-color var(--transition-slower),
+      color var(--transition-slower);
+    min-width: 100%;
+    cursor: pointer;
+    span {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    &[data-selected="true"] {
+      transition: background-color var(--transition), color var(--transition);
+      background: var(--button-bg);
+      color: var(--fg);
+    }
+
+    &[data-disabled="true"] {
+      color: var(--gray8);
+      cursor: not-allowed;
+    }
+
+    &:active {
+      transition-property: background-color;
+      background-color: var(--button-bg-hover);
+      color: var(--fg);
+    }
+
+    & + [cmdk-item] {
+      margin-top: 4px;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  [cmdk-list] {
+    height: min(330px, calc(var(--cmdk-list-height)));
+    max-height: 400px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transition: 100ms ease;
+    transition-property: height;
+    scroll-padding-block-start: 8px;
+    scroll-padding-block-end: 8px;
+    margin: 8px;
+    border-radius: var(--radius);
+    @media screen and (max-width: 668px) {
+      height: 100%;
+      max-height: unset;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: var(--outline);
+    }
+    .selected {
+      background-color: var(--button-bg-hover);
+      color: var(--fg);
+    }
+  }
+
+  [cmdk-group] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  [cmdk-group-items] {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .link {
+    min-width: 100%;
+  }
+
+  [cmdk-shortcuts] {
+    display: flex;
+    margin-left: auto;
+    gap: 8px;
+
+    kbd {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      min-width: 20px;
+      padding: 4px;
+      height: 20px;
+      border-radius: 4px;
+      color: var(--kbd-fg);
+      background-color: var(--kbd-bg);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+  }
+
+  [cmdk-separator] {
+    height: 2px;
+    width: 100%;
+    background-color: var(--border-color);
+    border: none;
+    border-radius: 4px;
+    margin: var(--space) 0;
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  *:not([hidden]) + [cmdk-group] {
+    margin-top: 8px;
+  }
+
+  [cmdk-group-heading] {
+    user-select: none;
+    font-size: var(--font-xs);
+    color: var(--sub-fg);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  [cmdk-empty] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    white-space: pre-wrap;
+    color: var(--sub-fg);
+  }
+}

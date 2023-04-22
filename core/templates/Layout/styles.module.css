@@ -6,15 +6,18 @@
 }
 
 .page {
-  margin: 0 auto;
-  max-width: var(--main-content);
+  flex: 1;
   width: 100%;
-  padding: var(--space-2xl) var(--space-md);
-
+  max-width: var(--main-content);
+  margin: 0 auto;
+}
+.article {
+  width: 100%;
+  padding: 0 var(--space-md) var(--space-2xl) var(--space-md);
 }
 
 @media screen and (max-width: 868px) {
-  .page {
-    padding: var(--space-xl) var(--space-md);
+  .article {
+    padding: var(--space-md);
   }
 }

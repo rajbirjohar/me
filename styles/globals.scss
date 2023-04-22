@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* Typography */
+  --font-mono: "Fira Code", "Menlo", "SFMono-Regular", "Consolas",
+    "Liberation Mono", monospace;
+
+  /* Font sizes */
+  --font-xs: clamp(0.83rem, 0vw + 0.83rem, 0.83rem);
+  --font-sm: clamp(0.91rem, 0vw + 0.91rem, 0.91rem);
+  --font-base: clamp(1rem, 0vw + 1rem, 1rem);
+  --font-md: clamp(1.1rem, 0vw + 1.1rem, 1.1rem);
+  --font-lg: clamp(1.21rem, 0vw + 1.21rem, 1.21rem);
+  --font-xl: clamp(1.33rem, 0vw + 1.33rem, 1.33rem);
+
+  /* Transitions */
+  --transition: 200ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 400ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slower: 600ms cubic-bezier(0.25, 1, 0.5, 1);
+  --stagger: 0;
+  --delay: 120ms;
+  --start: 0ms;
+
+  /* Colors */
+  --neutral-50: #fff;
+  --neutral-100: #fafafa;
+  --neutral-200: #eaeaea;
+  --neutral-300: #dbdbdb;
+  --neutral-400: #999;
+  --neutral-500: #888;
+  --neutral-600: #666;
+  --neutral-700: #444;
+  --neutral-800: #333;
+  --neutral-900: #0a0a0a;
+  --neutral-950: #000;
+
+  --red-50: #fef2f2;
+  --red-100: #fee2e2;
+  --red-200: #fecaca;
+  --red-300: #fca5a5;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --red-800: #991b1b;
+  --red-900: #7f1d1d;
+  --red-950: #450a0a;
+
+  --tree: #059669;
+  --firefly: transparent;
+
+  --brand-lighter: #bfdbfe;
+  --brand-light: #60a5fa;
+  --brand: #2563eb;
+  --brand-dark: #1e40af;
+  --brand-darker: #172554;
+
+  --bg: var(--neutral-100);
+
+  --heading-fg: var(--neutral-950);
+  --fg: var(--neutral-800);
+  --sub-fg: var(--neutral-600);
+
+  --border-color: var(--neutral-200);
+
+  --button-bg: var(--neutral-200);
+  --button-bg-hover: var(--neutral-300);
+  --button-bg-active: var(--neutral-400);
+  --button-fg: var(--neutral-800);
+  --button-fg-hover: var(--neutral-950);
+  --button-fg-active: var(--neutral-950);
+
+  --link: var(--brand);
+  --link-hover: var(--brand-dark);
+
+  --outline: 0 0 0 2px var(--brand);
+
+  --card-bg: var(--neutral-50);
+
+  --code-bg: var(--neutral-200);
+  --code-fg: var(--neutral-800);
+
+  --kbd-bg: var(--neutral-200);
+  --kbd-fg: var(--neutral-800);
+
+  --badge-bg: var(--brand-lighter);
+  --badge-fg: var(--brand-darker);
+
+  --tooltip-fg: var(--neutral-200);
+  --tooltip-bg: var(--neutral-800);
+
+  --highlight-bg: var(--brand);
+  --highlight-fg: var(--neutral-50);
+
+  --border: 2px solid var(--border-color);
+
+  /* Spacing */
+  --space-2xs: 0.125rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 8rem;
+  --space-3xl: 16rem;
+  --space-4xl: 32rem;
+  --space-5xl: 64rem;
+  --main-content: 42rem;
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-inner: calc(var(--space) - var(--radius));
+  --radius-full: 50%;
+  --radius-inline: 4px;
+
+  /* Shadows */
+  --shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.07);
+  --nav-shadow: rgba(178, 183, 190, 0.15) 0px 5px 10px 0px;
+}
+
+[data-theme="afternoon"] {
+  --neutral-50: #fafaf9;
+  --neutral-100: #f5f5f4;
+  --neutral-200: #e7e5e4;
+  --neutral-300: #d6d3d1;
+  --neutral-400: #a8a29e;
+  --neutral-500: #78716c;
+  --neutral-600: #57534e;
+  --neutral-700: #44403c;
+  --neutral-800: #292524;
+  --neutral-900: #1c1917;
+
+  --brand-lighter: #bbf7d0;
+  --brand-light: #4ade80;
+  --brand: #059669;
+  --brand-dark: #166534;
+  --brand-darker: #052e16;
+
+  --tree: #166534;
+  --firefly: transparent;
+
+  --bg: var(--neutral-100);
+
+  --heading-fg: var(--neutral-950);
+  --fg: var(--neutral-800);
+  --sub-fg: var(--neutral-600);
+
+  --border-color: var(--neutral-200);
+
+  --button-bg: var(--neutral-200);
+  --button-bg-hover: var(--neutral-300);
+  --button-bg-active: var(--neutral-400);
+  --button-fg: var(--neutral-800);
+  --button-fg-hover: var(--neutral-950);
+  --button-fg-active: var(--neutral-950);
+
+  --link: var(--brand);
+  --link-hover: var(--brand-dark);
+
+  --outline: 0 0 0 2px var(--brand);
+
+  --card-bg: var(--neutral-50);
+
+  --code-bg: var(--neutral-200);
+  --code-fg: var(--neutral-800);
+
+  --kbd-bg: var(--neutral-200);
+  --kbd-fg: var(--neutral-800);
+
+  --badge-bg: var(--brand-lighter);
+  --badge-fg: var(--brand-darker);
+
+  --tooltip-fg: var(--neutral-200);
+  --tooltip-bg: var(--neutral-800);
+
+  --highlight-bg: var(--brand);
+  --highlight-fg: var(--neutral-50);
+
+  --border: 2px solid var(--border-color);
+}
+
+[data-theme="evening"] {
+  --neutral-50: #fafafa;
+  --neutral-100: #f4f4f5;
+  --neutral-200: #e4e4e7;
+  --neutral-300: #d4d4d8;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-600: #52525b;
+  --neutral-700: #3f3f46;
+  --neutral-800: #27272a;
+  --neutral-900: #18181b;
+  --neutral-950: #09090b;
+
+  --tree: #166534;
+  --firefly: transparent;
+
+  --brand-lighter: #ccfbf1;
+  --brand-light: #5eead4;
+  --brand: #14b8a6;
+  --brand-dark: #0f766e;
+  --brand-darker: #134e4a;
+
+  --bg: var(--neutral-900);
+
+  --heading-fg: var(--neutral-50);
+  --fg: var(--neutral-300);
+  --sub-fg: var(--neutral-400);
+
+  --border-color: var(--neutral-800);
+
+  --button-bg: var(--neutral-800);
+  --button-bg-hover: var(--neutral-700);
+  --button-bg-active: var(--neutral-600);
+  --button-fg: var(--neutral-300);
+  --button-fg-hover: var(--neutral-100);
+  --button-fg-active: var(--neutral-100);
+
+  --link: var(--brand-light);
+  --link-hover: var(--brand-lighter);
+
+  --outline: 0 0 0 2px var(--brand-light);
+
+  --card-bg: var(--neutral-950);
+
+  --code-bg: var(--neutral-800);
+  --code-fg: var(--neutral-200);
+
+  --kbd-bg: var(--neutral-800);
+  --kbd-fg: var(--neutral-200);
+
+  --badge-bg: var(--brand-lighter);
+  --badge-fg: var(--brand-darker);
+
+  --tooltip-fg: var(--neutral-800);
+  --tooltip-bg: var(--neutral-200);
+
+  --highlight-bg: var(--brand);
+  --highlight-fg: var(--neutral-950);
+
+  --border: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] {
+  --brand-lighter: #ffedd5;
+  --brand-light: #fdba74;
+  --brand: #f97316;
+  --brand-dark: #c2410c;
+  --brand-darker: #7c2d12;
+
+  --firefly: #fde047;
+  --tree: #065f46;
+
+  --bg: var(--neutral-900);
+
+  --heading-fg: var(--neutral-50);
+  --fg: var(--neutral-300);
+  --sub-fg: var(--neutral-500);
+
+  --border-color: var(--neutral-800);
+
+  --button-bg: var(--neutral-800);
+  --button-bg-hover: var(--neutral-700);
+  --button-bg-active: var(--neutral-600);
+  --button-fg: var(--neutral-300);
+  --button-fg-hover: var(--neutral-100);
+  --button-fg-active: var(--neutral-100);
+
+  --link: var(--brand);
+  --link-hover: var(--brand-dark);
+
+  --outline: 0 0 0 2px var(--brand);
+
+  --card-bg: var(--neutral-950);
+
+  --code-bg: var(--neutral-800);
+  --code-fg: var(--neutral-200);
+
+  --kbd-bg: var(--neutral-800);
+  --kbd-fg: var(--neutral-200);
+
+  --badge-bg: var(--brand-lighter);
+  --badge-fg: var(--brand-darker);
+
+  --tooltip-fg: var(--neutral-800);
+  --tooltip-bg: var(--neutral-200);
+
+  --highlight-bg: var(--brand);
+  --highlight-fg: var(--neutral-950);
+
+  --border: 2px solid var(--border-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+  font-size: var(--font-base);
+  background-color: var(--bg);
+  color: var(--fg);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-xl);
+  font-family: var(--inter-font);
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font-size: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-fg);
+  font-weight: 600;
+  position: relative;
+  letter-spacing: 0.025em;
+}
+
+h1 {
+  font-size: var(--font-xl);
+}
+
+h2 {
+  font-size: var(--font-lg);
+}
+
+h3 {
+  font-size: var(--font-md);
+}
+
+h4 {
+  font-size: var(--font-base);
+}
+
+h5 {
+  font-size: var(--font-sm);
+}
+
+h6 {
+  font-size: var(--font-xs);
+}
+
+a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  max-width: max-content;
+  color: var(--link);
+  transition: color var(--transition-slow);
+  font-weight: 450;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--outline);
+}
+
+hr {
+  height: 2px;
+  width: 100%;
+  background-color: var(--border-color);
+  border: none;
+  border-radius: 4px;
+  margin: var(--space-lg) 0;
+}
+
+strong {
+  font-weight: 600;
+}
+
+pre {
+  color: var(--code-fg);
+  background-color: var(--code-bg);
+  padding: var(--space-sm) var(--space);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-sm);
+}
+
+code {
+  font-family: var(--font-mono);
+  color: var(--code-fg);
+  background-color: var(--code-bg);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 5px;
+  font-size: var(--font-sm);
+}
+
+pre code {
+  padding: 0;
+}
+
+mark {
+  background-color: var(--highlight-bg);
+  color: var(--highlight-fg);
+}
+
+blockquote {
+  padding: var(--space-sm) var(--space);
+  border-left: var(--border);
+  border-color: var(--link);
+  font-style: italic;
+  color: var(--fg);
+}
+
+cite {
+  color: var(--sub-fg);
+  margin: var(--space) 0;
+  display: block;
+}
+
+button {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  border-radius: var(--radius);
+  transition: background-color var(--transition-slower);
+  background-color: var(--button-bg);
+  color: var(--button-fg);
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--button-fg-hover);
+  background-color: var(--button-bg-hover);
+}
+
+button:active {
+  color: var(--button-fg-active);
+  background-color: var(--button-bg-active);
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: var(--outline);
+}
+
+button svg {
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.anchor {
+  font-weight: inherit;
+  color: inherit;
+}
+
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.anchor:hover::before {
+  content: "#";
+  position: absolute;
+  top: 0;
+  left: -1.1em;
+  color: var(--sub-fg);
+}
+
+[cmdk-overlay] {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  backdrop-filter: blur(15px);
+  isolation: isolate;
+  animation: overlayShadow var(--transition);
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: var(--button-bg);
+    z-index: -1;
+    opacity: 0.4;
+  }
+}
+
+::selection {
+  background: var(--highlight-bg);
+  color: var(--highlight-fg); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--highlight-fg);
+}
+::-moz-selection {
+  background: var(--highlight-bg);
+  color: var(--highlight-fg);
+  -webkit-text-fill-color: var(--highlight-fg); /* Gecko Browsers */
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@media screen and (max-width: 868px) {
+  .anchor:hover::before {
+    display: none;
+  }
+}

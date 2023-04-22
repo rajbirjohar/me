@@ -14,6 +14,11 @@ export default function About() {
     <>
       <Head>
         <title>Rajbir Johar | About</title>
+        <meta
+          content="A short description about who I am, what I do, and what I am passionate about."
+          name="description"
+          key="description"
+        />
       </Head>
       <section>
         <Prose>
