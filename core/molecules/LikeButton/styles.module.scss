@@ -1,0 +1,45 @@
+.button {
+  border: none;
+  border-radius: 48px;
+  padding: var(--space-sm) var(--space) var(--space-sm) 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: background-color var(--transition-slower),
+    scale var(--transition-slower);
+  &:hover {
+    scale: 1.05;
+    transition: scale var(--transition), background-color var(--transition);
+    .filled {
+      fill: var(--fg);
+      color: var(--fg);
+    }
+  }
+  svg {
+    height: 20px;
+    width: 20px;
+  }
+  .filled {
+    fill: var(--fg);
+    color: var(--fg);
+  }
+
+  &:active {
+    scale: 0.98;
+    transition: scale var(--transition);
+  }
+}
+
+.emojiwrapper {
+  position: relative;
+  translate: 10px 0;
+}
+
+.emojis {
+  position: absolute;
+  width: 100%;
+}
+.emoji {
+  position: absolute;
+  width: 100%;
+}

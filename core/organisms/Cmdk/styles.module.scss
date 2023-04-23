@@ -279,6 +279,7 @@
   }
   &:active {
     transform: rotate(20deg) scale(0.98);
+    transition: transform var(--transition);
   }
   @keyframes hello {
     0% {

@@ -9,6 +9,7 @@ import css from "./styles.module.css";
 import { format } from "date-fns";
 import { TrackedJournal } from "@/core/organisms/JournalList";
 import { useQuery } from "@tanstack/react-query";
+import LikeButton from "@/core/molecules/LikeButton";
 
 export default function Journal(props: { journal: TrackedJournal }) {
   const MDXContent = useMDXComponent(props.journal.body.code);
@@ -94,6 +95,9 @@ export default function Journal(props: { journal: TrackedJournal }) {
         <section>
           <MDXContent components={MDXComponents} />
         </section>
+        <footer>
+          <LikeButton slug={props.journal.slug} />
+        </footer>
       </Prose>
     </>
   );

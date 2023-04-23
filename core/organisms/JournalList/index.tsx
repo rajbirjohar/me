@@ -3,7 +3,6 @@ import JournalCard from "@/core/molecules/JournalCard";
 import css from "./styles.module.css";
 import { Variants, motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { compareDesc } from "date-fns";
 
 export interface TrackedJournal extends Journal {
   likes?: number;
@@ -26,14 +25,14 @@ export default function JournalList(props: { journals: Journal[] }) {
     },
   };
 
-  const fetchViews = async () => {
+  const fetchAllViews = async () => {
     const response = await fetch("/api/views");
     return response.json();
   };
 
   const analytics = useQuery<{ slug: string; likes: number; views: number }[]>({
     queryKey: ["views"],
-    queryFn: fetchViews,
+    queryFn: fetchAllViews,
   });
 
   const trackedJournals: TrackedJournal[] = props.journals.map((journal) => ({
