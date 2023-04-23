@@ -27,5 +27,9 @@ export const item: Variants = {
 };
 
 export default function Animate(props: { children: React.ReactNode }) {
-  return <motion.div variants={item}>{props.children}</motion.div>;
+  return (
+    <motion.div variants={item} layout="position">
+      {props.children}
+    </motion.div>
+  );
 }

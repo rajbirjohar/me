@@ -24,7 +24,6 @@ export default function Layout(props: { children: React.ReactNode }) {
 
   return (
     <main className={css.main}>
-      <Header />
       <LayoutGroup>
         <div className={css.page}>
           <AnimatePresence mode="wait" initial={false}>
@@ -41,7 +40,7 @@ export default function Layout(props: { children: React.ReactNode }) {
             </motion.article>
           </AnimatePresence>
         </div>
-
+        <Header />
         <Ascii />
       </LayoutGroup>
     </main>

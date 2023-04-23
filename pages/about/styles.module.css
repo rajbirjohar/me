@@ -1,0 +1,16 @@
+.signaturewrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 868px) {
+  .hero {
+    flex-direction: column;
+  }
+}

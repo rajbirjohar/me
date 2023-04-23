@@ -7,7 +7,7 @@
   background-color: var(--card-bg);
   transform: translate(-50%, -50%);
   max-width: 600px;
-  max-height: 500px;
+  max-height: 550px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   animation: contentShow var(--transition);
@@ -27,7 +27,7 @@
   @media screen and (max-width: 668px) {
     transform: translate(-50%, 0%);
     top: 15px;
-    max-height: 350px;
+    max-height: 400px;
     @keyframes contentShow {
       from {
         opacity: 0;
@@ -45,15 +45,35 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px 16px 0 16px;
-
     .greeting {
       display: flex;
       align-items: center;
       gap: var(--space-sm);
     }
-
     time {
       color: var(--sub-fg);
+    }
+  }
+
+  footer {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    backdrop-filter: blur(15px);
+    gap: var(--space-sm);
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background-color: var(--bg);
+      z-index: -1;
+      opacity: 0.5;
     }
   }
 
@@ -223,5 +243,47 @@
     height: 48px;
     white-space: pre-wrap;
     color: var(--sub-fg);
+  }
+}
+
+.button {
+  padding: var(--space);
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  border-radius: var(--radius-full);
+  transition: scale var(--transition-slower);
+  &::before {
+    border-radius: var(--radius-full);
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: var(--bg);
+    z-index: -1;
+    opacity: 0.5;
+    transition: background-color var(--transition-slower);
+  }
+  &:hover {
+    scale: 1.05;
+    transition: scale var(--transition);
+    &::before {
+      background-color: var(--sub-fg);
+      transition: background-color var(--transition);
+    }
+  }
+  &:active {
+    scale: 1;
+  }
+  .iconwrapper {
+    height: 44px;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--button-bg);
+    border-radius: var(--radius-full);
   }
 }

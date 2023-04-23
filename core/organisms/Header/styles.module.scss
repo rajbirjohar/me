@@ -1,33 +1,17 @@
 .header {
   position: sticky;
-  top: 0;
-  width: 100vw;
+  bottom: 1rem;
+  width: max-content;
   height: max-content;
-  display: flex;
-  align-items: flex-end;
-  backdrop-filter: blur(15px);
-  width: 100vw;
-  margin-top: 10rem;
+  margin: 0 auto;
   z-index: 100;
-  &::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-color: var(--bg);
-    z-index: -1;
-    opacity: 0.7;
-  }
   .navigation {
     display: flex;
     justify-content: flex-end;
-    width: 100%;
-    max-width: 72rem;
+    width: max-content;
     margin: 0 auto;
-    padding: var(--space) var(--space-md);
+    padding: var(--space);
+    border-radius: var(--radius-full);
   }
 
   @media screen and (max-width: 668px) {

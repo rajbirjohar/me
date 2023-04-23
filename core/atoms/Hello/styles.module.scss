@@ -1,0 +1,14 @@
+.hello {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .greeting,
+  .name {
+    margin-block-start: 0;
+    display: inline-block;
+  }
+  .greeting {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

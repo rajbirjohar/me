@@ -11,6 +11,7 @@ import {
   Linkedin,
   LucideIcon,
   Moon,
+  Music,
   Palette,
   ScanFace,
   Search,
@@ -27,6 +28,8 @@ import { useEffect, useState } from "react";
 import { Command } from "cmdk";
 import { useTheme } from "next-themes";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/core/atoms/Tooltip";
+import { useQuery } from "@tanstack/react-query";
+import { AnimatePresence, motion } from "framer-motion";
 
 type ListItem = {
   href: string;
@@ -40,6 +43,11 @@ const links: ListItem[] = [
     label: "home",
     href: "/",
     icon: Home,
+  },
+  {
+    label: "about",
+    href: "/about",
+    icon: ScanFace,
   },
   {
     label: "journals",
@@ -145,6 +153,16 @@ export default function Cmdk() {
   const [pages, setPages] = useState<string[]>([]);
   const page = pages[pages.length - 1];
 
+  const fetchCurrentlyPlaying = async () => {
+    const response = await fetch("/api/spotify/playing");
+    return response.json();
+  };
+
+  const song = useQuery<Track>({
+    queryKey: ["playing"],
+    queryFn: fetchCurrentlyPlaying,
+  });
+
   const router = useRouter();
   let pathname = router.asPath || "/";
   if (pathname.includes("/journals/")) {
@@ -164,9 +182,10 @@ export default function Cmdk() {
   }, []);
 
   useEffect(() => {
-    setInterval(() => {
+    const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
+    return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
@@ -193,7 +212,9 @@ export default function Cmdk() {
             className={css.button}
             aria-label="Menu Button"
           >
-            <CommandIcon />
+            <span className={css.iconwrapper}>
+              <CommandIcon />
+            </span>
           </button>
         </TooltipTrigger>
         <TooltipContent side="bottom">⌘ + K</TooltipContent>
@@ -317,6 +338,28 @@ export default function Cmdk() {
             </>
           )}
         </Command.List>
+        <AnimatePresence mode="wait">
+          {song.isError || (song.isLoading && <></>)}
+          {song.data && song.data.title !== "" && (
+            <motion.footer
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+            >
+              <Music />
+              <p className="clamp">
+                Listening to <Link href={song.data.url}>{song.data.title}</Link>{" "}
+                by {song.data.artist}.
+              </p>
+            </motion.footer>
+          )}
+        </AnimatePresence>
       </Command.Dialog>
     </>
   );
