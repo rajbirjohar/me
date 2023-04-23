@@ -27,7 +27,6 @@ import { useEffect, useState } from "react";
 import { Command } from "cmdk";
 import { useTheme } from "next-themes";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/core/atoms/Tooltip";
-import { motion } from "framer-motion";
 
 type ListItem = {
   href: string;
@@ -238,7 +237,7 @@ export default function Cmdk() {
         </header>
         <div className={css.search}>
           <Search className={css.icon} />
-          <Command.Input placeholder="Explore" autoFocus={false} />
+          <Command.Input placeholder="Explore" />
         </div>
         <Command.List>
           <Command.Empty>No results found.</Command.Empty>
