@@ -45,9 +45,9 @@ const links: ListItem[] = [
     icon: Home,
   },
   {
-    label: "about",
-    href: "/about",
-    icon: ScanFace,
+    label: "projects",
+    href: "/projects",
+    icon: CurlyBraces,
   },
   {
     label: "journals",
@@ -55,9 +55,9 @@ const links: ListItem[] = [
     icon: Bookmark,
   },
   {
-    label: "projects",
-    href: "/projects",
-    icon: CurlyBraces,
+    label: "about",
+    href: "/about",
+    icon: ScanFace,
   },
   {
     href: "https://github.com/rajbirjohar",
@@ -212,9 +212,7 @@ export default function Cmdk() {
             className={css.button}
             aria-label="Menu Button"
           >
-            <span className={css.iconwrapper}>
-              <CommandIcon />
-            </span>
+            <CommandIcon />
           </button>
         </TooltipTrigger>
         <TooltipContent side="bottom">⌘ + K</TooltipContent>

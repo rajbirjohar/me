@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 868px) {
   .article {
-    margin-top: var(--space-2xl);
+    margin-top: var(--space-xl);
     padding-inline: var(--space-md);
     padding-bottom: var(--space-lg);
   }

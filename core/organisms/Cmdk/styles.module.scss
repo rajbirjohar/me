@@ -151,7 +151,7 @@
 
   [cmdk-list] {
     height: min(330px, calc(var(--cmdk-list-height)));
-    max-height: 400px;
+    max-height: 500px;
     overflow-y: auto;
     overscroll-behavior: contain;
     transition: 100ms ease;
@@ -247,11 +247,13 @@
 }
 
 .button {
-  padding: var(--space);
   background-color: transparent;
+  padding: var(--space);
   backdrop-filter: blur(15px);
   border-radius: var(--radius-full);
-  transition: scale var(--transition-slower);
+  transition: background-color var(--transition-slower),
+    transform var(--transition-slower);
+  animation: hello 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   &::before {
     border-radius: var(--radius-full);
     display: block;
@@ -267,23 +269,30 @@
     transition: background-color var(--transition-slower);
   }
   &:hover {
-    scale: 1.05;
-    transition: scale var(--transition);
+    transform: rotate(20deg) scale(1.05);
+    transition: transform var(--transition);
+    background-color: transparent;
     &::before {
-      background-color: var(--sub-fg);
+      background-color: var(--button-bg);
       transition: background-color var(--transition);
     }
   }
   &:active {
-    scale: 1;
+    transform: rotate(20deg) scale(0.98);
   }
-  .iconwrapper {
-    height: 44px;
-    width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--button-bg);
-    border-radius: var(--radius-full);
+  @keyframes hello {
+    0% {
+      rotate: 360deg;
+      opacity: 0;
+      scale: 0.8;
+      translate: 0 20px;
+    }
+
+    100% {
+      rotate: 0deg;
+      scale: 1;
+      opacity: 1;
+      translate: 0 0px;
+    }
   }
 }
