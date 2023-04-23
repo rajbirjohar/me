@@ -7,6 +7,7 @@
 }
 
 .ascii {
+  margin-top: var(--space-xl);
   margin-bottom: 0;
   padding: 0;
   line-height: 1.2;

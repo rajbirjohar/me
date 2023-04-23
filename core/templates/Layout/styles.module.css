@@ -13,13 +13,12 @@
   margin: 10rem auto 0 auto;
   width: 100%;
   max-width: var(--main-content);
-  padding: 0 var(--space-md) var(--space-xl) var(--space-md);
+  padding: 0 var(--space-md) var(--space-lg) var(--space-md);
 }
 
 @media screen and (max-width: 868px) {
   .article {
     margin-top: var(--space-xl);
     padding-inline: var(--space-md);
-    padding-bottom: var(--space-lg);
   }
 }
