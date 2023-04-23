@@ -42,11 +42,6 @@ const links: ListItem[] = [
     icon: Home,
   },
   {
-    label: "about",
-    href: "/about",
-    icon: ScanFace,
-  },
-  {
     label: "journals",
     href: "/journals",
     icon: Bookmark,
@@ -176,7 +171,7 @@ export default function Cmdk() {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && e.metaKey) {
+      if ((e.key === "k" && e.metaKey) || (e.key === "k" && e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }

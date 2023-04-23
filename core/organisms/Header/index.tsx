@@ -1,12 +1,13 @@
 import css from "./styles.module.scss";
 import Cmdk from "../Cmdk";
+import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <header className={css.header}>
+    <motion.header className={css.header} layout>
       <nav className={css.navigation}>
         <Cmdk />
       </nav>
-    </header>
+    </motion.header>
   );
 }

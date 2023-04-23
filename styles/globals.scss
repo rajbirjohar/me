@@ -106,7 +106,7 @@
   --space-3xl: 16rem;
   --space-4xl: 32rem;
   --space-5xl: 64rem;
-  --main-content: 42rem;
+  --main-content: 36rem;
   --radius-sm: 4px;
   --radius: 8px;
   --radius-inner: calc(var(--space) - var(--radius));
@@ -267,7 +267,7 @@
   --button-fg-active: var(--neutral-100);
 
   --link: var(--brand);
-  --link-hover: var(--brand-dark);
+  --link-hover: var(--brand-light);
 
   --outline: 0 0 0 2px var(--brand);
 

@@ -8,16 +8,17 @@
 .page {
   flex: 1;
   width: 100%;
-  max-width: var(--main-content);
+  max-width: 72rem;
   margin: 0 auto;
 }
 .article {
   width: 100%;
+  max-width: var(--main-content);
   padding: 0 var(--space-md) var(--space-2xl) var(--space-md);
 }
 
 @media screen and (max-width: 868px) {
   .article {
-    padding: var(--space-md);
+    padding-inline: var(--space-md);
   }
 }
