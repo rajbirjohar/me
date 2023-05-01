@@ -251,7 +251,7 @@ export default function Cmdk() {
         </header>
         <div className={css.search}>
           <Search className={css.icon} />
-          <input autoFocus className={css.hiddeninput} />
+          <input className={css.hiddeninput} />
           <Command.Input placeholder="Explore" />
         </div>
         <Command.List>
