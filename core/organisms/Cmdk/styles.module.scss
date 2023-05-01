@@ -250,6 +250,18 @@
     white-space: pre-wrap;
     color: var(--sub-fg);
   }
+
+  .hiddeninput {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @media screen and (min-width: 668px) {
+      display: none;
+    }
+  }
 }
 
 .button {
