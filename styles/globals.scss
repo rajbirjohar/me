@@ -49,11 +49,11 @@
   --tree: #059669;
   --firefly: transparent;
 
-  --brand-lighter: #bfdbfe;
-  --brand-light: #60a5fa;
-  --brand: #2563eb;
-  --brand-dark: #1e40af;
-  --brand-darker: #172554;
+  --brand-lighter: #e9d5ff;
+  --brand-light: #c084fc;
+  --brand: #c026d3;
+  --brand-dark: #6b21a8;
+  --brand-darker: #3b0764;
 
   --bg: var(--neutral-100);
 
@@ -489,6 +489,7 @@ button {
   background-color: var(--button-bg);
   color: var(--button-fg);
   cursor: pointer;
+  user-select: none;
 }
 
 button:hover {

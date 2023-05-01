@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import css from "./styles.module.scss";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import { Heart } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/core/atoms/Tooltip";
 
 const emojis = ["👍", "🙏", "🥰", "👏", "😄", "🤘", "🤪", "🙌", "🥹", "🎉"];
 
@@ -83,35 +84,46 @@ export default function LikeButton(props: { slug: string }) {
   return (
     <AnimatePresence>
       {likes.data && (
-        <motion.button
-          key={props.slug}
-          initial={{ scale: 0, opacity: 0, y: 10 }}
-          animate={{ scale: 1, opacity: 1, y: 0 }}
-          className={css.button}
-          onClick={() => mutation.mutate()}
-        >
-          <div className={css.emojiwrapper}>
-            <div className={css.emojis}>
-              {emojis.map((item, index) => {
-                return (
-                  <motion.div
-                    key={index}
-                    className={css.emoji}
-                    animate={
-                      likes.data.userLikes === index + 1 ? "animate" : "initial"
-                    }
-                    variants={emoji}
-                    initial="initial"
-                  >
-                    {item}
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-          <Heart className={likes.data.userLikes === 10 ? css.filled : ""} />
-          {likes.data.likes}
-        </motion.button>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <motion.button
+              key={props.slug}
+              initial={{ scale: 0, opacity: 0, y: 10 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              className={css.button}
+              onClick={() => mutation.mutate()}
+            >
+              <div className={css.emojiwrapper}>
+                <div className={css.emojis}>
+                  {emojis.map((item, index) => {
+                    return (
+                      <motion.div
+                        key={index}
+                        className={css.emoji}
+                        animate={
+                          likes.data.userLikes === index + 1
+                            ? "animate"
+                            : "initial"
+                        }
+                        variants={emoji}
+                        initial="initial"
+                      >
+                        {item}
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+              <Heart
+                className={likes.data.userLikes === 10 ? css.filled : ""}
+              />
+              {likes.data.likes}
+            </motion.button>
+          </TooltipTrigger>
+          <TooltipContent>
+            If you like what I write, let me know.
+          </TooltipContent>
+        </Tooltip>
       )}
     </AnimatePresence>
   );

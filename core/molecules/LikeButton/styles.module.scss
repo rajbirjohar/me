@@ -7,6 +7,7 @@
   gap: var(--space-sm);
   transition: background-color var(--transition-slower),
     scale var(--transition-slower);
+
   &:hover {
     scale: 1.05;
     transition: scale var(--transition), background-color var(--transition);
@@ -15,6 +16,7 @@
       color: var(--fg);
     }
   }
+
   svg {
     height: 20px;
     width: 20px;

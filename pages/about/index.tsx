@@ -45,7 +45,7 @@ export default function About() {
             </p>
             <p>
               Although I spend most of my time coding, I find great joy in
-              designing visually stunning and user-friendly interfaces. I find
+              designing visually aesthetic and user-friendly interfaces. I find
               that my affinity for design combined with my understanding of the
               web brings out incredible websites that just works.
             </p>
@@ -56,11 +56,6 @@ export default function About() {
               I recently earned a Bachelors of Science (B.S.) in Computer
               Science so I&#39;m still on the path to acquiring more experience.
               Although, I&#39;m eager to see what&#39;s ahead.
-            </p>
-            <p>
-              During college, I directed the largest hackathon in the California
-              Inland Empire. I oversaw a team of 10 to host an event that would
-              inspire many more upcoming engineeers.
             </p>
           </Animate>
           <motion.h2 variants={item}>After Hours</motion.h2>
@@ -77,10 +72,17 @@ export default function About() {
             </p>
           </Animate>
           <motion.h2 variants={item}>Education</motion.h2>
-          <motion.p variants={item}>
-            I attend the University of California at Riverside where I earned my
-            B.S. in Computer Science.
-          </motion.p>
+          <Animate>
+            <p>
+              I attended the University of California at Riverside where I
+              earned my B.S. in Computer Science.
+            </p>
+            <p>
+              During college, I directed the largest hackathon in the California
+              Inland Empire. I oversaw a team of ten to host an event that would
+              inspire many more upcoming engineeers.
+            </p>
+          </Animate>
         </Prose>
       </section>
     </>

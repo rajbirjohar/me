@@ -74,7 +74,7 @@ export default function Hello() {
   }, [index]);
 
   useEffect(() => {
-    const timer = setInterval(() => handleNext(), 5000);
+    const timer = setInterval(() => handleNext(), 4000);
     return () => clearInterval(timer);
   }, [handleNext]);
 
