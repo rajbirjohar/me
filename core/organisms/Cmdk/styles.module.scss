@@ -174,7 +174,7 @@
       color: var(--fg);
     }
     @media screen and (max-width: 668px) {
-      height: calc(90vh - 150px);
+      height: calc(100% - 150px);
       max-height: unset;
     }
   }
