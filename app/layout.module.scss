@@ -1,8 +1,22 @@
 .main {
   width: 100%;
-  margin: 10rem auto 5rem;
-  padding: 0 var(--space-md);
+  margin: 0 auto;
+  padding: 10rem var(--space-md) 5rem;
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
+}
+
+.gradient {
+  position: fixed;
+  bottom: 0;
+  height: 5rem;
+  width: 100%;
+  background: linear-gradient(0deg, var(--bg) 0%, transparent 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding-top: 8rem;
+  }
 }

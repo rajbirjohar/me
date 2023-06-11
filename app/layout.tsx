@@ -22,6 +22,7 @@ export default function RootLayout({
           <Header />
           {children}
         </main>
+        <div className={styles.gradient} aria-hidden />
       </body>
     </html>
   );

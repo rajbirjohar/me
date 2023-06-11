@@ -5,6 +5,7 @@
   gap: var(--space-md);
   padding-top: var(--space-lg);
   font-size: var(--font-sm);
+
   .content {
     & > * + * {
       margin-block-start: var(--space-sm);
@@ -34,5 +35,13 @@
     & strong {
       color: var(--gray-0);
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .other {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
