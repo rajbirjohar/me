@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  nav {
+    display: flex;
+    gap: var(--space-sm);
+    border: 2px solid var(--gray-10);
+    padding: var(--space-xs);
+    border-radius: 24px;
+    a {
+      isolation: isolate;
+      position: relative;
+      text-decoration: none;
+      padding: var(--space-xs) var(--space-md);
+      color: var(--gray-5);
+      transition: color var(--transition-slow);
+      user-select: none;
+      span {
+        z-index: 2;
+      }
+      &:hover {
+        color: var(--gray-0);
+      }
+      &.active {
+        color: var(--gray-0);
+      }
+      & .indicator {
+        z-index: -1;
+        inset: 0;
+        position: absolute;
+        background-color: var(--gray-10);
+      }
+    }
+  }
+}

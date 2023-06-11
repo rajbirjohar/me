@@ -1,0 +1,81 @@
+.hovercard {
+  isolation: isolate;
+  border-radius: var(--border-radius);
+  padding: var(--space-md);
+  width: 300px;
+  box-shadow: var(--shadow);
+  animation-duration: 400ms;
+  backdrop-filter: blur(20px);
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+  position: relative;
+  &[data-side="top"] {
+    animation-name: slideDownAndFade;
+  }
+  &.hovercard[data-side="right"] {
+    animation-name: slideLeftAndFade;
+  }
+  &.hovercard[data-side="bottom"] {
+    animation-name: slideUpAndFade;
+  }
+  &.hovercard[data-side="left"] {
+    animation-name: slideRightAndFade;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--gray-12);
+    opacity: 0.5;
+    border-radius: var(--border-radius);
+    z-index: -1;
+  }
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.arrow {
+  fill: white;
+}

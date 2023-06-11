@@ -1,0 +1,38 @@
+.other {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  font-size: var(--font-sm);
+  .content {
+    & > * + * {
+      margin-block-start: var(--space-sm);
+    }
+  }
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+    color: var(--gray-5);
+    transition: var(--transition-slow);
+    &:hover {
+      color: var(--gray-1);
+    }
+  }
+  .metrics {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--gray-4);
+    & strong {
+      color: var(--gray-0);
+    }
+  }
+}

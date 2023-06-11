@@ -1,0 +1,187 @@
+:root {
+  --max-width: 36rem;
+  --border-radius: 8px;
+  --border-radius-full: 50%;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --space-xxs: 0.125rem; /* Extra extra small */
+  --space-xs: 0.25rem; /* Extra small */
+  --space-sm: 0.5rem; /* Small */
+  --space-md: 1rem; /* Medium */
+  --space-lg: 1.5rem; /* Large */
+  --space-xl: 2rem; /* Extra large */
+  --space-xxl: 3rem; /* Extra extra large */
+
+  /* Neutral colors */
+  --gray-0: #000000;
+  --gray-1: #111111;
+  --gray-2: #333333;
+  --gray-3: #525252;
+  --gray-4: #666666;
+  --gray-5: #7a7a7a;
+  --gray-6: #8f8f8f;
+  --gray-7: #a3a3a3;
+  --gray-8: #b8b8b8;
+  --gray-9: #cccccc;
+  --gray-10: #e0e0e0;
+  --gray-11: #f5f5f5;
+  --gray-12: #ffffff;
+
+  --error-lighter: #f7d4d6;
+  --error-light: #f33;
+  --error: red;
+  --error-dark: #e60000;
+
+  --bg: var(--gray-11);
+  --heading-fg: var(--gray-0);
+  --fg: var(--gray-1);
+  --sub-fg: var(--gray-4);
+
+  /* Brand colors */
+  --brand: #d23149;
+
+  /* Font sizes */
+  --font-xs: clamp(0.83rem, 0vw + 0.83rem, 0.83rem);
+  --font-sm: clamp(0.91rem, 0vw + 0.91rem, 0.91rem);
+  --font-base: clamp(1rem, 0vw + 1rem, 1rem);
+  --font-md: clamp(1.1rem, 0vw + 1.1rem, 1.1rem);
+  --font-lg: clamp(1.21rem, 0vw + 1.21rem, 1.21rem);
+  --font-xl: clamp(1.33rem, 0vw + 1.33rem, 1.33rem);
+
+  /* Transitions */
+  --transition: 200ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 400ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slower: 600ms cubic-bezier(0.25, 1, 0.5, 1);
+  --stagger: 0;
+  --delay: 120ms;
+  --start: 0ms;
+
+  /* Shadows */
+  --shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.07);
+  --nav-shadow: rgba(178, 183, 190, 0.15) 0px 5px 10px 0px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  font-size: var(--font-base);
+  background-color: var(--bg);
+  color: var(--fg);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-xl);
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-fg);
+  font-weight: 600;
+  position: relative;
+  letter-spacing: 0.025em;
+}
+
+h1 {
+  font-size: var(--font-xl);
+}
+
+h2 {
+  font-size: var(--font-lg);
+}
+
+h3 {
+  font-size: var(--font-md);
+}
+
+h4 {
+  font-size: var(--font-base);
+}
+
+h5 {
+  font-size: var(--font-sm);
+}
+
+h6 {
+  font-size: var(--font-xs);
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background: var(--brand);
+  color: var(--gray-9); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--gray-11);
+}
+::-moz-selection {
+  background: var(--brand);
+  color: var(--gray-9); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--gray-11);
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
