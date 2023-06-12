@@ -1,5 +1,5 @@
 .hero {
-  svg {
+  p svg {
     height: 20px;
     width: 20px;
     display: inline;
@@ -30,7 +30,7 @@
     align-items: center;
     gap: 2px;
     text-decoration: none;
-    color: var(--gray-5);
+    color: var(--sub-fg);
     transition: var(--transition-slow);
     &:hover {
       color: var(--gray-1);
@@ -40,7 +40,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    color: var(--gray-4);
+    color: var(--sub-fg);
     & strong {
       color: var(--gray-0);
     }
