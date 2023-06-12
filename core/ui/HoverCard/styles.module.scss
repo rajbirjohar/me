@@ -9,17 +9,33 @@
   animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, opacity;
   position: relative;
-  &[data-side="top"] {
-    animation-name: slideDownAndFade;
+  &[data-state="open"] {
+    &[data-side="top"] {
+      animation-name: slideDownAndFadeOpen;
+    }
+    &.hovercard[data-side="right"] {
+      animation-name: slideLeftAndFadeOpen;
+    }
+    &.hovercard[data-side="bottom"] {
+      animation-name: slideUpAndFadeOpen;
+    }
+    &.hovercard[data-side="left"] {
+      animation-name: slideRightAndFadeOpen;
+    }
   }
-  &.hovercard[data-side="right"] {
-    animation-name: slideLeftAndFade;
-  }
-  &.hovercard[data-side="bottom"] {
-    animation-name: slideUpAndFade;
-  }
-  &.hovercard[data-side="left"] {
-    animation-name: slideRightAndFade;
+  &[data-state="closed"] {
+    &[data-side="top"] {
+      animation-name: slideDownAndFadeClosed;
+    }
+    &.hovercard[data-side="right"] {
+      animation-name: slideLeftAndFadeClosed;
+    }
+    &.hovercard[data-side="bottom"] {
+      animation-name: slideUpAndFadeClosed;
+    }
+    &.hovercard[data-side="left"] {
+      animation-name: slideRightAndFadeClosed;
+    }
   }
   &::before {
     content: "";
@@ -32,7 +48,7 @@
   }
 }
 
-@keyframes slideUpAndFade {
+@keyframes slideUpAndFadeOpen {
   from {
     opacity: 0;
     transform: translateY(2px);
@@ -43,7 +59,7 @@
   }
 }
 
-@keyframes slideRightAndFade {
+@keyframes slideRightAndFadeOpen {
   from {
     opacity: 0;
     transform: translateX(-2px);
@@ -54,7 +70,7 @@
   }
 }
 
-@keyframes slideDownAndFade {
+@keyframes slideDownAndFadeOpen {
   from {
     opacity: 0;
     transform: translateY(-2px);
@@ -65,7 +81,7 @@
   }
 }
 
-@keyframes slideLeftAndFade {
+@keyframes slideLeftAndFadeOpen {
   from {
     opacity: 0;
     transform: translateX(2px);
@@ -73,6 +89,50 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slideUpAndFadeClosed {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+}
+
+@keyframes slideRightAndFadeClosed {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes slideDownAndFadeClosed {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes slideLeftAndFadeClosed {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(2px);
   }
 }
 

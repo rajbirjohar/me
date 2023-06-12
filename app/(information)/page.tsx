@@ -1,5 +1,18 @@
 import styles from "./page.module.scss";
-import { ArrowUpRightIcon } from "lucide-react";
+import {
+  ApertureIcon,
+  ArrowUpRightIcon,
+  Code2Icon,
+  EggFriedIcon,
+  EyeIcon,
+  KeyboardIcon,
+  MountainSnowIcon,
+  MusicIcon,
+  PaintbrushIcon,
+  PaletteIcon,
+  PenToolIcon,
+  Wand2Icon,
+} from "lucide-react";
 import {
   HoverCard,
   HoverCardContent,
@@ -21,17 +34,28 @@ export default async function Home() {
   }
 
   return (
-    <section>
+    <section className={styles.hero}>
       <Hello />
-      <p>I&#39;m an engineer and designer.</p>
-      <p>I also take photos, play bass, and get lost on canyon drives.</p>
       <p>
-        Currently building slick and accessible interfaces at Inventives.
-        Aspiring CSS wizard. Breaking things and learning along the way.
+        I&#39;m an <Code2Icon name="Code Icon" /> engineer and{" "}
+        <PenToolIcon name="Pen Tool Icon" /> designer.
       </p>
       <p>
-        Building up Snow Mouse Studio, a collaborative effort to create
-        brilliant ideas.
+        I also take <ApertureIcon name="Aperture Icon" /> photos,{" "}
+        <MusicIcon name="Music Icon" /> play bass, and{" "}
+        <MountainSnowIcon name="Mountain Snow Icon" /> get lost on canyon
+        drives.
+      </p>
+      <p>
+        Currently building <PaintbrushIcon name="Paint brush Icon" /> slick and{" "}
+        <EyeIcon name="Eye Icon" /> accessible interfaces at Inventives.
+        Aspiring <PaletteIcon name="Palette Icon" /> CSS wizard.{" "}
+        <EggFriedIcon name="Egg Fried Icon" /> Breaking things and learning
+        along the way.
+      </p>
+      <p>
+        Working on Snow Mouse Studio on the side, a collaborative effort to
+        create <Wand2Icon name="Wand 2 Icon" /> brilliant ideas.
       </p>
       <div className={styles.other}>
         {repo && (
