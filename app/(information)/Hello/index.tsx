@@ -3,6 +3,7 @@
 import { AnimatePresence, LayoutGroup, Variants, motion } from "framer-motion";
 import css from "./styles.module.scss";
 import { useCallback, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 const greetings = [
   "Hello",
@@ -32,9 +33,7 @@ const greetings = [
   "Здравейте",
 ];
 
-export default function Hello() {
-  const [mounted, setMounted] = useState(false);
-
+const Hello = () => {
   const hello: Variants = {
     initial: {
       opacity: 0,
@@ -79,12 +78,6 @@ export default function Hello() {
     return () => clearInterval(timer);
   }, [handleNext]);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return <></>;
-
   return (
     <h1 className={css.hello} data-nosnippet>
       <LayoutGroup id="hello">
@@ -108,4 +101,8 @@ export default function Hello() {
       </LayoutGroup>
     </h1>
   );
-}
+};
+
+export default dynamic(() => Promise.resolve(Hello), {
+  ssr: false,
+});

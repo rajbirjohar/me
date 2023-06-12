@@ -8,6 +8,7 @@
     display: inline-block;
   }
   .greeting {
+    color: var(--brand);
     overflow: hidden;
     white-space: nowrap;
   }

@@ -39,8 +39,10 @@
   --fg: var(--gray-1);
   --sub-fg: var(--gray-4);
 
+  --card: var(--gray-12);
+
   /* Brand colors */
-  --brand: #d23149;
+  --brand: #ff2d55;
 
   /* Font sizes */
   --font-xs: clamp(0.83rem, 0vw + 0.83rem, 0.83rem);
@@ -63,9 +65,28 @@
   --nav-shadow: rgba(178, 183, 190, 0.15) 0px 5px 10px 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
+[data-theme="dark"] {
+  /* Neutral colors */
+  --gray-12: #000000;
+  --gray-11: #0d0d0d;
+  --gray-10: #333333;
+  --gray-9: #525252;
+  --gray-8: #666666;
+  --gray-7: #7a7a7a;
+  --gray-6: #8f8f8f;
+  --gray-5: #a3a3a3;
+  --gray-4: #b8b8b8;
+  --gray-3: #cccccc;
+  --gray-2: #e0e0e0;
+  --gray-1: #f5f5f5;
+  --gray-0: #ffffff;
+
+  --brand: #ff375f;
+
+  --card: #1b1b1b;
+
+  --shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.4);
+  --nav-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px 0px;
 }
 
 * {

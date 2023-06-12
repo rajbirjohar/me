@@ -13,7 +13,12 @@ import Hello from "./Hello";
 export const revalidate = 60;
 
 export default async function Home() {
-  const [profile, repo] = await Promise.all([getProfileData(), getRepo()]);
+  let profile, repo;
+  try {
+    [profile, repo] = await Promise.all([getProfileData(), getRepo()]);
+  } catch (error) {
+    console.log(error);
+  }
 
   return (
     <section>
@@ -29,16 +34,18 @@ export default async function Home() {
         brilliant ideas.
       </p>
       <div className={styles.other}>
-        <span
-          style={{
-            color: "var(--sub-fg)",
-          }}
-        >
-          Updated{" "}
-          {formatDistance(new Date(repo.updated_at), new Date(), {
-            addSuffix: true,
-          })}
-        </span>
+        {repo && (
+          <span
+            style={{
+              color: "var(--sub-fg)",
+            }}
+          >
+            Updated{" "}
+            {formatDistance(new Date(repo.updated_at), new Date(), {
+              addSuffix: true,
+            })}
+          </span>
+        )}
         <div className={styles.contact}>
           <HoverCard>
             <HoverCardTrigger asChild>
@@ -54,29 +61,38 @@ export default async function Home() {
               <p>Connect with me on LinkedIn.</p>
             </HoverCardContent>
           </HoverCard>
-          <HoverCard>
-            <HoverCardTrigger asChild>
-              <a href={profile.html_url} className={styles.link}>
-                Github <ArrowUpRightIcon size={20} />{" "}
-              </a>
-            </HoverCardTrigger>
-            <HoverCardContent className={styles.content} side="top">
-              <Avatar>
-                <AvatarImage src={profile.avatar_url} alt="Rajbir Johar" />
-                <AvatarFallback delayMs={600}>RJ</AvatarFallback>
-              </Avatar>
-              <h4>{profile.name}</h4>
-              <p>{profile.bio}</p>
-              <div className={styles.metrics}>
-                <span>
-                  <strong>{profile.followers}</strong> followers
-                </span>
-                <span>
-                  <strong>{profile.following}</strong> following
-                </span>
-              </div>
-            </HoverCardContent>
-          </HoverCard>
+          {!profile ? (
+            <a
+              href={"https://www.github.com/rajbirjohar"}
+              className={styles.link}
+            >
+              Github <ArrowUpRightIcon size={20} />{" "}
+            </a>
+          ) : (
+            <HoverCard>
+              <HoverCardTrigger asChild>
+                <a href={profile.html_url} className={styles.link}>
+                  Github <ArrowUpRightIcon size={20} />{" "}
+                </a>
+              </HoverCardTrigger>
+              <HoverCardContent className={styles.content} side="top">
+                <Avatar>
+                  <AvatarImage src={profile.avatar_url} alt="Rajbir Johar" />
+                  <AvatarFallback delayMs={600}>RJ</AvatarFallback>
+                </Avatar>
+                <h4>{profile.name}</h4>
+                <p>{profile.bio}</p>
+                <div className={styles.metrics}>
+                  <span>
+                    <strong>{profile.followers}</strong> followers
+                  </span>
+                  <span>
+                    <strong>{profile.following}</strong> following
+                  </span>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+          )}
         </div>
       </div>
     </section>

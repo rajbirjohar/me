@@ -17,9 +17,6 @@
       color: var(--gray-5);
       transition: color var(--transition-slow);
       user-select: none;
-      span {
-        z-index: 2;
-      }
       &:hover {
         color: var(--gray-0);
       }
