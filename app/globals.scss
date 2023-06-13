@@ -14,35 +14,21 @@
   --space-xl: 2rem; /* Extra large */
   --space-xxl: 3rem; /* Extra extra large */
 
-  /* Neutral colors */
-  --gray-0: #000000;
-  --gray-1: #111111;
-  --gray-2: #333333;
-  --gray-3: #525252;
-  --gray-4: #666666;
-  --gray-5: #7a7a7a;
-  --gray-6: #8f8f8f;
-  --gray-7: #a3a3a3;
-  --gray-8: #b8b8b8;
-  --gray-9: #cccccc;
-  --gray-10: #e0e0e0;
-  --gray-11: #f5f5f5;
-  --gray-12: #ffffff;
+  --primary-foreground: #27262c;
+  --secondary-foreground: #676a72;
+
+  --background: #f2f4f5;
+  --lifted-background: #ffffff;
+
+  --border-color: #dee0e2;
+  --border: 1px solid var(--border-color);
+
+  --brand: #ff2d55;
 
   --error-lighter: #f7d4d6;
   --error-light: #f33;
   --error: red;
   --error-dark: #e60000;
-
-  --bg: var(--gray-11);
-  --heading-fg: var(--gray-0);
-  --fg: var(--gray-1);
-  --sub-fg: var(--gray-4);
-
-  --card: var(--gray-12);
-
-  /* Brand colors */
-  --brand: #ff2d55;
 
   /* Font sizes */
   --font-xs: clamp(0.83rem, 0vw + 0.83rem, 0.83rem);
@@ -66,27 +52,19 @@
 }
 
 [data-theme="dark"] {
-  /* Neutral colors */
-  --gray-12: #000000;
-  --gray-11: #0d0d0d;
-  --gray-10: #333333;
-  --gray-9: #525252;
-  --gray-8: #666666;
-  --gray-7: #7a7a7a;
-  --gray-6: #8f8f8f;
-  --gray-5: #a3a3a3;
-  --gray-4: #b8b8b8;
-  --gray-3: #cccccc;
-  --gray-2: #e0e0e0;
-  --gray-1: #f5f5f5;
-  --gray-0: #ffffff;
+  --primary-foreground: #e6e7ed;
+  --secondary-foreground: #97989e;
+
+  --background: #1e2024;
+  --lifted-background: #303237;
+
+  --border-color: #393b41;
+  --border: 1px solid var(--border-color);
 
   --brand: #ff375f;
 
-  --card: #1b1b1b;
-
-  --shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.4);
-  --nav-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px 0px;
+  --shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+  --nav-shadow: rgba(11, 11, 11, 0.15) 0px 5px 10px 0px;
 }
 
 * {
@@ -118,8 +96,8 @@ body {
   -webkit-font-smoothing: antialiased;
   height: 100%;
   font-size: var(--font-base);
-  background-color: var(--bg);
-  color: var(--fg);
+  background-color: var(--background);
+  color: var(--primary-foreground);
   scroll-behavior: smooth;
   scroll-padding-top: var(--space-xl);
 }
@@ -150,7 +128,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-fg);
   font-weight: 600;
   position: relative;
   letter-spacing: 0.025em;
@@ -195,13 +172,13 @@ h6 {
 
 ::selection {
   background: var(--brand);
-  color: var(--gray-9); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--gray-11);
+  color: var(--background); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--background);
 }
 ::-moz-selection {
   background: var(--brand);
-  color: var(--gray-9); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--gray-11);
+  color: var(--background); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--background);
 }
 
 /*

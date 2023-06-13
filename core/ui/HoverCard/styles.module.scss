@@ -1,14 +1,23 @@
 .hovercard {
   isolation: isolate;
-  border-radius: var(--border-radius);
-  padding: var(--space-md);
   width: 300px;
+  padding: var(--space-md);
   box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
   animation-duration: 400ms;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
   animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, opacity;
   position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--lifted-background);
+    opacity: 0.9;
+    border-radius: var(--border-radius);
+    z-index: -1;
+  }
   &[data-state="open"] {
     &[data-side="top"] {
       animation-name: slideDownAndFadeOpen;
@@ -36,15 +45,6 @@
     &.hovercard[data-side="left"] {
       animation-name: slideRightAndFadeClosed;
     }
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: var(--card);
-    opacity: 0.5;
-    border-radius: var(--border-radius);
-    z-index: -1;
   }
 }
 
@@ -134,8 +134,4 @@
     opacity: 0;
     transform: translateX(2px);
   }
-}
-
-.arrow {
-  fill: white;
 }

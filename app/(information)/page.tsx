@@ -61,7 +61,7 @@ export default async function Home() {
         {repo && (
           <span
             style={{
-              color: "var(--sub-fg)",
+              color: "var(--secondary-foreground)",
             }}
           >
             Updated{" "}

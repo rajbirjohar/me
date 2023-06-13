@@ -30,19 +30,19 @@
     align-items: center;
     gap: 2px;
     text-decoration: none;
-    color: var(--sub-fg);
+    color: var(--secondary-foreground);
     transition: var(--transition-slow);
     &:hover {
-      color: var(--gray-1);
+      color: var(--primary-foreground);
     }
   }
   .metrics {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    color: var(--sub-fg);
+    color: var(--secondary-foreground);
     & strong {
-      color: var(--gray-0);
+      color: var(--primary-foreground);
     }
   }
 }
