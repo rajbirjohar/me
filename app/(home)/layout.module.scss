@@ -1,0 +1,6 @@
+.article {
+  isolation: isolate;
+  & section > * + * {
+    margin-block-start: var(--space-md);
+  }
+}

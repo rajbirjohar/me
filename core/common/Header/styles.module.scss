@@ -3,14 +3,44 @@
   align-items: center;
   justify-content: center;
   nav {
+    position: relative;
     background-color: var(--lifted-background);
     display: flex;
+    align-items: center;
     gap: var(--space-sm);
     box-shadow: var(--nav-shadow);
-    padding: var(--space-xs);
+    overflow: hidden;
     border-radius: 24px;
+
+    // .glowline {
+    //   background: linear-gradient(
+    //     90deg,
+    //     rgba(0, 0, 0, 0),
+    //     var(--border-color) 20%,
+    //     var(--secondary-foreground) 67.19%,
+    //     rgba(0, 0, 0, 0)
+    //   );
+    //   opacity: 0.6;
+    //   height: 1px;
+    //   position: absolute;
+    //   top: 0px;
+    //   width: 75%;
+    //   z-index: 1;
+    //   left: 0;
+    //   right: 0;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // }
+    .linkwrapper {
+      display: flex;
+      align-items: center;
+      padding: var(--space-xs);
+
+      z-index: 2;
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+    }
     a {
-      isolation: isolate;
       position: relative;
       text-decoration: none;
       padding: var(--space-xs) var(--space-md);

@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, LayoutGroup, Variants, motion } from "framer-motion";
-import css from "./styles.module.scss";
+import styles from "./styles.module.scss";
 import { useCallback, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
@@ -78,28 +78,58 @@ const Hello = () => {
     return () => clearInterval(timer);
   }, [handleNext]);
 
+  useEffect(() => {
+    window.sessionStorage.setItem("load", "true");
+  }, []);
+
   return (
-    <h1 className={css.hello} data-nosnippet>
-      <LayoutGroup id="hello">
-        <AnimatePresence mode="wait" initial={false}>
+    <div className={styles.wrapper}>
+      <motion.h1
+        className={styles.hello}
+        data-nosnippet
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            type: "tween",
+            duration: 0.6,
+            delay: 0.4,
+          },
+        }}
+      >
+        <LayoutGroup id="hello">
+          <AnimatePresence mode="wait">
+            <motion.span
+              className={styles.greeting}
+              key={greetings[index]}
+              variants={hello}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              layoutId="greeting"
+              layout="preserve-aspect"
+            >
+              <motion.span layout>{greetings[index]}.&nbsp;</motion.span>
+            </motion.span>
+          </AnimatePresence>
           <motion.span
-            className={css.greeting}
-            key={greetings[index]}
-            variants={hello}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            layoutId="greeting"
-            layout="preserve-aspect"
+            layout="position"
+            layoutId="name"
+            className={styles.name}
           >
-            <motion.span layout>{greetings[index]}.&nbsp;</motion.span>
+            I&#39;m Rajbir.
           </motion.span>
-        </AnimatePresence>
-        <motion.span layout="position" layoutId="name" className={css.name}>
-          I&#39;m Rajbir.
-        </motion.span>
-      </LayoutGroup>
-    </h1>
+        </LayoutGroup>
+      </motion.h1>
+      <motion.h2
+        className={styles.subtitle}
+        initial={{ opacity: 0, y: 5 }}
+        animate={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: 1 } }}
+      >
+        Engineer / Designer
+      </motion.h2>
+    </div>
   );
 };
 

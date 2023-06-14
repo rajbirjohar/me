@@ -36,7 +36,7 @@ export default async function Home() {
   return (
     <section className={styles.hero}>
       <Hello />
-      <p>
+      {/* <p>
         I&#39;m an <Code2Icon name="Code Icon" /> engineer and{" "}
         <PenToolIcon name="Pen Tool Icon" /> designer.
       </p>
@@ -118,7 +118,7 @@ export default async function Home() {
             </HoverCard>
           )}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

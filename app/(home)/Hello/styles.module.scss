@@ -1,3 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: all;
+}
+
+.subtitle {
+  color: var(--secondary-foreground);
+  font-size: var(--font-base);
+  font-weight: normal;
+}
+
 .hello {
   display: flex;
   align-items: center;
