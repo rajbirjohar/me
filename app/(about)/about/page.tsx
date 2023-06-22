@@ -4,14 +4,15 @@ export default function About() {
       <section>
         <h1>Whoami</h1>
         <p>
-          I&#39;m a <strong>UX Engineer Lead</strong> at Inventives, where
-          I&#39;m responsible for designing, coding and maintaining user
-          interfaces.
+          I&#39;m a <strong>UX Engineer Lead</strong> at a venture studio, where
+          my sweet-spot is designing, coding and maintaining user interfaces
+          amongst other responsibilities
         </p>
         <p>
-          My work deals with Typescript and React and plenty of CSS. From
-          micro-interactions to stunning visual design, my goal is to create
-          interfaces that look amazing and feel effortless to use.
+          My tools of the trade are typically Typescript and React and plenty of
+          CSS. From micro-interactions to strategically driven visual design, my
+          goal is to create interfaces that not only look impressive, but feel
+          effortless to use.
         </p>
         <p>
           I&#39;m an artist at heart and I approach my work with a unique
@@ -19,26 +20,27 @@ export default function About() {
           impossible.
         </p>
         <p>
-          Although I spend most of my time coding, I find great joy in designing
-          visually aesthetic and user-friendly interfaces. I find that my
-          affinity for design combined with my understanding of the web brings
-          out incredible websites that just works.
+          Although I spend a large proportion of my time coding, what really
+          gets me up in the morning is designing visually aesthetic and
+          user-friendly interfaces. I find that my affinity for design combined
+          with my understanding of the web enables me to create incredible
+          websites that work as good as they look.
         </p>
         <h2>Experience and Education</h2>
         <p>
-          I joined Inventives early 2022. We are a venture studio focused on
-          building high potential Minimum Viable Products (MVPs) and spinning
-          them off into their own companies. I primarily work on designing and
-          building the frontend of our products.
+          I joined my present company in early 2022 where my responsibilities
+          are designing and building the front-end of our various concepts. We
+          build high potential Minimum Viable Products (MVPs) then spin them off
+          into their own successful and independent ventures.
         </p>
         <p>
-          I acquired a Bachelors of Science (B.S.) in Computer Science from the
-          University of California, Riverside in 2022.
-        </p>
-        <p>
-          During college, I led the largest hackathon in the California Inland
-          Empire. I oversaw a team of ten to host a collaborative and engaging
-          programming event meant to inspire many more upcoming engineeers.
+          I earned my Bachelors of Science (B.S.) in Computer Science from the
+          University of California, Riverside in 2022. During my time as a
+          student at UCR, I devised and led the largest hackathon ever held in
+          the California Inland Empire. Overseeing a team of ten, and under my
+          leadership, this ambitious programming event succeeded in inspiring a
+          host of up and coming engineers - something I&#39;m still quite proud
+          of.
         </p>
         <h2>After Hours</h2>
         <p>
@@ -47,16 +49,15 @@ export default function About() {
           or simply enjoying a regular walk through downtown.
         </p>
         <p>
-          I recently picked up playing the bass and enjoy creating music in my
-          spare time. There&#39;s something I find incredibly satisfying about
-          the deep, rumble, and I love how it allows me to express myself in a
-          completely different way.
+          I recently began playing the bass guitar and now enjoy playing and
+          creating music in my spare time. There&#39;s something I find
+          incredibly satisfying about the deep, rumble of a bass, and how it
+          allows me to express myself in a completely different way.
         </p>
         <p>
           Finally, I also enjoy taking scenic drives through canyons and other
-          natural landscapes. It&#39;s peaceful and calming about being
-          surrounded by nothing but open road, and I find that it helps me to
-          clear my mind.
+          natural landscapes. It&#39;s peaceful being surrounded by nothing but
+          silence and the open road.
         </p>
       </section>
     </>

@@ -1,5 +1,7 @@
 .article {
-  isolation: isolate;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   & section > * + * {
     margin-block-start: var(--space-md);
   }

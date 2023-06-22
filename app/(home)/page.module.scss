@@ -1,20 +1,12 @@
 .hero {
-  position: absolute;
-  inset: 0;
-  content: "";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
-  pointer-events: none;
-  p svg {
+  padding: 0 var(--space-md);
+  p > svg {
     height: 20px;
     width: 20px;
     display: inline;
     margin-bottom: -4px;
   }
 }
-
 .other {
   display: flex;
   align-items: center;
@@ -22,7 +14,6 @@
   gap: var(--space-md);
   padding-top: var(--space-lg);
   font-size: var(--font-sm);
-
   .content {
     & > * + * {
       margin-block-start: var(--space-sm);
@@ -33,29 +24,35 @@
     align-items: center;
     gap: var(--space-md);
   }
-  .link {
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
-    text-decoration: none;
-    color: var(--secondary-foreground);
-    transition: var(--transition-slow);
-    &:hover {
-      color: var(--primary-foreground);
-    }
+}
+.metrics {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--secondary-foreground);
+  & strong {
+    color: var(--primary-foreground);
   }
-  .metrics {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    color: var(--secondary-foreground);
-    & strong {
-      color: var(--primary-foreground);
-    }
+}
+.link {
+  cursor: pointer;
+  display: inline-flex;
+  text-decoration: none;
+  color: var(--secondary-foreground);
+  transition: var(--transition-slow);
+  &:hover {
+    color: var(--primary-foreground);
+  }
+  & svg {
+    margin-top: 4px;
+    stroke-width: 3;
   }
 }
 
 @media screen and (max-width: 768px) {
+  .hello {
+    align-items: flex-start;
+  }
   .other {
     flex-direction: column;
     justify-content: flex-start;

@@ -1,19 +1,7 @@
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  pointer-events: all;
-}
-
-.subtitle {
-  color: var(--secondary-foreground);
-  font-size: var(--font-base);
-  font-weight: normal;
-}
-
 .hello {
+  --font-super: clamp(1.5rem, 0vw + 1.5rem, 1.5rem);
+  font-size: var(--font-super);
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   .greeting,
   .name {
@@ -24,5 +12,8 @@
     color: var(--brand);
     overflow: hidden;
     white-space: nowrap;
+  }
+  .placeholder {
+    height: 42px;
   }
 }

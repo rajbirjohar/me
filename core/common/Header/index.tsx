@@ -31,7 +31,7 @@ export default function Header() {
           animate={{
             width: "auto",
             transition: {
-              delay: 1.8,
+              delay: 0.6,
               duration: 0.6,
               type: "spring",
               stiffness: 105,
@@ -39,7 +39,6 @@ export default function Header() {
             },
           }}
         >
-          {/* <div className={styles.glowline} /> */}
           <div className={styles.linkwrapper}>
             {links.map(({ href, text }, index) => {
               const active = href === pathname;

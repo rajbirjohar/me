@@ -5,7 +5,6 @@ import {
   Code2Icon,
   EggFriedIcon,
   EyeIcon,
-  KeyboardIcon,
   MountainSnowIcon,
   MusicIcon,
   PaintbrushIcon,
@@ -22,6 +21,7 @@ import { getRepo, getProfileData } from "@/lib/github";
 import { Avatar, AvatarFallback, AvatarImage } from "@/core/ui/Avatar";
 import { formatDistance } from "date-fns";
 import Hello from "./Hello";
+import CopyText from "@/core/common/CopyText";
 
 export const revalidate = 60;
 
@@ -36,7 +36,7 @@ export default async function Home() {
   return (
     <section className={styles.hero}>
       <Hello />
-      {/* <p>
+      <p>
         I&#39;m an <Code2Icon name="Code Icon" /> engineer and{" "}
         <PenToolIcon name="Pen Tool Icon" /> designer.
       </p>
@@ -48,14 +48,21 @@ export default async function Home() {
       </p>
       <p>
         Currently building <PaintbrushIcon name="Paint brush Icon" /> slick and{" "}
-        <EyeIcon name="Eye Icon" /> accessible interfaces at Inventives.
-        Aspiring <PaletteIcon name="Palette Icon" /> CSS wizard.{" "}
+        <EyeIcon name="Eye Icon" /> accessible interfaces for mind blowing
+        ideas. Aspiring <PaletteIcon name="Palette Icon" /> CSS wizard.{" "}
         <EggFriedIcon name="Egg Fried Icon" /> Breaking things and learning
         along the way.
       </p>
       <p>
-        Working on Snow Mouse Studio on the side, a collaborative effort to
-        create <Wand2Icon name="Wand 2 Icon" /> brilliant ideas.
+        Working on{" "}
+        <a className={styles.link} href="https://www.snowmouse.co/">
+          Snow Mouse Studio <ArrowUpRightIcon size={10} />
+        </a>{" "}
+        on the side, a collaborative effort to create{" "}
+        <Wand2Icon name="Wand 2 Icon" /> brilliant ideas.
+      </p>
+      <p>
+        Reach me at <CopyText text="hello@rajbir.io" />.
       </p>
       <div className={styles.other}>
         {repo && (
@@ -77,7 +84,7 @@ export default async function Home() {
                 href={"https://www.linkedin.com/in/rajbirjohar/"}
                 className={styles.link}
               >
-                LinkedIn <ArrowUpRightIcon size={20} />{" "}
+                LinkedIn <ArrowUpRightIcon size={10} />{" "}
               </a>
             </HoverCardTrigger>
             <HoverCardContent className={styles.content} side="top">
@@ -90,13 +97,13 @@ export default async function Home() {
               href={"https://www.github.com/rajbirjohar"}
               className={styles.link}
             >
-              Github <ArrowUpRightIcon size={20} />{" "}
+              Github <ArrowUpRightIcon size={10} />{" "}
             </a>
           ) : (
             <HoverCard>
               <HoverCardTrigger asChild>
                 <a href={profile.html_url} className={styles.link}>
-                  Github <ArrowUpRightIcon size={20} />{" "}
+                  Github <ArrowUpRightIcon size={10} />{" "}
                 </a>
               </HoverCardTrigger>
               <HoverCardContent className={styles.content} side="top">
@@ -118,7 +125,7 @@ export default async function Home() {
             </HoverCard>
           )}
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }

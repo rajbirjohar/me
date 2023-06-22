@@ -1,0 +1,12 @@
+.trigger {
+  border: none;
+  outline: transparent;
+  padding: 0;
+  background-color: transparent;
+  color: var(--secondary-foreground);
+  cursor: pointer;
+  transition: color var(--transition-slower);
+  &:hover {
+    color: var(--primary-foreground);
+  }
+}
