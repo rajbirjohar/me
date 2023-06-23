@@ -1,6 +1,6 @@
 .article {
-  width: 100%;
   max-width: 36rem;
+  margin-top: 40px;
   & section > * + * {
     margin-block-start: var(--space-md);
   }

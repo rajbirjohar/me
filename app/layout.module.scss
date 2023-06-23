@@ -15,6 +15,7 @@
   height: 120px;
   width: 100%;
   background: linear-gradient(0deg, var(--bg) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 @media screen and (max-width: 768px) {

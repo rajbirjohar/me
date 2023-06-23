@@ -22,7 +22,7 @@ export default async function Home() {
         on the side.
       </p>
       <p>
-        Talk to me - <CopyText text="hello@rajbir.io" />.
+        Talk to me — <CopyText text="hello@rajbir.io" />.
       </p>
     </section>
   );

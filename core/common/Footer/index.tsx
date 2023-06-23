@@ -51,7 +51,7 @@ export default async function Footer() {
               </a>
             </HoverCardTrigger>
             <HoverCardContent className={styles.content}>
-              <h4>LinkedIn</h4>
+              <h5>LinkedIn</h5>
               <p>Connect with me on LinkedIn.</p>
             </HoverCardContent>
           </HoverCard>
@@ -84,7 +84,7 @@ export default async function Footer() {
                   <AvatarImage src={profile.avatar_url} alt="Rajbir Johar" />
                   <AvatarFallback delayMs={600}>RJ</AvatarFallback>
                 </Avatar>
-                <h4>{profile.name}</h4>
+                <h5>{profile.name}</h5>
                 <p>{profile.bio}</p>
                 <div className={styles.metrics}>
                   <span>

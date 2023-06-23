@@ -40,12 +40,12 @@ export default function Info() {
           student at UCR, I devised and led the largest hackathon ever held in
           the California Inland Empire. Overseeing a team of ten, and under my
           leadership, this ambitious programming event succeeded in inspiring a
-          host of up and coming engineers - something I&#39;m still quite proud
+          host of up and coming engineers — something I&#39;m still quite proud
           of.
         </p>
         <h2>After Hours</h2>
         <p>
-          One of my favorite pastimes is photography - I love capturing the
+          One of my favorite pastimes is photography — I love capturing the
           world around me the way I see it, whether I&#39;m exploring new places
           or simply enjoying a regular walk through downtown.
         </p>
