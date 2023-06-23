@@ -16,7 +16,7 @@
 }
 
 .root {
-  background-color: var(--lifted-background);
+  background-color: var(--lifted-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 16px;
@@ -54,7 +54,7 @@
   grid-area: description;
   margin: 0;
   color: var(--secondary-foreground);
-  font-size: var(--font-sm);
+  font-size: 15px;
   line-height: 1.2;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .close {
-  background-color: var(--background);
+  background-color: var(--bg);
   outline: transparent;
   border: none;
   height: 36px;

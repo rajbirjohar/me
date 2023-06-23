@@ -1,7 +1,5 @@
 .article {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
+  margin-top: 40px;
   & section > * + * {
     margin-block-start: var(--space-md);
   }

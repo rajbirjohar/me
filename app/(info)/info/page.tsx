@@ -1,12 +1,13 @@
-export default function About() {
+export default function Info() {
   return (
     <>
       <section>
         <h1>Whoami</h1>
+        <p>Hello hello,</p>
         <p>
           I&#39;m a <strong>UX Engineer Lead</strong> at a venture studio, where
           my sweet-spot is designing, coding and maintaining user interfaces
-          amongst other responsibilities
+          amongst other responsibilities.
         </p>
         <p>
           My tools of the trade are typically Typescript and React and plenty of

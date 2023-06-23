@@ -1,51 +1,18 @@
 .hero {
-  padding: 0 var(--space-md);
-  p > svg {
-    height: 20px;
-    width: 20px;
-    display: inline;
-    margin-bottom: -4px;
-  }
-}
-.other {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  padding-top: var(--space-lg);
-  font-size: var(--font-sm);
-  .content {
-    & > * + * {
-      margin-block-start: var(--space-sm);
+  max-width: 36rem;
+  .link {
+    cursor: pointer;
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--sub-fg);
+    transition: var(--transition-slow);
+    &:hover {
+      color: var(--heading-fg);
     }
-  }
-  .contact {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-  }
-}
-.metrics {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  color: var(--secondary-foreground);
-  & strong {
-    color: var(--primary-foreground);
-  }
-}
-.link {
-  cursor: pointer;
-  display: inline-flex;
-  text-decoration: none;
-  color: var(--secondary-foreground);
-  transition: var(--transition-slow);
-  &:hover {
-    color: var(--primary-foreground);
-  }
-  & svg {
-    margin-top: 4px;
-    stroke-width: 3;
+    & svg {
+      margin-top: 6px;
+      stroke-width: 3;
+    }
   }
 }
 

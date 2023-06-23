@@ -3,10 +3,10 @@
   outline: transparent;
   padding: 0;
   background-color: transparent;
-  color: var(--secondary-foreground);
+  color: var(--sub-fg);
   cursor: pointer;
   transition: color var(--transition-slower);
   &:hover {
-    color: var(--primary-foreground);
+    color: var(--heading-fg);
   }
 }

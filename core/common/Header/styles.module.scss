@@ -1,42 +1,36 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
+  justify-content: flex-end;
+  height: 80px;
   nav {
     position: relative;
-    background-color: var(--lifted-background);
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    box-shadow: var(--nav-shadow);
     overflow: hidden;
-    border-radius: 24px;
-    .linkwrapper {
-      display: flex;
-      align-items: center;
-      padding: var(--space-xs);
+    gap: 24px;
+    & a {
+      padding: 4px;
       z-index: 2;
-      border-radius: 24px;
-    }
-    a {
       position: relative;
       text-decoration: none;
-      padding: var(--space-xs) var(--space-md);
-      color: var(--secondary-foreground);
+      color: var(--sub-fg);
       transition: color var(--transition-slow);
       user-select: none;
       &:hover {
-        color: var(--primary-foreground);
+        color: var(--heading-fg);
       }
       &.active {
-        color: var(--primary-foreground);
+        color: var(--heading-fg);
       }
       & .indicator {
         z-index: -1;
-        inset: 0;
+        height: 2px;
+        width: 100%;
         position: absolute;
-        background-color: var(--background);
+        translate: -4px 0px;
+        top: 50%;
+        background-color: var(--heading-fg);
       }
     }
   }

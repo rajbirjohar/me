@@ -1,23 +1,27 @@
 .main {
   width: 100%;
+  max-width: var(--main-content);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 10rem var(--space-md);
+  padding: 120px 32px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-xxl);
 }
 
 .gradient {
+  z-index: 2;
   position: fixed;
   bottom: 0;
-  height: 5rem;
+  height: 120px;
   width: 100%;
-  background: linear-gradient(0deg, var(--background) 0%, transparent 100%);
+  background: linear-gradient(0deg, var(--bg) 0%, transparent 100%);
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    padding-top: 5rem;
+    padding: 80px 24px;
+  }
+  .gradient {
+    height: 80px;
   }
 }

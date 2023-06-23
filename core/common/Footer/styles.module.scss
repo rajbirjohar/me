@@ -1,0 +1,47 @@
+.footer {
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: var(--sub-fg);
+  .header {
+    color: var(--heading-fg);
+  }
+  a {
+    cursor: pointer;
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--sub-fg);
+    transition: var(--transition-slow);
+    &:hover {
+      color: var(--heading-fg);
+    }
+    & svg {
+      margin-top: 4px;
+      stroke-width: 3;
+    }
+  }
+}
+
+.content {
+  & > * + * {
+    margin-block-start: var(--space-sm);
+  }
+}
+
+.metrics {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--sub-fg);
+  & strong {
+    color: var(--heading-fg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+   flex-direction: column;
+    gap: 24px;
+  }
+}

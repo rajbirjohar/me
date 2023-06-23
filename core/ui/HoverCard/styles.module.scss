@@ -1,7 +1,8 @@
 .hovercard {
+  z-index: 10;
   isolation: isolate;
   width: 300px;
-  padding: var(--space-md);
+  padding: 24px;
   box-shadow: var(--shadow);
   border-radius: var(--border-radius);
   animation-duration: 400ms;
@@ -9,11 +10,12 @@
   animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, opacity;
   position: relative;
+  font-size: 15px;
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: var(--lifted-background);
+    background-color: var(--lifted-bg);
     opacity: 0.9;
     border-radius: var(--border-radius);
     z-index: -1;

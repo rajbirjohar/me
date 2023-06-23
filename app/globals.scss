@@ -1,11 +1,11 @@
 :root {
-  --max-width: 36rem;
-  --border-radius: 8px;
-  --border-radius-full: 50%;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
+  --main-content: 60rem;
+  --border-radius: 8px;
+  --border-radius-full: 50%;
   --space-xxs: 0.125rem; /* Extra extra small */
   --space-xs: 0.25rem; /* Extra small */
   --space-sm: 0.5rem; /* Small */
@@ -14,13 +14,27 @@
   --space-xl: 2rem; /* Extra large */
   --space-xxl: 3rem; /* Extra extra large */
 
-  --primary-foreground: #27262c;
-  --secondary-foreground: #676a72;
+  --white: #fff;
+  --slate-0: #fafafa;
+  --slate-1: #f4f4f5;
+  --slate-2: #e4e4e7;
+  --slate-3: #a1a1aa;
+  --slate-4: #71717a;
+  --slate-5: #52525b;
+  --slate-6: #3f3f46;
+  --slate-7: #27272a;
+  --slate-8: #18181b;
+  --slate-9: #0c0c0d;
+  --slate-10: #09090b;
+  --black: #000;
 
-  --background: #f2f4f5;
-  --lifted-background: #ffffff;
+  --bg: var(--slate-0);
+  --lifted-bg: var(--white);
+  --fg: var(--slate-8);
+  --heading-fg: var(--slate-10);
+  --sub-fg: var(--slate-4);
 
-  --border-color: #dee0e2;
+  --border-color: var(--slate-3);
   --border: 1px solid var(--border-color);
 
   --brand: #ff2d55;
@@ -30,13 +44,21 @@
   --error: red;
   --error-dark: #e60000;
 
-  /* Font sizes */
-  --font-xs: clamp(0.83rem, 0vw + 0.83rem, 0.83rem);
-  --font-sm: clamp(0.91rem, 0vw + 0.91rem, 0.91rem);
-  --font-base: clamp(1rem, 0vw + 1rem, 1rem);
-  --font-md: clamp(1.1rem, 0vw + 1.1rem, 1.1rem);
-  --font-lg: clamp(1.21rem, 0vw + 1.21rem, 1.21rem);
-  --font-xl: clamp(1.33rem, 0vw + 1.33rem, 1.33rem);
+  // /* Font sizes */
+  --font-xs: clamp(0.83rem, 0.38vw + 0.73rem, 1.03rem);
+  --font-sm: clamp(0.91rem, 0.41vw + 0.81rem, 1.14rem);
+  --font-base: clamp(1rem, 0.45vw + 0.89rem, 1.25rem);
+  --font-md: clamp(1.1rem, 0.5vw + 0.98rem, 1.38rem);
+  --font-lg: clamp(1.21rem, 0.55vw + 1.07rem, 1.51rem);
+  --font-xl: clamp(1.33rem, 0.61vw + 1.18rem, 1.66rem);
+  --font-xxl: clamp(1.46rem, 0.67vw + 1.3rem, 1.83rem);
+
+  // --font-xs: clamp(0.83rem, 0vw + 0.83rem, 0.83rem);
+  // --font-sm: clamp(0.91rem, 0vw + 0.91rem, 0.91rem);
+  // --font-base: clamp(1rem, 0vw + 1rem, 1rem);
+  // --font-md: clamp(1.1rem, 0vw + 1.1rem, 1.1rem);
+  // --font-lg: clamp(1.21rem, 0vw + 1.21rem, 1.21rem);
+  // --font-xl: clamp(1.33rem, 0vw + 1.33rem, 1.33rem);
 
   /* Transitions */
   --transition: 200ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -52,13 +74,13 @@
 }
 
 [data-theme="dark"] {
-  --primary-foreground: #e6e7ed;
-  --secondary-foreground: #97989e;
+  --bg: var(--slate-10);
+  --lifted-bg: var(--slate-8);
+  --fg: var(--slate-2);
+  --heading-fg: var(--slate-0);
+  --sub-fg: var(--slate-3);
 
-  --background: #1e2024;
-  --lifted-background: #303237;
-
-  --border-color: #393b41;
+  --border-color: var(--slate-8);
   --border: 1px solid var(--border-color);
 
   --brand: #ff375f;
@@ -96,8 +118,8 @@ body {
   -webkit-font-smoothing: antialiased;
   height: 100%;
   font-size: var(--font-base);
-  background-color: var(--background);
-  color: var(--primary-foreground);
+  background-color: var(--bg);
+  color: var(--fg);
   scroll-behavior: smooth;
   scroll-padding-top: var(--space-xl);
 }
@@ -131,6 +153,7 @@ h6 {
   font-weight: 600;
   position: relative;
   letter-spacing: 0.025em;
+  color: var(--heading-fg);
 }
 
 h1 {
@@ -172,13 +195,13 @@ h6 {
 
 ::selection {
   background: var(--brand);
-  color: var(--background); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--background);
+  color: var(--bg); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--bg);
 }
 ::-moz-selection {
   background: var(--brand);
-  color: var(--background); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--background);
+  color: var(--bg); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--bg);
 }
 
 /*

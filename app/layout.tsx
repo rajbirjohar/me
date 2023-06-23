@@ -1,11 +1,12 @@
 import Header from "@/core/common/Header";
 import styles from "./layout.module.scss";
 import "@/app/globals.scss";
-import { Inter } from "next/font/google";
+import { Lora } from "next/font/google";
 import { Providers } from "@/providers";
 import { Toaster } from "@/core/ui/Toaster";
+import Footer from "@/core/common/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Lora({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Rajbir Johar",
@@ -19,12 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={font.className}>
         <Providers>
           <Toaster />
           <main className={styles.main}>
             <Header />
             {children}
+            <Footer />
           </main>
           <div className={styles.gradient} aria-hidden />
         </Providers>

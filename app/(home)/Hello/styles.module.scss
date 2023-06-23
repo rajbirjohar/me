@@ -1,6 +1,4 @@
 .hello {
-  --font-super: clamp(1.5rem, 0vw + 1.5rem, 1.5rem);
-  font-size: var(--font-super);
   display: flex;
   flex-wrap: wrap;
   .greeting,
