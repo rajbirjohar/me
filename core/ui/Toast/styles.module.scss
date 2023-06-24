@@ -26,20 +26,20 @@
   column-gap: 15px;
   align-items: center;
   &[data-state="open"] {
-    animation: slideIn var(--transition-slower);
+    animation: slideIn var(--transition-slow);
   }
   &[data-state="closed"] {
-    animation: hide var(--transition-slow);
+    animation: hide var(--transition-slower);
   }
   &[data-swipe="move"] {
     transform: translateY(var(--radix-toast-swipe-move-y));
   }
   &[data-swipe="cancel"] {
     transform: translateX(0);
-    transition: transform var(--transition-slow);
+    transition: transform var(--transition-slower);
   }
   &[data-swipe="end"] {
-    animation: swipeOut var(--transition-slow);
+    animation: swipeOut var(--transition-slower);
   }
 }
 .title {

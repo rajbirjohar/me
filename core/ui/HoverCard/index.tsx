@@ -4,6 +4,7 @@ import * as React from "react";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import { sanserif } from "@/fonts";
 
 const HoverCard = HoverCardPrimitive.Root;
 
@@ -17,7 +18,7 @@ const HoverCardContent = React.forwardRef<
     ref={ref}
     align={align}
     sideOffset={sideOffset}
-    className={classNames(styles.hovercard, className)}
+    className={classNames(styles.hovercard, className, sanserif.className)}
     {...props}
   />
 ));

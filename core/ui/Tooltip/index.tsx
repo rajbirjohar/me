@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import css from "./styles.module.scss";
+import { sanserif } from "@/fonts";
 
 import classNames from "classnames";
 
@@ -25,7 +26,7 @@ const TooltipContent = React.forwardRef<
     <TooltipPrimitive.Content
       ref={ref}
       sideOffset={sideOffset}
-      className={classNames(css.tooltip, className)}
+      className={classNames(css.tooltip, className, sanserif.className)}
       {...props}
     />
   </TooltipPortal>

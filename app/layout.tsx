@@ -1,13 +1,11 @@
 import Header from "@/core/common/Header";
 import styles from "./layout.module.scss";
 import "@/app/globals.scss";
-import { Inter } from "next/font/google";
 import { Providers } from "@/providers";
 import { Toaster } from "@/core/ui/Toaster";
 import Footer from "@/core/common/Footer";
 import { Metadata } from "next";
-
-const font = Inter({ subsets: ["latin"] });
+import { serif } from "@/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -54,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={font.className}>
+      <body className={serif.className}>
         <Providers>
           <Toaster />
           <main className={styles.main}>

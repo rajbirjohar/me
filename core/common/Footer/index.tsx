@@ -9,6 +9,7 @@ import { ArrowUpRightIcon } from "lucide-react";
 import { getProfileData } from "@/lib/github";
 import { Avatar, AvatarFallback, AvatarImage } from "@/core/ui/Avatar";
 import ThemeSwitch from "../ThemeSwitch";
+import { sanserif } from "@/fonts";
 
 export default async function Footer() {
   let profile;
@@ -22,11 +23,11 @@ export default async function Footer() {
     <footer className={styles.footer}>
       <div className={styles.column}>
         <div className={styles.header}>Rajbir Johar</div>
-        <div>UX Engineer</div>
+        <div className={sanserif.className}>UX Engineer</div>
       </div>
       <div className={styles.column}>
         <div className={styles.header}>Contact</div>
-        <CopyText text="hello@rajbir.io" />
+        <CopyText text="hello@rajbir.io" className={sanserif.className} />
       </div>
       <div className={styles.column}>
         <div className={styles.header}>Social</div>
@@ -35,7 +36,7 @@ export default async function Footer() {
             <HoverCardTrigger asChild>
               <a
                 href={"https://www.linkedin.com/in/rajbirjohar/"}
-                className={styles.link}
+                className={`${styles.link} ${sanserif.className}`}
               >
                 LinkedIn <ArrowUpRightIcon size={10} />{" "}
               </a>
@@ -49,14 +50,17 @@ export default async function Footer() {
           {!profile ? (
             <a
               href={"https://www.github.com/rajbirjohar"}
-              className={styles.link}
+              className={`${styles.link} ${sanserif.className}`}
             >
               Github <ArrowUpRightIcon size={10} />{" "}
             </a>
           ) : (
             <HoverCard>
               <HoverCardTrigger asChild>
-                <a href={profile.html_url} className={styles.link}>
+                <a
+                  href={profile.html_url}
+                  className={`${styles.link} ${sanserif.className}`}
+                >
                   Github <ArrowUpRightIcon size={10} />{" "}
                 </a>
               </HoverCardTrigger>

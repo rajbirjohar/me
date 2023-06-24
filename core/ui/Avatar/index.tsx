@@ -4,6 +4,7 @@ import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import { sanserif } from "@/fonts";
 
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
@@ -35,7 +36,7 @@ const AvatarFallback = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
     ref={ref}
-    className={classNames(styles.fallback, className)}
+    className={classNames(styles.fallback, className, sanserif.className)}
     {...props}
   />
 ));

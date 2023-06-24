@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { XIcon } from "lucide-react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
+import { sanserif } from "@/fonts";
 
 const ToastProvider = ToastPrimitives.Provider;
 
@@ -80,7 +81,7 @@ const ToastTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
-    className={classNames(styles.title, className)}
+    className={classNames(styles.title, className, sanserif.className)}
     {...props}
   />
 ));
@@ -92,7 +93,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={classNames(styles.description, className)}
+    className={classNames(styles.description, className, sanserif.className)}
     {...props}
   />
 ));
