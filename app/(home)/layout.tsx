@@ -1,9 +1,6 @@
 import styles from "./layout.module.scss";
 
-export const metadata = {
-  title: "Rajbir Johar",
-  description: "Developer and designer based in Arizona.",
-};
+export const metadata = {};
 
 export default function RootLayout({
   children,

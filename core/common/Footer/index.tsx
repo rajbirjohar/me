@@ -9,6 +9,7 @@ import { ArrowUpRightIcon } from "lucide-react";
 import { getProfileData } from "@/lib/github";
 import { Avatar, AvatarFallback, AvatarImage } from "@/core/ui/Avatar";
 import { Inter } from "next/font/google";
+import ThemeSwitch from "../ThemeSwitch";
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Footer() {
@@ -98,6 +99,9 @@ export default async function Footer() {
             </HoverCard>
           )}
         </div>
+      </div>
+      <div className={styles.column}>
+        <ThemeSwitch />
       </div>
     </footer>
   );

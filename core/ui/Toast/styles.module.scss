@@ -46,14 +46,14 @@
   grid-area: title;
   margin-bottom: 5px;
   font-weight: 500;
-  color: var(--primary-foreground);
+  color: var(--heading-fg);
   font-size: var(--font-base);
 }
 
 .description {
   grid-area: description;
   margin: 0;
-  color: var(--secondary-foreground);
+  color: var(--fg);
   font-size: 15px;
   line-height: 1.2;
 }
@@ -62,7 +62,16 @@
   grid-area: action;
 }
 
+[data-theme="dark"] {
+  .close {
+    --bg: var(--slate-7);
+    --hover-bg: var(--slate-6);
+  }
+}
+
 .close {
+  --bg: var(--slate-1);
+  --hover-bg: var(--slate-2);
   background-color: var(--bg);
   outline: transparent;
   border: none;
@@ -73,6 +82,10 @@
   justify-content: center;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color var(--transition-slower);
+  &:hover {
+    background-color: var(--hover-bg);
+  }
   & svg {
     min-height: 24px;
     min-width: 24px;
