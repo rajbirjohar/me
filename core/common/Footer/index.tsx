@@ -8,9 +8,7 @@ import styles from "./styles.module.scss";
 import { ArrowUpRightIcon } from "lucide-react";
 import { getProfileData } from "@/lib/github";
 import { Avatar, AvatarFallback, AvatarImage } from "@/core/ui/Avatar";
-import { Inter } from "next/font/google";
 import ThemeSwitch from "../ThemeSwitch";
-const inter = Inter({ subsets: ["latin"] });
 
 export default async function Footer() {
   let profile;
@@ -24,17 +22,11 @@ export default async function Footer() {
     <footer className={styles.footer}>
       <div className={styles.column}>
         <div className={styles.header}>Rajbir Johar</div>
-        <div
-          style={{
-            fontFamily: inter.style.fontFamily,
-          }}
-        >
-          UX Engineer
-        </div>
+        <div>UX Engineer</div>
       </div>
       <div className={styles.column}>
         <div className={styles.header}>Contact</div>
-        <CopyText text="hello@rajbir.io" className={inter.className} />
+        <CopyText text="hello@rajbir.io" />
       </div>
       <div className={styles.column}>
         <div className={styles.header}>Social</div>
@@ -44,9 +36,6 @@ export default async function Footer() {
               <a
                 href={"https://www.linkedin.com/in/rajbirjohar/"}
                 className={styles.link}
-                style={{
-                  fontFamily: inter.style.fontFamily,
-                }}
               >
                 LinkedIn <ArrowUpRightIcon size={10} />{" "}
               </a>
@@ -61,22 +50,13 @@ export default async function Footer() {
             <a
               href={"https://www.github.com/rajbirjohar"}
               className={styles.link}
-              style={{
-                fontFamily: inter.style.fontFamily,
-              }}
             >
               Github <ArrowUpRightIcon size={10} />{" "}
             </a>
           ) : (
             <HoverCard>
               <HoverCardTrigger asChild>
-                <a
-                  href={profile.html_url}
-                  className={styles.link}
-                  style={{
-                    fontFamily: inter.style.fontFamily,
-                  }}
-                >
+                <a href={profile.html_url} className={styles.link}>
                   Github <ArrowUpRightIcon size={10} />{" "}
                 </a>
               </HoverCardTrigger>

@@ -1,9 +1,6 @@
 import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import css from "./styles.module.scss";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 import classNames from "classnames";
 
@@ -29,7 +26,6 @@ const TooltipContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={classNames(css.tooltip, className)}
-      style={{ fontFamily: inter.style.fontFamily }}
       {...props}
     />
   </TooltipPortal>

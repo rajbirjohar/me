@@ -1,4 +1,5 @@
 .root {
+  margin-top: 40px;
   & > * + * {
     margin-block-start: 1rem;
   }

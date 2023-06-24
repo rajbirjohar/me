@@ -4,9 +4,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { XIcon } from "lucide-react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const ToastProvider = ToastPrimitives.Provider;
 
@@ -95,7 +92,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={classNames(styles.description, className, inter.className)}
+    className={classNames(styles.description, className)}
     {...props}
   />
 ));

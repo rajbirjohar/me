@@ -3,9 +3,6 @@
 import styles from "./styles.module.scss";
 import { useToast } from "@/core/ui/Toast/useToast";
 import classNames from "classnames";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function CopyText({
   text,

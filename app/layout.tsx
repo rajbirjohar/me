@@ -1,13 +1,13 @@
 import Header from "@/core/common/Header";
 import styles from "./layout.module.scss";
 import "@/app/globals.scss";
-import { Lora } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Providers } from "@/providers";
 import { Toaster } from "@/core/ui/Toaster";
 import Footer from "@/core/common/Footer";
 import { Metadata } from "next";
 
-const font = Lora({ subsets: ["latin"] });
+const font = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
