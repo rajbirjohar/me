@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  height: var(--nav-height);
+  margin-top: 72px;
+  isolation: isolate;
+  backdrop-filter: blur(20px);
+  font-size: 16px;
+  .nav {
+    width: 100%;
+    max-width: var(--main-content-width);
+    padding: 0 var(--gutter-md);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--gutter-md);
+    a {
+      border: none;
+      &.active {
+        color: var(--text);
+      }
+    }
+  }
+}

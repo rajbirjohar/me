@@ -1,0 +1,12 @@
+---
+import styles from "./styles.module.scss";
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<header class={styles.header}>
+  <nav class={styles.nav}>
+    <a href="/" class={currentPath === "" ? styles.active : ""}>Home</a>
+    <a href="/about" class={currentPath === "about" ? styles.active : ""}>Whoami</a>
+  </nav>
+</header>

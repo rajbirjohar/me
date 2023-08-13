@@ -1,0 +1,35 @@
+---
+import styles from "./styles.module.scss";
+import { ArrowUpRight } from "lucide-astro";
+---
+
+<footer class={styles.footer}>
+  <div class={styles.column}>
+    <small class={styles.header}>Rajbir Johar</small>
+    <div>UX Engineer</div>
+  </div>
+  <div class={styles.column}>
+    <small class={styles.header}>Contact</small>
+    <div>hello@rajbir.io</div>
+  </div>
+  <div class={styles.column}>
+    <small class={styles.header}>Elsewhere</small>
+    <span class={styles.linkwrapper}>
+      <a href={"https://www.linkedin.com/in/rajbirjohar/"} class={styles.link}>
+        LinkedIn
+      </a>
+      <ArrowUpRight size={10} />
+    </span>
+     ,{" "}
+    <span class={styles.linkwrapper}>
+      <a href={"https://www.github.com/rajbirjohar"} class={styles.link}>
+        Github
+      </a>
+      <ArrowUpRight size={10} />
+    </span>
+  </div>
+  <div class={styles.column}>
+    <small class={styles.header}>Built With</small>
+    <div>Astro I guess. Whatever is popular these days.</div>
+  </div>
+</footer>

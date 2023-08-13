@@ -1,0 +1,40 @@
+.footer {
+  max-width: var(--main-content-width);
+  padding: var(--gutter-md);
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin: 0 auto 72px auto;
+  .column {
+    flex: 1;
+    .header {
+      color: var(--primary);
+      display: block;
+    }
+    .linkwrapper {
+      color: var(--accent);
+      cursor: pointer;
+      display: inline-flex;
+      a {
+        border: none;
+      }
+      & svg {
+        margin-top: 4px;
+        stroke-width: 3;
+      }
+    }
+  }
+}
+
+.content {
+  & > * + * {
+    margin-block-start: var(--space-sm);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
