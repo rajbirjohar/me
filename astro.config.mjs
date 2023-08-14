@@ -7,6 +7,5 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: 'https://rajbir.io',
   integrations: [sitemap()],
-  output: "server",
   adapter: vercel()
 });
