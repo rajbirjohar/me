@@ -140,14 +140,14 @@ a {
 }
 
 ::selection {
-  background: var(--primary);
-  color: var(--background); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--background);
+  background: salmon;
+  color: white; /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: white;
 }
 ::-moz-selection {
-  background: var(--primary);
-  color: var(--background); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--bbackground);
+  background: salmon;
+  color: white; /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: white;
 }
 
 .gradient {
