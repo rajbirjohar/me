@@ -8,5 +8,8 @@ export default defineConfig({
   site: 'https://rajbir.io',
   integrations: [sitemap()],
   output: "hybrid",
-  adapter: vercel()
+  adapter: vercel(),
+  experimental: {
+		viewTransitions: true
+	}
 });

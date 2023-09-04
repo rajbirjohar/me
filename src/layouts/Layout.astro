@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
+import { ViewTransitions } from "astro:transitions";
 import Header from "@/core/Header/index.astro";
 import Footer from "@/core/Footer/index.astro";
 import "@/styles/globals.scss";
@@ -15,13 +15,16 @@ import "@/styles/globals.scss";
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Learn about what I do as a professional CSS Wizard 🧙‍♂️."
+      content="CSS wizard 🧙‍♂️. Building slick and accessible 
+      interfaces for brilliant ideas.  Breaking things and 
+      learning along the way."
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width" />
     <title>Rajbir Johar {title && `| ${title}`}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Header />
