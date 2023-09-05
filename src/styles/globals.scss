@@ -2,10 +2,22 @@
 
 :root {
   --text: #0d0c0d;
-  --background: #fcfcfc;
-  --primary: #63545c;
+  --background: #ffffff;
+  --primary: #11B7CD;
   --secondary: #e5e1e1;
-  --accent: #867272;
+  --tertiary: #4a4a4a;
+  --accent: #a24134;
+
+  --brand-50: #7AD1DD;
+  --brand-100: #5FCCDB;
+  --brand-200: #44CADC;
+  --brand-300: #2AC9DE;
+  --brand-400: #1AC2D9;
+  --brand-500: #11B7CD;
+  --brand-600: #09ADC3;
+  --brand-700: #0E99AC;
+  --brand-800: #128797;
+  --brand-900: #147885;
 
   --main-content-width: 868px;
   --prose-width: 568px;
@@ -43,9 +55,10 @@
   :root {
     --text: #ffffff;
     --background: #0d0c0d;
-    --primary: #63545c;
+    --primary: #11B7CD;
     --secondary: #191515;
-    --accent: #cdc4c4;
+    --tertiary: #a3a3a3;
+    --accent: #dc9b93;
   }
 }
 
@@ -140,14 +153,14 @@ a {
 }
 
 ::selection {
-  background: salmon;
-  color: white; /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: white;
+  background: var(--primary);
+  color: #0d0c0d; /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: #0d0c0d;
 }
 ::-moz-selection {
-  background: salmon;
-  color: white; /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: white;
+  background: var(--primary);
+  color: #0d0c0d; /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: #0d0c0d;
 }
 
 .gradient {
