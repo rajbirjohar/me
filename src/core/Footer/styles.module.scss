@@ -3,16 +3,14 @@
   padding: var(--gutter-md);
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
-  margin: 0 auto 72px auto;
+  margin: 96px auto;
   .column {
     flex: 1;
     .header {
-      color: var(--tertiary);
+      color: var(--sub-fg);
       display: block;
     }
     .linkwrapper {
-      color: var(--accent);
       cursor: pointer;
       display: inline-flex;
       a {
@@ -21,6 +19,7 @@
       & svg {
         margin-top: 4px;
         stroke-width: 3;
+        color: var(--link);
       }
     }
   }

@@ -1,0 +1,77 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import styles from "@/styles/journallayout.module.scss";
+import { ArrowLeft, ArrowLeftToLine } from "lucide-astro";
+import { format } from "date-fns";
+import { ArrowRight } from "lucide-astro";
+
+const { frontmatter } = Astro.props;
+const { title, published } = frontmatter;
+
+// Pagination
+const journals = await Astro.glob("../**/*.{md,mdx}");
+
+// Sort posts by date or any other frontmatter property
+journals.sort(
+  (a, b) =>
+    new Date(b.frontmatter.published).getTime() -
+    new Date(a.frontmatter.published).getTime()
+);
+
+const currentIndex = journals.findIndex((journal) => {
+  // Extract the path from the full URL, which usually includes protocol, domain, and path
+  const pathFromUrl = new URL(Astro.request.url).pathname;
+
+  // Normalize the path to ensure both URLs end with a trailing slash for a consistent comparison
+  const normalizedPostUrl =
+    journal.url && journal.url.endsWith("/") ? journal.url : `${journal.url}/`;
+  const normalizedPathFromUrl = pathFromUrl.endsWith("/")
+    ? pathFromUrl
+    : `${pathFromUrl}/`;
+
+  return normalizedPostUrl === normalizedPathFromUrl;
+});
+// Get previous post only if it exists
+const prev = currentIndex > 0 ? journals[currentIndex - 1] : null;
+
+// Get next post only if it exists
+const next =
+  currentIndex < journals.length - 1 ? journals[currentIndex + 1] : null;
+---
+
+<Layout title={frontmatter.title}>
+  <main class={styles.main}>
+    <article class={styles.prose}>
+      <a href="/journals" class={styles.back}
+        ><ArrowLeftToLine size={20} /> Index</a
+      >
+      <header class={styles.header}>
+        <h1>{title}</h1>
+        <time class={styles.published} datetime={published}>
+          Written {format(new Date(published), "MMM eo, yyyy")}
+        </time>
+      </header>
+      <div class="divider"></div>
+      <slot />
+      <footer class={styles.pagination}>
+        {
+          prev ? (
+            <a href={prev.url} class={styles.link}>
+              <ArrowLeft size={20} />
+              {prev.frontmatter.title}
+            </a>
+          ) : (
+            <div />
+          )
+        }
+        {
+          next && (
+            <a href={next.url} class={styles.link}>
+              {next.frontmatter.title} <ArrowRight size={20} />
+            </a>
+          )
+        }
+      </footer>
+    </article>
+  </main>
+</Layout>

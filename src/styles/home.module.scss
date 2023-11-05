@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: var(--gutter-xxl) var(--gutter-md);
   .prose {
-    max-width: var(--prose-width);
+    max-width: 468px;
     & > * + * {
       margin-block-start: 1rem;
     }

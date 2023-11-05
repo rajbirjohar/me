@@ -1,0 +1,23 @@
+---
+interface Props {
+  type?: "info" | "warning" | "danger";
+}
+
+const { type } = Astro.props;
+import { clsx } from "clsx";
+import styles from "./styles.module.scss";
+import { Info } from "lucide-astro";
+
+const classes = clsx(styles.note, {
+  [styles.info]: type === styles.info,
+  [styles.warning]: type === styles.warning,
+  [styles.danger]: type === styles.danger,
+});
+---
+
+<div class={classes}>
+  <Info class={styles.icon} />
+  <div class={styles.prose}>
+    <slot />
+  </div>
+</div>

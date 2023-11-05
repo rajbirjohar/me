@@ -1,0 +1,127 @@
+---
+layout: "@/layouts/JournalLayout.astro"
+title: "How I Build UI Components"
+published: 2023-11-05
+tags: ["ui"]
+---
+
+import Note from "@/core/Note/index.astro";
+
+Creating robust UI components is a balancing act. They must be sufficiently versatile to be reusable across your application, yet not so over-engineered that their complexity becomes a hindrance. A thoughtful approach to handling data flow in and out of components is often a solid starting point.
+
+<Note>
+    **My Way... Or Your Way**
+
+    This is how I build UI components. It's not the only way, nor is it the best way. It's simply the way that works for me.
+    I'm always open to new ideas and approaches, so if you have any suggestions, please reach out at my email at the bottom.
+
+</Note>
+
+## Start with the Data
+
+Begin by scrutinizing the data. Determine what is necessary for the component to function:
+
+1. What data is required for rendering?
+2. What input does the component need to operate effectively?
+3. What outputs must the component return to the parent?
+
+For example:
+
+```tsx
+<Counter
+  count={count}
+  onIncrement={() => setCount(count + 1)}
+  onDecrement={() => setCount(count - 1)}
+/>
+```
+
+This approach excels in scenarios where the parent manages a collection of children, and the interaction with a specific child is crucial, such as selection handling in a list.
+
+## React.forwardRef
+
+Incorporating `React.forwardRef` is essential when your component needs to interact with a ref. This becomes particularly useful for crafting components that are as accessible as native HTML elements, which is a frequent requirement with form libraries like `react-hook-form`.
+
+```tsx
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<"button">
+>(({ children, ...props }, ref) => (
+  <button ref={ref} {...props}>
+    {children}
+  </button>
+));
+```
+
+This allows you to extend your component's properties without sacrificing inherent HTML element attributes.
+
+```tsx
+interface ButtonProps {
+  variant?: "primary" | "secondary";
+}
+
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<"button"> & ButtonProps
+>(({ children, variant = "primary", ...props }, ref) => (
+  <button ref={ref} className={`button ${variant}`} {...props}>
+    {children}
+  </button>
+));
+
+// Usage
+<Button variant="secondary">Click Me</Button>;
+```
+
+## Co-locating Functions and Styles
+
+Co-locating styles with their respective components streamlines development by simplifying component management.
+
+```bash
+src/
+  components/
+    Button/
+      Button.tsx
+      Button.module.scss
+```
+
+This principle also applies to utility functions. For instance:
+
+```ts
+// src/utils/addTwoNumbers.ts
+
+export const addTwoNumbers = (a: number, b: number) => a + b;
+```
+
+Obviously, this example is ridiculous, but you get the point. If a function is prematurely abstracted and ends up unused elsewhere, it becomes technical debt. Keeping it alongside the component until it's proven to be needed elsewhere can save future refactoring.
+
+## Embrace Component Composition
+
+Rather than creating a monolithic component that tries to do everything, use composition to build smaller, reusable components that can be combined in new ways. This is the "composable" approach which React favors:
+
+```tsx
+const UserProfile = () => (
+  <Card>
+    <Avatar />
+    <UserName />
+    <UserBio />
+  </Card>
+);
+```
+
+This pattern encourages reusability and can greatly simplify the testing of individual components.
+
+## Keep Components Pure
+
+Aim to write pure components whenever possible. Pure components are those that do not mutate their inputs and always render the same output for the same state and props. This predictability can make your components easier to debug and optimize.
+
+## When to Know You've Gone Too Far
+
+Overburdening a component with props is a telltale sign that it's time to reassess its design. Excessive props can indicate that a component is taking on too many responsibilities or that the data model it relies on could benefit from refinement.
+
+## Striking the Right Balance
+
+The key to effective UI component design lies in finding the sweet spot between flexibility and simplicity. It’s about making each component a self-contained unit that's easy to maintain and understand. By starting with the data, using tools like `React.forwardRef` wisely, co-locating related code, and being mindful of prop proliferation, you create a codebase that’s as nimble as it is scalable. As your components evolve, keep a watchful eye for signs of overextension—it's the linchpin to maintaining an efficient and coherent UI architecture.
+
+With these practices, you're well on your way to building a UI that's as user-friendly for the developers as it is for the end-users.
+
+Remember, the best components are those that work quietly in the background, seamlessly bringing the user experience to life.

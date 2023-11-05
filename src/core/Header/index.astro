@@ -1,10 +1,29 @@
 ---
 import styles from "./styles.module.scss";
+
+const pathname = new URL(Astro.request.url).pathname;
+let currentPath = pathname.slice(1); // remove the first "/"
+
+// Set currentPath to "journals" if the path starts with "/journals/"
+if (pathname.startsWith("/journals/")) {
+  currentPath = "journals";
+}
 ---
 
 <header class={styles.header}>
   <nav class={styles.nav}>
-    <a href="/">Hello</a>
-    <a href="/about">Whoami</a>
+    <a href="/" class={currentPath === "" ? styles.active : undefined}>Hello</a>
+    <a
+      href="/about"
+      class={currentPath === "about" ? styles.active : undefined}
+    >
+      Whoami
+    </a>
+    <a
+      href="/journals"
+      class={currentPath === "journals" ? styles.active : undefined}
+    >
+      Journals
+    </a>
   </nav>
 </header>
