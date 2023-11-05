@@ -10,15 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^2.0.1",
-    "@astrojs/vercel": "^3.8.1",
-    "astro": "^2.10.7",
+    "@astrojs/mdx": "^1.1.3",
+    "@astrojs/sitemap": "^2.0.2",
+    "@astrojs/vercel": "^3.8.2",
+    "astro": "^3.4.3",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
     "lucide": "^0.267.0",
     "lucide-astro": "^0.265.0",
-    "sass": "^1.65.1"
+    "sass": "^1.69.5",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
-    "prettier": "^3.0.1",
-    "prettier-plugin-astro": "^0.11.0"
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.11.1"
   }
 }

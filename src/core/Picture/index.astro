@@ -1,0 +1,12 @@
+---
+import { Image } from "astro:assets";
+
+const { src, ...attrs } = Astro.props;
+
+import styles from "./styles.module.scss";
+---
+
+<figure class={styles.figure}>
+  <Image src={src} alt={attrs.alt} class={styles.image} />
+  <figcaption class={styles.caption}>{attrs.alt}</figcaption>
+</figure>

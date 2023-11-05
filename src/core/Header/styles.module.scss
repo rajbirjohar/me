@@ -3,8 +3,19 @@
   height: var(--nav-height);
   margin-top: 72px;
   isolation: isolate;
-  backdrop-filter: blur(20px);
-  font-size: 16px;
+  backdrop-filter: blur(15px);
+  position: sticky;
+  top: 0;
+  isolation: isolate;
+  z-index: 10;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg);
+    opacity: 0.75;
+    z-index: -1;
+  }
   .nav {
     width: 100%;
     max-width: var(--main-content-width);
@@ -17,8 +28,9 @@
     gap: var(--gutter-md);
     a {
       border: none;
+      color: var(--sub-fg);
       &.active {
-        color: var(--text);
+        color: var(--heading-fg);
       }
     }
   }

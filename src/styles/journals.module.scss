@@ -1,0 +1,49 @@
+.main {
+  width: 100%;
+  max-width: var(--main-content-width);
+  margin: 0 auto;
+  padding: var(--gutter-xxl) var(--gutter-md);
+  .title {
+    margin-block-start: 1rem;
+  }
+  .journals {
+    display: flex;
+    flex-direction: column;
+    .journal {
+      color: var(--fg);
+      border: none;
+      display: flex;
+      flex-direction: column;
+      .link {
+        border-bottom: none;
+        .title {
+          color: var(--link);
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            border-radius: 4px;
+            background-color: var(--link);
+            transition: width var(--transition);
+          }
+        }
+      }
+      .published {
+        font-size: 14px;
+        color: var(--sub-fg);
+      }
+      &:hover {
+        .title::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
