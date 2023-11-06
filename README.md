@@ -1,1 +1,3 @@
 # Portfolio
+
+Just my thoughts.
