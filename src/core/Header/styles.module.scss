@@ -3,24 +3,25 @@
   height: var(--nav-height);
   margin-top: 72px;
   isolation: isolate;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+  background: var(--bg-rgba);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   position: sticky;
   top: 0;
   isolation: isolate;
   z-index: 10;
-  &::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-color: var(--bg);
-    opacity: 0.7;
-    z-index: -1;
-  }
+  // &::before {
+  //   display: block;
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   height: 100%;
+  //   background-color: var(--bg);
+  //   opacity: 0.7;
+  //   z-index: -1;
+  // }
   .nav {
     width: 100%;
     max-width: var(--main-content-width);
