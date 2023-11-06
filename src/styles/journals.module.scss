@@ -39,9 +39,11 @@
         font-size: 14px;
         color: var(--sub-fg);
       }
-      &:hover {
-        .title::after {
-          width: 100%;
+      @media (hover: hover) {
+        &:hover {
+          .title::after {
+            width: 100%;
+          }
         }
       }
     }
