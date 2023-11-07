@@ -3,7 +3,7 @@
   height: var(--nav-height);
   margin-top: 72px;
   isolation: isolate;
-  background: var(--bg-rgba);
+  // background: var(--bg-rgba);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
   position: sticky;
@@ -11,18 +11,18 @@
   isolation: isolate;
   z-index: 10;
   // Testing without the pseudo element
-  // &::before {
-  //   display: block;
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   height: 100%;
-  //   background-color: var(--bg);
-  //   opacity: 0.7;
-  //   z-index: -1;
-  // }
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: var(--bg);
+    opacity: 0.8;
+    z-index: -1;
+  }
   .nav {
     width: 100%;
     max-width: var(--main-content-width);
