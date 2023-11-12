@@ -1,0 +1,249 @@
+---
+layout: "@/layouts/JournalLayout.astro"
+title: "Case Study: Chavez Boxing Gym"
+published: 2023-11-11
+---
+
+import Picture from "@/core/Picture/index.astro";
+import Video from "@/core/Video/index.astro";
+import home from "./home.png";
+import contact from "./contact.png";
+import sessions from "./sessions.png";
+import palette from "./palette.png";
+import final from "./final.mp4"
+
+I recently joined a boxing gym in my neighborhood, and it's been an exhilarating experience. Every session,
+I relish the sweat dripping off my face, the burn in my muscles, and the wave of accomplishment that washes
+over me post-workout. Entering the gym, I feel invincible, but by the time I leave, lifting my arms seems
+like an uphill battle.
+
+The gym is quaint and unassuming - it's really small. With about ten heavy bags, a speed bag, and a boxing
+ring, it's the epitome of simplicity. But that's precisely its charm. This isn't a place flaunting luxury
+or size; it's a haven solely dedicated to the art and discipline of boxing.
+
+What truly sets this gym apart is the sense of community it nurtures. Everyone, from novices to seasoned
+boxers, is united by a common goal: to push their limits and support each other. In all the gyms I've
+visited, this is the first where I've felt an integral part of something greater.
+
+At the heart of this community is Coach Pete, a former professional boxer whose expertise is only matched
+by his generosity. His commitment shines brightest in his Youth Boxing Program, aimed not just at teaching
+boxing skills, but at instilling values like discipline, respect, and diligence. The impact of his work
+extends beyond the ring, fostering positive growth in young lives Read more on the 
+[Chavez Youth website](https://chavezyouth.org/).
+
+
+However, I noticed a gap in how the gym presented itself digitally. Their existing website was basic -
+a few pages with essential information, but it lacked the spirit and vibrancy of the gym. Seeing an
+opportunity to give back to this place that had given me so much, I volunteered to redesign their
+website, aiming to capture and convey the true essence of our small yet mighty boxing gym.
+
+## Studying the Enemy
+
+Before diving into the design phase, it was crucial to size up the current website - understanding 
+its strengths and where it fell short. As I scrutinized the site's structure and content, I took note 
+of what elements were punching above their weight and which ones were barely staying on their feet. 
+The site's visual design, for instance, was like a boxer past his prime - it had the basics down with
+its color palette, typography, and layout, but lacked the vitality of a champion.
+
+        <Picture
+                    src={home}
+                    alt="Chavez Boxing Gym Home Page"
+                />
+
+Each page presented itself as a short wall of text, devoid of images or graphics - clear in its 
+message but as uninviting as an empty gym after hours. Have you ever landed on a website that 
+felt like it was just going through the motions? That was this site. My vision was to transform 
+it into a space as engaging and dynamic as a round in the ring, maintaining the clarity of the 
+original content but with a visual flair that could draw more visitors.
+
+        <Picture
+                    src={contact}
+                    alt="Chavez Boxing Gym Contact Page"
+                />
+
+In today's digital age, a website is often the first jab a business throws at potential customers. 
+A well-designed website isn't just a nice-to-have; it's a heavyweight contender in making a striking 
+first impression. To bring more foot traffic to the gym, I knew I had to create a site that was not 
+just informative but also engaging - a site that could capture the gym's essence as effectively 
+as a well-landed uppercut.
+
+        <Picture
+                    src={sessions}
+                    alt="Chavez Boxing Gym Sessions Page"
+                />
+
+While functional, the website lacked the dynamic energy and community spirit that define the gym. Its 
+design was outdated, and the content did not effectively communicate the unique values and experiences 
+the gym offers. This was my canvas - a plain, unembellished website ready to be infused with the same 
+vigor and passion that fills the gym's air.
+
+## Redefining the Ring
+
+With a clear understanding of the current website's strengths and weaknesses, I began the design process.
+
+### The Visual Design 
+
+The first step was to establish a strong visual identity for the site. I wanted to create a design that 
+was clean and modern, but also bold and energetic.
+
+The cornerstone of this visual identity was the color palette. A vibrant red naturally emerged as the 
+primary color, echoing the classic boxing gloves that symbolize the sport's heritage. To balance this 
+intensity, I integrated a spectrum of grays, creating a grounded yet contrasting backdrop. To infuse 
+an element of surprise, I selected an electric violet as the highlight color, adding an unexpected 
+burst of energy.
+
+        <Picture
+                    src={palette}
+                    alt="Chavez Boxing Gym Color Palette"
+                />
+
+I had to find a font that would complement the color palette and convey the same energy. I chose 
+[Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab).  This bold, geometric 
+font is not just visually striking against the red backdrop, but its slab serif style also conveys 
+a sense of robustness and resilience, mirroring the ethos of a boxing gym.
+
+In crafting the visual design, simplicity was my guiding principle. I aspired to create a clean, 
+modern aesthetic that accentuated the content without overwhelming it. Liberal use of white space 
+introduced balance and contrast, while a consistent and straightforward layout across pages ensured 
+a seamless user experience.
+
+### Navigating User Experience
+
+With the visual design in place, I shifted focus to crafting an intuitive user experience. The 
+goal was to design a site that was not only easy to navigate but also accessible across various 
+devices and browsers.
+
+The site had to be fast. Blazing fast. I wanted to ensure that users could access the information 
+they needed without delay. To achieve this, I leveraged [Astro](https://astro.build/), a static 
+site builder that generates static HTML at build time. This approach eliminates the need for 
+client-side JavaScript, resulting in a site that is not just speedy but also secure and accessible.
+
+The site's architecture was centered around simplicity and clarity. A streamlined navigation 
+structure featured a consistent top menu bar, making it effortless for users to traverse between 
+pages. The design was responsive, adapting fluidly to different screen sizes, a feature I 
+enhanced using Astro's responsive image support and CSS media queries. Rigorous testing 
+across various browsers and devices guaranteed a uniform experience for all users.
+
+This comprehensive approach to design and development significantly elevated the gym's online 
+presence, transforming its website into an effective hook for potential customers.
+
+## Building the Digital Knockout
+
+The punch of visual design and the agility of user experience were just the start. Now, it was time to lace 
+up for the real bout: building the site.
+
+### The Tech Stack
+
+Like I mentioned before I chose [Astro](https://astro.build/) to take advantage of the insane download speeds, 
+better SEO, and improved accessibility.
+
+For the Content Management System, I used [Payload](https://payloadcms.com/), a headless CMS that provides a 
+simple interface for content editors to manage content. The coaches excel at boxing, not web development, 
+so it was crucial to provide them with a straightforward way to update the site's content. Payload's 
+intuitive interface and straightforward documentation made it the perfect choice.
+
+I felt most comfortable with vanilla CSS because I prefer sticking to the fundementals so I opted to use 
+that instead of a CSS framework (I've got my own thoughts on CSS frameworks, but that's a topic for another day).
+
+Payload's starter template comes with pretty much everything I needed to quickly get up and running. All I had to 
+do was create a MongoDB Atlas database and connect it to the CMS. 
+
+Now I was throwing punches.
+
+### The Content
+
+Content is king in the ring of web design. To keep the gym's community engaged, I set up a straightforward way for 
+them to access fresh, dynamic content - in this case, food recipes. I created a `recipes` collection in the CMS 
+and that was it. The client could now add, edit, and delete recipes from the CMS.
+
+### Connecting the Dots
+
+The final step was to connect the CMS to the website. I created a `recipes` page on the UI and used 
+a simple fetch request to pull the data from the CMS. Displaying the data was trivial (but I had my fair share of 
+issues. I'll get into that). This final step was like landing the winning punch - connecting the back-end power 
+of the CMS with the front-end finesse of the UI.
+
+## (Un)expected Challenges
+
+Stepping into the ring with Astro and Payload was like preparing for a bout with unfamiliar opponents. 
+I was braced for challenges, but some still caught me off guard. I was doing okay up until I had to deploy
+the UI and CMS (I don't know how devops engineers do it). I had to spend a lot of time re-reading guides and 
+documentation trying to figure out where I went wrong.
+
+### Deployment Hurdles: The Devil in the Details
+
+When I first attempted to deploy the UI on Vercel, I initially kept hitting an error saying that the `API_URL` was invalid 
+and missing. Turns out, Astro requires any variables to be exposed client side to be prefixed with `PUBLIC`. 
+A minor detail, yet it underscored the importance of meticulous attention to documentation. This oversight, though 
+it made me feel foolish, was a stark reminder of the basics often overlooked in the heat of development.
+
+The next issue I ran into was with the CMS. I was able to deploy it successfully on [North Flank](https://northflank.com/),
+but accessing the CMS became a game of hide and seek with no errors in sight. The culprit? A missing `https://` prefix 
+in the public `DNS URL`. Simple? Yes. Frustrating? Absolutely. But these are the moments that define the learning 
+process - trivial yet critical, teaching patience and attention to the minutest of details.
+
+Navigating through guides and documentation was a time-consuming process, yet it was akin to a rigorous training session. 
+Each hurdle, while momentarily perplexing, reinforced an essential skill or piece of knowledge, fortifying my overall 
+understanding of these new platforms.
+
+### Embracing the Learning Curve
+
+These experiences, as minor as they were in the grander scheme of web development, were pivotal. They were not 
+just about solving problems but about understanding and adapting to the nuances of new technologies. Each challenge 
+was a lesson in patience, resilience, and humility - key attributes for any developer.
+
+As I overcame these initial stumbling blocks, I realized they were stepping stones towards a more profound 
+comprehension of the development process. They prepared me for the intricate challenges that lay ahead, equipping 
+me with a more robust toolkit to tackle the subsequent phases of the project.
+
+## The Final Bell
+
+And that's a wrap! The new website is now live, and I'm thrilled with the results. You can check out 
+the final product at the [Chavez Boxing website](https://chavez-boxing.vercel.app/). I'm proud to have created a site that
+captures the gym's spirit and communicates its values. I hope this website can help the gym reach 
+more people and continue to grow its community.
+
+        <Video
+                    src={final}
+                    alt="Chavez Boxing Gym Final Website"
+                />
+
+I learned a lot from this project. I was able to explore new technologies, tackle into new challenges, and 
+gain a deeper understanding of the development process. But most importantly, I was able to give back to a 
+community that has given me so much. 
+
+## AI as a Cornerman: Godspeed
+
+On a final note, I felt it was necessary to write about AI and it's impact on this project.
+
+Everyone and their grandma is talking about AI. AI is no longer a fleeting trend; it's become a staple in the 
+toolkit of modern developers. As someone who's regularly navigated the evolving tech landscape, I've seen 
+AI transform from a novel concept to an indispensable asset in my development process. Recognizing its 
+potential beyond the buzz, I've incorporated ChatGPT into my workflow, not as a mere curiosity, but as 
+a tried-and-true resource for informed decision-making. This isn't about jumping on the AI bandwagon; 
+it's about strategically utilizing a tool that's become as common in development as a text editor or a 
+version control system.
+
+The traditional route of sifting through endless documentation to select the right tools can be a marathon. 
+With ChatGPT, I turned this marathon into a sprint. By outlining my project needs, ChatGPT provided curated 
+recommendations on tech stacks and tools that aligned perfectly with my objectives. This process wasn't 
+just about saving hours of research; it was about targeted, intelligent guidance that cut through the 
+clutter of options.
+
+What about actual coding? I had a clear stance: ChatGPT was not a coder but a facilitator. Its purpose 
+was to enhance my decision-making process, not to replace the human element of creativity and problem-solving 
+in coding. It helped in debugging and provided quick references, but the core of the code - the soul of 
+the development - remained human-crafted.
+
+### The Verdict
+
+At the end of the day, it saved me time. Lots of time. Time that I could spend on other aspects of the 
+project, like design and testing. But at the same time, it only worked as well as the information I 
+provided. The more specific I was, the more accurate the recommendations. It's not a magic wand that 
+can solve all your problems, but it's a powerful tool that can help you make informed decisions.
+
+I was able to focus on the big picture, knowing that AI had my back with the details.
+
+
+
+

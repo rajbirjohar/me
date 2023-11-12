@@ -1,0 +1,17 @@
+.figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gutter);
+  .video {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    height: auto;
+    width: 100%;
+  }
+  .caption {
+    color: var(--sub-fg);
+    text-align: center;
+    max-width: 468px;
+  }
+}
