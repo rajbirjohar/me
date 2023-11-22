@@ -4,6 +4,10 @@ import styles from "./styles.module.scss";
 const pathname = new URL(Astro.request.url).pathname;
 let currentPath = pathname.slice(1); // remove the first "/"
 
+if (pathname.startsWith("/about/")) {
+  currentPath = "about";
+}
+
 // Set currentPath to "journals" if the path starts with "/journals/"
 if (pathname.startsWith("/journals/")) {
   currentPath = "journals";

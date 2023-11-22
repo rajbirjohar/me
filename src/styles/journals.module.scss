@@ -22,6 +22,10 @@
           position: relative;
           overflow: hidden;
           cursor: pointer;
+          @media screen and (max-width: 568px) {
+            font-size: var(--font-md);
+            line-height: 1.4;
+          }
           &::after {
             content: "";
             position: absolute;

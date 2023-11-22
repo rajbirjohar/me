@@ -57,7 +57,7 @@ const next =
         {
           prev ? (
             <a href={prev.url} class={styles.link}>
-              <ArrowLeft size={20} />
+              <ArrowLeft class={styles.icon} />
               {prev.frontmatter.title}
             </a>
           ) : (
@@ -67,7 +67,7 @@ const next =
         {
           next && (
             <a href={next.url} class={styles.link}>
-              {next.frontmatter.title} <ArrowRight size={20} />
+              {next.frontmatter.title} <ArrowRight class={styles.icon} />
             </a>
           )
         }
