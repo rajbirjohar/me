@@ -3,6 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import styles from "@/styles/404.module.scss";
 
 const pathname = new URL(Astro.request.url).pathname;
+
+export const prerender = false;
 ---
 
 <Layout>
