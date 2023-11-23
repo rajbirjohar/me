@@ -43,13 +43,13 @@
   --border-color: var(--slate-2);
   --link: var(--brand-900);
   --primary: var(--brand-600);
-  --hightlight: var(--accent);
-  --highlight-fg: var(--light);
+  --hightlight: var(--slate-2);
+  --highlight-fg: inherit;
 
   --note-bg: var(--light);
 
-  --main-content-width: 768px;
-  --prose-width: 768px;
+  --main-content-width: 668px;
+  --prose-width: 668px;
   --nav-height: 60px;
 
   --border-radius: 12px;
@@ -66,10 +66,10 @@
   --font-xs: 0.75rem;
   --font-sm: 0.875rem;
   --font-base: 1rem;
-  --font-md: 1.25rem;
-  --font-lg: 1.5rem;
-  --font-xl: 2rem;
-  --font-xxl: 3rem;
+  --font-md: 1.1rem;
+  --font-lg: 1.2rem;
+  --font-xl: 1.3rem;
+  --font-xxl: 1.4rem;
 
   --font-sans: "Inter", "SFPro", sans-serif;
   --font-serif: "Noto Serif", "Times New Roman", serif;
@@ -254,6 +254,7 @@ ul li::marker {
   width: 100%;
   background: linear-gradient(0deg, var(--bg-rgba) 0%, transparent 100%);
   pointer-events: none;
+  user-select: none;
 }
 
 .divider {

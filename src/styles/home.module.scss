@@ -1,12 +1,6 @@
-.main {
-  width: 100%;
-  max-width: var(--main-content-width);
-  margin: 0 auto;
-  padding: var(--gutter-xxl) var(--gutter-md);
-  .prose {
-    max-width: 468px;
-    & > * + * {
-      margin-block-start: 1rem;
-    }
+.prose {
+  max-width: 468px;
+  & > * + * {
+    margin-block-start: 1rem;
   }
 }

@@ -6,7 +6,13 @@ import { format } from "date-fns";
 import { ArrowRight } from "lucide-astro";
 
 const { frontmatter } = Astro.props;
-const { title, published } = frontmatter;
+const {
+  title,
+  published,
+}: {
+  title: string;
+  published: Date;
+} = frontmatter;
 
 // Pagination
 const journals = await Astro.glob("../**/*.{md,mdx}");
@@ -40,38 +46,39 @@ const next =
 ---
 
 <Layout title={frontmatter.title}>
-  <main class={styles.main}>
-    <article class={styles.prose}>
-      <a href="/journals" class={styles.back}
-        ><ArrowLeftToLine size={20} /> Index</a
+  <article class={styles.prose}>
+    <a href="/journals" class={styles.back}
+      ><ArrowLeftToLine size={20} /> Index</a
+    >
+    <header class={styles.header}>
+      <h1>{title}</h1>
+      <time
+        class={styles.published}
+        datetime={new Date(published).toLocaleDateString()}
       >
-      <header class={styles.header}>
-        <h1>{title}</h1>
-        <time class={styles.published} datetime={published}>
-          Written {format(new Date(published), "MMM eo, yyyy")}
-        </time>
-      </header>
-      <div class="divider"></div>
-      <slot />
-      <footer class={styles.pagination}>
-        {
-          prev ? (
-            <a href={prev.url} class={styles.link}>
-              <ArrowLeft class={styles.icon} />
-              {prev.frontmatter.title}
-            </a>
-          ) : (
-            <div />
-          )
-        }
-        {
-          next && (
-            <a href={next.url} class={styles.link}>
-              {next.frontmatter.title} <ArrowRight class={styles.icon} />
-            </a>
-          )
-        }
-      </footer>
-    </article>
-  </main>
+        Written {format(new Date(published), "MMM do yyyy")}
+      </time>
+    </header>
+    <div class="divider"></div>
+    <slot />
+    <footer class={styles.pagination}>
+      {
+        prev ? (
+          <a href={prev.url} class={styles.link}>
+            <ArrowLeft class={styles.icon} />
+            {prev.frontmatter.title}
+          </a>
+        ) : (
+          <div />
+        )
+      }
+      {
+        next && (
+          <a href={next.url} class={styles.link}>
+            {next.frontmatter.title} <ArrowRight class={styles.icon} />
+          </a>
+        )
+      }
+    </footer>
+  </article>
 </Layout>

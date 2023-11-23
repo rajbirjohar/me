@@ -15,7 +15,7 @@ journals.sort(
 ---
 
 <Layout title="Journals">
-  <main class={styles.main}>
+  <article class={styles.prose}>
     <h1 class={styles.title}>Journals</h1>
     <p>
       I like to write about things I learn, things I'm working on, and things I
@@ -31,14 +31,16 @@ journals.sort(
             </a>
             <time
               class={styles.published}
-              datetime={journal.frontmatter.published}
+              datetime={new Date(
+                journal.frontmatter.published
+              ).toLocaleDateString()}
             >
               Written{" "}
-              {format(new Date(journal.frontmatter.published), "MMM eo, yyyy")}
+              {format(new Date(journal.frontmatter.published), "MMM do, yyyy")}
             </time>
           </article>
         ))
       }
     </div>
-  </main>
+  </article>
 </Layout>
