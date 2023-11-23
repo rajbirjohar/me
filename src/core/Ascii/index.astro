@@ -2,8 +2,9 @@
 import styles from "./styles.module.scss";
 ---
 
-<div class={styles.wrapper}> 
-    <pre class={styles.ascii}>
+<div class={styles.wrapper} aria-hidden="true">
+  <pre
+    class={styles.ascii}>
     {"  "}                       <span class={styles.firefly}>*</span>                 <span class={styles.firefly}>*</span>                                    <span class={styles.smoke}>    </span>                              <span class={styles.firefly}>*</span>                                            
     {"  "}^     ^                          ^                           ^                <span class={styles.smoke}>## #</span>                      <span class={styles.firefly}>*</span>               ^                              ^     
     {" "}/|\ ^ /|\       ^    ^      <span class={styles.firefly}>*</span>    /|\           ^    ^        /|\ ^            <span class={styles.smoke}># #</span>     <span class={styles.tent}>____</span>   <span class={styles.firefly}>*</span>      ^                   /|\   ^  <span class={styles.firefly}>*</span>      ^    ^       ^ /|\   
@@ -13,4 +14,3 @@ import styles from "./styles.module.scss";
     -----    ----- -----      -----   -----     -----     ----------   -----    --------------------   -----  ---------- -----    ----------   ----- -----   ----- 
     </pre>
 </div>
- 
