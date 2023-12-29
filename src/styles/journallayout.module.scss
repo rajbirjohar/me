@@ -40,20 +40,6 @@
         max-height: 20px;
         max-width: 20px;
       }
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 2px;
-        border-radius: 4px;
-        background-color: var(--link);
-        transition: width var(--transition);
-      }
-      &:hover::after {
-        width: 100%;
-      }
     }
     @media screen and (max-width: 668px) {
       flex-direction: column;

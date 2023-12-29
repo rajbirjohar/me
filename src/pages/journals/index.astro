@@ -16,7 +16,7 @@ journals.sort(
 
 <Layout title="Journals">
   <article class={styles.prose}>
-    <h1 class={styles.title}>Journals</h1>
+    <h1 class={styles.title}>journals</h1>
     <p>
       I like to write about things I learn, things I'm working on, and things I
       think about in regards to software development, design, and life in
@@ -27,7 +27,7 @@ journals.sort(
         journals.map((journal) => (
           <article class={styles.journal}>
             <a href={journal.url} class={styles.link}>
-              <h2 class={styles.title}>{journal.frontmatter.title}</h2>
+              {journal.frontmatter.title}
             </a>
             <time
               class={styles.published}

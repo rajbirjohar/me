@@ -5,6 +5,8 @@
   .journals {
     display: flex;
     flex-direction: column;
+    gap: var(--gutter);
+    margin-top: var(--gutter);
     .journal {
       color: var(--fg);
       border: none;
@@ -12,24 +14,11 @@
       flex-direction: column;
       .link {
         border-bottom: none;
-        .title {
-          color: var(--link);
-          display: inline-block;
-          position: relative;
-          overflow: hidden;
-          cursor: pointer;
-          &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            border-radius: 4px;
-            background-color: var(--link);
-            transition: width var(--transition);
-          }
-        }
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        font-size: 500;
       }
       .published {
         font-size: 14px;

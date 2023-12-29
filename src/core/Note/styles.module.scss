@@ -4,7 +4,7 @@
   gap: var(--gutter);
   background-color: var(--note-bg);
   border-radius: var(--border-radius);
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
   .prose {
     & > * + * {
       margin-block-start: 1rem;
