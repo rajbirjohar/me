@@ -7,6 +7,7 @@
     align-items: center;
     gap: var(--gutter-xs);
     border-bottom: none;
+    font-size: var(--font-sm);
   }
   .header {
     display: flex;
@@ -14,7 +15,7 @@
     align-items: center;
     margin-bottom: var(--gutter-xl);
     .published {
-      color: var(--sub-fg);
+      color: var(--color-figure-gray-secondary);
       font-size: var(--font-sm);
     }
     @media screen and (max-width: 668px) {

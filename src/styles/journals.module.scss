@@ -1,5 +1,5 @@
 .prose {
-  .title {
+  & > * + * {
     margin-block-start: 1rem;
   }
   .journals {
@@ -8,7 +8,6 @@
     gap: var(--gutter);
     margin-top: var(--gutter);
     .journal {
-      color: var(--fg);
       border: none;
       display: flex;
       flex-direction: column;
@@ -19,10 +18,11 @@
         overflow: hidden;
         cursor: pointer;
         font-size: 500;
+        color: var(--brand);
       }
       .published {
         font-size: 14px;
-        color: var(--sub-fg);
+        color: var(--color-figure-gray-secondary);
       }
       @media (hover: hover) {
         &:hover {

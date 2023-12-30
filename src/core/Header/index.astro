@@ -1,5 +1,4 @@
 ---
-import Logo from "../Logo/index.astro";
 import styles from "./styles.module.scss";
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -17,18 +16,68 @@ if (pathname.startsWith("/journals/")) {
 
 <header class={styles.header}>
   <nav class={styles.nav}>
-    <a href="/" class={currentPath === "" ? styles.active : undefined}>hello</a>
-    <a
-      href="/about"
-      class={currentPath === "about" ? styles.active : undefined}
-    >
-      whoami
-    </a>
-    <a
-      href="/journals"
-      class={currentPath === "journals" ? styles.active : undefined}
-    >
-      journals
-    </a>
+    <div class={styles.heading}>
+      {
+        currentPath === "" ? (
+          <>hello</>
+        ) : currentPath === "about" ? (
+          <>whoami</>
+        ) : currentPath === "journals" ? (
+          <>journals</>
+        ) : (
+          <>404</>
+        )
+      }
+    </div>
+    <div class={styles.links}>
+      <a href="/" class={currentPath === "" ? styles.active : undefined}
+        >hello</a
+      >
+      <a
+        href="/about"
+        class={currentPath === "about" ? styles.active : undefined}
+      >
+        whoami
+      </a>
+      <a
+        href="/journals"
+        class={currentPath === "journals" ? styles.active : undefined}
+      >
+        journals
+      </a>
+    </div>
   </nav>
 </header>
+
+<script define:vars={{ styles }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(`.${styles.header}`);
+
+    const threshold = 50;
+
+    // Add scroll class on scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > threshold) {
+        header.classList.add(`${styles.scroll}`);
+      } else {
+        header.classList.remove(`${styles.scroll}`);
+      }
+    });
+  });
+
+  // Make the heading class visible on scroll
+  document.addEventListener("DOMContentLoaded", () => {
+    const heading = document.querySelector(`.${styles.heading}`);
+
+    const threshold = 60;
+
+    // Add scroll class on scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > threshold) {
+        heading.classList.add(`${styles.scroll}`);
+      } else {
+        heading.classList.remove(`${styles.scroll}`);
+      }
+    });
+  });
+</script>

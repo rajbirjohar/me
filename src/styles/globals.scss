@@ -3,50 +3,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --light: #fff;
-  --dark: #000;
+  --color-fill: #fff;
+  --color-fill-secondary: #fbfbfd;
+  --color-fill-tertiary: #f5f5f7;
+  --color-fill-quaternary: #252525;
 
-  --slate-0: #fafafa;
-  --slate-1: #f4f4f5;
-  --slate-2: #e4e4e7;
-  --slate-3: #d4d4d8;
-  --slate-4: #a1a1aa;
-  --slate-5: #71717a;
-  --slate-6: #52525b;
-  --slate-7: #3f3f46;
-  --slate-8: #27272a;
-  --slate-9: #18181b;
-  --slate-10: #09090b;
+  --color-fill-blue: #0071e3;
+  --color-fill-blue-secondary: #f6fbff;
 
-  --brand-50: #7ad1dd;
-  --brand-100: #5fccdb;
-  --brand-200: #44cadc;
-  --brand-300: #2ac9de;
-  --brand-400: #1ac2d9;
-  --brand-500: #11b7cd;
-  --brand-600: #09adc3;
-  --brand-700: #0e99ac;
-  --brand-800: #128797;
-  --brand-900: #147885;
+  --color-fill-gray: #1d1d1f;
+  --color-fill-gray-secondary: #86868b;
+  --color-fill-gray-tertiary: #d2d2d7;
+  --color-fill-gray-quaternary: #e8e8ed;
 
-  --accent: #a24134;
+  --color-figure-gray: #1d1d1f;
+  --color-figure-gray-secondary: #6e6e73;
+  --color-figure-gray-secondary-alt: #515154;
+  --color-figure-gray-tertiary: #86868b;
+  --color-figure-light-gray: #696969;
 
-  --fire: var(--slate-0);
+  --bg: var(--color-fill);
+  --fg: var(--color-figure-gray);
+
+  --header-bg: var(--color-fill);
+  --header-scroll-bg: var(--color-fill);
+  --header-fg: var(--color-figure-gray-secondary);
+  --header-active-fg: var(--color-figure-gray);
+
+  --footer-bg: var(--color-fill-tertiary);
+  --footer-heading-fg: var(--color-figure-gray);
+  --footer-fg: var(--color-figure-gray-secondary-alt);
+  --footer-active-fg: var(--color-figure-gray);
+
+  --border: 1px solid var(--color-fill-gray-tertiary);
+
+  --note-bg: var(--color-fill);
+
+  --orange: #ff9500;
+  --teal: #30b0c7;
+  --mint: #00c7be;
+  --blue: #007aff;
+
+  --brand: var(--blue);
+
   --trees: #059669;
-  --smoke: var(--slate-2);
-
-  --heading-fg: var(--dark);
-  --fg: var(--slate-7);
-  --sub-fg: var(--slate-5);
-  --bg: var(--slate-0);
-  --bg-rgba: rgba(250, 250, 250, 0.9);
-  --border-color: var(--slate-2);
-  --link: var(--brand-900);
-  --primary: var(--brand-600);
-  --hightlight: var(--slate-2);
-  --highlight-fg: inherit;
-
-  --note-bg: var(--light);
+  --fire: var(--color-fill);
+  --smoke: var(--color-fill-gray-tertiary);
 
   --main-content-width: 668px;
   --prose-width: 668px;
@@ -66,12 +68,12 @@
   --font-xs: 0.75rem;
   --font-sm: 0.875rem;
   --font-base: 1rem;
-  --font-md: 1.1rem;
-  --font-lg: 1.2rem;
-  --font-xl: 1.3rem;
-  --font-xxl: 1.4rem;
+  --font-md: 1.25rem;
+  --font-lg: 1.5rem;
+  --font-xl: 1.75rem;
+  --font-xxl: 2rem;
 
-  --font-sans: "Inter", "SFPro", sans-serif;
+  --font-sans: "Inter", "SFPro", system-ui, sans-serif;
   --font-serif: "Noto Serif", "Times New Roman", serif;
   --font-mono: "Noto Sans Mono", "SF Mono", monospace;
 
@@ -81,30 +83,39 @@
   --stagger: 0;
   --delay: 120ms;
   --start: 0ms;
-
-  --shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.07);
-  --nav-shadow: rgba(178, 183, 190, 0.15) 0px 5px 10px 0px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent: #dc9b93;
+    --color-fill: #000;
+    --color-fill-secondary: #161617;
+    --color-fill-tertiary: #1d1d1f;
 
-    --fire: #fbbf24;
-    --trees: #064e3b;
-    --smoke: var(--slate-5);
+    --color-fill-blue: #0071e3;
+    --color-fill-blue-secondary: #001931;
 
-    --heading-fg: var(--light);
-    --fg: var(--slate-2);
-    --sub-fg: var(--slate-4);
-    --bg: var(--slate-10);
-    --bg-rgba: rgba(9, 9, 11, 0.9);
-    --border-color: var(--slate-8);
-    --primary: var(--brand-500);
-    --link: var(--brand-500);
-    --highlight-fg: var(--dark);
+    --color-fill-gray: #f5f5f7;
+    --color-fill-gray-secondary: #6e6e73;
+    --color-fill-gray-tertiary: #424245;
+    --color-fill-gray-quaternary: #333336;
 
-    --note-bg: var(--slate-9);
+    --color-figure-gray: #f5f5f7;
+    --color-figure-gray-secondary: #86868b;
+    --color-figure-gray-secondary-alt: #a1a1a6;
+    --color-figure-gray-tertiary: #6e6e73;
+    --color-figure-light-gray: #9a9a9e;
+
+    --teal: #40cbe0;
+    --orange: #ff9f0a;
+    --mint: #63e6e2;
+
+    --brand: var(--orange);
+
+    --header-scroll-bg: var(--color-fill-secondary);
+
+    --note-bg: var(--color-fill-secondary);
+
+    --fire: var(--orange);
   }
 }
 
@@ -112,9 +123,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
   margin: 0;
 }
 
@@ -122,12 +130,13 @@ html {
   font-family: var(--font-sans);
   background-color: var(--bg);
   color: var(--fg);
-  font-size: var(--font-base);
+  font-size: 17px;
 }
 
 body {
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 
 img,
@@ -210,9 +219,12 @@ pre {
 }
 
 a {
-  color: var(--link);
-  border-bottom: 2px solid var(--link);
+  color: var(--brand);
   text-decoration: none;
+  transition: var(--transition);
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 blockquote {
@@ -220,30 +232,26 @@ blockquote {
   font-style: italic;
   font-family: var(--font-serif);
   text-align: center;
-  color: var(--accent);
+  color: var(--brand);
   max-width: 568px;
   margin: 0 auto;
 }
 
 /* Style for ordered list numbers */
 ol li::marker {
-  color: var(--sub-fg); /* Change to your preferred color */
+  color: var(--color-figure-gray-tertiary); /* Change to your preferred color */
 }
 
 /* Style for unordered list bullets */
 ul li::marker {
-  color: var(--sub-fg); /* Change to your preferred color */
+  color: var(--color-figure-gray-tertiary); /* Change to your preferred color */
 }
 
 ::selection {
-  background: var(--hightlight);
-  color: var(--highlight-fg); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--highlight-fg);
+  background: var(--color-fill-gray-tertiary);
 }
 ::-moz-selection {
-  background: var(--hightlight);
-  color: var(--highlight-fg); /* WebKit/Blink Browsers */
-  -webkit-text-fill-color: var(--highlight-fg);
+  background: var(--color-fill-gray-tertiary);
 }
 
 .gradient {
@@ -260,9 +268,9 @@ ul li::marker {
 .divider {
   width: 100%;
   max-width: 200px;
-  height: 2px;
+  height: 1px;
   border-radius: 4px;
-  background-color: var(--border-color);
+  background-color: var(--color-fill-gray-tertiary);
   margin: var(--gutter-xl) auto;
 }
 

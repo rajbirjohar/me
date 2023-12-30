@@ -5,25 +5,30 @@ import { ArrowUpRight } from "lucide-astro";
 ---
 
 <footer class={styles.footer}>
-  <div class={styles.column}>
-    <small class={styles.header}>rajbir johar</small>
-    <div>ux engineer</div>
-  </div>
-  <div class={styles.column}>
-    <small class={styles.header}>contact</small>
-    <div>hello@rajbir.io</div>
-  </div>
-  <div class={styles.column}>
-    <small class={styles.header}>elsewhere</small>
-    <div class={styles.linkwrapper}>
-      <a href={"https://www.linkedin.com/in/rajbirjohar/"} class={styles.link}>
-        linkedIn
-        <ArrowUpRight size={10} />
-      </a>
-      <a href={"https://www.github.com/rajbirjohar"} class={styles.link}>
-        github
-        <ArrowUpRight size={10} />
-      </a>
+  <div class={styles.content}>
+    <div class={styles.column}>
+      <h3 class={styles.header}>rajbir johar</h3>
+      <div class={styles.links}>ux engineer</div>
+    </div>
+    <div class={styles.column}>
+      <h3 class={styles.header}>contact</h3>
+      <div class={styles.links}>hello@rajbir.io</div>
+    </div>
+    <div class={styles.column}>
+      <h3 class={styles.header}>elsewhere</h3>
+      <div class={styles.links}>
+        <a
+          href={"https://www.linkedin.com/in/rajbirjohar/"}
+          class={styles.link}
+        >
+          linkedIn
+          <ArrowUpRight size={10} />
+        </a>
+        <a href={"https://www.github.com/rajbirjohar"} class={styles.link}>
+          github
+          <ArrowUpRight size={10} />
+        </a>
+      </div>
     </div>
   </div>
 </footer>

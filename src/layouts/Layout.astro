@@ -4,7 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import { ViewTransitions } from "astro:transitions";
 import Header from "@/core/Header/index.astro";
 import Footer from "@/core/Footer/index.astro";
 import styles from "@/styles/layout.module.scss";
@@ -32,14 +31,11 @@ import "@/styles/globals.scss";
     <meta name="theme-color" content="#ffffff" />
 
     <title>Rajbir Johar {title && `| ${title}`}</title>
-    <ViewTransitions />
   </head>
   <body>
     <Header />
     <main class={styles.main}>
-      <div class={styles.grid}>
-        <slot />
-      </div>
+      <slot />
     </main>
     <div class="divider"></div>
     <Footer />
