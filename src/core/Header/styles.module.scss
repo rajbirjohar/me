@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: var(--nav-height);
-  // margin-top:var(--gutter-xl);
+  margin-top: var(--gutter-xxl);
   isolation: isolate;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
@@ -9,8 +9,6 @@
   top: 0;
   isolation: isolate;
   z-index: 10;
-  border-bottom: var(--border);
-  // Testing without the pseudo element
   &::before {
     display: block;
     content: "";
@@ -53,19 +51,24 @@
       display: flex;
       align-items: center;
       gap: var(--gutter-md);
-      font-size: var(--font-xs);
       a {
         border: none;
         color: var(--header-fg);
         text-decoration: none;
         transition: var(--transition);
-        &:hover {
-          color: var(--header-active-fg);
-        }
+        font-size: var(--font-sm);
+        &:hover,
         &.active {
-          color: var(--brand);
+          color: var(--header-active-fg);
         }
       }
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    margin-top: var(--gutter-md);
+  }
+  
 }

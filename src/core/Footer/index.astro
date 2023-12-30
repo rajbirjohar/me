@@ -1,34 +1,33 @@
 ---
 import styles from "./styles.module.scss";
 import Ascii from "../Ascii/index.astro";
+import Logo from "../Logo/index.astro";
 import { ArrowUpRight } from "lucide-astro";
 ---
 
 <footer class={styles.footer}>
-  <div class={styles.content}>
-    <div class={styles.column}>
-      <h3 class={styles.header}>rajbir johar</h3>
-      <div class={styles.links}>ux engineer</div>
-    </div>
-    <div class={styles.column}>
-      <h3 class={styles.header}>contact</h3>
-      <div class={styles.links}>hello@rajbir.io</div>
-    </div>
-    <div class={styles.column}>
-      <h3 class={styles.header}>elsewhere</h3>
-      <div class={styles.links}>
-        <a
-          href={"https://www.linkedin.com/in/rajbirjohar/"}
-          class={styles.link}
-        >
-          linkedIn
-          <ArrowUpRight size={10} />
-        </a>
-        <a href={"https://www.github.com/rajbirjohar"} class={styles.link}>
-          github
-          <ArrowUpRight size={10} />
-        </a>
-      </div>
+  <div class={styles.column}>
+    <Logo />
+  </div>
+  <div class={styles.column}>
+    <h3 class={styles.header}>rajbir johar</h3>
+    <div class={styles.links}>ux engineer</div>
+  </div>
+  <div class={styles.column}>
+    <h3 class={styles.header}>contact</h3>
+    <div class={styles.links}>hello@rajbir.io</div>
+  </div>
+  <div class={styles.column}>
+    <h3 class={styles.header}>elsewhere</h3>
+    <div class={styles.links}>
+      <a href={"https://www.linkedin.com/in/rajbirjohar/"} class={styles.link}>
+        linkedIn
+        <ArrowUpRight size={10} />
+      </a>
+      <a href={"https://www.github.com/rajbirjohar"} class={styles.link}>
+        github
+        <ArrowUpRight size={10} />
+      </a>
     </div>
   </div>
 </footer>
