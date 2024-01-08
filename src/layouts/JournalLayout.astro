@@ -9,9 +9,11 @@ const { frontmatter } = Astro.props;
 const {
   title,
   published,
+  draft,
 }: {
   title: string;
   published: Date;
+  draft: boolean;
 } = frontmatter;
 
 // Pagination
@@ -46,39 +48,50 @@ const next =
 ---
 
 <Layout title={frontmatter.title}>
-  <article class={styles.prose}>
-    <a href="/journals" class={styles.back}
-      ><ArrowLeftToLine size={16} /> Index</a
-    >
-    <header class={styles.header}>
-      <h1>{title}</h1>
-      <time
-        class={styles.published}
-        datetime={new Date(published).toLocaleDateString()}
-      >
-        Written {format(new Date(published), "MMM do yyyy")}
-      </time>
-    </header>
-    <div class="divider"></div>
-    <slot />
-    <footer class={styles.pagination}>
-      {
-        prev ? (
-          <a href={prev.url} class={styles.link}>
-            <ArrowLeft class={styles.icon} />
-            {prev.frontmatter.title}
-          </a>
-        ) : (
-          <div />
-        )
-      }
-      {
-        next && (
-          <a href={next.url} class={styles.link}>
-            {next.frontmatter.title} <ArrowRight class={styles.icon} />
-          </a>
-        )
-      }
-    </footer>
-  </article>
+  {
+    draft ? (
+      <article class={styles.prose}>
+        <a href="/journals" class={styles.back}>
+          <ArrowLeftToLine size={16} /> Index
+        </a>
+        <header class={styles.header}>
+          <h1>It's not ready yet!</h1>
+        </header>
+        <div class="divider" />
+        <p>This journal entry is not ready yet. Please check back later.</p>
+      </article>
+    ) : (
+      <article class={styles.prose}>
+        <a href="/journals" class={styles.back}>
+          <ArrowLeftToLine size={16} /> Index
+        </a>
+        <header class={styles.header}>
+          <h1>{title}</h1>
+          <time
+            class={styles.published}
+            datetime={new Date(published).toLocaleDateString()}
+          >
+            Written {format(new Date(published), "MMM do yyyy")}
+          </time>
+        </header>
+        <div class="divider" />
+        <slot />
+        <footer class={styles.pagination}>
+          {prev ? (
+            <a href={prev.url} class={styles.link}>
+              <ArrowLeft class={styles.icon} />
+              {prev.frontmatter.title}
+            </a>
+          ) : (
+            <div />
+          )}
+          {next && (
+            <a href={next.url} class={styles.link}>
+              {next.frontmatter.title} <ArrowRight class={styles.icon} />
+            </a>
+          )}
+        </footer>
+      </article>
+    )
+  }
 </Layout>

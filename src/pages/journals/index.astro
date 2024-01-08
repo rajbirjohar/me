@@ -24,22 +24,27 @@ journals.sort(
     </p>
     <div class={styles.journals}>
       {
-        journals.map((journal) => (
-          <article class={styles.journal}>
-            <a href={journal.url} class={styles.link}>
-              {journal.frontmatter.title}
-            </a>
-            <time
-              class={styles.published}
-              datetime={new Date(
-                journal.frontmatter.published
-              ).toLocaleDateString()}
-            >
-              Written{" "}
-              {format(new Date(journal.frontmatter.published), "MMM do, yyyy")}
-            </time>
-          </article>
-        ))
+        journals
+          .filter((journal) => (journal.frontmatter.draft !== true ? true : false))
+          .map((journal) => (
+            <article class={styles.journal}>
+              <a href={journal.url} class={styles.link}>
+                {journal.frontmatter.title}
+              </a>
+              <time
+                class={styles.published}
+                datetime={new Date(
+                  journal.frontmatter.published
+                ).toLocaleDateString()}
+              >
+                Written{" "}
+                {format(
+                  new Date(journal.frontmatter.published),
+                  "MMM do, yyyy"
+                )}
+              </time>
+            </article>
+          ))
       }
     </div>
   </article>
