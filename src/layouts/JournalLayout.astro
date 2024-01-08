@@ -77,7 +77,7 @@ const next =
         <div class="divider" />
         <slot />
         <footer class={styles.pagination}>
-          {prev ? (
+          {prev && prev.frontmatter.draft !== true ? (
             <a href={prev.url} class={styles.link}>
               <ArrowLeft class={styles.icon} />
               {prev.frontmatter.title}
@@ -85,7 +85,7 @@ const next =
           ) : (
             <div />
           )}
-          {next && (
+          {next && next.frontmatter.draft !== true && (
             <a href={next.url} class={styles.link}>
               {next.frontmatter.title} <ArrowRight class={styles.icon} />
             </a>
