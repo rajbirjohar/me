@@ -129,14 +129,16 @@
 html {
   font-family: var(--font-sans);
   font-size: 17px;
+  background-color: var(--color-fill);
+  color: var(--color-figure-gray);
 }
 
 body {
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   height: 100%;
-  background-color: var(--bg);
-  color: var(--fg);
+  background-color: var(--color-fill);
+  color: var(--color-figure-gray);
 }
 
 img,
