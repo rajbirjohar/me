@@ -20,11 +20,13 @@ const {
 const journals = await Astro.glob("../**/*.{md,mdx}");
 
 // Sort posts by date or any other frontmatter property
-journals.sort(
-  (a, b) =>
-    new Date(b.frontmatter.published).getTime() -
-    new Date(a.frontmatter.published).getTime()
-);
+journals
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.published).getTime() -
+      new Date(a.frontmatter.published).getTime()
+  )
+  .filter((journal) => journal.frontmatter.draft !== true);
 
 const currentIndex = journals.findIndex((journal) => {
   // Extract the path from the full URL, which usually includes protocol, domain, and path
@@ -77,7 +79,7 @@ const next =
         <div class="divider" />
         <slot />
         <footer class={styles.pagination}>
-          {prev && prev.frontmatter.draft !== true ? (
+          {prev ? (
             <a href={prev.url} class={styles.link}>
               <ArrowLeft class={styles.icon} />
               {prev.frontmatter.title}
@@ -85,7 +87,7 @@ const next =
           ) : (
             <div />
           )}
-          {next && next.frontmatter.draft !== true && (
+          {next && (
             <a href={next.url} class={styles.link}>
               {next.frontmatter.title} <ArrowRight class={styles.icon} />
             </a>
