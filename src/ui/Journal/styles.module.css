@@ -17,9 +17,15 @@
 }
 
 .heading {
-  color: var(--brand);
+  color: inherit;
+  transition: inherit;
+}
+
+.heading:hover {
+  color: inherit;
 }
 
 .link {
-  max-width: fit-content;
+  width: max-content;
+  display: block;
 }

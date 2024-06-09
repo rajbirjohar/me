@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import styles from "./styles.module.css";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 /**
@@ -11,12 +12,27 @@ import { useEffect, useState } from "react";
  * softly animated to give the appearance of twinkling.
  */
 const StarField = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
   const starfield = Array.from({ length: 100 }, (_, i) => i).map((i) => {
     const size = Math.random() * 2 + 1;
     return <Star key={i} size={size} />;
   });
 
-  return <div className={styles.stars}>{starfield}</div>;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <AnimatePresence>
+      {theme === "dark" ? (
+        <div className={styles.stars}>{starfield}</div>
+      ) : null}
+    </AnimatePresence>
+  );
 };
 
 const Star = ({ size }: { size: number }) => {

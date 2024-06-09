@@ -3,7 +3,8 @@
   --heading: #111;
   --text: #333;
   --sub-text: #666;
-  --brand: #8e8bb2;
+  --brand: #6c6986;
+  --brand-hover: #514f63;
   --sun: #f9d71c;
   --moon: #f1f1f1;
   --tooltip-background: #fff;
@@ -14,8 +15,10 @@
 
   --sun-glow: 0 0 20px 0 rgba(249, 215, 28, 0.5);
   --sun-glow-hover: 0 0 20px 0 rgba(249, 215, 28, 0.75);
+  --sun-focus: 0 0 0 4px rgba(249, 215, 28, 0.5);
   --moon-glow: 0 0 20px 0 rgba(241, 241, 241, 0.5);
   --moon-glow-hover: 0 0 20px 0 rgba(241, 241, 241, 0.75);
+  --moon-focus: 0 0 0 4px rgba(241, 241, 241, 0.5);
 
   --new-moon-gradient: linear-gradient(to right, #000000 50%, #1a1a1a 50%);
   --waxing-crescent-gradient: linear-gradient(
@@ -79,6 +82,7 @@
   --text: #bfbfbf;
   --sub-text: #777777;
   --brand: #9cb770;
+  --brand-hover: #aeda69;
 
   --border-color: #252023;
   --tooltip-background: #222;
@@ -118,6 +122,7 @@ body {
   color: var(--text);
   letter-spacing: -0.02em;
   transition: background-color var(--transition), color var(--transition);
+  min-height: 100svh;
 }
 /*
     5. Improve media defaults
@@ -188,14 +193,17 @@ h6 {
 a {
   color: var(--brand);
   text-decoration: none;
+  transition: color var(--transition), box-shadow var(--transition);
+  border-radius: 4px;
   outline: none;
-  border: 2px solid transparent;
-  transition: border var(--transition);
-  border-radius: var(--border-radius-sm);
+}
+
+a:hover {
+  color: var(--brand-hover);
 }
 
 a:focus-visible {
-  border: 2px solid var(--border-color);
+  box-shadow: 0 0 0 2px var(--brand);
 }
 
 hr {
@@ -219,6 +227,13 @@ pre {
   padding: var(--gutter-sm) var(--gutter);
   border-radius: var(--border-radius);
   overflow-x: auto;
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition);
+}
+
+pre:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--brand);
 }
 
 ::selection {

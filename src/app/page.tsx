@@ -12,7 +12,7 @@ export default function Home() {
         <h1>Rajbir Johar</h1>
         <p>CSS is my jam.</p>
       </header>
-      <section>
+      <section className={styles.journals}>
         {journals.length < 1 && <p>No musings today.</p>}
         {journals.map((journal) => (
           <Journal key={journal.slug} journal={journal} />

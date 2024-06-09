@@ -11,7 +11,7 @@ export default function Journals() {
       <header>
         <h1>Journal</h1>
       </header>
-      <section>
+      <section className={styles.journals}>
         {journals.length < 1 && <p>No musings today.</p>}
         {journals.map((journal) => (
           <Journal key={journal.slug} journal={journal} />

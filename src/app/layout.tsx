@@ -5,6 +5,7 @@ import "./globals.css";
 import { Navigation } from "@/ui/Navigation";
 import { ThemeProvider } from "next-themes";
 import { Footer } from "@/ui/Footer";
+import { StarField } from "@/ui/Starfield";
 
 const wotfard = localFont({
   variable: "--wotfard",
@@ -141,6 +142,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={wotfard.className}>
         <ThemeProvider>
+          <StarField />
           <Navigation />
           <main className={styles.main}>{children}</main>
           <Footer />

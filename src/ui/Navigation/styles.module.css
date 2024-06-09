@@ -1,6 +1,6 @@
 .navwrapper {
   width: 100%;
-  margin-top: var(--gutter-xxl);
+  padding-top: var(--gutter-xxl);
 }
 
 .nav {
@@ -37,6 +37,7 @@
   border: none;
   cursor: pointer;
   transition: box-shadow var(--transition);
+  outline: none;
 }
 
 .button[data-theme="light"] {
@@ -54,8 +55,16 @@
   box-shadow: var(--sun-glow-hover);
 }
 
+.button[data-theme="light"]:focus-visible {
+  box-shadow: var(--sun-focus);
+}
+
 .button[data-theme="dark"]:hover {
   box-shadow: var(--moon-glow-hover);
+}
+
+.button[data-theme="dark"]:focus-visible {
+  box-shadow: var(--moon-focus);
 }
 
 .trigger {

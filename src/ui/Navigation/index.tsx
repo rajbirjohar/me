@@ -175,77 +175,72 @@ const Navigation = () => {
     },
   };
   return (
-    <>
-      <div className={styles.navwrapper}>
-        <AnimatePresence>
-          {theme === "dark" && mounted && <StarField />}
-        </AnimatePresence>
-        <nav className={styles.nav}>
-          <div className={styles.links}>
-            <Link href="/">Home</Link>
-            <Link href="/journal">Journal</Link>
+    <div className={styles.navwrapper}>
+      <nav className={styles.nav}>
+        <div className={styles.links}>
+          <Link href="/">Home</Link>
+          <Link href="/journal">Journal</Link>
+        </div>
+        {mounted && (
+          <div className={styles.theme}>
+            <Tooltip>
+              <TooltipTrigger className={styles.trigger} asChild>
+                <div className={styles.anchor}>
+                  <AnimatePresence mode="sync" initial={false}>
+                    {theme === "light" ? (
+                      <motion.button
+                        className={styles.button}
+                        onClick={toggleTheme}
+                        aria-label="Toggle Dark Mode"
+                        key="sun"
+                        data-theme="light"
+                        variants={buttonVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                      />
+                    ) : (
+                      <motion.button
+                        key="moon"
+                        data-theme="dark"
+                        variants={buttonVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        className={styles.button}
+                        onClick={toggleTheme}
+                        style={{
+                          background: `var(--${
+                            moonPhase(new Date()).background
+                          }-gradient)`,
+                        }}
+                        aria-label="Toggle Light Mode"
+                      />
+                    )}
+                  </AnimatePresence>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent side="left">
+                {theme === "light" ? (
+                  <>
+                    {nearestSolsticeOrEquinox(new Date()).name} |{" "}
+                    {format(
+                      nearestSolsticeOrEquinox(new Date()).date,
+                      "MMMM d, y"
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {moonPhase(new Date()).phase} |{" "}
+                    {moonPhase(new Date()).illumination}% Illuminated
+                  </>
+                )}
+              </TooltipContent>
+            </Tooltip>
           </div>
-          {mounted && (
-            <div className={styles.theme}>
-              <Tooltip>
-                <TooltipTrigger className={styles.trigger} asChild>
-                  <div className={styles.anchor}>
-                    <AnimatePresence mode="sync" initial={false}>
-                      {theme === "light" ? (
-                        <motion.button
-                          className={styles.button}
-                          onClick={toggleTheme}
-                          aria-label="Toggle Dark Mode"
-                          key="sun"
-                          data-theme="light"
-                          variants={buttonVariants}
-                          initial="initial"
-                          animate="animate"
-                          exit="exit"
-                        />
-                      ) : (
-                        <motion.button
-                          key="moon"
-                          data-theme="dark"
-                          variants={buttonVariants}
-                          initial="initial"
-                          animate="animate"
-                          exit="exit"
-                          className={styles.button}
-                          onClick={toggleTheme}
-                          style={{
-                            background: `var(--${
-                              moonPhase(new Date()).background
-                            }-gradient)`,
-                          }}
-                          aria-label="Toggle Light Mode"
-                        />
-                      )}
-                    </AnimatePresence>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent side="left">
-                  {theme === "light" ? (
-                    <>
-                      {nearestSolsticeOrEquinox(new Date()).name} |{" "}
-                      {format(
-                        nearestSolsticeOrEquinox(new Date()).date,
-                        "MMMM d, y"
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      {moonPhase(new Date()).phase} |{" "}
-                      {moonPhase(new Date()).illumination}% Illuminated
-                    </>
-                  )}
-                </TooltipContent>
-              </Tooltip>
-            </div>
-          )}
-        </nav>
-      </div>
-    </>
+        )}
+      </nav>
+    </div>
   );
 };
 
