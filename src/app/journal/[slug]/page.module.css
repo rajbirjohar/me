@@ -1,0 +1,16 @@
+.article > * + *,
+.header > * + *,
+.prose > * + * {
+  margin-block-start: 1rem;
+}
+
+.date {
+  font-size: var(--font-sm);
+  color: var(--sub-text);
+}
+
+.header {
+  text-align: center;
+  text-wrap: balance;
+  margin-bottom: var(--gutter-md);
+}

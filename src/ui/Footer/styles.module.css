@@ -1,0 +1,10 @@
+.footer {
+  width: 100%;
+  max-width: var(--content-width);
+  padding: 0 var(--gutter-md);
+  margin: 0 auto;
+  margin-bottom: var(--gutter-xxl);
+  text-align: center;
+  font-size: var(--font-sm);
+  color: var(--sub-text);
+}

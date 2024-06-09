@@ -1,0 +1,68 @@
+.navwrapper {
+  width: 100%;
+  margin-top: var(--gutter-xxl);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--gutter-md);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-md);
+}
+
+.links a {
+  line-height: 1;
+}
+
+.theme {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.button {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0px 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow var(--transition);
+}
+
+.button[data-theme="light"] {
+  background-color: var(--sun);
+  box-shadow: var(--sun-glow);
+}
+
+.button[data-theme="dark"] {
+  background-color: var(--moon);
+  border: 2px solid var(--moon);
+  box-shadow: var(--moon-glow);
+}
+
+.button[data-theme="light"]:hover {
+  box-shadow: var(--sun-glow-hover);
+}
+
+.button[data-theme="dark"]:hover {
+  box-shadow: var(--moon-glow-hover);
+}
+
+.trigger {
+  background-color: transparent;
+  border: none;
+}
+
+.anchor {
+  height: 44px;
+}
