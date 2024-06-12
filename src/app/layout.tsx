@@ -5,8 +5,8 @@ import "./globals.css";
 import { Navigation } from "@/ui/Navigation";
 import { ThemeProvider } from "next-themes";
 import { Footer } from "@/ui/Footer";
-import { StarField } from "@/ui/Starfield";
 import { Gradient } from "@/ui/Gradient";
+import type { Viewport } from "next";
 
 const wotfard = localFont({
   variable: "--wotfard",
@@ -132,6 +132,13 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "hsl(36,31%,90%)" },
+    { media: "(prefers-color-scheme: dark)", color: "hsl(270,6%,11%)" },
+  ],
 };
 
 export default function RootLayout({

@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import { Tooltip, TooltipTrigger, TooltipContent } from "../Tooltip";
 import { format } from "date-fns";
-import { StarField } from "../Starfield";
 
 const Navigation = () => {
   const { theme, setTheme } = useTheme();
@@ -181,7 +180,7 @@ const Navigation = () => {
           <Link href="/">Home</Link>
           <Link href="/journal">Journal</Link>
         </div>
-        {mounted && (
+        {mounted ? (
           <div className={styles.theme}>
             <Tooltip>
               <TooltipTrigger className={styles.trigger} asChild>
@@ -238,6 +237,13 @@ const Navigation = () => {
               </TooltipContent>
             </Tooltip>
           </div>
+        ) : (
+          <div
+            style={{
+              height: 44,
+              width: 44,
+            }}
+          />
         )}
       </nav>
     </div>

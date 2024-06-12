@@ -42,12 +42,13 @@
 
 .button[data-theme="light"] {
   background-color: var(--sun);
+  border: var(--sun-border);
   box-shadow: var(--sun-glow);
 }
 
 .button[data-theme="dark"] {
   background-color: var(--moon);
-  border: 2px solid var(--moon);
+  border: var(--moon-border);
   box-shadow: var(--moon-glow);
 }
 

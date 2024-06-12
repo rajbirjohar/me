@@ -17,6 +17,8 @@
   --code-text: #333;
   --hr-background: rgba(0, 0, 0, 0.1);
 
+  --sun-border: 2px solid #faf0b9;
+  --moon-border: 2px solid #f1f1f1;
   --sun-glow: 0 0 20px 0 rgba(249, 215, 28, 0.5);
   --sun-glow-hover: 0 0 20px 0 rgba(249, 215, 28, 0.75);
   --sun-focus: 0 0 0 4px rgba(249, 215, 28, 0.5);
@@ -72,8 +74,7 @@
   --font-md: clamp(1.1rem, 0.4vi + 1rem, 1.32rem);
   --font-lg: clamp(1.21rem, 0.46vi + 1.09rem, 1.46rem);
   --font-xl: clamp(1.33rem, 0.53vi + 1.2rem, 1.62rem);
-  --font-xxl: clamp(1.46rem, 0.62vi + 1.31rem, 1.8rem);
-  --font-xxxl: clamp(1.6rem, 0.72vi + 1.43rem, 2rem);
+  --font-xxl: clamp(1.6rem, 0.72vi + 1.43rem, 2rem);
 
   --content-width: 668px;
 

@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <header className={styles.header}>
-        <h1 className={styles.title}>Hi. I&#39;m Rajbir.</h1>
+        <h1>Hi. I&#39;m Rajbir.</h1>
         <p>
           I enjoy building aesthetic, accessible, and performant user
           interfaces.
