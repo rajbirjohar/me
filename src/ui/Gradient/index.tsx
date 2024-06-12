@@ -16,7 +16,7 @@ const Gradient: React.FC = () => {
     let time = 0;
 
     const color = (x: number, y: number, r: number, g: number, b: number) => {
-      context.fillStyle = `rgb(${r}, ${g}, ${b})`;
+      context.fillStyle = `rgba(${r}, ${g}, ${b}, 0.1)`;
       context.fillRect(x * 10, y * 10, 10, 10);
     };
 
@@ -51,7 +51,7 @@ const Gradient: React.FC = () => {
           color(x, y, R(x, y, time), G(x, y, time), B(x, y, time));
         }
       }
-      time += 0.01;
+      time += 0.005;
       window.requestAnimationFrame(startAnimation);
     };
 
