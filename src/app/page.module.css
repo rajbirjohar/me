@@ -1,3 +1,11 @@
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-xxxl);
+}
+
 .journals {
-  margin-top: var(--gutter-md);
+  margin-top: var(--gutter-lg);
 }

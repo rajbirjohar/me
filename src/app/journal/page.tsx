@@ -1,7 +1,6 @@
 import { getAllJournals } from "@/lib/api";
 import styles from "./page.module.css";
 import { Journal } from "@/ui/Journal";
-import BlackHoleSimulation from "@/ui/Blackhole";
 
 export default function Journals() {
   const journals = getAllJournals();
@@ -16,7 +15,6 @@ export default function Journals() {
         {journals.map((journal) => (
           <Journal key={journal.slug} journal={journal} />
         ))}
-        {/* <BlackHoleSimulation /> */}
       </section>
     </>
   );

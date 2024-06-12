@@ -1,17 +1,21 @@
 :root {
-  --background: #faf7f4;
+  --h: 36;
+  --s: 31%;
+  --l: 90%;
+  --background: hsla(var(--h), var(--s), var(--l), 1);
   --heading: #111;
   --text: #333;
   --sub-text: #666;
-  --brand: #6c6986;
-  --brand-hover: #514f63;
+  --brand: #5c5881;
+  --brand-hover: #3c394f;
   --sun: #f9d71c;
   --moon: #f1f1f1;
   --tooltip-background: #fff;
   --tooltip-text: #333;
 
-  --code-background: #e8e5e5;
+  --code-background: #d8d6d1;
   --code-text: #333;
+  --hr-background: rgba(0, 0, 0, 0.1);
 
   --sun-glow: 0 0 20px 0 rgba(249, 215, 28, 0.5);
   --sun-glow-hover: 0 0 20px 0 rgba(249, 215, 28, 0.75);
@@ -69,20 +73,45 @@
   --font-lg: clamp(1.21rem, 0.46vi + 1.09rem, 1.46rem);
   --font-xl: clamp(1.33rem, 0.53vi + 1.2rem, 1.62rem);
   --font-xxl: clamp(1.46rem, 0.62vi + 1.31rem, 1.8rem);
+  --font-xxxl: clamp(1.6rem, 0.72vi + 1.43rem, 2rem);
 
   --content-width: 668px;
 
   /* Transitions */
   --transition: 300ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+
+  --color-gradient: linear-gradient(
+    to bottom,
+    hsla(var(--h), var(--s), var(--l), 0) 0%,
+    hsla(var(--h), var(--s), var(--l), 0.013) 9.7%,
+    hsla(var(--h), var(--s), var(--l), 0.049) 18.1%,
+    hsla(var(--h), var(--s), var(--l), 0.104) 25.5%,
+    hsla(var(--h), var(--s), var(--l), 0.175) 31.9%,
+    hsla(var(--h), var(--s), var(--l), 0.259) 37.7%,
+    hsla(var(--h), var(--s), var(--l), 0.352) 43%,
+    hsla(var(--h), var(--s), var(--l), 0.45) 47.9%,
+    hsla(var(--h), var(--s), var(--l), 0.55) 52.8%,
+    hsla(var(--h), var(--s), var(--l), 0.648) 57.7%,
+    hsla(var(--h), var(--s), var(--l), 0.741) 63%,
+    hsla(var(--h), var(--s), var(--l), 0.825) 68.7%,
+    hsla(var(--h), var(--s), var(--l), 0.896) 75%,
+    hsla(var(--h), var(--s), var(--l), 0.951) 82.2%,
+    hsla(var(--h), var(--s), var(--l), 0.987) 90.5%,
+    hsl(var(--h), var(--s), var(--l)) 100%
+  );
 }
 
 [data-theme="dark"] {
-  --background: #0a0709;
+  --h: 270;
+  --s: 6%;
+  --l: 11%;
+  --background: hsla(var(--h), var(--s), var(--l), 1);
   --heading: #fff;
-  --text: #bfbfbf;
-  --sub-text: #777777;
-  --brand: #9cb770;
-  --brand-hover: #aeda69;
+  --text: #e0e0e0;
+  --sub-text: #b5b5b5;
+  --brand: #dcffa3;
+  --brand-hover: #e8ffbd;
 
   --border-color: #252023;
   --tooltip-background: #222;
@@ -90,6 +119,28 @@
 
   --code-background: #1a1a1a;
   --code-text: #ccc;
+
+  --hr-background: rgba(255, 255, 255, 0.1);
+
+  --color-gradient: linear-gradient(
+    to bottom,
+    hsla(var(--h), var(--s), var(--l), 0) 0%,
+    hsla(var(--h), var(--s), var(--l), 0.013) 9.7%,
+    hsla(var(--h), var(--s), var(--l), 0.049) 18.1%,
+    hsla(var(--h), var(--s), var(--l), 0.104) 25.5%,
+    hsla(var(--h), var(--s), var(--l), 0.175) 31.9%,
+    hsla(var(--h), var(--s), var(--l), 0.259) 37.7%,
+    hsla(var(--h), var(--s), var(--l), 0.352) 43%,
+    hsla(var(--h), var(--s), var(--l), 0.45) 47.9%,
+    hsla(var(--h), var(--s), var(--l), 0.55) 52.8%,
+    hsla(var(--h), var(--s), var(--l), 0.648) 57.7%,
+    hsla(var(--h), var(--s), var(--l), 0.741) 63%,
+    hsla(var(--h), var(--s), var(--l), 0.825) 68.7%,
+    hsla(var(--h), var(--s), var(--l), 0.896) 75%,
+    hsla(var(--h), var(--s), var(--l), 0.951) 82.2%,
+    hsla(var(--h), var(--s), var(--l), 0.987) 90.5%,
+    hsl(var(--h), var(--s), var(--l)) 100%
+  );
 }
 
 /*
@@ -209,7 +260,7 @@ a:focus-visible {
 hr {
   border: none;
   height: 2px;
-  background-color: var(--border-color);
+  background-color: var(--hr-background);
   margin: var(--gutter-lg) 0;
   border-radius: 4px;
 }

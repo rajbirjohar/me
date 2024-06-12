@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./page.module.css";
 import { getAllJournals } from "@/lib/api";
 import { Journal } from "@/ui/Journal";
@@ -8,9 +7,12 @@ export default function Home() {
 
   return (
     <>
-      <header>
-        <h1>Rajbir Johar</h1>
-        <p>CSS is my jam.</p>
+      <header className={styles.header}>
+        <h1 className={styles.title}>Hi. I&#39;m Rajbir.</h1>
+        <p>
+          I enjoy building aesthetic, accessible, and performant user
+          interfaces.
+        </p>
       </header>
       <section className={styles.journals}>
         {journals.length < 1 && <p>No musings today.</p>}

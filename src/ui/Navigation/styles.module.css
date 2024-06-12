@@ -36,7 +36,7 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition-slow);
   outline: none;
 }
 
