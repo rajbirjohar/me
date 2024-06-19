@@ -6,7 +6,7 @@ export default function NotFound() {
     <>
       <header className={styles.notFound}>
         <h1>Not Found</h1>
-        <p>But that's okay.</p>
+        <p>But that&#39;s okay.</p>
       </header>
       <Pong />
     </>

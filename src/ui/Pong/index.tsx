@@ -128,7 +128,7 @@ const Pong = () => {
 
       return { x, y, dx, dy, angle };
     });
-  }, [score]);
+  }, [score, highScore]);
 
   useEffect(() => {
     if (!gameStarted) return;
@@ -198,7 +198,7 @@ const Pong = () => {
     <div className={styles.board} ref={containerRef}>
       {!gameStarted && !gameOver && (
         <div className={styles.selection}>
-          <h2>Let's have some fun.</h2>
+          <h2>Let&#39;s have some fun.</h2>
           <div className={styles.emojis}>
             {emojies.map((emoji) => (
               <button
