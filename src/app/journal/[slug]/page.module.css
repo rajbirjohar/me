@@ -12,5 +12,5 @@
 .header {
   text-align: center;
   text-wrap: balance;
-  margin-bottom: var(--gutter-md);
+  padding-bottom: var(--gutter-md);
 }

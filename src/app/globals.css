@@ -10,7 +10,7 @@
   --brand-hover: #3c394f;
   --sun: #f9d71c;
   --moon: #f1f1f1;
-  --tooltip-background: #fff;
+  --tooltip-background: #fefefe;
   --tooltip-text: #333;
 
   --code-background: #d8d6d1;
@@ -51,6 +51,13 @@
     #1a1a1a 50%
   );
   --default-moon-gradient: linear-gradient(to right, #000000 50%, #1a1a1a 50%);
+
+  --paddle: #000;
+  --board-background: #fefefe;
+  --board-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --board-button-bg: #000;
+  --board-button-text: #fff;
+  --board-button-bg-hover: #333;
 
   --border-color: #e8e0d8;
   --border: 1px solid var(--border-color);
@@ -115,7 +122,7 @@
   --brand-hover: #e8ffbd;
 
   --border-color: #252023;
-  --tooltip-background: #222;
+  --tooltip-background: #29262a;
   --tooltip-text: #ccc;
 
   --code-background: #1a1a1a;
@@ -142,6 +149,12 @@
     hsla(var(--h), var(--s), var(--l), 0.987) 90.5%,
     hsl(var(--h), var(--s), var(--l)) 100%
   );
+
+  --paddle: #fff;
+  --board-background: #29262a;
+  --board-button-bg: #fff;
+  --board-button-text: #29262a;
+  --board-button-bg-hover: #e8ffbd;
 }
 
 /*
