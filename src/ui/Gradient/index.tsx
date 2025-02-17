@@ -51,7 +51,7 @@ const Gradient: React.FC = () => {
           color(x, y, R(x, y, time), G(x, y, time), B(x, y, time));
         }
       }
-      time += 0.01;
+      time += 0.005;
       window.requestAnimationFrame(startAnimation);
     };
 

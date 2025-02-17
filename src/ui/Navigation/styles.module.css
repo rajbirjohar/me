@@ -38,6 +38,7 @@
   cursor: pointer;
   transition: box-shadow var(--transition-slow);
   outline: none;
+  overflow: hidden;
 }
 
 .button[data-theme="light"] {
@@ -47,9 +48,19 @@
 }
 
 .button[data-theme="dark"] {
-  background-color: var(--moon);
+  /* background-color: var(--moon); */
   border: var(--moon-border);
   box-shadow: var(--moon-glow);
+}
+
+.phase {
+  border: 1px solid blue;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  /* background-color: var(--moon); */
+  border-radius: 50%;
 }
 
 .button[data-theme="light"]:hover {

@@ -11,7 +11,12 @@ import { format } from "date-fns";
 const Navigation = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+
+  const knownNewMoon = new Date(Date.UTC(2000, 0, 6, 18, 14));
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -29,12 +34,12 @@ const Navigation = () => {
   const moonPhase = (
     date: Date
   ): {
+    index: number;
     phase: string;
     background: string;
-    illumination: string;
+    illumination: number;
   } => {
     const synodicMonth = 29.53058867; // Synodic month (new moon to new moon) in days
-    const knownNewMoon = new Date(Date.UTC(2000, 0, 6, 18, 14)); // Date of known new moon (January 6, 2000)
     const moonPhases = [
       "New Moon",
       "Waxing Crescent",
@@ -47,6 +52,7 @@ const Navigation = () => {
     ];
 
     const msPerDay = 24 * 60 * 60 * 1000;
+
     const daysSinceKnownNewMoon =
       (date.getTime() - knownNewMoon.getTime()) / msPerDay;
 
@@ -74,10 +80,13 @@ const Navigation = () => {
       phaseIndex = 0; // New Moon
     }
 
+    console.log(moonPhases[phaseIndex].replace(" ", "-").toLowerCase());
+
     return {
+      index: phaseIndex,
       phase: moonPhases[phaseIndex],
       background: moonPhases[phaseIndex].replace(" ", "-").toLowerCase(),
-      illumination: (illumination * 100).toFixed(2),
+      illumination: parseFloat((illumination * 100).toFixed(2)),
     };
   };
 
@@ -173,6 +182,13 @@ const Navigation = () => {
       },
     },
   };
+
+  const currentDate = new Date(Date.UTC(2000, 0, 17, 18, 14));
+
+  const currentMoonPhase = moonPhase(currentDate);
+
+  console.log(currentMoonPhase);
+
   return (
     <div className={styles.navwrapper}>
       <nav className={styles.nav}>
@@ -207,14 +223,33 @@ const Navigation = () => {
                         animate="animate"
                         exit="exit"
                         className={styles.button}
-                        onClick={toggleTheme}
                         style={{
-                          background: `var(--${
-                            moonPhase(new Date()).background
-                          }-gradient)`,
+                          backgroundColor:
+                            currentMoonPhase.index < 4 ? "var(--moon)" : "#111",
                         }}
+                        onClick={toggleTheme}
                         aria-label="Toggle Light Mode"
-                      />
+                      >
+                        <div
+                          className={styles.phase}
+                          style={{
+                            backgroundColor:
+                              currentMoonPhase.index < 4
+                                ? "#111"
+                                : "var(--moon)",
+                            transform:
+                              currentMoonPhase.index < 4
+                                ? `translateX(calc(-${currentMoonPhase.illumination}%))`
+                                : `translateX(calc(100 - ${currentMoonPhase.illumination}%))`,
+
+                            borderRadius:
+                              currentMoonPhase.index === 2 ||
+                              currentMoonPhase.index === 6
+                                ? 0
+                                : "50%",
+                          }}
+                        />
+                      </motion.button>
                     )}
                   </AnimatePresence>
                 </div>
@@ -230,8 +265,8 @@ const Navigation = () => {
                   </>
                 ) : (
                   <>
-                    {moonPhase(new Date()).phase} |{" "}
-                    {moonPhase(new Date()).illumination}% Illuminated
+                    {currentMoonPhase.phase} | {currentMoonPhase.illumination}%
+                    Illuminated
                   </>
                 )}
               </TooltipContent>

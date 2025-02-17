@@ -1,93 +1,20 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { EB_Garamond, Geist_Mono } from "next/font/google";
 import styles from "./layout.module.css";
-import "./globals.css";
-import { Navigation } from "@/ui/Navigation";
-import { ThemeProvider } from "next-themes";
-import { Footer } from "@/ui/Footer";
-import { Gradient } from "@/ui/Gradient";
 import type { Viewport } from "next";
+import { cn } from "@/lib/cn";
+import "./globals.css";
+import { Provider } from "@/ui/Provider";
 
-const wotfard = localFont({
-  variable: "--wotfard",
-  src: [
-    {
-      path: "../fonts/Wotfard/WotfardRoman/wotfard-bold-webfont.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardRoman/wotfard-semibold-webfont.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardRoman/wotfard-medium-webfont.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardRoman/wotfard-regular-webfont.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardRoman/wotfard-thin-webfont.woff2",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardRoman/wotfard-light-webfont.woff2",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardRoman/wotfard-extralight-webfont.woff2",
-      weight: "100",
-      style: "normal",
-    },
-  ],
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--serif",
 });
-
-const wotfardItalic = localFont({
-  variable: "--wotfard-italic",
-  src: [
-    {
-      path: "../fonts/Wotfard/WotfardItalic/wotfard-bolditalic-webfont.woff2",
-      weight: "700",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardItalic/wotfard-semibolditalic-webfont.woff2",
-      weight: "600",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardItalic/wotfard-mediumitalic-webfont.woff2",
-      weight: "500",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardItalic/wotfard-regularitalic-webfont.woff2",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardItalic/wotfard-thinitalic-webfont.woff2",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardItalic/wotfard-lightitalic-webfont.woff2",
-      weight: "200",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Wotfard/WotfardItalic/wotfard-extralightitalic-webfont.woff2",
-      weight: "100",
-      style: "italic",
-    },
-  ],
+const mono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--mono",
 });
 
 export const metadata: Metadata = {
@@ -148,14 +75,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={wotfard.className}>
-        <ThemeProvider>
-          <Gradient />
-          <Navigation />
+      <Provider>
+        <body className={cn(garamond.variable, mono.variable)}>
           <main className={styles.main}>{children}</main>
-          <Footer />
-        </ThemeProvider>
-      </body>
+        </body>
+      </Provider>
     </html>
   );
 }

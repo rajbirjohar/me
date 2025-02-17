@@ -1,19 +1,14 @@
-.date {
-  font-size: var(--font-sm);
-  color: var(--sub-text);
-}
-
 /* Clamp at 3 lines */
 .excerpt {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .excerpt > * + * {
   margin-block-start: var(--gutter);
-  font-size: var(--font-sm);
 }
 
 .heading {

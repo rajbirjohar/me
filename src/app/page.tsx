@@ -6,9 +6,9 @@ export default function Home() {
   const journals = getAllJournals();
 
   return (
-    <>
+    <div className={styles.article}>
       <header className={styles.header}>
-        <h1>Hi. I&#39;m Rajbir.</h1>
+        <h1 className={styles.title}>Rajbir Johar</h1>
         <p>
           I enjoy building aesthetic, accessible, and performant user
           interfaces.
@@ -20,6 +20,6 @@ export default function Home() {
           <Journal key={journal.slug} journal={journal} />
         ))}
       </section>
-    </>
+    </div>
   );
 }

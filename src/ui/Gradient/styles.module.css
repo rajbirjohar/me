@@ -16,8 +16,8 @@
   z-index: 2;
   background: var(--color-gradient);
   inset: 0;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
 }
 
 .canvaswrapper {

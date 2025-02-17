@@ -17,7 +17,7 @@ export default async function Journal({ params }: Params) {
     <article className={styles.article}>
       <header className={styles.header}>
         <h1 className={styles.heading}>{journal.title}</h1>
-        <time className={styles.date}>
+        <time>
           {format(journal.date, "MMMM do, y")}
         </time>
       </header>
@@ -36,6 +36,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
+
   const post = getJournalBySlug(params.slug);
 
   if (!post) {

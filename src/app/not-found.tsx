@@ -1,4 +1,3 @@
-import { Pong } from "@/ui/Pong";
 import styles from "./not-found.module.css";
 
 export default function NotFound() {
@@ -8,7 +7,6 @@ export default function NotFound() {
         <h1>Not Found</h1>
         <p>But that&#39;s okay.</p>
       </header>
-      <Pong />
     </>
   );
 }

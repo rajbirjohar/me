@@ -1,16 +1,9 @@
-.article > * + *,
-.header > * + *,
-.prose > * + * {
-  margin-block-start: 1rem;
-}
-
-.date {
-  font-size: var(--font-sm);
-  color: var(--sub-text);
-}
-
 .header {
   text-align: center;
   text-wrap: balance;
   padding-bottom: var(--gutter-md);
+}
+
+.prose > * + * {
+  margin-block-start: 30px;
 }
