@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <>
       <header className={styles.nf}>
-        <h1>You've reached uncharted territory.</h1>
+        <h1>You&#39;ve reached uncharted territory.</h1>
         <p>
           <Link href="/">Go Home</Link>
         </p>
