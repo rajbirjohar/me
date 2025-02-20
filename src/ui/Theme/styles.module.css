@@ -1,28 +1,3 @@
-.navwrapper {
-  width: 100%;
-  padding-top: var(--gutter-xxl);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: var(--gutter-md);
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  gap: var(--gutter-md);
-}
-
-.links a {
-  line-height: 1;
-}
-
 .theme {
   position: relative;
   width: 44px;
@@ -48,18 +23,13 @@
 }
 
 .button[data-theme="dark"] {
-  /* background-color: var(--moon); */
-  border: var(--moon-border);
+  /* The dark button now relies on inline style for backgroundColor */
+  border: 2px solid var(--moon);
   box-shadow: var(--moon-glow);
 }
 
 .phase {
-  border: 1px solid blue;
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  /* background-color: var(--moon); */
+  /* Most styles are now set inline for dynamic behavior */
   border-radius: 50%;
 }
 

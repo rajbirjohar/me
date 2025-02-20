@@ -1,9 +1,55 @@
+.article {
+  width: 100%;
+  max-width: var(--article-width);
+  margin: 0 auto;
+}
+
 .header {
   text-align: center;
   text-wrap: balance;
-  padding-bottom: var(--gutter-md);
+  margin-bottom: 32px;
 }
 
-.prose > * + * {
-  margin-block-start: 30px;
+.title {
+  font-size: 46px;
+  line-height: 52px;
+  margin-bottom: 30px;
+}
+
+.date {
+  margin-bottom: 16px;
+}
+
+.excerpt {
+  margin-bottom: 20px;
+}
+
+.prose p {
+  margin-bottom: 20px;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .prose p {
+    margin-bottom: 24px;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    margin-top: 32px;
+    margin-bottom: 28px;
+  }
 }

@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { EB_Garamond, Geist_Mono } from "next/font/google";
+import { STIX_Two_Text, Geist_Mono, Geist } from "next/font/google";
 import styles from "./layout.module.css";
 import type { Viewport } from "next";
 import { cn } from "@/lib/cn";
 import "./globals.css";
 import { Provider } from "@/ui/Provider";
+import { Theme } from "@/ui/Theme";
 
-const garamond = EB_Garamond({
+const serif = STIX_Two_Text({
   subsets: ["latin"],
   display: "swap",
   variable: "--serif",
+});
+const sans = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--sans",
 });
 const mono = Geist_Mono({
   subsets: ["latin"],
@@ -76,8 +82,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Provider>
-        <body className={cn(garamond.variable, mono.variable)}>
+        <body className={cn(serif.variable, mono.variable, sans.variable)}>
           <main className={styles.main}>{children}</main>
+          <Theme />
         </body>
       </Provider>
     </html>

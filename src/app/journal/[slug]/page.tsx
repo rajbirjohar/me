@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 import { format } from "date-fns";
 
-export default async function Journal({ params }: Params) {
+export default async function Journal(props: Params) {
+  const params = await props.params;
   const journal = getJournalBySlug(params.slug);
 
   if (!journal) {
@@ -16,11 +17,13 @@ export default async function Journal({ params }: Params) {
   return (
     <article className={styles.article}>
       <header className={styles.header}>
-        <h1 className={styles.heading}>{journal.title}</h1>
-        <time>
+        <h1 className={styles.title}>{journal.title}</h1>
+        <p className={styles.excerpt}>{journal.excerpt}</p>
+        <time className={styles.date}>
           {format(journal.date, "MMMM do, y")}
         </time>
       </header>
+      <hr />
       <div
         dangerouslySetInnerHTML={{ __html: content }}
         className={styles.prose}
@@ -30,12 +33,13 @@ export default async function Journal({ params }: Params) {
 }
 
 type Params = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export function generateMetadata({ params }: Params): Metadata {
+export async function generateMetadata(props: Params): Promise<Metadata> {
+  const params = await props.params;
 
   const post = getJournalBySlug(params.slug);
 

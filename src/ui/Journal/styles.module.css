@@ -5,22 +5,16 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 16px;
 }
 
 .excerpt > * + * {
   margin-block-start: var(--gutter);
 }
 
-.heading {
-  color: inherit;
-  transition: inherit;
-}
-
-.heading:hover {
-  color: inherit;
-}
-
 .link {
   width: max-content;
   display: block;
+  font-family: var(--sans);
+  font-size: 20px;
 }

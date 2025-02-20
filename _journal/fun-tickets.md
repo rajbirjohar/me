@@ -1,45 +1,24 @@
 ---
-title: "On Creating Fun Tickets"
-excerpt: "What are fun tickets and why do I love them so much? Let's talk about it."
-date: "2024-06-08"
+title: "Adding a Little Joy to Your Work"
+excerpt: "Because why not?"
+date: "2025-02-17"
 author: Rajbir Johar
 ---
 
-I often find myself trying to slip in easter eggs throughout my sprint work and I try and see how many I can fit in before
-someone notices. I figure what's the harm in trying to spice up hours and hours of staring at logic and code.
+I love what I do. 
 
-```
+It's unfortunate that not many people have the privilege of saying that and I try and put in 100% of my efforts into my work every day. That being said, there will inevitably be those days or weeks where incoming tickets are slow or the work is menial. 
 
-░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓██████▓▒░░▒▓█▓▒░
-░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░
-░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░
-░▒▓████████▓▒░▒▓██████▓▒░ ░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░
-░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░
-░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░
-░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓████████▓▒░▒▓████████▓▒░▒▓██████▓▒░░▒▓█▓▒░
+That's often when I catch myself trying to slip in easter eggs throughout my sprint work before someone notices. As long as it doesn't negatively affect our end users and it doesn't hinder my core workload, I figure what's the harm? It's like that poem found on MacOS's document icon. It doesn't really serve a productivity benefit but it does brighten up my day whenever I see something similar pass QA and into prod from another dev.
 
-```
+I've included ASCII art in server logs, little loading bars on start-ups, and hidden tooltips meant to be discovered by accident. While these may seem "unnecessary" according to business requirements, they help break the monotony that grips us as developers every now and then. 
 
-I include ASCII art in server logs, fun loading bars on start-ups, and hidden tooltips meant to be discovered by accident. While these may seem "unnecessary" according to business requirements, they help break the monotony that grips us as developers. It gets boring.
+This doesn't mean I waste time on these little pockets of surprise. If I have an extra few minutes at the end of my day and all my work is complete, I'll spend those extra few minutes writing a script to put some color into our lives. Plus, there is always the chance I may learn something new which does benefit business impact 🤪.
 
-This doesn't mean I waste time on these little pockets of surprise. If I have an extra few minutes at the end of my day and all my work is complete, I'll spend those extra few minutes writing a script to put some color into our lives.
+Adding micro-animations is a wonderful example of how to include a little flair to our work. Most won't really notice but the ones that do will appreciate it more than you know. Another real example is when I wrote a custom logging server and added color coding to different alert levels and formatting to the log messages. It was a fun project completed in an hour, and it made my life (and my coworkers' lives) a lot easier.
 
-## What Counts
+I believe doing small things like these keep the team engaged and motivated—especially during slow workdays. It's a great way to experiment with new ideas and see how they can be implemented in real-world scenarios or improve our day-to-day work.
 
-When I say fun tickets, I don't mean unrelated tasks. I mean tasks that are fun but also valuable to our work. For example, adding micro-animations to our website or adding flair to our logs. They aren't useless and don't take much time but do improve our work in some way.
+Ultimately, I think we should all consider adding a bit of amusement and pride to our work. Plus they can lead to meaningful improvements or spark creativity. When we take the time to add these little touches, we make our code and product more enjoyable to interact with, both for ourselves and for others who come across it.
 
-The best fun tickets improve or speed up workflow. For example, writing a script to automate a repetitive task or creating a custom tool to help debug issues more easily. These fun tickets can have a real impact on our work, and you have a lot of freedom in how you implement them.
-
-## Why Fun Tickets?
-
-Fun tickets keep the team engaged and motivated, especially during slow workdays. They’re a great way to experiment with new ideas and see how they can be implemented in real-world scenarios or improve our day-to-day work.
-
-One example is when I wrote a custom logging server and added color coding, and strict formatting to the logs. It was a fun project completed in an hour, and it made my life a lot easier.
-
-## Closing Thoughts
-
-Ultimately, fun tickets are about more than just adding a bit of amusement to our work. They can lead to meaningful improvements, spark creativity, and foster a positive work environment. When we take the time to add these little touches, we make our code more enjoyable to interact with, both for ourselves and for others who come across it.
-
-Embracing fun tickets can also enhance team cohesion. They provide an opportunity to share creative solutions and inspire colleagues. By integrating these small, delightful elements into our work, we remind ourselves that coding isn't just about solving problems—it's also about enjoying the process.
-
-So, the next time you find yourself with a few spare minutes and all your tasks complete, consider adding a fun ticket to your day. You might be surprised at how much of a difference a little creativity can make.
+The next time you find yourself with a few spare minutes and all your tasks complete, try adding a fun ticket to your day. You might be surprised at how much of a difference a little creativity can make.

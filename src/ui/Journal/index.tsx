@@ -9,7 +9,6 @@ const Journal = ({ journal }: { journal: Journal }) => {
         {journal.title}
       </Link>
       <time>{format(journal.date, "M.d.y")}</time>
-      <p className={styles.excerpt}>{journal.excerpt}</p>
     </article>
   );
 };

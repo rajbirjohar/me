@@ -9,9 +9,8 @@ export default function Home() {
     <div className={styles.article}>
       <header className={styles.header}>
         <h1 className={styles.title}>Rajbir Johar</h1>
-        <p>
-          I enjoy building aesthetic, accessible, and performant user
-          interfaces.
+        <p className={styles.subtitle}>
+          Wizard
         </p>
       </header>
       <section className={styles.journals}>
