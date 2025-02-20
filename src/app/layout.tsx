@@ -5,7 +5,6 @@ import type { Viewport } from "next";
 import { cn } from "@/lib/cn";
 import "./globals.css";
 import { Provider } from "@/ui/Provider";
-import { Theme } from "@/ui/Theme";
 
 const serif = STIX_Two_Text({
   subsets: ["latin"],
@@ -81,12 +80,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Provider>
-        <body className={cn(serif.variable, mono.variable, sans.variable)}>
+      <body className={cn(serif.variable, mono.variable, sans.variable)}>
+        <Provider>
           <main className={styles.main}>{children}</main>
-          <Theme />
-        </body>
-      </Provider>
+        </Provider>
+      </body>
     </html>
   );
 }

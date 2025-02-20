@@ -1,13 +1,13 @@
 .theme {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
 }
 
 .button {
   position: absolute;
   inset: 0;
-  transform-origin: 0px 44px;
+  transform-origin: 0px 40px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -55,5 +55,5 @@
 }
 
 .anchor {
-  height: 44px;
+  height: 40px;
 }

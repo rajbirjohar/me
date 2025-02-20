@@ -12,9 +12,21 @@
   margin-block-start: 16px;
 }
 
+.titlewrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .subtitle {
   font-size: 20px;
   line-height: 26px;
   color: var(--secondary-text);
   font-family: var(--mono);
+}
+
+.journals {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }

@@ -1,11 +1,14 @@
+import Link from "next/link";
 import styles from "./not-found.module.css";
 
 export default function NotFound() {
   return (
     <>
-      <header className={styles.notFound}>
-        <h1>Not Found</h1>
-        <p>But that&#39;s okay.</p>
+      <header className={styles.nf}>
+        <h1>You've reached uncharted territory.</h1>
+        <p>
+          <Link href="/">Go Home</Link>
+        </p>
       </header>
     </>
   );

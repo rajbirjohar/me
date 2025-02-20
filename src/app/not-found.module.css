@@ -1,4 +1,8 @@
-.notFound {
+.nf {
   text-align: center;
   padding-bottom: var(--gutter-md);
+}
+
+.nf > * + * {
+  margin-block-start: 16px;
 }

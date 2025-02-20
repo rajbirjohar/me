@@ -13,7 +13,6 @@
 }
 
 .link {
-  width: max-content;
   display: block;
   font-family: var(--sans);
   font-size: 20px;

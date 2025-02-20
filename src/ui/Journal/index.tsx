@@ -4,7 +4,7 @@ import { format } from "date-fns";
 
 const Journal = ({ journal }: { journal: Journal }) => {
   return (
-    <article key={journal.slug} className={styles.article}>
+    <article key={journal.slug}>
       <Link href={`/journal/${journal.slug}`} className={styles.link}>
         {journal.title}
       </Link>
