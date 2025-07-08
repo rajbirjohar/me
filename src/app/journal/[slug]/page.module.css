@@ -1,27 +1,21 @@
 .article {
   width: 100%;
-  max-width: var(--article-width);
-  margin: 0 auto;
+  max-width: calc(var(--content-width) / 1.75);
 }
 
 .header {
-  text-align: center;
   text-wrap: balance;
   margin-bottom: 32px;
 }
 
 .title {
-  font-size: 46px;
-  line-height: 52px;
+  font-family: var(--serif);
+  font-size: var(--font-h2);
   margin-bottom: 30px;
 }
 
 .date {
   margin-bottom: 16px;
-}
-
-.excerpt {
-  margin-bottom: 20px;
 }
 
 .prose p {
@@ -36,6 +30,19 @@
 .prose h6 {
   margin-top: 36px;
   margin-bottom: 32px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-body);
+  margin-bottom: 24px;
+}
+
+.icon {
+  width: var(--font-body);
+  height: var(--font-body);
 }
 
 @media screen and (max-width: 768px) {

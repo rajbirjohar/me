@@ -1,16 +1,16 @@
 import { getAllJournals } from "@/lib/api";
 import styles from "./page.module.css";
-import { Journal } from "@/ui/Journal";
+import { Journal } from "@/ui/specialized/Journal";
 
 export default function Journals() {
   const journals = getAllJournals();
 
   return (
     <>
-      <header>
-        <h1>Journal</h1>
-      </header>
-      <section className={styles.journals}>
+      <section className={styles.section}>
+        <h1 className="h1-display">Journals</h1>
+      </section>
+      <section className={styles.section}>
         {journals.length < 1 && <p>No musings today.</p>}
         {journals.map((journal) => (
           <Journal key={journal.slug} journal={journal} />

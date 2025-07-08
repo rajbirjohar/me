@@ -1,0 +1,12 @@
+.section {
+  max-width: calc(var(--content-width) / 1.75);
+}
+
+.section h1 {
+  text-wrap: balance;
+  margin-bottom: 4rem;
+}
+
+.section > * + * {
+  margin-block-start: 1rem;
+}

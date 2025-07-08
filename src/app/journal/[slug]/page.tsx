@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 import { format } from "date-fns";
+import Link from "next/link";
+import { ArrowLeftIcon, ChevronLeftIcon } from "lucide-react";
 
 export default async function Journal(props: Params) {
   const params = await props.params;
@@ -17,8 +19,10 @@ export default async function Journal(props: Params) {
   return (
     <article className={styles.article}>
       <header className={styles.header}>
+        <Link href="/journal" className={styles.back}>
+          <ArrowLeftIcon className={styles.icon} /> Journals
+        </Link>
         <h1 className={styles.title}>{journal.title}</h1>
-        <p className={styles.excerpt}>{journal.excerpt}</p>
         <time className={styles.date}>
           {format(journal.date, "MMMM do, y")}
         </time>

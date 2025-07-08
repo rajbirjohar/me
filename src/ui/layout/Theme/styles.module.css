@@ -1,0 +1,110 @@
+.circadian {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: var(--24px) auto 0;
+  padding: 0 calc(var(--24px) + 6px) calc(var(--64px) * 2);
+  position: relative;
+  z-index: var(--zindex-content-lower-1);
+}
+
+.hours {
+  display: flex;
+  width: 100%;
+}
+
+.hour {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-radius: var(--radius-base);
+}
+
+.bubble {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, -100%, 0);
+  top: 0;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  z-index: var(--zindex-content);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble svg {
+  min-height: 24px;
+  min-width: 24px;
+  max-height: 24px;
+  max-width: 24px;
+}
+
+.lineholder {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.line {
+  height: 40px;
+  width: 2px;
+  background: var(--color-primary-accent);
+  transform: translate3d(0, 20px, 0);
+  transition: transform 0.5s var(--curve);
+  border-radius: 20px;
+}
+
+.line.dark {
+  opacity: 0.35;
+}
+
+.line.active {
+  transform: translate3d(0, -5px, 0) !important;
+}
+
+/*
+  Transform immediate neigboring lines to be half the transformation
+  of the active line.
+*/
+/* 1 ▸ hovered hour → raise its own line */
+.hour:hover .line {
+  transform: translate3d(0, 5px, 0);
+}
+
+/* 2 ▸ next hour after the hovered one → drop its line */
+.hour:hover + .hour .line {
+  transform: translate3d(0, 10px, 0);
+}
+
+/* 3 ▸ previous hour before the hovered one → drop its line */
+.hour:has(+ .hour:hover) .line {
+  /* “Select an .hour that HAS a next-sibling .hour:hover,
+      then style that hour’s .line” */
+  transform: translate3d(0, 10px, 0);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: var(--14px);
+}

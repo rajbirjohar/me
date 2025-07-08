@@ -1,8 +1,7 @@
 ---
-title: "Adding a Little Joy to Your Work"
-excerpt: "Because why not?"
+title: "Adding Joy to Your Work"
 date: "2025-02-17"
-author: Rajbir Johar
+author: "Rajbir Johar"
 ---
 
 I love what I do. 

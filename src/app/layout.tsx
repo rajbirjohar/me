@@ -1,21 +1,60 @@
 import type { Metadata } from "next";
-import { STIX_Two_Text, Geist_Mono, Geist } from "next/font/google";
+import { Playfair_Display, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import styles from "./layout.module.css";
 import type { Viewport } from "next";
 import { cn } from "@/lib/cn";
 import "./globals.css";
-import { Provider } from "@/ui/Provider";
+import { Provider } from "@/providers/Provider";
+import { Footer } from "@/ui/layout/Footer";
 
-const serif = STIX_Two_Text({
+const serif = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--serif",
 });
-const sans = Geist({
-  subsets: ["latin"],
-  display: "swap",
+
+const sans = localFont({
   variable: "--sans",
+  src: [
+    {
+      path: "./fonts/wotfard/roman/wotfard-bold-webfont.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/wotfard/roman/wotfard-semibold-webfont.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/wotfard/roman/wotfard-medium-webfont.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/wotfard/roman/wotfard-regular-webfont.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/wotfard/roman/wotfard-thin-webfont.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/wotfard/roman/wotfard-light-webfont.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "./fonts/wotfard/roman/wotfard-extralight-webfont.woff2",
+      weight: "100",
+      style: "normal",
+    },
+  ],
 });
+
 const mono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
@@ -26,7 +65,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rajbir.io"),
   title: "Rajbir Johar",
   description:
-    "Rajbir is an engineer and designer based in Arizona. His work focuses on building interfaces for high potential ideas.",
+    "Rajbir is an engineer and designer based in Arizona. His work focuses on building accessible, performant, and delightful user experiences.",
   authors: [
     {
       name: "Rajbir Johar",
@@ -83,6 +122,7 @@ export default function RootLayout({
       <body className={cn(serif.variable, mono.variable, sans.variable)}>
         <Provider>
           <main className={styles.main}>{children}</main>
+          <Footer />
         </Provider>
       </body>
     </html>

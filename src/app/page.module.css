@@ -1,32 +1,28 @@
-.article {
+.wrapper {
   width: 100%;
-  max-width: var(--article-width);
-  margin: 0 auto;
-}
-
-.header {
-  margin-bottom: 32px;
-}
-
-.header > * + * {
-  margin-block-start: 16px;
-}
-
-.titlewrapper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.hero h1 {
+  text-wrap: balance;
+  margin-bottom: 4rem;
 }
 
 .subtitle {
-  font-size: 20px;
-  line-height: 26px;
-  color: var(--secondary-text);
-  font-family: var(--mono);
+  max-width: calc(var(--content-width) / 1.75);
+  text-wrap: balance;
 }
 
-.journals {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.section {
+  max-width: calc(var(--content-width) / 1.75);
+}
+
+.section > * + * {
+  margin-block-start: 2rem;
+}
+
+.journals > * + * {
+  margin-block-start: 1rem;
 }

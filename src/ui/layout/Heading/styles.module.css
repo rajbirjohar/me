@@ -1,0 +1,14 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    min-height: 250px;
+  }
+}
