@@ -11,7 +11,7 @@
 }
 
 .timelineicon {
-  background-color: var(--color-backdrop);
+  background-color: var(--ghost-button-bg);
   border-radius: 50%;
   display: flex;
   align-items: center;
