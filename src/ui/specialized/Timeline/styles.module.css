@@ -32,6 +32,10 @@
   margin-bottom: 4px;
 }
 
+.timelinedate {
+  color: var(--color-text-tertiary);
+}
+
 @media screen and (max-width: 768px) {
   .timelineitem {
     grid-template-columns: 1fr;

@@ -10,9 +10,5 @@
 }
 
 .section > * + * {
-  margin-block-start: 2rem;
-}
-
-.journals > * + * {
-  margin-block-start: 1rem;
+  margin-block-start: 1.5rem;
 }

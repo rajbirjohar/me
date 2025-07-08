@@ -2,14 +2,19 @@ import Link from "next/link";
 import styles from "./styles.module.css";
 import { Theme } from "../Theme";
 import LastUpdated from "@/ui/specialized/LastUpdated";
+import { ArrowUpRightIcon } from "lucide-react";
 
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.divider} />
       <div className={styles.content}>
         <div className={styles.section}>
-          <p>Inspired by the endless wonderful designs on the web.</p>
+          <div>
+            <p className={styles.tag}>
+              Inspired by the endless wonderful designs on the web.
+            </p>
+            <LastUpdated />
+          </div>
         </div>
         <div className={styles.section}>
           <div className={styles.links}>
@@ -18,8 +23,9 @@ export const Footer = () => {
               href="https://github.com/rajbirjohar"
               target="_blank"
               rel="noopener noreferrer"
+              className={styles.link}
             >
-              Github
+              Github <ArrowUpRightIcon />
             </Link>
           </div>
           <div className={styles.links}>
@@ -29,7 +35,6 @@ export const Footer = () => {
         </div>
       </div>
       <Theme />
-      <LastUpdated />
     </footer>
   );
 };

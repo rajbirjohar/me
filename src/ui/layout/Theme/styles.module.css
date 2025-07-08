@@ -6,7 +6,7 @@
   width: 100%;
   max-width: var(--content-width);
   margin: var(--24px) auto 0;
-  padding: 0 calc(var(--24px) + 6px) calc(var(--24px) * 2);
+  padding: 0 calc(var(--24px) + 6px);
   position: relative;
   z-index: var(--zindex-content-lower-1);
 }

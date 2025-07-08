@@ -22,7 +22,8 @@ export default function Home() {
       <HeadingWrapper>
         <Heading>In pursuit of extraordinary.</Heading>
         <SubHeading>
-          Hello! I&#39;m Rajbir. I build delightful user interfaces for complex systems.
+          Hello! I&#39;m Rajbir. I build delightful user interfaces for complex
+          systems.
         </SubHeading>
       </HeadingWrapper>
       <section className={styles.section}>
@@ -47,13 +48,11 @@ export default function Home() {
         </Timeline>
       </section>
       <section className={styles.section}>
-        <h2>Journals</h2>
-        <div className={styles.journals}>
-          {journals.length < 1 && <p>No musings today.</p>}
-          {journals.map((journal) => (
-            <Journal key={journal.slug} journal={journal} />
-          ))}
-        </div>
+        <h2>Writing</h2>
+        {journals.length < 1 && <p>No musings today.</p>}
+        {journals.map((journal) => (
+          <Journal key={journal.slug} journal={journal} />
+        ))}
       </section>
       <section className={styles.section}>
         <h2>Endeavors</h2>

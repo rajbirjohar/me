@@ -121,7 +121,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(serif.variable, mono.variable, sans.variable)}>
         <Provider>
-          <main className={styles.main}>{children}</main>
+          <main className={styles.main}>
+            <div className={styles.content}>{children}</div>
+          </main>
           <Footer />
         </Provider>
       </body>

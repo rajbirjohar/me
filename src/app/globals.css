@@ -222,7 +222,7 @@ body {
   font-family: var(--sans);
   font-size: var(--16px);
   color: var(--color-text-primary);
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -368,7 +368,7 @@ button:active {
 
 ::selection {
   background: var(--color-primary-accent);
-  color: var(--color-text-tertiary);
+  color: var(--color-primary);
 }
 
 @media (prefers-reduced-motion: reduce) {
