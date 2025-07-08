@@ -27,6 +27,7 @@ export const Theme = () => {
                   setSelectedHour(index);
                   setTheme(index < 6 || index >= 18 ? "dark" : "light");
                 }}
+                aria-label="Set theme for hour"
               >
                 <AnimatePresence initial={false} mode="popLayout">
                   {selectedHour === index && (

@@ -35,9 +35,16 @@
   gap: var(--14px);
 }
 
+.links h4 {
+  font-size: var(--font-h6);
+}
+
 @media screen and (max-width: 768px) {
   .content {
     grid-template-columns: 1fr;
     gap: var(--24px);
+  }
+  .section:first-of-type {
+    grid-template-columns: 1fr;
   }
 }

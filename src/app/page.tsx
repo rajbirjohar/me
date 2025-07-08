@@ -1,5 +1,6 @@
+import { Heading, HeadingWrapper, SubHeading } from "@/ui/layout/Heading";
 import styles from "./page.module.css";
-import { getAllJournals } from "@/lib/api";
+import { getAllJournals } from "@/lib/journal";
 import { Journal } from "@/ui/specialized/Journal";
 import {
   Timeline,
@@ -18,12 +19,12 @@ export default function Home() {
 
   return (
     <div className={styles.wrapper}>
-      <section className={styles.hero}>
-        <h1 className="h1-display">In pursuit of extraordinary.</h1>
-        <p className={styles.subtitle}>
-          Hi. I&#39;m Rajbir. I build delightful UI for complex systems.
-        </p>
-      </section>
+      <HeadingWrapper>
+        <Heading>In pursuit of extraordinary.</Heading>
+        <SubHeading>
+          Hello! I&#39;m Rajbir. I build delightful user interfaces for complex systems.
+        </SubHeading>
+      </HeadingWrapper>
       <section className={styles.section}>
         <h2>Contributions</h2>
         <Timeline>
@@ -60,8 +61,8 @@ export default function Home() {
           I am currently working on a few personal projects that are close to my
           heart. The most recent one is a highly specialized platform for rising
           fashion designers and students to showcase their work and connect with
-          industry professionals. It&#39;s currently in beta but we are hoping to
-          launch it soon. Feel free to{" "}
+          industry professionals. It&#39;s currently in beta but we are hoping
+          to launch it soon. Feel free to{" "}
           <Link
             href="https://blnkla.com/"
             target="_blank"

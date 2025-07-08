@@ -5,18 +5,8 @@
   gap: var(--spacing-xl);
 }
 
-.hero h1 {
-  text-wrap: balance;
-  margin-bottom: 4rem;
-}
-
-.subtitle {
-  max-width: calc(var(--content-width) / 1.75);
-  text-wrap: balance;
-}
-
 .section {
-  max-width: calc(var(--content-width) / 1.75);
+  max-width: var(--partial-content-width);
 }
 
 .section > * + * {

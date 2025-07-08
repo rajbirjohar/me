@@ -22,10 +22,12 @@ export const experiences: Experience[] = [
           Currently, I am leading the software engineering team at PRS, where I
           am responsible for overseeing the development of our in-house
           construction logistics and management platform for TSMC&#39;s (Taiwan
-          Semiconductor Manufactoring Company) fabrication sites. My role
-          involves architecting and implementing solutions that streamline
-          construction processes, save on material costs, and overall improve
-          business intelligence.
+          Semiconductor Manufactoring Company) fabrication sites.
+        </p>
+        <p>
+          My role involves architecting and implementing solutions that
+          streamline construction processes, save on material costs, and overall
+          improve business intelligence.
         </p>
         <p>
           While the platform is still in its early stages and only operating in
@@ -55,13 +57,17 @@ export const experiences: Experience[] = [
   {
     title: "Web Developer and Director of Citrus Hack",
     description: (
-      <p>
-        While in college, I joined Citrus Hack, the largest on campus hackathon
-        organization as a lead web developer. I was responsible for building and
-        maintaining the frontend portal for the hackathon. Eventually, I became
-        the director of the organization where my focus was on higher level
-        planning and management of the event.
-      </p>
+      <>
+        <p>
+          While in college, I joined Citrus Hack, the largest on campus
+          hackathon organization as a lead web developer. I was responsible for
+          building and maintaining the frontend portal for the hackathon.
+        </p>
+        <p>
+          Eventually, I became the director of the organization where my focus
+          was on higher level planning and management of the event.
+        </p>
+      </>
     ),
     icon: CitrusIcon,
     startDate: "2020",
@@ -70,12 +76,17 @@ export const experiences: Experience[] = [
   {
     title: "UCR Residential Technician",
     description: (
-      <p>
-        My very first job. I helped set up and tear down media events on campus,
-        assisted students with technical issues and provided general support for
-        the residential community. Overall, an extremely valuable experience
-        that developed most of my soft skills.
-      </p>
+      <>
+        <p>
+          My very first job. I helped set up and tear down media events on
+          campus, assisted students with technical issues and provided general
+          support for the residential community.
+        </p>
+        <p>
+          Overall, an extremely valuable experience that developed my soft
+          skills.
+        </p>
+      </>
     ),
     icon: MonitorCogIcon,
     startDate: "2019",

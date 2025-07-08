@@ -3,7 +3,7 @@ import { Playfair_Display, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import styles from "./layout.module.css";
 import type { Viewport } from "next";
-import { cn } from "@/lib/cn";
+import { cn } from "@/utils/cn";
 import "./globals.css";
 import { Provider } from "@/providers/Provider";
 import { Footer } from "@/ui/layout/Footer";

@@ -1,6 +1,5 @@
 .article {
-  width: 100%;
-  max-width: calc(var(--content-width) / 1.75);
+  max-width: var(--partial-content-width);
 }
 
 .header {

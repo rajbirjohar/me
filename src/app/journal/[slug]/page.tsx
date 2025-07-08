@@ -1,4 +1,4 @@
-import { getAllJournals, getJournalBySlug, markdownToHtml } from "@/lib/api";
+import { getAllJournals, getJournalBySlug, markdownToHtml } from "@/lib/journal";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";

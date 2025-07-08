@@ -11,10 +11,12 @@ export const TimeLineItem = React.forwardRef<HTMLDivElement, TimeLineItem>(
   ({ className, children, icon, ...props }, ref) => {
     return (
       <div ref={ref} className={cn(styles.timelineitem, className)} {...props}>
-        <div className={styles.timelineicon}>
-          {React.createElement(icon, {
-            className: styles.icon,
-          })}
+        <div className={styles.timelineiconwrapper}>
+          <div className={styles.timelineicon}>
+            {React.createElement(icon, {
+              className: styles.icon,
+            })}
+          </div>
         </div>
         {children}
       </div>
@@ -29,7 +31,11 @@ interface TimeLineHeader extends React.HTMLAttributes<HTMLDivElement> {}
 export const TimeLineHeader = React.forwardRef<HTMLDivElement, TimeLineHeader>(
   ({ className, children, ...props }, ref) => {
     return (
-      <header ref={ref} className={cn(styles.timelineheader, className)} {...props}>
+      <header
+        ref={ref}
+        className={cn(styles.timelineheader, className)}
+        {...props}
+      >
         {children}
       </header>
     );

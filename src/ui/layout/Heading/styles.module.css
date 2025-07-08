@@ -1,14 +1,20 @@
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 50vh;
-  width: 100%;
+.wrapper {
+  max-width: var(--partial-content-width);
+}
+
+.heading {
+  text-wrap: balance;
+  margin-bottom: 4rem;
+}
+
+.subheading {
+  text-wrap: balance;
+  font-weight: normal;
+  font-size: var(--font-body);
 }
 
 @media screen and (max-width: 768px) {
-  .intro {
-    min-height: 250px;
+  .heading {
+    margin-bottom: 2rem;
   }
 }
