@@ -1,146 +1,146 @@
 .button {
-  position: relative;
-  width: max-content;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border-radius: var(--border-radius);
-  padding: var(--button-padding);
-  border: none;
-  color: inherit;
-  white-space: nowrap;
+	position: relative;
+	width: max-content;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	border-radius: var(--border-radius);
+	padding: var(--button-padding);
+	border: none;
+	color: inherit;
+	white-space: nowrap;
 }
 
 .button:disabled,
 .link:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-  color: inherit;
+	cursor: not-allowed;
+	opacity: 0.5;
+	color: inherit;
 }
 
 .button svg,
 .link svg {
-  min-height: 20px;
-  min-width: 20px;
-  max-width: 20px;
-  max-height: 20px;
+	min-height: 20px;
+	min-width: 20px;
+	max-width: 20px;
+	max-height: 20px;
 }
 
 .default,
 .link.default {
-  background-color: var(--default-button-bg);
-  color: var(--default-button-color);
+	background-color: var(--default-button-bg);
+	color: var(--default-button-color);
 }
 
 .default:hover,
 .link.default:hover {
-  background-color: var(--default-button-hover-bg);
+	background-color: var(--default-button-hover-bg);
 }
 
 .destructive,
 .link.destructive {
-  background-color: var(--destructive-button-bg);
-  color: var(--destructive-button-color);
+	background-color: var(--destructive-button-bg);
+	color: var(--destructive-button-color);
 }
 
 .destructive:hover,
 .link.destructive:hover {
-  background-color: var(--destructive-button-hover-bg);
+	background-color: var(--destructive-button-hover-bg);
 }
 
 .ghost,
 .link.ghost {
-  background-color: var(--ghost-button-bg);
-  color: var(--ghost-button-color);
+	background-color: var(--ghost-button-bg);
+	color: var(--ghost-button-color);
 }
 
 .ghost:hover,
 .link.ghost:hover {
-  background-color: var(--ghost-button-hover-bg);
+	background-color: var(--ghost-button-hover-bg);
 }
 
 .outline,
 .link.outline {
-  background-color: var(--outline-button-bg);
-  color: var(--outline-button-color);
-  border: var(--outline-button-border);
+	background-color: var(--outline-button-bg);
+	color: var(--outline-button-color);
+	border: var(--outline-button-border);
 }
 
 .outline:hover,
 .link.outline:hover {
-  background-color: var(--outline-button-hover-bg);
+	background-color: var(--outline-button-hover-bg);
 }
 
 .icon,
 .link .icon {
-  width: var(--interactive-element-height);
-  padding: 0;
+	width: var(--interactive-element-height);
+	padding: 0;
 }
 
 .rounded,
 .link.rounded {
-  border-radius: 22px;
+	border-radius: 22px;
 }
 
 .small,
 .link.small {
-  height: 32px;
-  font-size: 12px;
+	height: 32px;
+	font-size: 12px;
 }
 
 .small.icon,
 .link .small.icon {
-  width: 32px;
+	width: 32px;
 }
 
 .small svg,
 .link .small svg {
-  min-height: 16px;
-  min-width: 16px;
-  max-width: 16px;
-  max-height: 16px;
+	min-height: 16px;
+	min-width: 16px;
+	max-width: 16px;
+	max-height: 16px;
 }
 
 .xsmall,
 .link.xsmall {
-  height: 24px;
-  font-size: 11px;
-  padding: 0 var(--gutter-sm);
+	height: 24px;
+	font-size: 11px;
+	padding: 0 var(--gutter-sm);
 }
 
 .xsmall.icon,
 .link .xsmall.icon {
-  width: 24px;
+	width: 24px;
 }
 
 .xsmall svg,
 .link .xsmall svg {
-  min-height: 12px;
-  min-width: 12px;
-  max-width: 12px;
-  max-height: 12px;
+	min-height: 12px;
+	min-width: 12px;
+	max-width: 12px;
+	max-height: 12px;
 }
 
 .fill,
 .link.fill {
-  width: 100%;
-  /* Prevents overlap */
-  padding: 0;
+	width: 100%;
+	/* Prevents overlap */
+	padding: 0;
 }
 
 .loader {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background-color: inherit;
-  border-radius: inherit;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: default;
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	background-color: inherit;
+	border-radius: inherit;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: default;
 }
 
 .link {
-  text-decoration: none;
+	text-decoration: none;
 }

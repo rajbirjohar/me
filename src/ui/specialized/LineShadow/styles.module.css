@@ -1,43 +1,47 @@
 /* parent element */
 .lineshadow {
-    position: relative;   /* Tailwind `relative`                */
-    z-index: 0;           /* `z-0`                              */
-    display: inline-flex; /* `inline-flex`                      */
-  }
-  
-  /* synthetic text layer that supplies the animated shadow */
-  .lineshadow::after {
-    position: absolute;                /* `after:absolute`         */
-    left: 0.04em;                      /* `after:left-[0.04em]`    */
-    top: 0.04em;                       /* `after:top-[0.04em]`     */
-    content: attr(data-text);          /* `after:content-[attr(...)]` */
-  
-    z-index: -10;                      /* `after:-z-10`            */
-  
-    /* tiny diagonal stripes that will scroll to create the “lineshadow” */
-    background: linear-gradient(
-      45deg,
-      transparent 45%,
-      var(--shadow-color) 45%,
-      var(--shadow-color) 55%,
-      transparent 0
-    );                                 /* `after:bg-[linear-gradient(...)]` */
-    background-size: 0.06em 0.06em;    /* `after:bg-[length:0.06em_0.06em]` */
-  
-    /* show the gradient only where the glyphs are */
-    background-clip: text;
-    -webkit-background-clip: text;     /* for Safari */
-    color: transparent;                /* `after:text-transparent` */
-  
-    animation: lineshadow 80s linear infinite; 
-  }
-  
-  /* -------------------------------------------------
+	position: relative; /* Tailwind `relative`                */
+	z-index: 0; /* `z-0`                              */
+	display: inline-flex; /* `inline-flex`                      */
+}
+
+/* synthetic text layer that supplies the animated shadow */
+.lineshadow::after {
+	position: absolute; /* `after:absolute`         */
+	left: 0.04em; /* `after:left-[0.04em]`    */
+	top: 0.04em; /* `after:top-[0.04em]`     */
+	content: attr(data-text); /* `after:content-[attr(...)]` */
+
+	z-index: -10; /* `after:-z-10`            */
+
+	/* tiny diagonal stripes that will scroll to create the “lineshadow” */
+	background: linear-gradient(
+		45deg,
+		transparent 45%,
+		var(--shadow-color) 45%,
+		var(--shadow-color) 55%,
+		transparent 0
+	); /* `after:bg-[linear-gradient(...)]` */
+	background-size: 0.06em 0.06em; /* `after:bg-[length:0.06em_0.06em]` */
+
+	/* show the gradient only where the glyphs are */
+	background-clip: text;
+	-webkit-background-clip: text; /* for Safari */
+	color: transparent; /* `after:text-transparent` */
+
+	animation: lineshadow 80s linear infinite;
+}
+
+/* -------------------------------------------------
      Keyframes for the custom animation.
      Tailwind’s `animate-lineshadow` usually scrolls
      the background to create motion. Tweak as needed.
      -------------------------------------------------*/
-  @keyframes lineshadow {
-    from { background-position: 0 0; }
-    to   { background-position: 100% 0; }
-  }
+@keyframes lineshadow {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}

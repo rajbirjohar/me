@@ -1,50 +1,50 @@
+import Image from "next/image";
 import { getBookByISBN } from "@/lib/openlibrary";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger,
 } from "@/ui/core/HoverCard";
 import styles from "./styles.module.css";
-import Image from "next/image";
 
 export async function BookCard({
-  title,
-  isbn,
+	title,
+	isbn,
 }: {
-  title: string;
-  isbn: string;
+	title: string;
+	isbn: string;
 }) {
-  const book = await getBookByISBN(isbn);
+	const book = await getBookByISBN(isbn);
 
-  // Fallback if book is not found
-  if (!book) {
-    return <>{title}</>;
-  }
+	// Fallback if book is not found
+	if (!book) {
+		return <>{title}</>;
+	}
 
-  return (
-    <HoverCard>
-      <HoverCardTrigger asChild>
-        <span className={styles.trigger}>{title || book.title}</span>
-      </HoverCardTrigger>
-      <HoverCardContent side="bottom">
-        <div className={styles.metadata}>
-          {book.cover && (
-            <div className={styles.coverwrapper}>
-              <Image
-                src={book.cover}
-                alt={book.title}
-                fill
-                className={styles.cover}
-                sizes="(max-width: 768px) 100vw, 200px"
-              />
-            </div>
-          )}
-          <div className={styles.details}>
-            <p className={styles.title}>{book.title}</p>
-            <span className={styles.author}>{book.authors}</span>
-          </div>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
-  );
+	return (
+		<HoverCard>
+			<HoverCardTrigger asChild>
+				<span className={styles.trigger}>{title || book.title}</span>
+			</HoverCardTrigger>
+			<HoverCardContent side="bottom">
+				<div className={styles.metadata}>
+					{book.cover && (
+						<div className={styles.coverwrapper}>
+							<Image
+								src={book.cover}
+								alt={book.title}
+								fill
+								className={styles.cover}
+								sizes="(max-width: 768px) 100vw, 200px"
+							/>
+						</div>
+					)}
+					<div className={styles.details}>
+						<p className={styles.title}>{book.title}</p>
+						<span className={styles.author}>{book.authors}</span>
+					</div>
+				</div>
+			</HoverCardContent>
+		</HoverCard>
+	);
 }

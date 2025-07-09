@@ -1,10 +1,10 @@
 .main {
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    z-index: 2;
-    background-color: var(--color-primary);
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    box-shadow: var(--shadow-lg);
-  }
+	min-height: 100vh;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+	background-color: var(--color-primary);
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	box-shadow: var(--shadow-lg);
+}

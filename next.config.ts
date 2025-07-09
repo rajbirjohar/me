@@ -2,12 +2,10 @@ const withMDX = require("@next/mdx")();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configure `pageExtensions` to include MDX files
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  // Optionally, add any other Next.js config below
-  images: {
-    remotePatterns: [new URL("https://covers.openlibrary.org/b/id/**")],
-  },
+	pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+	images: {
+		remotePatterns: [new URL("https://covers.openlibrary.org/b/id/**")],
+	},
 };
 
 module.exports = withMDX(nextConfig);

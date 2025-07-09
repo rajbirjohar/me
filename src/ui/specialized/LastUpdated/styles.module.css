@@ -1,14 +1,13 @@
 .wrapper {
-  font-size: var(--14px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: calc(var(--24px) * 2) auto 0;
-  gap: var(--14px);
-  width: 100%;
+	font-size: var(--14px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: calc(var(--24px) * 2) auto 0;
+	gap: var(--14px);
+	width: 100%;
 }
 
-
 .time {
-  color: var(--color-text-tertiary);
+	color: var(--color-text-tertiary);
 }
