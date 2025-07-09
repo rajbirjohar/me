@@ -7,6 +7,7 @@ import { cn } from "@/utils/cn";
 import "./globals.css";
 import { Provider } from "@/providers/Provider";
 import { Footer } from "@/ui/layout/Footer";
+import Main from "@/ui/layout/Main";
 
 const serif = Playfair_Display({
   subsets: ["latin"],
@@ -121,9 +122,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(serif.variable, mono.variable, sans.variable)}>
         <Provider>
-          <main className={styles.main}>
+          <Main>
             <div className={styles.content}>{children}</div>
-          </main>
+          </Main>
           <Footer />
         </Provider>
       </body>

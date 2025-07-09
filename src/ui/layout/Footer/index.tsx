@@ -13,7 +13,7 @@ export const Footer = () => {
             <p className={styles.tag}>
               Inspired by the endless wonderful designs on the web.
             </p>
-            <LastUpdated />
+          
           </div>
         </div>
         <div className={styles.section}>
@@ -35,6 +35,7 @@ export const Footer = () => {
         </div>
       </div>
       <Theme />
+      <LastUpdated />
     </footer>
   );
 };

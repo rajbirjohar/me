@@ -17,7 +17,11 @@ export const getBookByISBN = cache(async (isbn: string) => {
 
   const data = (await res.json()) as Record<string, OLDoc>;
   const book = data[`ISBN:${isbn}`];
-  if (!book) throw new Error(`No Open Library hit for ISBN ${isbn}`);
+  if (!book) {
+    // return quietly if book not found. We don't want to crash the UI.
+    console.warn(`Book with ISBN ${isbn} not found in Open Library`);
+    return null;
+  }
 
   const description =
     typeof book.description === "string"

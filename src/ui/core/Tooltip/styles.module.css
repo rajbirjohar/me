@@ -14,6 +14,19 @@
   will-change: transform, opacity;
 }
 
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  position: relative;
+}
+
+.asterisk {
+  color: var(--color-text-link);
+  font-family: var(--serif);
+}
+
 .tooltip[data-state="delayed-open"][data-side="top"] {
   animation-name: slideDownAndFadeIn;
 }

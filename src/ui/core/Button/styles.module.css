@@ -1,13 +1,12 @@
 .button {
   position: relative;
-  height: 44px;
   width: max-content;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   border-radius: var(--border-radius);
-  padding: 0 16px;
+  padding: var(--button-padding);
   border: none;
   color: inherit;
   white-space: nowrap;

@@ -34,6 +34,12 @@
   --color-secondary: var(--color-surface-200);
   --color-primary-border: var(--color-surface-500);
   --color-backdrop: hsl(var(--surface) 45% 96% / 0.8);
+  /* Body background where the top 10% is the primary and the rest is the secondary */
+  --color-body-bg: linear-gradient(
+    to bottom,
+    var(--color-primary) 10%,
+    var(--color-secondary) 90%
+  );
 
   --color-text-primary: var(--color-base-800); /* deep kelp for body copy   */
   --color-text-secondary: var(--color-base-700);
@@ -55,7 +61,7 @@
   --color-selector: var(--color-white);
   --color-opaque: hsl(0 0% 100% / 0.5);
 
-  --font-h1: clamp(3.2rem, 0.5692rem + 8.238vw, 13.75rem);
+  --font-h1: clamp(2.8rem, 0.5692rem + 8.238vw, 8.75rem);
   --font-h2: clamp(1.5rem, 1.0982rem + 1.7143vw, 2.8125rem);
   --font-h3: clamp(1.375rem, 1.1837rem + 0.8163vw, 2rem);
   --font-h4: clamp(1.375rem, 1.1837rem + 0.8163vw, 1.6rem);
@@ -132,6 +138,8 @@
   --shadow-menu: 0px 10px 60px rgba(0, 0, 0, 0.1);
 
   --border-radius: 50px;
+
+  --button-padding: 0.5rem 1rem;
 
   --default-button-bg: var(--color-base-500);
   --default-button-color: var(--color-primary);
@@ -268,6 +276,7 @@ h6 {
 p {
   text-wrap: pretty;
 }
+
 h1,
 h2,
 h3,

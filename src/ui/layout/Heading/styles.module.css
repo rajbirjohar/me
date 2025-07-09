@@ -8,6 +8,7 @@
   font-weight: normal;
   font-size: var(--font-body);
   max-width: var(--partial-content-width);
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 768px) {

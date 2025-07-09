@@ -7,7 +7,7 @@
   max-height: var(--radix-hover-card-content-available-height);
   z-index: var(--zindex-content);
   overflow: auto;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px) brightness(1.2);
   isolation: isolate;
 }
 

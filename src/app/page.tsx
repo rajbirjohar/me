@@ -12,8 +12,9 @@ import {
   TimeLineTitle,
 } from "@/ui/specialized/Timeline";
 import { experiences } from "@/ui/specialized/Timeline/experiences";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui/core/Tooltip";
+import { TextTooltipTrigger, Tooltip, TooltipContent, TooltipTrigger } from "@/ui/core/Tooltip";
 import { BookCard } from "@/ui/specialized/BookCard";
+import { LineShadow } from "@/ui/specialized/LineShadow";
 
 export default function Home() {
   const journals = getAllJournals();
@@ -21,7 +22,7 @@ export default function Home() {
   return (
     <div className={styles.wrapper}>
       <HeadingWrapper>
-        <Heading>In pursuit of extraordinary.</Heading>
+        <Heading>In pursuit of <br /> <LineShadow as="i">extraordinary</LineShadow>.</Heading>
         <SubHeading>
           Hello! I&#39;m Rajbir. I build delightful user interfaces for complex
           systems.
@@ -33,9 +34,9 @@ export default function Home() {
           I currently lead a software engineering team in charge of our in-house
           construction logistics and management platform for{" "}
           <Tooltip>
-            <TooltipTrigger asChild>
-              <span>TSMC&#39;s</span>
-            </TooltipTrigger>
+            <TextTooltipTrigger>
+              TSMC&#39;s
+            </TextTooltipTrigger>
             <TooltipContent>
               TSMC stands for Taiwanese Semiconductor Manufacturing Company.
             </TooltipContent>

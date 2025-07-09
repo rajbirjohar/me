@@ -1,18 +1,15 @@
-.main {
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  background-color: var(--color-primary);
-  border-bottom-right-radius: 32px;
-  border-bottom-left-radius: 32px;
-  box-shadow: var(--shadow-lg);
-}
+
 
 .content {
   width: 100%;
   height: 100%;
   max-width: var(--content-width);
-  padding: 10rem var(--spacing-m);
+  padding: 10rem var(--spacing-m) 8rem;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 8rem var(--spacing-s) 6rem;
+  }
 }

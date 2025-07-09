@@ -35,6 +35,7 @@ export async function BookCard({
                 alt={book.title}
                 fill
                 className={styles.cover}
+                sizes="(max-width: 768px) 100vw, 200px"
               />
             </div>
           )}

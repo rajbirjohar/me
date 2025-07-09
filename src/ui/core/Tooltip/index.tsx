@@ -19,8 +19,25 @@ Tooltip.displayName = TooltipPrimitive.Tooltip.displayName;
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
+const TextTooltipTrigger = React.forwardRef<
+  React.ComponentRef<typeof TooltipPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Trigger>
+>(({ className,children, ...props }, ref) => (
+  <TooltipTrigger
+    ref={ref}
+    className={cn(css.trigger, className)}
+    asChild
+    {...props}
+  >
+    <span>{children}
+       <span className={css.asterisk}>*</span></span>
+</TooltipTrigger>
+));
+
+TextTooltipTrigger.displayName = TooltipPrimitive.Trigger.displayName;
+
 const TooltipContent = React.forwardRef<
-  React.ElementRef<typeof TooltipPrimitive.Content>,
+  React.ComponentRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
 >(({ className, sideOffset = 10, side = "top", ...props }, ref) => (
   <TooltipPortal>
@@ -41,4 +58,5 @@ export {
   TooltipContent,
   TooltipProvider,
   TooltipPortal,
+  TextTooltipTrigger
 };
