@@ -12,7 +12,8 @@ import {
   TimeLineTitle,
 } from "@/ui/specialized/Timeline";
 import { experiences } from "@/ui/specialized/Timeline/experiences";
-import Link from "next/link";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui/core/Tooltip";
+import { BookCard } from "@/ui/specialized/BookCard";
 
 export default function Home() {
   const journals = getAllJournals();
@@ -27,7 +28,29 @@ export default function Home() {
         </SubHeading>
       </HeadingWrapper>
       <section className={styles.section}>
-        <h2>Contributions</h2>
+        <h2>Today</h2>
+        <p>
+          I currently lead a software engineering team in charge of our in-house
+          construction logistics and management platform for{" "}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span>TSMC&#39;s</span>
+            </TooltipTrigger>
+            <TooltipContent>
+              TSMC stands for Taiwanese Semiconductor Manufacturing Company.
+            </TooltipContent>
+          </Tooltip>{" "}
+          fabrication sites in the US.
+        </p>
+        <p>
+          I&#39;m sinking hours into literary fiction. I recently finished{" "}
+          <BookCard title="Demon Copperhead" isbn="9780571376483" />,{" "}
+          <BookCard title="Foster" isbn="9780571255658" />, and{" "}
+          <BookCard title="Small Things Like These" isbn="9780802158741" />.
+        </p>
+      </section>
+      <section className={styles.section}>
+        <h2>Previously</h2>
         <Timeline>
           {experiences.map((experience, index) => (
             <TimeLineItem key={index} icon={experience.icon}>
@@ -53,29 +76,6 @@ export default function Home() {
         {journals.map((journal) => (
           <Journal key={journal.slug} journal={journal} />
         ))}
-      </section>
-      <section className={styles.section}>
-        <h2>Endeavors</h2>
-        <p>
-          I am currently working on a few personal projects that are close to my
-          heart. The most recent one is a highly specialized platform for rising
-          fashion designers and students to showcase their work and connect with
-          industry professionals. It&#39;s currently in beta but we are hoping
-          to launch it soon. Feel free to{" "}
-          <Link
-            href="https://blnkla.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            check it out here
-          </Link>
-          .
-        </p>
-        <p>
-          Another idea I am exploring is building a studio with a good friend to
-          create unique and creative landing pages for independent game
-          developers. More on that soon.
-        </p>
       </section>
     </div>
   );
