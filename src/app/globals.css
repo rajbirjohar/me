@@ -1,243 +1,244 @@
 :root {
-	--base: 130;
-	--surface: 42;
-	--active: 40;
+  --base: 130;
+  --surface: 42;
+  --active: 40;
 
-	/* whites & generic neutrals */
-	--color-white: hsl(0 0% 100%);
-	--color-white50: hsl(0 0% 100% / 0.5);
-	--color-white30: hsl(0 0% 100% / 0.3);
-	--color-white20: hsl(0 0% 100% / 0.2);
-	--color-black: hsl(0 0% 4%);
+  /* whites & generic neutrals */
+  --color-white: hsl(0 0% 100%);
+  --color-white50: hsl(0 0% 100% / 0.5);
+  --color-white30: hsl(0 0% 100% / 0.3);
+  --color-white20: hsl(0 0% 100% / 0.2);
+  --color-black: hsl(0 0% 4%);
 
-	/* surface scale (backgrounds & borders) */
-	--color-surface-100: hsl(var(--surface) 45% 96%);
-	--color-surface-200: hsl(var(--surface) 35% 93%);
-	--color-surface-300: hsl(var(--surface) 26% 90%);
-	--color-surface-400: hsl(var(--surface) 22% 85%);
-	--color-surface-500: hsl(var(--surface) 20% 82%);
+  /* surface scale (backgrounds & borders) */
+  --color-surface-100: hsl(var(--surface) 45% 96%);
+  --color-surface-200: hsl(var(--surface) 35% 93%);
+  --color-surface-300: hsl(var(--surface) 26% 90%);
+  --color-surface-400: hsl(var(--surface) 22% 85%);
+  --color-surface-500: hsl(var(--surface) 20% 82%);
 
-	/* base scale (UI greens) — **softer, easy-on-eyes** */
-	--color-base-300: hsl(var(--base) 30% 88%);
-	--color-base-400: hsl(var(--base) 25% 70%);
-	--color-base-500: hsl(var(--base) 20% 55%);
-	--color-base-600: hsl(var(--base) 16% 44%);
-	--color-base-700: hsl(var(--base) 14% 32%);
-	--color-base-800: hsl(var(--base) 12% 14%);
-	--color-base-900: hsl(var(--base) 10% 10%);
+  /* base scale (UI greens) — **softer, easy-on-eyes** */
+  --color-base-300: hsl(var(--base) 30% 88%);
+  --color-base-400: hsl(var(--base) 25% 70%);
+  --color-base-500: hsl(var(--base) 20% 55%);
+  --color-base-600: hsl(var(--base) 16% 44%);
+  --color-base-700: hsl(var(--base) 14% 32%);
+  --color-base-800: hsl(var(--base) 12% 14%);
+  --color-base-900: hsl(var(--base) 10% 10%);
 
-	/* semantic tokens your code already uses */
-	--color-primary: var(--color-surface-100);
-	--color-primary-accent: var(--color-base-900); /* slightly brighter for CTAs */
-	--color-secondary: var(--color-surface-200);
-	--color-primary-border: var(--color-surface-500);
-	--color-backdrop: hsl(var(--surface) 45% 96% / 0.8);
-	/* Body background where the top 10% is the primary and the rest is the secondary */
-	--color-body-bg: linear-gradient(
-		to bottom,
-		var(--color-primary) 10%,
-		var(--color-secondary) 90%
-	);
+  /* semantic tokens your code already uses */
+  --color-primary: var(--color-surface-100);
+  --color-primary-accent: var(
+    --color-base-900
+  ); /* slightly brighter for CTAs */
+  --color-secondary: var(--color-surface-200);
+  --color-primary-border: var(--color-surface-500);
+  --color-backdrop: hsl(var(--surface) 45% 96% / 0.8);
+  /* Body background where the top 10% is the primary and the rest is the secondary */
+  --color-body-bg: linear-gradient(
+    to bottom,
+    var(--color-primary) 10%,
+    var(--color-secondary) 90%
+  );
 
-	--color-text-primary: var(--color-base-800); /* deep kelp for body copy   */
-	--color-text-secondary: var(--color-base-700);
-	--color-text-tertiary: var(--color-base-500);
-	--color-text-quarterly: var(--color-base-400);
-	--color-text-hilite: hsl(var(--active) 82% 65%);
-	--color-text-link: hsl(var(--active) 100% 25%);
+  --color-text-primary: var(--color-base-800); /* deep kelp for body copy   */
+  --color-text-secondary: var(--color-base-700);
+  --color-text-tertiary: var(--color-base-600);
+  --color-text-quarterly: var(--color-base-500);
+  --color-text-hilite: hsl(var(--active) 82% 65%);
+  --color-text-link: hsl(var(--active) 100% 32%);
 
-	--color-text-active: var(--color-white);
-	--color-text-bold: var(--color-base-800);
-	--color-text-contrast: var(--color-base-300);
+  --color-text-active: var(--color-white);
+  --color-text-bold: var(--color-base-800);
+  --color-text-contrast: var(--color-base-300);
 
-	/* utility */
-	--color-light: var(--color-white);
-	--color-light-hover: hsl(0 0% 0% / 0.05);
-	--color-light-border: hsl(0 0% 0% / 0.1);
-	--color-white-hover: var(--color-light-hover);
-	--color-white-border: var(--color-light-border);
-	--color-selector: var(--color-white);
-	--color-opaque: hsl(0 0% 100% / 0.5);
+  /* utility */
+  --color-light: var(--color-white);
+  --color-light-hover: hsl(0 0% 0% / 0.05);
+  --color-light-border: hsl(0 0% 0% / 0.1);
+  --color-white-hover: var(--color-light-hover);
+  --color-white-border: var(--color-light-border);
+  --color-selector: var(--color-white);
+  --color-opaque: hsl(0 0% 100% / 0.5);
 
-	--font-h1: clamp(2.8rem, 0.5692rem + 8.238vw, 8.75rem);
-	--font-h2: clamp(1.5rem, 1.0982rem + 1.7143vw, 2.8125rem);
-	--font-h3: clamp(1.375rem, 1.1837rem + 0.8163vw, 2rem);
-	--font-h4: clamp(1.375rem, 1.1837rem + 0.8163vw, 1.6rem);
-	--font-h5: clamp(1rem, 0.9235rem + 0.3265vw, 1.25rem);
-	--font-h6: clamp(1rem, 0.9617rem + 0.1633vw, 1.125rem);
-	--font-body: clamp(1rem, 0.8852rem + 0.4898vw, 1.375rem);
-	--font-link: clamp(0.875rem, 0.7985rem + 0.3265vw, 1.125rem);
-	--font-mini: clamp(0.875rem, 0.87rem + 0.1633vw, 1rem);
-	--font-h2-display: clamp(1.875rem, 1.301rem + 2.449vw, 3.95rem);
-	--14px: 0.875rem;
-	--15px: 0.9375rem;
-	--16px: 1rem;
-	--17px: 1.0625rem;
-	--18px: 1.125rem;
-	--19px: 1.1875rem;
-	--20px: 1.25rem;
-	--21px: 1.3125rem;
-	--24px: 1.5rem;
-	--42px: 2.652rem;
-	--64px: 4rem;
-	--spacing-xxl: max(
-		130px,
-		calc(130px + (260 - 130) * ((100vw - 375px) / (1600 - 375)))
-	);
-	--spacing-xl: max(
-		var(--64px),
-		calc(var(--64px) + (128 - 64) * ((100vw - 375px) / (1600 - 375)))
-	);
-	--spacing-l: max(
-		var(--42px),
-		calc(var(--42px) + (84 - 42) * ((100vw - 375px) / (1600 - 375)))
-	);
-	--spacing-m: max(
-		var(--24px),
-		calc(var(--24px) + (48 - 24) * ((100vw - 375px) / (1600 - 375)))
-	);
-	--spacing-s: max(
-		var(--21px),
-		calc(var(--21px) + (42 - 21) * ((100vw - 375px) / (1600 - 375)))
-	);
-	--spacing-xs: max(
-		var(--14px),
-		calc(var(--14px) + (28 - 14) * ((100vw - 375px) / (1600 - 375)))
-	);
-	--spacing-xxs: max(
-		calc(var(--14px) / 2),
-		calc((var(--14px) / 2) + (14 - 7) * ((100vw - 375px) / (1600 - 375)))
-	);
+  --font-h1: clamp(2.8rem, 0.5692rem + 8.238vw, 8.75rem);
+  --font-h2: clamp(1.5rem, 1.0982rem + 1.7143vw, 2.8125rem);
+  --font-h3: clamp(1.375rem, 1.1837rem + 0.8163vw, 2rem);
+  --font-h4: clamp(1.375rem, 1.1837rem + 0.8163vw, 1.6rem);
+  --font-h5: clamp(1rem, 0.9235rem + 0.3265vw, 1.25rem);
+  --font-h6: clamp(1rem, 0.9617rem + 0.1633vw, 1.125rem);
+  --font-body: clamp(1rem, 0.8852rem + 0.4898vw, 1.375rem);
+  --font-link: clamp(0.875rem, 0.7985rem + 0.3265vw, 1.125rem);
+  --font-mini: clamp(0.875rem, 0.87rem + 0.1633vw, 1rem);
+  --font-h2-display: clamp(1.875rem, 1.301rem + 2.449vw, 3.95rem);
+  --14px: 0.875rem;
+  --15px: 0.9375rem;
+  --16px: 1rem;
+  --17px: 1.0625rem;
+  --18px: 1.125rem;
+  --19px: 1.1875rem;
+  --20px: 1.25rem;
+  --21px: 1.3125rem;
+  --24px: 1.5rem;
+  --42px: 2.652rem;
+  --64px: 4rem;
+  --spacing-xxl: max(
+    130px,
+    calc(130px + (260 - 130) * ((100vw - 375px) / (1600 - 375)))
+  );
+  --spacing-xl: max(
+    var(--64px),
+    calc(var(--64px) + (128 - 64) * ((100vw - 375px) / (1600 - 375)))
+  );
+  --spacing-l: max(
+    var(--42px),
+    calc(var(--42px) + (84 - 42) * ((100vw - 375px) / (1600 - 375)))
+  );
+  --spacing-m: max(
+    var(--24px),
+    calc(var(--24px) + (48 - 24) * ((100vw - 375px) / (1600 - 375)))
+  );
+  --spacing-s: max(
+    var(--21px),
+    calc(var(--21px) + (42 - 21) * ((100vw - 375px) / (1600 - 375)))
+  );
+  --spacing-xs: max(
+    var(--14px),
+    calc(var(--14px) + (28 - 14) * ((100vw - 375px) / (1600 - 375)))
+  );
+  --spacing-xxs: max(
+    calc(var(--14px) / 2),
+    calc((var(--14px) / 2) + (14 - 7) * ((100vw - 375px) / (1600 - 375)))
+  );
 
-	--content-width: 1320px;
-	--partial-content-width: calc(var(--content-width) / 1.6);
+  --content-width: 1320px;
+  --partial-content-width: calc(var(--content-width) / 1.6);
 
-	--transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	--transition-ease-fast: 350ms cubic-bezier(0.25, 1, 0.5, 1);
-	--transition-ease: 500ms cubic-bezier(0.25, 1, 0.5, 1);
-	--transition-ease-slow: 750ms cubic-bezier(0.25, 1, 0.5, 1);
-	--popover-entrance-animation: var(--transition-ease-fast);
-	--popover-exit-animation: var(--transition-ease-fast);
-	--shadow-lg: 0px 50px 100px -20px rgba(0, 0, 0, 0.15);
+  --transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-ease-fast: 350ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-ease: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-ease-slow: 750ms cubic-bezier(0.25, 1, 0.5, 1);
+  --popover-entrance-animation: var(--transition-ease-fast);
+  --popover-exit-animation: var(--transition-ease-fast);
+  --shadow-lg: 0px 50px 100px -20px rgba(0, 0, 0, 0.15);
 
-	--zindex-base: 1;
-	--zindex-2: 2;
-	--zindex-content-lower-2: 40;
-	--zindex-content-lower-1: 45;
-	--zindex-content: 50;
-	--zindex-top: 100;
-	--zindex-nav: 1000;
-	--zindex-nav-menu: 1010;
-	--zindex-modal: 2000;
-	--radius-base: 0.75rem;
+  --zindex-base: 1;
+  --zindex-2: 2;
+  --zindex-content-lower-2: 40;
+  --zindex-content-lower-1: 45;
+  --zindex-content: 50;
+  --zindex-top: 100;
+  --zindex-nav: 1000;
+  --zindex-nav-menu: 1010;
+  --zindex-modal: 2000;
+  --radius-base: 0.75rem;
 
-	--curve: cubic-bezier(0, 0.49, 0, 1.49);
-	--curve-timing: 0.35s;
-	--shadow-menu: 0px 10px 60px rgba(0, 0, 0, 0.1);
+  --curve: cubic-bezier(0, 0.49, 0, 1.49);
+  --curve-timing: 0.35s;
+  --shadow-menu: 0px 10px 60px rgba(0, 0, 0, 0.1);
 
-	--border-radius: 50px;
+  --border-radius: 50px;
 
-	--button-padding: 0.5rem 1rem;
+  --button-padding: 0.5rem 1rem;
 
-	--default-button-bg: var(--color-base-500);
-	--default-button-color: var(--color-primary);
-	--default-button-hover-bg: var(--color-base-600);
+  --default-button-bg: var(--color-base-500);
+  --default-button-color: var(--color-primary);
+  --default-button-hover-bg: var(--color-base-600);
 
-	--ghost-button-bg: var(--color-surface-300);
-	--ghost-button-color: var(--color-text-primary);
-	--ghost-button-hover-bg: var(--color-surface-500);
+  --ghost-button-bg: var(--color-surface-300);
+  --ghost-button-color: var(--color-text-primary);
+  --ghost-button-hover-bg: var(--color-surface-500);
 
-	--outline-button-bg: transparent;
-	--outline-button-color: var(--color-text-primary);
-	--outline-button-hover-bg: var(--color-surface-300);
-	--outline-button-border: 1px solid var(--color-surface-300);
+  --outline-button-bg: transparent;
+  --outline-button-color: var(--color-text-primary);
+  --outline-button-hover-bg: var(--color-surface-300);
+  --outline-button-border: 1px solid var(--color-surface-300);
 }
 
 [data-theme="dark"] {
-	--color-base-300: hsl(var(--base) 30% 88%);
-	--color-base-400: hsl(var(--base) 25% 70%);
-	--color-base-500: hsl(var(--base) 20% 55%);
-	--color-base-600: hsl(var(--base) 16% 44%);
-	--color-base-700: hsl(var(--base) 14% 35%);
-	--color-base-800: hsl(var(--base) 12% 14%);
-	--color-base-900: hsl(var(--base) 10% 10%);
+  --color-base-300: hsl(var(--base) 30% 88%);
+  --color-base-400: hsl(var(--base) 25% 70%);
+  --color-base-500: hsl(var(--base) 20% 55%);
+  --color-base-600: hsl(var(--base) 16% 44%);
+  --color-base-700: hsl(var(--base) 14% 35%);
+  --color-base-800: hsl(var(--base) 12% 12%);
+  --color-base-900: hsl(var(--base) 10% 10%);
 
-	--color-primary: var(--color-base-800);
-	--color-secondary: var(--color-base-900);
-	--color-primary-accent: var(--color-base-400);
-	--color-primary-border: hsl(var(--base) 12% 30% / 0.25);
-	--color-backdrop: hsl(var(--base) 12% 18% / 0.7);
+  --color-primary: var(--color-base-800);
+  --color-secondary: var(--color-base-900);
+  --color-primary-accent: var(--color-base-400);
+  --color-primary-border: hsl(var(--base) 12% 30% / 0.25);
+  --color-backdrop: hsl(var(--base) 12% 18% / 0.7);
 
-	--color-text-primary: var(--color-base-300);
-	--color-text-secondary: var(--color-base-400);
-	--color-text-tertiary: var(--color-base-600);
-	--color-text-quarterly: var(--color-base-500);
-	--color-text-hilite: hsl(var(--active) 82% 65%);
-	--color-text-link: hsl(var(--active) 72% 65%);
+  --color-text-primary: var(--color-base-300);
+  --color-text-secondary: var(--color-base-400);
+  --color-text-tertiary: var(--color-base-500);
+  --color-text-quarterly: var(--color-base-600);
+  --color-text-hilite: hsl(var(--active) 82% 65%);
+  --color-text-link: hsl(var(--active) 72% 65%);
 
-	/* light & borders re-tuned for dark */
-	--color-white30: hsl(var(--base) 20% 70% / 0.05);
-	--color-white50: hsl(var(--base) 20% 70% / 0.1);
-	--color-light: hsl(var(--base) 10% 26%);
-	--color-light-hover: hsl(var(--base) 10% 26% / 0.15);
-	--color-light-border: hsl(var(--base) 10% 45% / 0.25);
+  /* light & borders re-tuned for dark */
+  --color-white30: hsl(var(--base) 20% 70% / 0.05);
+  --color-white50: hsl(var(--base) 20% 70% / 0.1);
+  --color-light: hsl(var(--base) 10% 26%);
+  --color-light-hover: hsl(var(--base) 10% 26% / 0.15);
+  --color-light-border: hsl(var(--base) 10% 45% / 0.25);
 
-	--color-selector: var(--color-base-600);
-	--color-white-hover: hsl(0 0% 100% / 0.1);
-	--color-white-border: hsl(0 0% 100% / 0.2);
+  --color-selector: var(--color-base-600);
+  --color-white-hover: hsl(0 0% 100% / 0.1);
+  --color-white-border: hsl(0 0% 100% / 0.2);
 
-	--default-button-bg: var(--color-base-500);
-	--default-button-color: var(--color-text-primary);
-	--default-button-hover-bg: var(--color-base-400);
+  --default-button-bg: var(--color-base-500);
+  --default-button-color: var(--color-text-primary);
+  --default-button-hover-bg: var(--color-base-400);
 
-	--ghost-button-bg: var(--color-white30);
-	--ghost-button-color: var(--color-text-primary);
-	--ghost-button-hover-bg: var(--color-white50);
+  --ghost-button-bg: var(--color-white30);
+  --ghost-button-color: var(--color-text-primary);
+  --ghost-button-hover-bg: var(--color-white50);
 
-	--outline-button-bg: transparent;
-	--outline-button-color: var(--color-text-primary);
-	--outline-button-hover-bg: var(--color-white50);
-	--outline-button-border: 1px solid var(--color-white50);
+  --outline-button-bg: transparent;
+  --outline-button-color: var(--color-text-primary);
+  --outline-button-hover-bg: var(--color-white50);
+  --outline-button-border: 1px solid var(--color-white50);
 }
 
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	/* Set all background color and color transitions to be the same for smooth theme transitions */
-	transition:
-		background-color var(--transition-ease),
-		color var(--transition-ease);
+  box-sizing: border-box;
+  /* Set all background color and color transitions to be the same for smooth theme transitions */
+  transition: background-color var(--transition-ease),
+    color var(--transition-ease);
 }
 
 /* 2. Remove default margin */
 * {
-	margin: 0;
+  margin: 0;
 }
 
 /* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
-	html {
-		interpolate-size: allow-keywords;
-	}
+  html {
+    interpolate-size: allow-keywords;
+  }
 }
 
 body {
-	/* 4. Add accessible line-height */
-	line-height: 1.5;
-	font-family: var(--sans);
-	font-size: var(--16px);
-	color: var(--color-text-primary);
-	background-color: var(--color-secondary);
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	position: relative;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
-	height: 100%;
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  font-family: var(--sans);
+  font-size: var(--16px);
+  color: var(--color-text-primary);
+  background-color: var(--color-secondary);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  height: 100%;
 }
 
 /* 6. Improve media defaults */
@@ -246,8 +247,8 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
@@ -255,7 +256,7 @@ input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
 
 /* 8. Avoid text overflows */
@@ -266,12 +267,12 @@ h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* 9. Improve line wrapping */
 p {
-	text-wrap: pretty;
+  text-wrap: pretty;
 }
 
 h1,
@@ -280,114 +281,103 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 500;
-	text-wrap: balance;
+  font-weight: 500;
+  text-wrap: balance;
 }
 
 .h1-display {
-	font-size: var(--font-h1);
-	font-family: var(--serif);
-	line-height: 100%;
-	letter-spacing: 0.01em;
-	color: var(--color-text-link);
+  font-size: var(--font-h1);
+  font-family: var(--display-serif);
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  color: var(--color-text-link);
 }
+
 @media (min-width: 992px) {
-	.h1-display {
-		letter-spacing: -4px;
-	}
+  .h1-display {
+    letter-spacing: -4px;
+  }
 }
 h1 .holder {
-	position: relative;
+  position: relative;
 }
 h2 {
-	font-size: var(--font-h2);
-	line-height: 130%;
+  font-size: var(--font-h2);
+  line-height: 130%;
 }
 .h2-display {
-	font-size: var(--font-h2-display);
-	line-height: 120%;
-	letter-spacing: -0.25px;
+  font-size: var(--font-h2-display);
+  line-height: 120%;
+  letter-spacing: -0.25px;
 }
 @media (min-width: 768px) {
-	.h2-display {
-		line-height: 140%;
-		letter-spacing: -1px;
-	}
+  .h2-display {
+    line-height: 140%;
+    letter-spacing: -1px;
+  }
 }
 h3,
 .h3-display {
-	font-size: var(--font-h3);
+  font-size: var(--font-h3);
 }
 h4,
 .h4-display {
-	font-size: var(--font-h4);
+  font-size: var(--font-h4);
 }
 h5,
 .h5-display {
-	font-size: var(--font-h5);
+  font-size: var(--font-h5);
 }
 h6 {
-	font-size: var(--font-h6);
+  font-size: var(--font-h6);
 }
 p {
-	font-size: var(--font-body);
-	line-height: 160%;
-	color: var(--color-text-secondary);
-}
-p + p {
-	margin-top: var(--spacing-xs);
-}
-h2 + p {
-	margin-top: var(--spacing-xs);
-}
-h3 + p {
-	margin-top: var(--spacing-xxs);
-}
-p + h2 {
-	margin-top: var(--spacing-m);
-}
-p + h3 {
-	margin-top: var(--spacing-m);
+  font-size: var(--font-body);
+  line-height: 160%;
+  color: var(--color-text-secondary);
 }
 
 a {
-	color: var(--color-text-link);
-	text-decoration: none;
-	font-size: inherit;
-	border-radius: var(--radius-base);
+  color: var(--color-text-link);
+  text-decoration: none;
+  font-size: inherit;
+  border-radius: var(--radius-base);
 }
 
 hr {
-	border: none;
-	border-top: 1px solid var(--color-light-border);
-	margin: var(--spacing-m) 0;
+  border: none;
+  border-top: 1px solid var(--color-light-border);
+  margin: var(--spacing-m) 0;
 }
 
 a:focus-visible,
 button:focus-visible {
-	outline: none;
-	box-shadow:
-		inset 0 0 0 2px var(--color-selector),
-		0 0 0 2px var(--color-primary-accent);
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--color-selector),
+    0 0 0 2px var(--color-primary-accent);
 }
 a:active,
 button:active {
-	box-shadow: none;
+  box-shadow: none;
+}
+
+time {
+  font-family: var(--mono);
 }
 
 ::selection {
-	background: var(--color-primary-accent);
-	color: var(--color-primary);
+  background: var(--color-primary-border);
+  color: var(--color-text-primary);
 }
 
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*:before,
-	*:after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-	}
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /*
@@ -395,5 +385,5 @@ button:active {
 */
 #root,
 #__next {
-	isolation: isolate;
+  isolation: isolate;
 }

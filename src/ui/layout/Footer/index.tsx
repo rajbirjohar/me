@@ -28,7 +28,7 @@ export const Footer = () => {
 						</Link>
 					</div>
 					<div className={styles.links}>
-						<h4>Contact</h4>
+						<h4>Connect</h4>
 						<span>hello@rajbir.io</span>
 					</div>
 				</div>

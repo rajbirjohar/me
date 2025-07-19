@@ -1,18 +1,22 @@
 import { formatDistanceToNow } from "date-fns";
+import Link from "next/link";
 import { getLastUpdate } from "@/lib/github";
 import styles from "./styles.module.css";
 
 export default async function LastUpdated() {
-	const { updatedAt } = await getLastUpdate();
+	const { updatedAt, sha, url } = await getLastUpdate();
 
 	return (
-		<div
-			title={new Date(updatedAt).toLocaleString()}
+		<Link
+			href={url}
+			target="_blank"
+			rel="noopener noreferrer"
 			className={styles.wrapper}
 		>
 			<time dateTime={updatedAt} className={styles.time}>
-				Updated {formatDistanceToNow(new Date(updatedAt))} ago
-			</time>
-		</div>
+				{formatDistanceToNow(new Date(updatedAt))} ago
+			</time>{" "}
+			— <span>{sha.slice(0, 7)}</span>
+		</Link>
 	);
 }

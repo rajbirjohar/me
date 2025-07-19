@@ -1,13 +1,9 @@
 .wrapper {
-	font-size: var(--14px);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: calc(var(--24px) * 2) auto 0;
-	gap: var(--14px);
-	width: 100%;
-}
-
-.time {
-	color: var(--color-text-tertiary);
+  font-size: var(--14px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: calc(var(--24px) * 2) auto 0;
+  gap: var(--14px);
+  width: 100%;
 }

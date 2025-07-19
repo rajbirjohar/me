@@ -9,11 +9,13 @@ import {
 	getJournalBySlug,
 	markdownToHtml,
 } from "@/lib/journal";
+import { parseDate } from "@/utils/parseDate";
 import styles from "./page.module.css";
 
 export default async function Journal(props: Params) {
 	const params = await props.params;
 	const journal = getJournalBySlug(params.slug);
+	const date = parseDate(journal.date);
 
 	if (!journal) {
 		return notFound();
@@ -28,9 +30,7 @@ export default async function Journal(props: Params) {
 					<ArrowLeftIcon className={styles.icon} /> Journals
 				</Link>
 				<h1 className={styles.title}>{journal.title}</h1>
-				<time className={styles.date}>
-					{format(journal.date, "MMMM do, y")}
-				</time>
+				<time className={styles.date}>{format(date, "MMMM do, y")}</time>
 			</header>
 			<hr />
 			<div

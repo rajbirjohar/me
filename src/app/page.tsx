@@ -23,7 +23,7 @@ export default function Home() {
 		<div className={styles.wrapper}>
 			<HeadingWrapper>
 				<Heading>
-					In pursuit of <br /> <LineShadow as="i">extraordinary</LineShadow>.
+					In pursuit of <br /> <LineShadow as="i">extraordinary</LineShadow>
 				</Heading>
 				<SubHeading>
 					Hello! I&#39;m Rajbir. I build delightful user interfaces for complex

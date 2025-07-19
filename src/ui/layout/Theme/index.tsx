@@ -66,7 +66,13 @@ export const Theme = () => {
 								</div>
 							</button>
 						</TooltipTrigger>
-						<TooltipContent>{index}:00</TooltipContent>
+						<TooltipContent
+							style={{
+								fontFamily: "var(--mono)",
+							}}
+						>
+							{index}:00
+						</TooltipContent>
 					</Tooltip>
 				))}
 			</div>

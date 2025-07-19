@@ -1,65 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Playfair_Display } from "next/font/google";
-import localFont from "next/font/local";
 import { cn } from "@/utils/cn";
 import styles from "./layout.module.css";
 import "./globals.css";
 import { Provider } from "@/providers/Provider";
 import { Footer } from "@/ui/layout/Footer";
 import Main from "@/ui/layout/Main";
-
-const serif = Playfair_Display({
-	subsets: ["latin"],
-	display: "swap",
-	variable: "--serif",
-});
-
-const sans = localFont({
-	variable: "--sans",
-	src: [
-		{
-			path: "./fonts/wotfard/roman/wotfard-bold-webfont.woff2",
-			weight: "500",
-			style: "normal",
-		},
-		{
-			path: "./fonts/wotfard/roman/wotfard-semibold-webfont.woff2",
-			weight: "600",
-			style: "normal",
-		},
-		{
-			path: "./fonts/wotfard/roman/wotfard-medium-webfont.woff2",
-			weight: "500",
-			style: "normal",
-		},
-		{
-			path: "./fonts/wotfard/roman/wotfard-regular-webfont.woff2",
-			weight: "400",
-			style: "normal",
-		},
-		{
-			path: "./fonts/wotfard/roman/wotfard-thin-webfont.woff2",
-			weight: "300",
-			style: "normal",
-		},
-		{
-			path: "./fonts/wotfard/roman/wotfard-light-webfont.woff2",
-			weight: "200",
-			style: "normal",
-		},
-		{
-			path: "./fonts/wotfard/roman/wotfard-extralight-webfont.woff2",
-			weight: "100",
-			style: "normal",
-		},
-	],
-});
-
-const mono = Geist_Mono({
-	subsets: ["latin"],
-	display: "swap",
-	variable: "--mono",
-});
+import { displayNovela, novela, nudica, nudicaMono } from "./fonts";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://rajbir.io"),
@@ -119,7 +65,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={cn(serif.variable, mono.variable, sans.variable)}>
+			<body
+				className={cn(
+					nudica.variable,
+					nudicaMono.variable,
+					novela.variable,
+					displayNovela.variable,
+				)}
+			>
 				<Provider>
 					<Main>
 						<div className={styles.content}>{children}</div>

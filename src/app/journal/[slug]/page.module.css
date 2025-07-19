@@ -1,24 +1,24 @@
 .article {
-	max-width: var(--partial-content-width);
+  max-width: var(--partial-content-width);
+  font-family: var(--serif);
 }
 
 .header {
-	text-wrap: balance;
-	margin-bottom: 32px;
+  text-wrap: balance;
+  margin-bottom: 32px;
 }
 
 .title {
-	font-family: var(--serif);
-	font-size: var(--font-h2);
-	margin-bottom: 30px;
+  font-size: var(--font-h2);
+  margin-bottom: 30px;
 }
 
 .date {
-	margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .prose p {
-	margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .prose h1,
@@ -27,31 +27,31 @@
 .prose h4,
 .prose h5,
 .prose h6 {
-	margin-top: 36px;
-	margin-bottom: 32px;
+  margin-top: 36px;
+  margin-bottom: 32px;
 }
 
 .back {
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
-	font-size: var(--font-body);
-	margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-body);
+  margin-bottom: 1.5rem;
 }
 
 .icon {
-	width: var(--font-body);
-	height: var(--font-body);
+  width: var(--font-body);
+  height: var(--font-body);
 }
 
 @media screen and (max-width: 768px) {
-	.prose h1,
-	.prose h2,
-	.prose h3,
-	.prose h4,
-	.prose h5,
-	.prose h6 {
-		margin-top: 32px;
-		margin-bottom: 28px;
-	}
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    margin-top: 32px;
+    margin-bottom: 28px;
+  }
 }
