@@ -41,7 +41,7 @@ export default function Home() {
               TSMC stands for Taiwanese Semiconductor Manufacturing Company.
             </TooltipContent>
           </Tooltip>{" "}
-          fab sites in the US.
+          fabrication sites in the US.
         </p>
         <p>
           I&#39;m sinking hours into literary fiction. I recently finished{" "}

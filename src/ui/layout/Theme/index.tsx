@@ -78,6 +78,7 @@ export const Theme = () => {
       </div>
       <div className={styles.actions}>
         <Button
+          size="small"
           variant="ghost"
           onClick={() => {
             const currentHour = new Date().getHours();
@@ -89,6 +90,7 @@ export const Theme = () => {
           Current Hour
         </Button>
         <Button
+          size="small"
           variant="ghost"
           onClick={() => {
             const currentHour = new Date().getHours();

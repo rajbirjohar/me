@@ -1,8 +1,8 @@
 .trigger {
-  display: inline;
+  display: inline-block;
   cursor: default;
   /* Prevent wrapping */
-  white-space: nowrap;
+
   font-style: italic;
   color: var(--color-text-link);
 }

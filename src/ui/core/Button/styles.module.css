@@ -85,7 +85,7 @@
 
 .small,
 .link.small {
-  height: 32px;
+  padding: 0.4rem 0.85rem;
   font-size: var(--font-mini);
 }
 

@@ -49,7 +49,7 @@
   --font-h6: clamp(0.875rem, 0.87rem + 0.1633vw, 1rem);
   --font-body: clamp(1rem, 0.8852rem + 0.4898vw, 1.375rem);
   --font-link: clamp(0.875rem, 0.7985rem + 0.3265vw, 1.125rem);
-  --font-mini: clamp(0.875rem, 0.87rem + 0.1633vw, 1rem);
+  --font-mini: clamp(0.75rem, 0.75rem + 0.1633vw, 0.875rem);
 
   --font-h1-display: clamp(2.8rem, 0.5692rem + 8.238vw, 8.75rem);
   --font-h2-display: clamp(1.875rem, 1.301rem + 2.449vw, 3.95rem);
@@ -279,8 +279,9 @@ h1 {
 }
 
 .h1-display {
+  font-weight: 400;
   font-size: var(--font-h1-display);
-  font-family: var(--serif);
+  font-family: var(--serif-display);
   line-height: 100%;
   letter-spacing: 0.01em;
   color: var(--color-text-link);
