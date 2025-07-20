@@ -99,13 +99,27 @@
   transform: translate3d(0, 10px, 0);
 }
 
-.actions {
+.bottom {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: auto;
+  justify-content: space-between;
   margin-top: var(--24px);
   flex-wrap: wrap;
   width: 100%;
   gap: var(--14px);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--14px);
+}
+
+@media screen and (max-width: 600px) {
+  .bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: var(--42px);
+  }
 }

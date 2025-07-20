@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import { useState } from "react";
 import { Button } from "@/ui/core/Button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui/core/Tooltip";
+import LastUpdated from "@/ui/specialized/LastUpdated";
 import styles from "./styles.module.css";
 
 export const Theme = () => {
@@ -76,31 +77,34 @@ export const Theme = () => {
           </Tooltip>
         ))}
       </div>
-      <div className={styles.actions}>
-        <Button
-          size="small"
-          variant="ghost"
-          onClick={() => {
-            const currentHour = new Date().getHours();
-            setSelectedHour(currentHour);
-            setTheme(currentHour < 6 || currentHour >= 18 ? "dark" : "light");
-          }}
-        >
-          <ClockIcon />
-          Current Hour
-        </Button>
-        <Button
-          size="small"
-          variant="ghost"
-          onClick={() => {
-            const currentHour = new Date().getHours();
-            setSelectedHour(currentHour);
-            setTheme("system");
-          }}
-        >
-          <EarthIcon />
-          Defaults
-        </Button>
+      <div className={styles.bottom}>
+        <LastUpdated />
+        <div className={styles.actions}>
+          <Button
+            size="small"
+            variant="ghost"
+            onClick={() => {
+              const currentHour = new Date().getHours();
+              setSelectedHour(currentHour);
+              setTheme(currentHour < 6 || currentHour >= 18 ? "dark" : "light");
+            }}
+          >
+            <ClockIcon />
+            Current Hour
+          </Button>
+          <Button
+            size="small"
+            variant="ghost"
+            onClick={() => {
+              const currentHour = new Date().getHours();
+              setSelectedHour(currentHour);
+              setTheme("system");
+            }}
+          >
+            <EarthIcon />
+            Defaults
+          </Button>
+        </div>
       </div>
     </div>
   );
