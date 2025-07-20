@@ -32,3 +32,8 @@
   gap: 4px;
   width: fit-content;
 }
+
+.link svg {
+  height: var(--font-body);
+  width: var(--font-body);
+}
