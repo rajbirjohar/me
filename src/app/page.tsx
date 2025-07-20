@@ -1,3 +1,5 @@
+import { ArrowUpRightIcon } from "lucide-react";
+import Link from "next/link";
 import { getAllJournals } from "@/lib/journal";
 import { TextTooltipTrigger, Tooltip, TooltipContent } from "@/ui/core/Tooltip";
 import { Heading, HeadingWrapper, SubHeading } from "@/ui/layout/Heading";
@@ -15,6 +17,25 @@ import {
 } from "@/ui/specialized/Timeline";
 import { experiences } from "@/ui/specialized/Timeline/experiences";
 import styles from "./page.module.css";
+
+const resources = [
+  {
+    label: "MDN Web Docs",
+    url: "https://developer.mozilla.org/en-US/",
+  },
+  {
+    label: "CSS Tricks",
+    url: "https://css-tricks.com/",
+  },
+  {
+    label: "Kevin Powell",
+    url: "https://www.youtube.com/@KevinPowell",
+  },
+  {
+    label: "Juxtopposed",
+    url: "https://www.youtube.com/@juxtopposed",
+  },
+];
 
 export default function Home() {
   const journals = getAllJournals();
@@ -77,6 +98,22 @@ export default function Home() {
           {journals.length < 1 && <p>No musings today.</p>}
           {journals.map((journal) => (
             <Journal key={journal.slug} journal={journal} />
+          ))}
+        </div>
+      </section>
+      <section className={styles.section}>
+        <h2>Resources I Would Use If Starting Over Today</h2>
+        <div className={styles.resources}>
+          {resources.map((resource) => (
+            <Link
+              key={resource.label}
+              href={resource.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
+              {resource.label} <ArrowUpRightIcon />
+            </Link>
           ))}
         </div>
       </section>

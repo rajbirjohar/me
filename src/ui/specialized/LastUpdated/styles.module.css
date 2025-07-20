@@ -6,4 +6,5 @@
   margin: calc(var(--24px) * 2) auto 0;
   gap: var(--14px);
   width: 100%;
+  font-family: var(--mono);
 }

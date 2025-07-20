@@ -18,7 +18,7 @@
   --color-base-400: hsl(var(--base) 25% 70%);
   --color-base-500: hsl(var(--base) 20% 55%);
   --color-base-600: hsl(var(--base) 16% 44%);
-  --color-base-700: hsl(var(--base) 14% 32%);
+  --color-base-700: hsl(var(--base) 14% 36%);
   --color-base-800: hsl(var(--base) 12% 14%);
   --color-base-900: hsl(var(--base) 10% 10%);
 
@@ -137,7 +137,7 @@
   --color-base-400: hsl(var(--base) 25% 70%);
   --color-base-500: hsl(var(--base) 20% 55%);
   --color-base-600: hsl(var(--base) 16% 44%);
-  --color-base-700: hsl(var(--base) 14% 35%);
+  --color-base-700: hsl(var(--base) 14% 38%);
   --color-base-800: hsl(var(--base) 12% 12%);
   --color-base-900: hsl(var(--base) 10% 10%);
 
@@ -202,7 +202,7 @@ body {
   /* 4. Add accessible line-height */
   line-height: 1.65;
   font-family: var(--sans);
-  font-size: var(--16px);
+  font-size: var(--font-body);
   color: var(--color-text-primary);
   background-color: var(--color-secondary);
   margin: 0;
@@ -281,9 +281,8 @@ h1 {
 .h1-display {
   font-weight: 400;
   font-size: var(--font-h1-display);
-  font-family: var(--serif-display);
+  font-family: var(--serif);
   line-height: 100%;
-  letter-spacing: 0.01em;
   color: var(--color-text-link);
 }
 
@@ -369,7 +368,6 @@ pre {
 code,
 pre {
   font-family: var(--mono);
-  font-size: var(--font-mini);
   color: var(--color-text-tertiary);
 }
 

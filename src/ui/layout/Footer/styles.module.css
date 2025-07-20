@@ -30,24 +30,21 @@
   gap: var(--14px);
 }
 
-.links h4 {
-  font-size: var(--font-h6);
-}
-
 .link {
+  font-size: var(--font-h4);
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
 
 .link svg {
-  height: var(--font-h6);
-  width: var(--font-h6);
+  height: var(--font-h4);
+  width: var(--font-h4);
 }
 
 .tag {
   margin-bottom: var(--24px);
-  font-size: var(--font-h6);
+  font-size: var(--font-h4);
   text-wrap: balance;
 }
 

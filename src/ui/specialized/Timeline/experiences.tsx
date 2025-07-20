@@ -35,9 +35,9 @@ export const experiences: Experience[] = [
           I was responsible for building the frontend portal for the hackathon.
         </p>
         <p>
-          Eventually, I became the director of Citrus Hack. I was responsible
-          for organizing the hackathon, overseeing a team of developers,
-          designers, and event coordinators.
+          Eventually, I became the director of Citrus Hack. I led the organizing
+          of the hackathon, overseeing a team of developers, designers, and
+          event coordinators.
         </p>
       </>
     ),
@@ -46,13 +46,13 @@ export const experiences: Experience[] = [
     endDate: "2022",
   },
   {
-    title: "UCR Residential Technician",
+    title: "Residential Technician",
     description: (
       <>
         <p>
           I set up and tore down media events on campus, assisted students with
-          technical issues and provided general support for the residential
-          community.
+          technical issues and provided general support for the on campus
+          residential community.
         </p>
         <p>
           Overall, an extremely valuable experience developing my soft skills.

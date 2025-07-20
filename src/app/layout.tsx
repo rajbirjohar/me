@@ -5,7 +5,7 @@ import "./globals.css";
 import { Provider } from "@/providers/Provider";
 import { Footer } from "@/ui/layout/Footer";
 import Main from "@/ui/layout/Main";
-import { mono, sans, serif, serifAlternative, serifDisplay } from "./fonts";
+import { displayNovela, novela, nudica, nudicaMono } from "./fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rajbir.io"),
@@ -67,11 +67,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          sans.variable,
-          mono.variable,
-          serif.variable,
-          serifAlternative.variable,
-          serifDisplay.variable,
+          nudica.variable,
+          nudicaMono.variable,
+          novela.variable,
+          displayNovela.variable,
         )}
       >
         <Provider>

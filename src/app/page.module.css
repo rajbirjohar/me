@@ -14,5 +14,21 @@
 }
 
 .journals > * + * {
-  margin-block-start: 1rem;
+  margin-block-start: 0.75rem;
+}
+
+.resources {
+  display: flex;
+  flex-direction: column;
+}
+
+.resources > * + * {
+  margin-block-start: 0.75rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
 }
