@@ -1,197 +1,165 @@
 import localFont from "next/font/local";
 
-export const nudica = localFont({
+export const sans = localFont({
 	variable: "--sans",
 	display: "swap",
 	src: [
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-thin-webfont.woff2",
+			path: "./fonts/silka/silka-thin.woff2",
 			weight: "100",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-ultralight-webfont.woff2",
+			path: "./fonts/silka/silka-extralight.woff2",
 			weight: "200",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-light-webfont.woff2",
+			path: "./fonts/silka/silka-light.woff2",
 			weight: "300",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-regular-webfont.woff2",
+			path: "./fonts/silka/silka-regular.woff2",
 			weight: "400",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-medium-webfont.woff2",
+			path: "./fonts/silka/silka-medium.woff2",
 			weight: "500",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-bold-webfont.woff2",
+			path: "./fonts/silka/silka-bold.woff2",
 			weight: "700",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-thinitalic-webfont.woff2",
+			path: "./fonts/silka/silka-black.woff2",
+			weight: "900",
+			style: "normal",
+		},
+		{
+			path: "./fonts/silka/silka-thinitalic.woff2",
 			weight: "100",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-ultralightitalic-webfont.woff2",
+			path: "./fonts/silka/silka-extralightitalic.woff2",
 			weight: "200",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-lightitalic-webfont.woff2",
+			path: "./fonts/silka/silka-lightitalic.woff2",
 			weight: "300",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-regularitalic-webfont.woff2",
+			path: "./fonts/silka/silka-regularitalic.woff2",
 			weight: "400",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-mediumitalic-webfont.woff2",
+			path: "./fonts/silka/silka-mediumitalic.woff2",
 			weight: "500",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica/Webfont Kit/nudica-bolditalic-webfont.woff2",
+			path: "./fonts/silka/silka-bolditalic.woff2",
 			weight: "700",
+			style: "italic",
+		},
+		{
+			path: "./fonts/silka/silka-blackitalic.woff2",
+			weight: "900",
 			style: "italic",
 		},
 	],
 });
 
-export const nudicaMono = localFont({
+export const mono = localFont({
 	variable: "--mono",
 	display: "swap",
 	src: [
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-thin-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-thin.woff2",
 			weight: "100",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-ultralight-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-extralight.woff2",
 			weight: "200",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-light-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-light.woff2",
 			weight: "300",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-regular-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-regular.woff2",
 			weight: "400",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-medium-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-medium.woff2",
 			weight: "500",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-bold-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-bold.woff2",
 			weight: "700",
 			style: "normal",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-thinitalic-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-thinitalic.woff2",
 			weight: "100",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-ultralightitalic-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-extralightitalic.woff2",
 			weight: "200",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-lightitalic-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-lightitalic.woff2",
 			weight: "300",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-regularitalic-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-regularitalic.woff2",
 			weight: "400",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-mediumitalic-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-mediumitalic.woff2",
 			weight: "500",
 			style: "italic",
 		},
 		{
-			path: "./fonts/nudica-mono/Webfont Kit/nudicamono-bolditalic-webfont.woff2",
+			path: "./fonts/silka-mono/silkamono-bolditalic.woff2",
 			weight: "700",
 			style: "italic",
 		},
 	],
 });
 
-export const novela = localFont({
+export const serif = localFont({
 	variable: "--serif",
 	display: "swap",
 	src: [
 		{
-			path: "./fonts/novela/Webfont Kit/novela-regular-webfont.woff2",
+			path: "./fonts/calendas-plus/calendas-plus.woff2",
 			weight: "400",
 			style: "normal",
 		},
 		{
-			path: "./fonts/novela/Webfont Kit/novela-semibold-webfont.woff2",
-			weight: "600",
-			style: "normal",
-		},
-		{
-			path: "./fonts/novela/Webfont Kit/novela-bold-webfont.woff2",
+			path: "./fonts/calendas-plus/calendas-plus-bold.woff2",
 			weight: "700",
 			style: "normal",
 		},
 		{
-			path: "./fonts/novela/Webfont Kit/novela-black-webfont.woff2",
-			weight: "900",
-			style: "normal",
-		},
-		{
-			path: "./fonts/novela/Webfont Kit/novela-regularitalic-webfont.woff2",
-			weight: "400",
-			style: "italic",
-		},
-		{
-			path: "./fonts/novela/Webfont Kit/novela-semibolditalic-webfont.woff2",
-			weight: "600",
-			style: "italic",
-		},
-		{
-			path: "./fonts/novela/Webfont Kit/novela-bolditalic-webfont.woff2",
-			weight: "700",
-			style: "italic",
-		},
-		{
-			path: "./fonts/novela/Webfont Kit/novela-blackitalic-webfont.woff2",
-			weight: "900",
-			style: "italic",
-		},
-	],
-});
-
-export const displayNovela = localFont({
-	variable: "--display-serif",
-	display: "swap",
-	src: [
-		{
-			path: "./fonts/novela/Webfont Kit/novela-displayregular-webfont.woff2",
-			weight: "400",
-			style: "normal",
-		},
-		{
-			path: "./fonts/novela/Webfont Kit/novela-displayitalic-webfont.woff2",
+			path: "./fonts/calendas-plus/calendas-plus-italic.woff2",
 			weight: "400",
 			style: "italic",
 		},

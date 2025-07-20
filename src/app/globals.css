@@ -3,21 +3,17 @@
   --surface: 42;
   --active: 40;
 
-  /* whites & generic neutrals */
   --color-white: hsl(0 0% 100%);
-  --color-white50: hsl(0 0% 100% / 0.5);
-  --color-white30: hsl(0 0% 100% / 0.3);
-  --color-white20: hsl(0 0% 100% / 0.2);
+  --color-white-50: hsl(0 0% 100% / 0.5);
+  --color-white-30: hsl(0 0% 100% / 0.3);
   --color-black: hsl(0 0% 4%);
 
-  /* surface scale (backgrounds & borders) */
   --color-surface-100: hsl(var(--surface) 45% 96%);
   --color-surface-200: hsl(var(--surface) 35% 93%);
   --color-surface-300: hsl(var(--surface) 26% 90%);
   --color-surface-400: hsl(var(--surface) 22% 85%);
   --color-surface-500: hsl(var(--surface) 20% 82%);
 
-  /* base scale (UI greens) — **softer, easy-on-eyes** */
   --color-base-300: hsl(var(--base) 30% 88%);
   --color-base-400: hsl(var(--base) 25% 70%);
   --color-base-500: hsl(var(--base) 20% 55%);
@@ -26,51 +22,38 @@
   --color-base-800: hsl(var(--base) 12% 14%);
   --color-base-900: hsl(var(--base) 10% 10%);
 
-  /* semantic tokens your code already uses */
   --color-primary: var(--color-surface-100);
-  --color-primary-accent: var(
-    --color-base-900
-  ); /* slightly brighter for CTAs */
+  --color-primary-accent: var(--color-base-900);
   --color-secondary: var(--color-surface-200);
-  --color-primary-border: var(--color-surface-500);
-  --color-backdrop: hsl(var(--surface) 45% 96% / 0.8);
-  /* Body background where the top 10% is the primary and the rest is the secondary */
-  --color-body-bg: linear-gradient(
-    to bottom,
-    var(--color-primary) 10%,
-    var(--color-secondary) 90%
-  );
 
-  --color-text-primary: var(--color-base-800); /* deep kelp for body copy   */
+  --color-primary-border: var(--color-surface-500);
+
+  --color-text-primary: var(--color-base-800);
   --color-text-secondary: var(--color-base-700);
   --color-text-tertiary: var(--color-base-600);
   --color-text-quarterly: var(--color-base-500);
-  --color-text-hilite: hsl(var(--active) 82% 65%);
   --color-text-link: hsl(var(--active) 100% 32%);
 
-  --color-text-active: var(--color-white);
-  --color-text-bold: var(--color-base-800);
-  --color-text-contrast: var(--color-base-300);
-
   /* utility */
-  --color-light: var(--color-white);
   --color-light-hover: hsl(0 0% 0% / 0.05);
   --color-light-border: hsl(0 0% 0% / 0.1);
   --color-white-hover: var(--color-light-hover);
   --color-white-border: var(--color-light-border);
   --color-selector: var(--color-white);
-  --color-opaque: hsl(0 0% 100% / 0.5);
 
-  --font-h1: clamp(2.8rem, 0.5692rem + 8.238vw, 8.75rem);
-  --font-h2: clamp(1.5rem, 1.0982rem + 1.7143vw, 2.8125rem);
-  --font-h3: clamp(1.375rem, 1.1837rem + 0.8163vw, 2rem);
-  --font-h4: clamp(1.375rem, 1.1837rem + 0.8163vw, 1.6rem);
-  --font-h5: clamp(1rem, 0.9235rem + 0.3265vw, 1.25rem);
-  --font-h6: clamp(1rem, 0.9617rem + 0.1633vw, 1.125rem);
+  --font-h1: clamp(2.25rem, 1.5rem + 2.1429vw, 4.5rem);
+  --font-h2: clamp(1.375rem, 1.1837rem + 0.8163vw, 1.6rem);
+  --font-h3: clamp(1.125rem, 1.05rem + 0.3265vw, 1.375rem);
+  --font-h4: clamp(1rem, 0.8852rem + 0.4898vw, 1.25rem);
+  --font-h5: clamp(0.9375rem, 0.8852rem + 0.3265vw, 1.125rem);
+  --font-h6: clamp(0.875rem, 0.87rem + 0.1633vw, 1rem);
   --font-body: clamp(1rem, 0.8852rem + 0.4898vw, 1.375rem);
   --font-link: clamp(0.875rem, 0.7985rem + 0.3265vw, 1.125rem);
   --font-mini: clamp(0.875rem, 0.87rem + 0.1633vw, 1rem);
+
+  --font-h1-display: clamp(2.8rem, 0.5692rem + 8.238vw, 8.75rem);
   --font-h2-display: clamp(1.875rem, 1.301rem + 2.449vw, 3.95rem);
+
   --14px: 0.875rem;
   --15px: 0.9375rem;
   --16px: 1rem;
@@ -82,6 +65,7 @@
   --24px: 1.5rem;
   --42px: 2.652rem;
   --64px: 4rem;
+
   --spacing-xxl: max(
     130px,
     calc(130px + (260 - 130) * ((100vw - 375px) / (1600 - 375)))
@@ -112,7 +96,7 @@
   );
 
   --content-width: 1320px;
-  --partial-content-width: calc(var(--content-width) / 1.6);
+  --partial-content-width: calc(var(--content-width) / 1.7);
 
   --transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --transition-ease-fast: 350ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -122,15 +106,8 @@
   --popover-exit-animation: var(--transition-ease-fast);
   --shadow-lg: 0px 50px 100px -20px rgba(0, 0, 0, 0.15);
 
-  --zindex-base: 1;
-  --zindex-2: 2;
-  --zindex-content-lower-2: 40;
-  --zindex-content-lower-1: 45;
-  --zindex-content: 50;
-  --zindex-top: 100;
-  --zindex-nav: 1000;
-  --zindex-nav-menu: 1010;
-  --zindex-modal: 2000;
+  --z-index-content: 50;
+  --z-index-modal: 2000;
   --radius-base: 0.75rem;
 
   --curve: cubic-bezier(0, 0.49, 0, 1.49);
@@ -168,19 +145,16 @@
   --color-secondary: var(--color-base-900);
   --color-primary-accent: var(--color-base-400);
   --color-primary-border: hsl(var(--base) 12% 30% / 0.25);
-  --color-backdrop: hsl(var(--base) 12% 18% / 0.7);
 
   --color-text-primary: var(--color-base-300);
   --color-text-secondary: var(--color-base-400);
   --color-text-tertiary: var(--color-base-500);
   --color-text-quarterly: var(--color-base-600);
-  --color-text-hilite: hsl(var(--active) 82% 65%);
   --color-text-link: hsl(var(--active) 72% 65%);
 
   /* light & borders re-tuned for dark */
-  --color-white30: hsl(var(--base) 20% 70% / 0.05);
-  --color-white50: hsl(var(--base) 20% 70% / 0.1);
-  --color-light: hsl(var(--base) 10% 26%);
+  --color-white-30: hsl(var(--base) 20% 70% / 0.05);
+  --color-white-50: hsl(var(--base) 20% 70% / 0.1);
   --color-light-hover: hsl(var(--base) 10% 26% / 0.15);
   --color-light-border: hsl(var(--base) 10% 45% / 0.25);
 
@@ -192,14 +166,14 @@
   --default-button-color: var(--color-text-primary);
   --default-button-hover-bg: var(--color-base-400);
 
-  --ghost-button-bg: var(--color-white30);
+  --ghost-button-bg: var(--color-white-30);
   --ghost-button-color: var(--color-text-primary);
-  --ghost-button-hover-bg: var(--color-white50);
+  --ghost-button-hover-bg: var(--color-white-50);
 
   --outline-button-bg: transparent;
   --outline-button-color: var(--color-text-primary);
-  --outline-button-hover-bg: var(--color-white50);
-  --outline-button-border: 1px solid var(--color-white50);
+  --outline-button-hover-bg: var(--color-white-50);
+  --outline-button-border: 1px solid var(--color-white-50);
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -226,7 +200,7 @@
 
 body {
   /* 4. Add accessible line-height */
-  line-height: 1.5;
+  line-height: 1.65;
   font-family: var(--sans);
   font-size: var(--16px);
   color: var(--color-text-primary);
@@ -275,6 +249,19 @@ p {
   text-wrap: pretty;
 }
 
+ul,
+li,
+ol {
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-body);
+  color: var(--color-text-secondary);
+}
+
+ul > * + * {
+  margin-block-start: 1rem;
+}
+
 h1,
 h2,
 h3,
@@ -285,9 +272,15 @@ h6 {
   text-wrap: balance;
 }
 
-.h1-display {
+h1 {
   font-size: var(--font-h1);
-  font-family: var(--display-serif);
+  line-height: 130%;
+  letter-spacing: -0.5px;
+}
+
+.h1-display {
+  font-size: var(--font-h1-display);
+  font-family: var(--serif);
   line-height: 100%;
   letter-spacing: 0.01em;
   color: var(--color-text-link);
@@ -298,9 +291,7 @@ h6 {
     letter-spacing: -4px;
   }
 }
-h1 .holder {
-  position: relative;
-}
+
 h2 {
   font-size: var(--font-h2);
   line-height: 130%;
@@ -333,7 +324,6 @@ h6 {
 }
 p {
   font-size: var(--font-body);
-  line-height: 160%;
   color: var(--color-text-secondary);
 }
 
@@ -356,6 +346,7 @@ button:focus-visible {
   box-shadow: inset 0 0 0 2px var(--color-selector),
     0 0 0 2px var(--color-primary-accent);
 }
+
 a:active,
 button:active {
   box-shadow: none;
@@ -363,6 +354,22 @@ button:active {
 
 time {
   font-family: var(--mono);
+}
+
+pre {
+  background-color: var(--color-surface-300);
+  padding: var(--spacing-xs) var(--spacing-s);
+  border-radius: var(--radius-base);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+code,
+pre {
+  font-family: var(--mono);
+  font-size: var(--font-mini);
+  color: var(--color-text-tertiary);
 }
 
 ::selection {

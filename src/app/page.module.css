@@ -13,6 +13,6 @@
   margin-block-start: 1.5rem;
 }
 
-.section h2 {
-  font-size: var(--font-h4);
+.journals > * + * {
+  margin-block-start: 1rem;
 }

@@ -10,7 +10,11 @@ interface TimeLineItem extends React.HTMLAttributes<HTMLDivElement> {
 export const TimeLineItem = React.forwardRef<HTMLDivElement, TimeLineItem>(
 	({ className, children, icon, ...props }, ref) => {
 		return (
-			<div ref={ref} className={cn(styles.timelineitem, className)} {...props}>
+			<article
+				ref={ref}
+				className={cn(styles.timelineitem, className)}
+				{...props}
+			>
 				<div className={styles.timelineiconwrapper}>
 					<div className={styles.timelineicon}>
 						{React.createElement(icon, {
@@ -19,7 +23,7 @@ export const TimeLineItem = React.forwardRef<HTMLDivElement, TimeLineItem>(
 					</div>
 				</div>
 				{children}
-			</div>
+			</article>
 		);
 	},
 );

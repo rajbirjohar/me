@@ -1,18 +1,18 @@
 .heading {
-	text-wrap: balance;
-	margin-bottom: 4rem;
+  text-wrap: balance;
+  margin-bottom: 4rem;
 }
 
 .subheading {
-	text-wrap: balance;
-	font-weight: normal;
-	font-size: var(--font-body);
-	max-width: var(--partial-content-width);
-	line-height: 1.5;
+  text-wrap: balance;
+  font-weight: normal;
+  font-size: var(--font-body);
+  max-width: var(--partial-content-width);
+  line-height: 1.75;
 }
 
 @media screen and (max-width: 768px) {
-	.heading {
-		margin-bottom: 2rem;
-	}
+  .heading {
+    margin-bottom: 2rem;
+  }
 }

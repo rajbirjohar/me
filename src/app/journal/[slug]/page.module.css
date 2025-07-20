@@ -3,32 +3,16 @@
   font-family: var(--serif);
 }
 
-.header {
-  text-wrap: balance;
-  margin-bottom: 32px;
+.header > * {
+  display: block;
 }
 
-.title {
-  font-size: var(--font-h2);
-  margin-bottom: 30px;
+.header > * + * {
+  margin-block-start: 1.5rem;
 }
 
-.date {
-  margin-bottom: 16px;
-}
-
-.prose p {
-  margin-bottom: 1.5rem;
-}
-
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4,
-.prose h5,
-.prose h6 {
-  margin-top: 36px;
-  margin-bottom: 32px;
+.prose > * + * {
+  margin-block-start: 1.5rem;
 }
 
 .back {
@@ -36,22 +20,10 @@
   align-items: center;
   gap: 4px;
   font-size: var(--font-body);
-  margin-bottom: 1.5rem;
+  font-family: var(--sans);
 }
 
 .icon {
   width: var(--font-body);
   height: var(--font-body);
-}
-
-@media screen and (max-width: 768px) {
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6 {
-    margin-top: 32px;
-    margin-bottom: 28px;
-  }
 }
