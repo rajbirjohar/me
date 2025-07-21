@@ -99,19 +99,12 @@
   transform: translate3d(0, 10px, 0);
 }
 
-.bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: var(--24px);
-  flex-wrap: wrap;
-  width: 100%;
-  gap: var(--14px);
-}
-
 .actions {
   display: flex;
   align-items: center;
+  margin: var(--24px) auto;
+  flex-wrap: wrap;
+  width: 100%;
   gap: var(--14px);
 }
 

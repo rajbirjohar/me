@@ -6,7 +6,6 @@ import { useTheme } from "next-themes";
 import { useState } from "react";
 import { Button } from "@/ui/core/Button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui/core/Tooltip";
-import LastUpdated from "@/ui/specialized/LastUpdated";
 import styles from "./styles.module.css";
 
 export const Theme = () => {
@@ -78,7 +77,6 @@ export const Theme = () => {
         ))}
       </div>
       <div className={styles.bottom}>
-        <LastUpdated />
         <div className={styles.actions}>
           <Button
             size="small"

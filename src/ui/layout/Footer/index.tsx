@@ -1,5 +1,6 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
+import LastUpdated from "@/ui/specialized/LastUpdated";
 import { Theme } from "../Theme";
 import styles from "./styles.module.css";
 
@@ -33,6 +34,7 @@ export const Footer = () => {
         </div>
       </div>
       <Theme />
+      <LastUpdated />
     </footer>
   );
 };
